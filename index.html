@@ -92,10 +92,17 @@
       <p class="mt-2 text-gray-300">Flagship memecoin. Built with the community, for the community.</p>
       <div class="mt-5 grid-auto">
         <a class="inline-flex items-center justify-center px-6 py-4 rounded-2xl font-bold text-lg transition transform hover:-translate-y-0.5 active:translate-y-0 bg-gradient-to-br from-emerald-500 to-cyan-500 text-black"
-   href="https://moonshot.com/9GfTjaAtSAANHhrd9DUG75s7G8rH2N13GGfnXPURmoon" target="_blank" rel="noopener">
-  Buy $DGN on Moonshot
-</a>
+           href="https://moonshot.com/9GfTjaAtSAANHhrd9DUG75s7G8rH2N13GGfnXPURmoon" target="_blank" rel="noopener">
+          Buy $DGN on Moonshot
+        </a>
         <a class="btn btn-outline" href="https://jup.ag/tokens/9GfTjaAtSAANHhrd9DUG75s7G8rH2N13GGfnXPURmoon" target="_blank" rel="noopener">Jupiter</a>
+        <div class="flex flex-col gap-1">
+          <div class="flex gap-2">
+            <a class="btn btn-outline" href="https://solscan.io/token/9GfTjaAtSAANHhrd9DUG75s7G8rH2N13GGfnXPURmoon" target="_blank" rel="noopener">Solscan</a>
+            <button onclick="copyMint('9GfTjaAtSAANHhrd9DUG75s7G8rH2N13GGfnXPUR','tooltipDGN')" class="btn btn-outline relative">Copy Mint</button>
+          </div>
+          <span id="tooltipDGN" class="text-emerald-400 text-xs hidden">✅ Copied!</span>
+        </div>
       </div>
     </article>
 
@@ -108,11 +115,18 @@
       <p class="mt-2 text-gray-300">Flip the script. The bear becomes the bull.</p>
       <div class="mt-5 grid-auto">
         <a class="inline-flex items-center justify-center px-6 py-4 rounded-2xl font-bold text-lg transition transform hover:-translate-y-0.5 active:translate-y-0 bg-gradient-to-br from-emerald-500 to-cyan-500 text-black"
-   href="https://moonshot.com/4rmrCDF8Q723iepKsWBp8yj9jY8HTQFytXKCMfz8moon" target="_blank" rel="noopener">
-  Buy $BEARBULL on Moonshot
-</a>
+           href="https://moonshot.com/4rmrCDF8Q723iepKsWBp8yj9jY8HTQFytXKCMfz8moon" target="_blank" rel="noopener">
+          Buy $BEARBULL on Moonshot
+        </a>
         <a class="btn btn-outline" href="https://jup.ag/tokens/4rmrCDF8Q723iepKsWBp8yj9jY8HTQFytXKCMfz8moon" target="_blank" rel="noopener">Jupiter</a>
         <a class="btn btn-outline" href="https://x.com/degensteindgn" target="_blank" rel="noopener">Updates on X</a>
+        <div class="flex flex-col gap-1">
+          <div class="flex gap-2">
+            <a class="btn btn-outline" href="https://solscan.io/token/4rmrCDF8Q723iepKsWBp8yj9jY8HTQFytXKCMfz8moon" target="_blank" rel="noopener">Solscan</a>
+            <button onclick="copyMint('4rmrCDF8Q723iepKsWBp8yj9jY8HTQFytXKCMfz8','tooltipBEAR')" class="btn btn-outline relative">Copy Mint</button>
+          </div>
+          <span id="tooltipBEAR" class="text-emerald-400 text-xs hidden">✅ Copied!</span>
+        </div>
       </div>
     </article>
 
@@ -125,15 +139,31 @@
       <p class="mt-2 text-gray-300">Swing big. Community-powered chaos and memes.</p>
       <div class="mt-5 grid-auto">
         <a class="inline-flex items-center justify-center px-6 py-4 rounded-2xl font-bold text-lg transition transform hover:-translate-y-0.5 active:translate-y-0 bg-gradient-to-br from-emerald-500 to-cyan-500 text-black"
-   href="https://moonshot.com/C7cG3cZ3kv2Ucs6Fu7UJqXd977dhwDQcGbpYJbGsmoon" target="_blank" rel="noopener">
-  Buy $UGOTBALLS on Moonshot
-</a>
+           href="https://moonshot.com/C7cG3cZ3kv2Ucs6Fu7UJqXd977dhwDQcGbpYJbGsmoon" target="_blank" rel="noopener">
+          Buy $UGOTBALLS on Moonshot
+        </a>
         <a class="btn btn-outline" href="https://jup.ag/tokens/C7cG3cZ3kv2Ucs6Fu7UJqXd977dhwDQcGbpYJbGsmoon" target="_blank" rel="noopener">Jupiter</a>
         <a class="btn btn-outline" href="https://t.me/DegensteinArmy" target="_blank" rel="noopener">Telegram</a>
+        <div class="flex flex-col gap-1">
+          <div class="flex gap-2">
+            <a class="btn btn-outline" href="https://solscan.io/token/C7cG3cZ3kv2Ucs6Fu7UJqXd977dhwDQcGbpYJbGsmoon" target="_blank" rel="noopener">Solscan</a>
+            <button onclick="copyMint('C7cG3cZ3kv2Ucs6Fu7UJqXd977dhwDQcGbpYJbGs','tooltipBALLS')" class="btn btn-outline relative">Copy Mint</button>
+          </div>
+          <span id="tooltipBALLS" class="text-emerald-400 text-xs hidden">✅ Copied!</span>
+        </div>
       </div>
     </article>
   </div>
 </section>
+
+<script>
+  function copyMint(mint, tooltipId) {
+    navigator.clipboard.writeText(mint);
+    const tooltip = document.getElementById(tooltipId);
+    tooltip.classList.remove('hidden');
+    setTimeout(() => tooltip.classList.add('hidden'), 1500);
+  }
+</script>
 
   <!-- Community -->
   <section id="community" class="max-w-6xl mx-auto px-4 pb-20">
