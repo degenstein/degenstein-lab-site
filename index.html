@@ -292,19 +292,32 @@
   </section>
 
   <!-- Footer -->
-  <footer class="border-t border-white/10">
-    <div class="max-w-6xl mx-auto px-4 py-10 text-sm text-gray-400 flex flex-col md:flex-row items-center justify-between gap-4">
-      <div>© <span id="year"></span> Degenstein. All rights reserved.</div>
-      <div class="flex items-center gap-4">
-        <a class="hover:text-white" href="https://x.com/degensteindgn" target="_blank" rel="noopener">X</a>
-        <a class="hover:text-white" href="https://t.me/DegensteinArmy" target="_blank" rel="noopener">Telegram</a>
-        <a class="hover:text-white" href="#">Terms</a>
-      </div>
+<footer class="border-t border-white/10">
+  <div class="max-w-6xl mx-auto px-4 py-10 text-sm text-gray-400 flex flex-col md:flex-row items-center justify-between gap-4">
+    
+    <!-- Left side -->
+    <div>
+      © <span id="year"></span> Degenstein. All rights reserved.
+      <p class="mt-2 text-xs text-gray-500 max-w-md leading-relaxed">
+        Disclaimer: The tokens featured on this site ($DGN, $BEARBULL, $UGOTBALLS) are meme coins created for community engagement 
+        and entertainment purposes only. They do not represent investment products, securities, or financial instruments. 
+        Cryptocurrency markets are highly volatile — trade at your own risk. Nothing on this website constitutes financial advice. 
+        Always DYOR (Do Your Own Research).
+      </p>
     </div>
-  </footer>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+    <!-- Right side -->
+    <div class="flex items-center gap-4">
+      <a class="hover:text-white" href="https://x.com/degensteindgn" target="_blank" rel="noopener">X</a>
+      <a class="hover:text-white" href="https://t.me/DegensteinArmy" target="_blank" rel="noopener">Telegram</a>
+      <a class="hover:text-white" href="#">Terms</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
+
