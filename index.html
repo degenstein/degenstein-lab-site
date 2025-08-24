@@ -90,67 +90,31 @@
 <body>
   <!-- Header -->
 <header class="sticky top-0 z-50 backdrop-blur bg-black/60 border-b border-white/10">
-  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between flex-wrap gap-3">
     <!-- Left: Brand -->
     <a href="/" class="flex items-center gap-3">
       <img src="assets/logo.png" alt="Degenstein Labs Logo" class="w-12 h-12 md:w-16 md:h-16 rounded-full" />
       <h1 class="text-lg md:text-xl font-extrabold tracking-tight">Degenstein Labs</h1>
     </a>
 
-    <!-- Desktop Nav -->
-    <nav class="hidden md:flex items-center gap-2">
-      <a href="#origin" class="inline-flex items-center justify-center px-4 py-2 rounded-2xl border border-white/10 backdrop-blur text-sm hover:-translate-y-0.5 transition">Origin</a>
-      <a href="#tokens" class="inline-flex items-center justify-center px-4 py-2 rounded-2xl border border-white/10 backdrop-blur text-sm hover:-translate-y-0.5 transition">Tokens</a>
-      <a href="#tokenomics" class="inline-flex items-center justify-center px-4 py-2 rounded-2xl border border-white/10 backdrop-blur text-sm hover:-translate-y-0.5 transition">Tokenomics</a>
-      <a href="#community" class="inline-flex items-center justify-center px-4 py-2 rounded-2xl border border-white/10 backdrop-blur text-sm hover:-translate-y-0.5 transition">Community</a>
-      <a href="/links.html" class="inline-flex items-center justify-center px-4 py-2 rounded-2xl border border-white/10 backdrop-blur text-sm hover:-translate-y-0.5 transition">All Links</a>
+    <!-- Nav: always visible -->
+    <nav class="flex flex-wrap items-center gap-2 w-full md:w-auto">
+      <a href="#origin" class="px-4 py-2 rounded-2xl border border-white/10 backdrop-blur text-sm hover:-translate-y-0.5 transition">Origin</a>
+      <a href="#tokens" class="px-4 py-2 rounded-2xl border border-white/10 backdrop-blur text-sm hover:-translate-y-0.5 transition">Tokens</a>
+      <a href="#tokenomics" class="px-4 py-2 rounded-2xl border border-white/10 backdrop-blur text-sm hover:-translate-y-0.5 transition">Tokenomics</a>
+      <a href="#community" class="px-4 py-2 rounded-2xl border border-white/10 backdrop-blur text-sm hover:-translate-y-0.5 transition">Community</a>
+      <a href="/links.html" class="px-4 py-2 rounded-2xl border border-white/10 backdrop-blur text-sm hover:-translate-y-0.5 transition">All Links</a>
 
       <!-- Divider -->
-      <span class="mx-1 w-px h-6 bg-white/10"></span>
+      <span class="mx-1 w-px h-6 bg-white/10 hidden md:inline-block"></span>
 
       <!-- CTAs -->
       <a href="https://pump.fun/coin/5ZpQPVyQb5ndx86Udj2Rcfzuj8djNybrVJQdr2k6pump" target="_blank" rel="noopener"
-         class="inline-flex items-center justify-center px-4 py-2 rounded-2xl font-semibold text-sm bg-gradient-to-br from-emerald-500 to-cyan-500 text-black hover:-translate-y-0.5 transition">
+         class="px-4 py-2 rounded-2xl font-semibold text-sm bg-gradient-to-br from-emerald-500 to-cyan-500 text-black hover:-translate-y-0.5 transition">
         ⚗️ Buy $DRDGN
       </a>
       <a href="https://solscan.io/token/5ZpQPVyQb5ndx86Udj2Rcfzuj8djNybrVJQdr2k6pump" target="_blank" rel="noopener"
-         class="inline-flex items-center justify-center px-4 py-2 rounded-2xl border border-white/10 backdrop-blur text-sm hover:-translate-y-0.5 transition">
-        🔍 Solscan
-      </a>
-    </nav>
-
-    <!-- Mobile Hamburger -->
-    <button id="mobileMenuBtn" aria-label="Open menu"
-            class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl border border-white/10">
-      <!-- simple icon -->
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-        <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-    </button>
-  </div>
-
-  <!-- Mobile Menu -->
-  <div id="mobileMenu" class="md:hidden hidden border-t border-white/10">
-    <div class="max-w-6xl mx-auto px-4 py-4 grid gap-2">
-      <a href="#origin" class="block px-4 py-3 rounded-2xl border border-white/10 backdrop-blur">Origin</a>
-      <a href="#tokens" class="block px-4 py-3 rounded-2xl border border-white/10 backdrop-blur">Tokens</a>
-      <a href="#tokenomics" class="block px-4 py-3 rounded-2xl border border-white/10 backdrop-blur">Tokenomics</a>
-      <a href="#community" class="block px-4 py-3 rounded-2xl border border-white/10 backdrop-blur">Community</a>
-      <a href="/links.html" class="block px-4 py-3 rounded-2xl border border-white/10 backdrop-blur">All Links</a>
-
-      <div class="h-px bg-white/10 my-2"></div>
-
-      <a href="https://pump.fun/coin/5ZpQPVyQb5ndx86Udj2Rcfzuj8djNybrVJQdr2k6pump" target="_blank" rel="noopener"
-         class="block text-center px-4 py-3 rounded-2xl font-semibold bg-gradient-to-br from-emerald-500 to-cyan-500 text-black">
-        ⚗️ Buy $DRDGN
-      </a>
-      <a href="https://solscan.io/token/5ZpQPVyQb5ndx86Udj2Rcfzuj8djNybrVJQdr2k6pump" target="_blank" rel="noopener"
-         class="block text-center px-4 py-3 rounded-2xl border border-white/10 backdrop-blur">
-        🔍 Solscan
-      </a>
-    </div>
-  </div>
-</header>
+         class="px-4 py-2 rounded-2xl border border-white/10 backdrop-blur text-sm hover:-translate-y-0.5 transition"
 
 <script>
   // Simple mobile menu toggle
