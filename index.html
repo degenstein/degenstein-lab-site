@@ -3,25 +3,90 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Degenstein - official </title>
-  <meta name="description" content="Degenstein official home: trade $DGN, join the army, and grab links to Telegram, X, Jupiter, BananaGun, and Moonshot." />
+
+  <title>Degenstein Labs — Official</title>
+  <meta name="description" content="Degenstein official home: trade $DGN, $DRDGN, join the army, and grab links to Telegram, X, Solscan, Pump.fun, Jupiter, and Moonshot." />
+  <link rel="canonical" href="https://degenstein.xyz/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Degenstein Labs" />
+  <meta property="og:title" content="Dr. Degenstein ($DRDGN) Has Entered the Lab" />
+  <meta property="og:description" content="The Lab’s mad scientist is live. With $SUCK and $DGN already tested, $DRDGN is the ultimate creation. Join the Degenstein Army." />
+  <!-- Optional: update to your hosted banner -->
+  <meta property="og:image" content="https://degenstein.xyz/assets/drdegenstein_banner_1500x500.jpg" />
+  <meta property="og:url" content="https://degenstein.xyz/" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@degensteindgn" />
+  <meta name="twitter:title" content="Dr. Degenstein ($DRDGN) Has Entered the Lab" />
+  <meta name="twitter:description" content="The Lab’s mad scientist is live. Join the experiment on Pump.fun." />
+  <meta name="twitter:image" content="https://degenstein.xyz/assets/drdegenstein_banner_1500x500.jpg" />
+
+  <meta name="theme-color" content="#10b981" />
+
+  <!-- Fonts + Tailwind CDN -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Base styles (no @apply; plain CSS so it works with CDN Tailwind) -->
   <style>
     :root { color-scheme: dark; }
-    html, body { background:#000; color:#e5e7eb; font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
-    .glow { box-shadow: 0 0 30px rgba(0,255,170,0.15), inset 0 0 20px rgba(0,255,170,0.05); }
-    .btn { @apply inline-flex items-center justify-center px-5 py-3 rounded-2xl font-semibold transition transform hover:-translate-y-0.5 active:translate-y-0; }
-    .btn-primary { background: linear-gradient(135deg,#22c55e,#06b6d4); color:#00110b; }
-    .btn-outline { border:1px solid rgba(255,255,255,0.12); backdrop-filter: blur(6px); }
-    .card { @apply rounded-3xl p-6 md:p-8 bg-neutral-900/60 border border-white/10 glow; }
-    .badge { @apply text-xs px-2 py-1 rounded-full border border-white/10 bg-white/5; }
-    .grid-auto { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; }
+    html, body {
+      background:#000; color:#e5e7eb;
+      font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    }
     a { text-decoration: none; }
+
+    /* Utility-like classes recreated in plain CSS */
+    .glow { box-shadow: 0 0 30px rgba(0,255,170,0.15), inset 0 0 20px rgba(0,255,170,0.05); }
+
+    .btn {
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:0.75rem 1.25rem; border-radius:1rem;
+      font-weight:600; transition:transform .15s ease;
+      backdrop-filter: blur(6px);
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn:active { transform: translateY(0); }
+
+    .btn-primary {
+      background: linear-gradient(135deg,#22c55e,#06b6d4);
+      color:#00110b;
+    }
+    .btn-outline {
+      border:1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.03);
+      color:#e5e7eb;
+    }
+
+    .card {
+      border-radius:1.5rem; padding:1.5rem; 
+      background: rgba(23,23,23,0.6);
+      border:1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 0 30px rgba(0,255,170,0.15), inset 0 0 20px rgba(0,255,170,0.05);
+    }
+    @media (min-width: 768px) { .card { padding:2rem; } }
+
+    .badge {
+      display:inline-block; font-size:0.75rem;
+      padding:0.25rem 0.5rem; border-radius:9999px;
+      border:1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.05);
+    }
+
+    .grid-auto { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; }
+
+    /* Motion preference for glow animations */
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; animation: none !important; }
+    }
   </style>
 </head>
+
 <body>
   <!-- Header -->
 <header class="sticky top-0 z-50 backdrop-blur bg-black/60 border-b border-white/10">
