@@ -176,8 +176,8 @@
 <!-- Tokens -->
 <section id="tokens" class="max-w-6xl mx-auto px-4 py-16">
   <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-    
-    <!-- DRDGN (Core) — first -->
+
+    <!-- DRDGN (Core) -->
     <article class="card ring-1 ring-emerald-500/30">
       <div class="flex items-center justify-between">
         <h4 class="text-xl font-bold">$DRDGN — Dr. Degenstein</h4>
@@ -191,6 +191,16 @@
            href="https://pump.fun/coin/5ZpQPVyQb5ndx86Udj2Rcfzuj8djNybrVJQdr2k6pump" target="_blank" rel="noopener">
           ⚗️ Buy ($DRDGN) on Pump.fun
         </a>
+
+        <!-- Copy Mint Button -->
+        <div class="flex items-center gap-2">
+          <button onclick="copyMint('5ZpQPVyQb5ndx86Udj2Rcfzuj8djNybrVJQdr2k6pump','tooltipDRDGN')" 
+                  class="btn btn-outline w-full">
+            📋 Copy Mint
+          </button>
+          <span id="tooltipDRDGN" class="text-emerald-400 text-xs hidden">✅ Copied!</span>
+        </div>
+
         <a class="btn btn-outline w-full" href="https://solscan.io/token/5ZpQPVyQb5ndx86Udj2Rcfzuj8djNybrVJQdr2k6pump" target="_blank" rel="noopener">🔍 Solscan</a>
         <a class="btn btn-outline w-full" href="https://x.com/degensteindgn" target="_blank" rel="noopener">X</a>
         <a class="btn btn-outline w-full" href="https://t.me/DegensteinArmy" target="_blank" rel="noopener">Telegram</a>
@@ -198,7 +208,7 @@
       </div>
     </article>
 
-    <!-- SUCK (Core) — second -->
+    <!-- SUCK (Core) -->
     <article class="card ring-1 ring-emerald-500/30">
       <div class="flex items-center justify-between">
         <h4 class="text-xl font-bold">$SUCK — VAMPENSTEIN</h4>
@@ -212,13 +222,23 @@
            href="https://pump.fun/5UmNtEkR34ZM7PK8TdhWwr6iWutZs2PVL9qtu19Jpump" target="_blank" rel="noopener">
           🧛 Buy ($SUCK) on Pump.fun
         </a>
+
+        <!-- Copy Mint Button -->
+        <div class="flex items-center gap-2">
+          <button onclick="copyMint('5UmNtEkR34ZM7PK8TdhWwr6iWutZs2PVL9qtu19Jpump','tooltipSUCK')" 
+                  class="btn btn-outline w-full">
+            📋 Copy Mint
+          </button>
+          <span id="tooltipSUCK" class="text-emerald-400 text-xs hidden">✅ Copied!</span>
+        </div>
+
         <a class="btn btn-outline w-full" href="https://solscan.io/token/5UmNtEkR34ZM7PK8TdhWwr6iWutZs2PVL9qtu19Jpump" target="_blank" rel="noopener">🔍 Solscan</a>
         <a class="btn btn-outline w-full" href="https://x.com/degensteindgn" target="_blank" rel="noopener">X</a>
         <a class="btn btn-outline w-full" href="https://t.me/DegensteinArmy" target="_blank" rel="noopener">Telegram</a>
       </div>
     </article>
 
-    <!-- KITTY (Core) — third (to the right of $SUCK on xl) -->
+    <!-- KITTY (Core) -->
     <article class="card ring-1 ring-emerald-500/30">
       <div class="flex items-center justify-between">
         <h4 class="text-xl font-bold">$KITTY — Miss_Kittystein</h4>
@@ -233,26 +253,37 @@
            href="https://pump.fun/coin/GvorTjssS3VyyQ6o9Z14C24mRwkVtqkc2ygDsgLCpump" target="_blank" rel="noopener">
           🐱 Buy ($KITTY) on Pump.fun
         </a>
+
+        <!-- Copy Mint Button -->
         <div class="flex items-center gap-2">
-          <button onclick="copyMint('GvorTjssS3VyyQ6o9Z14C24mRwkVtqkc2ygDsgLCpump','tooltipKITTY')" class="btn btn-outline w-full">📋 Copy Mint</button>
+          <button onclick="copyMint('GvorTjssS3VyyQ6o9Z14C24mRwkVtqkc2ygDsgLCpump','tooltipKITTY')" 
+                  class="btn btn-outline w-full">
+            📋 Copy Mint
+          </button>
           <span id="tooltipKITTY" class="text-emerald-400 text-xs hidden">✅ Copied!</span>
         </div>
+
+        <a class="btn btn-outline w-full" href="https://solscan.io/token/GvorTjssS3VyyQ6o9Z14C24mRwkVtqkc2ygDsgLCpump" target="_blank" rel="noopener">🔍 Solscan</a>
         <a class="btn btn-outline w-full" href="https://x.com/degensteindgn" target="_blank" rel="noopener">X</a>
         <a class="btn btn-outline w-full" href="https://t.me/DegensteinArmy" target="_blank" rel="noopener">Telegram</a>
       </div>
 
-      <!-- Optional trust/listings compact -->
+      <!-- Trust & Listings -->
       <div class="mt-6 grid gap-6">
         <div class="card">
           <h5 class="text-lg font-bold mb-2">✅ Security & Trust</h5>
           <ul class="space-y-2 text-sm">
             <li>
               ✅ Security Detection: <span class="text-emerald-400 font-semibold">Zero Risks</span><br/>
-              <a class="btn btn-outline mt-2 w-full" href="https://gopluslabs.io/token-security/solana/GvorTjssS3VyyQ6o9Z14C24mRwkVtqkc2ygDsgLCpump" target="_blank" rel="noopener">GoPlus Security Report</a>
+              <a class="btn btn-outline mt-2 w-full" href="https://gopluslabs.io/token-security/solana/GvorTjssS3VyyQ6o9Z14C24mRwkVtqkc2ygDsgLCpump" target="_blank" rel="noopener">
+                GoPlus Security Report
+              </a>
             </li>
             <li class="pt-2">
               ✅ Trust Score: <span class="text-emerald-400 font-semibold">95%</span><br/>
-              <a class="btn btn-outline mt-2 w-full" href="https://www.freshcoins.io/token-scan/sol/GvorTjssS3VyyQ6o9Z14C24mRwkVtqkc2ygDsgLCpump" target="_blank" rel="noopener">FreshCoins Scan</a>
+              <a class="btn btn-outline mt-2 w-full" href="https://www.freshcoins.io/token-scan/sol/GvorTjssS3VyyQ6o9Z14C24mRwkVtqkc2ygDsgLCpump" target="_blank" rel="noopener">
+                FreshCoins Scan
+              </a>
             </li>
           </ul>
         </div>
