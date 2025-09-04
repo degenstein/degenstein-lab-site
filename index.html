@@ -31,7 +31,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Base styles (no @apply; plain CSS so it works with CDN Tailwind) -->
+    <!-- Base styles (no @apply; plain CSS so it works with CDN Tailwind) -->
   <style>
     :root { color-scheme: dark; }
     html, body {
@@ -66,6 +66,7 @@
       background: rgba(23,23,23,0.6);
       border:1px solid rgba(255,255,255,0.1);
       box-shadow: 0 0 30px rgba(0,255,170,0.15), inset 0 0 20px rgba(0,255,170,0.05);
+      overflow:hidden; /* 🔧 keeps widget inside */
     }
     @media (min-width: 768px) { .card { padding:2rem; } }
 
@@ -81,7 +82,17 @@
     @media (prefers-reduced-motion: reduce) {
       * { transition: none !important; animation: none !important; }
     }
+
+    /* 🔧 FreshCoins Audit widget fixes */
+    #audit-widget { width:100%; display:block; margin:0; padding:0; }
+    #audit-widget * { max-width:100% !important; box-sizing:border-box; }
+    #audit-widget iframe,
+    #audit-widget .freshcoins,
+    #audit-widget .fcw-root {
+      width:100% !important;
+    }
   </style>
+
 </head>
 
 <body>
