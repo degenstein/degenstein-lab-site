@@ -95,6 +95,53 @@
       50% { box-shadow: 0 0 20px rgba(220,20,60,0.7), 0 0 40px rgba(0,255,170,0.5); }
     }
     .animate-glow { animation: glow 2.5s ease-in-out infinite; }
+
+    /* =========================
+       PROMOS UPGRADE STYLES
+       ========================= */
+    .promos-wrap { position: relative; }
+    .promos-wrap::before {
+      content:"";
+      position:absolute; inset:-10% -5% -15% -5%;
+      background:
+        radial-gradient(1200px 400px at 50% -10%, rgba(16,185,129,.15), transparent 60%),
+        radial-gradient(800px 300px at 80% 110%, rgba(6,182,212,.12), transparent 60%);
+      pointer-events:none; filter: blur(6px);
+    }
+    .badge-boost {
+      --badge-g1:#10b981; --badge-g2:#06b6d4;
+      background: linear-gradient(135deg, var(--badge-g1), var(--badge-g2));
+      color:#00110b; border:none;
+      box-shadow: 0 0 0 3px rgba(16,185,129,.18), 0 6px 24px rgba(6,182,212,.25);
+      animation: badgePulse 2.8s ease-in-out infinite;
+    }
+    @keyframes badgePulse {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-1px); box-shadow: 0 0 0 5px rgba(16,185,129,.25), 0 12px 36px rgba(6,182,212,.35); }
+    }
+    .grad-title {
+      background: linear-gradient(180deg,#fff,#d1fae5 60%,#a7f3d0);
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+      text-shadow: 0 2px 18px rgba(16,185,129,.14);
+    }
+    .promo-card {
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.04));
+      border-color: rgba(255,255,255,.14);
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .promo-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(16,185,129,.35);
+      box-shadow: 0 14px 40px rgba(16,185,129,.18), 0 4px 20px rgba(6,182,212,.15);
+    }
+    .kicker { font-weight:800; letter-spacing:.15px; }
+    .btn-pop {
+      background: linear-gradient(135deg,#22c55e,#06b6d4);
+      color:#00110b; font-weight:700;
+      box-shadow: 0 8px 24px rgba(16,185,129,.28);
+    }
+    .btn-pop:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(6,182,212,.32); }
+    .muted { color: rgba(203,213,225,.7); }
   </style>
 </head>
 
@@ -312,116 +359,117 @@
 
 <!-- ===================== COMMUNITY PROMOS / REFERRALS ====================== -->
 <section id="community-promos" class="relative py-16 sm:py-20 bg-gradient-to-b from-slate-900 via-slate-900/60 to-slate-950">
-  <div class="mx-auto max-w-7xl px-4">
+  <div class="promos-wrap"></div>
+  <div class="mx-auto max-w-7xl px-4 relative">
     <!-- Header -->
     <div class="mx-auto max-w-3xl text-center">
-      <span class="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold tracking-wide text-emerald-300">
+      <span class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold tracking-wide badge-boost">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a1 1 0 0 1 1 1v3.055a7.001 7.001 0 0 1 5.945 5.945H22a1 1 0 1 1 0 2h-3.055A7.001 7.001 0 0 1 13 19.945V23a1 1 0 1 1-2 0v-3.055A7.001 7.001 0 0 1 5.055 14H2a1 1 0 1 1 0-2h3.055A7.001 7.001 0 0 1 11 6.055V3a1 1 0 0 1 1-1Z"/></svg>
         Giving Back
       </span>
-      <h2 class="mt-4 text-3xl sm:text-4xl font-extrabold text-white">Community Promos & Referral Rewards</h2>
+      <h2 class="mt-4 text-3xl sm:text-4xl font-extrabold grad-title">Community Promos & Referral Rewards</h2>
       <p class="mt-3 text-base sm:text-lg text-slate-300">These are optional referral links that help support the Degenstein community. If you use them, a small bonus may be awarded to you and/or the Lab.</p>
     </div>
 
     <!-- Grid -->
     <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
       <!-- Coinbase -->
-      <article class="group relative rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition hover:border-emerald-400/30 hover:bg-white/10">
+      <article class="group relative rounded-2xl border promo-card p-6 backdrop-blur">
         <div class="flex items-center gap-3">
           <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-6 w-6 text-white" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2Zm0 3a7 7 0 1 1-7 7 7.008 7.008 0 0 1 7-7Zm0 2.5a4.5 4.5 0 1 0 4.5 4.5A4.505 4.505 0 0 0 12 7.5Z"/></svg>
           </div>
           <div>
-            <h3 class="text-lg font-bold text-white">Coinbase — <span class="text-emerald-300">$30 Bonus</span></h3>
+            <h3 class="text-lg font-bold text-white">Coinbase — <span class="text-emerald-300 kicker">$30 Bonus</span></h3>
             <p class="text-sm text-slate-300/90">New users can receive up to $30 in rewards after sign-up and completing requirements.</p>
           </div>
         </div>
         <div class="mt-5 flex items-center justify-between">
-          <a href="https://coinbase.com/join/MFB6ACG?src=referral-link" class="inline-flex items-center gap-2 rounded-xl bg-emerald-500/20 px-4 py-2 text-sm font-semibold text-emerald-200 ring-1 ring-emerald-500/30 transition hover:bg-emerald-500/30" target="_blank" rel="noopener noreferrer">
+          <a href="https://coinbase.com/join/MFB6ACG?src=referral-link" class="inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm btn-pop transition" target="_blank" rel="noopener noreferrer">
             Claim Offer
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="M13 5h6a1 1 0 0 1 1 1v6h-2V8.414l-8.293 8.293-1.414-1.414L16.586 7H13V5Z"/></svg>
           </a>
-          <span class="text-xs text-slate-400">Referral link</span>
+          <span class="text-xs muted">Referral link</span>
         </div>
       </article>
 
       <!-- Gemini -->
-      <article class="group relative rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition hover:border-emerald-400/30 hover:bg-white/10">
+      <article class="group relative rounded-2xl border promo-card p-6 backdrop-blur">
         <div class="flex items-center gap-3">
           <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Z"/></svg>
           </div>
           <div>
-            <h3 class="text-lg font-bold text-white">Gemini — <span class="text-emerald-300">$75 Bonus</span></h3>
+            <h3 class="text-lg font-bold text-white">Gemini — <span class="text-emerald-300 kicker">$75 Bonus</span></h3>
             <p class="text-sm text-slate-300/90">Register via this link and follow the steps to qualify for the promotional reward.</p>
           </div>
         </div>
         <div class="mt-5 flex items-center justify-between">
-          <a href="https://exchange.gemini.com/register?referral=9zrdalkh7&type=referral" class="inline-flex items-center gap-2 rounded-xl bg-emerald-500/20 px-4 py-2 text-sm font-semibold text-emerald-200 ring-1 ring-emerald-500/30 transition hover:bg-emerald-500/30" target="_blank" rel="noopener noreferrer">
+          <a href="https://exchange.gemini.com/register?referral=9zrdalkh7&type=referral" class="inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm btn-pop transition" target="_blank" rel="noopener noreferrer">
             Claim Offer
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="M13 5h6a1 1 0 0 1 1 1v6h-2V8.414l-8.293 8.293-1.414-1.414L16.586 7H13V5Z"/></svg>
           </a>
-          <span class="text-xs text-slate-400">Referral link</span>
+          <span class="text-xs muted">Referral link</span>
         </div>
       </article>
 
       <!-- BTCC -->
-      <article class="group relative rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition hover:border-emerald-400/30 hover:bg-white/10">
+      <article class="group relative rounded-2xl border promo-card p-6 backdrop-blur">
         <div class="flex items-center gap-3">
           <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M4 5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3H4V5Zm0 5h16v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-9Zm4 2v2h6v-2H8Z"/></svg>
           </div>
           <div>
-            <h3 class="text-lg font-bold text-white">BTCC — <span class="text-emerald-300">Promos Worth $1,000s</span></h3>
+            <h3 class="text-lg font-bold text-white">BTCC — <span class="text-emerald-300 kicker">Promos Worth $1,000s</span></h3>
             <p class="text-sm text-slate-300/90">Join BTCC via this partner link to access multiple promo campaigns and rewards.</p>
           </div>
         </div>
         <div class="mt-5 flex items-center justify-between">
-          <a href="https://partner.btcc.com/us/c/HC6O49" class="inline-flex items-center gap-2 rounded-xl bg-emerald-500/20 px-4 py-2 text-sm font-semibold text-emerald-200 ring-1 ring-emerald-500/30 transition hover:bg-emerald-500/30" target="_blank" rel="noopener noreferrer">
+          <a href="https://partner.btcc.com/us/c/HC6O49" class="inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm btn-pop transition" target="_blank" rel="noopener noreferrer">
             Claim Offer
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="M13 5h6a1 1 0 0 1 1 1v6h-2V8.414l-8.293 8.293-1.414-1.414L16.586 7H13V5Z"/></svg>
           </a>
-          <span class="text-xs text-slate-400">Referral link</span>
+          <span class="text-xs muted">Referral link</span>
         </div>
       </article>
 
       <!-- Moonshot -->
-      <article class="group relative rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition hover:border-emerald-400/30 hover:bg-white/10">
+      <article class="group relative rounded-2xl border promo-card p-6 backdrop-blur">
         <div class="flex items-center gap-3">
           <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2Zm1 14h-2v-2h2v2Zm0-4h-2V6h2v6Z"/></svg>
           </div>
           <div>
-            <h3 class="text-lg font-bold text-white">Moonshot — <span class="text-emerald-300">Up to $100 Free Memecoins</span></h3>
+            <h3 class="text-lg font-bold text-white">Moonshot — <span class="text-emerald-300 kicker">Up to $100 Free Memecoins</span></h3>
             <p class="text-sm text-slate-300/90">Deposit via this referral link and get rewarded with bonus memecoins.</p>
           </div>
         </div>
         <div class="mt-5 flex items-center justify-between">
-          <a href="https://moonshot.com?ref=TorB1MIgA9" class="inline-flex items-center gap-2 rounded-xl bg-emerald-500/20 px-4 py-2 text-sm font-semibold text-emerald-200 ring-1 ring-emerald-500/30 transition hover:bg-emerald-500/30" target="_blank" rel="noopener noreferrer">
+          <a href="https://moonshot.com?ref=TorB1MIgA9" class="inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm btn-pop transition" target="_blank" rel="noopener noreferrer">
             Claim Offer
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="M13 5h6a1 1 0 0 1 1 1v6h-2V8.414l-8.293 8.293-1.414-1.414L16.586 7H13V5Z"/></svg>
           </a>
-          <span class="text-xs text-slate-400">Referral link</span>
+          <span class="text-xs muted">Referral link</span>
         </div>
       </article>
 
       <!-- Coindepo -->
-      <article class="group relative rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition hover:border-emerald-400/30 hover:bg-white/10">
+      <article class="group relative rounded-2xl border promo-card p-6 backdrop-blur">
         <div class="flex items-center gap-3">
           <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1a11 11 0 1 0 11 11A11.012 11.012 0 0 0 12 1Zm1 16h-2v-2h2Zm0-4h-2V6h2Z"/></svg>
           </div>
           <div>
-            <h3 class="text-lg font-bold text-white">Coindepo — <span class="text-emerald-300">Up to $500 in USDC</span></h3>
+            <h3 class="text-lg font-bold text-white">Coindepo — <span class="text-emerald-300 kicker">Up to $500 in USDC</span></h3>
             <p class="text-sm text-slate-300/90">Sign up and deposit with this referral link to earn rewards in stablecoins.</p>
           </div>
         </div>
         <div class="mt-5 flex items-center justify-between">
-          <a href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV" class="inline-flex items-center gap-2 rounded-xl bg-emerald-500/20 px-4 py-2 text-sm font-semibold text-emerald-200 ring-1 ring-emerald-500/30 transition hover:bg-emerald-500/30" target="_blank" rel="noopener noreferrer">
+          <a href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV" class="inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm btn-pop transition" target="_blank" rel="noopener noreferrer">
             Claim Offer
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="M13 5h6a1 1 0 0 1 1 1v6h-2V8.414l-8.293 8.293-1.414-1.414L16.586 7H13V5Z"/></svg>
           </a>
-          <span class="text-xs text-slate-400">Referral link</span>
+          <span class="text-xs muted">Referral link</span>
         </div>
       </article>
     </div>
@@ -550,3 +598,4 @@
 
 </body>
 </html>
+
