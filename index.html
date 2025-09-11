@@ -142,6 +142,15 @@
     }
     .btn-pop:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(6,182,212,.32); }
     .muted { color: rgba(203,213,225,.7); }
+
+    /* ===== Token avatar + lightbox additions ===== */
+    .token-avatar { height:1.5rem; width:1.5rem; border-radius:9999px; }
+    .token-avatar-ring { box-shadow: 0 0 0 1px rgba(16,185,129,.35); }
+    #token-lightbox { position:fixed; inset:0; z-index:100; display:none; align-items:center; justify-content:center; }
+    #token-lightbox.show { display:flex; }
+    #token-lightbox .backdrop { position:absolute; inset:0; background:rgba(0,0,0,.8); }
+    #token-lightbox img { max-width:90vw; max-height:90vh; border-radius:1rem; box-shadow:0 20px 60px rgba(0,0,0,.6); }
+    #token-lightbox .close { position:absolute; top:1rem; right:1rem; font-size:2rem; color:#fff; line-height:1; }
   </style>
 </head>
 
@@ -216,7 +225,13 @@
     <!-- DRDGN (Core) -->
     <article class="card ring-1 ring-emerald-500/30">
       <div class="flex items-center justify-between">
-        <h4 class="text-xl font-bold">$DRDGN — Dr. Degenstein</h4>
+        <div class="flex items-center gap-2">
+          <button class="token-zoom" data-fullsrc="assets/tokens/drdgn_large.webp" aria-label="Enlarge $DRDGN">
+            <img src="assets/tokens/drdgn_thumb.webp" alt="$DRDGN token icon"
+                 class="token-avatar token-avatar-ring" width="24" height="24" loading="lazy" decoding="async">
+          </button>
+          <h4 class="text-xl font-bold">$DRDGN — Dr. Degenstein</h4>
+        </div>
         <span class="badge bg-emerald-500/20 text-emerald-400">Core</span>
       </div>
       <p class="mt-2 text-gray-300">The Lab’s mad scientist has arrived. After $SUCK and $DGN, this is the ultimate experiment unleashed.</p>
@@ -255,7 +270,13 @@
     <!-- SUCK (Core) -->
     <article class="card ring-1 ring-emerald-500/30">
       <div class="flex items-center justify-between">
-        <h4 class="text-xl font-bold">$SUCK — VAMPENSTEIN</h4>
+        <div class="flex items-center gap-2">
+          <button class="token-zoom" data-fullsrc="assets/tokens/suck_large.webp" aria-label="Enlarge $SUCK">
+            <img src="assets/tokens/suck_thumb.webp" alt="$SUCK token icon"
+                 class="token-avatar token-avatar-ring" width="24" height="24" loading="lazy" decoding="async">
+          </button>
+          <h4 class="text-xl font-bold">$SUCK — VAMPENSTEIN</h4>
+        </div>
         <span class="badge bg-emerald-500/20 text-emerald-400">Core</span>
       </div>
       <p class="mt-2 text-gray-300">The coin that will suck all those red-blooded candles until they turn green. 🩸🟢</p>
@@ -294,7 +315,13 @@
     <!-- KITTY (Core) -->
     <article class="card ring-1 ring-emerald-500/30">
       <div class="flex items-center justify-between">
-        <h4 class="text-xl font-bold">$KITTY — Miss_Kittystein</h4>
+        <div class="flex items-center gap-2">
+          <button class="token-zoom" data-fullsrc="assets/tokens/kitty_large.webp" aria-label="Enlarge $KITTY">
+            <img src="assets/tokens/kitty_thumb.webp" alt="$KITTY token icon"
+                 class="token-avatar token-avatar-ring" width="24" height="24" loading="lazy" decoding="async">
+          </button>
+          <h4 class="text-xl font-bold">$KITTY — Miss_Kittystein</h4>
+        </div>
         <span class="badge bg-emerald-500/20 text-emerald-400">Core</span>
       </div>
 
@@ -596,6 +623,38 @@
   }
 </script>
 
+<!-- ===== Token Lightbox (clickable avatars) ===== -->
+<div id="token-lightbox" aria-hidden="true">
+  <button class="backdrop" data-close aria-label="Close image"></button>
+  <img id="token-lightbox-img" alt="Token artwork">
+  <button class="close" data-close aria-label="Close">&times;</button>
+</div>
+
+<script>
+  (function () {
+    const box = document.getElementById('token-lightbox');
+    const img = document.getElementById('token-lightbox-img');
+
+    function openBox(src) {
+      img.src = src;
+      box.classList.add('show');
+      box.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeBox() {
+      box.classList.remove('show');
+      box.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      img.removeAttribute('src');
+    }
+
+    document.querySelectorAll('.token-zoom').forEach(btn => {
+      btn.addEventListener('click', () => openBox(btn.dataset.fullsrc));
+    });
+    box.querySelectorAll('[data-close]').forEach(el => el.addEventListener('click', closeBox));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeBox(); });
+  })();
+</script>
+
 </body>
 </html>
-
