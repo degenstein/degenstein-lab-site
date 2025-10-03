@@ -129,6 +129,12 @@
       <a href="/links.html" class="inline-flex items-center justify-center px-4 py-2 rounded-2xl border border-white/10 backdrop-blur text-sm">All Links</a>
       <!-- UPDATED whitepaper link -->
       <a href="/assets/Degenstein_Lab_Tokens_Whitepaper_with_PENGA_Burns_Audit.pdf" class="inline-flex items-center justify-center px-4 py-2 rounded-2xl border border-white/10 backdrop-blur text-sm" target="_blank" rel="noopener">Whitepaper</a>
+
+      <!-- ✅ OPTION A: Play button added to navbar -->
+      <a href="/penga.html" style="display:inline-block;padding:10px 14px;border-radius:12px;border:1px solid rgba(106,245,230,.4);background:rgba(106,245,230,.18);color:#e6fffb;text-decoration:none;">
+        🎮 Play the $PENGA Mini Game
+      </a>
+
       <span class="mx-1 w-px h-6 bg-white/10"></span>
       <div class="flex flex-row gap-2">
         <a href="https://pump.fun/coin/GvorTjssS3VyyQ6o9Z14C24mRwkVtqkc2ygDsgLCpump" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 rounded-2xl font-semibold text-sm bg-gradient-to-br from-emerald-500 to-cyan-500 text-black">
@@ -235,6 +241,7 @@
     </figure>
   </div>
 </section>
+
 <!-- === $PENGA Video === -->
 <section id="penga-video" class="max-w-6xl mx-auto px-4 py-12">
   <div class="card">
@@ -253,7 +260,6 @@
         </div>
       </div>
 
-      <!-- Responsive video player -->
       <div class="w-full md:w-[560px] lg:w-[720px] shrink-0">
         <div class="rounded-2xl overflow-hidden border border-white/10 bg-white/5">
           <video
@@ -263,7 +269,6 @@
             preload="metadata"
             poster="assets/pengastein_vixens_banner_1500x500.png"
           >
-            <!-- Update the src filename if you use a different name/path -->
             <source src="assets/penga_intro_1080.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
@@ -408,18 +413,7 @@
       </div>
       <div class="mt-6 grid gap-6">
         <div class="card">
-          <h5 class="text-lg font-bold mb-2">✅ Security & Trust</h5>
-          <ul class="space-y-2 text-sm">
-            <li>✅ Security Detection: <span class="text-emerald-400 font-semibold">Zero Risks</span><br/>
-              <a class="btn btn-outline mt-2 w-full" href="https://gopluslabs.io/token-security/solana/GvorTjssS3VyyQ6o9Z14C24mRwkVtqkc2ygDsgLCpump" target="_blank" rel="noopener">GoPlus Security Report</a>
-            </li>
-            <li class="pt-2">✅ Trust Score: <span class="text-emerald-400 font-semibold">95%</span><br/>
-              <a class="btn btn-outline mt-2 w-full" href="https://www.freshcoins.io/token-scan/sol/GvorTjssS3VyyQ6o9Z14C24mRwkVtqkc2ygDsgLCpump" target="_blank" rel="noopener">FreshCoins Scan</a>
-            </li>
-          </ul>
-        </div>
-        <div class="card overflow-hidden">
-          <h5 class="text-lg font-bold mb-3">🔎 FreshCoins Audit</h5>
+          <h5 class="text-lg font-bold mb-2">🔎 FreshCoins Audit</h5>
           <div id="audit-widget" data-slug="miss_kittystein" data-style="dark"></div>
         </div>
       </div>
@@ -678,7 +672,7 @@
         <p class="mt-2 text-sm text-slate-300">${p.blurb || ''}</p>
         <div class="mt-4 inline-flex items-center gap-2 text-emerald-300 text-sm">
           <span>Use referral</span>
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M13.293 5.293a1 1 0 0 1 1.414 0l6 6a.997.997 0 0 1 .083 1.32l-.083.094-6 6a1 1 0 0 1-1.497-1.32l.083-.094L17.585 13H4a1 1 0 0 1-.117-1.993L4 11h13.585l-4.292-4.293a1 1 0 0 1-.083-1.32l.083-.094Z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M13.293 5.293a1 1 0 0 1 1.414 0l6 6a.997.997 0 0 1 .083 1.32l-.083.094-6 6a 1 1 0 0 1-1.497-1.32l.083-.094L17.585 13H4a1 1 0 0 1-.117-1.993L4 11h13.585l-4.292-4.293a1 1 0 0 1-.083-1.32l.083-.094Z"/></svg>
         </div>
       </a>
     `).join('');
@@ -686,6 +680,4 @@
 </script>
 
 </body>
-</html>
-
 </html>
