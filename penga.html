@@ -1,1 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>$PENGA — Pengastein Rocket Run</title>
+  <meta name="description" content="Pengastein Rocket Run — a $PENGA mini game by Degenstein Lab." />
+  <link rel="icon" href="/assets/favicon.ico" />
+  <style>
+    :root {
+      --bg1:#0b1020; --bg2:#101b3d; --cyan:#6af5e6; --ink:#e5f4ff; --muted:#88a6ff;
+      --ring: rgba(106,245,230,.35);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin:0; padding:0; background:var(--bg1); color:white; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; }
+    a { color: var(--cyan); }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 16px; }
+    .title { font-weight: 800; font-size: clamp(24px, 4vw, 32px); color: var(--cyan); margin: 4px 0 8px; }
+    .subtitle { color: #cffafe; opacity:.9; font-size: 14px; margin-bottom: 12px; }
+    .grid { display: grid; gap: 16px; grid-template-columns: 1fr; }
+    @media (min-width: 900px) { .grid { grid-template-columns: 1fr 260px; } }
+    .panel { border-radius: 16px; overflow: hidden; border: 1px solid var(--ring); background: #0b1020; position: relative; }
+    .side { display: grid; gap: 12px; height: max-content; }
+    .card { border-radius: 16px; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.05); padding: 12px; }
+    .row { display:flex; align-items:center; justify-content:space-between; }
+    .btns { display:flex; gap:8px; flex-wrap: wrap; }
+    .btn { cursor:pointer; border-radius: 14px; padding: 8px 12px; border: 1px solid rgba(106,245,230,.4); background: rgba(106,245,230,.18); color:#e6fffb; }
+    .btn:hover { background: rgba(106,245,230,.28); }
+    .btn-secondary { border-color:rgba(255,255,255,.2); background: rgba(255,255,255,.08); color:#fff; }
+    canvas { display:block; width:100%; height:auto; background: linear-gradient(180deg, var(--bg1), var(--bg2)); }
+    .mobile { position:absolute; inset-inline:0; bottom:8px; display:flex; justify-content:space-between; padding: 0 10px; gap: 10px; }
+    .pad { display:flex; gap:8px; }
+    .ctrl { -webkit-tap-highlight-color: transparent; user-select:none; font-size:12px; color:white; background: rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.25); border-radius:12px; padding:10px 14px; }
+    .ctrl.big { background: rgba(106,245,230,.35); border-color: rgba(106,245,230,.6); font-weight:700; }
+    .footer { margin-top:12px; font-size:12px; color:#c7d2fecc; display:flex; gap:6px; flex-wrap:wrap; align-items:center; }
+    .notice { margin-top: 10px; color:#fecaca; background: rgba(244,63,94,.12); border:1px solid rgba(244,63,94,.3); padding:10px; border-radius:14px; display:none; }
+    .badge { font-size:12px; color:#bfefff; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="row" style="margin-bottom:8px; gap:10px; align-items:flex-end;">
+      <div>
+        <div class="title">$PENGA Mini Game — Pengastein Rocket Run</div>
+        <div class="subtitle">Collect shards, dodge hazards, and set a new high score. Arrow keys/WASD + Space (double-jump). Mobile has tap controls.</div>
+      </div>
+      <div class="btns">
+        <button id="startBtn" class="btn">▶ Start</button>
+        <button id="pauseBtn" class="btn" style="display:none;">Pause</button>
+        <button id="resetBtn" class="btn btn-secondary" style="display:none;">Reset</button>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="panel">
+        <canvas id="game" width="900" height="520"></canvas>
+
+        <!-- Mobile controls -->
+        <div class="mobile" id="mobileCtrls" style="display:none;">
+          <div class="pad">
+            <button class="ctrl" data-key="left">◀</button>
+            <button class="ctrl" data-key="right">▶</button>
+          </div>
+          <div class="pad">
+            <button class="ctrl" data-key="up">▲</button>
+            <button class="ctrl" data-key="down">▼</button>
+            <button class="ctrl big" data-key="jump">JUMP</button>
+          </div>
+        </div>
+      </div>
+
+      <aside class="side">
+        <div class="card">
+          <div class="row"><div class="badge">Score</div><div id="scoreEl">0</div></div>
+          <div class="row"><div class="badge">Best</div><div id="bestEl">0</div></div>
+          <div style="margin-top:6px; font-size:11px; color:#a5f3fc;">Heat multiplier increases difficulty and rewards over time.</div>
+        </div>
+
+        <div class="card">
+          <div style="font-weight:600; color:#cffafe; margin-bottom:6px;">How to play</div>
+          <ul style="margin:0; padding-left:18px; color:#e0f2fecc; font-size:14px; display:grid; gap:6px;">
+            <li>WASD / Arrow keys to move. Space = jump + double-jump.</li>
+            <li>Collect neon shards for points.</li>
+            <li>Avoid barrels, zaps, and gas clouds.</li>
+            <li>On mobile, use the on-screen buttons.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div style="font-weight:600; color:#cffafe; margin-bottom:6px;">Share your score</div>
+          <a id="shareLink" class="btn" href="#" target="_blank" rel="noopener">Share on X</a>
+        </div>
+
+        <div id="gameOverBox" class="notice"></div>
+      </aside>
+    </div>
+
+    <div class="footer">
+      <span>Built for Degenstein Lab • $PENGA</span>
+      <span>•</span>
+      <a href="https://pump.fun" target="_blank" rel="noopener">Pump.fun</a>
+      <span>•</span>
+      <a href="https://degenstein.xyz" target="_blank" rel="noopener">degenstein.xyz</a>
+    </div>
+  </div>
+
+  <script>
+    // -------- Helpers ----------
+    const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+    const rand  = (a, b) => Math.random() * (b - a) + a;
+
+    // -------- State ----------
+    const canvas = document.getElementById('game');
+    const ctx = canvas.getContext('2d');
+    const scoreEl = document.getElementById('scoreEl');
+    const bestEl  = document.getElementById('bestEl');
+    const mobile = document.getElementById('mobileCtrls');
+    const startBtn = document.getElementById('startBtn');
+    const pauseBtn = document.getElementById('pauseBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    const gameOverBox = document.getElementById('gameOverBox');
+    const shareLink = document.getElementById('shareLink');
+
+    let running=false, paused=false, gameOver=false, req=null;
+    let score=0, best=Number(localStorage.getItem('penga_best')||0);
+    bestEl.textContent = best;
+
+    const input = { left:false, right:false, up:false, down:false, jump:false };
+
+    const state = {
+      t:0, w:canvas.width, h:canvas.height,
+      speed:3, gravity:0.4, air:0.98,
+      shardTimer:0, hazardTimer:0, shards:[], hazards:[], effects:[]
+    };
+    const player = { x: state.w*0.2, y: state.h*0.5, vx:0, vy:0, r:18, doubleJump:true, invuln:0 };
+
+    // -------- Responsive canvas ----------
+    const resize = () => {
+      const parentW = canvas.parentElement.clientWidth;
+      const h = Math.min(600, Math.max(420, Math.round(parentW*0.56)));
+      canvas.width = parentW;
+      canvas.height = h;
+      state.w = canvas.width; state.h = canvas.height;
+      drawSplash();
+    };
+    new ResizeObserver(resize).observe(canvas.parentElement);
+    resize();
+
+    // -------- Input ----------
+    const keyMap = {
+      ArrowLeft:'left', ArrowRight:'right', ArrowUp:'up', ArrowDown:'down', ' ':'jump',
+      a:'left', d:'right', w:'up', s:'down', A:'left', D:'right', W:'up', S:'down'
+    };
+    const keyHandler = (e) => {
+      if (keyMap[e.key]!==undefined) { e.preventDefault(); input[keyMap[e.key]] = (e.type==='keydown'); }
+    };
+    window.addEventListener('keydown', keyHandler);
+    window.addEventListener('keyup', keyHandler);
+
+    // mobile controls appear on small screens
+    const isTouch = matchMedia('(max-width: 640px)').matches;
+    if (isTouch) {
+      mobile.style.display='flex';
+      mobile.querySelectorAll('.ctrl').forEach(btn=>{
+        const k = btn.dataset.key;
+        btn.addEventListener('touchstart', e => { e.preventDefault(); input[k]=true; }, {passive:false});
+        btn.addEventListener('touchend',   e => { e.preventDefault(); input[k]=false; }, {passive:false});
+      });
+    }
+
+    // -------- Game loop ----------
+    function start() {
+      running=true; paused=false; gameOver=false; score=0;
+      Object.assign(state, { t:0, shardTimer:0, hazardTimer:0, shards:[], hazards:[], effects:[] });
+      Object.assign(player, { x: state.w*0.2, y: state.h*0.5, vx:0, vy:0, r:18, doubleJump:true, invuln:0 });
+
+      startBtn.style.display='none';
+      pauseBtn.style.display='inline-block';
+      resetBtn.style.display='inline-block';
+      gameOverBox.style.display='none';
+
+      cancelAnimationFrame(req);
+      loop();
+    }
+    function end() {
+      running=false; gameOver=true; paused=false;
+      best = Math.max(best, score);
+      localStorage.setItem('penga_best', String(best));
+      bestEl.textContent = best;
+      pauseBtn.style.display='none';
+      startBtn.textContent='▶ Play Again';
+      startBtn.style.display='inline-block';
+      gameOverBox.textContent = `Game Over — Final score: ${score}. Best: ${best}`;
+      gameOverBox.style.display='block';
+      cancelAnimationFrame(req);
+      updateShare();
+    }
+    function reset() {
+      running=false; paused=false; gameOver=false; score=0;
+      startBtn.textContent='▶ Start';
+      startBtn.style.display='inline-block';
+      pauseBtn.style.display='none';
+      gameOverBox.style.display='none';
+      drawSplash();
+    }
+
+    function loop() {
+      if (!running) return;
+      if (paused) { draw(); req = requestAnimationFrame(loop); return; }
+
+      state.t += 1;
+      const diff = 1 + Math.min(2.5, state.t / (60*45)); // up to ~3.5x
+      state.speed = 3 * diff;
+
+      // physics
+      const tx = (input.left?-0.6:0) + (input.right?0.6:0);
+      player.vx += tx;
+      if (input.up) player.vy -= 0.3*diff;
+      player.vy += state.gravity;
+      player.vx *= state.air; player.vy *= 0.995;
+
+      if (input.jump) {
+        if (player.y > 30) {
+          if (player.vy > -5) player.vy = -6.5;
+          if (player.doubleJump) {
+            player.vy = -8;
+            player.doubleJump = false;
+            state.effects.push({ x: player.x-8, y: player.y+12, r:6, life:18 });
+          }
+        }
+        input.jump = false;
+      }
+
+      player.x = clamp(player.x + player.vx, player.r, state.w - player.r);
+      player.y = clamp(player.y + player.vy, player.r, state.h - player.r);
+      if (player.y >= state.h - player.r - 0.5) player.doubleJump = true;
+
+      // spawn shards
+      state.shardTimer -= 1;
+      if (state.shardTimer <= 0) {
+        state.shardTimer = Math.max(30, 90 - state.t*0.03);
+        const lanes = Math.floor(rand(1,4));
+        for (let i=0;i<lanes;i++){
+          state.shards.push({ x: state.w + rand(0,80), y: rand(40, state.h-40), r:10, v: state.speed + rand(1,3), spin: rand(0,Math.PI*2) });
+        }
+      }
+      // spawn hazards
+      state.hazardTimer -= 1;
+      if (state.hazardTimer <= 0) {
+        state.hazardTimer = Math.max(40, 110 - state.t*0.04);
+        const types = ['barrel','zap','gas'];
+        const type = types[Math.floor(rand(0, types.length))];
+        const size = rand(14,26)*diff;
+        state.hazards.push({ x: state.w + 20, y: rand(30, state.h-30), r: size, v: state.speed + rand(2,4), type });
+      }
+
+      // move items
+      state.shards.forEach(s => s.x -= s.v);
+      state.hazards.forEach(h => h.x -= h.v);
+      state.effects.forEach(e => { e.life -= 1; e.r += 0.6; });
+      state.effects = state.effects.filter(e => e.life > 0);
+
+      // collisions
+      const hit = (a,b) => { const dx=a.x-b.x, dy=a.y-b.y, rr=a.r+b.r; return dx*dx+dy*dy <= rr*rr; };
+
+      for (let i=state.shards.length-1;i>=0;i--){
+        const s = state.shards[i];
+        if (hit(player, s)) {
+          state.shards.splice(i,1);
+          score += Math.round(10*diff);
+          state.effects.push({ x:s.x, y:s.y, r:4, life:22 });
+        } else if (s.x < -40) state.shards.splice(i,1);
+      }
+
+      if (player.invuln>0) player.invuln -= 1;
+
+      for (let i=state.hazards.length-1;i>=0;i--){
+        const h = state.hazards[i];
+        if (hit(player, h) && player.invuln<=0) {
+          score = Math.max(0, Math.round(score*0.7));
+          player.invuln = 60;
+          player.vx = -3*diff; player.vy = -2.5*diff;
+          state.effects.push({ x: player.x, y: player.y, r:8, life:26 });
+          state.hazards.splice(i,1);
+        } else if (h.x < -60) state.hazards.splice(i,1);
+      }
+
+      if (state.t % 12 === 0) score += Math.round(1*diff);
+      scoreEl.textContent = score;
+
+      if (player.invuln<=0 && score<=0 && state.t>90) { end(); return; }
+
+      draw();
+      req = requestAnimationFrame(loop);
+    }
+
+    // -------- Drawing ----------
+    function draw() {
+      const w = state.w, h = state.h;
+      ctx.clearRect(0,0,w,h);
+
+      const g = ctx.createLinearGradient(0,0,0,h);
+      g.addColorStop(0,'#0b1020'); g.addColorStop(1,'#101b3d');
+      ctx.fillStyle = g; ctx.fillRect(0,0,w,h);
+
+      // parallax pipes
+      for (let i=0;i<8;i++){
+        const y = ((i*80 + (state.t*0.6)) % (h+80)) - 80;
+        ctx.fillStyle = '#0f2a4f'; ctx.fillRect(0,y,w,12);
+      }
+
+      // shards
+      state.shards.forEach(s=>{
+        ctx.save();
+        ctx.translate(s.x, s.y); s.spin += 0.1; ctx.rotate(s.spin);
+        ctx.beginPath(); ctx.moveTo(0,-s.r); ctx.lineTo(s.r,0); ctx.lineTo(0,s.r); ctx.lineTo(-s.r,0); ctx.closePath();
+        ctx.fillStyle = '#6af5e6'; ctx.shadowBlur=12; ctx.shadowColor='#6af5e6'; ctx.fill();
+        ctx.restore();
+      });
+
+      // hazards
+      state.hazards.forEach(hz=>{
+        ctx.save(); ctx.translate(hz.x, hz.y);
+        if (hz.type==='barrel'){
+          ctx.fillStyle='#8b1f1f'; ctx.beginPath(); ctx.arc(0,0,hz.r,0,Math.PI*2); ctx.fill();
+          ctx.strokeStyle='#ff9f9f'; ctx.lineWidth=3;
+          ctx.beginPath(); ctx.moveTo(-hz.r*.7, -hz.r*.4); ctx.lineTo(hz.r*.7, -hz.r*.4); ctx.stroke();
+          ctx.beginPath(); ctx.moveTo(-hz.r*.7,  hz.r*.4); ctx.lineTo(hz.r*.7,  hz.r*.4); ctx.stroke();
+        } else if (hz.type==='zap'){
+          ctx.strokeStyle='#7cc7ff'; ctx.lineWidth=3; ctx.shadowBlur=10; ctx.shadowColor='#7cc7ff';
+          ctx.beginPath(); ctx.moveTo(-hz.r, -hz.r); ctx.lineTo(hz.r*.2,-hz.r*.2); ctx.lineTo(-hz.r*.2,hz.r*.2); ctx.lineTo(hz.r, hz.r); ctx.stroke();
+        } else {
+          const grd = ctx.createRadialGradient(0,0,hz.r*.2,0,0,hz.r);
+          grd.addColorStop(0,'rgba(80,255,170,.9)'); grd.addColorStop(1,'rgba(80,255,170,0)');
+          ctx.fillStyle=grd; ctx.beginPath(); ctx.arc(0,0,hz.r,0,Math.PI*2); ctx.fill();
+        }
+        ctx.restore();
+      });
+
+      // effects
+      state.effects.forEach(e=>{
+        ctx.save(); ctx.globalAlpha = Math.max(0, e.life/26);
+        ctx.strokeStyle='#fff'; ctx.lineWidth=2; ctx.beginPath(); ctx.arc(e.x,e.y,e.r,0,Math.PI*2); ctx.stroke(); ctx.restore();
+      });
+
+      // player rocket penguin
+      ctx.save(); ctx.translate(player.x, player.y); ctx.rotate(player.vy*0.02);
+      // rocket body
+      ctx.fillStyle='#c9e1ff'; ctx.beginPath(); ctx.moveTo(-26,0); ctx.lineTo(10,-10); ctx.lineTo(10,10); ctx.closePath(); ctx.fill();
+      // tip
+      ctx.fillStyle='#6af5e6'; ctx.beginPath(); ctx.arc(12,0,6,0,Math.PI*2); ctx.fill();
+      // fins
+      ctx.fillStyle='#7a9cff'; ctx.fillRect(-16,-14,8,8); ctx.fillRect(-16,6,8,8);
+      // flame
+      const flame = 10 + Math.sin(Date.now()/60)*4;
+      ctx.fillStyle='#ffdd55'; ctx.beginPath(); ctx.moveTo(-28,0);
+      ctx.quadraticCurveTo(-28-flame,-6,-36-flame,0);
+      ctx.quadraticCurveTo(-28-flame, 6,-28,0); ctx.fill();
+      // head
+      ctx.save(); ctx.translate(-6,0);
+      ctx.fillStyle='#111827'; ctx.beginPath(); ctx.arc(0,0,10,0,Math.PI*2); ctx.fill();
+      ctx.fillStyle='#fef3c7'; ctx.beginPath(); ctx.arc(0,2,6,0,Math.PI*2); ctx.fill();
+      ctx.fillStyle='#fbbf24'; ctx.beginPath(); ctx.moveTo(6,2); ctx.lineTo(12,4); ctx.lineTo(6,6); ctx.closePath(); ctx.fill();
+      ctx.fillStyle='#9ca3af'; ctx.fillRect(-10,-2,3,3); ctx.fillRect(7,-2,3,3);
+      ctx.restore();
+      // invuln aura
+      if (player.invuln>0){ ctx.globalAlpha = 0.35 + 0.25*Math.sin(state.t/2); ctx.fillStyle='#6af5e6'; ctx.beginPath(); ctx.arc(0,0,player.r+6,0,Math.PI*2); ctx.fill(); }
+      ctx.restore();
+
+      // HUD
+      ctx.fillStyle = '#e5f4ff'; ctx.font = 'bold 18px ui-sans-serif'; ctx.fillText(`Score: ${score}`, 16, 28);
+      ctx.fillStyle = '#9ae6ff'; ctx.globalAlpha=.25; ctx.fillRect(16, 40, 120, 8); ctx.globalAlpha=1;
+      const diff = 1 + Math.min(2.5, state.t/(60*45));
+      ctx.fillStyle = '#6af5e6'; ctx.fillRect(16, 40, clamp(120*(diff/3.5),8,120), 8);
+      ctx.fillStyle='#bfefff'; ctx.font='12px ui-sans-serif'; ctx.fillText('Heat', 16, 64);
+      ctx.font='12px ui-sans-serif'; ctx.fillStyle='#88a6ff'; ctx.fillText('Degenstein Lab — $PENGA', 16, state.h-16);
+      ctx.textAlign='right'; ctx.fillText('degenstein.xyz', state.w-16, state.h-16); ctx.textAlign='left';
+    }
+
+    function drawSplash() {
+      const w=state.w, h=state.h;
+      ctx.clearRect(0,0,w,h);
+      const g = ctx.createLinearGradient(0,0,0,h);
+      g.addColorStop(0,'#0b1020'); g.addColorStop(1,'#101b3d');
+      ctx.fillStyle=g; ctx.fillRect(0,0,w,h);
+      ctx.fillStyle='#6af5e6'; ctx.font='bold 36px ui-sans-serif'; ctx.fillText('Pengastein Rocket Run', 24, 60);
+      ctx.save(); ctx.translate(w*0.62, h*0.45); ctx.rotate(-0.08);
+      ctx.fillStyle='#c9e1ff'; ctx.fillRect(-40,-10,80,20);
+      ctx.fillStyle='#6af5e6'; ctx.beginPath(); ctx.arc(46,0,8,0,Math.PI*2); ctx.fill();
+      ctx.fillStyle='#111827'; ctx.beginPath(); ctx.arc(-10,0,14,0,Math.PI*2); ctx.fill(); ctx.restore();
+      ctx.fillStyle='#e5f4ff'; ctx.font='16px ui-sans-serif';
+      ['Collect neon shards to score.',
+       'Avoid lab hazards: barrels, zaps, and gas clouds.',
+       'Arrow keys/WASD to move, SPACE to jump / double-jump.',
+       'Tap on-screen controls on mobile.'
+      ].forEach((t,i)=>ctx.fillText(t,24,110+i*24));
+      ctx.fillStyle='#88a6ff'; ctx.fillText('Tip: Scoring accelerates as the lab heats up.', 24, h-40);
+      ctx.fillStyle='#bfefff'; ctx.fillText('Press START to play.', 24, h-16);
+    }
+
+    function updateShare(){
+      const txt = encodeURIComponent(`I just played Pengastein Rocket Run and scored ${Math.max(best, score)}! 🧬🐧🚀 #PENGA degenstein.xyz`);
+      shareLink.href = `https://twitter.com/intent/tweet?text=${txt}`;
+    }
+
+    // -------- Buttons ----------
+    startBtn.addEventListener('click', start);
+    pauseBtn.addEventListener('click', () => { paused = !paused; pauseBtn.textContent = paused ? 'Resume' : 'Pause'; });
+    resetBtn.addEventListener('click', reset);
+
+    // initial splash + share
+    drawSplash(); updateShare();
+  </script>
+</body>
+</html>
 
