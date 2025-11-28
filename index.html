@@ -334,13 +334,50 @@
 <!-- ✅ Referral promos renderer -->
 <script>
   const PROMOS = [
-    { name: "Coinbase", emoji: "💳", url: "https://coinbase.com/join/MFB6ACG?src=referral-link", blurb: "Earn a bonus when you start trading with Coinbase and help power Degenstein giveaways." },
-    { name: "Gemini", emoji: "🔷", url: "https://exchange.gemini.com/register?referral=9zrdalkh7&type=referral", blurb: "Grab a bonus for signing up on Gemini. Supports future rewards." },
-    { name: "BTCC", emoji: "📈", url: "https://www.btcc.com/en-US/invite/YOUR_CODE", blurb: "Up to $1,000+ in trading rewards when you join with our invite." },
-    { name: "Moonshot", emoji: "🌙", url: "https://moonshot.com/?ref=TorB1M", blurb: "Score a bonus on Moonshot. Every trade strengthens the community." },
-    { name: "Bitunix", emoji: "🧰", url: "https://www.bitunix.com/register?inviteCode=57hn7f", blurb: "Unlock trading rewards with our Bitunix invite. Fuel future giveaways." },
-    { name: "CoinDepo", emoji: "💠", url: "https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV", blurb: "Earn up to $500 in FREE USDC bonuses when you join and start earning up to 27% APR on your crypto." }
+    {
+      name: "Coinbase",
+      emoji: "💳",
+      url: "https://coinbase.com/join/MFB6ACG?src=referral-link",
+      blurb: "Earn a bonus when you start trading with Coinbase and help power Degenstein giveaways."
+    },
+    {
+      name: "Gemini",
+      emoji: "🔷",
+      url: "https://exchange.gemini.com/register?referral=9zrdalkh7&type=referral",
+      blurb: "Grab a bonus for signing up on Gemini. Supports future Lab rewards."
+    },
+    {
+      name: "BTCC",
+      emoji: "📈",
+      url: "https://www.btcc.com/en-US/invite/YOUR_CODE",
+      blurb: "Up to $1,000+ in trading rewards when you join with our invite."
+    },
+    {
+      name: "Moonshot",
+      emoji: "🌙",
+      url: "https://moonshot.com/?ref=TorB1M",
+      blurb: "Score a bonus on Moonshot. Every trade strengthens the Degenstein Army."
+    },
+    {
+      name: "Bitunix",
+      emoji: "🧰",
+      url: "https://www.bitunix.com/register?inviteCode=57hn7f",
+      blurb: "Unlock trading rewards with our Bitunix invite. Fuel future Degenstein giveaways."
+    },
+    {
+      name: "Weex",
+      emoji: "📊",
+      url: "https://weex.com/register?vipCode=5flql",
+      blurb: "Join Weex with this VIP code and access trading rewards, fee perks, and bonuses."
+    },
+    {
+      name: "CoinDepo",
+      emoji: "💠",
+      url: "https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV",
+      blurb: "Earn up to $500 in FREE USDC bonuses when you join and start earning up to 27% APR on your crypto."
+    }
   ];
+
   (function renderPromos() {
     const grid = document.getElementById('promos-grid');
     if (!grid) return;
@@ -349,7 +386,8 @@
       return;
     }
     grid.innerHTML = PROMOS.map(p => `
-      <a href="${p.url}" target="_blank" rel="noopener nofollow noreferrer" class="group block rounded-2xl border border-white/10 bg-white/5 p-5 hover:bg-white/[0.07] transition">
+      <a href="${p.url}" target="_blank" rel="noopener nofollow noreferrer"
+         class="group block rounded-2xl border border-white/10 bg-white/5 p-5 hover:bg-white/[0.07] transition">
         <div class="flex items-center gap-3">
           <div class="text-2xl">${p.emoji || '🔗'}</div>
           <h3 class="text-lg font-bold tracking-tight">${p.name}</h3>
@@ -357,12 +395,15 @@
         <p class="mt-2 text-sm text-slate-300">${p.blurb || ''}</p>
         <div class="mt-4 inline-flex items-center gap-2 text-emerald-300 text-sm">
           <span>Use referral</span>
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M13.293 5.293a1 1 0 0 1 1.414 0l6 6a.997.997 0 0 1 .083 1.32l-.083.094-6 6a 1 1 0 0 1-1.497-1.32l.083-.094L17.585 13H4a1 1 0 0 1-.117-1.993L4 11h13.585l-4.292-4.293a1 1 0 0 1-.083-1.32l.083-.094Z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M13.293 5.293a1 1 0 0 1 1.414 0l6 6a.997.997 0 0 1 .083 1.32l-.083.094-6 6a1 1 0 0 1-1.497-1.32l.083-.094L17.585 13H4a1 1 0 0 1-.117-1.993L4 11h13.585l-4.292-4.293a1 1 0 0 1-.083-1.32l.083-.094Z"/>
+          </svg>
         </div>
       </a>
     `).join('');
   })();
 </script>
+
 
 </body>
 </html>
