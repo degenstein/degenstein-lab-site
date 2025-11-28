@@ -13,7 +13,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Degenstein Bonus Hub" />
   <meta property="og:title" content="Degenstein Bonus Hub — Earn Crypto & Cash Bonuses" />
-  <meta property="og:description" content="Stack referral bonuses, yield, and rewards from curated crypto and finance platforms. Plus explore the Degenstein Lab meme ecosystem." />
+  <meta property="og:description" content="Stack referral bonuses, yield, and rewards from curated crypto and finance platforms." />
   <meta property="og:image" content="https://degenstein.xyz/assets/pengastein_vixens_banner_1500x500.png" />
   <meta property="og:image:width" content="1500" />
   <meta property="og:image:height" content="500" />
@@ -30,7 +30,7 @@
 
   <meta name="theme-color" content="#10b981" />
 
-  <!-- Fonts + Tailwind CDN (consider replacing with a compiled CSS bundle in production) -->
+  <!-- Fonts + Tailwind CDN -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
@@ -86,28 +86,6 @@
     @media (prefers-reduced-motion: reduce) {
       * { transition: none !important; animation: none !important; }
     }
-
-    /* FreshCoins Audit widget fixes (scoped) */
-    #audit-widget { width:100%; display:block; margin:0; padding:0; }
-    #audit-widget * { max-width:100% !important; box-sizing:border-box; }
-    #audit-widget iframe,
-    #audit-widget .freshcoins,
-    #audit-widget .fcw-root { width:100% !important; }
-
-    @keyframes glow {
-      0%, 100% { box-shadow: 0 0 10px rgba(220,20,60,0.4), 0 0 20px rgba(0,255,170,0.3); }
-      50% { box-shadow: 0 0 20px rgba(220,20,60,0.7), 0 0 40px rgba(0,255,170,0.5); }
-    }
-    .animate-glow { animation: glow 2.5s ease-in-out infinite; }
-
-    /* ===== Token avatar + lightbox additions ===== */
-    .token-avatar { height:1.5rem; width:1.5rem; border-radius:9999px; object-fit:cover; }
-    .token-avatar-ring { box-shadow: 0 0 0 1px rgba(16,185,129,.35); }
-    #token-lightbox { position:fixed; inset:0; z-index:100; display:none; align-items:center; justify-content:center; }
-    #token-lightbox.show { display:flex; }
-    #token-lightbox .backdrop { position:absolute; inset:0; background:rgba(0,0,0,.8); }
-    #token-lightbox img { max-width:90vw; max-height:90vh; border-radius:1rem; box-shadow:0 20px 60px rgba(0,0,0,.6); }
-    #token-lightbox .close { position:absolute; top:1rem; right:1rem; font-size:2rem; color:#fff; line-height:1; }
   </style>
 </head>
 
@@ -119,7 +97,7 @@
       <img src="assets/dr_degenstein_logo.jpg" alt="Degenstein Logo" class="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover" width="64" height="64" />
       <div>
         <h1 class="text-lg md:text-xl font-extrabold tracking-tight">Degenstein Bonus Hub</h1>
-        <p class="text-[11px] text-gray-400 hidden sm:block">Referral bonuses • Passive income • Degenstein Lab</p>
+        <p class="text-[11px] text-gray-400 hidden sm:block">Referral bonuses • Passive income • Crypto rewards</p>
       </div>
     </a>
 
@@ -127,10 +105,9 @@
       <a href="#featured-offers" class="inline-flex items-center justify-center px-4 py-2 rounded-2xl border border-white/10 backdrop-blur text-sm">Best Bonus</a>
       <a href="#how-it-works" class="inline-flex items-center justify-center px-4 py-2 rounded-2xl border border-white/10 backdrop-blur text-sm">How It Works</a>
       <a href="#community-promos" class="inline-flex items-center justify-center px-4 py-2 rounded-2xl border border-white/10 backdrop-blur text-sm">All Bonuses</a>
-      <a href="#tokens" class="inline-flex items-center justify-center px-4 py-2 rounded-2xl border border-white/10 backdrop-blur text-sm">Degenstein Lab</a>
       <a href="/links.html" class="inline-flex items-center justify-center px-4 py-2 rounded-2xl border border-white/10 backdrop-blur text-sm">All Links</a>
-      <!-- Whitepaper still available for those exploring the Lab -->
-      <a href="/assets/Degenstein_Lab_Tokens_Whitepaper_with_PENGA_Burns_Audit.pdf" class="inline-flex items-center justify-center px-4 py-2 rounded-2xl border border-white/10 backdrop-blur text-sm" target="_blank" rel="noopener">Lab Whitepaper</a>
+      <!-- Optional: link out to Lab page (tokens are over there, not on homepage) -->
+      <a href="/lab.html" class="inline-flex items-center justify-center px-4 py-2 rounded-2xl border border-white/10 backdrop-blur text-sm">Degenstein Lab</a>
 
       <span class="mx-1 w-px h-6 bg-white/10"></span>
       <a href="#featured-offers" class="inline-flex items-center gap-2 px-4 py-2 rounded-2xl font-semibold text-sm bg-gradient-to-br from-emerald-500 to-cyan-500 text-black">
@@ -161,7 +138,7 @@
             <li>💰 <span class="font-semibold text-emerald-300">Welcome Bonuses:</span> Up to <span class="font-semibold">hundreds in USDC/crypto</span> when you join through referral links.</li>
             <li>📈 <span class="font-semibold text-emerald-300">Passive Income:</span> Earn up to <span class="font-semibold">27% APR</span> on select platforms while waiting for the next pump.</li>
             <li>🧪 <span class="font-semibold text-emerald-300">Hand-Picked Only:</span> Highlighting platforms I use or would recommend to friends—no random garbage.</li>
-            <li>🎁 <span class="font-semibold text-emerald-300">Community Boost:</span> My referral rewards help fund future giveaways, airdrops, and Degenstein Lab events.</li>
+            <li>🎁 <span class="font-semibold text-emerald-300">Community Boost:</span> My referral rewards help fund future giveaways, airdrops, and events.</li>
           </ul>
 
           <p class="mt-6 text-gray-100 font-semibold">Bottom line:</p>
@@ -200,7 +177,7 @@
 
           <div class="rounded-2xl border border-white/10 bg-white/5 p-4 text-xs text-gray-400">
             <p>
-              Transparency: Many links on this site are referrals. Using them may reward both you and me. My side of the rewards helps fuel community promos and Degenstein Lab events.
+              Transparency: Many links on this site are referrals. Using them may reward both you and me. My side of the rewards helps fuel community promos and future giveaways.
             </p>
           </div>
         </aside>
@@ -301,20 +278,20 @@
   </div>
 </section>
 
-<!-- Showcase Banner (kept as brand / visual) -->
+<!-- Showcase Banner (still on-brand visual) -->
 <section class="max-w-6xl mx-auto px-4 py-12">
-  <img src="assets/Degenstein_Banner_Vixens_Pink_Reordered_1500x500.jpg" alt="Vixens of the Degenstein Lab — Banner" class="rounded-2xl shadow-lg w-full" width="1500" height="500" loading="lazy" decoding="async" />
+  <img src="assets/Degenstein_Banner_Vixens_Pink_Reordered_1500x500.jpg" alt="Degenstein Bonus Hub banner" class="rounded-2xl shadow-lg w-full" width="1500" height="500" loading="lazy" decoding="async" />
 </section>
 
 <!-- ===================== COMMUNITY PROMOS / REFERRALS ====================== -->
 <section id="community-promos" class="relative py-16 sm:py-20 bg-gradient-to-b from-slate-900 via-slate-900/60 to-slate-950">
   <div class="mx-auto max-w-7xl px-4 relative">
     <div class="mx-auto max-w-3xl text-center">
-      <span class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold tracking-wide badge-boost">
+      <span class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold tracking-wide">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a1 1 0 0 1 1 1v3.055a7.001 7.001 0 0 1 5.945 5.945H22a1 1 0 1 1 0 2h-3.055A7.001 7.001 0 0 1 13 19.945V23a1 1 0 1 1-2 0v-3.055A7.001 7.001 0 0 1 5.055 14H2a1 1 0 1 1 0-2h3.055A7.001 7.001 0 0 1 11 6.055V3a1 1 0 0 1 1-1Z"/></svg>
         Bonus Grid
       </span>
-      <h2 class="mt-4 text-3xl sm:text-4xl font-extrabold grad-title">All Referral Bonuses & Deals</h2>
+      <h2 class="mt-4 text-3xl sm:text-4xl font-extrabold">All Referral Bonuses & Deals</h2>
       <p class="mt-3 text-base sm:text-lg text-slate-300">
         Explore more platforms that reward you for joining with a referral. Some give you sign-up bonuses, some give you fee discounts, some do both.
       </p>
@@ -323,7 +300,7 @@
     <div id="promos-grid" class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
 
     <div class="mt-10 mx-auto max-w-3xl text-slate-400 text-xs leading-relaxed">
-      <p><span class="font-semibold text-slate-300">Transparency:</span> These are referral links. By using them, you may receive a sign-up bonus; the Lab may also receive a small reward that we channel back into community giveaways and challenges.</p>
+      <p><span class="font-semibold text-slate-300">Transparency:</span> These are referral links. By using them, you may receive a sign-up bonus; I may also receive a small reward that goes back into community giveaways and challenges.</p>
       <p class="mt-2">
         Promotions are run by the respective platforms and may change or have eligibility requirements. Always DYOR. Crypto involves risk; never invest more than you can afford to lose.
       </p>
@@ -332,350 +309,6 @@
 </section>
 <!-- ===================== /COMMUNITY PROMOS ====================== -->
 
-<!-- ======================= Degenstein Lab / Tokens =======================
-     From here down, your original meme ecosystem is preserved as a "project" section
-     ====================================================================== -->
-
-<!-- NEW: Pengastein Launch Announcement (above video) -->
-<section id="penga-launch" class="max-w-6xl mx-auto px-4 py-12">
-  <div class="card grid md:grid-cols-2 gap-8 items-center">
-    <div>
-      <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">🧬 The Degenstein Lab Meme Ecosystem</h2>
-      <p class="mt-3 text-gray-300">
-        Below is the original Degenstein Lab universe: $KITTY, $SUCK, $DRDGN & $PENGA. These are meme coins created for community fun, raids, and lore—not financial products.
-      </p>
-
-      <h3 class="mt-5 text-xl font-bold">❄️ Pengastein ($PENGA) is Live</h3>
-      <p class="mt-2 text-gray-300">Half penguin, half Frankenstein — built to freeze dips and spark pumps. Join the newest Degenstein Lab experiment.</p>
-
-      <div class="mt-5 grid sm:grid-cols-2 gap-3">
-        <a class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl font-bold text-lg bg-gradient-to-br from-emerald-500 to-cyan-500 text-black" href="https://pump.fun/coin/3KjH3EE8YwxCv9oGkRTaMdFc2T8jhyoLjT5hfy5Hpump" target="_blank" rel="noopener">
-          <img src="assets/pengastein_512x512.jpg" alt="$PENGA logo" class="token-avatar token-avatar-ring" width="24" height="24" loading="lazy" decoding="async"> Buy ($PENGA) on Pump.fun
-        </a>
-        <button type="button" class="btn btn-outline" onclick="copyMint('3KjH3EE8YwxCv9oGkRTaMdFc2T8jhyoLjT5hfy5Hpump','tooltipPENGA')">📋 Copy $PENGA Contract</button>
-      </div>
-      <div class="mt-2"><span id="tooltipPENGA" class="text-emerald-400 text-xs hidden">✅ Copied!</span></div>
-
-      <div class="mt-4 flex flex-wrap gap-2">
-        <a class="btn btn-outline" href="https://solscan.io/token/3KjH3EE8YwxCv9oGkRTaMdFc2T8jhyoLjT5hfy5Hpump" target="_blank" rel="noopener">🔍 Solscan</a>
-        <a class="btn btn-outline" href="https://x.com/degensteindgn" target="_blank" rel="noopener">X</a>
-        <a class="btn btn-outline" href="https://t.me/DegensteinArmy" target="_blank" rel="noopener">Telegram</a>
-      </div>
-
-      <p class="mt-4 text-sm text-gray-400">CA: <code class="text-gray-300">3KjH3EE8YwxCv9oGkRTaMdFc2T8jhyoLjT5hfy5Hpump</code></p>
-    </div>
-
-    <figure class="rounded-2xl overflow-hidden border border-white/10 bg-white/5 p-2">
-      <img src="assets/pengastein_vixens_banner_1500x500.png" alt="Pengastein with the Degenstein Vixens" class="rounded-xl w-full h-auto" width="1500" height="500" loading="lazy" decoding="async">
-    </figure>
-  </div>
-</section>
-
-<!-- === $PENGA Video === -->
-<section id="penga-video" class="max-w-6xl mx-auto px-4 py-12">
-  <div class="card">
-    <div class="flex items-start justify-between gap-6 flex-col md:flex-row">
-      <div class="flex-1">
-        <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">🎬 Why $PENGA Fits the Lab Lore</h2>
-        <p class="mt-2 text-gray-300">
-          A fast 20-second hype cut: from the Lab that brought you $KITTY, $SUCK, and $DRDGN — Pengastein is here. This is part of the Degenstein universe and for entertainment/community only.
-        </p>
-        <div class="mt-4 flex flex-wrap gap-3">
-          <a class="btn btn-primary" href="https://x.com/DHouseofcrypto/status/1973438778141294742" target="_blank" rel="noopener">
-            🔗 October Event Details
-          </a>
-          <a class="btn btn-outline" href="#tokens">View All Lab Tokens</a>
-        </div>
-      </div>
-
-      <div class="w-full md:w-[560px] lg:w-[720px] shrink-0">
-        <div class="rounded-2xl overflow-hidden border border-white/10 bg-white/5">
-          <video
-            class="w-full h-auto block"
-            controls
-            playsinline
-            preload="metadata"
-            poster="assets/pengastein_vixens_banner_1500x500.png"
-          >
-            <source src="assets/penga_intro_1080.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <div class="mt-2 text-xs text-gray-400">
-          Having trouble? <a href="assets/penga_intro_1080.mp4" class="underline decoration-emerald-500/60 hover:text-white">Download the MP4</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- === /$PENGA Video === -->
-
-<!-- ✅ $KITTY Burn Proof -->
-<section id="kitty-burn" class="mx-auto max-w-3xl my-10 rounded-2xl border border-zinc-800 bg-zinc-900/60 p-6 text-zinc-100 shadow-xl">
-  <div class="flex items-start gap-3">
-    <div class="text-3xl">🔥</div>
-    <div class="flex-1">
-      <h2 class="text-2xl font-extrabold tracking-tight">
-        10 Million <span class="text-emerald-400">$KITTY</span> Burn Complete
-      </h2>
-      <p class="mt-1 text-emerald-300">Supply reduced forever — confirmed on-chain ✅</p>
-
-      <div class="mt-5 grid gap-3 sm:flex sm:items-center">
-        <a href="https://solscan.io/tx/4GHk4ENpQz5f2so2jAbMJ1Z8Kyvg1cKCwAVEQX62i4SBWFgWxqHXpRckSBYq8nVcFGMhHZ7gDkVLryXH56amYtiY" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-xl bg-emerald-500 px-4 py-2 font-semibold text-zinc-900 hover:bg-emerald-400 transition">View Transaction Proof on Solscan</a>
-        <button type="button" class="inline-flex items-center justify-center rounded-xl border border-zinc-700 px-4 py-2 font-medium hover:bg-zinc-800 transition" onclick="navigator.clipboard.writeText('https://solscan.io/tx/4GHk4ENpQz5f2so2jAbMJ1Z8Kyvg1cKCwAVEQX62i4SBWFgWxqHXpRckSBYq8nVcFGMhHZ7gDkVLryXH56amYtiY').then(()=>{this.innerText='Copied ✔'; setTimeout(()=>this.innerText='Copy TX Link', 2000)})">Copy TX Link</button>
-      </div>
-
-      <p class="mt-5 text-zinc-300">Scarcity is tightening. Keep an eye on price action and future burns from the Degenstein Lab.</p>
-      <p class="mt-3 text-xs text-zinc-500">Proof shows transfer to the incinerator address (burn) and finalization on Solana.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ======================= Tokens ======================= -->
-<section id="tokens" class="max-w-6xl mx-auto px-4 py-16">
-  <div class="mb-8 text-center max-w-3xl mx-auto">
-    <h2 class="text-3xl md:text-4xl font-extrabold">Degenstein Lab Tokens</h2>
-    <p class="mt-2 text-gray-300 text-sm md:text-base">
-      These are meme coins built for community engagement, storytelling, and fun. They are <span class="font-semibold">not</span> investment products or financial instruments.
-    </p>
-  </div>
-
-  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-
-    <!-- DRDGN (Core) -->
-    <article class="card ring-1 ring-emerald-500/30">
-      <div class="flex items-center justify-between">
-        <div class="flex items-center gap-2">
-          <button class="token-zoom" data-fullsrc="assets/dr_degenstein_logo.jpg" aria-label="Enlarge $DRDGN">
-            <img src="assets/drdgn_thumb.jpg" alt="$DRDGN token icon" class="token-avatar token-avatar-ring" width="24" height="24" loading="lazy" decoding="async">
-          </button>
-          <h4 class="text-xl font-bold">$DRDGN — Dr. Degenstein</h4>
-        </div>
-        <span class="badge bg-emerald-500/20 text-emerald-400">Core</span>
-      </div>
-      <p class="mt-2 text-gray-300">The Lab’s mad scientist has arrived. After $SUCK and $DGN, this is the ultimate experiment unleashed.</p>
-      <div class="mt-5 flex flex-col gap-3">
-        <a class="w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl font-bold text-lg bg-gradient-to-br from-emerald-500 to-cyan-500 text-black" href="https://pump.fun/coin/5ZpQPVyQb5ndx86Udj2Rcfzuj8djNybrVJQdr2k6pump" target="_blank" rel="noopener"><img src="assets/drdgn_thumb.jpg" alt="$DRDGN logo" class="token-avatar token-avatar-ring mr-2" width="24" height="24" loading="lazy" decoding="async" /> Buy ($DRDGN) on Pump.fun</a>
-        <div class="flex items-center gap-2">
-          <button onclick="copyMint('5ZpQPVyQb5ndx86Udj2Rcfzuj8djNybrVJQdr2k6pump','tooltipDRDGN')" class="btn btn-outline w-full">📋 Copy Mint</button>
-          <span id="tooltipDRDGN" class="text-emerald-400 text-xs hidden">✅ Copied!</span>
-        </div>
-        <a class="btn btn-outline w-full" href="https://solscan.io/token/5ZpQPVyQb5ndx86Udj2Rcfzuj8djNybrVJQdr2k6pump" target="_blank" rel="noopener">🔍 Solscan</a>
-        <a class="btn btn-outline w-full" href="https://x.com/degensteindgn" target="_blank" rel="noopener">X</a>
-        <a class="btn btn-outline w-full" href="https://t.me/DegensteinArmy" target="_blank" rel="noopener">Telegram</a>
-        <a class="btn btn-outline w-full" href="https://www.facebook.com/share/g/15x8UHZmYz/" target="_blank" rel="noopener">Facebook</a>
-      </div>
-      <div class="mt-6 grid gap-6">
-        <div class="card">
-          <h5 class="text-lg font-bold mb-2">✅ Security & Trust</h5>
-          <ul class="space-y-2 text-sm">
-            <li>✅ Security Detection: <span class="text-emerald-400 font-semibold">Zero Risks</span><br/>
-              <a class="btn btn-outline mt-2 w-full" href="https://gopluslabs.io/token-security/solana/5ZpQPVyQb5ndx86Udj2Rcfzuj8djNybrVJQdr2k6pump" target="_blank" rel="noopener">GoPlus Security Report</a>
-            </li>
-            <li class="pt-2">✅ Trust Score: <span class="text-emerald-400 font-semibold">95%</span><br/>
-              <a class="btn btn-outline mt-2 w-full" href="https://www.freshcoins.io/token-scan/sol/5ZpQPVyQb5ndx86Udj2Rcfzuj8djNybrVJQdr2k6pump" target="_blank" rel="noopener">FreshCoins Scan</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </article>
-
-    <!-- SUCK (Core) -->
-    <article class="card ring-1 ring-emerald-500/30">
-      <div class="flex items-center justify-between">
-        <div class="flex items-center gap-2">
-          <button class="token-zoom" data-fullsrc="assets/Vampenstein_1000x1000.jpg" aria-label="Enlarge $SUCK">
-            <img src="assets/suck_thumb.jpg" alt="$SUCK token icon" class="token-avatar token-avatar-ring" width="24" height="24" loading="lazy" decoding="async">
-          </button>
-          <h4 class="text-xl font-bold">$SUCK — VAMPENSTEIN</h4>
-        </div>
-        <span class="badge bg-emerald-500/20 text-emerald-400">Core</span>
-      </div>
-      <p class="mt-2 text-gray-300">The coin that will suck all those red candles until they turn green. 🩸🟢</p>
-      <div class="mt-5 flex flex-col gap-3">
-        <a class="w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl font-bold text-lg bg-gradient-to-br from-emerald-500 to-cyan-500 text-black" href="https://pump.fun/coin/5UmNtEkR34ZM7PK8TdhWwr6iWutZs2PVL9qtu19Jpump" target="_blank" rel="noopener"><img src="assets/suck_thumb.jpg" alt="$SUCK logo" class="token-avatar token-avatar-ring mr-2" width="24" height="24" loading="lazy" decoding="async" /> Buy ($SUCK) on Pump.fun</a>
-        <div class="flex items-center gap-2">
-          <button onclick="copyMint('5UmNtEkR34ZM7PK8TdhWwr6iWutZs2PVL9qtu19Jpump','tooltipSUCK')" class="btn btn-outline w-full">📋 Copy Mint</button>
-          <span id="tooltipSUCK" class="text-emerald-400 text-xs hidden">✅ Copied!</span>
-        </div>
-        <a class="btn btn-outline w-full" href="https://solscan.io/token/5UmNtEkR34ZM7PK8TdhWwr6iWutZs2PVL9qtu19Jpump" target="_blank" rel="noopener">🔍 Solscan</a>
-        <a class="btn btn-outline w-full" href="https://x.com/degensteindgn" target="_blank" rel="noopener">X</a>
-        <a class="btn btn-outline w-full" href="https://t.me/DegensteinArmy" target="_blank" rel="noopener">Telegram</a>
-        <a class="btn btn-outline w-full" href="https://www.facebook.com/share/g/15x8UHZmYz/" target="_blank" rel="noopener">Facebook</a>
-      </div>
-      <div class="mt-6 grid gap-6">
-        <div class="card">
-          <h5 class="text-lg font-bold mb-2">✅ Security & Trust</h5>
-          <ul class="space-y-2 text-sm">
-            <li>✅ Security Detection: <span class="text-emerald-400 font-semibold">Zero Risks</span><br/>
-              <a class="btn btn-outline mt-2 w-full" href="https://gopluslabs.io/token-security/solana/5UmNtEkR34ZM7PK8TdhWwr6iWutZs2PVL9qtu19Jpump" target="_blank" rel="noopener">GoPlus Security Report</a>
-            </li>
-            <li class="pt-2">✅ Trust Score: <span class="text-emerald-400 font-semibold">95%</span><br/>
-              <a class="btn btn-outline mt-2 w-full" href="https://www.freshcoins.io/token-scan/sol/5UmNtEkR34ZM7PK8TdhWwr6iWutZs2PVL9qtu19Jpump" target="_blank" rel="noopener">FreshCoins Scan</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </article>
-
-    <!-- KITTY (Core) -->
-    <article class="card ring-1 ring-emerald-500/30">
-      <div class="flex items-center justify-between">
-        <div class="flex items-center gap-2">
-          <button class="token-zoom" data-fullsrc="assets/Miss_Kittystein_Teaser_1000x1000.jpg" aria-label="Enlarge $KITTY">
-            <img src="assets/kitty_thumb.jpg" alt="$KITTY token icon" class="token-avatar token-avatar-ring" width="24" height="24" loading="lazy" decoding="async">
-          </button>
-          <h4 class="text-xl font-bold">$KITTY — Miss_Kittystein</h4>
-        </div>
-        <span class="badge bg-emerald-500/20 text-emerald-400">Core</span>
-      </div>
-      <p class="mt-2 text-gray-300">Deep inside the Lab, another experiment escaped… 🐾✨ Miss Kittystein claws red candles green and always lands on her feet.</p>
-      <div class="mt-5 flex flex-col gap-3">
-        <a class="w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl font-bold text-lg bg-gradient-to-br from-emerald-500 to-cyan-500 text-black" href="https://pump.fun/coin/GvorTjssS3VyyQ6o9Z14C24mRwkVtqkc2ygDsgLCpump" target="_blank" rel="noopener"><img src="assets/kitty_thumb.jpg" alt="$KITTY logo" class="token-avatar token-avatar-ring mr-2" width="24" height="24" loading="lazy" decoding="async" /> Buy ($KITTY) on Pump.fun</a>
-        <div class="flex items-center gap-2">
-          <button onclick="copyMint('GvorTjssS3VyyQ6o9Z14C24mRwkVtqkc2ygDsgLCpump','tooltipKITTY')" class="btn btn-outline w-full">📋 Copy Mint</button>
-          <span id="tooltipKITTY" class="text-emerald-400 text-xs hidden">✅ Copied!</span>
-        </div>
-        <a class="btn btn-outline w-full" href="https://solscan.io/token/GvorTjssS3VyyQ6o9Z14C24mRwkVtqkc2ygDsgLCpump" target="_blank" rel="noopener">🔍 Solscan</a>
-        <a class="btn btn-outline w-full" href="https://x.com/degensteindgn" target="_blank" rel="noopener">X</a>
-        <a class="btn btn-outline w-full" href="https://t.me/DegensteinArmy" target="_blank" rel="noopener">Telegram</a>
-        <a class="btn btn-outline w-full" href="https://www.facebook.com/share/g/15x8UHZmYz/" target="_blank" rel="noopener">Facebook</a>
-      </div>
-      <div class="mt-6 grid gap-6">
-        <div class="card">
-          <h5 class="text-lg font-bold mb-2">🔎 FreshCoins Audit</h5>
-          <div id="audit-widget" data-slug="miss_kittystein" data-style="dark"></div>
-        </div>
-      </div>
-    </article>
-
-    <!-- NEW: PENGA (Core) -->
-    <article class="card ring-1 ring-emerald-500/30">
-      <div class="flex items-center justify-between">
-        <div class="flex items-center gap-2">
-          <button class="token-zoom" data-fullsrc="assets/pengastein_1000x1000.jpg" aria-label="Enlarge $PENGA">
-            <img src="assets/pengastein_512x512.jpg" alt="$PENGA token icon" class="token-avatar token-avatar-ring" width="24" height="24" loading="lazy" decoding="async">
-          </button>
-          <h4 class="text-xl font-bold">$PENGA — Pengastein</h4>
-        </div>
-        <span class="badge bg-emerald-500/20 text-emerald-400">New</span>
-      </div>
-      <p class="mt-2 text-gray-300">The frost-born fusion from the Degenstein Lab. Half penguin, half Frankenstein — built to freeze dips and spark pumps. 🐧⚡</p>
-      <div class="mt-5 flex flex-col gap-3">
-        <a class="w-full inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl font-bold text-lg bg-gradient-to-br from-emerald-500 to-cyan-500 text-black" href="https://pump.fun/coin/3KjH3EE8YwxCv9oGkRTaMdFc2T8jhyoLjT5hfy5Hpump" target="_blank" rel="noopener"><img src="assets/pengastein_512x512.jpg" alt="$PENGA logo" class="token-avatar token-avatar-ring mr-2" width="24" height="24" loading="lazy" decoding="async" /> Buy ($PENGA) on Pump.fun</a>
-        <div class="flex items-center gap-2">
-          <button onclick="copyMint('3KjH3EE8YwxCv9oGkRTaMdFc2T8jhyoLjT5hfy5Hpump','tooltipPENGA2')" class="btn btn-outline w-full">📋 Copy Mint</button>
-          <span id="tooltipPENGA2" class="text-emerald-400 text-xs hidden">✅ Copied!</span>
-        </div>
-        <a class="btn btn-outline w-full" href="https://solscan.io/token/3KjH3EE8YwxCv9oGkRTaMdFc2T8jhyoLjT5hfy5Hpump" target="_blank" rel="noopener">🔍 Solscan</a>
-        <a class="btn btn-outline w-full" href="https://x.com/degensteindgn" target="_blank" rel="noopener">X</a>
-        <a class="btn btn-outline w-full" href="https://t.me/DegensteinArmy" target="_blank" rel="noopener">Telegram</a>
-      </div>
-      <div class="mt-6 grid gap-6">
-        <div class="card">
-          <h5 class="text-lg font-bold mb-2">✅ Notes</h5>
-          <ul class="space-y-2 text-sm">
-            <li>Fair-launch on Pump.fun • On-chain revocations for mint/freeze.</li>
-            <li>Part of the Degenstein Lab family ($KITTY, $SUCK, $DRDGN).</li>
-          </ul>
-        </div>
-      </div>
-    </article>
-
-  </div><!-- /grid -->
-</section>
-<!-- ===================== /Tokens ======================== -->
-
-<!-- ===================== Tokenomics ==================== -->
-<section id="tokenomics" class="max-w-6xl mx-auto px-4 py-16">
-  <div class="card text-center">
-    <h2 class="text-3xl md:text-4xl font-extrabold mb-6">Tokenomics</h2>
-    <p class="text-gray-300 max-w-2xl mx-auto mb-8">Built for the community. Transparent distribution and sustainable growth for all Degenstein Labs projects.</p>
-    <img src="assets/tokenomicsa.png" alt="Tokenomics infographic for Degenstein Lab" class="rounded-2xl shadow-lg mx-auto max-w-3xl w-full" width="1200" height="900" loading="lazy" decoding="async" />
-  </div>
-</section>
-<!-- =================== /Tokenomics ====================== -->
-
-<!-- Origin of Dr. Degenstein -->
-<section id="origin" class="max-w-6xl mx-auto px-4 py-16">
-  <div class="card">
-    <h2 class="text-3xl md:text-4xl font-extrabold mb-6">⚡ The Origin of Dr. Degenstein</h2>
-    <p>Before the Lab had a name, a sleepless chemist obsessed over one idea: <span class="font-semibold">memes + community = on-chain life</span>. Night after night he mixed liquidity, lore, and a little chaos—until one experiment sparked neon green across the beakers. The blast didn’t destroy the lab… it created its keeper. That keeper took a name: <span class="font-semibold">Dr. Degenstein</span>.</p>
-    <h3 class="mt-8 text-xl font-bold">🧪 Field Tests</h3>
-    <ul class="list-disc list-inside space-y-1 text-gray-300">
-      <li><span class="font-semibold">$SUCK — Vampenstein:</span> a red-candle hunter built to turn fear into green. 🩸🟢</li>
-      <li><span class="font-semibold">$KITTY — Miss Kittystein:</span> agile, nine lives, and a talent for landing charts on their feet. 🐾</li>
-    </ul>
-    <p class="mt-4">The tests worked. The Lab needed a banner—something to carry the story, fund the madness, and rally the Army.</p>
-    <h3 class="mt-8 text-xl font-bold">🧠 The Master Formula — <span class="text-emerald-400">$DRDGN</span></h3>
-    <p>Distilling every lesson from the trials, the Doctor forged his signature token: <span class="font-semibold">$DRDGN</span>. It’s the Lab’s calling card—your key to raids, reveals, and whatever the Doctor cooks up next.</p>
-    <h3 class="mt-8 text-xl font-bold">🔭 What’s Next</h3>
-    <ul class="list-disc list-inside space-y-1 text-gray-300">
-      <li>New creations from the Lab and deeper lore for each Vixen.</li>
-      <li>Community-first ops: raids, meme drops, and surprise activations.</li>
-      <li>Transparent builds—watch the formulas evolve in public.</li>
-    </ul>
-    <p class="mt-6">The Doctor is in. The Lab doors are open. If you’re reading this, you’re still early.
-      <a href="#tokens" class="underline decoration-emerald-500/60 hover:text-white">Choose your vial</a>, or study the schematics in the
-      <a href="/assets/Degenstein_Lab_Tokens_Whitepaper_with_PENGA_Burns_Audit.pdf" target="_blank" rel="noopener" class="underline decoration-emerald-500/60 hover:text-white">Lab Whitepaper</a>.
-    </p>
-  </div>
-</section>
-
-<!-- Lab Teaser Card with Glow -->
-<section id="teaser" class="max-w-6xl mx-auto px-4 pt-8">
-  <div class="card text-center animate-glow">
-    <p class="text-lg md:text-xl">Something sinister was brewing in the <span class="font-semibold text-emerald-400">DEGENSTEIN LAB</span>…<br class="hidden md:block" />
-      <span class="text-gray-300">The next monster has risen — VAMPENSTEIN — ready to $SUCK. 🌑🩸</span>
-    </p>
-  </div>
-</section>
-
-<!-- Community -->
-<section id="community" class="max-w-6xl mx-auto px-4 pb-20">
-  <div class="card">
-    <div class="grid md:grid-cols-2 gap-8 items-center">
-      <div>
-        <h3 class="text-2xl md:text-3xl font-extrabold">Join the Degenstein Community</h3>
-        <p class="mt-2 text-gray-300">Alpha drops, raids, giveaways, and early teasers. Get in now.</p>
-        <div class="mt-5 flex flex-wrap gap-3">
-          <a class="btn btn-primary" href="https://t.me/DegensteinArmy" target="_blank" rel="noopener">Join Telegram</a>
-          <a class="btn btn-outline" href="https://x.com/degensteindgn" target="_blank" rel="noopener">Follow on X</a>
-        </div>
-      </div>
-      <div class="rounded-2xl border border-white/10 p-4 bg-neutral-900/60">
-        <ul class="space-y-3 text-sm text-gray-300">
-          <li>• Daily raid ops & pin rotations</li>
-          <li>• Giveaways—drop your Moonshot username</li>
-          <li>• Meme challenges and collabs</li>
-          <li>• Live support for setup & trading</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="max-w-6xl mx-auto px-4 pb-8">
-  <div class="card">
-    <h4 class="text-lg font-bold">Latest Community Updates</h4>
-    <ul class="mt-2 text-sm text-gray-300 list-disc list-inside">
-      <li>🐧 <span class="font-semibold">$PENGA — Pengastein launch live</span>. <a class="underline decoration-emerald-500/60 hover:text-white" href="https://pump.fun/coin/3KjH3EE8YwxCv9oGkRTaMdFc2T8jhyoLjT5hfy5Hpump" target="_blank" rel="noopener">Buy on Pump.fun</a></li>
-      <li>🔥 <span class="font-semibold">10M $KITTY burn executed — 9/27/2025</span>
-        <span class="text-emerald-300">Supply reduced forever (on-chain)</span>.
-        <a class="underline decoration-emerald-500/60 hover:text-white" href="https://solscan.io/tx/4GHk4ENpQz5f2so2jAbMJ1Z8Kyvg1cKCwAVEQX62i4SBWFgWxqHXpRckSBYq8nVcFGMhHZ7gDkVLryXH56amYtiY" target="_blank" rel="noopener">View transaction</a>
-      </li>
-      <li>🎁 Supporters Event live – random airdrops to active holders. <a class="btn btn-outline" href="https://x.com/degensteindgn" target="_blank" rel="noopener">Latest Event X</a></li>
-      <li>🧪 $KITTY FreshCoins audit widget enabled (95% trust & security).</li>
-      <li>📣 New 5:2 X banner + vertical hero added to media kit.</li>
-    </ul>
-    <div class="mt-4 flex flex-wrap gap-2">
-      <a class="btn btn-outline" href="https://x.com/degensteindgn" target="_blank" rel="noopener">Follow X</a>
-      <a class="btn btn-outline" href="https://t.me/DegensteinArmy" target="_blank" rel="noopener">Join Telegram</a>
-      <a class="btn btn-outline" href="https://www.geckoterminal.com/solana/pools/tLEr2e5Nd7kwAJ1hPx4SG5HVUxP7ZZkr1fqJJU85PKM" target="_blank" rel="noopener">GeckoTerminal</a>
-    </div>
-  </div>
-</section>
-
 <!-- Footer -->
 <footer class="border-t border-white/10">
   <div class="max-w-6xl mx-auto px-4 py-10 text-sm text-gray-400 flex flex-col md:flex-row items-center justify-between gap-4">
@@ -683,8 +316,7 @@
       © <span id="year"></span> Degenstein. All rights reserved.
       <p class="mt-2 text-xs text-gray-500 max-w-md leading-relaxed">
         Disclaimer: Referrals and yield platforms carry risk. Promotions change and may have eligibility rules—always verify details on each platform.
-        The Degenstein Lab tokens ($DRDGN, $SUCK, $KITTY, $PENGA) are meme coins created for community engagement and entertainment only, not investment products, securities, or financial instruments.
-        Nothing on this website is financial advice. Always DYOR.
+        Nothing on this website is financial advice. Always do your own research and never invest more than you can afford to lose.
       </p>
     </div>
     <div class="flex items-center gap-4">
@@ -704,67 +336,14 @@
 <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
 <noscript><div class="statcounter"><a title="Web Analytics Made Easy - Statcounter" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/13160262/0/dff3f68d/1/" alt="Web Analytics Made Easy - Statcounter" referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
 
-<!-- ✅ FreshCoins Audit widget loader -->
-<script src="https://www.freshcoins.io/audit-widget.js"></script>
-
-<!-- Copy-to-clipboard helper -->
-<script>
-  function copyMint(mint, tooltipId) {
-    try {
-      navigator.clipboard.writeText(mint);
-      const el = document.getElementById(tooltipId);
-      if (el) {
-        el.classList.remove('hidden');
-        setTimeout(() => el.classList.add('hidden'), 1800);
-      }
-    } catch (e) {
-      alert('Could not copy. Please copy manually:\n' + mint);
-    }
-  }
-</script>
-
-<!-- ===== Token Lightbox (clickable avatars) with a11y ===== -->
-<div id="token-lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Token artwork viewer">
-  <button class="backdrop" data-close aria-label="Close image"></button>
-  <img id="token-lightbox-img" alt="Token artwork enlarged">
-  <button class="close" data-close aria-label="Close">&times;</button>
-</div>
-
-<script>
-  (function () {
-    const box = document.getElementById('token-lightbox');
-    const img = document.getElementById('token-lightbox-img');
-    let lastFocus = null;
-    function openBox(src, opener) {
-      lastFocus = opener || document.activeElement;
-      img.src = src; box.classList.add('show'); box.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden'; box.querySelector('.close').focus();
-    }
-    function closeBox() {
-      box.classList.remove('show'); box.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = ''; img.removeAttribute('src');
-      if (lastFocus && lastFocus.focus) lastFocus.focus();
-    }
-    document.querySelectorAll('.token-zoom').forEach(btn => {
-      btn.setAttribute('tabindex', '0');
-      btn.addEventListener('click', () => openBox(btn.dataset.fullsrc, btn));
-      btn.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openBox(btn.dataset.fullsrc, btn); }
-      });
-    });
-    box.querySelectorAll('[data-close]').forEach(el => el.addEventListener('click', closeBox));
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeBox(); });
-  })();
-</script>
-
 <!-- ✅ Referral promos renderer -->
 <script>
   const PROMOS = [
     { name: "Coinbase", emoji: "💳", url: "https://coinbase.com/join/MFB6ACG?src=referral-link", blurb: "Earn a bonus when you start trading with Coinbase and help power Degenstein giveaways." },
-    { name: "Gemini", emoji: "🔷", url: "https://exchange.gemini.com/register?referral=9zrdalkh7&type=referral", blurb: "Grab a bonus for signing up on Gemini. Supports future Lab rewards." },
+    { name: "Gemini", emoji: "🔷", url: "https://exchange.gemini.com/register?referral=9zrdalkh7&type=referral", blurb: "Grab a bonus for signing up on Gemini. Supports future rewards." },
     { name: "BTCC", emoji: "📈", url: "https://www.btcc.com/en-US/invite/YOUR_CODE", blurb: "Up to $1,000+ in trading rewards when you join with our invite." },
-    { name: "Moonshot", emoji: "🌙", url: "https://moonshot.com/?ref=TorB1M", blurb: "Score a bonus on Moonshot. Every trade strengthens the Degenstein Army." },
-    { name: "Bitunix", emoji: "🧰", url: "https://www.bitunix.com/register?inviteCode=57hn7f", blurb: "Unlock trading rewards with our Bitunix invite. Fuel future Degenstein giveaways." },
+    { name: "Moonshot", emoji: "🌙", url: "https://moonshot.com/?ref=TorB1M", blurb: "Score a bonus on Moonshot. Every trade strengthens the community." },
+    { name: "Bitunix", emoji: "🧰", url: "https://www.bitunix.com/register?inviteCode=57hn7f", blurb: "Unlock trading rewards with our Bitunix invite. Fuel future giveaways." },
     { name: "CoinDepo", emoji: "💠", url: "https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV", blurb: "Earn up to $500 in FREE USDC bonuses when you join and start earning up to 27% APR on your crypto." }
   ];
   (function renderPromos() {
@@ -792,4 +371,5 @@
 
 </body>
 </html>
+
 
