@@ -106,8 +106,8 @@
     <nav class="flex flex-wrap items-center justify-end gap-2">
       <a href="#coindepo-bonus" class="inline-flex items-center justify-center px-4 py-2 rounded-2xl border border-white/10 backdrop-blur text-sm">Best Bonus</a>
       <a href="/coindepo-review/" class="inline-flex items-center justify-center px-4 py-2 rounded-2xl border border-white/10 backdrop-blur text-sm">
-  CoinDepo Review
-</a>
+        CoinDepo Review
+      </a>
       <a href="#how-it-works" class="inline-flex items-center justify-center px-4 py-2 rounded-2xl border border-white/10 backdrop-blur text-sm">How It Works</a>
       <a href="#community-promos" class="inline-flex items-center justify-center px-4 py-2 rounded-2xl border border-white/10 backdrop-blur text-sm">All Bonuses</a>
       <a href="/links.html" class="inline-flex items-center justify-center px-4 py-2 rounded-2xl border border-white/10 backdrop-blur text-sm">All Links</a>
@@ -448,7 +448,13 @@
     <div id="promos-grid" class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
 
     <div class="mt-10 mx-auto max-w-3xl text-slate-400 text-xs leading-relaxed">
-      <p><span class="font-semibold text-slate-300">Transparency:</span> These are referral links. You may receive bonuses; I may receive small rewards that fund community promos.</p>
+      <p>
+        <span class="font-semibold text-slate-300">Transparency:</span>
+        These are referral links. You may receive bonuses; I may receive small rewards that fund community promos.
+      </p>
+      <p class="mt-2">
+        If a button or link doesn’t open, you can copy the referral code shown on each card and enter it manually on the platform’s sign-up page.
+      </p>
       <p class="mt-2">
         Promotions may change. Always DYOR. Crypto is risky.
       </p>
@@ -490,55 +496,64 @@ const PROMOS = [
     name: "Coinbase",
     emoji: "💳",
     url: "https://coinbase.com/join/MFB6ACG?src=referral-link",
-    blurb: "Earn a bonus of $30 in BTC when you start trading."
+    blurb: "Earn a bonus of $30 in BTC when you start trading.",
+    code: "MFB6ACG"
   },
   {
     name: "Gemini",
     emoji: "🔷",
     url: "https://exchange.gemini.com/register?referral=9zrdalkh7&type=referral",
-    blurb: "Earn $50 in your choice of crypto."
+    blurb: "Earn $50 in your choice of crypto.",
+    code: "9zrdalkh7"
   },
   {
     name: "BTCC",
     emoji: "📈",
-    url: "https://www.btcc.com/en-US/invite/YOUR_CODE",
-    blurb: "Up to $1,000 in trading rewards."
+    url: "https://www.btcc.com/en-US/invite/HC6O49",
+    blurb: "Up to $1,000 in trading rewards.",
+    code: "HC6O49"
   },
   {
     name: "Moonshot",
     emoji: "🌙",
     url: "https://moonshot.com/?ref=TorB1M",
-    blurb: "Bonus rewards on Moonshot."
+    blurb: "Bonus rewards on Moonshot.",
+    code: "TorB1M"
   },
   {
     name: "Bitunix",
     emoji: "🧰",
     url: "https://www.bitunix.com/register?inviteCode=57hn7f",
-    blurb: "Unlock hundreds in trading rewards."
+    blurb: "Unlock hundreds in trading rewards.",
+    code: "57hn7f"
   },
   {
     name: "Weex",
     emoji: "📊",
     url: "https://weex.com/register?vipCode=5flql",
-    blurb: "Claim up to 30,000 USDT rewards via my VIP link."
+    blurb: "Claim up to 30,000 USDT rewards via my VIP link.",
+    code: "5flql"
   },
   {
     name: "CoinDepo",
     emoji: "💠",
     url: "https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV",
-    blurb: "Earn up to $500 in FREE USDC + up to 27% APR."
+    blurb: "Earn up to $500 in FREE USDC + up to 27% APR.",
+    code: "R-UgAoMRNV"
   },
   {
     name: "BYDFi",
     emoji: "⚡",
     url: "https://partner.bydfi.com/j/3tLVlEZ0",
-    blurb: "Low-fee trading + exclusive bonuses up to $8100 using my referral link."
+    blurb: "Low-fee trading + exclusive bonuses up to $8100 using my referral link.",
+    code: "qkmc3q"
   },
   {
     name: "CoinStats",
     emoji: "📊",
     url: "https://invite.coinstats.app/r?i=Qm2yTg1745088895231",
-    blurb: "Get 2,000 Sparks welcome bonus when you sign up and start using the app."
+    blurb: "Get 2,000 Sparks welcome bonus when you sign up and start using the app.",
+    code: "Qm2yTg1745088895231"
   },
 ];
 
@@ -553,6 +568,11 @@ const PROMOS = [
         <h3 class="text-lg font-bold">${p.name}</h3>
       </div>
       <p class="mt-2 text-sm text-slate-300">${p.blurb}</p>
+      ${p.code ? `
+        <p class="mt-1 text-[11px] text-slate-400">
+          Referral code: <code>${p.code}</code>
+        </p>
+      ` : ''}
       <div class="mt-3 inline-flex items-center gap-2 text-emerald-300 text-xs uppercase tracking-wide">
         <span>Use referral</span>
       </div>
