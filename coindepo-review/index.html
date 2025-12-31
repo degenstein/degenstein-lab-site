@@ -83,8 +83,62 @@
     }
     .muted { color: rgba(229,231,235,0.75); }
     .fine { font-size: 0.8rem; color: rgba(229,231,235,0.65); }
+    .toc a { text-decoration:none; }
+    .toc a:hover { color:#fff; }
+    .section-title { font-size: 1.5rem; font-weight: 800; margin-bottom: .65rem; }
+    .sub-title { font-size: 1.05rem; font-weight: 700; margin: .75rem 0 .35rem; }
+    table { border-collapse: separate; border-spacing: 0; width: 100%; }
+    th, td { padding: .85rem .9rem; vertical-align: top; }
+    thead th {
+      background: rgba(255,255,255,0.06);
+      color: rgba(229,231,235,0.95);
+      font-weight: 800;
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+    }
+    tbody td {
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      color: rgba(229,231,235,0.85);
+    }
+    .table-wrap {
+      overflow-x:auto;
+      border-radius: 1rem;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.02);
+    }
+    .grid2 { display:grid; gap:1rem; grid-template-columns: 1fr; }
+    @media (min-width: 900px) { .grid2 { grid-template-columns: 1.1fr .9fr; } }
+    .hero-bg {
+      position: relative;
+      overflow:hidden;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .glow1,.glow2 {
+      position:absolute; width:520px; height:520px; border-radius:999px;
+      filter: blur(60px); opacity:.18; pointer-events:none;
+      background: radial-gradient(circle, #06b6d4, transparent 60%);
+    }
+    .glow1 { top:-260px; left:-260px; }
+    .glow2 {
+      bottom:-260px; right:-260px;
+      background: radial-gradient(circle, #22c55e, transparent 60%);
+    }
   </style>
 
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"CoinDepo Review (2025) — 21% APR Example & Interest Accounts",
+    "description":"Educational CoinDepo review covering interest accounts, a 21% APR example for 90 days, and crypto-backed loans.",
+    "image":["https://degenstein.xyz/assets/og-coindepo-review-1200x630.png"],
+    "author":{"@type":"Organization","name":"Degenstein Bonus Hub"},
+    "publisher":{"@type":"Organization","name":"Degenstein Bonus Hub"},
+    "datePublished":"2025-12-14",
+    "dateModified":"2025-12-14",
+    "mainEntityOfPage":{"@type":"WebPage","@id":"https://degenstein.xyz/coindepo-review/"}
+  }
+  </script>
 </head>
 
 <body>
@@ -93,14 +147,15 @@
   <div class="wrap py-4 flex items-center justify-between gap-3">
     <a href="/" class="text-xl font-extrabold">Degenstein Bonus Hub</a>
     <a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W"
-       target="_blank" rel="noopener nofollow noreferrer"
-       class="btn-primary">
+       target="_blank" rel="noopener nofollow noreferrer" class="btn-primary">
       Join CoinDepo
     </a>
   </div>
 </header>
 
 <section class="hero-bg">
+  <div class="glow1"></div><div class="glow2"></div>
+
   <div class="wrap py-10 md:py-14">
     <div class="card">
       <div class="grid2 items-start">
@@ -112,8 +167,7 @@
 
           <div class="flex flex-wrap gap-3 mb-4">
             <a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W"
-               target="_blank" rel="noopener nofollow noreferrer"
-               class="btn-primary">
+               target="_blank" rel="noopener nofollow noreferrer" class="btn-primary">
               💠 Join CoinDepo
             </a>
             <a href="/" class="btn-outline">← Back to Bonus Hub</a>
@@ -123,15 +177,441 @@
             Transparency: This page contains referral links. You may receive bonuses; I may receive rewards.
           </p>
         </div>
+
+        <!-- TL;DR snippet -->
+        <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <div class="text-lg font-extrabold mb-2">CoinDepo review (TL;DR)</div>
+          <ul class="list-disc pl-6 text-sm text-gray-300 space-y-1">
+            <li><strong>Best for:</strong> holders who want idle crypto or stablecoins to earn yield.</li>
+            <li><strong>How it works:</strong> deposit → choose a term → earn interest based on published rates.</li>
+            <li><strong>Example:</strong> $1,000 at a 21% APR example for 90 days ≈ <strong>$51.78</strong> (simple).</li>
+            <li><strong>Risk:</strong> custody and market risk apply — verify terms in-app.</li>
+          </ul>
+
+          <!-- Reports pill -->
+          <div class="mt-4 flex flex-wrap gap-2">
+            <a href="#transparency-report" class="pill inline-flex items-center gap-1">
+              📊 <span>Reports</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- TOC -->
+        <div class="mt-7 rounded-2xl border border-white/10 bg-white/5 p-5 toc">
+          <div class="text-sm font-semibold text-gray-200">On this page</div>
+          <ul class="mt-3 grid sm:grid-cols-2 gap-2 text-sm text-gray-300">
+            <li><a href="#what-is">1) What is CoinDepo?</a></li>
+            <li><a href="#why-use">2) Why use it vs holding idle?</a></li>
+            <li><a href="#features">3) Features & claims (verify in-app)</a></li>
+            <li><a href="#transparency-report">4) Q3 2025 transparency report</a></li>
+            <li><a href="#how-it-works">5) How interest accounts work</a></li>
+            <li><a href="#bonuses">6) Account types & term structure</a></li>
+            <li><a href="#compare">7) CoinDepo vs holding idle table</a></li>
+            <li><a href="#calculator">8) $1,000 calculator examples</a></li>
+            <li><a href="#loans">9) Crypto-backed loans</a></li>
+            <li><a href="#best-practices">10) Best practices & risk notes</a></li>
+            <li><a href="#faq">11) FAQ</a></li>
+            <li><a href="#where-to-buy-coindepo">12) Where to buy $COINDEPO token</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <main class="wrap pb-16 space-y-10">
-  <!-- (Your content continues unchanged) -->
-  <!-- All references to CoinDepo signup now use the correct referral URL -->
-  <!-- No instances of R-UgAoMRNV remain in this file -->
+
+  <!-- 1) What is -->
+  <section id="what-is" class="card">
+    <div class="section-title">What is CoinDepo?</div>
+    <p class="muted">
+      CoinDepo is positioned as a yield platform for long-term holders who want their crypto or stablecoins to earn interest instead of sitting idle.
+      Users typically deposit supported assets into interest accounts that may have different terms (duration, payout schedules, withdrawal rules).
+    </p>
+    <p class="fine mt-3">
+      Educational note: exact supported assets, rates, terms, and eligibility can change—always verify details inside CoinDepo.
+    </p>
+  </section>
+
+  <!-- 2) Why use -->
+  <section id="why-use" class="card">
+    <div class="section-title">Why use CoinDepo vs holding idle?</div>
+    <p class="muted">
+      The basic idea is simple: if you’re going to hold anyway, you can either let capital sit at 0%—or attempt to earn yield while you wait.
+      Your tradeoff is yield potential vs platform/terms risk.
+    </p>
+    <div class="mt-4 flex flex-wrap gap-2">
+      <span class="pill">Yield while holding</span>
+      <span class="pill">Structured terms (verify in-app)</span>
+      <span class="pill">Loan option (risk)</span>
+    </div>
+  </section>
+
+  <!-- 3) Features list -->
+  <section id="features" class="card">
+    <div class="section-title">Features & claims (verify in-app)</div>
+    <p class="muted mb-4">
+      These are common features CoinDepo markets. Treat them as <strong>claims</strong> until you confirm them in-app / official terms.
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <div class="sub-title">Interest rates for major crypto & stablecoins</div>
+        <p class="fine">Rates vary by asset and term. Use the in-app rate table as source of truth.</p>
+      </div>
+
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <div class="sub-title">Different types of interest accounts</div>
+        <p class="fine">Examples: monthly / quarterly / semi-annual / annual (availability can change).</p>
+      </div>
+
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <div class="sub-title">Security & protections</div>
+        <p class="fine">CoinDepo may describe “enterprise-grade” or multi-layer security—verify details and disclosures.</p>
+      </div>
+
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <div class="sub-title">Fees</div>
+        <p class="fine">Some platforms advertise “no fees” in certain cases. Confirm what’s free vs what may incur fees.</p>
+      </div>
+
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <div class="sub-title">Deposit minimums / maximums</div>
+        <p class="fine">Confirm whether accounts have minimums, maximums, or lockup requirements.</p>
+      </div>
+
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <div class="sub-title">Insurance language</div>
+        <p class="fine">If CoinDepo mentions “insurance,” read the exact wording carefully—coverage, limits, and conditions matter.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4) Q3 2025 Transparency Report -->
+  <section id="transparency-report" class="card">
+    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+      <div class="md:w-2/3">
+        <div class="section-title">CoinDepo Q3 2025 transparency report</div>
+        <p class="muted">
+          CoinDepo publishes quarterly transparency reports that show platform growth, user stats, and high-level yield metrics.
+          For this review, the <strong>Q3 2025 report</strong> is a useful snapshot of how the platform presents its performance.
+        </p>
+
+        <ul class="list-disc pl-6 text-sm text-gray-300 space-y-1 mt-4">
+          <li><strong>Assets under management (AUM):</strong> around $177M with ~24% quarter-over-quarter growth.</li>
+          <li><strong>Active users:</strong> roughly 87,000 accounts, up about 45% vs the prior quarter.</li>
+          <li><strong>Average APR paid:</strong> mid-teens APY range on interest products (varies by asset & term).</li>
+          <li><strong>Token activity:</strong> continued rollout and listings of the CoinDepo token ($CDT).</li>
+          <li><strong>Risk & structure:</strong> overview of how yields are generated and how risk is managed at a high level.</li>
+        </ul>
+
+        <p class="fine mt-4">
+          All figures above come from CoinDepo’s own materials and may change over time. Treat this report as a starting point for
+          your own research, not a guarantee of future performance.
+        </p>
+      </div>
+
+      <div class="md:w-1/3 rounded-2xl border border-white/10 bg-white/5 p-5 flex flex-col justify-between">
+        <div>
+          <div class="sub-title mb-1">View the official Q3 2025 report</div>
+          <p class="fine mb-4">
+            The full document includes charts, asset breakdowns, and more detail on how CoinDepo describes its operations and risk framework.
+          </p>
+        </div>
+        <a
+          href="https://coindepo.com/reports/q3-2025"
+          target="_blank"
+          rel="noopener nofollow noreferrer"
+          class="btn-primary mt-2 text-sm justify-center"
+        >
+          📄 Open Q3 2025 Report on CoinDepo
+        </a>
+        <p class="fine mt-3">
+          Always cross-check the latest report and terms directly on CoinDepo before making decisions. This section is for education, not financial advice.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5) How it works -->
+  <section id="how-it-works" class="card">
+    <div class="section-title">How CoinDepo interest accounts work</div>
+    <ol class="list-decimal pl-6 text-gray-300 space-y-2">
+      <li>Deposit supported crypto or stablecoins into CoinDepo.</li>
+      <li>Select an interest account term (duration) that matches your strategy.</li>
+      <li>Earn interest based on the published rate for that asset + term.</li>
+      <li>Withdraw / roll over based on the plan rules and timing.</li>
+    </ol>
+    <p class="fine mt-4">
+      APR vs APY: APR is annualized simple rate. APY may assume compounding. Always check how CoinDepo defines the rate for each product.
+    </p>
+  </section>
+
+  <!-- 6) Account types & term structure -->
+  <section id="bonuses" class="card">
+    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-3">
+      <div>
+        <div class="section-title">Account types & term structure</div>
+        <p class="muted">
+          Instead of focusing on promo bonuses, it’s more important to understand how CoinDepo structures its interest accounts:
+          which terms exist, how often interest is paid, and what happens at the end of a term.
+        </p>
+        <p class="fine mt-2">Availability and details can change. Always confirm in-app before depositing.</p>
+      </div>
+    </div>
+
+    <div class="table-wrap mt-5">
+      <table>
+        <thead>
+          <tr>
+            <th>Account type (example)</th>
+            <th>Key characteristics</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Short-term interest account</strong></td>
+            <td>Shorter lock-up period; more flexibility but may have lower rates. Check if interest is paid monthly or at maturity.</td>
+          </tr>
+          <tr>
+            <td><strong>Quarterly / medium-term account</strong></td>
+            <td>Longer commitment than short-term; potentially higher rate. Understand withdrawal rules before committing.</td>
+          </tr>
+          <tr>
+            <td><strong>Long-term / annual account</strong></td>
+            <td>Longest commitment period; may offer higher rates. Best suited for capital you truly don’t need to access for a while.</td>
+          </tr>
+          <tr>
+            <td><strong>Current interest account</strong></td>
+            <td>Often used as a more flexible option where interest accrues with fewer lockup constraints. Terms vary by platform and product.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="fine mt-3">
+      Treat these as structural examples. The exact names, terms, and rates for CoinDepo products should always be verified directly
+      in the app or on their official website.
+    </p>
+  </section>
+
+  <!-- 7) Compare table -->
+  <section id="compare" class="card">
+    <div class="section-title">CoinDepo vs holding idle</div>
+    <p class="muted mb-4">
+      A practical comparison for holders deciding whether to park funds idle or attempt yield.
+    </p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Feature / consideration</th>
+            <th>CoinDepo</th>
+            <th>Holding idle (wallet/exchange)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Yield potential</td>
+            <td>✅ Earn interest (varies by term/asset)</td>
+            <td>❌ Typically 0%</td>
+          </tr>
+          <tr>
+            <td>Liquidity</td>
+            <td>⚠️ Depends on plan rules/lockups</td>
+            <td>✅ Usually immediate</td>
+          </tr>
+          <tr>
+            <td>Risk</td>
+            <td>⚠️ Platform + terms risk</td>
+            <td>⚠️ Market risk only (still exists)</td>
+          </tr>
+          <tr>
+            <td>Loans</td>
+            <td>✅ Crypto-backed loans (risk)</td>
+            <td>❌ Often must sell for liquidity</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="fine mt-3">
+      This table is educational. Always verify the exact CoinDepo product features and your eligibility.
+    </p>
+  </section>
+
+  <!-- 8) Calculator -->
+  <section id="calculator" class="card">
+    <div class="flex flex-wrap items-center justify-between gap-3 mb-3">
+      <div class="section-title mb-0">$1,000 calculator examples</div>
+      <div class="flex flex-wrap gap-2">
+        <span class="pill">21% APR example</span>
+        <span class="pill">90-day timing</span>
+        <span class="pill">Simple interest</span>
+      </div>
+    </div>
+
+    <p class="muted">
+      These are <strong>illustrative examples</strong> using simple interest so it’s easy to understand.
+      Actual results depend on your asset, product, and current rate in CoinDepo.
+    </p>
+
+    <div class="table-wrap mt-5">
+      <table>
+        <thead>
+          <tr>
+            <th>Scenario</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Idle (0% yield)</strong> for 90 days</td>
+            <td><strong>$1,000</strong></td>
+          </tr>
+          <tr>
+            <td><strong>21% APR example</strong> for 90 days (simple)</td>
+            <td><strong>$1,051.78</strong> <span class="fine">(≈ $51.78 interest)</span></td>
+          </tr>
+          <tr>
+            <td><strong>Difference</strong> (interest only)</td>
+            <td><strong>+$51.78</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mt-5 rounded-2xl border border-white/10 bg-white/5 p-5">
+      <div class="sub-title">How the 90-day math is calculated</div>
+      <p class="muted">
+        $1,000 × 0.21 × (90 / 365) ≈ <strong>$51.78</strong>
+      </p>
+      <p class="fine mt-2">
+        If CoinDepo uses compounding or different day-count assumptions for a product, your result will differ.
+      </p>
+    </div>
+
+    <div class="mt-5">
+      <div class="sub-title">12-month reference (same 21% APR example, simple)</div>
+      <p class="muted">$1,000 × 0.21 × (365 / 365) = <strong>$210</strong> interest over 12 months (illustrative).</p>
+    </div>
+  </section>
+
+  <!-- 9) Loans -->
+  <section id="loans" class="card">
+    <div class="section-title">Crypto-backed loans</div>
+    <p class="muted">
+      CoinDepo may offer crypto-backed loans, which lets you borrow against crypto without selling.
+      This can help avoid taxable sales, but introduces loan terms + <strong>liquidation risk</strong> if collateral value drops.
+    </p>
+    <ul class="list-disc pl-6 text-gray-300 space-y-2 mt-4">
+      <li>Check collateral requirements, LTV, fees/interest, and liquidation rules.</li>
+      <li>Use conservative collateral management—don’t push your limits.</li>
+      <li>Loans are not risk-free; read the product disclosures carefully.</li>
+    </ul>
+  </section>
+
+  <!-- 10) Best practices -->
+  <section id="best-practices" class="card">
+    <div class="section-title">Best practices & risk notes</div>
+    <ul class="list-disc pl-6 text-gray-300 space-y-2">
+      <li>Start small until you fully understand the plan rules and withdrawal timing.</li>
+      <li>Only allocate funds you can afford to lock for the chosen term.</li>
+      <li>Rates and terms can change—always verify in-app before depositing.</li>
+      <li>Crypto involves market volatility + platform/custody risk.</li>
+      <li>If using loans, account for liquidation risk during drawdowns.</li>
+    </ul>
+  </section>
+
+  <!-- 11) FAQ -->
+  <section id="faq" class="card">
+    <div class="section-title">FAQ</div>
+
+    <div class="sub-title">Is CoinDepo legit?</div>
+    <p class="muted">
+      This is an educational review. Whether it meets your “legit” standard depends on terms, custody model, security disclosures,
+      and your risk tolerance. Verify the latest official terms and disclosures before depositing.
+    </p>
+
+    <div class="sub-title">How do CoinDepo interest accounts work?</div>
+    <p class="muted">
+      Typically: deposit assets → choose an interest account term → earn interest based on the published rate → withdraw/roll based on plan rules.
+    </p>
+
+    <div class="sub-title">How much would $1,000 earn in 90 days?</div>
+    <p class="muted">
+      Using a <strong>21% APR example</strong> and simple prorated interest:
+      <strong>$1,000 × 0.21 × (90/365) ≈ $51.78</strong>. Actual results depend on the specific product terms and current rate.
+    </p>
+  </section>
+
+  <!-- 12) Where to buy $COINDEPO token -->
+  <section id="where-to-buy-coindepo" class="card">
+    <div class="section-title">Where to buy $COINDEPO token</div>
+    <p class="muted">
+      If you’ve reviewed the project and decided $COINDEPO fits your strategy, these are current ways to get exposure to the token.
+      Listings and trading pairs can change, so always double-check inside the app or exchange before you trade.
+    </p>
+
+    <div class="mt-5 grid gap-4 md:grid-cols-2">
+      <!-- WEEX (recommended) -->
+      <div class="rounded-2xl border border-emerald-500/50 bg-white/5 p-5">
+        <div class="flex items-center justify-between gap-3 mb-2">
+          <div class="text-base font-semibold text-emerald-300">WEEX (Recommended)</div>
+          <span class="pill">Spot / Trading</span>
+        </div>
+        <p class="fine mb-3">
+          Buy & trade $COINDEPO using my WEEX referral/VIP link. After registering, search for the $COINDEPO pair
+          (for example against USDT) and confirm fees and liquidity before placing any orders.
+        </p>
+        <a
+          href="https://weex.com/register?vipCode=5flql"
+          target="_blank"
+          rel="noopener nofollow noreferrer"
+          class="btn-primary text-sm justify-center"
+        >
+          👉 Buy on WEEX — Referral: 5flql
+        </a>
+        <p class="fine mt-3">
+          This route is best if you want a straight exchange-style experience with order books and trading tools.
+        </p>
+      </div>
+
+      <!-- Buy via CoinDepo platform -->
+      <div class="rounded-2xl border border-white/15 bg-white/5 p-5">
+        <div class="text-base font-semibold mb-2 text-gray-100">Buy inside CoinDepo platform</div>
+        <p class="fine mb-3">
+          You can also start by opening a CoinDepo account, depositing supported assets, and then converting into $COINDEPO
+          once you understand how the token fits into your interest and Token Advantage strategy.
+        </p>
+        <a
+          href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W"
+          target="_blank"
+          rel="noopener nofollow noreferrer"
+          class="btn-outline text-sm justify-center"
+        >
+          💠 Sign up / Deposit on CoinDepo
+        </a>
+        <p class="fine mt-3">
+          Always confirm supported pairs, spreads, and any conversion or withdrawal fees directly in-app. This is not a recommendation to buy—just an overview of current access paths.
+        </p>
+      </div>
+    </div>
+
+    <p class="fine mt-4">
+      Reminder: token markets are volatile. Double-check all links, trading pairs, and platform terms yourself, and only allocate what fits your risk tolerance.
+    </p>
+  </section>
+
+  <!-- Disclaimer -->
+  <section class="card">
+    <p class="text-sm text-gray-300">
+      <strong>Disclaimer:</strong> Educational content only. Not financial advice. Cryptocurrency involves risk, including loss of principal.
+      Rates/APR/APY are subject to change and are not guaranteed. Always do your own research and verify terms in-app.
+    </p>
+  </section>
+
 </main>
 
 <footer class="border-t border-white/10">
@@ -157,6 +637,7 @@
 
 </body>
 </html>
+
 
 
 
