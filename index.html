@@ -423,7 +423,7 @@
         </h4>
 
         <div class="space-y-4">
-          <div class="rounded-xl overflow-hidden bg-black/30 shadow border border-white/10">
+          <div class="rounded-2xl overflow-hidden bg-black/30 shadow border border-white/10">
             <iframe
               width="100%" height="220"
               src="https://www.youtube.com/embed/beGIbyZ_564"
@@ -433,7 +433,7 @@
             <div class="p-3 text-sm text-gray-300">How to Deposit Your Crypto Assets in CoinDepo</div>
           </div>
 
-          <div class="rounded-xl overflow-hidden bg-black/30 shadow border border-white/10">
+          <div class="rounded-2xl overflow-hidden bg-black/30 shadow border border-white/10">
             <iframe
               width="100%" height="220"
               src="https://www.youtube.com/embed/88YGAlzk71E"
@@ -443,7 +443,7 @@
             <div class="p-3 text-sm text-gray-300">How to Calculate Your Earnings in CoinDepo</div>
           </div>
 
-          <div class="rounded-xl overflow-hidden bg-black/30 shadow border border-white/10">
+          <div class="rounded-2xl overflow-hidden bg-black/30 shadow border border-white/10">
             <iframe
               width="100%" height="240"
               src="https://www.youtube.com/embed/N5jRA65K9As"
@@ -622,6 +622,171 @@
     <p class="mt-6 text-xs text-gray-400">
       Crypto and yield products carry risk. Always verify terms on CoinDepo.
     </p>
+  </div>
+</section>
+
+<!-- ================= Degenstein Earnings Calculator ================= -->
+<section id="earnings-calculator" class="max-w-6xl mx-auto px-4 py-12 md:py-16">
+  <div class="card">
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-4">
+      <div>
+        <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">
+          Degenstein Earnings Calculator
+        </h2>
+        <p class="mt-1 text-sm md:text-base text-gray-300 max-w-xl">
+          Unofficial tool to estimate what your crypto or stablecoin deposit might earn at different CoinDepo APRs and time frames.
+          Plug in your own numbers and compare against the screenshots above.
+        </p>
+      </div>
+      <div class="flex flex-col items-start md:items-end gap-2">
+        <button
+          type="button"
+          id="calc-quick-90"
+          class="btn btn-outline text-xs md:text-sm"
+        >
+          ⚡ 90-Day Test Deposit Example
+        </button>
+        <p class="text-[11px] text-gray-500 max-w-xs text-right md:text-right">
+          Tip: start with a smaller test amount first, then scale up only if you’re comfortable with the risk.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-2">
+      <!-- Inputs -->
+      <div class="space-y-4">
+        <div>
+          <label for="calc-amount" class="block text-sm font-semibold text-gray-200 mb-1">
+            Deposit amount (USD equivalent)
+          </label>
+          <input
+            id="calc-amount"
+            type="number"
+            min="0"
+            step="0.01"
+            value="1000"
+            class="w-full rounded-xl border border-white/15 bg-black/60 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-400"
+          />
+        </div>
+
+        <div>
+          <label for="calc-apr" class="block text-sm font-semibold text-gray-200 mb-1">
+            APR (annual rate, %)
+          </label>
+          <input
+            id="calc-apr"
+            type="number"
+            min="0"
+            max="100"
+            step="0.01"
+            value="21"
+            class="w-full rounded-xl border border-white/15 bg-black/60 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-400"
+          />
+          <div class="mt-2 flex flex-wrap gap-2 text-xs">
+            <button type="button" data-apr="21" class="badge cursor-pointer calc-apr-preset">21% example</button>
+            <button type="button" data-apr="24" class="badge cursor-pointer calc-apr-preset">24% example</button>
+            <button type="button" data-apr="27" class="badge cursor-pointer calc-apr-preset">27% example</button>
+          </div>
+        </div>
+
+        <div>
+          <label for="calc-days" class="block text-sm font-semibold text-gray-200 mb-1">
+            Term length (days)
+          </label>
+          <input
+            id="calc-days"
+            type="number"
+            min="1"
+            max="1095"
+            step="1"
+            value="90"
+            class="w-full rounded-xl border border-white/15 bg-black/60 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-400"
+          />
+          <div class="mt-2 flex flex-wrap gap-2 text-xs">
+            <button type="button" data-days="30" class="badge cursor-pointer calc-days-preset">30 days</button>
+            <button type="button" data-days="90" class="badge cursor-pointer calc-days-preset">90 days</button>
+            <button type="button" data-days="180" class="badge cursor-pointer calc-days-preset">180 days</button>
+            <button type="button" data-days="365" class="badge cursor-pointer calc-days-preset">365 days</button>
+          </div>
+        </div>
+
+        <div>
+          <label for="calc-mode" class="block text-sm font-semibold text-gray-200 mb-1">
+            Interest mode
+          </label>
+          <select
+            id="calc-mode"
+            class="w-full rounded-xl border border-white/15 bg-black/60 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-400"
+          >
+            <option value="simple" selected>Simple (no compounding)</option>
+            <option value="monthly">Compounding monthly</option>
+            <option value="quarterly">Compounding quarterly</option>
+            <option value="semiannual">Compounding semi-annually</option>
+            <option value="annual">Compounding annually</option>
+          </select>
+        </div>
+
+        <button
+          type="button"
+          id="calc-button"
+          class="btn btn-primary w-full justify-center text-sm mt-1"
+        >
+          🧮 Calculate Estimate
+        </button>
+      </div>
+
+      <!-- Results -->
+      <div class="space-y-4">
+        <div class="rounded-2xl border border-emerald-400/50 bg-black/60 px-4 py-4">
+          <div class="text-xs font-semibold text-emerald-300 mb-1 uppercase tracking-wide">
+            Estimated Result for This Term
+          </div>
+          <div class="text-sm text-gray-300 mb-2">
+            Based on your inputs. This is a rough estimate, not an official CoinDepo quote.
+          </div>
+
+          <div class="mt-3">
+            <div class="text-xs text-gray-400 mb-1">Estimated interest</div>
+            <div id="calc-interest" class="text-2xl font-extrabold text-emerald-300">
+              $0.00
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <div class="text-xs text-gray-400 mb-1">Estimated total at end of term</div>
+            <div id="calc-total" class="text-xl font-bold text-gray-100">
+              $0.00
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <div class="text-xs text-gray-400 mb-1">Approx. % gain over this period</div>
+            <div id="calc-period-return" class="text-sm font-semibold text-gray-200">
+              0.00%
+            </div>
+          </div>
+        </div>
+
+        <p class="text-xs text-gray-500 leading-relaxed">
+          This calculator is for education only. It assumes a fixed APR and basic compounding model if selected.
+          Real results may differ depending on how CoinDepo structures each product (e.g., payout schedule, day-count, fees, Token Advantage boosts).
+          Always confirm the final numbers directly inside CoinDepo.
+        </p>
+
+        <p class="text-xs text-gray-400 leading-relaxed">
+          Want to try this for real with a small test deposit?
+          <a
+            href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W"
+            target="_blank"
+            rel="noopener nofollow noreferrer"
+            class="text-emerald-300 underline"
+          >
+            Open CoinDepo with my referral link
+          </a>
+          and compare your actual earnings to this estimate.
+        </p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -834,6 +999,119 @@ const PROMOS = [
       </div>
     </a>
   `).join('');
+})();
+</script>
+
+<!-- ====================== EARNINGS CALCULATOR SCRIPT ===================== -->
+<script>
+(function () {
+  const amountInput = document.getElementById('calc-amount');
+  const aprInput = document.getElementById('calc-apr');
+  const daysInput = document.getElementById('calc-days');
+  const modeSelect = document.getElementById('calc-mode');
+  const button = document.getElementById('calc-button');
+  const quick90 = document.getElementById('calc-quick-90');
+
+  const interestEl = document.getElementById('calc-interest');
+  const totalEl = document.getElementById('calc-total');
+  const periodReturnEl = document.getElementById('calc-period-return');
+
+  if (!amountInput || !aprInput || !daysInput || !modeSelect || !button ||
+      !interestEl || !totalEl || !periodReturnEl) {
+    return;
+  }
+
+  function getCompoundingFrequency(mode) {
+    switch (mode) {
+      case 'monthly': return 12;
+      case 'quarterly': return 4;
+      case 'semiannual': return 2;
+      case 'annual': return 1;
+      default: return 0; // simple
+    }
+  }
+
+  function formatMoney(value) {
+    if (!isFinite(value)) return '$0.00';
+    return '$' + value.toFixed(2);
+  }
+
+  function formatPercent(value) {
+    if (!isFinite(value)) return '0.00%';
+    return value.toFixed(2) + '%';
+  }
+
+  function calculate() {
+    const principal = Math.max(0, parseFloat(amountInput.value || '0'));
+    const apr = Math.max(0, parseFloat(aprInput.value || '0')) / 100;
+    const days = Math.max(0, parseInt(daysInput.value || '0', 10));
+    const mode = modeSelect.value;
+
+    if (!principal || !apr || !days) {
+      interestEl.textContent = '$0.00';
+      totalEl.textContent = '$0.00';
+      periodReturnEl.textContent = '0.00%';
+      return;
+    }
+
+    const tYears = days / 365;
+    const n = getCompoundingFrequency(mode);
+    let total;
+
+    if (n === 0) {
+      const interest = principal * apr * tYears;
+      total = principal + interest;
+    } else {
+      total = principal * Math.pow(1 + apr / n, n * tYears);
+    }
+
+    const interest = total - principal;
+    const periodReturn = (interest / principal) * 100;
+
+    interestEl.textContent = formatMoney(interest);
+    totalEl.textContent = formatMoney(total);
+    periodReturnEl.textContent = formatPercent(periodReturn);
+  }
+
+  // Preset APR buttons
+  document.querySelectorAll('.calc-apr-preset').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const v = parseFloat(btn.getAttribute('data-apr') || '0');
+      if (v) aprInput.value = v;
+      calculate();
+    });
+  });
+
+  // Preset day buttons
+  document.querySelectorAll('.calc-days-preset').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const v = parseInt(btn.getAttribute('data-days') || '0', 10);
+      if (v) daysInput.value = v;
+      calculate();
+    });
+  });
+
+  // Quick 90-day test example
+  if (quick90) {
+    quick90.addEventListener('click', () => {
+      amountInput.value = 1000;
+      aprInput.value = 24;
+      daysInput.value = 90;
+      modeSelect.value = 'simple';
+      calculate();
+      window.location.hash = '#earnings-calculator';
+    });
+  }
+
+  // Events
+  button.addEventListener('click', calculate);
+  [amountInput, aprInput, daysInput, modeSelect].forEach(el => {
+    el.addEventListener('input', calculate);
+    el.addEventListener('change', calculate);
+  });
+
+  // Initial run
+  calculate();
 })();
 </script>
 
