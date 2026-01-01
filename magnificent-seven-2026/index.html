@@ -92,16 +92,6 @@
       white-space:nowrap;
     }
 
-    .toc a {
-      display:flex; justify-content:space-between; align-items:center;
-      padding:0.45rem 0.7rem; border-radius:0.9rem;
-      font-size:0.8rem; color:#e5e7eb;
-    }
-    .toc a:hover {
-      background:rgba(15,23,42,0.85);
-      color:#a5f3fc;
-    }
-
     .range-tag {
       font-size:0.75rem;
       padding:0.15rem 0.45rem;
@@ -192,7 +182,7 @@
               </span>
             </div>
 
-            <!-- NEW: Back to main page pill -->
+            <!-- Back to main page pill -->
             <div class="mt-3">
               <a href="/" class="pill">
                 ← Back to Degenstein Bonus Hub
@@ -334,303 +324,264 @@
     </div>
   </section>
 
-  <!-- TOC + Asset Deep Dives -->
+  <!-- Asset Deep Dives (single column, no sidebar) -->
   <section class="max-w-6xl mx-auto px-4 pb-10 md:pb-14">
-    <div class="grid gap-6 lg:grid-cols-[minmax(0,3fr)_minmax(0,1.5fr)]">
-      <!-- Left: deep dives -->
-      <div class="space-y-8">
+    <div class="space-y-8">
 
-        <!-- XRP -->
-        <article id="xrp" class="card">
-          <h2 class="text-xl md:text-2xl font-extrabold flex items-center gap-2 mb-1">
-            XRP — $8 to $11
-            <span class="range-tag text-[0.65rem]">Payments • ETFs • Liquidity</span>
-          </h2>
-          <p class="text-xs text-gray-400 mb-3">Cross-border settlement rails &amp; institutional rails narrative.</p>
+      <!-- XRP -->
+      <article id="xrp" class="card">
+        <h2 class="text-xl md:text-2xl font-extrabold flex items-center gap-2 mb-1">
+          XRP — $8 to $11
+          <span class="range-tag text-[0.65rem]">Payments • ETFs • Liquidity</span>
+        </h2>
+        <p class="text-xs text-gray-400 mb-3">Cross-border settlement rails &amp; institutional rails narrative.</p>
 
-          <h3 class="text-sm font-semibold text-emerald-300 mb-1">Why I’m Here</h3>
-          <p class="text-sm text-gray-200 mb-3">
-            XRP is one of the few assets explicitly built to move value, not just store it.
-            If ETF products scale and banks keep experimenting with Ripple’s tech, I see
-            <span class="font-semibold">$8–$11</span> as a reasonable outcome in a functioning bull.
-          </p>
+        <h3 class="text-sm font-semibold text-emerald-300 mb-1">Why I’m Here</h3>
+        <p class="text-sm text-gray-200 mb-3">
+          XRP is one of the few assets explicitly built to move value, not just store it.
+          If ETF products scale and banks keep experimenting with Ripple’s tech, I see
+          <span class="font-semibold">$8–$11</span> as a reasonable outcome in a functioning bull.
+        </p>
 
-          <h4 class="text-xs font-semibold text-gray-300 mb-1 uppercase tracking-wide">Key 2026 Catalysts</h4>
-          <ul class="text-sm text-gray-200 space-y-1 mb-3">
-            <li>• Further clarity on XRP’s regulatory status and exchange access.</li>
-            <li>• Growth in cross-border payment corridors using XRP as bridge liquidity.</li>
-            <li>• ETF products or structured notes unlocking institutional buy flows.</li>
-          </ul>
+        <h4 class="text-xs font-semibold text-gray-300 mb-1 uppercase tracking-wide">Key 2026 Catalysts</h4>
+        <ul class="text-sm text-gray-200 space-y-1 mb-3">
+          <li>• Further clarity on XRP’s regulatory status and exchange access.</li>
+          <li>• Growth in cross-border payment corridors using XRP as bridge liquidity.</li>
+          <li>• ETF products or structured notes unlocking institutional buy flows.</li>
+        </ul>
 
-          <h4 class="text-xs font-semibold text-gray-300 mb-1 uppercase tracking-wide">Risks</h4>
-          <ul class="text-xs text-gray-400 space-y-1">
-            <li>• Regulatory reversals or slow approvals in key jurisdictions.</li>
-            <li>• Competing rails (private networks, CBDCs) capturing settlement flows.</li>
-            <li>• Lack of visible XRP volume even with partnerships announced.</li>
-          </ul>
-        </article>
+        <h4 class="text-xs font-semibold text-gray-300 mb-1 uppercase tracking-wide">Risks</h4>
+        <ul class="text-xs text-gray-400 space-y-1">
+          <li>• Regulatory reversals or slow approvals in key jurisdictions.</li>
+          <li>• Competing rails (private networks, CBDCs) capturing settlement flows.</li>
+          <li>• Lack of visible XRP volume even with partnerships announced.</li>
+        </ul>
+      </article>
 
-        <!-- AVAX -->
-        <article id="avax" class="card">
-          <h2 class="text-xl md:text-2xl font-extrabold flex items-center gap-2 mb-1">
-            AVAX — $25 to $40
-            <span class="range-tag text-[0.65rem]">Subnets • Institutional DeFi</span>
-          </h2>
-          <p class="text-xs text-gray-400 mb-3">App-specific chains with a real throughput story.</p>
+      <!-- AVAX -->
+      <article id="avax" class="card">
+        <h2 class="text-xl md:text-2xl font-extrabold flex items-center gap-2 mb-1">
+          AVAX — $25 to $40
+          <span class="range-tag text-[0.65rem]">Subnets • Institutional DeFi</span>
+        </h2>
+        <p class="text-xs text-gray-400 mb-3">App-specific chains with a real throughput story.</p>
 
-          <h3 class="text-sm font-semibold text-emerald-300 mb-1">Why I’m Here</h3>
-          <p class="text-sm text-gray-200 mb-3">
-            Avalanche’s subnet design is a clean story for enterprises and DeFi teams that want 
-            their own lanes. If those lanes get used and fees accrue back to AVAX, 
-            <span class="font-semibold">$25–$40</span> isn’t a stretch, it’s continuity.
-          </p>
+        <h3 class="text-sm font-semibold text-emerald-300 mb-1">Why I’m Here</h3>
+        <p class="text-sm text-gray-200 mb-3">
+          Avalanche’s subnet design is a clean story for enterprises and DeFi teams that want 
+          their own lanes. If those lanes get used and fees accrue back to AVAX, 
+          <span class="font-semibold">$25–$40</span> isn’t a stretch, it’s continuity.
+        </p>
 
-          <h4 class="text-xs font-semibold text-gray-300 mb-1 uppercase tracking-wide">Key 2026 Catalysts</h4>
-          <ul class="text-sm text-gray-200 space-y-1 mb-3">
-            <li>• More live subnets with real TVL, not just test pilots.</li>
-            <li>• Institutional-grade DeFi and RWA experiments launching on Avalanche.</li>
-            <li>• Bridges and tooling that make multichain usage feel seamless.</li>
-          </ul>
+        <h4 class="text-xs font-semibold text-gray-300 mb-1 uppercase tracking-wide">Key 2026 Catalysts</h4>
+        <ul class="text-sm text-gray-200 space-y-1 mb-3">
+          <li>• More live subnets with real TVL, not just test pilots.</li>
+          <li>• Institutional-grade DeFi and RWA experiments launching on Avalanche.</li>
+          <li>• Bridges and tooling that make multichain usage feel seamless.</li>
+        </ul>
 
-          <h4 class="text-xs font-semibold text-gray-300 mb-1 uppercase tracking-wide">Risks</h4>
-          <ul class="text-xs text-gray-400 space-y-1">
-            <li>• Fragmented liquidity if too many subnets dilute usage.</li>
-            <li>• Competition from Ethereum L2s and other L1s targeting the same clients.</li>
-            <li>• Macro risk if DeFi TVL drains during risk-off environments.</li>
-          </ul>
-        </article>
+        <h4 class="text-xs font-semibold text-gray-300 mb-1 uppercase tracking-wide">Risks</h4>
+        <ul class="text-xs text-gray-400 space-y-1">
+          <li>• Fragmented liquidity if too many subnets dilute usage.</li>
+          <li>• Competition from Ethereum L2s and other L1s targeting the same clients.</li>
+          <li>• Macro risk if DeFi TVL drains during risk-off environments.</li>
+        </ul>
+      </article>
 
-        <!-- LINK -->
-        <article id="link" class="card">
-          <h2 class="text-xl md:text-2xl font-extrabold flex items-center gap-2 mb-1">
-            LINK — $30 to $45
-            <span class="range-tag text-[0.65rem]">Oracles • Tokenization • CCIP</span>
-          </h2>
-          <p class="text-xs text-gray-400 mb-3">Non-optional infrastructure for smart contracts.</p>
+      <!-- LINK -->
+      <article id="link" class="card">
+        <h2 class="text-xl md:text-2xl font-extrabold flex items-center gap-2 mb-1">
+          LINK — $30 to $45
+          <span class="range-tag text-[0.65rem]">Oracles • Tokenization • CCIP</span>
+        </h2>
+        <p class="text-xs text-gray-400 mb-3">Non-optional infrastructure for smart contracts.</p>
 
-          <h3 class="text-sm font-semibold text-emerald-300 mb-1">Why I’m Here</h3>
-          <p class="text-sm text-gray-200 mb-3">
-            Whatever happens with tokenization, oracles will be involved. Chainlink already runs
-            a huge chunk of that stack. With CCIP connecting chains and institutions, 
-            <span class="font-semibold">$30–$45</span> feels like a base case for a functioning bull.
-          </p>
+        <h3 class="text-sm font-semibold text-emerald-300 mb-1">Why I’m Here</h3>
+        <p class="text-sm text-gray-200 mb-3">
+          Whatever happens with tokenization, oracles will be involved. Chainlink already runs
+          a huge chunk of that stack. With CCIP connecting chains and institutions, 
+          <span class="font-semibold">$30–$45</span> feels like a base case for a functioning bull.
+        </p>
 
-          <h4 class="text-xs font-semibold text-gray-300 mb-1 uppercase tracking-wide">Key 2026 Catalysts</h4>
-          <ul class="text-sm text-gray-200 space-y-1 mb-3">
-            <li>• CCIP adoption by major chains, banks, and RWA platforms.</li>
-            <li>• More value locked in tokenized instruments that rely on LINK feeds.</li>
-            <li>• Staking and fee-sharing structures rewarding long-term holders.</li>
-          </ul>
+        <h4 class="text-xs font-semibold text-gray-300 mb-1 uppercase tracking-wide">Key 2026 Catalysts</h4>
+        <ul class="text-sm text-gray-200 space-y-1 mb-3">
+          <li>• CCIP adoption by major chains, banks, and RWA platforms.</li>
+          <li>• More value locked in tokenized instruments that rely on LINK feeds.</li>
+          <li>• Staking and fee-sharing structures rewarding long-term holders.</li>
+        </ul>
 
-          <h4 class="text-xs font-semibold text-gray-300 mb-1 uppercase tracking-wide">Risks</h4>
-          <ul class="text-xs text-gray-400 space-y-1">
-            <li>• Slow enterprise adoption timelines for tokenization.</li>
-            <li>• Competing oracle solutions (or in-house feeds) in some ecosystems.</li>
-            <li>• Governance or centralization concerns around oracle networks.</li>
-          </ul>
-        </article>
+        <h4 class="text-xs font-semibold text-gray-300 mb-1 uppercase tracking-wide">Risks</h4>
+        <ul class="text-xs text-gray-400 space-y-1">
+          <li>• Slow enterprise adoption timelines for tokenization.</li>
+          <li>• Competing oracle solutions (or in-house feeds) in some ecosystems.</li>
+          <li>• Governance or centralization concerns around oracle networks.</li>
+        </ul>
+      </article>
 
-        <!-- ETH -->
-        <article id="eth" class="card">
-          <h2 class="text-xl md:text-2xl font-extrabold flex items-center gap-2 mb-1">
-            ETH — $6,000 to $6,500
-            <span class="range-tag text-[0.65rem]">Base Layer • L2 • ETFs</span>
-          </h2>
-          <p class="text-xs text-gray-400 mb-3">The crypto “blue-chip” that everything settles on.</p>
+      <!-- ETH -->
+      <article id="eth" class="card">
+        <h2 class="text-xl md:text-2xl font-extrabold flex items-center gap-2 mb-1">
+          ETH — $6,000 to $6,500
+          <span class="range-tag text-[0.65rem]">Base Layer • L2 • ETFs</span>
+        </h2>
+        <p class="text-xs text-gray-400 mb-3">The crypto “blue-chip” that everything settles on.</p>
 
-          <h3 class="text-sm font-semibold text-emerald-300 mb-1">Why I’m Here</h3>
-          <p class="text-sm text-gray-200 mb-3">
-            Ethereum is the settlement layer for a huge portion of crypto. Rollups scale it,
-            ETF products and staking turn it into an institutional yield asset. 
-            <span class="font-semibold">$6k–$6.5k</span> is a measured range if that story continues.
-          </p>
+        <h3 class="text-sm font-semibold text-emerald-300 mb-1">Why I’m Here</h3>
+        <p class="text-sm text-gray-200 mb-3">
+          Ethereum is the settlement layer for a huge portion of crypto. Rollups scale it,
+          ETF products and staking turn it into an institutional yield asset. 
+          <span class="font-semibold">$6k–$6.5k</span> is a measured range if that story continues.
+        </p>
 
-          <h4 class="text-xs font-semibold text-gray-300 mb-1 uppercase tracking-wide">Key 2026 Catalysts</h4>
-          <ul class="text-sm text-gray-200 space-y-1 mb-3">
-            <li>• Growth of L2 ecosystems with real users and fees.</li>
-            <li>• ETH ETFs and custody products absorbing long-term supply.</li>
-            <li>• Staking yield becoming a more “accepted” macro asset class.</li>
-          </ul>
+        <h4 class="text-xs font-semibold text-gray-300 mb-1 uppercase tracking-wide">Key 2026 Catalysts</h4>
+        <ul class="text-sm text-gray-200 space-y-1 mb-3">
+          <li>• Growth of L2 ecosystems with real users and fees.</li>
+          <li>• ETH ETFs and custody products absorbing long-term supply.</li>
+          <li>• Staking yield becoming a more “accepted” macro asset class.</li>
+        </ul>
 
-          <h4 class="text-xs font-semibold text-gray-300 mb-1 uppercase tracking-wide">Risks</h4>
-          <ul class="text-xs text-gray-400 space-y-1">
-            <li>• Regulatory attacks on staking or L2s in key jurisdictions.</li>
-            <li>• L1 and L2 competition that erodes fee capture.</li>
-            <li>• Macro regime where risk assets struggle across the board.</li>
-          </ul>
-        </article>
+        <h4 class="text-xs font-semibold text-gray-300 mb-1 uppercase tracking-wide">Risks</h4>
+        <ul class="text-xs text-gray-400 space-y-1">
+          <li>• Regulatory attacks on staking or L2s in key jurisdictions.</li>
+          <li>• L1 and L2 competition that erodes fee capture.</li>
+          <li>• Macro regime where risk assets struggle across the board.</li>
+        </ul>
+      </article>
 
-        <!-- SOL -->
-        <article id="sol" class="card">
-          <h2 class="text-xl md:text-2xl font-extrabold flex items-center gap-2 mb-1">
-            SOL — $350 to $400
-            <span class="range-tag text-[0.65rem]">Consumer Chain • UX • Liquidity</span>
-          </h2>
-          <p class="text-xs text-gray-400 mb-3">Fast UX and culture often beat ideology.</p>
+      <!-- SOL -->
+      <article id="sol" class="card">
+        <h2 class="text-xl md:text-2xl font-extrabold flex items-center gap-2 mb-1">
+          SOL — $350 to $400
+          <span class="range-tag text-[0.65rem]">Consumer Chain • UX • Liquidity</span>
+        </h2>
+        <p class="text-xs text-gray-400 mb-3">Fast UX and culture often beat ideology.</p>
 
-          <h3 class="text-sm font-semibold text-emerald-300 mb-1">Why I’m Here</h3>
-          <p class="text-sm text-gray-200 mb-3">
-            Solana has the clearest consumer story: speed, low fees, thriving memecoin and NFT ecosystem.
-            If the next wave of users actually touches crypto, Solana probably sees them first. 
-            <span class="font-semibold">$350–$400</span> is where that narrative shows up in price.
-          </p>
+        <h3 class="text-sm font-semibold text-emerald-300 mb-1">Why I’m Here</h3>
+        <p class="text-sm text-gray-200 mb-3">
+          Solana has the clearest consumer story: speed, low fees, thriving memecoin and NFT ecosystem.
+          If the next wave of users actually touches crypto, Solana probably sees them first. 
+          <span class="font-semibold">$350–$400</span> is where that narrative shows up in price.
+        </p>
 
-          <h4 class="text-xs font-semibold text-gray-300 mb-1 uppercase tracking-wide">Key 2026 Catalysts</h4>
-          <ul class="text-sm text-gray-200 space-y-1 mb-3">
-            <li>• On-chain orderbooks, games and apps gaining daily active users.</li>
-            <li>• Continued memecoin and NFT liquidity that sticks around.</li>
-            <li>• Better tooling for onboarding non-crypto natives.</li>
-          </ul>
+        <h4 class="text-xs font-semibold text-gray-300 mb-1 uppercase tracking-wide">Key 2026 Catalysts</h4>
+        <ul class="text-sm text-gray-200 space-y-1 mb-3">
+          <li>• On-chain orderbooks, games and apps gaining daily active users.</li>
+          <li>• Continued memecoin and NFT liquidity that sticks around.</li>
+          <li>• Better tooling for onboarding non-crypto natives.</li>
+        </ul>
 
-          <h4 class="text-xs font-semibold text-gray-300 mb-1 uppercase tracking-wide">Risks</h4>
-          <ul class="text-xs text-gray-400 space-y-1">
-            <li>• Network outages or reliability concerns returning.</li>
-            <li>• Regulatory heat on U.S.-listed Solana products or exchanges.</li>
-            <li>• Over-reliance on memecoin hype instead of durable apps.</li>
-          </ul>
-        </article>
+        <h4 class="text-xs font-semibold text-gray-300 mb-1 uppercase tracking-wide">Risks</h4>
+        <ul class="text-xs text-gray-400 space-y-1">
+          <li>• Network outages or reliability concerns returning.</li>
+          <li>• Regulatory heat on U.S.-listed Solana products or exchanges.</li>
+          <li>• Over-reliance on memecoin hype instead of durable apps.</li>
+        </ul>
+      </article>
 
-        <!-- NEAR -->
-        <article id="near" class="card">
-          <h2 class="text-xl md:text-2xl font-extrabold flex items-center gap-2 mb-1">
-            NEAR — $8 to $12
-            <span class="range-tag text-[0.65rem]">Sharding • UX • Devs</span>
-          </h2>
-          <p class="text-xs text-gray-400 mb-3">Quiet execution with scalable design.</p>
+      <!-- NEAR -->
+      <article id="near" class="card">
+        <h2 class="text-xl md:text-2xl font-extrabold flex items-center gap-2 mb-1">
+          NEAR — $8 to $12
+          <span class="range-tag text-[0.65rem]">Sharding • UX • Devs</span>
+        </h2>
+        <p class="text-xs text-gray-400 mb-3">Quiet execution with scalable design.</p>
 
-          <h3 class="text-sm font-semibold text-emerald-300 mb-1">Why I’m Here</h3>
-          <p class="text-sm text-gray-200 mb-3">
-            NEAR doesn’t scream for attention, but it’s been building. Sharding, the Aurora EVM,
-            and smoother onboarding give it a lane. If devs and real apps follow, 
-            <span class="font-semibold">$8–$12</span> is a fair snap-back range.
-          </p>
+        <h3 class="text-sm font-semibold text-emerald-300 mb-1">Why I’m Here</h3>
+        <p class="text-sm text-gray-200 mb-3">
+          NEAR doesn’t scream for attention, but it’s been building. Sharding, the Aurora EVM,
+          and smoother onboarding give it a lane. If devs and real apps follow, 
+          <span class="font-semibold">$8–$12</span> is a fair snap-back range.
+        </p>
 
-          <h4 class="text-xs font-semibold text-gray-300 mb-1 uppercase tracking-wide">Key 2026 Catalysts</h4>
-          <ul class="text-sm text-gray-200 space-y-1 mb-3">
-            <li>• Real usage of sharding capacity (not just testnet talk).</li>
-            <li>• Growth of Aurora and cross-chain deployments.</li>
-            <li>• Simple UX onramps targeted at mainstream users.</li>
-          </ul>
+        <h4 class="text-xs font-semibold text-gray-300 mb-1 uppercase tracking-wide">Key 2026 Catalysts</h4>
+        <ul class="text-sm text-gray-200 space-y-1 mb-3">
+          <li>• Real usage of sharding capacity (not just testnet talk).</li>
+          <li>• Growth of Aurora and cross-chain deployments.</li>
+          <li>• Simple UX onramps targeted at mainstream users.</li>
+        </ul>
 
-          <h4 class="text-xs font-semibold text-gray-300 mb-1 uppercase tracking-wide">Risks</h4>
-          <ul class="text-xs text-gray-400 space-y-1">
-            <li>• Failure to break out of the “undiscovered” narrative.</li>
-            <li>• Liquidity staying thin compared to bigger L1s.</li>
-            <li>• Ecosystem grants not translating into sticky apps.</li>
-          </ul>
-        </article>
+        <h4 class="text-xs font-semibold text-gray-300 mb-1 uppercase tracking-wide">Risks</h4>
+        <ul class="text-xs text-gray-400 space-y-1">
+          <li>• Failure to break out of the “undiscovered” narrative.</li>
+          <li>• Liquidity staying thin compared to bigger L1s.</li>
+          <li>• Ecosystem grants not translating into sticky apps.</li>
+        </ul>
+      </article>
 
-        <!-- ONDO -->
-        <article id="ondo" class="card">
-          <h2 class="text-xl md:text-2xl font-extrabold flex items-center gap-2 mb-1">
-            ONDO — $1.50 to $3
-            <span class="range-tag text-[0.65rem]">RWA • Treasuries • Yield</span>
-          </h2>
-          <p class="text-xs text-gray-400 mb-3">An asymmetry bet on tokenized yield.</p>
+      <!-- ONDO -->
+      <article id="ondo" class="card">
+        <h2 class="text-xl md:text-2xl font-extrabold flex items-center gap-2 mb-1">
+          ONDO — $1.50 to $3
+          <span class="range-tag text-[0.65rem]">RWA • Treasuries • Yield</span>
+        </h2>
+        <p class="text-xs text-gray-400 mb-3">An asymmetry bet on tokenized yield.</p>
 
-          <h3 class="text-sm font-semibold text-emerald-300 mb-1">Why I’m Here</h3>
-          <p class="text-sm text-gray-200 mb-3">
-            ONDO is a lever on the RWA + treasury yield narrative. If real-world yield keeps moving on-chain
-            and institutions want those wrappers, 
-            <span class="font-semibold">$1.50–$3</span> is not a crazy ask — it’s the story starting to play out.
-          </p>
+        <h3 class="text-sm font-semibold text-emerald-300 mb-1">Why I’m Here</h3>
+        <p class="text-sm text-gray-200 mb-3">
+          ONDO is a lever on the RWA + treasury yield narrative. If real-world yield keeps moving on-chain
+          and institutions want those wrappers, 
+          <span class="font-semibold">$1.50–$3</span> is not a crazy ask — it’s the story starting to play out.
+        </p>
 
-          <h4 class="text-xs font-semibold text-gray-300 mb-1 uppercase tracking-wide">Key 2026 Catalysts</h4>
-          <ul class="text-sm text-gray-200 space-y-1 mb-3">
-            <li>• More assets bridged into ONDO-style products (treasuries, bonds, credit).</li>
-            <li>• Institutional frameworks around tokenized yield products maturing.</li>
-            <li>• Stronger integrations with DeFi money markets and aggregators.</li>
-          </ul>
+        <h4 class="text-xs font-semibold text-gray-300 mb-1 uppercase tracking-wide">Key 2026 Catalysts</h4>
+        <ul class="text-sm text-gray-200 space-y-1 mb-3">
+          <li>• More assets bridged into ONDO-style products (treasuries, bonds, credit).</li>
+          <li>• Institutional frameworks around tokenized yield products maturing.</li>
+          <li>• Stronger integrations with DeFi money markets and aggregators.</li>
+        </ul>
 
-          <h4 class="text-xs font-semibold text-gray-300 mb-1 uppercase tracking-wide">Risks</h4>
-          <ul class="text-xs text-gray-400 space-y-1">
-            <li>• Regulatory uncertainty around RWA instruments and compliant access.</li>
-            <li>• Counterparty or structure risk in how underlying assets are held.</li>
-            <li>• Narrative rotation away from RWAs if something breaks big.</li>
-          </ul>
-        </article>
+        <h4 class="text-xs font-semibold text-gray-300 mb-1 uppercase tracking-wide">Risks</h4>
+        <ul class="text-xs text-gray-400 space-y-1">
+          <li>• Regulatory uncertainty around RWA instruments and compliant access.</li>
+          <li>• Counterparty or structure risk in how underlying assets are held.</li>
+          <li>• Narrative rotation away from RWAs if something breaks big.</li>
+        </ul>
+      </article>
 
+    </div>
+  </section>
+
+  <!-- Earn While You Wait (full-width, simple) -->
+  <section id="earn-while-wait" class="max-w-6xl mx-auto px-4 pb-10 md:pb-14">
+    <div class="card">
+      <h3 class="text-sm md:text-base font-semibold text-gray-100 uppercase tracking-wide mb-2">
+        Earn While You Wait
+      </h3>
+      <p class="text-sm text-gray-200 mb-3">
+        My play isn’t just “buy and pray.” While I wait on these 2026 targets, I’m earning yield on the
+        same assets through CoinDepo. No trading. No selling. Just holding &amp; compounding.
+      </p>
+
+      <ul class="text-sm text-gray-200 space-y-1 mb-3">
+        <li>• <span class="font-semibold text-emerald-300">Stables:</span> up to ~27% APR</li>
+        <li>• <span class="font-semibold text-emerald-300">Crypto:</span> up to ~21% APR</li>
+        <li>• <span class="font-semibold text-emerald-300">Fiat/Stable (compounding):</span> up to ~24% APR</li>
+      </ul>
+
+      <p class="text-xs text-gray-400 mb-3">
+        Rates and terms change — always check the official CoinDepo site. This is not a guarantee and not 
+        investment advice. It’s simply how I position my own bags.
+      </p>
+
+      <div class="space-y-2 text-xs">
+        <p>
+          🔑 <span class="font-semibold text-emerald-300">Referral Code:</span> <span class="font-mono">A-32wqw35W</span>
+        </p>
+        <p class="break-words">
+          ➡️ <a
+            href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W"
+            target="_blank"
+            rel="noopener nofollow noreferrer"
+            class="text-emerald-300 underline"
+          >
+            https://app.coindepo.com/auth-sign-up?ref=A-32wqw35W
+          </a>
+        </p>
+        <p>
+          🌐 More passive income tools &amp; bonus links:
+          <a href="https://degenstein.xyz" class="text-cyan-300 underline">degenstein.xyz</a>
+        </p>
       </div>
-
-      <!-- Right: TOC + Earn block -->
-      <aside class="space-y-6">
-        <!-- TOC -->
-        <div class="card">
-          <h3 class="text-sm font-semibold text-gray-100 mb-2 uppercase tracking-wide">
-            Quick Navigation
-          </h3>
-          <div class="toc space-y-1">
-            <a href="#xrp"><span>XRP — $8–$11</span><span>↳</span></a>
-            <a href="#avax"><span>AVAX — $25–$40</span><span>↳</span></a>
-            <a href="#link"><span>LINK — $30–$45</span><span>↳</span></a>
-            <a href="#eth"><span>ETH — $6k–$6.5k</span><span>↳</span></a>
-            <a href="#sol"><span>SOL — $350–$400</span><span>↳</span></a>
-            <a href="#near"><span>NEAR — $8–$12</span><span>↳</span></a>
-            <a href="#ondo"><span>ONDO — $1.50–$3</span><span>↳</span></a>
-          </div>
-        </div>
-
-        <!-- Earn While You Wait -->
-        <div id="earn-while-wait" class="card">
-          <h3 class="text-sm font-semibold text-gray-100 uppercase tracking-wide mb-2">
-            Earn While You Wait
-          </h3>
-          <p class="text-sm text-gray-200 mb-3">
-            My play isn’t just “buy and pray.” While I wait on these 2026 targets, I’m earning yield on the
-            same assets through CoinDepo. No trading. No selling. Just holding &amp; compounding.
-          </p>
-
-          <ul class="text-sm text-gray-200 space-y-1 mb-3">
-            <li>• <span class="font-semibold text-emerald-300">Stables:</span> up to ~27% APR</li>
-            <li>• <span class="font-semibold text-emerald-300">Crypto:</span> up to ~21% APR</li>
-            <li>• <span class="font-semibold text-emerald-300">Fiat/Stable (compounding):</span> up to ~24% APR</li>
-          </ul>
-
-          <p class="text-xs text-gray-400 mb-3">
-            Rates and terms change — always check the official CoinDepo site. This is not a guarantee and not 
-            investment advice. It’s simply how I position my own bags.
-          </p>
-
-          <div class="space-y-2 text-xs">
-            <p>
-              🔑 <span class="font-semibold text-emerald-300">Referral Code:</span> <span class="font-mono">A-32wqw35W</span>
-            </p>
-            <p class="break-words">
-              ➡️ <a
-                href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W"
-                target="_blank"
-                rel="noopener nofollow noreferrer"
-                class="text-emerald-300 underline"
-              >
-                https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W
-              </a>
-            </p>
-            <p>
-              🌐 More passive income tools &amp; bonus links:
-              <a href="https://degenstein.xyz" class="text-cyan-300 underline">degenstein.xyz</a>
-            </p>
-          </div>
-        </div>
-
-        <!-- Risk Management -->
-        <div class="card">
-          <h3 class="text-sm font-semibold text-gray-100 uppercase tracking-wide mb-2">
-            Risk Management Snapshot
-          </h3>
-          <p class="text-xs text-gray-400 mb-3">
-            These ranges are bullish but not insane. Still — crypto is volatile. I treat it accordingly.
-          </p>
-          <ul class="text-xs text-gray-300 space-y-1 mb-3">
-            <li>• No leverage on this basket.</li>
-            <li>• Position sizing based on worst case, not best case.</li>
-            <li>• Mixed exposure: majors (ETH, SOL, XRP) + infra (LINK, AVAX, NEAR) + RWA (ONDO).</li>
-            <li>• I assume we can have 50%+ drawdowns even in a bull cycle.</li>
-          </ul>
-          <p class="text-[11px] text-gray-500">
-            TL;DR: I respect the downside while betting on upside.
-          </p>
-        </div>
-      </aside>
     </div>
   </section>
 
@@ -680,5 +631,6 @@
 
 </body>
 </html>
+
 
 
