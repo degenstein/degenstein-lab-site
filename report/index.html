@@ -82,8 +82,33 @@
       max-width: 560px;
     }
 
+    .home-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 12px;
+      margin-bottom: 18px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.8);
+      color: var(--text-muted);
+      font-size: 0.74rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.15s ease-out;
+    }
+
+    .home-pill:hover {
+      background: var(--accent-soft);
+      border-color: var(--accent);
+      color: var(--accent);
+      text-decoration: none;
+    }
+
     .intro {
-      margin-top: 22px;
+      margin-top: 10px;
       max-width: 620px;
       font-size: 0.98rem;
       color: var(--text-muted);
@@ -92,6 +117,47 @@
 
     .intro strong {
       color: var(--text-main);
+    }
+
+    .share-row {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .share-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+    }
+
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.15s ease-out;
+    }
+
+    .share-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      text-decoration: none;
+      background: var(--accent-soft);
+    }
+
+    .share-btn span {
+      font-size: 0.95rem;
     }
 
     .divider {
@@ -278,7 +344,6 @@
     .sub-link a {
       color: var(--accent);
     }
-
   </style>
 </head>
 <body>
@@ -293,6 +358,10 @@
       <h1>The Degenstein Report</h1>
       <p class="subtitle">Token breakdowns, yield angles &amp; real catalysts — no hopium.</p>
 
+      <a href="https://degenstein.xyz/" class="home-pill">
+        ← Back to Main Page
+      </a>
+
       <div class="intro">
         <p>
           Welcome to <strong>The Degenstein Report</strong> — a research hub where I occasionally
@@ -303,6 +372,23 @@
           No hype. No hopium. Just where I see value, how I position, and how I leverage passive
           income to earn while I hold.
         </p>
+
+        <div class="share-row">
+          <span class="share-label">Share this hub</span>
+
+          <a
+            class="share-btn"
+            href="https://twitter.com/intent/tweet?text=New%20Degenstein%20Report%20hub%20is%20live%20%E2%80%94%20token%20breakdowns%2C%20yield%20angles%20%26%20real%20catalysts%20%E2%80%94%20no%20hopium.&url=https%3A%2F%2Fdegenstein.xyz%2Freport%2F"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>✕</span> Share on X
+          </a>
+
+          <button class="share-btn" type="button" onclick="copyReportLink()">
+            <span>⧉</span> Copy link
+          </button>
+        </div>
       </div>
 
       <div class="divider"></div>
@@ -366,6 +452,32 @@
 
     </div>
   </div>
+
+  <script>
+    function copyReportLink() {
+      const url = "https://degenstein.xyz/report/";
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(function () {
+          alert("Link copied: " + url);
+        }, function () {
+          alert("Could not copy link, please copy manually: " + url);
+        });
+      } else {
+        // Fallback
+        const temp = document.createElement("input");
+        temp.value = url;
+        document.body.appendChild(temp);
+        temp.select();
+        try {
+          document.execCommand("copy");
+          alert("Link copied: " + url);
+        } catch (e) {
+          alert("Could not copy link, please copy manually: " + url);
+        }
+        document.body.removeChild(temp);
+      }
+    }
+  </script>
 </body>
 </html>
 
