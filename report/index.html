@@ -5,6 +5,26 @@
   <title>The Degenstein Report | Degenstein Bonus Hub</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- 🧠 SEO -->
+  <meta name="description" content="Token breakdowns, yield angles & real catalysts — no hopium. The Degenstein Report is where I break down real narratives and how I earn while I hold." />
+  <link rel="canonical" href="https://degenstein.xyz/report/" />
+
+  <!-- 🌐 OG TAGS for X/Twitter & Link Sharing -->
+  <meta property="og:title" content="The Degenstein Report — Token breakdowns, yield angles & real catalysts — no hopium" />
+  <meta property="og:description" content="Crypto token analysis without hopium — narratives, catalysts, yield strategy & earning while holding." />
+  <meta property="og:image" content="https://degenstein.xyz/assets/degenstein-report-banner-1200x630.png" />
+  <meta property="og:url" content="https://degenstein.xyz/report/" />
+  <meta property="og:type" content="website" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Degenstein Report" />
+  <meta name="twitter:description" content="Token breakdowns, yield angles & real catalysts — no hopium." />
+  <meta name="twitter:image" content="https://degenstein.xyz/assets/degenstein-report-banner-1200x630.png" />
+  <meta name="twitter:site" content="@degensteindgn" />
+
+  <!-- COLORS / BRAND -->
+  <meta name="theme-color" content="#22c55e" />
+
   <style>
     :root {
       --bg: #020617;
@@ -20,464 +40,120 @@
       --radius-lg: 18px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-        "Segoe UI", sans-serif;
+      font-family: system-ui, -apple-system, Segoe UI, sans-serif;
       background:
         radial-gradient(circle at top left, rgba(34, 197, 94, 0.16), transparent 55%),
         radial-gradient(circle at bottom right, rgba(15, 118, 110, 0.18), transparent 55%),
         var(--bg);
       color: var(--text-main);
-      -webkit-font-smoothing: antialiased;
     }
 
-    .page {
-      min-height: 100vh;
-      padding: 40px 16px 64px;
-      display: flex;
-      justify-content: center;
-    }
+    .page { min-height: 100vh; padding: 40px 16px 64px; display: flex; justify-content: center; }
+    .container { max-width: 980px; width: 100%; }
 
-    .container {
-      width: 100%;
-      max-width: 980px;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.85);
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      color: var(--text-muted);
-      font-size: 11px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
-
-    .badge-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: var(--accent);
-      box-shadow: 0 0 10px rgba(34, 197, 94, 0.9);
-    }
-
-    h1 {
-      font-size: clamp(2.3rem, 4vw, 3.2rem);
-      margin: 14px 0 6px;
-      letter-spacing: 0.02em;
-    }
-
-    .subtitle {
-      font-size: 1rem;
-      color: var(--text-muted);
-      max-width: 560px;
-    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
     .home-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: 12px;
-      margin-bottom: 18px;
-      padding: 7px 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      background: rgba(15, 23, 42, 0.8);
-      color: var(--text-muted);
-      font-size: 0.74rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: all 0.15s ease-out;
+      display: inline-flex; gap: 6px; margin: 14px 0 22px; padding: 7px 14px;
+      border-radius: 999px; font-size: 0.74rem; letter-spacing: 0.14em;
+      background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(148, 163, 184, 0.4);
+      color: var(--text-muted); text-transform: uppercase; transition: 0.15s;
     }
+    .home-pill:hover { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
 
-    .home-pill:hover {
-      background: var(--accent-soft);
-      border-color: var(--accent);
-      color: var(--accent);
-      text-decoration: none;
-    }
+    .badge { display: inline-flex; gap: 8px; padding: 4px 10px; border-radius: 999px; background: rgba(15,23,42,.85);
+      border:1px solid rgba(148,163,184,.35); font-size:11px; letter-spacing:.16em; text-transform:uppercase; margin-bottom:10px; }
+    .badge-dot { width: 6px; height: 6px; border-radius: 999px; background: var(--accent); box-shadow: 0 0 10px rgba(34,197,94,.9); }
 
-    .intro {
-      margin-top: 10px;
-      max-width: 620px;
-      font-size: 0.98rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-    }
+    h1{font-size:clamp(2.3rem,4vw,3.2rem);margin:14px 0 6px;}
+    .subtitle{font-size:1rem;color:var(--text-muted);margin-bottom:6px;}
 
-    .intro strong {
-      color: var(--text-main);
-    }
+    .divider{border-bottom:1px solid rgba(148,163,184,.3);margin:32px 0 20px;}
 
-    .share-row {
-      margin-top: 18px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-    }
+    /* CARDS */
+    .grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:18px;}
+    @media(max-width:768px){.grid{grid-template-columns:1fr;}}
 
-    .share-label {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-muted);
-    }
+    .card{padding:18px;border-radius:var(--radius-lg);background:radial-gradient(circle at top left,rgba(34,197,94,.14),transparent 70%),var(--card);border:1px solid rgba(148,163,184,.32);box-shadow:var(--shadow-soft);}
+    .card-muted{background:var(--card-alt);border-style:dashed;border-color:rgba(148,163,184,.4);box-shadow:none;}
 
-    .share-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 7px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      background: rgba(15, 23, 42, 0.9);
-      color: var(--text-muted);
-      font-size: 0.8rem;
-      text-decoration: none;
-      cursor: pointer;
-      transition: all 0.15s ease-out;
-    }
+    .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 10px;}
+    .tag{padding:3px 8px;border-radius:999px;font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;background:rgba(15,23,42,.8);border:1px solid rgba(148,163,184,.4);}
+    .tag-primary{border-color:rgba(34,197,94,.7);background:rgba(34,197,94,.06);color:var(--accent);}
 
-    .share-btn:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      text-decoration: none;
-      background: var(--accent-soft);
-    }
-
-    .share-btn span {
-      font-size: 0.95rem;
-    }
-
-    .divider {
-      margin: 28px 0 20px;
-      border-bottom: 1px solid rgba(148, 163, 184, 0.3);
-    }
-
-    h2.section-title {
-      font-size: 1.25rem;
-      margin-bottom: 14px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-      gap: 18px;
-    }
-
-    @media (max-width: 768px) {
-      .page {
-        padding-top: 28px;
-      }
-
-      .grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
-
-    .card {
-      background: radial-gradient(circle at top left, rgba(34, 197, 94, 0.14), transparent 70%),
-                  var(--card);
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(148, 163, 184, 0.32);
-      padding: 18px 18px 20px;
-      box-shadow: var(--shadow-soft);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top right, rgba(34, 197, 94, 0.18), transparent 60%);
-      opacity: 0.5;
-      pointer-events: none;
-    }
-
-    .card-inner {
-      position: relative;
-      z-index: 1;
-    }
-
-    .card h3 {
-      font-size: 1.05rem;
-      margin: 0 0 6px;
-    }
-
-    .card p {
-      margin: 0;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    .tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 8px 0 10px;
-    }
-
-    .tag {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      padding: 3px 8px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      color: var(--text-muted);
-      background: rgba(15, 23, 42, 0.8);
-    }
-
-    .tag-primary {
-      color: var(--accent);
-      border-color: rgba(34, 197, 94, 0.7);
-      background: rgba(34, 197, 94, 0.06);
-    }
-
-    .card-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.88rem;
-      margin-top: 10px;
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .card-link span {
-      font-size: 1.05rem;
-      line-height: 1;
-    }
-
-    .card-muted {
-      background: var(--card-alt);
-      border-style: dashed;
-      border-color: rgba(148, 163, 184, 0.4);
-      box-shadow: none;
-    }
-
-    .cta {
-      margin-top: 26px;
-      padding: 16px 18px 18px;
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(34, 197, 94, 0.4);
-      background:
-        linear-gradient(135deg, rgba(34, 197, 94, 0.16), transparent 55%),
-        rgba(15, 23, 42, 0.95);
-      text-align: left;
-    }
-
-    .cta-title {
-      font-size: 1.02rem;
-      margin-bottom: 4px;
-    }
-
-    .cta p {
-      margin: 0;
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    .cta-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 12px;
-      padding: 9px 18px;
-      border-radius: 999px;
-      border: none;
-      background: var(--accent);
-      color: #020617;
-      font-size: 0.9rem;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      box-shadow: 0 10px 30px rgba(34, 197, 94, 0.6);
-      transition: transform 0.08s ease-out, box-shadow 0.08s ease-out,
-        background 0.12s ease-out;
-    }
-
-    .cta-button:hover {
-      transform: translateY(-1px);
-      background: #4ade80;
-      box-shadow: 0 14px 40px rgba(34, 197, 94, 0.8);
-    }
-
-    .cta small {
-      display: block;
-      margin-top: 8px;
-      font-size: 0.7rem;
-      color: var(--text-muted);
-      opacity: 0.7;
-    }
-
-    a {
-      color: var(--accent);
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .sub-link {
-      font-size: 0.82rem;
-      margin-top: 4px;
-      display: inline-block;
-      color: var(--text-muted);
-    }
-
-    .sub-link a {
-      color: var(--accent);
-    }
+    .card-link{margin-top:10px;display:inline-flex;gap:6px;font-weight:500;}
   </style>
 </head>
+
 <body>
+
   <div class="page">
     <div class="container">
 
-      <div class="badge">
-        <span class="badge-dot"></span>
-        The Degenstein Report
+      <!-- 🎯 NEW BANNER -->
+      <div style="margin-bottom:22px;">
+        <img
+          src="/assets/degenstein-report-banner-1200x630.png"
+          alt="The Degenstein Report — Token breakdowns, yield angles & real catalysts — no hopium"
+          class="w-full h-auto rounded-2xl"
+          loading="lazy"
+        />
       </div>
 
+      <div class="badge"><span class="badge-dot"></span> The Degenstein Report</div>
       <h1>The Degenstein Report</h1>
-      <p class="subtitle">Token breakdowns, yield angles &amp; real catalysts — no hopium.</p>
+      <p class="subtitle">Token breakdowns, yield angles & real catalysts — no hopium.</p>
 
-      <a href="https://degenstein.xyz/" class="home-pill">
-        ← Back to Main Page
-      </a>
+      <a href="https://degenstein.xyz/" class="home-pill">← Back to Main Page</a>
 
-      <div class="intro">
-        <p>
-          Welcome to <strong>The Degenstein Report</strong> — a research hub where I occasionally
-          break down crypto tokens with real narratives, actual catalysts, and a focus on yield
-          strategies for 2026 and beyond.
-        </p>
-        <p style="margin-top: 10px;">
-          No hype. No hopium. Just where I see value, how I position, and how I leverage passive
-          income to earn while I hold.
-        </p>
-
-        <div class="share-row">
-          <span class="share-label">Share this hub</span>
-
-          <a
-            class="share-btn"
-            href="https://twitter.com/intent/tweet?text=New%20Degenstein%20Report%20hub%20is%20live%20%E2%80%94%20token%20breakdowns%2C%20yield%20angles%20%26%20real%20catalysts%20%E2%80%94%20no%20hopium.&url=https%3A%2F%2Fdegenstein.xyz%2Freport%2F"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span>✕</span> Share on X
-          </a>
-
-          <button class="share-btn" type="button" onclick="copyReportLink()">
-            <span>⧉</span> Copy link
-          </button>
-        </div>
-      </div>
+      <!-- INTRO -->
+      <p style="max-width:620px;color:var(--text-muted);line-height:1.7;">
+        Welcome to <strong>The Degenstein Report</strong> — a research hub where I break down crypto tokens
+        with real narratives, catalysts, and yield strategies for 2026 and beyond.
+        No hype. No hopium. Just where I see value and how I earn while I hold.
+      </p>
 
       <div class="divider"></div>
 
-      <h2 class="section-title">Latest Reports</h2>
+      <h2 style="font-size:1.25rem;margin-bottom:14px;">Latest Reports</h2>
 
       <div class="grid">
-        <!-- XRP report card -->
-        <a href="/report/xrp/" style="text-decoration: none;">
+
+        <!-- XRP -->
+        <a href="/report/xrp/" style="text-decoration:none;">
           <article class="card">
-            <div class="card-inner">
-              <div class="tag-row">
-                <span class="tag tag-primary">$XRP</span>
-                <span class="tag">Infrastructure</span>
-                <span class="tag">2026 Watch</span>
-              </div>
-              <h3>$XRP — 2026 ETF Era &amp; Global Payment Rails</h3>
-              <p>
-                2026 focus: institutions, payment rails expansion, and how I play the thesis by
-                earning yield while I wait.
-              </p>
-              <div class="card-link">
-                <span>↗</span>
-                Read full XRP report
-              </div>
+            <div class="tag-row">
+              <span class="tag tag-primary">$XRP</span><span class="tag">Infrastructure</span><span class="tag">2026 Watch</span>
             </div>
+            <h3 style="margin:0 0 6px;">$XRP — 2026 ETF Era & Global Payment Rails</h3>
+            <p style="margin:0 0 6px;">Why XRP is a macro infrastructure bet + how I earn while I wait.</p>
+            <span class="card-link">↗ Read full XRP report</span>
           </article>
         </a>
 
-        <!-- Placeholder / Coming soon -->
+        <!-- COMING SOON -->
         <article class="card card-muted">
-          <div class="card-inner">
-            <div class="tag-row">
-              <span class="tag">Coming Soon</span>
-            </div>
-            <h3>Next Report: To Be Announced</h3>
-            <p>
-              I publish when there’s something real to say — not on a forced schedule.
-              Check back for future deep dives on other tokens I’m watching.
-            </p>
-          </div>
+          <div class="tag-row"><span class="tag">Coming Soon</span></div>
+          <h3>Next Report: To Be Announced</h3>
+          <p>I publish when there’s something real to say — not on a forced schedule.</p>
         </article>
       </div>
 
-      <!-- CTA block -->
-      <div class="cta">
-        <div class="cta-title">Earn While You Hold</div>
-        <p>
-          While I wait for catalysts to play out, I prefer my bags to work for me.
-          I earn up to <strong>24% APR</strong> on crypto I already own — without
-          trading or selling — using CoinDepo.
-        </p>
-        <a
-          class="cta-button"
-          href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W"
-        >
+      <!-- CTA -->
+      <div style="margin-top:26px;padding:18px;border:1px solid rgba(34,197,94,.4);border-radius:18px;background:rgba(15,23,42,.95);">
+        <div style="font-size:1.02rem;margin-bottom:4px;">Earn While You Hold</div>
+        <p style="margin:0 0 10px;color:var(--text-muted);">I earn up to <strong>24% APR</strong> on crypto I already own — no trading, no selling.</p>
+        <a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W" class="cta-button">
           Start here → Referral Code: A-32wqw35W
         </a>
-        <small>*Terms apply. Not financial advice. DYOR.</small>
       </div>
 
     </div>
   </div>
 
-  <script>
-    function copyReportLink() {
-      const url = "https://degenstein.xyz/report/";
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(url).then(function () {
-          alert("Link copied: " + url);
-        }, function () {
-          alert("Could not copy link, please copy manually: " + url);
-        });
-      } else {
-        // Fallback
-        const temp = document.createElement("input");
-        temp.value = url;
-        document.body.appendChild(temp);
-        temp.select();
-        try {
-          document.execCommand("copy");
-          alert("Link copied: " + url);
-        } catch (e) {
-          alert("Could not copy link, please copy manually: " + url);
-        }
-        document.body.removeChild(temp);
-      }
-    }
-  </script>
 </body>
 </html>
 
