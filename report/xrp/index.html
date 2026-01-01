@@ -64,11 +64,35 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      margin-bottom: 16px;
+      margin-bottom: 8px;
     }
 
     .back-link span {
       font-size: 1.1rem;
+    }
+
+    .home-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 20px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.8);
+      color: var(--text-muted);
+      font-size: 0.74rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.15s ease-out;
+    }
+
+    .home-pill:hover {
+      background: var(--accent-soft);
+      border-color: var(--accent);
+      color: var(--accent);
+      text-decoration: none;
     }
 
     .badge-row {
@@ -122,6 +146,48 @@
       font-size: 0.95rem;
       color: var(--text-muted);
       max-width: 520px;
+    }
+
+    .share-row {
+      margin-top: 14px;
+      margin-bottom: 6px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .share-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+    }
+
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.15s ease-out;
+    }
+
+    .share-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      text-decoration: none;
+      background: var(--accent-soft);
+    }
+
+    .share-btn span {
+      font-size: 0.95rem;
     }
 
     .snapshot {
@@ -278,7 +344,6 @@
       color: var(--text-muted);
       line-height: 1.6;
     }
-
   </style>
 </head>
 <body>
@@ -287,6 +352,10 @@
 
       <a class="back-link" href="/report/">
         <span>←</span> Back to all reports
+      </a>
+
+      <a href="https://degenstein.xyz/" class="home-pill">
+        ← Back to Main Page
       </a>
 
       <div class="badge-row">
@@ -301,6 +370,23 @@
       <p class="subtitle">
         Token breakdowns, yield angles &amp; real catalysts — no hopium.
       </p>
+
+      <div class="share-row">
+        <span class="share-label">Share this report</span>
+
+        <a
+          class="share-btn"
+          href="https://twitter.com/intent/tweet?text=New%20Degenstein%20Report%3A%20XRP%20%E2%80%94%202026%20ETF%20Era%20%26%20Global%20Payment%20Rails&url=https%3A%2F%2Fdegenstein.xyz%2Freport%2Fxrp%2F"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>✕</span> Share on X
+        </a>
+
+        <button class="share-btn" type="button" onclick="copyXrpLink()">
+          <span>⧉</span> Copy link
+        </button>
+      </div>
 
       <!-- Snapshot -->
       <section class="snapshot">
@@ -466,7 +552,31 @@
 
     </div>
   </div>
+
+  <script>
+    function copyXrpLink() {
+      const url = "https://degenstein.xyz/report/xrp/";
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(function () {
+          alert("Link copied: " + url);
+        }, function () {
+          alert("Could not copy link, please copy manually: " + url);
+        });
+      } else {
+        const temp = document.createElement("input");
+        temp.value = url;
+        document.body.appendChild(temp);
+        temp.select();
+        try {
+          document.execCommand("copy");
+          alert("Link copied: " + url);
+        } catch (e) {
+          alert("Could not copy link, please copy manually: " + url);
+        }
+        document.body.removeChild(temp);
+      }
+    }
+  </script>
 </body>
 </html>
-
 
