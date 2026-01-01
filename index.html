@@ -83,7 +83,7 @@
       background: rgba(255,255,255,0.05);
     }
 
-    /* 🧮 Calculator pill */
+    /* Pills */
     .pill {
       display:inline-flex;
       align-items:center;
@@ -96,6 +96,17 @@
       color:#6ee7b7;
       font-weight:600;
       white-space:nowrap;
+    }
+
+    .pill-secondary {
+      border-color: rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.6);
+      color:#e5e7eb;
+    }
+
+    .pill-secondary:hover {
+      border-color: rgba(34, 197, 94, 0.8);
+      color:#6ee7b7;
     }
 
     .grid-auto { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; }
@@ -134,6 +145,11 @@
       <!-- NEW: Degenstein Weekly link -->
       <a href="/degenstein-weekly/" class="inline-flex items-center justify-center px-4 py-2 rounded-2xl border border-white/10 backdrop-blur text-sm">
         📰 Degenstein Weekly
+      </a>
+
+      <!-- NEW: Degenstein Report nav -->
+      <a href="/report/" class="inline-flex items-center justify-center px-4 py-2 rounded-2xl border border-white/10 backdrop-blur text-sm">
+        📊 Degenstein Report
       </a>
 
       <!-- NEW: 2026 Magnificent Seven link -->
@@ -194,10 +210,13 @@
             </a>
           </div>
 
-          <!-- 🧮 Hero calculator pill -->
+          <!-- 🧮 Hero pills -->
           <div class="mt-3 flex flex-wrap gap-2">
             <a href="#earnings-calculator" class="pill">
               🧮 Try Earnings Calculator
+            </a>
+            <a href="/report/" class="pill pill-secondary">
+              📊 Read Token Reports
             </a>
           </div>
 
@@ -347,11 +366,56 @@
   </div>
 </section>
 
+<!-- ============ Degenstein Report HOME FEATURE ============ -->
+<section id="report-home" class="max-w-6xl mx-auto px-4 pb-10 md:pb-14">
+  <div class="card flex flex-col md:flex-row gap-6 items-center">
+    <div class="w-full md:w-1/2">
+      <div class="h-full w-full rounded-2xl border border-emerald-400/40 bg-gradient-to-br from-emerald-500/20 via-cyan-500/10 to-slate-900 flex items-center justify-center p-6">
+        <div class="space-y-2 text-center">
+          <div class="inline-flex items-center gap-2 rounded-full border border-emerald-400/60 bg-black/40 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-emerald-300">
+            <span>📊 Research Hub</span>
+          </div>
+          <p class="text-xs text-gray-300 max-w-xs mx-auto">
+            Token breakdowns, yield angles &amp; real catalysts — no hopium.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="w-full md:w-1/2 space-y-3">
+      <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">
+        The Degenstein Report — Token Deep Dives
+      </h2>
+      <p class="text-sm md:text-base text-gray-300">
+        When there’s something real to say about a token, I write a full report:
+        narrative, catalysts, and how I personally earn yield while I wait. No daily noise,
+        just occasional high-signal breakdowns.
+      </p>
+      <ul class="text-sm text-gray-300 space-y-1">
+        <li>• Snapshot of sector, narrative &amp; status</li>
+        <li>• Key 2026+ catalysts I’m watching</li>
+        <li>• “Earn while I hold” angle for each token</li>
+      </ul>
+      <p class="text-xs text-gray-400">
+        First feature: <span class="text-emerald-300 font-semibold">$XRP — 2026 ETF Era &amp; Global Payment Rails</span>.
+        More tokens will be added over time when they deserve a full write-up.
+      </p>
+      <div class="flex flex-wrap gap-3 pt-2">
+        <a href="/report/" class="btn btn-primary text-sm md:text-base">
+          📊 View All Reports
+        </a>
+        <a href="/report/xrp/" class="btn btn-outline text-xs md:text-sm">
+          💠 Read the XRP Report
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ Magnificent Seven HOME FEATURE ============ -->
 <section id="magnificent-seven-home" class="max-w-6xl mx-auto px-4 pb-10 md:pb-14">
   <div class="card flex flex-col md:flex-row gap-6 items-center">
     <div class="w-full md:w-1/2">
-           <img
+      <img
         src="assets/magnificentseven.png"
         alt="My 2026 Magnificent Seven Crypto Targets"
         class="w-full h-auto rounded-2xl border border-emerald-400/40"
