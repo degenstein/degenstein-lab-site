@@ -25,22 +25,65 @@
   <meta name="theme-color" content="#06b6d4" />
 
   <style>
+    :root{
+      --bg:#020617;
+      --card:#0b1220;
+      --muted:#9ca3af;
+      --text:#f9fafb;
+      --accent:#22c55e;
+      --accent2:#06b6d4;
+      --border:rgba(148,163,184,.28);
+      --shadow:0 18px 55px rgba(0,0,0,.65);
+      --radius:18px;
+    }
     body{
       margin:0;
       font-family:system-ui,-apple-system,Segoe UI,sans-serif;
-      background:#020617;
-      color:#f9fafb;
+      background:
+        radial-gradient(circle at top left,rgba(34,197,94,.14),transparent 55%),
+        radial-gradient(circle at bottom right,rgba(6,182,212,.14),transparent 55%),
+        var(--bg);
+      color:var(--text);
     }
     .page{min-height:100vh;padding:40px 16px 64px;display:flex;justify-content:center;}
-    .container{max-width:860px;width:100%;}
-    a{color:#22c55e;text-decoration:none;}
+    .container{max-width:880px;width:100%;}
+    a{color:var(--accent);text-decoration:none;}
     a:hover{text-decoration:underline;}
 
-    h1{font-size:clamp(2.1rem,4vw,2.8rem);margin-bottom:6px;}
-    h2{margin-top:36px;font-size:1.4rem;}
-    p{color:#9ca3af;line-height:1.7;font-size:1rem;}
+    h1{font-size:clamp(2.1rem,4vw,2.9rem);margin:10px 0 6px;}
+    h2{margin-top:34px;font-size:1.35rem;}
+    p{color:var(--muted);line-height:1.7;font-size:1rem;}
 
+    /* pill buttons */
+    .pill-row{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin:12px 0 16px;
+    }
     .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:7px 14px;
+      border-radius:999px;
+      font-size:.74rem;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      border:1px solid rgba(148,163,184,.38);
+      background:rgba(15,23,42,.82);
+      color:var(--muted);
+      transition:.15s;
+    }
+    .pill:hover{
+      border-color:rgba(6,182,212,.65);
+      background:rgba(6,182,212,.10);
+      color:#67e8f9;
+      text-decoration:none;
+    }
+
+    .tag-pill{
       display:inline-flex;
       gap:8px;
       padding:6px 14px;
@@ -48,23 +91,22 @@
       font-size:.72rem;
       letter-spacing:.14em;
       text-transform:uppercase;
-      border:1px solid rgba(148,163,184,.35);
-      background:rgba(15,23,42,.85);
-      color:#9ca3af;
-      margin-bottom:14px;
+      border:1px solid rgba(34,197,94,.55);
+      background:rgba(34,197,94,.10);
+      color:#6ee7b7;
+      margin-bottom:10px;
+      font-weight:850;
     }
 
-    .divider{
-      border-bottom:1px solid rgba(148,163,184,.25);
-      margin:28px 0;
-    }
+    .divider{border-bottom:1px solid rgba(148,163,184,.22);margin:26px 0;}
 
     .box{
-      margin-top:26px;
+      margin-top:22px;
       padding:18px;
-      border-radius:16px;
+      border-radius:var(--radius);
       border:1px solid rgba(6,182,212,.35);
       background:rgba(15,23,42,.92);
+      box-shadow:var(--shadow);
     }
 
     .cta{
@@ -73,9 +115,53 @@
       margin-top:12px;
       padding:9px 18px;
       border-radius:999px;
-      font-weight:800;
-      background:linear-gradient(135deg,#22c55e,#06b6d4);
+      font-weight:900;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
       color:#020617;
+      box-shadow:0 14px 40px rgba(6,182,212,.18);
+      transition:.12s;
+    }
+    .cta:hover{
+      transform:translateY(-1px);
+      text-decoration:none;
+      box-shadow:0 18px 55px rgba(6,182,212,.25);
+    }
+
+    /* share row */
+    .share-row{
+      margin: 10px 0 6px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+    }
+    .share-label{
+      font-size:.78rem;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:var(--muted);
+      opacity:.9;
+    }
+    .share-btn{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:7px 12px;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,.4);
+      background:rgba(15,23,42,.86);
+      color:var(--muted);
+      font-size:.82rem;
+      font-weight:750;
+      cursor:pointer;
+      transition:.15s;
+      text-decoration:none;
+    }
+    .share-btn:hover{
+      border-color: rgba(6,182,212,.65);
+      color:#67e8f9;
+      background: rgba(6,182,212,.10);
+      text-decoration:none;
     }
   </style>
 </head>
@@ -84,121 +170,127 @@
 <div class="page">
 <div class="container">
 
-  <div class="pill">Platform Report · Infrastructure</div>
+  <div class="tag-pill">Platform Report · Infrastructure</div>
 
   <h1>BTCC Exchange — Futures, Liquidity & Execution</h1>
-
   <p>
     This report is part of <strong>The Degenstein Report</strong>, where I analyze
-    not just crypto assets, but the platforms and infrastructure that serious
-    traders actually use.
+    crypto assets <em>and</em> the platforms and infrastructure that serious traders use.
   </p>
+
+  <!-- pill nav -->
+  <div class="pill-row">
+    <a class="pill" href="https://degenstein.xyz/">← Back to Main</a>
+    <a class="pill" href="https://degenstein.xyz/report/">← Back to Reports</a>
+  </div>
+
+  <!-- share row -->
+  <div class="share-row">
+    <span class="share-label">Share</span>
+
+    <a class="share-btn"
+       href="https://twitter.com/intent/tweet?text=BTCC%20Exchange%20%E2%80%94%20Futures%2C%20Liquidity%20%26%20Execution%20(%E2%80%9Cno%20hopium%E2%80%9D)%20via%20The%20Degenstein%20Report&url=https%3A%2F%2Fdegenstein.xyz%2Freport%2Fbtcc%2F"
+       target="_blank" rel="noopener noreferrer">
+      ✕ Share on X
+    </a>
+
+    <button class="share-btn" type="button" onclick="copyBtccLink()">
+      ⧉ Copy link
+    </button>
+  </div>
 
   <div class="divider"></div>
 
   <h2>Overview</h2>
   <p>
-    <strong>:contentReference[oaicite:0]{index=0}</strong> is one of the
-    longest-running cryptocurrency exchanges in the industry, originally launched
-    in 2011. While many platforms have come and gone across multiple market cycles,
-    BTCC has survived — and adapted — by focusing primarily on crypto derivatives.
-  </p>
-
-  <p>
-    Rather than positioning itself as a beginner-friendly spot exchange, BTCC has
-    consistently targeted active traders who care about execution quality,
-    leverage access, and liquidity.
+    <strong>BTCC</strong> is one of the longest-running crypto exchanges in the industry,
+    originally launched in 2011. Across multiple market cycles, BTCC has stayed focused
+    on derivatives — especially futures and perpetual contracts — rather than trying to be
+    everything for everyone.
   </p>
 
   <h2>Core Trading Focus</h2>
   <p>
-    BTCC is best known for its futures and perpetual contracts across major crypto
-    assets. Traders can take long or short positions, use flexible margin options,
-    and access leverage levels that far exceed what most spot-focused exchanges
-    offer.
+    BTCC is built for active traders who care about execution, liquidity, and risk tools.
+    The platform offers perpetual futures across major crypto assets and supports a range
+    of leverage settings depending on the contract and market conditions.
   </p>
 
   <p>
-    Depending on the market and contract, leverage can extend as high as
-    <strong>500×</strong>. This is not designed for casual users — it’s a tool for
-    experienced traders who understand position sizing and risk management.
+    Some contracts may offer leverage up to <strong>500×</strong>. This isn’t designed for casual users —
+    it’s for experienced traders who understand position sizing and liquidation risk.
   </p>
 
   <h2>Liquidity & Execution</h2>
   <p>
-    One of BTCC’s key strengths is execution reliability. The platform prioritizes
-    low-latency order matching, deep liquidity on major pairs, and consistent uptime
-    during periods of elevated volatility.
-  </p>
-
-  <p>
-    For traders who scalp, hedge, or actively manage positions, execution quality
-    matters far more than flashy features — and this is where BTCC earns its
-    reputation.
+    Execution quality is the difference between a strategy that works on paper and one that works
+    in real markets. BTCC emphasizes low-latency order matching and reliable performance during
+    volatility — which is exactly when traders need the platform to hold up.
   </p>
 
   <h2>Security & Longevity</h2>
   <p>
-    Longevity is an underrated signal in crypto. BTCC has operated through multiple
-    bull and bear markets, regulatory shifts, and industry failures. That alone
-    places it in a much smaller category of exchanges still standing.
-  </p>
-
-  <p>
-    The platform operates with industry-standard security practices and maintains
-    continuous monitoring — an expectation, not a luxury, at this level.
+    Longevity matters in crypto. BTCC has operated through multiple bull and bear markets, which puts it
+    in a smaller category of platforms that have endured long-term.
   </p>
 
   <h2>Who BTCC Is For</h2>
-  <p>
-    BTCC is best suited for:
-  </p>
-  <ul style="color:#9ca3af;line-height:1.7;">
+  <ul style="color:var(--muted);line-height:1.7;">
     <li>Active and professional traders</li>
     <li>Futures and derivatives users</li>
     <li>Traders who value execution and liquidity</li>
-    <li>Users comfortable with leverage and risk management</li>
+    <li>Users comfortable managing leverage risk</li>
   </ul>
-
-  <p>
-    It is <em>not</em> designed as a passive yield platform or a beginner-first
-    onboarding experience.
-  </p>
-
-  <h2>How It Fits My Strategy</h2>
-  <p>
-    I separate crypto into layers: assets, yield, and execution. BTCC sits firmly in
-    the execution layer — the place where trading ideas actually get deployed.
-  </p>
-
-  <p>
-    When I evaluate platforms, longevity and reliability matter more than marketing.
-    BTCC earns its place by staying operational, liquid, and focused on what traders
-    actually need.
-  </p>
 
   <div class="box">
     <strong>Accessing the Platform</strong>
-    <p>
-      For readers who want to explore BTCC directly, the platform provides
-      referral-based access that highlights current onboarding incentives during
-      account creation.
+    <p style="margin-top:8px;">
+      BTCC’s onboarding page may display welcome incentives (for example,
+      <strong>“up to 30,000 USDT in welcome rewards”</strong>) during account creation.
+      Availability and requirements can change, so always review the current terms on the signup flow.
     </p>
 
-    <a href="https://partner.btcc.com/us/c/HC6O49" class="cta" rel="noopener">
+    <a href="https://partner.btcc.com/us/c/HC6O49" class="cta" target="_blank" rel="noopener noreferrer">
       Explore BTCC →
     </a>
   </div>
 
   <div class="divider"></div>
 
-  <p style="font-size:.9rem;">
+  <p style="font-size:.9rem;color:var(--muted);">
     This report is informational only and reflects my personal research framework.
     It is not financial advice.
   </p>
 
 </div>
 </div>
+
+<script>
+  function copyBtccLink() {
+    const url = "https://degenstein.xyz/report/btcc/";
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(function () {
+        alert("Link copied: " + url);
+      }, function () {
+        alert("Could not copy link, please copy manually: " + url);
+      });
+    } else {
+      const temp = document.createElement("input");
+      temp.value = url;
+      document.body.appendChild(temp);
+      temp.select();
+      try {
+        document.execCommand("copy");
+        alert("Link copied: " + url);
+      } catch (e) {
+        alert("Could not copy link, please copy manually: " + url);
+      }
+      document.body.removeChild(temp);
+    }
+  }
+</script>
+
 </body>
 </html>
+
 
