@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -92,7 +92,7 @@
     h1{font-size:clamp(2.3rem,4vw,3.2rem);margin:12px 0 6px;}
     .subtitle{font-size:1rem;color:var(--text-muted);}
 
-    /* NEW: share row for the REPORT INDEX page */
+    /* share row */
     .share-row{
       margin: 14px 0 10px;
       display:flex;
@@ -172,7 +172,6 @@
       box-shadow:none;
     }
 
-    /* Premium hover for clickable cards */
     a:hover .card{
       text-decoration:none;
       border-color:rgba(6,182,212,.55);
@@ -200,7 +199,7 @@
       font-weight:650;
     }
 
-    /* NEW: Featured treatment to make XRP/ONDO/LINK pop */
+    /* Featured cards (XRP/ONDO/LINK) */
     .card-featured{
       border-color: rgba(6,182,212,.35);
       box-shadow: 0 18px 55px rgba(0,0,0,.75), 0 0 40px rgba(34,197,94,.10);
@@ -231,7 +230,41 @@
       opacity:.65;
     }
 
-    /* NEW: small “Featured” pill */
+    /* NEW: Flagship card (Magnificent Seven) */
+    .card-flagship{
+      border-color: rgba(6,182,212,.45);
+      box-shadow:
+        0 22px 70px rgba(0,0,0,.78),
+        0 0 46px rgba(6,182,212,.16),
+        0 0 34px rgba(34,197,94,.10);
+    }
+    .card-flagship:before{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:
+        radial-gradient(circle at 18% 0%, rgba(6,182,212,.18), transparent 45%),
+        radial-gradient(circle at 90% 15%, rgba(34,197,94,.16), transparent 48%),
+        linear-gradient(135deg, rgba(6,182,212,.10), rgba(34,197,94,.08));
+      opacity: 1;
+    }
+    .card-flagship:after{
+      content:"";
+      position:absolute;
+      top:-2px; left:-2px; right:-2px; bottom:-2px;
+      border-radius: calc(var(--radius-lg) + 2px);
+      padding: 2px;
+      background: linear-gradient(135deg, rgba(34,197,94,.55), rgba(6,182,212,.65), rgba(34,197,94,.20));
+      -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events:none;
+      opacity:.78;
+    }
+
     .featured-pill{
       position:absolute;
       top:14px;
@@ -254,6 +287,31 @@
       width:6px;height:6px;border-radius:999px;
       background: var(--accent2);
       box-shadow: 0 0 12px rgba(6,182,212,.55);
+    }
+
+    /* NEW: Flagship pill */
+    .flagship-pill{
+      position:absolute;
+      top:14px;
+      right:14px;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:4px 10px;
+      border-radius:999px;
+      border:1px solid rgba(34,197,94,.55);
+      background: rgba(34,197,94,.10);
+      color:#6ee7b7;
+      font-size:.68rem;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      font-weight:900;
+      z-index:2;
+    }
+    .flagship-dot{
+      width:6px;height:6px;border-radius:999px;
+      background: var(--accent);
+      box-shadow: 0 0 12px rgba(34,197,94,.55);
     }
 
     .card-link{
@@ -299,7 +357,7 @@
 
   <a href="https://degenstein.xyz/" class="home-pill">← Back to Main Page</a>
 
-  <!-- NEW: X share feature for this page -->
+  <!-- X share feature -->
   <div class="share-row">
     <span class="share-label">Share this page</span>
 
@@ -325,6 +383,21 @@
 
   <div class="grid">
 
+    <!-- ✅ NEW: MAGNIFICENT SEVEN (FLAGSHIP) -->
+    <a href="/report/magnificent-seven/">
+      <article class="card card-flagship">
+        <div class="flagship-pill"><span class="flagship-dot"></span> Flagship</div>
+        <div class="tag-row">
+          <span class="tag tag-primary">2026 Outlook</span>
+          <span class="tag tag-alt">Magnificent Seven</span>
+          <span class="tag tag-alt">Targets</span>
+        </div>
+        <h3>2026 “Magnificent Seven” Crypto Targets</h3>
+        <p>My low-end to mid bull case ranges for $XRP, $AVAX, $LINK, $ETH, $SOL, $NEAR, $ONDO — plus catalysts & risks.</p>
+        <span class="card-link">↗ Read the flagship report</span>
+      </article>
+    </a>
+
     <!-- XRP -->
     <a href="/report/xrp/">
       <article class="card card-featured">
@@ -339,6 +412,11 @@
         <span class="card-link">↗ Read full XRP report</span>
       </article>
     </a>
+
+  </div>
+
+  <!-- NEW ROW -->
+  <div class="grid" style="margin-top:18px;">
 
     <!-- ONDO -->
     <a href="/report/ondo/">
@@ -355,12 +433,7 @@
       </article>
     </a>
 
-  </div>
-
-  <!-- NEW ROW -->
-  <div class="grid" style="margin-top:18px;">
-
-    <!-- LINK (NEW) -->
+    <!-- LINK -->
     <a href="/report/link/">
       <article class="card card-featured">
         <div class="featured-pill"><span class="featured-dot"></span> Featured</div>
@@ -374,12 +447,6 @@
         <span class="card-link">↗ Read full LINK report</span>
       </article>
     </a>
-
-    <article class="card card-muted">
-      <div class="tag-row"><span class="tag">Coming Soon</span></div>
-      <h3>Next Report: To Be Announced</h3>
-      <p>I publish when there’s something real to say — not on a forced schedule.</p>
-    </article>
 
   </div>
 
