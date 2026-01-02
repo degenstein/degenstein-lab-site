@@ -58,15 +58,15 @@
     .page{min-height:100vh;padding:40px 16px 64px;display:flex;justify-content:center;}
     .container{max-width:980px;width:100%;}
 
-    /* Base links stay emerald unless we override (so brand stays consistent) */
+    /* Base links stay emerald unless we override */
     a{color:var(--accent);text-decoration:none;}
     a:hover{text-decoration:underline;}
 
-    .report-banner-wrap{max-width:760px;margin:0 auto 32px;}
-    .report-banner-img{width:100%;border-radius:18px;display:block;}
+    .report-banner-wrap{max-width:760px;margin:0 auto 22px;}
+    .report-banner-img{width:100%;border-radius:18px;display:block;box-shadow:0 18px 60px rgba(0,0,0,.55);}
 
     .home-pill{
-      display:inline-flex;gap:6px;margin:14px 0 22px;padding:7px 14px;
+      display:inline-flex;gap:6px;margin:14px 0 14px;padding:7px 14px;
       border-radius:999px;font-size:.74rem;letter-spacing:.14em;
       background:rgba(15,23,42,.8);border:1px solid rgba(148,163,184,.4);
       color:var(--text-muted);text-transform:uppercase;transition:.15s;
@@ -89,19 +89,56 @@
       box-shadow:0 0 10px rgba(34,197,94,.9);
     }
 
-    h1{font-size:clamp(2.3rem,4vw,3.2rem);margin:14px 0 6px;}
+    h1{font-size:clamp(2.3rem,4vw,3.2rem);margin:12px 0 6px;}
     .subtitle{font-size:1rem;color:var(--text-muted);}
+
+    /* NEW: share row for the REPORT INDEX page */
+    .share-row{
+      margin: 14px 0 10px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+    }
+    .share-label{
+      font-size:.78rem;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:var(--text-muted);
+      opacity:.9;
+    }
+    .share-btn{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:7px 12px;
+      border-radius:999px;
+      border:1px solid rgba(148,163,184,.4);
+      background:rgba(15,23,42,.86);
+      color:var(--text-muted);
+      font-size:.82rem;
+      font-weight:650;
+      cursor:pointer;
+      transition:.15s;
+      text-decoration:none;
+    }
+    .share-btn:hover{
+      border-color: rgba(6,182,212,.65);
+      color:#67e8f9;
+      background: var(--accent2-soft);
+      text-decoration:none;
+    }
 
     .divider{
       border-bottom:1px solid rgba(148,163,184,.3);
-      margin:32px 0 20px;
+      margin:26px 0 18px;
       position:relative;
     }
     .divider:after{
       content:"";
       display:block;
       height:1px;
-      width:160px;
+      width:200px;
       margin-top:-1px;
       background:linear-gradient(90deg, rgba(6,182,212,.0), rgba(6,182,212,.75), rgba(6,182,212,.0));
     }
@@ -113,14 +150,29 @@
       padding:18px;border-radius:var(--radius-lg);
       background:
         radial-gradient(circle at top left,rgba(34,197,94,.14),transparent 70%),
-        var(--card);
+        linear-gradient(180deg, rgba(2,6,23,.70), rgba(2,6,23,.95));
       border:1px solid rgba(148,163,184,.32);
       box-shadow:var(--shadow-soft);
       transition: border-color .15s ease, box-shadow .15s ease, transform .15s ease;
+      position:relative;
+      overflow:hidden;
     }
-    .card-muted{background:var(--card-alt);border-style:dashed;box-shadow:none;}
+    .card p{color:var(--text-muted);line-height:1.55;margin:8px 0 0;}
+    .card h3{
+      margin: 8px 0 0;
+      letter-spacing:.01em;
+      font-size: 1.03rem;
+      line-height:1.25;
+      color: var(--text-main);
+    }
 
-    /* Premium cyan hover for clickable cards */
+    .card-muted{
+      background:var(--card-alt);
+      border-style:dashed;
+      box-shadow:none;
+    }
+
+    /* Premium hover for clickable cards */
     a:hover .card{
       text-decoration:none;
       border-color:rgba(6,182,212,.55);
@@ -128,7 +180,7 @@
       transform: translateY(-1px);
     }
 
-    .tag-row{display:flex;gap:8px;margin:8px 0 10px;flex-wrap:wrap;}
+    .tag-row{display:flex;gap:8px;margin:2px 0 10px;flex-wrap:wrap;}
     .tag{
       padding:3px 8px;border-radius:999px;font-size:.7rem;
       text-transform:uppercase;letter-spacing:.12em;
@@ -137,29 +189,85 @@
     }
     .tag-primary{
       border-color:rgba(34,197,94,.7);
-      background:rgba(34,197,94,.06);
+      background:rgba(34,197,94,.08);
       color:var(--accent);
+      font-weight:700;
     }
-
-    /* NEW: Cyan tag for secondary categories (Infrastructure / RWA / CCIP, etc.) */
     .tag-alt{
       border-color:rgba(6,182,212,.50);
       background:rgba(6,182,212,.08);
       color:#67e8f9;
+      font-weight:650;
     }
 
-    /* Make the “Read full report” link cyan so it pops */
+    /* NEW: Featured treatment to make XRP/ONDO/LINK pop */
+    .card-featured{
+      border-color: rgba(6,182,212,.35);
+      box-shadow: 0 18px 55px rgba(0,0,0,.75), 0 0 40px rgba(34,197,94,.10);
+    }
+    .card-featured:before{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(6,182,212,.14), transparent 42%),
+        radial-gradient(circle at 85% 0%, rgba(34,197,94,.12), transparent 45%);
+      opacity: 1;
+    }
+    .card-featured:after{
+      content:"";
+      position:absolute;
+      top:-2px; left:-2px; right:-2px; bottom:-2px;
+      border-radius: calc(var(--radius-lg) + 2px);
+      padding: 2px;
+      background: linear-gradient(135deg, rgba(6,182,212,.55), rgba(34,197,94,.45), rgba(6,182,212,.15));
+      -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events:none;
+      opacity:.65;
+    }
+
+    /* NEW: small “Featured” pill */
+    .featured-pill{
+      position:absolute;
+      top:14px;
+      right:14px;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:4px 10px;
+      border-radius:999px;
+      border:1px solid rgba(6,182,212,.45);
+      background: rgba(6,182,212,.08);
+      color:#67e8f9;
+      font-size:.68rem;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      font-weight:800;
+      z-index:2;
+    }
+    .featured-dot{
+      width:6px;height:6px;border-radius:999px;
+      background: var(--accent2);
+      box-shadow: 0 0 12px rgba(6,182,212,.55);
+    }
+
     .card-link{
-      margin-top:10px;
+      margin-top:12px;
       display:inline-flex;
       gap:6px;
-      font-weight:600;
+      font-weight:800;
+      letter-spacing:.01em;
       color: var(--accent2);
     }
 
     .cta-button{
       display:inline-flex;align-items:center;margin-top:10px;
-      padding:9px 18px;border-radius:999px;font-weight:700;
+      padding:9px 18px;border-radius:999px;font-weight:800;
       background:linear-gradient(135deg, var(--accent), var(--accent2));
       color:#020617;
       box-shadow:0 14px 40px rgba(6,182,212,.20);
@@ -191,6 +299,21 @@
 
   <a href="https://degenstein.xyz/" class="home-pill">← Back to Main Page</a>
 
+  <!-- NEW: X share feature for this page -->
+  <div class="share-row">
+    <span class="share-label">Share this page</span>
+
+    <a class="share-btn"
+       href="https://twitter.com/intent/tweet?text=The%20Degenstein%20Report%20%E2%80%94%20token%20breakdowns%2C%20yield%20angles%20%26%20real%20catalysts%20(no%20hopium).&url=https%3A%2F%2Fdegenstein.xyz%2Freport%2F"
+       target="_blank" rel="noopener noreferrer">
+      ✕ Share on X
+    </a>
+
+    <button class="share-btn" type="button" onclick="copyReportLink()">
+      ⧉ Copy link
+    </button>
+  </div>
+
   <p style="max-width:620px;color:var(--text-muted);line-height:1.7;">
     Welcome to <strong>The Degenstein Report</strong> — a research hub where I break down crypto tokens
     with real narratives, catalysts, and yield strategies for 2026 and beyond.
@@ -204,7 +327,8 @@
 
     <!-- XRP -->
     <a href="/report/xrp/">
-      <article class="card">
+      <article class="card card-featured">
+        <div class="featured-pill"><span class="featured-dot"></span> Featured</div>
         <div class="tag-row">
           <span class="tag tag-primary">$XRP</span>
           <span class="tag tag-alt">Infrastructure</span>
@@ -218,7 +342,8 @@
 
     <!-- ONDO -->
     <a href="/report/ondo/">
-      <article class="card">
+      <article class="card card-featured">
+        <div class="featured-pill"><span class="featured-dot"></span> Featured</div>
         <div class="tag-row">
           <span class="tag tag-primary">$ONDO</span>
           <span class="tag tag-alt">RWA</span>
@@ -237,7 +362,8 @@
 
     <!-- LINK (NEW) -->
     <a href="/report/link/">
-      <article class="card">
+      <article class="card card-featured">
+        <div class="featured-pill"><span class="featured-dot"></span> Featured</div>
         <div class="tag-row">
           <span class="tag tag-primary">$LINK</span>
           <span class="tag tag-alt">Oracles</span>
@@ -268,7 +394,7 @@
         If it has real catalysts, it goes on the list.
       </p>
       <a href="https://x.com/DHouseofcrypto" target="_blank" rel="noopener"
-         style="display:inline-flex;gap:6px;font-size:.8rem;font-weight:600;color:var(--accent2);">
+         style="display:inline-flex;gap:6px;font-size:.8rem;font-weight:800;color:var(--accent2);">
         𝕏 Message me on X →
       </a>
     </article>
@@ -282,7 +408,7 @@
   </div>
 
   <!-- CTA -->
-  <div style="margin-top:26px;padding:18px;border:1px solid rgba(6,182,212,.35);border-radius:18px;background:rgba(15,23,42,.95);">
+  <div style="margin-top:26px;padding:18px;border:1px solid rgba(6,182,212,.35);border-radius:18px;background:rgba(15,23,42,.95);box-shadow:0 18px 60px rgba(0,0,0,.45);">
     <div style="font-size:1.02rem;margin-bottom:4px;">Earn While You Hold</div>
     <p style="color:var(--text-muted);">I earn up to <strong>24% APR</strong> on crypto I already own.</p>
     <a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W" class="cta-button">
@@ -292,8 +418,35 @@
 
 </div>
 </div>
+
+<script>
+  function copyReportLink() {
+    const url = "https://degenstein.xyz/report/";
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(function () {
+        alert("Link copied: " + url);
+      }, function () {
+        alert("Could not copy link, please copy manually: " + url);
+      });
+    } else {
+      const temp = document.createElement("input");
+      temp.value = url;
+      document.body.appendChild(temp);
+      temp.select();
+      try {
+        document.execCommand("copy");
+        alert("Link copied: " + url);
+      } catch (e) {
+        alert("Could not copy link, please copy manually: " + url);
+      }
+      document.body.removeChild(temp);
+    }
+  }
+</script>
+
 </body>
 </html>
+
 
 
 
