@@ -15,14 +15,14 @@
   <meta property="og:title" content="$LINK — Tokenization & CCIP Infrastructure Thesis" />
   <meta property="og:description" content="Oracles + CCIP rails for tokenized assets. Real catalysts + earn while you hold. No hopium." />
   <meta property="og:url" content="https://degenstein.xyz/report/link/" />
-  <meta property="og:image" content="https://degenstein.xyz/assets/degenstein-report-banner-1200x630.png" />
+  <meta property="og:image" content="https://degenstein.xyz/assets/linkreport.png" />
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="$LINK — Tokenization & CCIP Infrastructure Thesis" />
   <meta name="twitter:description" content="Oracles + CCIP rails for tokenization. Real catalysts + earn while you hold. No hopium." />
-  <meta name="twitter:image" content="https://degenstein.xyz/assets/degenstein-report-banner-1200x630.png" />
-  <meta name="twitter:site" content="@degensteindgn" />
+  <meta name="twitter:image" content="https://degenstein.xyz/assets/linkreport.png" />
+  <meta name="twitter:site" content="@DHouseofcrypto" />
 
   <meta name="theme-color" content="#22c55e" />
 
@@ -64,6 +64,10 @@
 
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
+
+    /* NEW: Banner */
+    .report-banner-wrap { max-width: 760px; margin: 0 auto 20px; }
+    .report-banner-img { width: 100%; border-radius: 18px; display: block; box-shadow: var(--shadow-soft); }
 
     .back-link {
       font-size: 0.8rem;
@@ -327,6 +331,16 @@
 <body>
   <div class="page">
     <div class="container">
+
+      <!-- NEW: LINK REPORT BANNER -->
+      <div class="report-banner-wrap">
+        <img
+          src="/assets/linkreport.png"
+          alt="$LINK Report Banner"
+          class="report-banner-img"
+          loading="lazy"
+        />
+      </div>
 
       <a class="back-link" href="/report/">
         <span>←</span> Back to all reports
