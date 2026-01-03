@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -63,7 +63,12 @@
     a:hover{text-decoration:underline;}
 
     .report-banner-wrap{max-width:760px;margin:0 auto 22px;}
-    .report-banner-img{width:100%;border-radius:18px;display:block;box-shadow:0 18px 60px rgba(0,0,0,.55);}
+    .report-banner-img{
+      width:100%;
+      border-radius:18px;
+      display:block;
+      box-shadow:0 18px 60px rgba(0,0,0,.55);
+    }
 
     .home-pill{
       display:inline-flex;gap:6px;margin:14px 0 14px;padding:7px 14px;
@@ -199,7 +204,7 @@
       font-weight:650;
     }
 
-    /* Featured cards (XRP/ONDO/LINK) */
+    /* Featured cards */
     .card-featured{
       border-color: rgba(6,182,212,.35);
       box-shadow: 0 18px 55px rgba(0,0,0,.75), 0 0 40px rgba(34,197,94,.10);
@@ -230,7 +235,7 @@
       opacity:.65;
     }
 
-    /* NEW: Flagship card (Magnificent Seven) */
+    /* Flagship card (Magnificent Seven) */
     .card-flagship{
       border-color: rgba(6,182,212,.45);
       box-shadow:
@@ -289,7 +294,6 @@
       box-shadow: 0 0 12px rgba(6,182,212,.55);
     }
 
-    /* NEW: Flagship pill */
     .flagship-pill{
       position:absolute;
       top:14px;
@@ -381,9 +385,10 @@
 
   <h2 style="font-size:1.25rem;margin-bottom:14px;">Latest Reports</h2>
 
+  <!-- ROW 1 -->
   <div class="grid">
 
-    <!-- ✅ NEW: MAGNIFICENT SEVEN (FLAGSHIP) -->
+    <!-- MAGNIFICENT SEVEN (FLAGSHIP) -->
     <a href="/report/magnificent-seven/">
       <article class="card card-flagship">
         <div class="flagship-pill"><span class="flagship-dot"></span> Flagship</div>
@@ -397,6 +402,26 @@
         <span class="card-link">↗ Read the flagship report</span>
       </article>
     </a>
+
+    <!-- NEAR + AI (FEATURED) -->
+    <a href="/report/near-ai/">
+      <article class="card card-featured">
+        <div class="featured-pill"><span class="featured-dot"></span> Featured</div>
+        <div class="tag-row">
+          <span class="tag tag-primary">$NEAR + AI</span>
+          <span class="tag tag-alt">Agents</span>
+          <span class="tag tag-alt">UX</span>
+        </div>
+        <h3>NEAR + AI — Infrastructure for Autonomous Apps & Agents</h3>
+        <p>How NEAR’s UX + scaling can fit the AI/agent wave — catalysts, risks, and my earn-while-I-hold angle.</p>
+        <span class="card-link">↗ Read NEAR + AI report</span>
+      </article>
+    </a>
+
+  </div>
+
+  <!-- ROW 2 -->
+  <div class="grid" style="margin-top:18px;">
 
     <!-- XRP -->
     <a href="/report/xrp/">
@@ -413,11 +438,6 @@
       </article>
     </a>
 
-  </div>
-
-  <!-- NEW ROW -->
-  <div class="grid" style="margin-top:18px;">
-
     <!-- ONDO -->
     <a href="/report/ondo/">
       <article class="card card-featured">
@@ -432,6 +452,11 @@
         <span class="card-link">↗ Read full ONDO report</span>
       </article>
     </a>
+
+  </div>
+
+  <!-- ROW 3 -->
+  <div class="grid" style="margin-top:18px;">
 
     <!-- LINK -->
     <a href="/report/link/">
@@ -448,11 +473,19 @@
       </article>
     </a>
 
+    <!-- Coming soon -->
+    <article class="card card-muted">
+      <div class="tag-row"><span class="tag">Coming Soon</span></div>
+      <h3>Next Report: To Be Announced</h3>
+      <p>I publish when there’s something real to say — not on a forced schedule.</p>
+    </article>
+
   </div>
 
+  <!-- ROW 4 -->
   <div class="grid" style="margin-top:18px;">
 
-    <!-- ✅ NEW: BTCC PLATFORM REPORT -->
+    <!-- BTCC PLATFORM REPORT -->
     <a href="/report/btcc/">
       <article class="card">
         <div class="tag-row">
@@ -466,7 +499,7 @@
       </article>
     </a>
 
-    <!-- ✅ NEW: COINDEPO YIELD REPORT -->
+    <!-- COINDEPO YIELD REPORT -->
     <a href="/report/coindepo-earn-while-you-hold/">
       <article class="card card-featured">
         <div class="featured-pill"><span class="featured-dot"></span> Yield Thesis</div>
@@ -485,7 +518,12 @@
       </article>
     </a>
 
-    <!-- UPDATED SUGGESTIONS CARD -->
+  </div>
+
+  <!-- ROW 5 -->
+  <div class="grid" style="margin-top:18px;">
+
+    <!-- Suggestions -->
     <article class="card card-muted">
       <div class="tag-row"><span class="tag">Suggestions</span></div>
       <h3>Want me to cover something?</h3>
@@ -497,6 +535,12 @@
          style="display:inline-flex;gap:6px;font-size:.8rem;font-weight:800;color:var(--accent2);">
         𝕏 Message me on X →
       </a>
+    </article>
+
+    <article class="card card-muted">
+      <div class="tag-row"><span class="tag">Coming Soon</span></div>
+      <h3>More Reports Incoming</h3>
+      <p>More tokens and platform writeups will be added over time when they deserve a full breakdown.</p>
     </article>
 
   </div>
@@ -540,6 +584,7 @@
 
 </body>
 </html>
+
 
 
 
