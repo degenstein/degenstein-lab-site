@@ -90,6 +90,28 @@
     .nav a{ color: var(--muted); font-weight: 600; font-size: 13px; }
     .nav a:hover{ color: var(--text); }
 
+    /* ✅ ADDED: Share on X button style */
+    .sharex{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding: 8px 10px;
+      border-radius: 12px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,0.07);
+      color: var(--text);
+      font-weight: 800;
+      font-size: 13px;
+      cursor: pointer;
+      text-decoration: none;
+      user-select:none;
+    }
+    .sharex:hover{
+      border-color: rgba(0,255,170,0.35);
+      background: linear-gradient(180deg, rgba(0,255,170,0.18), rgba(255,255,255,0.06));
+      text-decoration:none;
+    }
+
     .hero{
       margin-top: 18px;
       padding: 26px 22px;
@@ -318,6 +340,9 @@
         <a href="#price-history">Price History</a>
         <a href="#onchain-metrics">Onchain Metrics</a>
         <a href="#earn-while-you-hold">Earn While You Hold</a>
+
+        <!-- ✅ ADDED: Share on X button -->
+        <button class="sharex" type="button" onclick="shareOnX()">✕ Share on X</button>
       </div>
     </div>
 
@@ -466,7 +491,7 @@
             <strong>earn while you hold</strong> and stay positioned for upside.
           </p>
           <div class="btnrow">
-            <a class="btn primary" href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV" target="_blank" rel="noopener">CoinDepo (Earn While You Hold)</a>
+            <a class="btn primary" href="https://app.coindepo.com/auth-sign-up?ref=R-UgAoMRNV" target="_blank" rel="noopener">CoinDepo (Earn While You Hold)</a>
           </div>
           <p class="tiny" style="margin:10px 0 0;">
             Use code: <span style="font-family:var(--mono); font-weight:900;">R-UgAoMRNV</span>
@@ -584,6 +609,16 @@
     mountTV("tv-eth", "COINBASE:ETHUSD");
   </script>
 
+  <!-- ✅ ADDED: Share on X function -->
+  <script>
+    function shareOnX() {
+      const url = "https://degenstein.xyz/report/sol-vs-eth/";
+      const text = "Solana vs Ethereum (SOL & ETH) — price history + onchain metrics + a research-first comparison (no hopium).";
+      const intent = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(text) + "&url=" + encodeURIComponent(url);
+      window.open(intent, "_blank", "noopener,noreferrer");
+    }
+  </script>
+
   <!-- ===================== -->
   <!-- ✅ Onchain Metrics Fetch -->
   <!-- ===================== -->
@@ -679,7 +714,9 @@
     // Light refresh
     setInterval(loadTVL, 5 * 60 * 1000);
     setInterval(loadSolanaTPS, 60 * 1000);
+    setInterval(loadEthGas, 60 * 1000);
   </script>
 </body>
 </html>
+
 
