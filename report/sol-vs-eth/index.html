@@ -1,1 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Solana vs Ethereum Report — SOL & ETH | The Degenstein Report</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ✅ SEO -->
+  <meta name="description" content="A research-first comparison of Solana (SOL) and Ethereum (ETH): roles, risks, price history embeds, onchain metrics (TVL, TPS/gas), and an earn-while-you-hold strategy. No hopium." />
+  <link rel="canonical" href="https://degenstein.xyz/report/sol-vs-eth/" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Degenstein Bonus Hub" />
+  <meta property="og:title" content="Solana vs Ethereum Report — SOL & ETH" />
+  <meta property="og:description" content="Price history, onchain metrics, and a serious comparison of the two dominant L1 strategies — settlement vs execution." />
+  <meta property="og:image" content="https://degenstein.xyz/assets/ethsol.png" />
+  <meta property="og:image:secure_url" content="https://degenstein.xyz/assets/ethsol.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="675" />
+
+  <!-- ✅ Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Solana vs Ethereum Report — SOL & ETH" />
+  <meta name="twitter:description" content="Price history + onchain metrics + a research-first comparison. No hopium." />
+  <meta name="twitter:image" content="https://degenstein.xyz/assets/ethsol.png" />
+
+  <style>
+    :root{
+      --bg: #070A0F;
+      --panel: rgba(255,255,255,0.06);
+      --panel2: rgba(255,255,255,0.08);
+      --text: rgba(255,255,255,0.90);
+      --muted: rgba(255,255,255,0.70);
+      --muted2: rgba(255,255,255,0.55);
+      --stroke: rgba(255,255,255,0.12);
+      --glow: rgba(0,255,170,0.16);
+      --accent: #00FFAA;
+      --accent2: #7C3AED;
+      --danger: #FF4D6D;
+      --warn: #FFB703;
+
+      --radius: 18px;
+      --shadow: 0 18px 55px rgba(0,0,0,0.55);
+      --shadow2: 0 12px 40px rgba(0,0,0,0.45);
+      --max: 1120px;
+
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+
+    *{ box-sizing: border-box; }
+    body{
+      margin: 0;
+      font-family: var(--sans);
+      color: var(--text);
+      background:
+        radial-gradient(1200px 700px at 20% 10%, rgba(0,255,170,0.16), transparent 60%),
+        radial-gradient(900px 600px at 85% 25%, rgba(124,58,237,0.18), transparent 60%),
+        radial-gradient(700px 500px at 55% 90%, rgba(0,160,255,0.12), transparent 60%),
+        var(--bg);
+      line-height: 1.45;
+    }
+
+    a{ color: var(--accent); text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+
+    .wrap{ max-width: var(--max); margin: 0 auto; padding: 28px 18px 70px; }
+
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 14px 16px;
+      border: 1px solid var(--stroke);
+      background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.04));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow2);
+      backdrop-filter: blur(10px);
+    }
+    .brand{
+      display:flex; align-items:center; gap: 10px; font-weight: 700;
+      letter-spacing: .2px;
+    }
+    .dot{
+      width: 10px; height: 10px; border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 18px var(--glow);
+    }
+    .nav{ display:flex; gap: 14px; flex-wrap: wrap; }
+    .nav a{ color: var(--muted); font-weight: 600; font-size: 13px; }
+    .nav a:hover{ color: var(--text); }
+
+    .hero{
+      margin-top: 18px;
+      padding: 26px 22px;
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(420px 220px at 20% 30%, rgba(0,255,170,0.18), transparent 70%),
+                  radial-gradient(360px 220px at 85% 40%, rgba(124,58,237,0.20), transparent 72%);
+      pointer-events:none;
+    }
+    .hero > *{ position: relative; z-index: 1; }
+
+    .kicker{
+      display:inline-flex; align-items:center; gap: 10px;
+      font-size: 12px; color: var(--muted);
+      border: 1px solid var(--stroke);
+      background: rgba(0,0,0,0.25);
+      padding: 8px 10px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+    .pill{
+      font-family: var(--mono);
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke);
+      color: rgba(255,255,255,0.8);
+      background: rgba(255,255,255,0.06);
+    }
+
+    h1{ margin: 0 0 10px; font-size: 34px; letter-spacing: -0.4px; }
+    .sub{ color: var(--muted); max-width: 72ch; font-size: 15px; margin: 0; }
+
+    .hero-cover{
+      margin-top: 16px;
+      border: 1px solid var(--stroke);
+      border-radius: 16px;
+      overflow: hidden;
+      background: rgba(0,0,0,0.22);
+      box-shadow: var(--shadow2);
+    }
+    .hero-cover img{
+      width: 100%;
+      display: block;
+      height: auto;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    @media (max-width: 980px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+
+    .card{
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.035));
+      box-shadow: var(--shadow2);
+      padding: 18px;
+      backdrop-filter: blur(10px);
+    }
+    .card h2{
+      margin: 0 0 10px;
+      font-size: 18px;
+      letter-spacing: -0.2px;
+    }
+    .muted{ color: var(--muted); }
+    .tiny{ color: var(--muted2); font-size: 12px; }
+    .sep{ height: 1px; background: var(--stroke); margin: 14px 0; }
+
+    .bullets{ margin: 10px 0 0; padding-left: 18px; color: var(--muted); }
+    .bullets li{ margin: 6px 0; }
+
+    .callout{
+      border: 1px solid rgba(0,255,170,0.28);
+      background: radial-gradient(650px 220px at 20% 30%, rgba(0,255,170,0.18), rgba(0,0,0,0.15));
+      border-radius: var(--radius);
+      padding: 16px;
+      margin-top: 14px;
+    }
+    .callout strong{ color: rgba(255,255,255,0.95); }
+    .btnrow{ display:flex; gap: 10px; flex-wrap: wrap; margin-top: 10px; }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,0.07);
+      color: var(--text);
+      font-weight: 700;
+      font-size: 13px;
+      text-decoration: none;
+    }
+    .btn.primary{
+      border-color: rgba(0,255,170,0.35);
+      background: linear-gradient(180deg, rgba(0,255,170,0.22), rgba(255,255,255,0.06));
+    }
+
+    .section{
+      margin-top: 18px;
+      padding: 18px;
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.03));
+      box-shadow: var(--shadow2);
+      backdrop-filter: blur(10px);
+    }
+    .section h2{ margin: 0 0 10px; font-size: 18px; }
+    .section h3{ margin: 14px 0 8px; font-size: 15px; color: rgba(255,255,255,0.90); }
+    .two{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 10px;
+    }
+    @media (max-width: 980px){
+      .two{ grid-template-columns: 1fr; }
+    }
+
+    .chartbox{
+      border: 1px solid var(--stroke);
+      border-radius: 16px;
+      background: rgba(0,0,0,0.22);
+      overflow: hidden;
+      min-height: 420px;
+    }
+    .charthead{
+      display:flex; justify-content:space-between; align-items:center;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--stroke);
+      background: rgba(255,255,255,0.05);
+    }
+    .charttitle{
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: .2px;
+    }
+    .tag{
+      font-family: var(--mono);
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke);
+      color: rgba(255,255,255,0.72);
+      background: rgba(255,255,255,0.06);
+    }
+
+    .metrics{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 10px;
+    }
+    @media (max-width: 980px){ .metrics{ grid-template-columns: repeat(2, 1fr);} }
+    @media (max-width: 520px){ .metrics{ grid-template-columns: 1fr;} }
+
+    .metric{
+      border: 1px solid var(--stroke);
+      border-radius: 16px;
+      background: rgba(0,0,0,0.22);
+      padding: 12px 12px 10px;
+    }
+    .metric .label{ color: var(--muted2); font-size: 12px; }
+    .metric .value{ font-size: 18px; font-weight: 900; margin-top: 6px; letter-spacing: -0.2px; }
+    .metric .note{ color: var(--muted2); font-size: 11px; margin-top: 6px; }
+
+    .table{
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      overflow: hidden;
+      border-radius: 16px;
+      border: 1px solid var(--stroke);
+      background: rgba(0,0,0,0.16);
+    }
+    .table th, .table td{
+      padding: 10px 10px;
+      border-bottom: 1px solid var(--stroke);
+      text-align: left;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .table th{ color: rgba(255,255,255,0.85); font-weight: 800; background: rgba(255,255,255,0.05); }
+    .table tr:last-child td{ border-bottom: none; }
+
+    .footer{
+      margin-top: 18px;
+      color: var(--muted2);
+      font-size: 12px;
+      padding: 14px 6px 0;
+    }
+    .disclaimer{
+      margin-top: 10px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px;
+      padding: 10px 12px;
+      background: rgba(0,0,0,0.20);
+      color: var(--muted2);
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <span class="dot"></span>
+        <span>Degenstein Bonus Hub</span>
+      </div>
+      <div class="nav">
+        <a href="https://degenstein.xyz/">Home</a>
+        <a href="https://degenstein.xyz/report/">Reports</a>
+        <a href="#price-history">Price History</a>
+        <a href="#onchain-metrics">Onchain Metrics</a>
+        <a href="#earn-while-you-hold">Earn While You Hold</a>
+      </div>
+    </div>
+
+    <header class="hero">
+      <div class="kicker">
+        <span class="pill">The Degenstein Report</span>
+        <span>Research-first • roles, risks, metrics • no hopium</span>
+      </div>
+      <h1>Solana ($SOL) & Ethereum ($ETH) Report</h1>
+      <p class="sub">
+        A serious comparison of the two dominant Layer-1 strategies:
+        <strong>ETH</strong> as the settlement & financial coordination layer, and
+        <strong>SOL</strong> as the high-speed execution & consumer adoption layer —
+        plus embedded price history and live onchain metrics.
+      </p>
+
+      <!-- ✅ NEW: Cover image -->
+      <div class="hero-cover">
+        <img src="https://degenstein.xyz/assets/ethsol.png" alt="Ethereum & Solana Report Cover" width="1200" height="675" loading="eager" />
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h2>Executive Summary</h2>
+          <p class="muted">
+            ETH and SOL are increasingly <strong>complementary</strong>, not strictly rivals.
+            Ethereum prioritizes security + liquidity + institutional settlement, while Solana optimizes for speed + UX + real-time apps.
+          </p>
+          <ul class="bullets">
+            <li><strong>ETH</strong> tends to win where trust, liquidity, and settlement assurances matter most.</li>
+            <li><strong>SOL</strong> tends to win where speed, low fees, and consumer app UX matter most.</li>
+            <li>Rather than choosing one, many portfolios allocate to both to capture different adoption lanes.</li>
+          </ul>
+
+          <!-- ✅ CoinDepo Callout #1 -->
+          <div class="callout" id="earn-while-you-hold">
+            <h2 style="margin:0 0 6px;">Earn While You Hold (ETH & SOL)</h2>
+            <p class="muted" style="margin:0;">
+              Instead of trying to time tops and bottoms, many investors focus on
+              <strong>earning yield while they hold</strong> and letting compounding do the work.
+            </p>
+            <div class="btnrow">
+              <a class="btn primary" href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV" target="_blank" rel="noopener">Start on CoinDepo</a>
+              <a class="btn" href="https://degenstein.xyz/" target="_blank" rel="noopener">More walkthroughs on degenstein.xyz</a>
+            </div>
+            <p class="tiny" style="margin:10px 0 0;">
+              Referral Code: <span style="font-family:var(--mono); font-weight:800;">R-UgAoMRNV</span>
+            </p>
+            <div class="disclaimer">
+              Educational content only. Availability and eligibility may vary by jurisdiction. Not financial advice.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Roles at a Glance</h2>
+          <table class="table" aria-label="ETH vs SOL roles">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Ethereum (ETH)</th>
+                <th>Solana (SOL)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Primary Role</td>
+                <td>Settlement / finance</td>
+                <td>Execution / consumer apps</td>
+              </tr>
+              <tr>
+                <td>Scaling</td>
+                <td>L2 rollups</td>
+                <td>Single-layer</td>
+              </tr>
+              <tr>
+                <td>Strength</td>
+                <td>Liquidity + trust</td>
+                <td>Speed + UX</td>
+              </tr>
+              <tr>
+                <td>Best-fit apps</td>
+                <td>RWAs, DeFi primitives</td>
+                <td>Payments, NFTs, gaming</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="sep"></div>
+
+          <h2>Risks (Real Talk)</h2>
+          <ul class="bullets">
+            <li><strong>ETH:</strong> L2 fragmentation, variable fees, slower UX iteration.</li>
+            <li><strong>SOL:</strong> historic reliability concerns (improving), validator requirements.</li>
+            <li><strong>Both:</strong> macro + regulatory uncertainty impacts all crypto markets.</li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===================== -->
+    <!-- ✅ PRICE HISTORY -->
+    <!-- ===================== -->
+    <section class="section" id="price-history">
+      <h2>Price History</h2>
+      <p class="muted" style="margin:0;">
+        Embedded charts let readers explore multiple timeframes (1D, 1W, 1M, YTD, all-time) without leaving your site.
+        These are TradingView widgets.
+      </p>
+
+      <div class="two">
+        <div class="chartbox">
+          <div class="charthead">
+            <div class="charttitle">Solana Price Chart</div>
+            <div class="tag">SOLUSD</div>
+          </div>
+          <div id="tv-sol" style="height: 420px;"></div>
+        </div>
+
+        <div class="chartbox">
+          <div class="charthead">
+            <div class="charttitle">Ethereum Price Chart</div>
+            <div class="tag">ETHUSD</div>
+          </div>
+          <div id="tv-eth" style="height: 420px;"></div>
+        </div>
+      </div>
+
+      <div class="two" style="margin-top:14px;">
+        <div class="chartbox" style="min-height:360px;">
+          <div class="charthead">
+            <div class="charttitle">SOL vs ETH (Side-by-side view)</div>
+            <div class="tag">Compare</div>
+          </div>
+          <div class="tiny" style="padding:12px;">
+            Tip: If you prefer a single comparison chart, replace this box with a custom TradingView compare embed
+            or a lightweight “Symbol Overview” widget for both tickers.
+          </div>
+        </div>
+
+        <!-- ✅ CoinDepo Callout #2 (near price charts) -->
+        <div class="card" style="padding:16px;">
+          <h2 style="margin:0 0 8px;">The Strategy Edge</h2>
+          <p class="muted" style="margin:0;">
+            Price moves are unpredictable short-term. The repeatable move:
+            <strong>earn while you hold</strong> and stay positioned for upside.
+          </p>
+          <div class="btnrow">
+            <a class="btn primary" href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV" target="_blank" rel="noopener">CoinDepo (Earn While You Hold)</a>
+          </div>
+          <p class="tiny" style="margin:10px 0 0;">
+            Use code: <span style="font-family:var(--mono); font-weight:900;">R-UgAoMRNV</span>
+          </p>
+          <div class="disclaimer">
+            Always confirm product terms, rates, and eligibility in your region.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== -->
+    <!-- ✅ ONCHAIN METRICS -->
+    <!-- ===================== -->
+    <section class="section" id="onchain-metrics">
+      <h2>Onchain Metrics</h2>
+      <p class="muted" style="margin:0;">
+        Live metrics help readers understand real network usage beyond price.
+        This section pulls: (1) TVL (DeFiLlama), (2) Solana TPS estimate (Solana RPC), and optional (3) ETH gas (Etherscan).
+      </p>
+
+      <div class="metrics" aria-label="Onchain metrics tiles">
+        <div class="metric">
+          <div class="label">Ethereum TVL</div>
+          <div class="value" id="eth-tvl">$—</div>
+          <div class="note">Source: DeFiLlama</div>
+        </div>
+        <div class="metric">
+          <div class="label">Solana TVL</div>
+          <div class="value" id="sol-tvl">$—</div>
+          <div class="note">Source: DeFiLlama</div>
+        </div>
+        <div class="metric">
+          <div class="label">Solana TPS (est.)</div>
+          <div class="value" id="sol-tps">—</div>
+          <div class="note">Derived from recent performance samples</div>
+        </div>
+        <div class="metric">
+          <div class="label">Ethereum Gas (optional)</div>
+          <div class="value" id="eth-gas">—</div>
+          <div class="note">Enable with an Etherscan API key</div>
+        </div>
+      </div>
+
+      <div class="sep"></div>
+
+      <h3>How to interpret these</h3>
+      <ul class="bullets">
+        <li><strong>TVL</strong> is a proxy for DeFi gravity and liquidity depth (not a perfect metric, but useful for comparisons).</li>
+        <li><strong>TPS</strong> helps contextualize throughput during real usage windows (estimated from Solana RPC samples).</li>
+        <li><strong>Gas</strong> is a demand signal on Ethereum (higher gas often = higher activity), but it can also reflect congestion.</li>
+      </ul>
+
+      <div class="disclaimer">
+        Metrics can lag or differ across providers. Use them for trend context, not as single-point “truth.”
+      </div>
+    </section>
+
+    <!-- ===================== -->
+    <!-- ✅ CONCLUSION -->
+    <!-- ===================== -->
+    <section class="section" id="final-take">
+      <h2>Final Take</h2>
+      <p class="muted" style="margin:0;">
+        Ethereum and Solana are not a zero-sum bet. ETH tends to dominate institutional settlement + financial primitives.
+        SOL tends to dominate consumer UX + high-frequency execution. Many investors hold both to capture different adoption lanes.
+      </p>
+
+      <!-- ✅ CoinDepo Callout #3 (closing CTA) -->
+      <div class="callout">
+        <h2 style="margin:0 0 6px;">My “No Panic” Plan</h2>
+        <p class="muted" style="margin:0;">
+          Stay positioned in high-conviction assets, avoid overtrading, and focus on
+          <strong>earning while holding</strong> so time is working for you.
+        </p>
+        <div class="btnrow">
+          <a class="btn primary" href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV" target="_blank" rel="noopener">Join CoinDepo</a>
+          <a class="btn" href="https://degenstein.xyz/report/" target="_blank" rel="noopener">More reports</a>
+        </div>
+        <p class="tiny" style="margin:10px 0 0;">
+          Referral Code: <span style="font-family:var(--mono); font-weight:900;">R-UgAoMRNV</span>
+        </p>
+      </div>
+
+      <div class="footer">
+        <div>Not financial advice. Educational content only.</div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===================== -->
+  <!-- ✅ TradingView Widgets -->
+  <!-- ===================== -->
+  <script src="https://s3.tradingview.com/tv.js"></script>
+  <script>
+    function mountTV(containerId, symbol){
+      if (!window.TradingView) return;
+      new TradingView.widget({
+        autosize: true,
+        symbol: symbol,
+        interval: "D",
+        timezone: "Etc/UTC",
+        theme: "dark",
+        style: "1",
+        locale: "en",
+        enable_publishing: false,
+        hide_side_toolbar: false,
+        allow_symbol_change: true,
+        container_id: containerId
+      });
+    }
+
+    // Common symbols on TradingView. Swap venue if you prefer.
+    mountTV("tv-sol", "COINBASE:SOLUSD");
+    mountTV("tv-eth", "COINBASE:ETHUSD");
+  </script>
+
+  <!-- ===================== -->
+  <!-- ✅ Onchain Metrics Fetch -->
+  <!-- ===================== -->
+  <script>
+    const fmtUSD = (n) => {
+      if (n === null || n === undefined || isNaN(n)) return "$—";
+      const abs = Math.abs(n);
+      if (abs >= 1e12) return "$" + (n/1e12).toFixed(2) + "T";
+      if (abs >= 1e9)  return "$" + (n/1e9).toFixed(2) + "B";
+      if (abs >= 1e6)  return "$" + (n/1e6).toFixed(2) + "M";
+      if (abs >= 1e3)  return "$" + (n/1e3).toFixed(2) + "K";
+      return "$" + Number(n).toFixed(0);
+    };
+
+    // TVL via DeFiLlama (chains endpoint)
+    async function loadTVL(){
+      try{
+        const res = await fetch("https://api.llama.fi/v2/chains");
+        const data = await res.json();
+
+        const eth = data.find(x => (x.name || "").toLowerCase() === "ethereum");
+        const sol = data.find(x => (x.name || "").toLowerCase() === "solana");
+
+        document.getElementById("eth-tvl").textContent = fmtUSD(eth?.tvl);
+        document.getElementById("sol-tvl").textContent = fmtUSD(sol?.tvl);
+      }catch(e){
+        console.warn("TVL load error:", e);
+      }
+    }
+
+    // Solana TPS estimate via Solana RPC getRecentPerformanceSamples
+    async function loadSolanaTPS(){
+      try{
+        const RPC = "https://api.mainnet-beta.solana.com";
+        const body = {
+          jsonrpc: "2.0",
+          id: 1,
+          method: "getRecentPerformanceSamples",
+          params: [5]
+        };
+
+        const res = await fetch(RPC, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body)
+        });
+
+        const json = await res.json();
+        const samples = json?.result || [];
+        if (!samples.length){
+          document.getElementById("sol-tps").textContent = "—";
+          return;
+        }
+
+        let tx = 0;
+        let secs = 0;
+        for (const s of samples){
+          tx += Number(s.numTransactions || 0);
+          secs += Number(s.samplePeriodSecs || 0);
+        }
+
+        const tps = secs > 0 ? (tx / secs) : 0;
+        document.getElementById("sol-tps").textContent = tps ? tps.toFixed(0) : "—";
+      }catch(e){
+        console.warn("SOL TPS load error:", e);
+      }
+    }
+
+    // Optional Ethereum gas via Etherscan (needs API key)
+    async function loadEthGas(){
+      try{
+        const ETHERSCAN_API_KEY = ""; // <-- add your key or leave blank
+        if (!ETHERSCAN_API_KEY){
+          document.getElementById("eth-gas").textContent = "API key needed";
+          return;
+        }
+
+        const url = `https://api.etherscan.io/v2/api?chainid=1&module=gastracker&action=gasoracle&apikey=${encodeURIComponent(ETHERSCAN_API_KEY)}`;
+        const res = await fetch(url);
+        const json = await res.json();
+        const gwei = json?.result?.ProposeGasPrice;
+        document.getElementById("eth-gas").textContent = gwei ? `${gwei} gwei` : "—";
+      }catch(e){
+        console.warn("ETH gas load error:", e);
+      }
+    }
+
+    // Boot
+    loadTVL();
+    loadSolanaTPS();
+    loadEthGas();
+
+    // Light refresh
+    setInterval(loadTVL, 5 * 60 * 1000);
+    setInterval(loadSolanaTPS, 60 * 1000);
+  </script>
+</body>
+</html>
 
