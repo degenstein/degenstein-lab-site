@@ -204,6 +204,20 @@
       font-weight:650;
     }
 
+    /* ✅ Shared card thumbnail (matches your ETH/SOL card look) */
+    .card-thumb{
+      margin:10px 0 10px;
+      border-radius:14px;
+      overflow:hidden;
+      border:1px solid rgba(148,163,184,.25);
+      background:rgba(15,23,42,.6);
+    }
+    .card-thumb img{
+      width:100%;
+      display:block;
+      height:auto;
+    }
+
     /* Featured cards */
     .card-featured{
       border-color: rgba(6,182,212,.35);
@@ -545,7 +559,7 @@
 
   </div>
 
-  <!-- ✅ ROW 6 (NEW): SOL + ETH REPORT CARD (with cover image you saved as ethsol.png) -->
+  <!-- ✅ ROW 6: SOL + ETH + MEMECOIN TRIO (both with cover images) -->
   <div class="grid" style="margin-top:18px;">
 
     <!-- SOL + ETH REPORT -->
@@ -558,9 +572,8 @@
           <span class="tag tag-alt">Onchain Metrics</span>
         </div>
 
-        <!-- Optional mini-cover inside card -->
-        <div style="margin:10px 0 10px;border-radius:14px;overflow:hidden;border:1px solid rgba(148,163,184,.25);background:rgba(15,23,42,.6);">
-          <img src="/assets/ethsol.png" alt="ETH & SOL Report Cover" style="width:100%;display:block;height:auto;" loading="lazy" />
+        <div class="card-thumb">
+          <img src="/assets/ethsol.png" alt="ETH & SOL Report Cover" loading="lazy" />
         </div>
 
         <h3>Solana vs Ethereum — Roles, Price History & Onchain Metrics</h3>
@@ -572,8 +585,8 @@
       </article>
     </a>
 
-    <!-- Keep your existing Memecoin trio card (or swap this slot if you want) -->
-    <a href="/report/memecoin-trinity/">
+    <!-- MEMECOIN TRIO REPORT (NOW WITH COVER IMAGE memecoinreport.png) -->
+    <a href="/report/memecoin-trio/">
       <article class="card">
         <div class="tag-row">
           <span class="tag tag-primary">Memecoin Trio</span>
@@ -581,6 +594,11 @@
           <span class="tag tag-alt">$DOGE</span>
           <span class="tag tag-alt">$SHIB</span>
         </div>
+
+        <div class="card-thumb">
+          <img src="/assets/memecoinreport.png" alt="Memecoin Trio Report Cover" loading="lazy" />
+        </div>
+
         <h3>Memecoin Trio — PEPE, DOGE & SHIB</h3>
         <p>A clean breakdown of liquidity, culture, reflexive demand, and what actually drives memecoin cycles — without the hopium.</p>
         <span class="card-link">↗ Read the memecoin report</span>
