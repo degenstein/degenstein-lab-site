@@ -86,7 +86,7 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      margin-bottom: 20px;
+      margin-bottom: 14px;
       padding: 7px 14px;
       border-radius: 999px;
       border: 1px solid rgba(148, 163, 184, 0.4);
@@ -103,6 +103,21 @@
       border-color: var(--accent);
       color: var(--accent);
       text-decoration: none;
+    }
+
+    /* ✅ NEW: top banner image (like your other reports) */
+    .banner-wrap{
+      margin: 6px 0 18px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid rgba(148,163,184,.25);
+      background: rgba(15,23,42,.35);
+      box-shadow: 0 18px 60px rgba(0,0,0,.55);
+    }
+    .banner-wrap img{
+      width: 100%;
+      display: block;
+      height: auto;
     }
 
     .badge-row {
@@ -354,6 +369,11 @@
         ← Back to Main Page
       </a>
 
+      <!-- ✅ NEW: visible banner image -->
+      <div class="banner-wrap">
+        <img src="/assets/report-ondo-1200x630.png" alt="ONDO Report Cover" width="1200" height="630" loading="eager" />
+      </div>
+
       <div class="badge-row">
         <div class="badge">
           <span class="badge-dot"></span>
@@ -494,10 +514,12 @@
           </p>
         </div>
 
-        <!-- ✅ FIXED: your current CoinDepo link + referral code -->
+        <!-- ✅ FIXED: current CoinDepo link + code -->
         <a
           class="cta-button"
           href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           Explore CoinDepo → Use Referral: R-UgAoMRNV
         </a>
