@@ -324,6 +324,43 @@
     }
     .income h3{margin:0 0 6px;font-size:1.18rem;}
     .income p{margin:0;color:var(--text-muted);line-height:1.75;font-size:.95rem;}
+
+    /* NEW: bonus pill + example box */
+    .bonus-pill{
+      margin-top:10px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 12px;
+      border-radius:999px;
+      border:1px solid rgba(34,197,94,.55);
+      background: rgba(34,197,94,.10);
+      color:#6ee7b7;
+      font-size:.74rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      font-weight:900;
+    }
+    .example-box{
+      margin-top:10px;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid rgba(6,182,212,.30);
+      background: rgba(6,182,212,.08);
+      color: rgba(226,232,240,.95);
+      line-height:1.65;
+      max-width:760px;
+    }
+    .example-box strong{color:#67e8f9;}
+    .example-box code{
+      color:#67e8f9;
+      font-weight:900;
+      background: rgba(2,6,23,.55);
+      border: 1px solid rgba(148,163,184,.22);
+      padding: 2px 6px;
+      border-radius: 8px;
+    }
+
     .cta{
       display:inline-flex;
       align-items:center;
@@ -512,14 +549,24 @@
         <p style="margin-top:10px;">
           One platform I personally use is <strong>CoinDepo</strong>, where it’s possible to earn up to <strong>24% APR</strong>
           on supported assets while holding — no trading, no selling, just compounding over time.
+          When you use <strong>my link</strong>, you can also qualify for an <strong>up to $500 $USDC bonus</strong> (90 days, terms apply).
         </p>
 
-        <a class="cta" href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W">
-          Explore CoinDepo → Use Referral: A-32wqw35W
+        <div class="bonus-pill">Bonus up to $500 $USDC (90 days)</div>
+
+        <div class="example-box">
+          <strong>Example bonus:</strong> Hold <code>$1,000</code> for <code>90 days</code> →
+          <strong>$100 $USDC bonus</strong> (tier/eligibility dependent).
+        </div>
+
+        <!-- ✅ FIXED: correct link + correct referral code -->
+        <a class="cta" href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV">
+          Explore CoinDepo → Use Referral: R-UgAoMRNV
         </a>
 
         <div class="fineprint">
           Always read the platform’s terms and risks. Rates/eligibility can change. Not financial advice.
+          Bonus tiers/eligibility vary by region and can change—confirm inside CoinDepo.
         </div>
       </section>
 
@@ -566,4 +613,5 @@
   </script>
 </body>
 </html>
+
 
