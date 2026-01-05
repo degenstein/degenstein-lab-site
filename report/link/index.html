@@ -34,6 +34,8 @@
       --border: #1e293b;
       --accent: #22c55e;
       --accent-soft: rgba(34, 197, 94, 0.1);
+      --accent2: #06b6d4;
+      --accent2-soft: rgba(6,182,212,.10);
       --text-main: #f9fafb;
       --text-muted: #9ca3af;
       --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.8);
@@ -65,7 +67,7 @@
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    /* NEW: Banner */
+    /* Banner */
     .report-banner-wrap { max-width: 760px; margin: 0 auto 20px; }
     .report-banner-img { width: 100%; border-radius: 18px; display: block; box-shadow: var(--shadow-soft); }
 
@@ -286,6 +288,42 @@
       line-height: 1.7;
     }
 
+    /* NEW: bonus pill + example box */
+    .bonus-pill{
+      margin-top: 10px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 12px;
+      border-radius:999px;
+      border:1px solid rgba(34,197,94,.55);
+      background: rgba(34,197,94,.10);
+      color:#6ee7b7;
+      font-size:.74rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      font-weight:900;
+    }
+    .example-box{
+      margin-top: 10px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(6,182,212,.30);
+      background: rgba(6,182,212,.08);
+      color: rgba(226,232,240,.95);
+      line-height: 1.65;
+      max-width: 760px;
+    }
+    .example-box strong{ color:#67e8f9; }
+    .example-box code{
+      color:#67e8f9;
+      font-weight:900;
+      background: rgba(2,6,23,.55);
+      border: 1px solid rgba(148,163,184,.22);
+      padding: 2px 6px;
+      border-radius: 8px;
+    }
+
     .cta-button {
       display: inline-flex;
       align-items: center;
@@ -297,7 +335,7 @@
       background: var(--accent);
       color: #020617;
       font-size: 0.9rem;
-      font-weight: 600;
+      font-weight: 700;
       cursor: pointer;
       text-decoration: none;
       box-shadow: 0 10px 30px rgba(34, 197, 94, 0.7);
@@ -332,7 +370,7 @@
   <div class="page">
     <div class="container">
 
-      <!-- NEW: LINK REPORT BANNER -->
+      <!-- LINK REPORT BANNER -->
       <div class="report-banner-wrap">
         <img
           src="/assets/linkreport.png"
@@ -483,21 +521,36 @@
           <li>Stack yield where possible so time works in my favor.</li>
           <li>Avoid constant overtrading and leverage roulette.</li>
         </ul>
-        <div class="income-body" style="margin-top: 8px;">
+
+        <div class="income-body" style="margin-top: 10px;">
           <p>
             One of the platforms I personally use is <strong>CoinDepo</strong>, where it’s
             possible to earn up to <strong>24% APR</strong> on supported assets while holding —
             no trading, no selling, just compounding over time.
           </p>
+
+          <div class="bonus-pill">Bonus up to $500 $USDC (90 days)</div>
+
+          <p style="margin-top: 10px;">
+            When you use <strong>my link</strong>, you can also qualify for an <strong>up to $500 $USDC bonus</strong> (terms apply).
+          </p>
+
+          <div class="example-box">
+            <strong>Example bonus:</strong> Hold <code>$1,000</code> for <code>90 days</code> →
+            <strong>$100 $USDC bonus</strong> (tier/eligibility dependent).
+          </div>
         </div>
+
+        <!-- ✅ FIXED: correct link + correct referral code -->
         <a
           class="cta-button"
-          href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W"
+          href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV"
         >
-          Explore CoinDepo → Use Referral: A-32wqw35W
+          Explore CoinDepo → Use Referral: R-UgAoMRNV
         </a>
+
         <div class="income-note">
-          Always read the platform’s terms and risks. Not financial advice. Do your own research.
+          Always read the platform’s terms and risks. Not financial advice. Do your own research. Bonus tiers/eligibility vary by region and can change.
         </div>
       </section>
 
@@ -552,4 +605,5 @@
   </script>
 </body>
 </html>
+
 
