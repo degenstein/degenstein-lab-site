@@ -350,6 +350,38 @@
       box-shadow:0 18px 55px rgba(6,182,212,.28);
       text-decoration:none;
     }
+
+    /* CTA extras */
+    .cta-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 12px;
+      border-radius:999px;
+      border:1px solid rgba(34,197,94,.45);
+      background: rgba(34,197,94,.10);
+      color:#6ee7b7;
+      font-size:.72rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      font-weight:900;
+      margin-top:10px;
+    }
+    .cta-example{
+      margin-top:10px;
+      color: var(--text-muted);
+      line-height: 1.65;
+      font-size: .95rem;
+      max-width: 720px;
+    }
+    .cta-example code{
+      color:#67e8f9;
+      font-weight:800;
+      background: rgba(6,182,212,.10);
+      border: 1px solid rgba(6,182,212,.22);
+      padding: 2px 6px;
+      border-radius: 8px;
+    }
   </style>
 </head>
 
@@ -589,15 +621,27 @@
   <!-- CTA -->
   <div style="margin-top:26px;padding:18px;border:1px solid rgba(6,182,212,.35);border-radius:18px;background:rgba(15,23,42,.95);box-shadow:0 18px 60px rgba(0,0,0,.45);">
     <div style="font-size:1.02rem;margin-bottom:4px;">Earn While You Hold</div>
-    <p style="color:var(--text-muted);">
-      I earn up to <strong>24% APR</strong> on crypto I already own — and new signups can qualify for a
-      <strong>bonus</strong> (terms apply).
+
+    <div class="cta-badge">Bonus up to $500 USDC (90 days)</div>
+
+    <p style="color:var(--text-muted);margin-top:10px;">
+      I earn up to <strong>24% APR</strong> on crypto I already own — and when you use my link, you can qualify for an
+      <strong>up to $500 $USDC bonus</strong> (terms apply).
     </p>
 
-    <!-- ✅ Correct link + correct referral code -->
+    <p class="cta-example">
+      <strong>Example:</strong> Deposit <code>$5,000</code> and hold for <code>90 days</code> →
+      qualify for a bonus + earn yield while you hold (depending on tier and eligibility).
+    </p>
+
+    <!-- ✅ Correct link + correct referral code (per your latest preference) -->
     <a href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV" class="cta-button">
       Start here → Referral Code: R-UgAoMRNV
     </a>
+
+    <p style="margin-top:10px;color:rgba(156,163,175,.95);font-size:.82rem;line-height:1.55;">
+      Disclaimer: Bonus tiers, APR, eligibility, and availability vary by region and can change. Always confirm terms inside CoinDepo.
+    </p>
   </div>
 
 </div>
