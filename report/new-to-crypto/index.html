@@ -11,8 +11,8 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="New to Crypto? 3 Must-Have Platforms (Start Here)" />
-  <meta property="og:description" content="A beginner-proof setup: buy, earn while holding, and track your portfolio — without getting lost." />
-  <meta property="og:image" content="https://degenstein.xyz/assets/degenstein-report-banner-1200x630.png" />
+  <meta property="og:description" content="Buy. Earn while holding. Track everything. A beginner-proof setup." />
+  <meta property="og:image" content="https://degenstein.xyz/assets/newtocrypto.png" />
   <meta property="og:url" content="https://degenstein.xyz/report/new-to-crypto/" />
   <meta property="og:type" content="article" />
 
@@ -20,7 +20,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="New to Crypto? 3 Must-Have Platforms (Start Here)" />
   <meta name="twitter:description" content="Buy. Earn while holding. Track everything. A beginner-proof setup." />
-  <meta name="twitter:image" content="https://degenstein.xyz/assets/degenstein-report-banner-1200x630.png" />
+  <meta name="twitter:image" content="https://degenstein.xyz/assets/newtocrypto.png" />
   <meta name="twitter:site" content="@DHouseofcrypto" />
 
   <meta name="theme-color" content="#06b6d4" />
@@ -68,6 +68,23 @@
       box-shadow:0 18px 60px rgba(0,0,0,.55);
     }
 
+    /* NEW TO CRYPTO HERO IMAGE */
+    .new-hero-wrap{max-width:860px;margin:14px auto 0;}
+    .new-hero-img{
+      width:100%;
+      border-radius:18px;
+      display:block;
+      border:1px solid rgba(148,163,184,.25);
+      box-shadow:0 18px 60px rgba(0,0,0,.55);
+    }
+    .new-hero-context{
+      max-width:820px;
+      margin:12px auto 0;
+      color:var(--text-muted);
+      line-height:1.7;
+      font-size: .98rem;
+    }
+
     .pillrow{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:10px 0 10px;}
     .nav-pill{
       display:inline-flex;gap:6px;padding:7px 14px;
@@ -95,24 +112,6 @@
 
     h1{font-size:clamp(2.1rem,4vw,3.1rem);margin:10px 0 8px;line-height:1.1;}
     .subtitle{color:var(--text-muted);max-width:740px;line-height:1.65;margin:0 0 14px;}
-    
-<!-- NEW TO CRYPTO HERO IMAGE -->
-<div class="report-banner-wrap" style="margin-top:18px;">
-  <img
-    src="/assets/newtocrypto.png"
-    alt="New to Crypto? Start Here — Buy, Earn, Track (3 Must-Have Platforms)"
-    class="report-banner-img"
-    loading="lazy"
-  />
-</div>
-
-<!-- Beginner-friendly context -->
-<p style="max-width:720px;color:var(--text-muted);line-height:1.7;margin:14px auto 0;">
-  If you’re brand new to crypto, don’t start with trading strategies, leverage,
-  or chasing pumps. Start with a simple foundation that most beginners miss:
-  <strong>buy crypto safely</strong>, <strong>earn while you hold</strong>,
-  and <strong>track everything in one place</strong>.
-</p>
 
     .share-row{
       margin: 12px 0 12px;
@@ -182,15 +181,6 @@
     .platform h3{margin:6px 0 6px;font-size:1.05rem;letter-spacing:.01em;}
     .platform p{margin:0;color:var(--text-muted);line-height:1.6;}
     .emoji{font-size:1.5rem;}
-    .mini{
-      display:inline-flex;align-items:center;gap:8px;
-      font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
-      color:#67e8f9;
-      border:1px solid rgba(6,182,212,.45);
-      background:rgba(6,182,212,.08);
-      padding:4px 10px;border-radius:999px;
-      font-weight:800;
-    }
     .mini2{
       display:inline-flex;align-items:center;gap:8px;
       font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
@@ -299,6 +289,7 @@
 <div class="page">
   <div class="container">
 
+    <!-- Top Report Banner (kept) -->
     <div class="banner-wrap">
       <img src="/assets/degenstein-report-banner-1200x630.png"
            alt="New to Crypto — Start Here"
@@ -311,6 +302,22 @@
     <p class="subtitle">
       If you’re brand new, the fastest way to get wrecked is downloading 10 apps and buying random stuff.
       This report gives you a <strong>simple beginner setup</strong>: where to buy, how to earn while holding, and how to track everything.
+    </p>
+
+    <!-- ✅ NEW TO CRYPTO IMAGE (requested) -->
+    <div class="new-hero-wrap">
+      <img
+        src="/assets/newtocrypto.png"
+        alt="NEW TO CRYPTO? START HERE — Buy • Earn • Track (3 Must-Have Platforms)"
+        class="new-hero-img"
+        loading="lazy"
+      />
+    </div>
+
+    <!-- OPTIONAL (HIGHLY RECOMMENDED): one-line context under image -->
+    <p class="new-hero-context">
+      New here? Don’t start with trading, leverage, or chasing pumps — start with a simple foundation:
+      <strong>buy safely</strong>, <strong>earn while you hold</strong>, and <strong>track everything in one place</strong>.
     </p>
 
     <div class="pillrow">
@@ -554,4 +561,5 @@
 
 </body>
 </html>
+
 
