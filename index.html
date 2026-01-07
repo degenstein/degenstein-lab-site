@@ -44,35 +44,47 @@
     html, body {
       background:#000; color:#e5e7eb;
       font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
     }
     a { text-decoration: none; }
+
+    /* Layout polish */
+    .container-max { max-width: 72rem; } /* ~max-w-6xl */
+    .content-max { max-width: 42rem; }   /* readable paragraphs */
+    .section-pad { padding-top: 3.25rem; padding-bottom: 3.25rem; }
+    @media (min-width: 768px) {
+      .section-pad { padding-top: 4rem; padding-bottom: 4rem; }
+    }
 
     .glow { box-shadow: 0 0 30px rgba(0,255,170,0.15), inset 0 0 20px rgba(0,255,170,0.05); }
 
     .btn {
       display:inline-flex; align-items:center; justify-content:center;
-      padding:0.75rem 1.25rem; border-radius:1rem;
-      font-weight:600; transition:transform .15s ease;
+      padding:0.85rem 1.25rem; border-radius:1rem;
+      font-weight:700; transition:transform .15s ease, opacity .15s ease;
       backdrop-filter: blur(6px);
+      letter-spacing: -0.01em;
     }
     .btn:hover { transform: translateY(-2px); }
     .btn:active { transform: translateY(0); }
+    .btn:focus { outline: none; box-shadow: 0 0 0 2px rgba(16,185,129,0.35); }
 
     .btn-primary {
       background: linear-gradient(135deg,#22c55e,#06b6d4);
       color:#00110b;
     }
     .btn-outline {
-      border:1px solid rgba(255,255,255,0.12);
+      border:1px solid rgba(255,255,255,0.14);
       background: rgba(255,255,255,0.03);
       color:#e5e7eb;
     }
 
     .card {
       border-radius:1.5rem; padding:1.5rem;
-      background: rgba(23,23,23,0.6);
-      border:1px solid rgba(255,255,255,0.1);
-      box-shadow: 0 0 30px rgba(0,255,170,0.15), inset 0 0 20px rgba(0,255,170,0.05);
+      background: rgba(23,23,23,0.55);
+      border:1px solid rgba(255,255,255,0.10);
+      box-shadow: 0 0 28px rgba(0,255,170,0.12), inset 0 0 18px rgba(0,255,170,0.04);
     }
     @media (min-width: 768px) { .card { padding:2rem; } }
 
@@ -94,22 +106,48 @@
       border:1px solid rgba(16,185,129,0.55);
       background:rgba(16,185,129,0.12);
       color:#6ee7b7;
-      font-weight:600;
+      font-weight:700;
       white-space:nowrap;
     }
-
     .pill-secondary {
       border-color: rgba(148, 163, 184, 0.6);
       background: rgba(15, 23, 42, 0.6);
       color:#e5e7eb;
     }
-
     .pill-secondary:hover {
       border-color: rgba(34, 197, 94, 0.8);
       color:#6ee7b7;
     }
 
-    .grid-auto { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; }
+    /* Nav */
+    .navlink{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:0.55rem 0.9rem;
+      border-radius: 1rem;
+      border:1px solid rgba(255,255,255,0.10);
+      background: rgba(0,0,0,0.10);
+      font-size: 0.875rem;
+      transition: border-color .15s ease, color .15s ease, background .15s ease;
+    }
+    .navlink:hover{
+      border-color: rgba(16,185,129,0.35);
+      background: rgba(255,255,255,0.04);
+      color: #fff;
+    }
+    .navlink-active{
+      border-color: rgba(16,185,129,0.55) !important;
+      background: rgba(16,185,129,0.10) !important;
+      color: #a7f3d0 !important;
+    }
+
+    /* Text links for “secondary actions” (keeps CTA buttons consistent) */
+    .textlink{
+      display:inline-flex; align-items:center; gap:.45rem;
+      font-weight:700;
+      font-size: 0.85rem;
+      color:#6ee7b7;
+    }
+    .textlink:hover{ color:#a7f3d0; text-decoration: underline; text-underline-offset: 4px; }
 
     @media (prefers-reduced-motion: reduce) {
       * { transition: none !important; animation: none !important; }
@@ -120,7 +158,7 @@
 <body>
 <!-- Header -->
 <header class="sticky top-0 z-50 backdrop-blur bg-black/60 border-b border-white/10">
-  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+  <div class="container-max mx-auto px-4 py-3 flex items-center justify-between">
     <a href="/" class="flex items-center gap-3">
       <img src="assets/dan-degenstein-crypto-avatar.png"
            alt="Dan Degenstein | House of Crypto"
@@ -133,37 +171,23 @@
     </a>
 
     <nav class="flex flex-wrap items-center justify-end gap-2">
-      <a href="#coindepo-bonus" class="inline-flex items-center justify-center px-4 py-2 rounded-2xl border border-white/10 backdrop-blur text-sm">Best Bonus</a>
+      <a href="#coindepo-bonus" class="navlink" data-scrollspy="coindepo-bonus">Best Bonus</a>
 
-      <!-- UPDATED: $COINDEPO Token (Buy) nav button -->
       <a href="/coindepo-review/#where-to-buy-coindepo"
-        class="inline-flex items-center justify-center px-4 py-2 rounded-2xl border border-rose-500/40 backdrop-blur text-sm text-rose-300 font-semibold hover:text-rose-200 hover:border-rose-400 transition">
+        class="navlink border-rose-500/40 text-rose-300 font-extrabold hover:text-rose-200 hover:border-rose-400"
+        style="border-color: rgba(244,63,94,0.40) !important;"
+        data-scrollspy="">
         $COINDEPO Token (Buy)
       </a>
 
-      <a href="/coindepo-review/" class="inline-flex items-center justify-center px-4 py-2 rounded-2xl border border-white/10 backdrop-blur text-sm">
-        CoinDepo Review
-      </a>
-
-      <!-- NEW: Degenstein Weekly link -->
-      <a href="/degenstein-weekly/" class="inline-flex items-center justify-center px-4 py-2 rounded-2xl border border-white/10 backdrop-blur text-sm">
-        📰 Degenstein Weekly
-      </a>
-
-      <!-- NEW: Degenstein Report nav -->
-      <a href="/report/" class="inline-flex items-center justify-center px-4 py-2 rounded-2xl border border-white/10 backdrop-blur text-sm">
-        📊 Degenstein Report
-      </a>
-
-      <!-- NEW: 2026 Magnificent Seven link -->
-      <a href="/magnificent-seven-2026/" class="inline-flex items-center justify-center px-4 py-2 rounded-2xl border border-white/10 backdrop-blur text-sm">
-        🚀 2026 Magnificent Seven
-      </a>
-
-      <a href="#community-promos" class="inline-flex items-center justify-center px-4 py-2 rounded-2xl border border-white/10 backdrop-blur text-sm">All Bonuses</a>
+      <a href="/coindepo-review/" class="navlink">CoinDepo Review</a>
+      <a href="/degenstein-weekly/" class="navlink">📰 Weekly</a>
+      <a href="/report/" class="navlink">📊 Reports</a>
+      <a href="#community-promos" class="navlink" data-scrollspy="community-promos">All Bonuses</a>
 
       <span class="mx-1 w-px h-6 bg-white/10"></span>
-      <a href="#coindepo-bonus" class="inline-flex items-center gap-2 px-4 py-2 rounded-2xl font-semibold text-sm bg-gradient-to-br from-emerald-500 to-cyan-500 text-black">
+
+      <a href="#coindepo-bonus" class="inline-flex items-center gap-2 px-4 py-2 rounded-2xl font-extrabold text-sm bg-gradient-to-br from-emerald-500 to-cyan-500 text-black">
         💠 View CoinDepo Details
       </a>
     </nav>
@@ -175,47 +199,55 @@
   <div class="absolute -top-40 -left-40 w-[520px] h-[520px] rounded-full blur-3xl opacity-20" style="background:radial-gradient(circle,#06b6d4,transparent 60%)"></div>
   <div class="absolute -bottom-40 -right-40 w-[520px] h-[520px] rounded-full blur-3xl opacity-20" style="background:radial-gradient(circle,#22c55e,transparent 60%)"></div>
 
-  <div class="max-w-6xl mx-auto px-4 py-14 md:py-18">
+  <div class="container-max mx-auto px-4 py-14 md:py-18">
     <div class="card">
       <div class="grid md:grid-cols-2 gap-10 items-start">
 
         <div>
-          <!-- 🔥 Upcoming Token Burn Announcement -->
-          <div class="mb-4 inline-flex items-center gap-2 rounded-full border border-rose-500/50 bg-rose-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-rose-300">
+          <!-- 🔥 Major Token Event (date unknown) -->
+          <div class="mb-4 inline-flex items-center gap-2 rounded-full border border-rose-500/50 bg-rose-500/10 px-3 py-1 text-[11px] font-extrabold uppercase tracking-wide text-rose-300">
             <span>🔥 Major Token Event</span>
             <span>•</span>
-            <span>Jan 2026 Burn Scheduled</span>
+            <span>Burn Scheduled (date TBD)</span>
           </div>
 
-          <h2 class="text-3xl md:text-5xl font-extrabold leading-tight">
-            Turn Your Crypto &amp; Cash into <span class="text-emerald-400">Bonuses &amp; Passive Income</span>
+          <!-- (1) Tightened hero: one clear promise + subhead -->
+          <h2 class="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight">
+            Stack <span class="text-emerald-400">bonuses</span> and earn <span class="text-emerald-400">yield</span> while you hold.
           </h2>
-          <p class="mt-3 text-base md:text-lg text-gray-300">
-            Instead of letting your bags sit idle on exchanges, use them to unlock sign-up bonuses, boosted APY, and rewards. I curate referral deals I actually use so you can stack extra yield while you hold.
+
+          <p class="mt-3 text-base md:text-lg text-gray-300 content-max">
+            I curate referral deals I actually use (like CoinDepo) so you can unlock sign-up bonuses, boosted APR, and rewards —
+            without chasing endless threads.
           </p>
 
-          <ul class="mt-6 space-y-3 text-gray-200 text-sm md:text-base">
-            <li>💰 <span class="font-semibold text-emerald-300">Welcome Bonuses:</span> up to <span class="font-semibold">$500 USDC</span> via the CoinDepo referral bonus (see tiers below).</li>
-            <li>📈 <span class="font-semibold text-emerald-300">Passive Income:</span> earn up to <span class="font-semibold">27% APR</span> on select platforms while waiting for the next pump.</li>
-            <li>🧪 <span class="font-semibold text-emerald-300">Hand-Picked Only:</span> No random garbage—just platforms I'd recommend to friends.</li>
-            <li>🎁 <span class="font-semibold text-emerald-300">Community Boost:</span> My referral rewards help fund future giveaways, airdrops, and events.</li>
-          </ul>
-
+          <!-- Two CTA buttons max -->
           <div class="mt-6 flex flex-wrap gap-3">
             <a href="#coindepo-bonus" class="btn btn-primary text-base">
               🚀 View Today’s Best Bonus
             </a>
+            <a href="#how-it-works" class="btn btn-outline text-base">
+              👇 How It Works
+            </a>
           </div>
 
-          <!-- 🧮 Hero pills -->
-          <div class="mt-3 flex flex-wrap gap-2">
-            <a href="/coindepo-review/#earnings-calculator" class="pill">
-              🧮 Try Earnings Calculator
-            </a>
-            <a href="/report/" class="pill pill-secondary">
-              📊 Read Token Reports
-            </a>
+          <!-- (3) Trust UI above the fold -->
+          <div class="mt-4 flex flex-wrap gap-2 items-center text-xs text-gray-400">
+            <span class="pill pill-secondary">✅ Referral disclosure</span>
+            <span class="pill pill-secondary">🛡️ Not financial advice</span>
+            <span class="pill">🕒 Last updated: <span id="lastUpdated">—</span></span>
           </div>
+
+          <!-- Secondary actions as text links (keeps button system clean) -->
+          <div class="mt-4 flex flex-wrap gap-4">
+            <a href="/coindepo-review/#earnings-calculator" class="textlink">🧮 Earnings Calculator</a>
+            <a href="/report/" class="textlink">📊 Read Token Reports</a>
+          </div>
+
+          <!-- (8) Make “burn” more credible without a date -->
+          <p class="mt-4 text-[12px] text-gray-400 content-max">
+            Burn details will be posted with on-chain proof once the transaction is executed.
+          </p>
         </div>
 
         <!-- Side Panel -->
@@ -224,16 +256,18 @@
             <div class="flex items-center gap-3">
               <div class="text-3xl">💠</div>
               <div>
-                <h3 class="text-xl font-bold">Featured: CoinDepo</h3>
+                <h3 class="text-xl font-extrabold">Featured: CoinDepo</h3>
                 <p class="text-sm text-gray-300">
-                  Earn up to <span class="font-semibold text-emerald-300">27% APR</span> on your deposits.
+                  Earn up to <span class="font-extrabold text-emerald-300">27% APR</span> on your deposits.
                 </p>
               </div>
             </div>
+
             <ul class="mt-4 text-sm text-gray-300 space-y-1">
               <li>• Great for XRP, SOL, AVAX, PEPE, DOGE, SHIB &amp; stablecoins</li>
               <li>• Multiple interest account types (quarterly, annual, etc.)</li>
             </ul>
+
             <a href="/coindepo-review/" class="mt-4 inline-flex w-full justify-center btn btn-primary text-sm">
               🔎 Read Full CoinDepo Review
             </a>
@@ -251,139 +285,101 @@
   </div>
 </section>
 
-<!-- ================= Degenstein Weekly HOME FEATURE ================= -->
-<section id="weekly-home" class="max-w-6xl mx-auto px-4 py-10 md:py-14">
-  <div class="card flex flex-col md:flex-row gap-6 items-center">
-    <div class="w-full md:w-1/2">
-      <img
-        src="assets/weekly-og-1200x630.png"
-        alt="Degenstein Weekly — The Week in Crypto (No BS)"
-        class="w-full h-auto rounded-2xl border border-white/10"
-        loading="lazy"
-      />
-    </div>
-    <div class="w-full md:w-1/2 space-y-3">
-      <div class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-emerald-300">
-        <span>📰 New</span>
-        <span>Weekly Crypto Recap</span>
+<!-- (2) Featured card grid (Weekly + Reports) -->
+<section id="featured" class="container-max mx-auto px-4 section-pad">
+  <div class="grid gap-5 md:grid-cols-2">
+    <!-- Weekly Card -->
+    <div class="card">
+      <div class="flex items-start justify-between gap-4">
+        <div class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[11px] font-extrabold uppercase tracking-wide text-emerald-300">
+          <span>📰 Weekly</span>
+          <span>•</span>
+          <span>High-signal recap</span>
+        </div>
+        <a href="/degenstein-weekly/" class="pill">Open</a>
       </div>
-      <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">
+
+      <div class="mt-4">
+        <img
+          src="assets/weekly-og-1200x630.png"
+          alt="Degenstein Weekly — The Week in Crypto (No BS)"
+          class="w-full h-auto rounded-2xl border border-white/10"
+          loading="lazy"
+        />
+      </div>
+
+      <h2 class="mt-4 text-2xl font-extrabold tracking-tight">
         Degenstein Weekly: The Week in Crypto (No BS)
       </h2>
-      <p class="text-sm md:text-base text-gray-300">
-        One page, once a week: headlines, market context, macro risks, and real use-case progress.
-        No hype predictions, no 20-tweet threads — just what actually matters for the next moves.
+      <p class="mt-2 text-sm md:text-base text-gray-300 content-max">
+        One page, once a week: headlines, market context, macro risks, and real use-case progress — no hype predictions.
       </p>
-      <ul class="text-sm text-gray-300 space-y-1">
-        <li>• Key news &amp; flows I’m paying attention to</li>
-        <li>• Macro + regulatory moves that affect real bags</li>
-        <li>• How I’m positioning and earning while I wait</li>
-      </ul>
-      <div class="flex flex-wrap gap-3 pt-2">
+
+      <div class="mt-4 flex flex-wrap gap-3">
         <a href="/degenstein-weekly/" class="btn btn-primary text-sm md:text-base">
           📰 Read This Week’s Edition
         </a>
-        <a href="/degenstein-weekly/#archive" class="btn btn-outline text-xs md:text-sm">
+        <a href="/degenstein-weekly/#archive" class="btn btn-outline text-sm md:text-base">
           📁 View Archive
         </a>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ============ Degenstein Report HOME FEATURE ============ -->
-<section id="report-home" class="max-w-6xl mx-auto px-4 pb-10 md:pb-14">
-  <div class="card flex flex-col md:flex-row gap-6 items-center">
-    <div class="w-full md:w-1/2">
-      <img
-        src="assets/degenstein-report-banner-1200x630.png"
-        alt="The Degenstein Report — Token breakdowns, yield angles & real catalysts — no hopium."
-        class="w-full h-auto rounded-2xl border border-emerald-400/40"
-        loading="lazy"
-      />
-    </div>
-    <div class="w-full md:w-1/2 space-y-3">
-      <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">
+    <!-- Reports Card -->
+    <div class="card">
+      <div class="flex items-start justify-between gap-4">
+        <div class="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-500/10 px-3 py-1 text-[11px] font-extrabold uppercase tracking-wide text-emerald-300">
+          <span>📊 Reports</span>
+          <span>•</span>
+          <span>Token deep dives</span>
+        </div>
+        <a href="/report/" class="pill">Browse</a>
+      </div>
+
+      <div class="mt-4">
+        <img
+          src="assets/degenstein-report-banner-1200x630.png"
+          alt="The Degenstein Report — Token breakdowns, yield angles & real catalysts — no hopium."
+          class="w-full h-auto rounded-2xl border border-emerald-400/40"
+          loading="lazy"
+        />
+      </div>
+
+      <h2 class="mt-4 text-2xl font-extrabold tracking-tight">
         The Degenstein Report — Token Deep Dives
       </h2>
-      <p class="text-sm md:text-base text-gray-300">
-        When there’s something real to say about a token, I write a full report:
-        narrative, catalysts, and how I personally earn yield while I wait. No daily noise,
-        just occasional high-signal breakdowns.
+      <p class="mt-2 text-sm md:text-base text-gray-300 content-max">
+        When there’s something real to say about a token, I write a full report: narrative, catalysts, and how I earn yield while I wait.
       </p>
-      <ul class="text-sm text-gray-300 space-y-1">
-        <li>• Snapshot of sector, narrative &amp; status</li>
-        <li>• Key 2026+ catalysts I’m watching</li>
-        <li>• “Earn while I hold” angle for each token</li>
-      </ul>
-      <p class="text-xs text-gray-400">
-        Featured reports:
-        <span class="text-emerald-300 font-semibold">$XRP — 2026 ETF Era &amp; Global Payment Rails</span>,
-        <span class="text-emerald-300 font-semibold">$ONDO — Tokenized Treasuries &amp; Real Yield Rails</span>, and
-        <span class="text-emerald-300 font-semibold">$LINK — Tokenization + CCIP Infrastructure Thesis</span>.
-        More tokens will be added over time when they deserve a full write-up.
-      </p>
-      <div class="flex flex-wrap gap-3 pt-2">
+
+      <div class="mt-4 flex flex-wrap gap-3">
         <a href="/report/" class="btn btn-primary text-sm md:text-base">
           📊 View All Reports
         </a>
-        <a href="/report/xrp/" class="btn btn-outline text-xs md:text-sm">
-          💠 Read the XRP Report
+        <a href="/report/xrp/" class="btn btn-outline text-sm md:text-base">
+          💠 XRP
         </a>
-        <a href="/report/ondo/" class="btn btn-outline text-xs md:text-sm">
-          🏦 Read the ONDO Report
+        <a href="/report/ondo/" class="btn btn-outline text-sm md:text-base">
+          🏦 ONDO
         </a>
-        <a href="/report/link/" class="btn btn-outline text-xs md:text-sm">
-          🔗 Read the LINK Report
+        <a href="/report/link/" class="btn btn-outline text-sm md:text-base">
+          🔗 LINK
         </a>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- ============ Magnificent Seven HOME FEATURE ============ -->
-<section id="magnificent-seven-home" class="max-w-6xl mx-auto px-4 pb-10 md:pb-14">
-  <div class="card flex flex-col md:flex-row gap-6 items-center">
-    <div class="w-full md:w-1/2">
-      <img
-        src="assets/magnificentseven.png"
-        alt="My 2026 Magnificent Seven Crypto Targets"
-        class="w-full h-auto rounded-2xl border border-emerald-400/40"
-        loading="lazy"
-      />
-    </div>
-    <div class="w-full md:w-1/2 space-y-3">
-      <div class="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-emerald-300">
-        <span>🚀 New</span>
-        <span>2026 Price Outlook</span>
-      </div>
-      <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">
-        My 2026 “Magnificent Seven” Crypto Targets
-      </h2>
-      <p class="text-sm md:text-base text-gray-300">
-        Deep dive into why I’m targeting XRP, AVAX, LINK, ETH, SOL, NEAR &amp; ONDO for 2026 — with 
-        realistic low-end to mid bull case ranges based on catalysts, adoption, and macro.
+      <p class="mt-3 text-[11px] text-gray-500 content-max">
+        More tokens will be added over time when they deserve a full write-up.
       </p>
-      <ul class="text-sm text-gray-300 space-y-1">
-        <li>• XRP, AVAX, LINK, ETH, SOL, NEAR, ONDO thesis</li>
-        <li>• Target ranges like XRP $8–$11, ETH $6k–$6.5k</li>
-        <li>• How I earn up to 24% APR while I wait</li>
-      </ul>
-      <div class="flex flex-wrap gap-3 pt-2">
-        <a href="/magnificent-seven-2026/" class="btn btn-primary text-sm md:text-base">
-          🚀 Read the 2026 Magnificent Seven Report
-        </a>
-      </div>
     </div>
   </div>
 </section>
 
 <!-- ================= CoinDepo Bonus Details (Homepage) ================= -->
-<section id="coindepo-bonus" class="max-w-6xl mx-auto px-4 py-12 md:py-16">
+<section id="coindepo-bonus" class="container-max mx-auto px-4 section-pad">
   <div class="card">
     <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
       <div>
-        <div class="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-emerald-300">
+        <div class="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-500/10 px-3 py-1 text-[11px] font-extrabold uppercase tracking-wide text-emerald-300">
           <span>💠 Best Bonus</span>
           <span>•</span>
           <span>CoinDepo</span>
@@ -416,7 +412,7 @@
     <div class="grid gap-4 md:grid-cols-3">
       <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
         <div class="text-2xl mb-2">①</div>
-        <h3 class="font-semibold mb-1 text-emerald-300">Sign Up</h3>
+        <h3 class="font-extrabold mb-1 text-emerald-300">Sign Up</h3>
         <p class="text-sm text-gray-300">
           The referred user must create an account using the bonus-eligible signup link:
         </p>
@@ -429,7 +425,7 @@
 
       <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
         <div class="text-2xl mb-2">②</div>
-        <h3 class="font-semibold mb-1 text-emerald-300">Deposit</h3>
+        <h3 class="font-extrabold mb-1 text-emerald-300">Deposit</h3>
         <p class="text-sm text-gray-300">
           Deposit supported assets equivalent to <strong>$100 or more</strong>.
         </p>
@@ -440,7 +436,7 @@
 
       <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
         <div class="text-2xl mb-2">③</div>
-        <h3 class="font-semibold mb-1 text-emerald-300">Hold for 90 Days</h3>
+        <h3 class="font-extrabold mb-1 text-emerald-300">Hold for 90 Days</h3>
         <p class="text-sm text-gray-300">
           Maintain the qualifying balance for <strong>at least 90 days</strong>
           in any Compound Interest Account.
@@ -465,7 +461,7 @@
         <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
           <div class="flex items-center justify-between">
             <span class="badge">Tier 1</span>
-            <span class="text-sm font-semibold">$100 – $249</span>
+            <span class="text-sm font-extrabold">$100 – $249</span>
           </div>
           <p class="mt-2 text-sm">Bonus payout: <strong>$10 USDC</strong></p>
         </div>
@@ -473,7 +469,7 @@
         <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
           <div class="flex items-center justify-between">
             <span class="badge">Tier 2</span>
-            <span class="text-sm font-semibold">$250 – $499</span>
+            <span class="text-sm font-extrabold">$250 – $499</span>
           </div>
           <p class="mt-2 text-sm">Bonus payout: <strong>$25 USDC</strong></p>
         </div>
@@ -481,7 +477,7 @@
         <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
           <div class="flex items-center justify-between">
             <span class="badge">Tier 3</span>
-            <span class="text-sm font-semibold">$500 – $999</span>
+            <span class="text-sm font-extrabold">$500 – $999</span>
           </div>
           <p class="mt-2 text-sm">Bonus payout: <strong>$50 USDC</strong></p>
         </div>
@@ -489,7 +485,7 @@
         <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
           <div class="flex items-center justify-between">
             <span class="badge">Tier 4</span>
-            <span class="text-sm font-semibold">$1,000 – $4,999</span>
+            <span class="text-sm font-extrabold">$1,000 – $4,999</span>
           </div>
           <p class="mt-2 text-sm">Bonus payout: <strong>$100 USDC</strong></p>
         </div>
@@ -497,7 +493,7 @@
         <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
           <div class="flex items-center justify-between">
             <span class="badge">Tier 5</span>
-            <span class="text-sm font-semibold">$5,000 – $14,999</span>
+            <span class="text-sm font-extrabold">$5,000 – $14,999</span>
           </div>
           <p class="mt-2 text-sm">Bonus payout: <strong>$300 USDC</strong></p>
         </div>
@@ -505,7 +501,7 @@
         <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
           <div class="flex items-center justify-between">
             <span class="badge">Tier 6</span>
-            <span class="text-sm font-semibold">$15,000+</span>
+            <span class="text-sm font-extrabold">$15,000+</span>
           </div>
           <p class="mt-2 text-sm">Bonus payout: <strong>$500 USDC</strong></p>
         </div>
@@ -531,8 +527,8 @@
   </div>
 </section>
 
-<!-- ====================== HOW IT WORKS (MOVED HERE) ====================== -->
-<section id="how-it-works" class="max-w-6xl mx-auto px-4 py-12 md:py-16">
+<!-- ====================== HOW IT WORKS ====================== -->
+<section id="how-it-works" class="container-max mx-auto px-4 section-pad">
   <div class="card">
     <div class="text-center max-w-3xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-extrabold mb-3">How This Bonus Hub Works</h2>
@@ -544,21 +540,21 @@
     <div class="mt-8 grid gap-6 md:grid-cols-3">
       <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
         <div class="text-2xl mb-2">①</div>
-        <h3 class="font-semibold mb-1">Pick a Platform</h3>
+        <h3 class="font-extrabold mb-1">Pick a Platform</h3>
         <p class="text-sm text-gray-300">
           Browse the Bonus Hub and choose the referral deal that fits your goals and risk level.
         </p>
       </div>
       <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
         <div class="text-2xl mb-2">②</div>
-        <h3 class="font-semibold mb-1">Join with My Link</h3>
+        <h3 class="font-extrabold mb-1">Join with My Link</h3>
         <p class="text-sm text-gray-300">
           Click through using the referral button. Complete sign-up and any KYC the platform needs.
         </p>
       </div>
       <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
         <div class="text-2xl mb-2">③</div>
-        <h3 class="font-semibold mb-1">Deposit &amp; Earn</h3>
+        <h3 class="font-extrabold mb-1">Deposit &amp; Earn</h3>
         <p class="text-sm text-gray-300">
           Make the qualifying deposit, hold or trade as required, and collect your bonus and yield. Always read platform terms.
         </p>
@@ -582,7 +578,7 @@
 
     <div class="mt-10 mx-auto max-w-3xl text-slate-400 text-xs leading-relaxed">
       <p>
-        <span class="font-semibold text-slate-300">Transparency:</span>
+        <span class="font-extrabold text-slate-300">Transparency:</span>
         These are referral links. You may receive bonuses; I may receive small rewards that fund community promos.
       </p>
       <p class="mt-2">
@@ -598,7 +594,7 @@
 
 <!-- ====================== FOOTER ===================== -->
 <footer class="border-t border-white/10">
-  <div class="max-w-6xl mx-auto px-4 py-10 text-sm text-gray-400 flex flex-col md:flex-row items-center justify-between gap-4">
+  <div class="container-max mx-auto px-4 py-10 text-sm text-gray-400 flex flex-col md:flex-row items-center justify-between gap-4">
     <div>
       © <span id="year"></span> Degenstein. All rights reserved.
       <p class="mt-2 text-xs text-gray-500 max-w-md leading-relaxed">
@@ -615,7 +611,17 @@
   </div>
 </footer>
 
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Last updated stamp (local date, readable)
+  (function(){
+    const el = document.getElementById('lastUpdated');
+    if (!el) return;
+    const d = new Date();
+    el.textContent = d.toLocaleDateString(undefined, { year:'numeric', month:'short', day:'numeric' });
+  })();
+</script>
 
 <!-- Statcounter (optional, same as homepage) -->
 <script type="text/javascript">var sc_project=13160262; var sc_invisible=1; var sc_security="dff3f68d"; </script>
@@ -698,7 +704,7 @@ const PROMOS = [
        class="group block rounded-2xl bg-white/5 p-4 hover:bg-white/[0.09] transition">
       <div class="flex items-center gap-3">
         <div class="text-2xl">${p.emoji}</div>
-        <h3 class="text-lg font-bold">${p.name}</h3>
+        <h3 class="text-lg font-extrabold">${p.name}</h3>
       </div>
       <p class="mt-2 text-sm text-slate-300">${p.blurb}</p>
       ${p.code ? `
@@ -706,7 +712,7 @@ const PROMOS = [
           Referral code: <code>${p.code}</code>
         </p>
       ` : ''}
-      <div class="mt-3 inline-flex items-center gap-2 text-emerald-300 text-xs uppercase tracking-wide">
+      <div class="mt-3 inline-flex items-center gap-2 text-emerald-300 text-xs uppercase tracking-wide font-extrabold">
         <span>Use referral</span>
       </div>
     </a>
@@ -714,9 +720,36 @@ const PROMOS = [
 })();
 </script>
 
+<!-- (5) Scrollspy highlight for nav sections (simple + lightweight) -->
+<script>
+(function(){
+  const links = Array.from(document.querySelectorAll('[data-scrollspy]')).filter(a => a.getAttribute('data-scrollspy'));
+  const sections = links
+    .map(a => document.getElementById(a.getAttribute('data-scrollspy')))
+    .filter(Boolean);
+
+  if (!links.length || !sections.length) return;
+
+  const byId = new Map(links.map(a => [a.getAttribute('data-scrollspy'), a]));
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      const id = e.target.id;
+      const link = byId.get(id);
+      if (!link) return;
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.remove('navlink-active'));
+        link.classList.add('navlink-active');
+      }
+    });
+  }, { rootMargin: "-40% 0px -55% 0px", threshold: 0.01 });
+
+  sections.forEach(s => obs.observe(s));
+})();
+</script>
+
 </body>
 </html>
-
 
 
 
