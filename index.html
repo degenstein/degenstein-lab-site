@@ -574,6 +574,11 @@
       </p>
     </div>
 
+    <!-- ⭐ Beginner legend -->
+    <div class="mt-6 mb-2 text-center text-[11px] text-slate-400">
+      ⭐ = <span class="text-emerald-300 font-semibold">Recommended for beginners</span>
+    </div>
+
     <div id="promos-grid" class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
 
     <div class="mt-10 mx-auto max-w-3xl text-slate-400 text-xs leading-relaxed">
@@ -637,14 +642,16 @@ const PROMOS = [
     emoji: "💠",
     url: "https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV",
     blurb: "CoinDepo referral bonus up to $500 USDC (90-day hold). Full steps + tiers: https://degenstein.xyz/#coindepo-bonus",
-    code: "R-UgAoMRNV"
+    code: "R-UgAoMRNV",
+    beginner: true
   },
   {
     name: "Gemini",
     emoji: "🔷",
     url: "https://exchange.gemini.com/register?referral=9zrdalkh7&type=referral",
     blurb: "Earn $50 in your choice of crypto.",
-    code: "9zrdalkh7"
+    code: "9zrdalkh7",
+    beginner: true
   },
   {
     name: "Coinbase",
@@ -690,7 +697,8 @@ const PROMOS = [
     emoji: "📊",
     url: "https://invite.coinstats.app/r?i=Qm2yTg1745088895231",
     blurb: "Get 2,000 Sparks welcome bonus when you sign up and start using the app.",
-    code: "Qm2yTg1745088895231"
+    code: "Qm2yTg1745088895231",
+    beginner: true
   },
   {
     name: "Moonshot",
@@ -706,7 +714,15 @@ const PROMOS = [
   if (!grid) return;
   grid.innerHTML = PROMOS.map(p => `
     <a href="${p.url}" target="_blank" rel="noopener"
-       class="group block rounded-2xl bg-white/5 p-4 hover:bg-white/[0.09] transition">
+       class="group block rounded-2xl bg-white/5 p-4 hover:bg-white/[0.09] transition relative">
+
+      ${p.beginner ? `
+        <div class="absolute top-3 right-3 rounded-full border border-emerald-400/40 bg-emerald-500/10 px-2 py-[2px]
+                    text-[10px] font-extrabold uppercase tracking-wide text-emerald-300">
+          ⭐ Recommended
+        </div>
+      ` : ``}
+
       <div class="flex items-center gap-3">
         <div class="text-2xl">${p.emoji}</div>
         <h3 class="text-lg font-extrabold">${p.name}</h3>
@@ -755,7 +771,6 @@ const PROMOS = [
 
 </body>
 </html>
-
 
 
 
