@@ -176,6 +176,50 @@
       border-radius: 8px;
     }
 
+    /* ✅ CoinDepo CTA */
+    .coindepo-wrap{
+      margin:18px 0 22px;
+      padding:18px;
+      border-radius:18px;
+      border:1px solid rgba(34,197,94,.35);
+      background:
+        radial-gradient(circle at top left,rgba(34,197,94,.14),transparent 65%),
+        radial-gradient(circle at bottom right,rgba(6,182,212,.10),transparent 60%),
+        rgba(15,23,42,.92);
+      box-shadow:0 18px 60px rgba(0,0,0,.45);
+    }
+    .coindepo-title{
+      margin:0 0 6px;
+      font-size:1.05rem;
+      letter-spacing:.01em;
+    }
+    .coindepo-text{
+      margin:0;
+      color:var(--text-muted);
+      line-height:1.7;
+      max-width:860px;
+    }
+    .coindepo-bullets{margin:10px 0 0 18px;color:var(--text-muted);line-height:1.75;}
+    .coindepo-bullets li{margin:6px 0;}
+    .coindepo-btn{
+      display:inline-flex;align-items:center;gap:8px;
+      margin-top:12px;
+      padding:9px 16px;
+      border-radius:999px;
+      font-weight:950;
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      color:#020617;
+      box-shadow:0 14px 40px rgba(6,182,212,.20);
+      transition: transform .12s ease, box-shadow .12s ease;
+    }
+    .coindepo-btn:hover{transform:translateY(-1px);box-shadow:0 18px 55px rgba(6,182,212,.28);text-decoration:none;}
+    .coindepo-foot{
+      margin-top:10px;
+      color:rgba(148,163,184,.95);
+      font-size:.9rem;
+      line-height:1.6;
+    }
+
     .cta-wrap{
       margin-top:26px;
       padding:18px;
@@ -235,6 +279,28 @@
       <a href="https://degenstein.xyz/" class="home-pill">← Main Page</a>
 
       <div class="divider"></div>
+
+      <!-- ✅ COINDEPO (WHERE I HOLD WHILE I WAIT) -->
+      <div class="coindepo-wrap">
+        <h2 class="coindepo-title">Where I hold while I wait (CoinDepo)</h2>
+        <p class="coindepo-text">
+          I’m not trying to time every candle. When I’m holding through chop, I prefer parking part of my crypto
+          where it can still work for me — and CoinDepo is one of the ways I do that.
+        </p>
+        <ul class="coindepo-bullets">
+          <li><strong>Earn up to 21%+ APR</strong> on certain assets while you hold (rates vary).</li>
+          <li><strong>No day-trading required</strong> — the point is to keep your hands steady during noise.</li>
+          <li><strong>90-day hold bonus</strong> available through my exclusive link (terms apply).</li>
+        </ul>
+
+        <a class="coindepo-btn" href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV" target="_blank" rel="noopener">
+          Claim CoinDepo bonus → 
+        </a>
+
+        <div class="coindepo-foot">
+          Referral code: <strong>R-UgAoMRNV</strong> • Always DYOR • Rates/bonuses can change • Check eligibility and terms inside the app.
+        </div>
+      </div>
 
       <!-- 0) PURPOSE -->
       <div class="section">
