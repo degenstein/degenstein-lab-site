@@ -169,6 +169,16 @@
       font-weight:650;
     }
 
+    /* ✅ shared thumbnail style (matches your reports page) */
+    .card-thumb{
+      margin:10px 0 10px;
+      border-radius:14px;
+      overflow:hidden;
+      border:1px solid rgba(148,163,184,.25);
+      background:rgba(15,23,42,.6);
+    }
+    .card-thumb img{width:100%;display:block;height:auto;}
+
     .card-link{
       margin-top:12px;
       display:inline-flex;
@@ -257,19 +267,24 @@
 
       <div class="divider"></div>
 
-      <h2 style="font-size:1.25rem;margin-bottom:14px;">Portfolio Playbooks (Coming Soon)</h2>
+      <h2 style="font-size:1.25rem;margin-bottom:14px;">Portfolio Playbooks</h2>
 
       <div class="grid">
 
-        <!-- ✅ START HERE (NOW CLICKABLE) -->
+        <!-- ✅ START HERE (PUBLISHED + THUMBNAIL) -->
         <a class="card-wrap" href="/playbooks/no-fomo-ruleset/">
-          <article class="card card-muted">
+          <article class="card">
             <div class="featured-pill"><span class="featured-dot"></span> Start Here</div>
             <div class="tag-row">
               <span class="tag tag-primary">Rules</span>
               <span class="tag tag-alt">No FOMO</span>
-              <span class="tag tag-alt">Simple</span>
+              <span class="tag tag-alt">Live</span>
             </div>
+
+            <div class="card-thumb">
+              <img src="/assets/nofomo.png" alt="No-FOMO Ruleset Cover" loading="lazy" />
+            </div>
+
             <h3>The No-FOMO Ruleset (How I actually operate)</h3>
             <p>
               The core rules I use: position sizing, what to do during pumps, what I don’t touch, and how I avoid blowing up.
@@ -337,5 +352,6 @@
   </div>
 </body>
 </html>
+
 
 
