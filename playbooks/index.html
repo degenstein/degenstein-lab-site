@@ -202,6 +202,9 @@
       box-shadow: 0 0 12px rgba(6,182,212,.55);
     }
 
+    /* ✅ Remove underline + keep full card clickable */
+    a.card-wrap:hover{ text-decoration:none; }
+
     .cta-wrap{
       margin-top:26px;
       padding:18px;
@@ -258,20 +261,22 @@
 
       <div class="grid">
 
-        <!-- START HERE -->
-        <article class="card card-muted">
-          <div class="featured-pill"><span class="featured-dot"></span> Start Here</div>
-          <div class="tag-row">
-            <span class="tag tag-primary">Rules</span>
-            <span class="tag tag-alt">No FOMO</span>
-            <span class="tag tag-alt">Simple</span>
-          </div>
-          <h3>The No-FOMO Ruleset (How I actually operate)</h3>
-          <p>
-            The core rules I use: position sizing, what to do during pumps, what I don’t touch, and how I avoid blowing up.
-          </p>
-          <span class="card-link">↗ Publishing soon</span>
-        </article>
+        <!-- ✅ START HERE (NOW CLICKABLE) -->
+        <a class="card-wrap" href="/playbooks/no-fomo-ruleset/">
+          <article class="card card-muted">
+            <div class="featured-pill"><span class="featured-dot"></span> Start Here</div>
+            <div class="tag-row">
+              <span class="tag tag-primary">Rules</span>
+              <span class="tag tag-alt">No FOMO</span>
+              <span class="tag tag-alt">Simple</span>
+            </div>
+            <h3>The No-FOMO Ruleset (How I actually operate)</h3>
+            <p>
+              The core rules I use: position sizing, what to do during pumps, what I don’t touch, and how I avoid blowing up.
+            </p>
+            <span class="card-link">↗ Open the No-FOMO Ruleset</span>
+          </article>
+        </a>
 
         <!-- $1,000 -->
         <article class="card card-muted">
@@ -332,4 +337,5 @@
   </div>
 </body>
 </html>
+
 
