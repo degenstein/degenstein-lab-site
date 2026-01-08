@@ -12,7 +12,7 @@
   <!-- 🌐 Open Graph -->
   <meta property="og:title" content="Degenstein’s Crypto Playbooks" />
   <meta property="og:description" content="Portfolio examples + repeatable rules for different budgets (and memecoin setups). Clear, simple, practical." />
-  <meta property="og:image" content="https://degenstein.xyz/assets/degenstein-report-banner-1200x630.png" />
+  <meta property="og:image" content="https://degenstein.xyz/assets/playbooks.png" />
   <meta property="og:url" content="https://degenstein.xyz/playbooks/" />
   <meta property="og:type" content="website" />
 
@@ -20,7 +20,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Degenstein’s Crypto Playbooks" />
   <meta name="twitter:description" content="Portfolio examples + repeatable rules for different budgets. No hopium." />
-  <meta name="twitter:image" content="https://degenstein.xyz/assets/degenstein-report-banner-1200x630.png" />
+  <meta name="twitter:image" content="https://degenstein.xyz/assets/playbooks.png" />
   <meta name="twitter:site" content="@DHouseofcrypto" />
 
   <meta name="theme-color" content="#06b6d4" />
@@ -60,6 +60,18 @@
     a{color:var(--accent);text-decoration:none;}
     a:hover{text-decoration:underline;}
 
+    /* ✅ COVER IMAGE (Playbooks) */
+    .playbook-banner-wrap{
+      max-width:760px;
+      margin:0 auto 22px;
+    }
+    .playbook-banner-img{
+      width:100%;
+      border-radius:18px;
+      display:block;
+      box-shadow:0 18px 60px rgba(0,0,0,.55);
+    }
+
     .home-pill{
       display:inline-flex;gap:6px;margin:14px 0 14px;padding:7px 14px;
       border-radius:999px;font-size:.74rem;letter-spacing:.14em;
@@ -86,6 +98,19 @@
 
     h1{font-size:clamp(2.2rem,4vw,3.1rem);margin:12px 0 6px;}
     .subtitle{font-size:1rem;color:var(--text-muted);max-width:760px;line-height:1.65;}
+
+    /* ✅ DYOR DISCLAIMER */
+    .disclaimer{
+      margin-top:14px;
+      padding:12px 14px;
+      border-radius:14px;
+      background:rgba(15,23,42,.9);
+      border:1px solid rgba(148,163,184,.35);
+      color:var(--text-muted);
+      font-size:.9rem;
+      line-height:1.6;
+    }
+    .disclaimer strong{color:var(--text-main);}
 
     .divider{
       border-bottom:1px solid rgba(148,163,184,.3);
@@ -203,12 +228,26 @@
   <div class="page">
     <div class="container">
 
+      <!-- ✅ COVER IMAGE -->
+      <div class="playbook-banner-wrap">
+        <img src="/assets/playbooks.png"
+             alt="Degenstein’s Crypto Playbooks"
+             class="playbook-banner-img"
+             loading="lazy" />
+      </div>
+
       <div class="badge"><span class="badge-dot"></span> Degenstein’s Crypto Playbooks</div>
       <h1>Degenstein’s Crypto Playbooks</h1>
       <p class="subtitle">
         Playbooks are simple, repeatable guides — portfolio examples and rulesets for different budgets and styles.
         No complicated theory. No hopium. Just “here’s the setup” and “here’s the rules.”
       </p>
+
+      <!-- ✅ DYOR DISCLAIMER -->
+      <div class="disclaimer">
+        ⚠️ These playbooks are <strong>my personal suggestions</strong> and are <strong>not financial advice</strong>.
+        Always <strong>DYOR</strong> and choose what fits your goals and risk tolerance.
+      </div>
 
       <a href="https://degenstein.xyz/" class="home-pill">← Back to Main Page</a>
       <a href="https://degenstein.xyz/report/" class="home-pill">← Back to Reports</a>
@@ -293,3 +332,4 @@
   </div>
 </body>
 </html>
+
