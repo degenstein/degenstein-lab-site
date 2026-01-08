@@ -112,6 +112,37 @@
     }
     .disclaimer strong{color:var(--text-main);}
 
+    /* ✅ NEW: Share row + X share pill */
+    .share-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:14px;
+      align-items:center;
+    }
+    .share-x{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:7px 14px;
+      border-radius:999px;
+      font-size:.74rem;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      font-weight:800;
+      background:rgba(29,155,240,.14);
+      border:1px solid rgba(29,155,240,.55);
+      color:#9bd7ff;
+      transition:.15s;
+    }
+    .share-x:hover{
+      background:rgba(29,155,240,.18);
+      border-color:rgba(29,155,240,.85);
+      color:#d2efff;
+      text-decoration:none;
+      transform:translateY(-1px);
+    }
+
     .divider{
       border-bottom:1px solid rgba(148,163,184,.3);
       margin:26px 0 18px;
@@ -262,8 +293,18 @@
         Always <strong>DYOR</strong> and choose what fits your goals and risk tolerance.
       </div>
 
-      <a href="https://degenstein.xyz/" class="home-pill">← Back to Main Page</a>
-      <a href="https://degenstein.xyz/report/" class="home-pill">← Back to Reports</a>
+      <!-- ✅ NEW: Share row (keeps your existing pills intact) -->
+      <div class="share-row">
+        <a href="https://degenstein.xyz/" class="home-pill">← Back to Main Page</a>
+        <a href="https://degenstein.xyz/report/" class="home-pill">← Back to Reports</a>
+
+        <!-- X Share Button -->
+        <a class="share-x"
+           target="_blank" rel="noopener"
+           href="https://x.com/intent/tweet?text=I%20just%20published%20my%20Crypto%20Playbooks%20%E2%80%94%20portfolio%20examples%20%2B%20strict%20rules.%20No%20hopium.%0A%0A&url=https%3A%2F%2Fdegenstein.xyz%2Fplaybooks%2F&via=DHouseofcrypto">
+          𝕏 Share Playbooks
+        </a>
+      </div>
 
       <div class="divider"></div>
 
@@ -336,25 +377,25 @@
         </a>
 
        <!-- ✅ MEMECOIN (LIVE + CLICKABLE + THUMBNAIL) -->
-<a class="card-wrap" href="/playbooks/memecoin-portfolio-playbook/">
-  <article class="card">
-    <div class="tag-row">
-      <span class="tag tag-primary">Memecoin</span>
-      <span class="tag tag-alt">Risk</span>
-      <span class="tag tag-alt">Live</span>
-    </div>
+        <a class="card-wrap" href="/playbooks/memecoin-portfolio-playbook/">
+          <article class="card">
+            <div class="tag-row">
+              <span class="tag tag-primary">Memecoin</span>
+              <span class="tag tag-alt">Risk</span>
+              <span class="tag tag-alt">Live</span>
+            </div>
 
-    <div class="card-thumb">
-      <img src="/assets/memecoinportfolio.png" alt="Memecoin Portfolio Playbook Cover" loading="lazy" />
-    </div>
+            <div class="card-thumb">
+              <img src="/assets/memecoinportfolio.png" alt="Memecoin Portfolio Playbook Cover" loading="lazy" />
+            </div>
 
-    <h3>Memecoin Portfolio Playbook</h3>
-    <p>
-      A memecoin-only “degen sleeve” featuring $SHIB, $PEPE, and $DOGE — with strict rules for sizing, entries, exits, and rotation.
-    </p>
-    <span class="card-link">↗ Open the Memecoin Playbook</span>
-  </article>
-</a>
+            <h3>Memecoin Portfolio Playbook</h3>
+            <p>
+              A memecoin-only “degen sleeve” featuring $SHIB, $PEPE, and $DOGE — with strict rules for sizing, entries, exits, and rotation.
+            </p>
+            <span class="card-link">↗ Open the Memecoin Playbook</span>
+          </article>
+        </a>
 
       </div>
 
@@ -373,5 +414,6 @@
   </div>
 </body>
 </html>
+
 
 
