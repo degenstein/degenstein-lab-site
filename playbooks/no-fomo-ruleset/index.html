@@ -1,1 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>No-FOMO Ruleset | Degenstein’s Crypto Playbooks</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <meta name="description" content="The No-FOMO Ruleset — how I size positions, what I do during pumps, what I avoid, and how I reduce blow-ups. DYOR." />
+  <link rel="canonical" href="https://degenstein.xyz/playbooks/no-fomo-ruleset/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="The No-FOMO Ruleset (How I actually operate)" />
+  <meta property="og:description" content="Position sizing, pump rules, what I don’t touch, and how I avoid blowing up. DYOR." />
+  <meta property="og:image" content="https://degenstein.xyz/assets/playbooks.png" />
+  <meta property="og:url" content="https://degenstein.xyz/playbooks/no-fomo-ruleset/" />
+  <meta property="og:type" content="website" />
+
+  <!-- X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The No-FOMO Ruleset" />
+  <meta name="twitter:description" content="Position sizing, pump rules, what I avoid, and how I reduce blow-ups. DYOR." />
+  <meta name="twitter:image" content="https://degenstein.xyz/assets/playbooks.png" />
+  <meta name="twitter:site" content="@DHouseofcrypto" />
+
+  <meta name="theme-color" content="#06b6d4" />
+
+  <style>
+    :root{
+      --bg:#020617;
+      --card:#020617;
+      --card-alt:#020817;
+      --accent:#22c55e;
+      --accent2:#06b6d4;
+      --text-main:#f9fafb;
+      --text-muted:#9ca3af;
+      --shadow-soft:0 18px 45px rgba(0,0,0,.75);
+      --radius-lg:18px;
+    }
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,sans-serif;
+      background:
+        radial-gradient(circle at top left,rgba(34,197,94,.16),transparent 55%),
+        radial-gradient(circle at bottom right,rgba(6,182,212,.14),transparent 55%),
+        var(--bg);
+      color:var(--text-main);
+    }
+    .page{min-height:100vh;padding:40px 16px 64px;display:flex;justify-content:center;}
+    .container{max-width:980px;width:100%;}
+    a{color:var(--accent);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+
+    .home-pill{
+      display:inline-flex;gap:6px;margin:14px 8px 14px 0;padding:7px 14px;
+      border-radius:999px;font-size:.74rem;letter-spacing:.14em;
+      background:rgba(15,23,42,.8);border:1px solid rgba(148,163,184,.4);
+      color:var(--text-muted);text-transform:uppercase;transition:.15s;
+    }
+    .home-pill:hover{
+      background:rgba(6,182,212,.12);
+      border-color:rgba(6,182,212,.65);
+      color:#67e8f9;
+      text-decoration:none;
+    }
+
+    .badge{
+      display:inline-flex;gap:8px;padding:4px 10px;border-radius:999px;
+      background:rgba(15,23,42,.85);border:1px solid rgba(148,163,184,.35);
+      font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:10px;
+    }
+    .badge-dot{
+      width:6px;height:6px;border-radius:999px;
+      background:var(--accent);
+      box-shadow:0 0 10px rgba(34,197,94,.9);
+    }
+
+    h1{font-size:clamp(2.0rem,4vw,3.0rem);margin:12px 0 6px;}
+    .subtitle{font-size:1rem;color:var(--text-muted);max-width:820px;line-height:1.7;}
+
+    .divider{
+      border-bottom:1px solid rgba(148,163,184,.3);
+      margin:26px 0 18px;
+      position:relative;
+    }
+    .divider:after{
+      content:"";
+      display:block;
+      height:1px;
+      width:200px;
+      margin-top:-1px;
+      background:linear-gradient(90deg, rgba(6,182,212,.0), rgba(6,182,212,.75), rgba(6,182,212,.0));
+    }
+
+    .disclaimer{
+      margin-top:14px;
+      padding:12px 14px;
+      border-radius:14px;
+      background:rgba(15,23,42,.9);
+      border:1px solid rgba(148,163,184,.35);
+      color:var(--text-muted);
+      font-size:.9rem;
+      line-height:1.6;
+    }
+    .disclaimer strong{color:var(--text-main);}
+
+    .section{
+      padding:18px;
+      border-radius:var(--radius-lg);
+      border:1px solid rgba(148,163,184,.28);
+      background:linear-gradient(180deg, rgba(2,6,23,.70), rgba(2,6,23,.95));
+      box-shadow:var(--shadow-soft);
+      margin-bottom:18px;
+    }
+    .section h2{
+      margin:0 0 8px;
+      font-size:1.15rem;
+      letter-spacing:.01em;
+    }
+    .section p{margin:0;color:var(--text-muted);line-height:1.7;}
+    ul{margin:10px 0 0 18px;color:var(--text-muted);line-height:1.75;}
+    li{margin:6px 0;}
+    .callout{
+      margin-top:12px;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid rgba(6,182,212,.35);
+      background:rgba(6,182,212,.08);
+      color:rgba(226,232,240,.92);
+      line-height:1.7;
+    }
+    code{
+      color:#67e8f9;
+      font-weight:800;
+      background: rgba(6,182,212,.10);
+      border: 1px solid rgba(6,182,212,.22);
+      padding: 2px 6px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <div class="container">
+
+      <div class="badge"><span class="badge-dot"></span> Playbook #1</div>
+      <h1>The No-FOMO Ruleset (How I actually operate)</h1>
+      <p class="subtitle">
+        This is the base system I use to avoid getting emotional, chasing pumps, and over-sizing risk.
+        It’s designed to keep you in the game through volatility.
+      </p>
+
+      <div class="disclaimer">
+        ⚠️ This is <strong>my personal approach</strong> and <strong>not financial advice</strong>. Always <strong>DYOR</strong> and adjust for your own risk tolerance.
+      </div>
+
+      <a href="https://degenstein.xyz/playbooks/" class="home-pill">← Back to Playbooks</a>
+      <a href="https://degenstein.xyz/" class="home-pill">← Main Page</a>
+
+      <div class="divider"></div>
+
+      <!-- 1) POSITION SIZING -->
+      <div class="section">
+        <h2>1) Position sizing (the #1 survival rule)</h2>
+        <p>
+          Most blow-ups come from being too big in one thing. My default is to size so I can hold through a nasty drawdown without panic-selling.
+        </p>
+        <ul>
+          <li><strong>Core positions</strong> are sized to survive volatility.</li>
+          <li><strong>High-upside plays</strong> are smaller on purpose.</li>
+          <li>If a position size makes you check the chart every 5 minutes, it’s too big.</li>
+        </ul>
+        <div class="callout">
+          Quick check: could you watch it drop <code>-30%</code> and still follow your plan? If not, you’re oversized.
+        </div>
+      </div>
+
+      <!-- 2) WHAT I DO DURING PUMPS -->
+      <div class="section">
+        <h2>2) What I do during pumps</h2>
+        <p>
+          Pumps are where people lose discipline. My rule is simple: I don’t chase. I manage risk.
+        </p>
+        <ul>
+          <li>No new buys “because it’s finally moving.”</li>
+          <li>If I’m already in profit, I consider trimming the most speculative part first.</li>
+          <li>I don’t change my thesis because a candle is green.</li>
+        </ul>
+        <div class="callout">
+          The goal is to avoid turning a clean plan into a stress position.
+        </div>
+      </div>
+
+      <!-- 3) WHAT I DON’T TOUCH -->
+      <div class="section">
+        <h2>3) What I don’t touch</h2>
+        <p>
+          These are the common “portfolio killers” that wipe people out fast.
+        </p>
+        <ul>
+          <li>High leverage / revenge trading.</li>
+          <li>Unknown yield promises that sound too good.</li>
+          <li>Illiquid microcaps with no exit plan.</li>
+          <li>Anything I can’t explain in one sentence.</li>
+        </ul>
+      </div>
+
+      <!-- 4) HOW I AVOID BLOWING UP -->
+      <div class="section">
+        <h2>4) How I avoid blowing up</h2>
+        <p>
+          I don’t try to be perfect. I try to be consistent. The edge is staying alive long enough for the cycle to work.
+        </p>
+        <ul>
+          <li>One plan, written down.</li>
+          <li>No “all-in” moments.</li>
+          <li>When emotions rise, I reduce size — not increase it.</li>
+          <li>I treat crypto like a long game, not a day-by-day mood.</li>
+        </ul>
+        <div class="callout">
+          If you want one rule to remember: <strong>protect your bankroll first</strong>. Gains come after.
+        </div>
+      </div>
+
+      <!-- NEXT STEPS -->
+      <div class="section" style="border-color:rgba(34,197,94,.35);">
+        <h2>Next steps</h2>
+        <p>
+          This ruleset powers every portfolio playbook on this site. Next we’ll publish:
+        </p>
+        <ul>
+          <li><strong>$1,000 Portfolio Playbook</strong> (simple, beginner-proof)</li>
+          <li><strong>$5,000 Portfolio Playbook</strong> (core + small upside sleeve)</li>
+          <li><strong>Memecoin Sleeve Playbook</strong> (strict risk rules)</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
 
