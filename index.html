@@ -119,6 +119,20 @@
       color:#6ee7b7;
     }
 
+    /* ✅ NEW: Playbooks pill button (matches your pill system) */
+    .pill-playbooks{
+      border-color: rgba(6,182,212,0.60);
+      background: rgba(6,182,212,0.10);
+      color:#67e8f9;
+      font-weight:800;
+      transition: transform .15s ease, border-color .15s ease, color .15s ease;
+    }
+    .pill-playbooks:hover{
+      border-color: rgba(34,197,94,0.75);
+      color:#a7f3d0;
+      transform: translateY(-1px);
+    }
+
     /* Nav */
     .navlink{
       display:inline-flex; align-items:center; justify-content:center;
@@ -172,6 +186,9 @@
 
     <nav class="flex flex-wrap items-center justify-end gap-2">
       <a href="#coindepo-bonus" class="navlink" data-scrollspy="coindepo-bonus">Best Bonus</a>
+
+      <!-- ✅ NEW: Playbooks nav button -->
+      <a href="/playbooks/" class="navlink">📘 Playbooks</a>
 
       <a href="/coindepo-review/#where-to-buy-coindepo"
         class="navlink border-rose-500/40 text-rose-300 font-extrabold hover:text-rose-200 hover:border-rose-400"
@@ -229,15 +246,20 @@
             </a>
           </div>
 
+          <!-- ✅ NEW: Playbooks pill row in hero -->
           <div class="mt-4 flex flex-wrap gap-2 items-center text-xs text-gray-400">
             <span class="pill pill-secondary">✅ Referral disclosure</span>
             <span class="pill pill-secondary">🛡️ Not financial advice</span>
             <span class="pill">🕒 Last updated: <span id="lastUpdated">—</span></span>
+
+            <a href="/playbooks/" class="pill pill-playbooks">📘 Playbooks (Rules + Portfolios)</a>
           </div>
 
           <div class="mt-4 flex flex-wrap gap-4">
             <a href="/coindepo-review/#earnings-calculator" class="textlink">🧮 Earnings Calculator</a>
             <a href="/report/" class="textlink">📊 Read Token Reports</a>
+            <!-- ✅ NEW: quick text link -->
+            <a href="/playbooks/" class="textlink">📘 Open Playbooks</a>
           </div>
 
           <p class="mt-4 text-[12px] text-gray-400 content-max">
@@ -267,6 +289,23 @@
             </a>
           </div>
 
+          <!-- ✅ NEW: Playbooks mini-card -->
+          <div class="rounded-2xl border border-cyan-400/30 bg-cyan-500/10 p-5">
+            <div class="flex items-center gap-3">
+              <div class="text-3xl">📘</div>
+              <div>
+                <h3 class="text-xl font-extrabold">New: Playbooks</h3>
+                <p class="text-sm text-gray-200/90">
+                  Rules + portfolio examples: <span class="font-extrabold">No-FOMO</span>, <span class="font-extrabold">$1k</span>, <span class="font-extrabold">$5k</span>, and a <span class="font-extrabold">memecoin sleeve</span>.
+                </p>
+              </div>
+            </div>
+
+            <a href="/playbooks/" class="mt-4 inline-flex w-full justify-center btn btn-outline text-sm">
+              📘 Open Playbooks
+            </a>
+          </div>
+
           <div class="rounded-2xl border border-white/10 bg-white/5 p-4 text-xs text-gray-400">
             <p>
               Transparency: Many links on this site are referrals. Using them may reward both you and me. My side helps fuel future giveaways and challenges.
@@ -279,10 +318,12 @@
   </div>
 </section>
 
-<!-- Featured card grid (Weekly + Reports) -->
+<!-- Featured card grid (Weekly + Reports + Playbooks) -->
 <section id="featured" class="container-max mx-auto px-4 section-pad">
-  <div class="grid gap-5 md:grid-cols-2">
-    <div class="card">
+  <div class="grid gap-5 md:grid-cols-3">
+
+    <!-- Weekly -->
+    <div class="card md:col-span-1">
       <div class="flex items-start justify-between gap-4">
         <div class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[11px] font-extrabold uppercase tracking-wide text-emerald-300">
           <span>📰 Weekly</span>
@@ -318,7 +359,8 @@
       </div>
     </div>
 
-    <div class="card">
+    <!-- Reports -->
+    <div class="card md:col-span-1">
       <div class="flex items-start justify-between gap-4">
         <div class="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-500/10 px-3 py-1 text-[11px] font-extrabold uppercase tracking-wide text-emerald-300">
           <span>📊 Reports</span>
@@ -363,6 +405,48 @@
         More tokens will be added over time when they deserve a full write-up.
       </p>
     </div>
+
+    <!-- ✅ NEW: Playbooks (3rd card) -->
+    <div class="card md:col-span-1">
+      <div class="flex items-start justify-between gap-4">
+        <div class="inline-flex items-center gap-2 rounded-full border border-cyan-400/40 bg-cyan-500/10 px-3 py-1 text-[11px] font-extrabold uppercase tracking-wide text-cyan-200">
+          <span>📘 Playbooks</span>
+          <span>•</span>
+          <span>Rules + setups</span>
+        </div>
+        <a href="/playbooks/" class="pill pill-playbooks">Open</a>
+      </div>
+
+      <div class="mt-4">
+        <img
+          src="assets/playbooks.png"
+          alt="Degenstein’s Crypto Playbooks — Rules + Portfolio Examples"
+          class="w-full h-auto rounded-2xl border border-cyan-400/30"
+          loading="lazy"
+        />
+      </div>
+
+      <h2 class="mt-4 text-2xl font-extrabold tracking-tight">
+        Degenstein’s Crypto Playbooks
+      </h2>
+      <p class="mt-2 text-sm md:text-base text-gray-300 content-max">
+        Simple, repeatable guides: the No-FOMO ruleset, $1,000 and $5,000 portfolio examples, and a memecoin sleeve for DOGE/SHIB/PEPE.
+      </p>
+
+      <div class="mt-4 flex flex-wrap gap-3">
+        <a href="/playbooks/" class="btn btn-primary text-sm md:text-base">
+          📘 Browse Playbooks
+        </a>
+        <a href="/playbooks/no-fomo-ruleset/" class="btn btn-outline text-sm md:text-base">
+          ✅ No-FOMO Rules
+        </a>
+      </div>
+
+      <p class="mt-3 text-[11px] text-gray-500 content-max">
+        Built for discipline: rules first, then upside.
+      </p>
+    </div>
+
   </div>
 </section>
 
@@ -826,6 +910,7 @@ const PROMOS = [
 
 </body>
 </html>
+
 
 
 
