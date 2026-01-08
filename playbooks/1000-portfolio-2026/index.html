@@ -12,7 +12,7 @@
   <!-- Open Graph -->
   <meta property="og:title" content="$1,000 Portfolio Example (2026)" />
   <meta property="og:description" content="A simple, beginner-proof portfolio example with clear rules. No hopium. DYOR." />
-  <meta property="og:image" content="https://degenstein.xyz/assets/playbooks.png" />
+  <meta property="og:image" content="https://degenstein.xyz/assets/1000playbook.png" />
   <meta property="og:url" content="https://degenstein.xyz/playbooks/1000-portfolio-2026/" />
   <meta property="og:type" content="website" />
 
@@ -20,7 +20,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="$1,000 Portfolio Example (2026)" />
   <meta name="twitter:description" content="A simple, beginner-proof portfolio example with clear rules. No hopium. DYOR." />
-  <meta name="twitter:image" content="https://degenstein.xyz/assets/playbooks.png" />
+  <meta name="twitter:image" content="https://degenstein.xyz/assets/1000playbook.png" />
   <meta name="twitter:site" content="@DHouseofcrypto" />
 
   <meta name="theme-color" content="#06b6d4" />
@@ -30,13 +30,17 @@
       --bg:#020617;
       --card:#020617;
       --card-alt:#020817;
+
       --accent:#22c55e;
       --accent2:#06b6d4;
+
       --text-main:#f9fafb;
       --text-muted:#9ca3af;
+
       --shadow-soft:0 18px 45px rgba(0,0,0,.75);
       --radius-lg:18px;
     }
+
     body{
       margin:0;
       font-family:system-ui,-apple-system,Segoe UI,sans-serif;
@@ -46,10 +50,24 @@
         var(--bg);
       color:var(--text-main);
     }
+
     .page{min-height:100vh;padding:40px 16px 64px;display:flex;justify-content:center;}
     .container{max-width:980px;width:100%;}
+
     a{color:var(--accent);text-decoration:none;}
     a:hover{text-decoration:underline;}
+
+    /* ✅ COVER IMAGE */
+    .cover-wrap{
+      max-width:760px;
+      margin:0 auto 22px;
+    }
+    .cover-img{
+      width:100%;
+      border-radius:18px;
+      display:block;
+      box-shadow:0 18px 60px rgba(0,0,0,.55);
+    }
 
     .home-pill{
       display:inline-flex;gap:6px;margin:14px 8px 14px 0;padding:7px 14px;
@@ -112,8 +130,13 @@
       box-shadow:var(--shadow-soft);
       margin-bottom:18px;
     }
-    .section h2{margin:0 0 8px;font-size:1.15rem;letter-spacing:.01em;}
+    .section h2{
+      margin:0 0 8px;
+      font-size:1.15rem;
+      letter-spacing:.01em;
+    }
     .section p{margin:0;color:var(--text-muted);line-height:1.7;}
+
     ul{margin:10px 0 0 18px;color:var(--text-muted);line-height:1.75;}
     li{margin:6px 0;}
 
@@ -127,6 +150,7 @@
       line-height:1.7;
     }
 
+    /* ✅ allocation mini-table */
     .alloc{
       margin-top:10px;
       border:1px solid rgba(148,163,184,.22);
@@ -144,6 +168,7 @@
     }
     .alloc-row:last-child{border-bottom:none;}
     .alloc-left{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
+
     .pill{
       display:inline-flex;
       padding:2px 10px;
@@ -200,11 +225,16 @@
   <div class="page">
     <div class="container">
 
+      <!-- ✅ COVER -->
+      <div class="cover-wrap">
+        <img src="/assets/1000playbook.png" alt="$1,000 Portfolio Example (2026) Cover" class="cover-img" loading="lazy" />
+      </div>
+
       <div class="badge"><span class="badge-dot"></span> Playbook #2</div>
       <h1>$1,000 Portfolio Example (2026)</h1>
       <p class="subtitle">
         A beginner-proof setup designed to keep things simple, reduce FOMO behavior, and build exposure to the biggest narratives.
-        Clear rules > vibes.
+        Clear rules &gt; vibes.
       </p>
 
       <div class="disclaimer">
