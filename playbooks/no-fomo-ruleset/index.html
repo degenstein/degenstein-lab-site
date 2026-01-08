@@ -67,7 +67,7 @@
       display:inline-flex;gap:6px;margin:14px 8px 14px 0;padding:7px 14px;
       border-radius:999px;font-size:.74rem;letter-spacing:.14em;
       background:rgba(15,23,42,.8);border:1px solid rgba(148,163,184,.4);
-      color:var(--text-muted);text-transform:uppercase;
+      color:var(--text-muted);text-transform:uppercase;transition:.15s;
     }
     .home-pill:hover{
       background:rgba(6,182,212,.12);
@@ -93,6 +93,15 @@
     .divider{
       border-bottom:1px solid rgba(148,163,184,.3);
       margin:26px 0 18px;
+      position:relative;
+    }
+    .divider:after{
+      content:"";
+      display:block;
+      height:1px;
+      width:200px;
+      margin-top:-1px;
+      background:linear-gradient(90deg, rgba(6,182,212,.0), rgba(6,182,212,.75), rgba(6,182,212,.0));
     }
 
     .disclaimer{
@@ -105,6 +114,7 @@
       font-size:.9rem;
       line-height:1.6;
     }
+    .disclaimer strong{color:var(--text-main);}
 
     .section{
       padding:18px;
@@ -114,7 +124,11 @@
       box-shadow:var(--shadow-soft);
       margin-bottom:18px;
     }
-    .section h2{margin:0 0 8px;font-size:1.15rem;}
+    .section h2{
+      margin:0 0 8px;
+      font-size:1.15rem;
+      letter-spacing:.01em;
+    }
     .section p{margin:0;color:var(--text-muted);line-height:1.7;}
     ul{margin:10px 0 0 18px;color:var(--text-muted);line-height:1.75;}
     li{margin:6px 0;}
@@ -125,18 +139,35 @@
       border-radius:14px;
       border:1px solid rgba(6,182,212,.35);
       background:rgba(6,182,212,.08);
-      color:#e5e7eb;
+      color:rgba(226,232,240,.92);
       line-height:1.7;
+    }
+    code{
+      color:#67e8f9;
+      font-weight:800;
+      background: rgba(6,182,212,.10);
+      border: 1px solid rgba(6,182,212,.22);
+      padding: 2px 6px;
+      border-radius: 8px;
     }
 
     .cta-button{
-      display:inline-flex;align-items:center;margin-top:12px;
-      padding:9px 18px;border-radius:999px;font-weight:900;
+      display:inline-flex;
+      align-items:center;
+      margin-top:12px;
+      padding:9px 18px;
+      border-radius:999px;
+      font-weight:900;
       background:linear-gradient(135deg, var(--accent), var(--accent2));
       color:#020617;
       box-shadow:0 14px 40px rgba(6,182,212,.20);
+      transition: transform .12s ease, box-shadow .12s ease;
     }
-    .cta-button:hover{transform:translateY(-1px);text-decoration:none;}
+    .cta-button:hover{
+      transform: translateY(-1px);
+      box-shadow:0 18px 55px rgba(6,182,212,.28);
+      text-decoration:none;
+    }
   </style>
 </head>
 
@@ -144,9 +175,9 @@
   <div class="page">
     <div class="container">
 
-      <!-- COVER -->
+      <!-- ✅ COVER -->
       <div class="cover-wrap">
-        <img src="/assets/nofomo.png" alt="The No-FOMO Ruleset" class="cover-img" />
+        <img src="/assets/nofomo.png" alt="The No-FOMO Ruleset" class="cover-img" loading="lazy" />
       </div>
 
       <div class="badge"><span class="badge-dot"></span> Playbook #1</div>
@@ -161,48 +192,106 @@
         Always <strong>DYOR</strong> and adjust for your own risk tolerance.
       </div>
 
-      <a href="/playbooks/" class="home-pill">← Back to Playbooks</a>
-      <a href="/" class="home-pill">← Main Page</a>
+      <a href="https://degenstein.xyz/playbooks/" class="home-pill">← Back to Playbooks</a>
+      <a href="https://degenstein.xyz/" class="home-pill">← Main Page</a>
 
       <div class="divider"></div>
 
-      <!-- EXISTING SECTIONS (unchanged) -->
-      <!-- ... your 1–4 rules sections remain exactly as-is ... -->
-
-      <!-- WHERE I HOLD -->
-      <div class="section" style="border-color:rgba(34,197,94,.45);">
-        <h2>Where I hold my crypto (No-FOMO compatible)</h2>
+      <!-- 1) POSITION SIZING -->
+      <div class="section">
+        <h2>1) Position sizing (the #1 survival rule)</h2>
         <p>
-          Part of avoiding FOMO is <strong>not feeling forced to trade</strong>. For long-term holdings,
-          I prefer using yield platforms so my crypto is still working while I wait.
+          Most blow-ups come from being too big in one thing. My default is to size so I can hold through a nasty drawdown without panic-selling.
         </p>
         <ul>
-          <li>Earn up to <strong>~21%+ APR</strong> on select crypto assets</li>
-          <li>No trading, no chart-watching, no emotional exits</li>
-          <li>Special <strong>bonus for holding 90 days</strong> using my link</li>
+          <li><strong>Core positions</strong> are sized to survive volatility.</li>
+          <li><strong>High-upside plays</strong> are smaller on purpose.</li>
+          <li>If a position size makes you check the chart every 5 minutes, it’s too big.</li>
         </ul>
         <div class="callout">
-          This fits the No-FOMO mindset: earn while you hold, stay patient, and avoid panic decisions.
+          Quick check: could you watch it drop <code>-30%</code> and still follow your plan? If not, you’re oversized.
         </div>
+      </div>
 
-        <a class="cta-button"
-           href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV"
-           target="_blank" rel="noopener">
-          Start earning while you hold →
+      <!-- 2) WHAT I DO DURING PUMPS -->
+      <div class="section">
+        <h2>2) What I do during pumps</h2>
+        <p>
+          Pumps are where people lose discipline. My rule is simple: I don’t chase. I manage risk.
+        </p>
+        <ul>
+          <li>No new buys “because it’s finally moving.”</li>
+          <li>If I’m already in profit, I consider trimming the most speculative part first.</li>
+          <li>I don’t change my thesis because a candle is green.</li>
+        </ul>
+        <div class="callout">
+          The goal is to avoid turning a clean plan into a stress position.
+        </div>
+      </div>
+
+      <!-- 3) WHAT I DON’T TOUCH -->
+      <div class="section">
+        <h2>3) What I don’t touch</h2>
+        <p>
+          These are the common “portfolio killers” that wipe people out fast.
+        </p>
+        <ul>
+          <li>High leverage / revenge trading.</li>
+          <li>Unknown yield promises that sound too good.</li>
+          <li>Illiquid microcaps with no exit plan.</li>
+          <li>Anything I can’t explain in one sentence.</li>
+        </ul>
+      </div>
+
+      <!-- 4) HOW I AVOID BLOWING UP -->
+      <div class="section">
+        <h2>4) How I avoid blowing up</h2>
+        <p>
+          I don’t try to be perfect. I try to be consistent. The edge is staying alive long enough for the cycle to work.
+        </p>
+        <ul>
+          <li>One plan, written down.</li>
+          <li>No “all-in” moments.</li>
+          <li>When emotions rise, I reduce size — not increase it.</li>
+          <li>I treat crypto like a long game, not a day-by-day mood.</li>
+        </ul>
+        <div class="callout">
+          If you want one rule to remember: <strong>protect your bankroll first</strong>. Gains come after.
+        </div>
+      </div>
+
+      <!-- ✅ WHERE I HOLD (COINDEPO) -->
+      <div class="section" style="border-color:rgba(34,197,94,.45);">
+        <h2>Where I hold (to avoid FOMO behavior)</h2>
+        <p>
+          Part of avoiding FOMO is <strong>not feeling forced to trade</strong>. For long-term holds, I like setups where
+          I can earn while I wait — instead of staring at charts.
+        </p>
+        <ul>
+          <li>Earn up to <strong>21%+ (or more)</strong> on select assets (rates vary)</li>
+          <li>Long-term mindset: <strong>hold + earn</strong> instead of chase + flip</li>
+          <li>Potential <strong>90-day holding bonus</strong> when using my exclusive link (eligibility varies)</li>
+        </ul>
+
+        <a class="cta-button" href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV" target="_blank" rel="noopener">
+          CoinDepo — start here (Referral: R-UgAoMRNV) →
         </a>
 
-        <p style="margin-top:10px;font-size:.85rem;color:var(--text-muted);">
-          Bonus tiers, APR, and eligibility vary by region and asset. Always confirm terms inside the platform.
+        <p style="margin-top:10px;color:rgba(156,163,175,.95);font-size:.82rem;line-height:1.55;">
+          Disclaimer: APR, bonus tiers, eligibility, and availability vary by region/asset and can change. Always confirm terms inside the platform.
         </p>
       </div>
 
       <!-- NEXT STEPS -->
       <div class="section" style="border-color:rgba(34,197,94,.35);">
         <h2>Next steps</h2>
+        <p>
+          This ruleset powers every portfolio playbook on this site. Next we’ll publish:
+        </p>
         <ul>
-          <li><strong>$1,000 Portfolio Playbook</strong></li>
-          <li><strong>$5,000 Portfolio Playbook</strong></li>
-          <li><strong>Memecoin Sleeve Playbook</strong></li>
+          <li><strong>$1,000 Portfolio Playbook</strong> (simple, beginner-proof)</li>
+          <li><strong>$5,000 Portfolio Playbook</strong> (core + small upside sleeve)</li>
+          <li><strong>Memecoin Sleeve Playbook</strong> (strict risk rules)</li>
         </ul>
       </div>
 
@@ -210,4 +299,5 @@
   </div>
 </body>
 </html>
+
 
