@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Degenstein’s Crypto Playbooks | Degenstein Bonus Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- 🧠 SEO -->
+  <meta name="description" content="Degenstein’s Crypto Playbooks — simple portfolio examples and repeatable strategies for different budgets and styles. Clear rules. No hopium." />
+  <link rel="canonical" href="https://degenstein.xyz/playbooks/" />
+
+  <!-- 🌐 Open Graph -->
+  <meta property="og:title" content="Degenstein’s Crypto Playbooks" />
+  <meta property="og:description" content="Portfolio examples + repeatable rules for different budgets (and memecoin setups). Clear, simple, practical." />
+  <meta property="og:image" content="https://degenstein.xyz/assets/degenstein-report-banner-1200x630.png" />
+  <meta property="og:url" content="https://degenstein.xyz/playbooks/" />
+  <meta property="og:type" content="website" />
+
+  <!-- X / Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Degenstein’s Crypto Playbooks" />
+  <meta name="twitter:description" content="Portfolio examples + repeatable rules for different budgets. No hopium." />
+  <meta name="twitter:image" content="https://degenstein.xyz/assets/degenstein-report-banner-1200x630.png" />
+  <meta name="twitter:site" content="@DHouseofcrypto" />
+
+  <meta name="theme-color" content="#06b6d4" />
+
+  <style>
+    :root{
+      --bg:#020617;
+      --card:#020617;
+      --card-alt:#020817;
+
+      --accent:#22c55e;
+      --accent-soft:rgba(34,197,94,.10);
+
+      --accent2:#06b6d4;
+      --accent2-soft:rgba(6,182,212,.12);
+
+      --text-main:#f9fafb;
+      --text-muted:#9ca3af;
+
+      --shadow-soft:0 18px 45px rgba(0,0,0,.75);
+      --radius-lg:18px;
+    }
+
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,sans-serif;
+      background:
+        radial-gradient(circle at top left,rgba(34,197,94,.16),transparent 55%),
+        radial-gradient(circle at bottom right,rgba(6,182,212,.14),transparent 55%),
+        var(--bg);
+      color:var(--text-main);
+    }
+
+    .page{min-height:100vh;padding:40px 16px 64px;display:flex;justify-content:center;}
+    .container{max-width:980px;width:100%;}
+
+    a{color:var(--accent);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+
+    .home-pill{
+      display:inline-flex;gap:6px;margin:14px 0 14px;padding:7px 14px;
+      border-radius:999px;font-size:.74rem;letter-spacing:.14em;
+      background:rgba(15,23,42,.8);border:1px solid rgba(148,163,184,.4);
+      color:var(--text-muted);text-transform:uppercase;transition:.15s;
+    }
+    .home-pill:hover{
+      background:var(--accent2-soft);
+      border-color:rgba(6,182,212,.65);
+      color:#67e8f9;
+      text-decoration:none;
+    }
+
+    .badge{
+      display:inline-flex;gap:8px;padding:4px 10px;border-radius:999px;
+      background:rgba(15,23,42,.85);border:1px solid rgba(148,163,184,.35);
+      font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:10px;
+    }
+    .badge-dot{
+      width:6px;height:6px;border-radius:999px;
+      background:var(--accent);
+      box-shadow:0 0 10px rgba(34,197,94,.9);
+    }
+
+    h1{font-size:clamp(2.2rem,4vw,3.1rem);margin:12px 0 6px;}
+    .subtitle{font-size:1rem;color:var(--text-muted);max-width:760px;line-height:1.65;}
+
+    .divider{
+      border-bottom:1px solid rgba(148,163,184,.3);
+      margin:26px 0 18px;
+      position:relative;
+    }
+    .divider:after{
+      content:"";
+      display:block;
+      height:1px;
+      width:200px;
+      margin-top:-1px;
+      background:linear-gradient(90deg, rgba(6,182,212,.0), rgba(6,182,212,.75), rgba(6,182,212,.0));
+    }
+
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+    @media(max-width:768px){.grid{grid-template-columns:1fr;}}
+
+    .card{
+      padding:18px;border-radius:var(--radius-lg);
+      background:
+        radial-gradient(circle at top left,rgba(34,197,94,.14),transparent 70%),
+        linear-gradient(180deg, rgba(2,6,23,.70), rgba(2,6,23,.95));
+      border:1px solid rgba(148,163,184,.32);
+      box-shadow:var(--shadow-soft);
+      transition: border-color .15s ease, box-shadow .15s ease, transform .15s ease;
+      position:relative;
+      overflow:hidden;
+    }
+    .card p{color:var(--text-muted);line-height:1.55;margin:8px 0 0;}
+    .card h3{margin:8px 0 0;font-size:1.05rem;line-height:1.25;color:var(--text-main);}
+
+    .card-muted{
+      background:var(--card-alt);
+      border-style:dashed;
+      box-shadow:none;
+    }
+
+    .tag-row{display:flex;gap:8px;margin:2px 0 10px;flex-wrap:wrap;}
+    .tag{
+      padding:3px 8px;border-radius:999px;font-size:.7rem;
+      text-transform:uppercase;letter-spacing:.12em;
+      background:rgba(15,23,42,.8);border:1px solid rgba(148,163,184,.4);
+      color: var(--text-muted);
+    }
+    .tag-primary{
+      border-color:rgba(34,197,94,.7);
+      background:rgba(34,197,94,.08);
+      color:var(--accent);
+      font-weight:700;
+    }
+    .tag-alt{
+      border-color:rgba(6,182,212,.50);
+      background:rgba(6,182,212,.08);
+      color:#67e8f9;
+      font-weight:650;
+    }
+
+    .card-link{
+      margin-top:12px;
+      display:inline-flex;
+      gap:6px;
+      font-weight:800;
+      letter-spacing:.01em;
+      color: var(--accent2);
+    }
+
+    .featured-pill{
+      position:absolute;
+      top:14px;
+      right:14px;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:4px 10px;
+      border-radius:999px;
+      border:1px solid rgba(6,182,212,.45);
+      background: rgba(6,182,212,.08);
+      color:#67e8f9;
+      font-size:.68rem;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      font-weight:800;
+      z-index:2;
+    }
+    .featured-dot{
+      width:6px;height:6px;border-radius:999px;
+      background: var(--accent2);
+      box-shadow: 0 0 12px rgba(6,182,212,.55);
+    }
+
+    .cta-wrap{
+      margin-top:26px;
+      padding:18px;
+      border:1px solid rgba(6,182,212,.35);
+      border-radius:18px;
+      background:rgba(15,23,42,.95);
+      box-shadow:0 18px 60px rgba(0,0,0,.45);
+    }
+    .cta-title{font-size:1.02rem;margin-bottom:4px;}
+    .cta-text{color:var(--text-muted);line-height:1.65;margin:10px 0 0;max-width:780px;}
+    .cta-button{
+      display:inline-flex;align-items:center;margin-top:12px;
+      padding:9px 18px;border-radius:999px;font-weight:900;
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      color:#020617;
+      box-shadow:0 14px 40px rgba(6,182,212,.20);
+      transition: transform .12s ease, box-shadow .12s ease;
+    }
+    .cta-button:hover{transform:translateY(-1px);box-shadow:0 18px 55px rgba(6,182,212,.28);text-decoration:none;}
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <div class="container">
+
+      <div class="badge"><span class="badge-dot"></span> Degenstein’s Crypto Playbooks</div>
+      <h1>Degenstein’s Crypto Playbooks</h1>
+      <p class="subtitle">
+        Playbooks are simple, repeatable guides — portfolio examples and rulesets for different budgets and styles.
+        No complicated theory. No hopium. Just “here’s the setup” and “here’s the rules.”
+      </p>
+
+      <a href="https://degenstein.xyz/" class="home-pill">← Back to Main Page</a>
+      <a href="https://degenstein.xyz/report/" class="home-pill">← Back to Reports</a>
+
+      <div class="divider"></div>
+
+      <h2 style="font-size:1.25rem;margin-bottom:14px;">Portfolio Playbooks (Coming Soon)</h2>
+
+      <div class="grid">
+
+        <!-- START HERE -->
+        <article class="card card-muted">
+          <div class="featured-pill"><span class="featured-dot"></span> Start Here</div>
+          <div class="tag-row">
+            <span class="tag tag-primary">Rules</span>
+            <span class="tag tag-alt">No FOMO</span>
+            <span class="tag tag-alt">Simple</span>
+          </div>
+          <h3>The No-FOMO Ruleset (How I actually operate)</h3>
+          <p>
+            The core rules I use: position sizing, what to do during pumps, what I don’t touch, and how I avoid blowing up.
+          </p>
+          <span class="card-link">↗ Publishing soon</span>
+        </article>
+
+        <!-- $1,000 -->
+        <article class="card card-muted">
+          <div class="tag-row">
+            <span class="tag tag-primary">$1,000</span>
+            <span class="tag tag-alt">Starter</span>
+            <span class="tag tag-alt">2026</span>
+          </div>
+          <h3>$1,000 Portfolio Example (2026)</h3>
+          <p>
+            A clean starter portfolio + rules: what goes where, how I rebalance, and what I do if price dumps or pumps.
+          </p>
+          <span class="card-link">↗ Publishing soon</span>
+        </article>
+
+        <!-- $5,000 -->
+        <article class="card card-muted">
+          <div class="tag-row">
+            <span class="tag tag-primary">$5,000</span>
+            <span class="tag tag-alt">Core</span>
+            <span class="tag tag-alt">2026</span>
+          </div>
+          <h3>$5,000 Portfolio Example (2026)</h3>
+          <p>
+            A more complete setup with core positions + a small “high-upside” sleeve — and the rules to keep it disciplined.
+          </p>
+          <span class="card-link">↗ Publishing soon</span>
+        </article>
+
+        <!-- MEMECOIN -->
+        <article class="card card-muted">
+          <div class="tag-row">
+            <span class="tag tag-primary">Memecoin</span>
+            <span class="tag tag-alt">Risk</span>
+            <span class="tag tag-alt">Rules</span>
+          </div>
+          <h3>Memecoin Portfolio Playbook</h3>
+          <p>
+            A memecoin-only “degen sleeve” with strict rules: sizing, entries, exits, and when to rotate out.
+          </p>
+          <span class="card-link">↗ Publishing soon</span>
+        </article>
+
+      </div>
+
+      <div class="cta-wrap">
+        <div class="cta-title">Want a Playbook?</div>
+        <p class="cta-text">
+          DM me on X with the budget + style (safe / balanced / degen) and what you want it to include.
+          If it has real utility, I’ll build it.
+        </p>
+        <a class="cta-button" href="https://x.com/DHouseofcrypto" target="_blank" rel="noopener">
+          𝕏 Message me on X →
+        </a>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
