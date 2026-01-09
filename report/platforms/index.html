@@ -1,1 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Crypto Platforms Explained — What You Actually Need | The Degenstein Report</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- 🧠 SEO -->
+  <meta name="description" content="Too many crypto apps? Here’s what each platform does, which ones you actually need, and a simple setup for beginners. Includes Coinbase, Gemini, BTCC, WEEX, CoinDepo, Bitunix, BYDFi, and CoinStats (with my referral links)." />
+  <link rel="canonical" href="https://degenstein.xyz/report/platforms/" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- 🌐 Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="The Degenstein Report" />
+  <meta property="og:title" content="Crypto Platforms Explained — What You Actually Need" />
+  <meta property="og:description" content="A clean breakdown of what each platform does + a simple setup for beginners. No app overload." />
+  <meta property="og:url" content="https://degenstein.xyz/report/platforms/" />
+  <meta property="og:locale" content="en_US" />
+  <!-- Use any banner you already host, or swap filename later -->
+  <meta property="og:image" content="https://degenstein.xyz/assets/degenstein-report-banner-1200x630.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@DHouseofcrypto" />
+  <meta name="twitter:creator" content="@DHouseofcrypto" />
+  <meta name="twitter:title" content="Crypto Platforms Explained — What You Actually Need" />
+  <meta name="twitter:description" content="No app overload. Just the tools that matter: buy, earn, track, and (optional) trade." />
+  <meta name="twitter:image" content="https://degenstein.xyz/assets/degenstein-report-banner-1200x630.png" />
+
+  <meta name="theme-color" content="#10b981" />
+
+  <!-- Fonts + Tailwind -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root { color-scheme: dark; }
+    html, body{
+      background:#000; color:#e5e7eb;
+      font-family:'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      font-size:16px; line-height:1.6;
+    }
+    a { text-decoration:none; }
+    .container-max{ max-width:72rem; }
+    .content-max{ max-width:44rem; }
+    .section-pad{ padding-top:3.25rem; padding-bottom:3.25rem; }
+    @media (min-width:768px){ .section-pad{ padding-top:4rem; padding-bottom:4rem; } }
+
+    .card{
+      border-radius:1.5rem; padding:1.5rem;
+      background: rgba(23,23,23,0.55);
+      border:1px solid rgba(255,255,255,0.10);
+      box-shadow: 0 0 28px rgba(0,255,170,0.12), inset 0 0 18px rgba(0,255,170,0.04);
+    }
+    @media (min-width:768px){ .card{ padding:2rem; } }
+
+    .badge{
+      display:inline-block; font-size:0.75rem;
+      padding:0.25rem 0.5rem; border-radius:9999px;
+      border:1px solid rgba(255,255,255,0.1);
+      background: rgba(255,255,255,0.05);
+    }
+    .pill{
+      display:inline-flex; align-items:center; gap:0.35rem;
+      font-size:0.75rem; padding:0.3rem 0.7rem; border-radius:9999px;
+      border:1px solid rgba(16,185,129,0.55);
+      background:rgba(16,185,129,0.12);
+      color:#6ee7b7; font-weight:800; white-space:nowrap;
+    }
+    .pill-secondary{
+      border-color: rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.6);
+      color:#e5e7eb; font-weight:700;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:0.85rem 1.25rem; borderborder-radius:1rem;
+      border-radius:1rem;
+      font-weight:800; transition:transform .15s ease, opacity .15s ease;
+      backdrop-filter: blur(6px);
+      letter-spacing:-0.01em;
+    }
+    .btn:hover{ transform: translateY(-2px); }
+    .btn:active{ transform: translateY(0); }
+    .btn-primary{
+      background: linear-gradient(135deg,#22c55e,#06b6d4);
+      color:#00110b;
+    }
+    .btn-outline{
+      border:1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.03);
+      color:#e5e7eb;
+    }
+    .navlink{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:0.55rem 0.9rem;
+      border-radius: 1rem;
+      border:1px solid rgba(255,255,255,0.10);
+      background: rgba(0,0,0,0.10);
+      font-size: 0.875rem;
+      transition: border-color .15s ease, color .15s ease, background .15s ease;
+    }
+    .navlink:hover{
+      border-color: rgba(16,185,129,0.35);
+      background: rgba(255,255,255,0.04);
+      color:#fff;
+    }
+    .navlink-active{
+      border-color: rgba(16,185,129,0.55) !important;
+      background: rgba(16,185,129,0.10) !important;
+      color: #a7f3d0 !important;
+    }
+    .textlink{
+      display:inline-flex; align-items:center; gap:.45rem;
+      font-weight:800; font-size: 0.85rem;
+      color:#6ee7b7;
+    }
+    .textlink:hover{ color:#a7f3d0; text-decoration: underline; text-underline-offset: 4px; }
+
+    .tablewrap{
+      border-radius:1.25rem;
+      border:1px solid rgba(255,255,255,0.10);
+      overflow:hidden;
+      background: rgba(255,255,255,0.03);
+    }
+    table{ width:100%; border-collapse:collapse; }
+    th, td{ padding:0.85rem 0.9rem; vertical-align:top; }
+    th{
+      text-align:left;
+      font-size:0.75rem;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+      color:#9ca3af;
+      background: rgba(255,255,255,0.04);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+    tr:not(:last-child) td{ border-bottom:1px solid rgba(255,255,255,0.06); }
+    .kicker{
+      display:inline-flex; align-items:center; gap:.5rem;
+      border:1px solid rgba(16,185,129,0.35);
+      background: rgba(16,185,129,0.10);
+      color:#a7f3d0;
+      padding:.35rem .7rem; border-radius:9999px;
+      font-weight:900; font-size:11px; letter-spacing:.08em; text-transform:uppercase;
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      *{ transition:none !important; animation:none !important; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- Header -->
+<header class="sticky top-0 z-50 backdrop-blur bg-black/60 border-b border-white/10">
+  <div class="container-max mx-auto px-4 py-3 flex items-center justify-between gap-3">
+    <a href="/" class="flex items-center gap-3">
+      <img
+        src="/assets/dan-degenstein-crypto-avatar.png"
+        alt="Dan Degenstein | House of Crypto"
+        class="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover border border-white/10"
+        width="64" height="64"
+      />
+      <div>
+        <div class="text-lg md:text-xl font-extrabold tracking-tight">The Degenstein Report</div>
+        <div class="text-[11px] text-gray-400 hidden sm:block">No hopium • Real tools • Clean setups</div>
+      </div>
+    </a>
+
+    <nav class="flex flex-wrap items-center justify-end gap-2">
+      <a href="#starter-stack" class="navlink" data-scrollspy="starter-stack">Starter Stack</a>
+      <a href="#comparison" class="navlink" data-scrollspy="comparison">Comparison</a>
+      <a href="#platforms" class="navlink" data-scrollspy="platforms">Platforms</a>
+      <a href="/report/" class="navlink">All Reports</a>
+      <a href="/playbooks/" class="navlink">📘 Playbooks</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="relative overflow-hidden border-b border-white/10 bg-black">
+  <div class="absolute -top-40 -left-40 w-[520px] h-[520px] rounded-full blur-3xl opacity-20" style="background:radial-gradient(circle,#06b6d4,transparent 60%)"></div>
+  <div class="absolute -bottom-40 -right-40 w-[520px] h-[520px] rounded-full blur-3xl opacity-20" style="background:radial-gradient(circle,#22c55e,transparent 60%)"></div>
+
+  <div class="container-max mx-auto px-4 py-14 md:py-18">
+    <div class="card">
+      <div class="grid md:grid-cols-2 gap-10 items-start">
+
+        <div>
+          <div class="kicker">🧰 Crypto Platforms — The Clean Setup</div>
+
+          <h1 class="mt-4 text-3xl md:text-5xl font-extrabold leading-tight tracking-tight">
+            Too many crypto apps?
+            <span class="text-emerald-400">Here’s what they do</span> — and what you actually need.
+          </h1>
+
+          <p class="mt-3 text-base md:text-lg text-gray-300 content-max">
+            Most people download <strong>10 platforms</strong> and still don’t have a real system.
+            This report simplifies it into a few roles: <strong>Buy</strong>, <strong>Earn</strong>, <strong>Trade (optional)</strong>, and <strong>Track</strong>.
+          </p>
+
+          <div class="mt-5 flex flex-wrap gap-2 items-center">
+            <span class="pill pill-secondary">✅ Referral disclosure</span>
+            <span class="pill pill-secondary">🛡️ Not financial advice</span>
+            <span class="pill">🕒 Last updated: <span id="lastUpdated">—</span></span>
+          </div>
+
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="#starter-stack" class="btn btn-primary text-base">🚀 Show me the “starter stack”</a>
+            <a href="#platforms" class="btn btn-outline text-base">👇 Break down each platform</a>
+          </div>
+
+          <p class="mt-4 text-[12px] text-gray-400 content-max">
+            Availability, bonuses, and eligibility can change by region. Always verify inside the platform before depositing or trading.
+          </p>
+        </div>
+
+        <aside class="space-y-4">
+          <div class="rounded-2xl border border-emerald-500/40 bg-black/60 p-5">
+            <div class="flex items-center gap-3">
+              <div class="text-3xl">💠</div>
+              <div>
+                <div class="text-xl font-extrabold">My simple framework</div>
+                <div class="text-sm text-gray-300">You only need tools for the job.</div>
+              </div>
+            </div>
+
+            <ul class="mt-4 text-sm text-gray-300 space-y-2">
+              <li><strong>Buy:</strong> Coinbase or Gemini</li>
+              <li><strong>Earn:</strong> CoinDepo (yield + bonus flow)</li>
+              <li><strong>Track:</strong> CoinStats</li>
+              <li><strong>Optional:</strong> BTCC / WEEX / Bitunix / BYDFi (trading platforms)</li>
+            </ul>
+
+            <div class="mt-4 flex flex-wrap gap-3">
+              <a href="#starter-stack" class="btn btn-primary text-sm w-full">✅ Copy the exact setup</a>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-4 text-xs text-gray-400">
+            <p>
+              Transparency: Many links below are referrals. Using them may reward both you and me. My side helps fund giveaways and future content.
+            </p>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Starter Stack -->
+<section id="starter-stack" class="container-max mx-auto px-4 section-pad">
+  <div class="card">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+      <div>
+        <div class="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-500/10 px-3 py-1 text-[11px] font-extrabold uppercase tracking-wide text-emerald-300">
+          <span>Starter Stack</span>
+          <span>•</span>
+          <span>Beginner-friendly</span>
+        </div>
+        <h2 class="mt-3 text-2xl md:text-3xl font-extrabold tracking-tight">
+          If you want the simplest “do it right” setup:
+        </h2>
+        <p class="mt-2 text-sm md:text-base text-gray-300 content-max">
+          This covers 95% of what most people need without turning crypto into a second job.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap gap-2">
+        <a href="/playbooks/" class="textlink">📘 Add rules via Playbooks</a>
+        <a href="/report/" class="textlink">📊 Browse token reports</a>
+      </div>
+    </div>
+
+    <div class="mt-8 grid gap-4 md:grid-cols-3">
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <div class="text-2xl mb-2">①</div>
+        <div class="font-extrabold text-emerald-200">Buy / On-ramp</div>
+        <div class="mt-1 text-sm text-gray-300">
+          Use <strong>Coinbase</strong> or <strong>Gemini</strong> to convert dollars to crypto cleanly.
+        </div>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <a class="btn btn-primary text-sm" href="https://coinbase.com/join/MFB6ACG?src=referral-link" target="_blank" rel="noopener">Coinbase link</a>
+          <a class="btn btn-outline text-sm" href="https://exchange.gemini.com/register?referral=9zrdalkh7&type=referral" target="_blank" rel="noopener">Gemini link</a>
+        </div>
+        <div class="mt-3 text-[11px] text-gray-400">
+          Tip: pick <strong>one</strong> as your main on-ramp so your deposits and tax exports stay simpler.
+        </div>
+      </div>
+
+      <div class="rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-5">
+        <div class="text-2xl mb-2">②</div>
+        <div class="font-extrabold text-emerald-200">Earn while holding</div>
+        <div class="mt-1 text-sm text-gray-200/90">
+          Use <strong>CoinDepo</strong> when your plan is: hold quality bags and earn yield while you wait (instead of staring at candles).
+        </div>
+
+        <div class="mt-4 flex flex-wrap gap-2">
+          <a class="btn btn-primary text-sm w-full"
+             href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV"
+             target="_blank" rel="noopener">
+            ✅ CoinDepo bonus-eligible signup
+          </a>
+          <a class="btn btn-outline text-sm w-full" href="/coindepo-review/" rel="noopener">
+            🔎 Read my CoinDepo review
+          </a>
+        </div>
+
+        <div class="mt-3 text-[11px] text-gray-300/90">
+          Referral code: <code class="text-emerald-200 font-extrabold">R-UgAoMRNV</code>
+        </div>
+      </div>
+
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <div class="text-2xl mb-2">③</div>
+        <div class="font-extrabold text-emerald-200">Track everything</div>
+        <div class="mt-1 text-sm text-gray-300">
+          Use <strong>CoinStats</strong> to see your portfolio in one dashboard across exchanges and wallets.
+        </div>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <a class="btn btn-primary text-sm w-full"
+             href="https://invite.coinstats.app/r?i=Qm2yTg1745088895231"
+             target="_blank" rel="noopener">
+            📊 CoinStats invite link
+          </a>
+        </div>
+        <div class="mt-3 text-[11px] text-gray-400">
+          Referral code: <code>Qm2yTg1745088895231</code>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 rounded-2xl border border-white/10 bg-black/40 p-5">
+      <div class="font-extrabold">When do you add more platforms?</div>
+      <p class="mt-1 text-sm text-gray-300 content-max">
+        Only when you have a clear reason (advanced trading tools, specific listings, futures, promos).
+        If your goal is simply to accumulate and hold long-term, your “starter stack” is enough.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Comparison -->
+<section id="comparison" class="container-max mx-auto px-4 section-pad">
+  <div class="card">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+      <div>
+        <div class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[11px] font-extrabold uppercase tracking-wide text-emerald-300">
+          <span>Comparison</span>
+          <span>•</span>
+          <span>What each app is FOR</span>
+        </div>
+        <h2 class="mt-3 text-2xl md:text-3xl font-extrabold tracking-tight">
+          One table to kill the confusion
+        </h2>
+        <p class="mt-2 text-sm md:text-base text-gray-300 content-max">
+          “Which one do I need?” depends on the job. Here’s the clean breakdown.
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-6 tablewrap">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 18%">Platform</th>
+            <th style="width: 22%">Best For</th>
+            <th style="width: 35%">What it does</th>
+            <th style="width: 25%">Do you need it?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="font-extrabold">Coinbase</td>
+            <td>Buying crypto</td>
+            <td class="text-gray-300">Mainstream exchange/on-ramp to convert dollars → crypto.</td>
+            <td class="text-gray-300"><strong>Yes</strong> (or Gemini). Pick 1 main on-ramp.</td>
+          </tr>
+          <tr>
+            <td class="font-extrabold">Gemini</td>
+            <td>Buying crypto</td>
+            <td class="text-gray-300">Alternative on-ramp; simple exchange flow for beginners.</td>
+            <td class="text-gray-300"><strong>Yes</strong> (or Coinbase). Pick 1 main on-ramp.</td>
+          </tr>
+          <tr>
+            <td class="font-extrabold">CoinDepo</td>
+            <td>Earning while holding</td>
+            <td class="text-gray-300">Earn yield on deposits + referral bonus flow (terms/eligibility vary).</td>
+            <td class="text-gray-300"><strong>Yes</strong> if your plan is “hold and earn”.</td>
+          </tr>
+          <tr>
+            <td class="font-extrabold">CoinStats</td>
+            <td>Tracking</td>
+            <td class="text-gray-300">Portfolio dashboard across exchanges/wallets. A “single pane of glass.”</td>
+            <td class="text-gray-300"><strong>Yes</strong> if you use 2+ platforms.</td>
+          </tr>
+          <tr>
+            <td class="font-extrabold">BTCC</td>
+            <td>Trading / rewards</td>
+            <td class="text-gray-300">Trading platform with promo/rewards; best used intentionally (not as your first app).</td>
+            <td class="text-gray-300"><strong>Optional</strong> (for traders).</td>
+          </tr>
+          <tr>
+            <td class="font-extrabold">WEEX</td>
+            <td>Trading / rewards</td>
+            <td class="text-gray-300">Trading platform; promo/rewards via VIP link (verify current rules).</td>
+            <td class="text-gray-300"><strong>Optional</strong> (for traders).</td>
+          </tr>
+          <tr>
+            <td class="font-extrabold">Bitunix</td>
+            <td>Trading / rewards</td>
+            <td class="text-gray-300">Trading platform with invite rewards. Useful if you want another venue for setups.</td>
+            <td class="text-gray-300"><strong>Optional</strong> (for traders).</td>
+          </tr>
+          <tr>
+            <td class="font-extrabold">BYDFi</td>
+            <td>Trading / bonuses</td>
+            <td class="text-gray-300">Trading platform with bonuses and low-fee angle (promo terms vary).</td>
+            <td class="text-gray-300"><strong>Optional</strong> (for traders).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mt-6 grid gap-4 md:grid-cols-2">
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <div class="font-extrabold">The “minimum viable crypto toolkit”</div>
+        <p class="mt-2 text-sm text-gray-300">
+          <strong>On-ramp + Earn + Track</strong>.
+          Everything else is optional until you have a strategy that requires it.
+        </p>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <div class="font-extrabold">The biggest beginner mistake</div>
+        <p class="mt-2 text-sm text-gray-300">
+          Signing up everywhere “just in case.”
+          More apps = more logins, more confusion, more mistakes.
+          Add tools only when they solve a specific problem.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Platforms -->
+<section id="platforms" class="container-max mx-auto px-4 section-pad">
+  <div class="card">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+      <div>
+        <div class="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-500/10 px-3 py-1 text-[11px] font-extrabold uppercase tracking-wide text-emerald-300">
+          <span>Platforms</span>
+          <span>•</span>
+          <span>What they do + my links</span>
+        </div>
+        <h2 class="mt-3 text-2xl md:text-3xl font-extrabold tracking-tight">Quick breakdowns (no fluff)</h2>
+        <p class="mt-2 text-sm md:text-base text-gray-300 content-max">
+          Each card tells you what the platform is for, who it’s best for, and how it fits into a simple system.
+        </p>
+      </div>
+
+      <div class="flex flex-wrap gap-2">
+        <a href="/degenstein-weekly/" class="navlink">📰 Weekly</a>
+        <a href="/report/" class="navlink">📊 Reports</a>
+      </div>
+    </div>
+
+    <div class="mt-8 grid gap-4 md:grid-cols-2">
+
+      <!-- Coinbase -->
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <div class="flex items-center justify-between gap-3">
+          <div class="flex items-center gap-3">
+            <div class="text-2xl">💳</div>
+            <div class="text-xl font-extrabold">Coinbase</div>
+          </div>
+          <span class="badge">Buy / On-ramp</span>
+        </div>
+        <p class="mt-3 text-sm text-gray-300">
+          Best for converting fiat → crypto and keeping things straightforward. Great “first exchange.”
+        </p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <a class="btn btn-primary text-sm" href="https://coinbase.com/join/MFB6ACG?src=referral-link" target="_blank" rel="noopener">Use my Coinbase link</a>
+          <span class="pill pill-secondary">Code: MFB6ACG</span>
+        </div>
+      </div>
+
+      <!-- Gemini -->
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <div class="flex items-center justify-between gap-3">
+          <div class="flex items-center gap-3">
+            <div class="text-2xl">🔷</div>
+            <div class="text-xl font-extrabold">Gemini</div>
+          </div>
+          <span class="badge">Buy / On-ramp</span>
+        </div>
+        <p class="mt-3 text-sm text-gray-300">
+          Clean beginner exchange. Use it as your main on-ramp if you prefer its UI and flow.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <a class="btn btn-primary text-sm" href="https://exchange.gemini.com/register?referral=9zrdalkh7&type=referral" target="_blank" rel="noopener">Use my Gemini link</a>
+          <span class="pill pill-secondary">Code: 9zrdalkh7</span>
+        </div>
+      </div>
+
+      <!-- CoinDepo -->
+      <div class="rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-5">
+        <div class="flex items-center justify-between gap-3">
+          <div class="flex items-center gap-3">
+            <div class="text-2xl">💠</div>
+            <div class="text-xl font-extrabold">CoinDepo</div>
+          </div>
+          <span class="badge">Earn / Bonus flow</span>
+        </div>
+        <p class="mt-3 text-sm text-gray-200/90">
+          Best for “earn while you hold” strategies. If you’re a long-term holder, this is the platform that turns waiting into compounding.
+        </p>
+        <div class="mt-4 grid gap-2">
+          <a class="btn btn-primary text-sm w-full" href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV" target="_blank" rel="noopener">
+            ✅ Bonus-eligible signup link
+          </a>
+          <a class="btn btn-outline text-sm w-full" href="/coindepo-review/">🔎 Read my CoinDepo review</a>
+        </div>
+        <div class="mt-3 text-[11px] text-gray-300/90">
+          Referral code: <code class="text-emerald-200 font-extrabold">R-UgAoMRNV</code>
+        </div>
+      </div>
+
+      <!-- CoinStats -->
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <div class="flex items-center justify-between gap-3">
+          <div class="flex items-center gap-3">
+            <div class="text-2xl">📊</div>
+            <div class="text-xl font-extrabold">CoinStats</div>
+          </div>
+          <span class="badge">Track</span>
+        </div>
+        <p class="mt-3 text-sm text-gray-300">
+          Best for tracking balances and performance across multiple exchanges and wallets in one place.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <a class="btn btn-primary text-sm" href="https://invite.coinstats.app/r?i=Qm2yTg1745088895231" target="_blank" rel="noopener">Use my CoinStats link</a>
+          <span class="pill pill-secondary">Code: Qm2yTg1745088895231</span>
+        </div>
+      </div>
+
+      <!-- BTCC -->
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <div class="flex items-center justify-between gap-3">
+          <div class="flex items-center gap-3">
+            <div class="text-2xl">📈</div>
+            <div class="text-xl font-extrabold">BTCC</div>
+          </div>
+          <span class="badge">Trade (Optional)</span>
+        </div>
+        <p class="mt-3 text-sm text-gray-300">
+          Trading platform with promo/rewards. Best used if you already have rules and risk limits.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <a class="btn btn-primary text-sm" href="https://www.btcc.com/en-US/invite/HC6O49" target="_blank" rel="noopener">Use my BTCC link</a>
+          <span class="pill pill-secondary">Code: HC6O49</span>
+        </div>
+      </div>
+
+      <!-- WEEX -->
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <div class="flex items-center justify-between gap-3">
+          <div class="flex items-center gap-3">
+            <div class="text-2xl">📊</div>
+            <div class="text-xl font-extrabold">WEEX</div>
+          </div>
+          <span class="badge">Trade (Optional)</span>
+        </div>
+        <p class="mt-3 text-sm text-gray-300">
+          Trading platform with VIP referral promos. Verify current eligibility and bonus rules in-app.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <a class="btn btn-primary text-sm" href="https://weex.com/register?vipCode=5flql" target="_blank" rel="noopener">Use my WEEX link</a>
+          <span class="pill pill-secondary">Code: 5flql</span>
+        </div>
+      </div>
+
+      <!-- Bitunix -->
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <div class="flex items-center justify-between gap-3">
+          <div class="flex items-center gap-3">
+            <div class="text-2xl">🧰</div>
+            <div class="text-xl font-extrabold">Bitunix</div>
+          </div>
+          <span class="badge">Trade (Optional)</span>
+        </div>
+        <p class="mt-3 text-sm text-gray-300">
+          Another trading venue with invite rewards. Use it only if it adds real value to your strategy.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <a class="btn btn-primary text-sm" href="https://www.bitunix.com/register?inviteCode=57hn7f" target="_blank" rel="noopener">Use my Bitunix link</a>
+          <span class="pill pill-secondary">Code: 57hn7f</span>
+        </div>
+      </div>
+
+      <!-- BYDFi -->
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+        <div class="flex items-center justify-between gap-3">
+          <div class="flex items-center gap-3">
+            <div class="text-2xl">⚡</div>
+            <div class="text-xl font-extrabold">BYDFi</div>
+          </div>
+          <span class="badge">Trade (Optional)</span>
+        </div>
+        <p class="mt-3 text-sm text-gray-300">
+          Trading platform with bonus promos. Best for experienced users who want another tool in the toolbox.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <a class="btn btn-primary text-sm" href="https://partner.bydfi.com/j/3tLVlEZ0" target="_blank" rel="noopener">Use my BYDFi link</a>
+          <span class="pill pill-secondary">Code: qkmc3q</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mt-10 rounded-2xl border border-white/10 bg-black/40 p-5">
+      <div class="font-extrabold">My rule for adding “extra” platforms</div>
+      <p class="mt-2 text-sm text-gray-300 content-max">
+        If a platform doesn’t clearly do one of these better for you — <strong>buy</strong>, <strong>earn</strong>, <strong>track</strong>, or <strong>execute a specific strategy</strong> —
+        it’s noise. Noise steals attention. Attention is alpha.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="border-t border-white/10">
+  <div class="container-max mx-auto px-4 py-10 text-sm text-gray-400 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+    <div>
+      © <span id="year"></span> Degenstein. All rights reserved.
+      <p class="mt-2 text-xs text-gray-500 max-w-2xl leading-relaxed">
+        Disclaimer: Referrals and yield/trading platforms carry risk. Promotions and eligibility rules can change.
+        Nothing on this website is financial advice. Always DYOR and verify terms in the platform.
+      </p>
+    </div>
+    <div class="flex items-center gap-4">
+      <a class="hover:text-white" href="https://x.com/DHouseofcrypto" target="_blank" rel="noopener">X</a>
+      <a class="hover:text-white" href="https://t.me/DegensteinArmy" target="_blank" rel="noopener">Telegram</a>
+      <a class="hover:text-white" href="/terms.html">Terms</a>
+      <a class="hover:text-white" href="/privacy.html">Privacy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Last updated stamp
+  (function(){
+    const el = document.getElementById('lastUpdated');
+    if (!el) return;
+    const d = new Date();
+    el.textContent = d.toLocaleDateString(undefined, { year:'numeric', month:'short', day:'numeric' });
+  })();
+</script>
+
+<!-- Scrollspy highlight -->
+<script>
+(function(){
+  const links = Array.from(document.querySelectorAll('[data-scrollspy]')).filter(a => a.getAttribute('data-scrollspy'));
+  const sections = links
+    .map(a => document.getElementById(a.getAttribute('data-scrollspy')))
+    .filter(Boolean);
+
+  if (!links.length || !sections.length) return;
+
+  const byId = new Map(links.map(a => [a.getAttribute('data-scrollspy'), a]));
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      const id = e.target.id;
+      const link = byId.get(id);
+      if (!link) return;
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.remove('navlink-active'));
+        link.classList.add('navlink-active');
+      }
+    });
+  }, { rootMargin: "-40% 0px -55% 0px", threshold: 0.01 });
+
+  sections.forEach(s => obs.observe(s));
+})();
+</script>
+
+</body>
+</html>
 
