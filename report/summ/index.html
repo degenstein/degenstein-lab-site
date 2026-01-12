@@ -34,7 +34,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- 🔒 SAME STYLE BLOCK AS MAG7 (UNCHANGED) -->
   <style>
     :root { color-scheme: dark; }
     html, body {
@@ -66,71 +65,91 @@
 
 <main class="flex-1">
 
-<section class="max-w-6xl mx-auto px-4 py-10">
-  <div class="flex flex-wrap gap-2 mb-4">
-    <span class="badge"><span class="badge-dot"></span> The Degenstein Report</span>
-    <span class="badge border-cyan-300/50 text-cyan-200 bg-cyan-500/10">Infrastructure</span>
-    <span class="badge border-emerald-400/50 text-emerald-200 bg-emerald-500/10">Compliance</span>
-  </div>
-
-  <div class="card">
-    <h1 class="text-3xl md:text-4xl font-extrabold mb-3">
-      Summ — Crypto Tax Infrastructure
-    </h1>
-
-    <p class="text-gray-300 max-w-3xl">
-      Summ is a crypto tax preparation platform built to track, normalize, and reconcile
-      on-chain and exchange activity into tax-ready reports.
-      This is not a speculative product — it is compliance infrastructure for active crypto users.
-    </p>
-
-    <div class="mt-5 grid md:grid-cols-2 gap-4">
-      <div>
-        <h2 class="font-extrabold text-emerald-300 mb-2">What Summ Does</h2>
-        <ul class="text-sm space-y-1 text-gray-200">
-          <li>• Aggregates centralized exchange activity</li>
-          <li>• Tracks multiple wallets and blockchains</li>
-          <li>• Normalizes DeFi transactions into tax-readable events</li>
-          <li>• Generates reports for compliant tax filing</li>
-        </ul>
+<!-- HERO -->
+<section class="max-w-6xl mx-auto px-4 py-12">
+  <div class="card grid md:grid-cols-2 gap-8 items-center">
+    
+    <div>
+      <div class="flex flex-wrap gap-2 mb-4">
+        <span class="badge"><span class="badge-dot"></span> The Degenstein Report</span>
+        <span class="badge border-cyan-300/50 text-cyan-200 bg-cyan-500/10">Infrastructure</span>
+        <span class="badge border-emerald-400/50 text-emerald-200 bg-emerald-500/10">Compliance</span>
       </div>
 
-      <div>
-        <h2 class="font-extrabold text-emerald-300 mb-2">Why This Matters</h2>
-        <p class="text-sm text-gray-200">
-          As on-chain activity increases, manual tracking breaks.
-          Crypto tax software is no longer optional friction —
-          it is a structural requirement for anyone interacting across wallets, chains, and protocols.
-        </p>
-      </div>
-    </div>
+      <h1 class="text-4xl font-extrabold mb-3">
+        Summ
+      </h1>
 
-    <div class="mt-6 border-t border-white/10 pt-5">
-      <h3 class="font-extrabold text-cyan-200 mb-2">How Summ Fits</h3>
-      <p class="text-sm text-gray-200 max-w-3xl">
-        Summ competes on coverage breadth, accuracy, and time saved.
-        Its core value is reducing human error — the largest hidden risk in crypto tax reporting.
+      <p class="text-xl text-gray-300 mb-4">
+        Crypto Tax Infrastructure for Active On-Chain Users
       </p>
-    </div>
 
-    <div class="mt-6 flex flex-wrap gap-3">
+      <ul class="text-sm space-y-1 text-gray-200 mb-6">
+        <li>• Tracks wallets, exchanges, and blockchains</li>
+        <li>• Normalizes DeFi activity into tax-readable events</li>
+        <li>• Produces compliant, tax-ready reports</li>
+      </ul>
+
       <a
         href="https://summ.com/?via=66tc8ydq"
         target="_blank"
         rel="noopener nofollow"
         class="btn btn-primary"
       >
-        Use Summ → Save 20% (Code: 66tc8ydq)
+        Save 20% with Summ →
       </a>
+    </div>
 
-      <a href="/report/" class="btn btn-outline">
-        ← Back to Reports
-      </a>
+    <div class="flex justify-center">
+      <img
+        src="/assets/summ.png"
+        alt="Summ crypto tax infrastructure dashboard"
+        class="max-w-full rounded-xl border border-white/10"
+        loading="eager"
+      />
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTENT -->
+<section class="max-w-6xl mx-auto px-4 pb-12">
+  <div class="card">
+
+    <h2 class="text-2xl font-extrabold mb-3">Overview</h2>
+    <p class="text-gray-300 max-w-3xl mb-6">
+      Summ is a crypto tax preparation platform built to track, normalize, and reconcile
+      on-chain and exchange activity into tax-ready reports.
+      This is not a speculative product — it is compliance infrastructure for active crypto users.
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <div>
+        <h3 class="font-extrabold text-emerald-300 mb-2">Why Crypto Tax Software Is Mandatory</h3>
+        <p class="text-sm text-gray-200">
+          As crypto adoption grows, reporting requirements increase.
+          Manual tracking does not scale. Tax software has become a structural requirement
+          for anyone operating across wallets, chains, and protocols.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-extrabold text-emerald-300 mb-2">How Summ Fits</h3>
+        <p class="text-sm text-gray-200">
+          Summ competes on coverage breadth, accuracy, and time saved.
+          Its primary value is reducing human error — the largest hidden risk in crypto tax reporting.
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-6 border-t border-white/10 pt-5 flex flex-wrap gap-3">
+      <a href="/report/" class="btn btn-outline">← Back to Reports</a>
     </div>
 
     <p class="mt-4 text-xs text-gray-400">
       Disclosure: referral link. Crypto tax rules vary by jurisdiction. Software does not replace professional tax advice.
     </p>
+
   </div>
 </section>
 
@@ -148,6 +167,7 @@
 
 </body>
 </html>
+
 
 
 
