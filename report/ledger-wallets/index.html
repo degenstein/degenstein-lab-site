@@ -103,9 +103,27 @@
       border-radius: 6px;
       text-decoration: none;
       font-weight: bold;
+      margin: 10px;
     }
 
     .x-button:hover {
+      background: #1a1a1a;
+    }
+
+    /* BACK TO REPORTS BUTTON */
+    .back-button {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 10px 16px;
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 6px;
+      color: #00ffcc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back-button:hover {
       background: #1a1a1a;
     }
 
@@ -136,6 +154,9 @@
 
 <body>
   <div class="container">
+
+    <!-- BACK TO REPORTS (TOP) -->
+    <a href="https://degenstein.xyz/report/" class="back-button">← Back to Reports</a>
 
     <h1>Ledger Wallet Comparison</h1>
     <p>
@@ -255,7 +276,7 @@
       </p>
     </div>
 
-    <!-- SHARE BUTTON -->
+    <!-- SHARE + BACK BUTTON -->
     <div class="share">
       <a
         class="x-button"
@@ -265,6 +286,10 @@
       >
         Share on X
       </a>
+
+      <br><br>
+
+      <a href="https://degenstein.xyz/report/" class="back-button">← Back to Reports</a>
     </div>
 
     <footer>
@@ -277,4 +302,5 @@
   </div>
 </body>
 </html>
+
 
