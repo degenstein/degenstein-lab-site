@@ -1,1 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>$10,000 Portfolio Example (2026) | Degenstein’s Crypto Playbooks</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <meta name="description" content="$10,000 Portfolio Example (2026) — a larger-cap, conviction-weighted crypto playbook with stronger core exposure, structured themes, and a disciplined upside sleeve. DYOR." />
+  <link rel="canonical" href="https://degenstein.xyz/playbooks/10000-portfolio-2026/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="$10,000 Portfolio Example (2026)" />
+  <meta property="og:description" content="A disciplined $10K portfolio example: conviction core + tokenization themes + capped upside. Built for 2026 narratives. DYOR." />
+  <meta property="og:image" content="https://degenstein.xyz/assets/10000playbook.png" />
+  <meta property="og:url" content="https://degenstein.xyz/playbooks/10000-portfolio-2026/" />
+  <meta property="og:type" content="website" />
+
+  <!-- X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="$10,000 Portfolio Example (2026)" />
+  <meta name="twitter:description" content="A conviction-weighted $10K crypto playbook built for 2026. Core + themes + strict rules. DYOR." />
+  <meta name="twitter:image" content="https://degenstein.xyz/assets/10000playbook.png" />
+  <meta name="twitter:site" content="@DHouseofcrypto" />
+
+  <meta name="theme-color" content="#06b6d4" />
+
+  <style>
+    :root{
+      --bg:#020617;
+      --card:#020617;
+      --card-alt:#020817;
+
+      --accent:#22c55e;
+      --accent2:#06b6d4;
+
+      --text-main:#f9fafb;
+      --text-muted:#9ca3af;
+
+      --shadow-soft:0 18px 45px rgba(0,0,0,.75);
+      --radius-lg:18px;
+    }
+
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,sans-serif;
+      background:
+        radial-gradient(circle at top left,rgba(34,197,94,.16),transparent 55%),
+        radial-gradient(circle at bottom right,rgba(6,182,212,.14),transparent 55%),
+        var(--bg);
+      color:var(--text-main);
+    }
+
+    .page{min-height:100vh;padding:40px 16px 64px;display:flex;justify-content:center;}
+    .container{max-width:980px;width:100%;}
+
+    a{color:var(--accent);text-decoration:none;}
+    a:hover{text-decoration:underline;}
+
+    .cover-wrap{max-width:760px;margin:0 auto 22px;}
+    .cover-img{width:100%;border-radius:18px;display:block;box-shadow:0 18px 60px rgba(0,0,0,.55);}
+
+    .home-pill{
+      display:inline-flex;gap:6px;margin:14px 8px 14px 0;padding:7px 14px;
+      border-radius:999px;font-size:.74rem;letter-spacing:.14em;
+      background:rgba(15,23,42,.8);border:1px solid rgba(148,163,184,.4);
+      color:var(--text-muted);text-transform:uppercase;transition:.15s;
+    }
+    .home-pill:hover{
+      background:rgba(6,182,212,.12);
+      border-color:rgba(6,182,212,.65);
+      color:#67e8f9;
+      text-decoration:none;
+    }
+
+    .badge{
+      display:inline-flex;gap:8px;padding:4px 10px;border-radius:999px;
+      background:rgba(15,23,42,.85);border:1px solid rgba(148,163,184,.35);
+      font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:10px;
+    }
+    .badge-dot{width:6px;height:6px;border-radius:999px;background:var(--accent);box-shadow:0 0 10px rgba(34,197,94,.9);}    
+
+    h1{font-size:clamp(2.0rem,4vw,3.0rem);margin:12px 0 6px;}
+    .subtitle{font-size:1rem;color:var(--text-muted);max-width:860px;line-height:1.7;}
+
+    .divider{border-bottom:1px solid rgba(148,163,184,.3);margin:26px 0 18px;position:relative;}
+    .divider:after{content:"";display:block;height:1px;width:200px;margin-top:-1px;background:linear-gradient(90deg, rgba(6,182,212,.0), rgba(6,182,212,.75), rgba(6,182,212,.0));}
+
+    .disclaimer{margin-top:14px;padding:12px 14px;border-radius:14px;background:rgba(15,23,42,.9);border:1px solid rgba(148,163,184,.35);color:var(--text-muted);font-size:.9rem;line-height:1.6;}
+    .disclaimer strong{color:var(--text-main);}    
+
+    .section{padding:18px;border-radius:var(--radius-lg);border:1px solid rgba(148,163,184,.28);background:linear-gradient(180deg, rgba(2,6,23,.70), rgba(2,6,23,.95));box-shadow:var(--shadow-soft);margin-bottom:18px;}
+    .section h2{margin:0 0 8px;font-size:1.15rem;}
+    .section p{margin:0;color:var(--text-muted);line-height:1.7;}
+
+    ul{margin:10px 0 0 18px;color:var(--text-muted);line-height:1.75;}
+    li{margin:6px 0;}
+
+    .callout{margin-top:12px;padding:12px 14px;border-radius:14px;border:1px solid rgba(6,182,212,.35);background:rgba(6,182,212,.08);color:rgba(226,232,240,.92);line-height:1.7;}
+
+    .alloc{margin-top:10px;border:1px solid rgba(148,163,184,.22);border-radius:14px;overflow:hidden;}
+    .alloc-row{display:flex;justify-content:space-between;gap:12px;padding:10px 12px;background:rgba(15,23,42,.65);border-bottom:1px solid rgba(148,163,184,.18);color:rgba(226,232,240,.95);}    
+    .alloc-row:last-child{border-bottom:none;}    
+
+    .pill{display:inline-flex;padding:2px 10px;border-radius:999px;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;border:1px solid rgba(148,163,184,.35);background:rgba(2,6,23,.45);color:var(--text-muted);font-weight:800;}
+    .pill-green{border-color:rgba(34,197,94,.55);background:rgba(34,197,94,.10);color:#6ee7b7;}
+    .pill-cyan{border-color:rgba(6,182,212,.55);background:rgba(6,182,212,.10);color:#67e8f9;}
+    .pill-amber{border-color:rgba(245,158,11,.45);background:rgba(245,158,11,.08);color:rgba(253,230,138,.95);}    
+
+    code{color:#67e8f9;font-weight:800;background: rgba(6,182,212,.10);border: 1px solid rgba(6,182,212,.22);padding: 2px 6px;border-radius: 8px;}
+
+    .cta-button{display:inline-flex;align-items:center;margin-top:12px;padding:9px 18px;border-radius:999px;font-weight:900;background:linear-gradient(135deg, var(--accent), var(--accent2));color:#020617;box-shadow:0 14px 40px rgba(6,182,212,.20);}    
+  </style>
+</head>
+
+<body>
+<div class="page">
+<div class="container">
+
+  <div class="cover-wrap">
+    <img src="/assets/10000playbook.png" alt="$10,000 Portfolio Example (2026) Cover" class="cover-img" loading="lazy" />
+  </div>
+
+  <div class="badge"><span class="badge-dot"></span> Playbook #4</div>
+  <h1>$10,000 Portfolio Example (2026)</h1>
+  <p class="subtitle">
+    This playbook is built for conviction sizing. With <code>$10,000</code>, the edge comes from disciplined concentration,
+    stronger core exposure, and resisting the urge to over-diversify.
+  </p>
+
+  <div class="disclaimer">⚠️ <strong>Not financial advice.</strong> This is a portfolio example and framework only. Always DYOR.</div>
+
+  <a href="https://degenstein.xyz/playbooks/" class="home-pill">← Back to Playbooks</a>
+  <a href="https://degenstein.xyz/" class="home-pill">← Main Page</a>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <h2>Goal of this playbook</h2>
+    <p>
+      Optimize for survivability and upside in a full-cycle environment. This portfolio leans into assets with
+      institutional relevance, real demand, and multi-year narratives — not short-term hype.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Portfolio structure</h2>
+    <ul>
+      <li><strong>Core (65–75%)</strong>: assets you can confidently hold through volatility.</li>
+      <li><strong>Themes (20–25%)</strong>: tokenization, infrastructure, and settlement layers.</li>
+      <li><strong>Upside sleeve (5–10%)</strong>: capped exposure to higher-beta L1s.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Suggested allocation (example)</h2>
+    <div class="alloc">
+      <div class="alloc-row"><div><span class="pill pill-green">Core</span> <strong>$ETH</strong></div><div><strong>25%</strong> ($2,500)</div></div>
+      <div class="alloc-row"><div><span class="pill pill-green">Core</span> <strong>$XRP</strong></div><div><strong>20%</strong> ($2,000)</div></div>
+      <div class="alloc-row"><div><span class="pill pill-green">Core</span> <strong>$SOL</strong></div><div><strong>15%</strong> ($1,500)</div></div>
+      <div class="alloc-row"><div><span class="pill pill-cyan">Theme</span> <strong>$LINK</strong></div><div><strong>10%</strong> ($1,000)</div></div>
+      <div class="alloc-row"><div><span class="pill pill-cyan">Theme</span> <strong>$ONDO</strong></div><div><strong>10%</strong> ($1,000)</div></div>
+      <div class="alloc-row"><div><span class="pill pill-amber">Upside</span> <strong>$AVAX / $NEAR</strong></div><div><strong>10%</strong> ($1,000)</div></div>
+    </div>
+  </div>
+
+  <div class="section" style="border-color:rgba(34,197,94,.45);">
+    <h2>Where I hold</h2>
+    <p>
+      I prefer setups that reduce overtrading and let capital compound while waiting.
+    </p>
+    <a class="cta-button" href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV" target="_blank" rel="noopener">
+      CoinDepo — start here (Referral: R-UgAoMRNV) →
+    </a>
+    <p style="margin-top:10px;color:rgba(156,163,175,.95);font-size:.82rem;">APR and bonuses vary by asset and region.</p>
+  </div>
+
+</div>
+</div>
+</body>
+</html>
 
