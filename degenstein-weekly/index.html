@@ -4,90 +4,49 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Degenstein Weekly — The Week in Crypto (No BS)</title>
+  <title>Degenstein Weekly — Infrastructure Wins Before Price</title>
 
-  <meta name="description" content="Weekly crypto headlines, market context, real use-case progress, macro shifts, and earning strategies — no hype, no charts, no BS." />
+  <meta name="description" content="A full-spectrum weekly crypto brief covering XRP, ONDO, LINK, NEAR, and AVAX, macro pressure points, real adoption, and how to earn yield while markets build structure." />
   <link rel="canonical" href="https://degenstein.xyz/degenstein-weekly/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Degenstein" />
-  <meta property="og:title" content="Degenstein Weekly — The Week in Crypto (No BS)" />
-  <meta property="og:description" content="What actually changed this week, why it matters, and how I position capital." />
+  <meta property="og:title" content="Degenstein Weekly — Infrastructure Wins Before Price" />
+  <meta property="og:description" content="No hype. Just structure, adoption, and positioning." />
   <meta property="og:url" content="https://degenstein.xyz/degenstein-weekly/" />
   <meta property="og:image" content="https://degenstein.xyz/assets/weekly-og-1200x630.png" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Degenstein Weekly — The Week in Crypto (No BS)" />
-  <meta name="twitter:description" content="No noise. No shills. Just the signals that matter." />
+  <meta name="twitter:title" content="Degenstein Weekly — Infrastructure Wins Before Price" />
+  <meta name="twitter:description" content="XRP, RWAs, infra chains, and paid patience." />
   <meta name="twitter:image" content="https://degenstein.xyz/assets/weekly-og-1200x630.png" />
 
   <style>
     body { background:#000; color:#fff; font-family: system-ui, sans-serif; line-height:1.7; margin:0; }
-    h1, h2, h3 { font-weight:800; margin-top:1.6rem; letter-spacing:.2px; }
-    .container { max-width:900px; margin:0 auto; padding:2rem 1rem; }
+    h1, h2, h3 { font-weight:800; margin-top:1.8rem; letter-spacing:.2px; }
+    .container { max-width:960px; margin:0 auto; padding:2.2rem 1.2rem; }
     a { color:#34ffa8; text-decoration:none; }
     a:hover { opacity:.9; }
-    .divider { border-bottom:1px solid #222; margin:2rem 0; }
-    ul { padding-left:1.2rem; }
-    li { margin:.35rem 0; }
-    .pill { display:inline-block; padding:4px 10px; border-radius:9999px; background:#111; border:1px solid #222; margin-bottom:1rem; font-size:13px; }
+    .divider { border-bottom:1px solid #222; margin:2.4rem 0; }
+    ul { padding-left:1.3rem; }
+    li { margin:.45rem 0; }
+    .pill { display:inline-block; padding:4px 12px; border-radius:9999px; background:#111; border:1px solid #222; margin-bottom:1.2rem; font-size:13px; }
     nav { background:#0a0a0a; padding:1rem; border-bottom:1px solid #111; text-align:center; }
     nav a { margin:0 1rem; color:#34ffa8; font-weight:800; }
     .updated { font-size:13px; opacity:.65; margin-top:.6rem; }
-    .lede { opacity:.9; max-width:75ch; }
-    .callout {
-      background:#0b0b0b;
-      border:1px solid #222;
-      border-radius:12px;
-      padding:1.2rem;
-      margin-top:1rem;
-    }
-    .grid {
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:14px;
-      margin-top:1rem;
-    }
-    @media (max-width:760px){
-      .grid { grid-template-columns: 1fr; }
-    }
-    .card {
-      background:#0b0b0b;
-      border:1px solid #222;
-      border-radius:12px;
-      padding:1.1rem;
-    }
+    .lede { opacity:.92; max-width:80ch; }
+    .callout { background:#0b0b0b; border:1px solid #222; border-radius:14px; padding:1.4rem; margin-top:1.4rem; }
+    .grid { display:grid; grid-template-columns: 1fr 1fr; gap:16px; margin-top:1.2rem; }
+    @media (max-width:780px){ .grid { grid-template-columns: 1fr; } }
+    .card { background:#0b0b0b; border:1px solid #222; border-radius:14px; padding:1.3rem; }
     .muted { opacity:.75; }
-    .tag {
-      display:inline-block;
-      font-size:12px;
-      border:1px solid #1f4d3a;
-      color:#34ffa8;
-      background:rgba(52,255,168,.06);
-      padding:3px 10px;
-      border-radius:999px;
-      margin:0 6px 6px 0;
-    }
-    .strategyBox{
-      background:linear-gradient(135deg,#0d1f17,#050505);
-      border:1px solid #1f4d3a;
-      border-radius:14px;
-      padding:1.5rem;
-      margin-top:1.2rem;
-    }
-    .toc a{
-      display:block;
-      padding:10px 12px;
-      border-radius:10px;
-      border:1px solid #222;
-      background:#0b0b0b;
-      margin:.5rem 0;
-      font-weight:700;
-    }
+    .tag { display:inline-block; font-size:12px; border:1px solid #1f4d3a; color:#34ffa8; background:rgba(52,255,168,.06); padding:4px 12px; border-radius:999px; margin:0 6px 6px 0; }
+    .strategyBox{ background:linear-gradient(135deg,#0d1f17,#050505); border:1px solid #1f4d3a; border-radius:16px; padding:1.7rem; margin-top:1.6rem; }
+    .toc a{ display:block; padding:12px 14px; border-radius:12px; border:1px solid #222; background:#0b0b0b; margin:.55rem 0; font-weight:800; }
     .toc a:hover{ border-color:#1f4d3a; }
-    .kicker { font-size:13px; opacity:.7; margin-top:.25rem; }
+    .kicker { font-size:13px; opacity:.7; margin-top:.35rem; }
   </style>
 </head>
 
@@ -100,27 +59,26 @@
 
 <div class="container">
   <span class="pill">🔥 Latest Edition</span>
-  <h1>Degenstein Weekly: The Week in Crypto (No BS)</h1>
+  <h1>Degenstein Weekly: Infrastructure Wins Before Price</h1>
 
   <p class="lede">
-    This weekly brief is for people who want <strong>signal</strong>, not noise.
-    I’m not here to predict candles — I’m here to track what changed, why it matters,
-    and how capital is actually positioning beneath the surface.
+    This weekly is built for investors who understand that price is the *last* thing to move.
+    Structure moves first. Infrastructure follows. Capital allocates quietly.
+    And only then does price react.
   </p>
 
   <p class="updated">Last updated: <strong>January 2026</strong></p>
 
   <div class="divider"></div>
 
-  <!-- TOC -->
   <h2>📌 Table of Contents</h2>
   <div class="toc">
     <a href="#latest">🚀 Top Headlines</a>
-    <a href="#quickreads">⚡ Quick Reads / Action Items</a>
-    <a href="#context">🧭 What This Week Means</a>
     <a href="#snapshot">📊 Market Snapshot</a>
-    <a href="#macro">🌍 Macro to Watch</a>
-    <a href="#usecase">🧱 Real Use-Case Progress</a>
+    <a href="#macro">🌍 Macro & Credit Stress</a>
+    <a href="#xrp">💎 XRP: Global Payment Rails</a>
+    <a href="#rwa">🏛️ ONDO & LINK: Real-World Assets</a>
+    <a href="#infra">⚙️ NEAR & AVAX: Infrastructure Scaling</a>
     <a href="#earn">💼 Earn While You Hold</a>
     <a href="#positioning">✅ My Positioning</a>
     <a href="#final">🧠 Final Thoughts</a>
@@ -128,197 +86,142 @@
 
   <div class="divider"></div>
 
-  <!-- HEADLINES -->
   <h2 id="latest">🚀 Top Headlines (This Week)</h2>
   <ul>
-    <li><strong>ETF infrastructure continues to expand:</strong> Access vehicles and custody rails are maturing quietly.</li>
-    <li><strong>Rate expectations stabilized:</strong> Reduced macro uncertainty supports risk assets.</li>
-    <li><strong>Capital rotation is selective:</strong> Large caps, rails, and real-yield narratives attract flow.</li>
-    <li><strong>RWAs remain sticky:</strong> Tokenized treasuries and yield products continue pulling sidelined capital.</li>
-    <li><strong>Compliance tooling matters more:</strong> Tax, reporting, and custody rails increasingly dictate adoption.</li>
+    <li><strong>XRP:</strong> Payment-rail narrative strengthens as institutions lean into compliant settlement layers.</li>
+    <li><strong>ONDO:</strong> RWA flows continue as tokenized treasuries absorb sidelined capital.</li>
+    <li><strong>LINK:</strong> Oracle dominance expands as RWAs demand reliable pricing and data feeds.</li>
+    <li><strong>NEAR:</strong> UX-first chain abstraction quietly drives real transaction growth.</li>
+    <li><strong>AVAX:</strong> Subnets and enterprise tooling remain attractive to institutions.</li>
   </ul>
 
   <div class="callout">
-    <div class="tag">No BS takeaway</div>
-    <p style="margin:0;">
-      This wasn’t a “headline week” — it was a <strong>plumbing week</strong>.
-      Plumbing improvements usually get priced later, not immediately.
-    </p>
+    <div class="tag">No BS Takeaway</div>
+    <p style="margin:0;">This was not a momentum week. It was a *validation* week. Infrastructure assets continue to justify institutional attention.</p>
   </div>
 
   <div class="divider"></div>
 
-  <!-- QUICK READS -->
-  <h2 id="quickreads">⚡ Quick Reads / Action Items</h2>
-  <p class="kicker">If you only read one section, read this.</p>
-
-  <div class="grid">
-    <div class="card">
-      <h3 style="margin-top:0;">What I’m Watching</h3>
-      <ul>
-        <li>Stablecoin inflows (often lead price).</li>
-        <li>ETF-related access headlines.</li>
-        <li>Payments + settlement narratives.</li>
-        <li>RWA yield adoption.</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h3 style="margin-top:0;">What I’m Avoiding</h3>
-      <ul>
-        <li>Overtrading January chop.</li>
-        <li>Low-liquidity pumps.</li>
-        <li>Forcing entries without structure.</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- CONTEXT -->
-  <h2 id="context">🧭 What This Week Means</h2>
-  <p>
-    Early-year markets are about positioning, not excitement.
-    This is when institutions rebalance, narratives compete,
-    and liquidity decides what deserves attention.
-  </p>
-  <p>
-    The important question isn’t “Did price move?”
-    It’s whether <strong>conditions improved</strong> for sustained upside.
-    This week pushed access, yield, and infrastructure in the right direction.
-  </p>
-
-  <div class="divider"></div>
-
-  <!-- SNAPSHOT -->
   <h2 id="snapshot">📊 Market Snapshot</h2>
   <div class="grid">
     <div class="card">
       <h3 style="margin-top:0;">Majors</h3>
       <ul>
-        <li><strong>BTC:</strong> Consolidation, not distribution.</li>
-        <li><strong>ETH:</strong> Base-building behavior.</li>
+        <li><strong>BTC:</strong> Consolidation above key liquidity zones.</li>
+        <li><strong>ETH:</strong> Base-building as scaling narratives mature.</li>
       </ul>
     </div>
-
     <div class="card">
-      <h3 style="margin-top:0;">Themes</h3>
+      <h3 style="margin-top:0;">Infrastructure Themes</h3>
       <ul>
-        <li><strong>XRP:</strong> Rails narrative intact.</li>
-        <li><strong>SOL:</strong> Buyers defending pullbacks.</li>
-        <li><strong>LINK:</strong> Compression before expansion.</li>
-        <li><strong>ONDO:</strong> RWA demand steady.</li>
+        <li>Payments & settlement rails</li>
+        <li>Tokenized yield & RWAs</li>
+        <li>Chain abstraction & UX</li>
+        <li>Enterprise blockchain tooling</li>
       </ul>
     </div>
   </div>
 
   <div class="divider"></div>
 
-  <!-- MACRO -->
-  <h2 id="macro">🌍 Macro to Watch</h2>
-  <ul>
-    <li>Liquidity windows post-rebalancing.</li>
-    <li>Regulatory tone and enforcement clarity.</li>
-    <li>Stablecoin issuance trends.</li>
-    <li>Rates remaining “known,” not surprising.</li>
-  </ul>
-
-  <div class="divider"></div>
-
-  <!-- USE CASE -->
-  <h2 id="usecase">🧱 Real Use-Case Progress</h2>
-
-  <h3>Payments & Settlement (XRP)</h3>
+  <h2 id="macro">🌍 Macro & Credit Stress</h2>
   <p>
-    Rails assets benefit from structure, not hype.
-    Demand comes from usage, access, and legal clarity —
-    not retail momentum.
+    Consumer credit remains under pressure, with renewed political discussion around capping credit card APRs near 10%.
+    Whether or not proposals tied to Trump-era policy ideas move forward, the signal matters.
   </p>
-
-  <h3>RWAs & Yield</h3>
   <p>
-    Real yield wins during sideways markets.
-    Tokenized treasuries turn waiting into earning.
-  </p>
-
-  <h3>Infrastructure</h3>
-  <p>
-    LINK, SOL, and AVAX benefit when throughput,
-    interoperability, and UX improve.
+    When traditional finance becomes restrictive, expensive, or politically constrained, capital seeks alternative rails.
+    Crypto infrastructure benefits from this environment quietly, not explosively.
   </p>
 
   <div class="divider"></div>
 
-  <!-- STRATEGY -->
+  <h2 id="xrp">💎 XRP: Global Payment Rails</h2>
+  <p>
+    XRP continues to benefit from something most crypto assets lack: regulatory survivability paired with real utility.
+    Cross-border payments demand liquidity, speed, and compliance.
+  </p>
+  <p>
+    This is not a meme trade.
+    It is a long-duration infrastructure thesis that improves as clarity increases.
+  </p>
+
+  <div class="divider"></div>
+
+  <h2 id="rwa">🏛️ ONDO & LINK: Real-World Assets</h2>
+  <p>
+    ONDO represents the RWA thesis in practice, not theory.
+    Tokenized treasuries convert idle capital into yield without forcing risk-on exposure.
+  </p>
+  <p>
+    LINK functions as the middleware that institutions require.
+    As RWAs scale, oracle demand scales with them.
+    This pairing is structural, not cyclical.
+  </p>
+
+  <div class="divider"></div>
+
+  <h2 id="infra">⚙️ NEAR & AVAX: Infrastructure Scaling</h2>
+  <p>
+    NEAR focuses on abstraction and usability.
+    When users stop caring about chains, adoption accelerates.
+  </p>
+  <p>
+    AVAX continues to attract enterprises through subnets, offering customizable blockchain environments without sacrificing performance.
+  </p>
+
+  <div class="divider"></div>
+
   <h2 id="earn">💼 Earn While You Hold</h2>
-
   <p>
-    Most people lose money by feeling forced to act.
-    My edge is simple: <strong>get paid while I wait</strong>.
+    Volatility punishes impatience.
+    My approach is simple: earn yield while structure develops.
   </p>
 
   <div class="strategyBox">
     <h3 style="margin-top:0; color:#34ffa8;">💼 Strategy Spotlight: CoinDepo</h3>
-
     <ul>
       <li>Earn up to <strong>27% APR</strong> while holding</li>
       <li>No active trading required</li>
-      <li>Built for volatile or sideways markets</li>
-      <li>Turns patience into a paid strategy</li>
+      <li>Turns waiting into a paid strategy</li>
     </ul>
-
     <p>
-      🔐 <strong>Exclusive link + bonus access:</strong><br>
-      <a href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV">
-        https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV
-      </a><br>
+      🎁 <strong>Use my exclusive link and earn up to $500 USDC:</strong><br>
+      <a href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV">https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV</a><br>
       Referral code: <strong>R-UgAoMRNV</strong>
     </p>
-
-    <p class="muted" style="margin:0;">
-      This is how I stay paid while markets set up the next move.
-    </p>
+    <p class="muted" style="margin:0;">This is how I stay patient, liquid, and paid.</p>
   </div>
 
   <div class="divider"></div>
 
-  <!-- POSITIONING -->
   <h2 id="positioning">✅ My Positioning</h2>
   <ul>
-    <li>Hold conviction in rails, infra, and RWAs.</li>
-    <li>Avoid overtrading noise.</li>
-    <li>Use yield to reduce pressure.</li>
-    <li>Keep dry powder for volatility.</li>
+    <li>Overweight infrastructure and rails.</li>
+    <li>Undertrade volatility.</li>
+    <li>Use yield to reduce timing pressure.</li>
+    <li>Let institutions do the work.</li>
   </ul>
 
   <div class="divider"></div>
 
-  <!-- FINAL -->
   <h2 id="final">🧠 Final Thoughts</h2>
   <p>
-    This week wasn’t loud — it was constructive.
-    Structure continues to improve beneath the surface.
+    This is how bull markets are built — quietly, structurally, and long before retail notices.
   </p>
-
   <p>
-    My 2026 framework remains:
+    My framework remains:
     <br><strong>Earn yield → hold conviction → deploy when structure confirms.</strong>
   </p>
 
   <div class="divider"></div>
 
   <h2 style="font-size:16px;">⚠️ Disclosure</h2>
-  <p style="font-size:14px; opacity:.7;">
-    This report is for informational purposes only and is not financial advice.
-    Some links may be affiliate links.
-  </p>
-
-  <p style="opacity:.7; font-size:14px;">
-    New editions publish weekly as structure evolves.
-  </p>
+  <p style="font-size:14px; opacity:.7;">Informational only. Not financial advice. Affiliate links may be used.</p>
+  <p style="opacity:.7; font-size:14px;">New editions publish weekly.</p>
 
   <br><br>
-  <p><a href="/">&larr; Back to homepage</a></p>
+  <p><a href="/">← Back to homepage</a></p>
 </div>
 
 </body>
