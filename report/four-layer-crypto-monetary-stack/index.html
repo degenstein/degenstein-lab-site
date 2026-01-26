@@ -52,7 +52,12 @@
     h1{font-size:34px; margin:12px 0 10px}
     .sub{color:var(--muted); max-width:75ch}
     .hero-cover{margin-top:16px; border:1px solid var(--stroke); border-radius:16px; overflow:hidden}
-    .hero-cover img{width:100%; display:block}
+    .hero-cover img{
+      width:100%;
+      max-height:420px;
+      object-fit:contain;
+      display:block;
+    }
     .grid{display:grid; grid-template-columns:1.2fr .8fr; gap:16px; margin-top:16px}
     @media(max-width:980px){.grid{grid-template-columns:1fr}}
     .card{padding:18px; border:1px solid var(--stroke); border-radius:var(--radius); background:linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.035)); box-shadow:var(--shadow2)}
@@ -91,7 +96,7 @@
     <div class="kicker"><span>The Degenstein Report</span><span>Macro-first • no hopium</span></div>
     <h1>BTC vs ETH vs SOL vs XRP</h1>
     <p class="sub">Understanding crypto through the <strong>Gold, Silver, and Copper</strong> monetary standard: Bitcoin as pristine collateral, Ethereum as programmable settlement, and Solana as high-speed economic throughput.</p>
-    <div class="hero-cover"><img src="https://degenstein.xyz/assets/btcethsol.png" alt="BTC ETH SOL Monetary Stack" /></div>
+    <div class="hero-cover" style="max-height:420px;"><img src="https://degenstein.xyz/assets/btcethsol.png" alt="BTC ETH SOL Monetary Stack" /></div>
 
     <div class="grid">
       <div class="card">
@@ -306,3 +311,4 @@
 </script>
 </body>
 </html>
+
