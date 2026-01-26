@@ -69,6 +69,8 @@
     .tag{font-family:var(--mono); font-size:11px; padding:4px 8px; border-radius:999px; border:1px solid var(--stroke)}
     .callout{margin-top:14px; padding:16px; border:1px solid rgba(0,255,170,0.28); border-radius:var(--radius); background:radial-gradient(650px 220px at 20% 30%, rgba(0,255,170,0.18), rgba(0,0,0,0.15))}
     .footer{margin-top:18px; font-size:12px; color:var(--muted2)}
+      .sharex{display:inline-flex;align-items:center;justify-content:center;padding:8px 10px;border-radius:12px;border:1px solid var(--stroke);background:rgba(255,255,255,0.07);color:var(--text);font-weight:800;font-size:13px;cursor:pointer}
+    .sharex:hover{border-color:rgba(0,255,170,0.35);background:linear-gradient(180deg, rgba(0,255,170,0.18), rgba(255,255,255,0.06))}
   </style>
 </head>
 <body>
@@ -76,11 +78,13 @@
   <div class="topbar">
     <div class="brand"><span class="dot"></span><span>Degenstein Bonus Hub</span></div>
     <div class="nav">
-      <a href="#framework">Framework</a>
-      <a href="#price-history">Price History</a>
-      <a href="#roles">Roles</a>
-      <a href="#final">Final Take</a>
-    </div>
+        <a href="https://degenstein.xyz/">Home</a>
+        <a href="https://degenstein.xyz/report/">Reports</a>
+        <a href="#framework">Framework</a>
+        <a href="#allocation">Allocations</a>
+        <a href="#final">Final Take</a>
+        <button class="sharex" type="button" onclick="shareOnX()">✕ Share on X</button>
+      </div>
   </div>
 
   <header class="hero">
@@ -256,6 +260,23 @@
     </p>
   </section>
 
+  <section class="section" id="earn-while-you-hold">
+    <h2>Earn While You Hold (CoinDepo)</h2>
+    <p class="muted">
+      Instead of overtrading, many investors focus on compounding yield while staying positioned
+      across the Four-Layer Crypto Monetary Stack.
+    </p>
+    <div class="callout">
+      <strong>CoinDepo Strategy:</strong> Earn yield on BTC, ETH, SOL, and XRP while maintaining long-term exposure.
+      <div style="margin-top:10px;">
+        <a class="btn primary" href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV" target="_blank" rel="noopener">Join CoinDepo</a>
+        <a class="btn" href="https://degenstein.xyz/report/">Return to Reports</a>
+        <a class="btn" href="https://degenstein.xyz/">Return to Home</a>
+      </div>
+      <p class="tiny" style="margin-top:10px;">Referral Code: <strong>R-UgAoMRNV</strong></p>
+    </div>
+  </section>
+
   <section class="section" id="final">
     <h2>Final Take</h2>
     <p class="muted">Bitcoin, Ethereum, Solana, and XRP are not competitors in a zero-sum game. They occupy different monetary niches — just like gold, silver, copper, and clearing rails did for centuries — with <strong>XRP explicitly serving the liquidity and clearing function between networks and institutions</strong>.</p>
@@ -275,6 +296,13 @@
   mount("tv-eth","COINBASE:ETHUSD");
   mount("tv-sol","COINBASE:SOLUSD");
 </script>
+<script>
+  function shareOnX(){
+    const url = 'https://degenstein.xyz/report/four-layer-crypto-monetary-stack';
+    const text = 'The Four-Layer Crypto Monetary Stack: BTC (Gold), ETH (Settlement), SOL (Execution), XRP (Clearing).';
+    const intent = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(url);
+    window.open(intent, '_blank', 'noopener,noreferrer');
+  }
+</script>
 </body>
 </html>
-
