@@ -31,98 +31,42 @@
   --border:rgba(148,163,184,.3);
   --radius:18px;
 }
-
 body{
   margin:0;
   font-family:system-ui,-apple-system,Segoe UI,sans-serif;
   background:var(--bg);
   color:var(--text);
 }
-
 .page{padding:40px 16px 64px;display:flex;justify-content:center;}
 .container{max-width:980px;width:100%;}
-
 a{color:var(--accent);text-decoration:none;}
 a:hover{text-decoration:underline;}
-
-.banner{
-  max-width:760px;
-  margin:0 auto 24px;
-}
-.banner img{
-  width:100%;
-  border-radius:var(--radius);
-}
-
-.top-actions{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin:14px 0 20px;
-}
-
+.banner{max-width:760px;margin:0 auto 24px;}
+.banner img{width:100%;border-radius:var(--radius);}
+.top-actions{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 20px;}
 .button{
-  padding:8px 14px;
-  border-radius:999px;
-  border:1px solid var(--border);
-  background:#020817;
-  color:var(--muted);
-  font-size:.8rem;
-  font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:.12em;
+  padding:8px 14px;border-radius:999px;border:1px solid var(--border);
+  background:#020817;color:var(--muted);font-size:.8rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:.12em;
 }
-
-.button:hover{
-  background:rgba(6,182,212,.12);
-  color:#67e8f9;
-  text-decoration:none;
-}
-
+.button:hover{background:rgba(6,182,212,.12);color:#67e8f9;text-decoration:none;}
 h1{margin:0 0 6px;}
 .subtitle{color:var(--muted);margin-bottom:26px;}
-
-.section{
-  margin-top:34px;
-}
-.section h2{
-  font-size:1.15rem;
-  margin-bottom:14px;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:18px;
-}
-@media(max-width:768px){
-  .grid{grid-template-columns:1fr;}
-}
-
+.section{margin-top:34px;}
+.section h2{font-size:1.15rem;margin-bottom:14px;}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+@media(max-width:768px){.grid{grid-template-columns:1fr;}}
 .card{
-  padding:18px;
-  border-radius:var(--radius);
-  border:1px solid var(--border);
+  padding:18px;border-radius:var(--radius);border:1px solid var(--border);
   background:#020817;
 }
-.card img{
-  width:100%;
-  border-radius:14px;
-  margin-bottom:10px;
-}
-.card h3{
-  margin:6px 0;
-  font-size:1rem;
-}
-.card p{
-  color:var(--muted);
-  font-size:.95rem;
-}
-.card span{
-  display:inline-block;
-  margin-top:8px;
-  font-weight:800;
-  color:var(--accent2);
+.card img{width:100%;border-radius:14px;margin-bottom:10px;}
+.card h3{margin:6px 0;font-size:1rem;}
+.card p{color:var(--muted);font-size:.95rem;}
+.card span{display:inline-block;margin-top:8px;font-weight:800;color:var(--accent2);}
+.badge{
+  display:inline-block;margin-top:6px;font-size:.7rem;font-weight:900;
+  color:#22c55e;letter-spacing:.12em;
 }
 </style>
 </head>
@@ -148,6 +92,16 @@ h1{margin:0 0 6px;}
 <div class="section">
 <h2>Core Frameworks & Market Maps</h2>
 <div class="grid">
+
+<a href="/report/spring-crypto-outlook/">
+  <div class="card">
+    <img src="/assets/spring-crypto-outlook.png">
+    <h3>Spring Crypto Outlook — Positioning Before the Move</h3>
+    <p>Macro shifts, regulatory clarity, ecosystem catalysts, and earning yield while markets consolidate.</p>
+    <span>Read report →</span>
+    <div class="badge">NEW • SPRING OUTLOOK</div>
+  </div>
+</a>
 
 <a href="/report/four-layer-crypto-monetary-stack/">
   <div class="card">
@@ -175,15 +129,6 @@ h1{margin:0 0 6px;}
 <h2>Base Networks & Monetary Rails</h2>
 <div class="grid">
 
-<a href="/report/sol-vs-eth/">
-  <div class="card">
-    <img src="/assets/ethsol.png">
-    <h3>Solana vs Ethereum</h3>
-    <p>L1 execution vs settlement — roles, metrics & history.</p>
-    <span>Read report →</span>
-  </div>
-</a>
-
 <a href="/report/xrp/">
   <div class="card">
     <img src="/assets/report-xrp.png">
@@ -193,10 +138,18 @@ h1{margin:0 0 6px;}
   </div>
 </a>
 
+<a href="/report/sol-vs-eth/">
+  <div class="card">
+    <img src="/assets/ethsol.png">
+    <h3>Solana vs Ethereum</h3>
+    <p>L1 execution vs settlement — roles, metrics & history.</p>
+    <span>Read report →</span>
+  </div>
+</a>
+
 </div>
 
 <div class="grid" style="margin-top:18px;">
-
 <a href="/report/near-ai/">
   <div class="card">
     <img src="/assets/report-near-ai.png">
@@ -205,7 +158,6 @@ h1{margin:0 0 6px;}
     <span>Read report →</span>
   </div>
 </a>
-
 </div>
 </div>
 
@@ -249,19 +201,6 @@ h1{margin:0 0 6px;}
   </div>
 </a>
 
-<a href="/report/summ/">
-  <div class="card">
-    <img src="/assets/summ.png">
-    <h3>Summ — Crypto Tax Infrastructure</h3>
-    <p>On-chain tax preparation for active users.</p>
-    <span>Read report →</span>
-  </div>
-</a>
-
-</div>
-
-<div class="grid" style="margin-top:18px;">
-
 <a href="/report/gemini-vs-coinbase/">
   <div class="card">
     <img src="/assets/geminicoinbase.png">
@@ -271,6 +210,9 @@ h1{margin:0 0 6px;}
   </div>
 </a>
 
+</div>
+
+<div class="grid" style="margin-top:18px;">
 <a href="/report/ledger-wallets/">
   <div class="card">
     <img src="/assets/ledgerwallet.png">
@@ -280,6 +222,14 @@ h1{margin:0 0 6px;}
   </div>
 </a>
 
+<a href="/report/summ/">
+  <div class="card">
+    <img src="/assets/summ.png">
+    <h3>Summ — Crypto Tax Infrastructure</h3>
+    <p>On-chain tax preparation for active users.</p>
+    <span>Read report →</span>
+  </div>
+</a>
 </div>
 </div>
 
@@ -299,21 +249,12 @@ h1{margin:0 0 6px;}
 
 </div>
 </div>
-<!-- DYOR DISCLAIMER -->
-<div style="
-  margin-top:40px;
-  padding:16px 18px;
-  border:1px solid rgba(148,163,184,.25);
-  border-radius:14px;
-  background:#020817;
-  color:#9ca3af;
-  font-size:.85rem;
-  line-height:1.6;
-">
+
+<!-- DISCLAIMER -->
+<div style="margin-top:40px;padding:16px 18px;border:1px solid rgba(148,163,184,.25);
+  border-radius:14px;background:#020817;color:#9ca3af;font-size:.85rem;line-height:1.6;">
   <strong style="color:#f9fafb;">Disclaimer:</strong>
-  This content is for informational and educational purposes only and reflects my personal research and opinions.
-  It is not financial advice. Crypto assets are volatile and involve risk.
-  Always do your own research (DYOR) and consider your financial situation before making any investment decisions.
+  This content is for informational and educational purposes only and is not financial advice.
 </div>
 
 </div>
