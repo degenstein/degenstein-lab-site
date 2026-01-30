@@ -41,32 +41,84 @@
     }
     a{color:var(--accent); text-decoration:none}
     .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 70px}
-    .topbar{display:flex; justify-content:space-between; align-items:center; padding:14px 16px;
-      border:1px solid var(--stroke); border-radius:var(--radius); background:rgba(255,255,255,0.05);
-      box-shadow:var(--shadow)}
+
+    .topbar{
+      display:flex; justify-content:space-between; align-items:center;
+      padding:14px 16px; border:1px solid var(--stroke);
+      border-radius:var(--radius); background:rgba(255,255,255,0.05);
+      box-shadow:var(--shadow)
+    }
     .brand{display:flex; gap:10px; font-weight:800}
     .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 16px rgba(0,255,170,.5)}
     .nav{display:flex;gap:12px;flex-wrap:wrap}
     .nav a{font-size:13px;color:var(--muted);font-weight:600}
-    .sharex{padding:8px 10px;border-radius:12px;border:1px solid var(--stroke);
-      background:rgba(255,255,255,0.07);color:var(--text);font-weight:800;font-size:13px;cursor:pointer}
+    .sharex{
+      padding:8px 10px;border-radius:12px;border:1px solid var(--stroke);
+      background:rgba(255,255,255,0.07);color:var(--text);
+      font-weight:800;font-size:13px;cursor:pointer
+    }
     .sharex:hover{border-color:rgba(0,255,170,0.35);background:rgba(0,255,170,0.18)}
-    .hero{margin-top:18px;padding:26px 22px;border:1px solid var(--stroke);
-      border-radius:var(--radius);background:rgba(255,255,255,0.06);box-shadow:var(--shadow)}
+
+    .hero{
+      margin-top:18px;padding:26px 22px;border:1px solid var(--stroke);
+      border-radius:var(--radius);background:rgba(255,255,255,0.06);
+      box-shadow:var(--shadow)
+    }
     h1{font-size:34px;margin:12px 0 10px}
-    h2{margin-top:0}
+    h2.section-title{
+      font-size:1.35rem;
+      letter-spacing:.02em;
+      margin-bottom:6px;
+    }
     .sub{color:var(--muted);max-width:75ch}
+
     .hero-cover{margin-top:16px}
     .hero-cover img{width:100%;border-radius:16px;border:1px solid var(--stroke)}
-    .section{margin-top:22px;padding:20px;border:1px solid var(--stroke);
-      border-radius:var(--radius);background:rgba(255,255,255,0.04)}
+
+    .section{
+      margin-top:22px;padding:20px;border:1px solid var(--stroke);
+      border-radius:var(--radius);background:rgba(255,255,255,0.04)
+    }
+
     .bullets{padding-left:18px;color:var(--muted)}
     .bullets li{margin:8px 0}
+
     .table{width:100%;border-collapse:collapse;margin-top:12px}
     .table th,.table td{padding:10px;border-bottom:1px solid var(--stroke);font-size:13px}
     .table th{text-align:left;color:var(--muted)}
-    .callout{margin-top:16px;padding:16px;border:1px solid rgba(0,255,170,0.3);
-      border-radius:var(--radius);background:rgba(0,255,170,0.12)}
+
+    .callout{
+      margin-top:16px;padding:16px;border:1px solid rgba(0,255,170,0.3);
+      border-radius:var(--radius);background:rgba(0,255,170,0.12)
+    }
+
+    /* ===== Asset Styling ===== */
+    .asset{
+      margin-top:18px;
+      padding:18px;
+      border-radius:14px;
+      border:1px solid var(--stroke);
+      background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+    }
+    .asset-tag{
+      font-size:.7rem;font-weight:900;letter-spacing:.12em;
+      text-transform:uppercase;display:inline-block;margin-bottom:6px;
+    }
+
+    .btc{color:#f7931a}
+    .sol{color:#14f195}
+    .avax{color:#e84142}
+    .xrp{color:#4a90e2}
+    .ondo{color:#7c3aed}
+    .link{color:#2a5ada}
+
+    .glow-btc{box-shadow:0 0 0 1px rgba(247,147,26,.15),0 0 22px rgba(247,147,26,.08)}
+    .glow-sol{box-shadow:0 0 0 1px rgba(20,241,149,.18),0 0 22px rgba(20,241,149,.10)}
+    .glow-avax{box-shadow:0 0 0 1px rgba(232,65,66,.18),0 0 22px rgba(232,65,66,.10)}
+    .glow-xrp{box-shadow:0 0 0 1px rgba(74,144,226,.18),0 0 22px rgba(74,144,226,.10)}
+    .glow-ondo{box-shadow:0 0 0 1px rgba(124,58,237,.18),0 0 22px rgba(124,58,237,.10)}
+    .glow-link{box-shadow:0 0 0 1px rgba(42,90,218,.18),0 0 22px rgba(42,90,218,.10)}
+
     .footer{margin-top:18px;font-size:12px;color:rgba(255,255,255,0.55)}
   </style>
 </head>
@@ -95,163 +147,81 @@
 </header>
 
 <section class="section">
-<h2>Why Spring Matters</h2>
+<h2 class="section-title">Why Spring Matters</h2>
 <p class="sub">
-Crypto markets historically transition in spring. Liquidity conditions stabilize, volatility compresses,
-and capital begins positioning ahead of summer narrative expansion. This phase rewards patience,
-discipline, and correct exposure far more than short-term speculation.
+Crypto markets historically transition in spring. Liquidity stabilizes, volatility compresses,
+and capital positions ahead of summer narratives.
 </p>
 </section>
 
 <section class="section">
-<h2>Macro Deep Dive: The Fed Transition</h2>
-<p class="sub">
-A new Federal Reserve Chair expected in May represents a shift in tone before a shift in policy.
-Markets do not wait for rate cuts — they respond to guidance, language, and predictability.
-</p>
-<ul class="bullets">
-  <li>Risk assets often reprice during leadership transitions</li>
-  <li>Crypto historically reacts early to macro tone changes</li>
-  <li>Stability alone can reduce downside volatility</li>
-</ul>
-</section>
+<h2 class="section-title">Asset-by-Asset Outlook</h2>
 
-<section class="section">
-<h2>Regulatory Outlook: CLARITY Act Scenarios</h2>
-<p class="sub">
-The CLARITY Act aims to define digital asset classifications and jurisdictional boundaries.
-Even incremental progress reduces institutional hesitation and long-term risk premiums.
-</p>
-<ul class="bullets">
-  <li>Clearer rules enable capital allocation</li>
-  <li>Compliance clarity benefits U.S.-exposed assets</li>
-  <li>Regulation favors infrastructure over speculation</li>
-</ul>
-</section>
+<div class="asset glow-btc">
+  <span class="asset-tag btc">Bitcoin • BTC</span>
+  <p class="sub">Macro anchor and base collateral. Leads stabilization phases.</p>
+  <ul class="bullets">
+    <li>Institutional balance-sheet asset</li>
+    <li>CoinDepo: conservative yield on core holdings</li>
+  </ul>
+  <p class="sub"><strong>Indicative allocation:</strong> 30–45%</p>
+</div>
 
-<section class="section">
-<h2>Asset-by-Asset Outlook</h2>
+<div class="asset glow-sol">
+  <span class="asset-tag sol">Solana • SOL</span>
+  <p class="sub">High-velocity execution and consumer adoption.</p>
+  <ul class="bullets">
+    <li>Visible on-chain activity</li>
+    <li>CoinDepo: higher-yield growth compounding</li>
+  </ul>
+  <p class="sub"><strong>Indicative allocation:</strong> 15–25%</p>
+</div>
 
-<p class="sub">
-<strong>Bitcoin (BTC)</strong> remains the primary macro anchor for the digital asset market.
-During transitional phases like spring, capital tends to consolidate into BTC as volatility
-compresses and directional conviction rebuilds.
-</p>
-<ul class="bullets">
-  <li>Acts as the balance-sheet asset for institutions</li>
-  <li>Benefits first from macro stabilization and liquidity normalization</li>
-  <li>Historically leads recoveries before capital rotates into higher beta</li>
-</ul>
+<div class="asset glow-avax">
+  <span class="asset-tag avax">Avalanche • AVAX</span>
+  <p class="sub">Event-driven ecosystem growth and subnets.</p>
+  <ul class="bullets">
+    <li>$1M gaming incentive catalyst</li>
+    <li>CoinDepo: yield offsets volatility</li>
+  </ul>
+  <p class="sub"><strong>Indicative allocation:</strong> 8–15%</p>
+</div>
 
-<p class="sub">
-<strong>Solana (SOL)</strong> represents the highest-velocity execution layer among major L1s.
-Spring phases tend to favor networks where activity, users, and developer momentum remain visible
-even when price action is muted.
-</p>
-<ul class="bullets">
-  <li>Strong consumer and application throughput</li>
-  <li>Developer growth translating into real usage</li>
-  <li>Often outperforms once risk appetite begins expanding</li>
-</ul>
+<div class="asset glow-xrp">
+  <span class="asset-tag xrp">XRP</span>
+  <p class="sub">Regulatory asymmetry and institutional settlement.</p>
+  <ul class="bullets">
+    <li>Compliance-driven upside</li>
+    <li>CoinDepo: paid patience</li>
+  </ul>
+  <p class="sub"><strong>Indicative allocation:</strong> 5–10%</p>
+</div>
 
-<p class="sub">
-<strong>Avalanche (AVAX)</strong> occupies a unique middle ground between enterprise adoption
-and consumer-facing ecosystems. Incentive-driven growth programs, including a $1M gaming contest,
-serve as short-term catalysts for on-chain activity.
-</p>
-<ul class="bullets">
-  <li>Subnet architecture attracts targeted applications</li>
-  <li>Gaming and institutional pilots increase visibility</li>
-  <li>Typically responds well to ecosystem-specific news</li>
-</ul>
+<div class="asset glow-ondo">
+  <span class="asset-tag ondo">ONDO</span>
+  <p class="sub">Tokenized Treasuries and real-world yield.</p>
+  <ul class="bullets">
+    <li>TradFi yield on-chain</li>
+    <li>CoinDepo: yield-on-yield</li>
+  </ul>
+  <p class="sub"><strong>Indicative allocation:</strong> 5–10%</p>
+</div>
 
-<p class="sub">
-<strong>XRP</strong> continues to trade with regulatory asymmetry. Unlike most crypto assets,
-its long-term thesis is tied less to speculation and more to institutional payment infrastructure
-and compliance clarity.
-</p>
-<ul class="bullets">
-  <li>Direct exposure to regulatory outcomes</li>
-  <li>Optimized for liquidity and cross-border settlement</li>
-  <li>Asymmetric upside if institutional corridors expand</li>
-</ul>
-
-<p class="sub">
-<strong>ONDO</strong> sits at the intersection of real-world assets, yield, and on-chain finance.
-As investors seek defensible yield and regulated exposure, tokenized Treasuries become increasingly
-relevant during consolidation phases.
-</p>
-<ul class="bullets">
-  <li>Bridges TradFi yield into crypto-native rails</li>
-  <li>Appeals to capital prioritizing stability over speculation</li>
-  <li>Benefits from regulatory clarity around asset classification</li>
-</ul>
-
-<p class="sub">
-<strong>Chainlink (LINK)</strong> functions as critical middleware rather than a consumer-facing asset.
-Its value accrues from infrastructure adoption — especially as tokenization, cross-chain settlement,
-and institutional-grade data feeds expand.
-</p>
-<ul class="bullets">
-  <li>Core infrastructure for tokenized assets</li>
-  <li>Enables cross-chain communication and settlement</li>
-  <li>Often lags early but strengthens as systems scale</li>
-</ul>
-
-<p class="sub">
-Taken together, these assets represent different layers of the crypto stack — from macro collateral
-to execution, settlement, and infrastructure. Spring conditions favor balanced exposure across
-these roles rather than concentration in a single narrative.
-</p>
-</section>
-
-
-<section class="section">
-<h2>Spring Catalyst Timeline</h2>
-<table class="table">
-<thead>
-<tr><th>Phase</th><th>What Happens</th><th>Market Effect</th></tr>
-</thead>
-<tbody>
-<tr><td>March</td><td>Accumulation</td><td>Volatility compression</td></tr>
-<tr><td>April</td><td>Regulatory signals</td><td>Risk repricing</td></tr>
-<tr><td>May</td><td>Fed transition</td><td>Liquidity anticipation</td></tr>
-<tr><td>Late Spring</td><td>Rotation</td><td>Alt exposure expands</td></tr>
-</tbody>
-</table>
-</section>
-
-<section class="section">
-<h2>Why Yield Matters Right Now</h2>
-<p class="sub">
-In consolidation phases, total return is driven by yield, not price appreciation.
-Earning while holding reduces time risk and improves long-term compounding.
-</p>
-<div class="callout">
-<ul class="bullets">
-  <li>Earn up to <strong>21%+ APY</strong></li>
-  <li>Earn up to <strong>$500 USDC</strong> by holding <strong>90 days</strong></li>
-</ul>
-<a href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV" target="_blank">
-👉 Access CoinDepo (exclusive link)
-</a>
+<div class="asset glow-link">
+  <span class="asset-tag link">Chainlink • LINK</span>
+  <p class="sub">Middleware for tokenization and settlement.</p>
+  <ul class="bullets">
+    <li>CCIP and oracle backbone</li>
+    <li>CoinDepo: long-duration infrastructure yield</li>
+  </ul>
+  <p class="sub"><strong>Indicative allocation:</strong> 5–10%</p>
 </div>
 </section>
 
 <section class="section">
-<h2>What Breaks This Thesis</h2>
-<ul class="bullets">
-  <li>Unexpected macro tightening</li>
-  <li>Regulatory reversals or delays</li>
-  <li>Liquidity shocks across risk assets</li>
-</ul>
-</section>
-
-<section class="section">
-<h2>Final Take</h2>
+<h2 class="section-title">Final Take</h2>
 <p class="sub">
-Spring is the setup phase. Markets reward those who position early,
-stay disciplined, and compound patiently while waiting for confirmation.
+Spring is the setup phase. Position early, earn yield, and wait for confirmation.
 </p>
 <p style="margin-top:12px;">
 ← <a href="https://degenstein.xyz/report/">Back to Reports</a>
@@ -279,4 +249,5 @@ function shareOnX(){
 
 </body>
 </html>
+
 
