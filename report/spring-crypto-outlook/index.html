@@ -25,30 +25,37 @@
 
   <style>
     :root{
-      --bg:#070A0F; --text:rgba(255,255,255,0.92); --muted:rgba(255,255,255,0.70);
-      --stroke:rgba(255,255,255,0.12); --accent:#00FFAA;
-      --radius:18px; --shadow:0 18px 55px rgba(0,0,0,0.55);
-      --max:1120px; --sans:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      --bg:#070A0F;
+      --text:rgba(255,255,255,0.92);
+      --muted:rgba(255,255,255,0.70);
+      --stroke:rgba(255,255,255,0.12);
+      --accent:#00FFAA;
+      --radius:18px;
+      --shadow:0 18px 55px rgba(0,0,0,0.55);
+      --max:1120px;
+      --sans:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
     }
     *{box-sizing:border-box}
     body{
-      margin:0; font-family:var(--sans); color:var(--text);
+      margin:0;
+      font-family:var(--sans);
+      color:var(--text);
       background:
         radial-gradient(1200px 700px at 20% 10%, rgba(0,255,170,0.16), transparent 60%),
         radial-gradient(900px 600px at 85% 25%, rgba(124,58,237,0.18), transparent 60%),
         var(--bg);
       line-height:1.55;
     }
-    a{color:var(--accent); text-decoration:none}
-    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 70px}
+    a{color:var(--accent);text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:28px 18px 70px}
 
     .topbar{
-      display:flex; justify-content:space-between; align-items:center;
-      padding:14px 16px; border:1px solid var(--stroke);
-      border-radius:var(--radius); background:rgba(255,255,255,0.05);
+      display:flex;justify-content:space-between;align-items:center;
+      padding:14px 16px;border:1px solid var(--stroke);
+      border-radius:var(--radius);background:rgba(255,255,255,0.05);
       box-shadow:var(--shadow)
     }
-    .brand{display:flex; gap:10px; font-weight:800}
+    .brand{display:flex;gap:10px;font-weight:800}
     .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 16px rgba(0,255,170,.5)}
     .nav{display:flex;gap:12px;flex-wrap:wrap}
     .nav a{font-size:13px;color:var(--muted);font-weight:600}
@@ -65,11 +72,7 @@
       box-shadow:var(--shadow)
     }
     h1{font-size:34px;margin:12px 0 10px}
-    h2.section-title{
-      font-size:1.35rem;
-      letter-spacing:.02em;
-      margin-bottom:6px;
-    }
+    h2.section-title{font-size:1.35rem;letter-spacing:.02em;margin-bottom:6px}
     .sub{color:var(--muted);max-width:75ch}
 
     .hero-cover{margin-top:16px}
@@ -92,25 +95,13 @@
       border-radius:var(--radius);background:rgba(0,255,170,0.12)
     }
 
-    /* ===== Asset Styling ===== */
-    .asset{
-      margin-top:18px;
-      padding:18px;
-      border-radius:14px;
-      border:1px solid var(--stroke);
-      background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
-    }
-    .asset-tag{
-      font-size:.7rem;font-weight:900;letter-spacing:.12em;
-      text-transform:uppercase;display:inline-block;margin-bottom:6px;
-    }
+    /* Asset styling */
+    .asset{margin-top:18px;padding:18px;border-radius:14px;border:1px solid var(--stroke);
+      background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02))}
+    .asset-tag{font-size:.7rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;display:inline-block;margin-bottom:6px}
 
-    .btc{color:#f7931a}
-    .sol{color:#14f195}
-    .avax{color:#e84142}
-    .xrp{color:#4a90e2}
-    .ondo{color:#7c3aed}
-    .link{color:#2a5ada}
+    .btc{color:#f7931a}.sol{color:#14f195}.avax{color:#e84142}
+    .xrp{color:#4a90e2}.ondo{color:#7c3aed}.link{color:#2a5ada}
 
     .glow-btc{box-shadow:0 0 0 1px rgba(247,147,26,.15),0 0 22px rgba(247,147,26,.08)}
     .glow-sol{box-shadow:0 0 0 1px rgba(20,241,149,.18),0 0 22px rgba(20,241,149,.10)}
@@ -155,67 +146,115 @@ and capital positions ahead of summer narratives.
 </section>
 
 <section class="section">
+<h2 class="section-title">Macro Deep Dive: The Fed Transition</h2>
+<ul class="bullets">
+  <li>Leadership changes often precede repricing</li>
+  <li>Markets react to tone before policy</li>
+  <li>Crypto historically front-runs liquidity shifts</li>
+</ul>
+</section>
+
+<section class="section">
+<h2 class="section-title">Regulatory Outlook: CLARITY Act</h2>
+<ul class="bullets">
+  <li>Reduced jurisdictional uncertainty</li>
+  <li>Favors infrastructure and compliant rails</li>
+  <li>Encourages sidelined capital to re-enter</li>
+</ul>
+</section>
+
+<section class="section">
 <h2 class="section-title">Asset-by-Asset Outlook</h2>
 
 <div class="asset glow-btc">
   <span class="asset-tag btc">Bitcoin • BTC</span>
-  <p class="sub">Macro anchor and base collateral. Leads stabilization phases.</p>
   <ul class="bullets">
-    <li>Institutional balance-sheet asset</li>
-    <li>CoinDepo: conservative yield on core holdings</li>
+    <li>Macro anchor and balance-sheet asset</li>
+    <li>CoinDepo: conservative yield while holding core exposure</li>
+    <li><strong>Indicative allocation:</strong> 30–45%</li>
   </ul>
-  <p class="sub"><strong>Indicative allocation:</strong> 30–45%</p>
 </div>
 
 <div class="asset glow-sol">
   <span class="asset-tag sol">Solana • SOL</span>
-  <p class="sub">High-velocity execution and consumer adoption.</p>
   <ul class="bullets">
-    <li>Visible on-chain activity</li>
-    <li>CoinDepo: higher-yield growth compounding</li>
+    <li>Execution layer with visible on-chain growth</li>
+    <li>CoinDepo: higher-yield compounding for growth exposure</li>
+    <li><strong>Indicative allocation:</strong> 15–25%</li>
   </ul>
-  <p class="sub"><strong>Indicative allocation:</strong> 15–25%</p>
 </div>
 
 <div class="asset glow-avax">
   <span class="asset-tag avax">Avalanche • AVAX</span>
-  <p class="sub">Event-driven ecosystem growth and subnets.</p>
   <ul class="bullets">
-    <li>$1M gaming incentive catalyst</li>
-    <li>CoinDepo: yield offsets volatility</li>
+    <li>Event-driven ecosystem and gaming incentives</li>
+    <li>CoinDepo: yield offsets volatility during catalyst wait</li>
+    <li><strong>Indicative allocation:</strong> 8–15%</li>
   </ul>
-  <p class="sub"><strong>Indicative allocation:</strong> 8–15%</p>
 </div>
 
 <div class="asset glow-xrp">
   <span class="asset-tag xrp">XRP</span>
-  <p class="sub">Regulatory asymmetry and institutional settlement.</p>
   <ul class="bullets">
-    <li>Compliance-driven upside</li>
-    <li>CoinDepo: paid patience</li>
+    <li>Regulatory asymmetry and institutional settlement</li>
+    <li>CoinDepo: paid patience for structural thesis</li>
+    <li><strong>Indicative allocation:</strong> 5–10%</li>
   </ul>
-  <p class="sub"><strong>Indicative allocation:</strong> 5–10%</p>
 </div>
 
 <div class="asset glow-ondo">
   <span class="asset-tag ondo">ONDO</span>
-  <p class="sub">Tokenized Treasuries and real-world yield.</p>
   <ul class="bullets">
-    <li>TradFi yield on-chain</li>
-    <li>CoinDepo: yield-on-yield</li>
+    <li>Tokenized Treasuries and real-world yield</li>
+    <li>CoinDepo: yield-on-yield compounding</li>
+    <li><strong>Indicative allocation:</strong> 5–10%</li>
   </ul>
-  <p class="sub"><strong>Indicative allocation:</strong> 5–10%</p>
 </div>
 
 <div class="asset glow-link">
   <span class="asset-tag link">Chainlink • LINK</span>
-  <p class="sub">Middleware for tokenization and settlement.</p>
   <ul class="bullets">
-    <li>CCIP and oracle backbone</li>
+    <li>Infrastructure backbone for tokenization</li>
     <li>CoinDepo: long-duration infrastructure yield</li>
+    <li><strong>Indicative allocation:</strong> 5–10%</li>
   </ul>
-  <p class="sub"><strong>Indicative allocation:</strong> 5–10%</p>
 </div>
+</section>
+
+<section class="section">
+<h2 class="section-title">Spring Catalyst Timeline</h2>
+<table class="table">
+<tr><th>Phase</th><th>Focus</th><th>Market Effect</th></tr>
+<tr><td>March</td><td>Accumulation</td><td>Volatility compression</td></tr>
+<tr><td>April</td><td>Regulatory signals</td><td>Risk repricing</td></tr>
+<tr><td>May</td><td>Fed transition</td><td>Liquidity anticipation</td></tr>
+<tr><td>Late Spring</td><td>Rotation</td><td>Alt expansion</td></tr>
+</table>
+</section>
+
+<section class="section">
+<h2 class="section-title">Why Yield Matters Right Now</h2>
+<div class="callout">
+<ul class="bullets">
+  <li>Earn up to <strong>21%+ APY</strong></li>
+  <li>Earn up to <strong>$500 USDC</strong> for holding <strong>90 days</strong></li>
+</ul>
+<a href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV" target="_blank">
+👉 Access CoinDepo (exclusive link)
+</a>
+<p class="sub" style="font-size:12px;margin-top:8px;">
+Bonus details: https://degenstein.xyz/coindepo-review/#referral-bonus
+</p>
+</div>
+</section>
+
+<section class="section">
+<h2 class="section-title">What Breaks This Thesis</h2>
+<ul class="bullets">
+  <li>Unexpected macro tightening</li>
+  <li>Regulatory reversals or delays</li>
+  <li>Liquidity shocks across risk assets</li>
+</ul>
 </section>
 
 <section class="section">
@@ -249,5 +288,6 @@ function shareOnX(){
 
 </body>
 </html>
+
 
 
