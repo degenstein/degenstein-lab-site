@@ -15,107 +15,135 @@
 <meta property="og:description" content="A clear breakdown of AZZA cloud mining — structure, accessibility, and risk considerations.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://degenstein.xyz/report/azza-cloud-mining/">
-<meta property="og:image" content="https://degenstein.xyz/assets/images/azza-featured.png">
+<meta property="og:image" content="https://degenstein.xyz/assets/azza-featured.png">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="AZZA Cloud Mining Report">
 <meta name="twitter:description" content="Understand AZZA cloud mining: what it is, how it works, and what users should know.">
-<meta name="twitter:image" content="https://degenstein.xyz/assets/images/azza-featured.png">
+<meta name="twitter:image" content="https://degenstein.xyz/assets/azza-featured.png">
 
 <!-- STYLE -->
 <style>
-:root {
-  --bg: #0e0e11;
-  --panel: #15151b;
-  --text: #e6e6eb;
-  --muted: #a1a1b3;
-  --accent: #00eaff;
-  --border: #24242d;
+:root{
+  --bg:#020617;
+  --panel:#020817;
+  --text:#f9fafb;
+  --muted:#9ca3af;
+  --accent:#22c55e;
+  --accent2:#06b6d4;
+  --border:rgba(148,163,184,.3);
+  --radius:18px;
 }
 
-* {
-  box-sizing: border-box;
+*{box-sizing:border-box;}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:system-ui,-apple-system,Segoe UI,sans-serif;
+  line-height:1.75;
 }
 
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  line-height: 1.75;
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:48px 16px 72px;
 }
 
-.container {
-  max-width: 900px;
-  margin: auto;
-  padding: 60px 20px;
+/* HERO */
+.hero{
+  text-align:center;
+  margin-bottom:22px;
+}
+.hero img{
+  width:100%;
+  max-height:460px;
+  object-fit:cover;
+  border-radius:var(--radius);
+  margin-bottom:18px;
+}
+.hero h1{
+  font-size:2.4rem;
+  margin:0 0 10px;
+}
+.hero .subtitle{
+  color:var(--muted);
+  font-size:1.05rem;
+  max-width:720px;
+  margin:0 auto 12px;
+}
+.hero .excerpt{
+  max-width:760px;
+  margin:0 auto;
+  font-size:1.05rem;
+  color:#e5e7eb;
 }
 
-.hero {
-  margin-bottom: 50px;
+/* TOP ACTIONS */
+.top-actions{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:18px 0 40px;
+}
+.button{
+  padding:8px 14px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:#020817;
+  color:var(--muted);
+  font-size:.75rem;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  text-decoration:none;
+}
+.button:hover{
+  background:rgba(6,182,212,.15);
+  color:#67e8f9;
 }
 
-.hero img {
-  width: 100%;
-  border-radius: 12px;
-  margin-bottom: 30px;
+/* SECTIONS */
+.section{
+  margin-top:48px;
+  padding-bottom:40px;
+  border-bottom:1px solid var(--border);
 }
-
-.hero h1 {
-  font-size: 40px;
-  line-height: 1.2;
-  margin-bottom: 16px;
+.section h2{
+  font-size:1.25rem;
+  margin-bottom:14px;
 }
-
-.hero p {
-  color: var(--muted);
-  font-size: 18px;
+.section p{
+  margin-bottom:16px;
+  color:#e5e7eb;
 }
+ul,ol{margin-left:20px;}
+li{margin-bottom:8px;}
 
-.section {
-  margin-bottom: 60px;
-  padding-bottom: 40px;
-  border-bottom: 1px solid var(--border);
+/* CTA */
+.cta{
+  margin-top:18px;
+  padding:22px;
+  border-radius:var(--radius);
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  text-align:center;
+  color:#020617;
 }
-
-.section h2 {
-  font-size: 26px;
-  margin-bottom: 16px;
+.cta a{
+  color:#020617;
+  font-weight:900;
+  font-size:1.1rem;
+  text-decoration:none;
 }
+.cta a:hover{text-decoration:underline;}
 
-.section p {
-  margin-bottom: 18px;
-}
-
-ul, ol {
-  margin-left: 20px;
-}
-
-li {
-  margin-bottom: 10px;
-}
-
-.cta {
-  background: linear-gradient(135deg, #00eaff, #4dfcff);
-  color: #000;
-  padding: 28px;
-  border-radius: 14px;
-  text-align: center;
-  margin-top: 30px;
-}
-
-.cta a {
-  color: #000;
-  font-weight: 700;
-  font-size: 18px;
-  text-decoration: none;
-}
-
-.footer-note {
-  color: var(--muted);
-  font-size: 14px;
-  margin-top: 40px;
+.footer-note{
+  color:var(--muted);
+  font-size:.9rem;
+  margin-top:16px;
 }
 </style>
 </head>
@@ -126,18 +154,28 @@ li {
 
   <!-- HERO -->
   <div class="hero">
-    <img src="https://degenstein.xyz/assets/images/azza-featured.jpg" alt="AZZA Cloud Mining">
+    <img src="/assets/azza-featured.png" alt="AZZA Cloud Mining Dashboard">
     <h1>AZZA Cloud Mining Report</h1>
-    <p>
-      A practical overview of AZZA — how cloud mining works, who it’s for, and what users should understand before participating.
+    <p class="subtitle">
+      Cloud mining without hardware — a hands-off approach to mining exposure.
     </p>
+    <p class="excerpt">
+      This report examines AZZA, a cloud mining platform that allows users to access mining through contracts rather than physical equipment. We cover how it works, who it may be suitable for, and the risks users should understand before participating.
+    </p>
+  </div>
+
+  <!-- TOP ACTIONS -->
+  <div class="top-actions">
+    <a href="/report/" class="button">← Back to Reports</a>
+    <a href="https://twitter.com/intent/tweet?text=AZZA%20Cloud%20Mining%20Report%20—%20hands-off%20cloud%20mining%20overview&url=https://degenstein.xyz/report/azza-cloud-mining/"
+       target="_blank" class="button">Share on X</a>
   </div>
 
   <!-- INTRO -->
   <div class="section">
     <h2>Introduction</h2>
     <p>
-      AZZA is a cloud mining platform built for users who want exposure to cryptocurrency mining without owning or operating physical hardware. 
+      AZZA is a cloud mining platform built for users who want exposure to cryptocurrency mining without owning or operating physical hardware.
       Instead of running rigs, managing electricity, or maintaining infrastructure, users access mining through digital contracts and a centralized dashboard.
     </p>
   </div>
@@ -172,7 +210,7 @@ li {
   <div class="section">
     <h2>Company & Transparency</h2>
     <p>
-      AZZA operates under a registered U.S. limited liability company (LLC) and publishes legal disclosures on its website. 
+      AZZA operates under a registered U.S. limited liability company (LLC) and publishes legal disclosures on its website.
       This provides a baseline level of entity transparency compared to anonymous platforms, though users should still review all terms carefully.
     </p>
   </div>
@@ -215,7 +253,8 @@ li {
   <div class="section">
     <h2>Final Note</h2>
     <p class="footer-note">
-      This report is for informational purposes only and does not constitute financial advice. Cryptocurrency and cloud mining involve risk, and outcomes vary.
+      This report is for informational purposes only and does not constitute financial advice.
+      Cryptocurrency and cloud mining involve risk, and outcomes vary.
     </p>
   </div>
 
@@ -223,4 +262,5 @@ li {
 
 </body>
 </html>
+
 
