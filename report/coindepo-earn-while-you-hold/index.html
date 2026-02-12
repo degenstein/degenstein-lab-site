@@ -138,38 +138,42 @@
     CoinDepo is a centralized yield platform designed for crypto holders who want
     supported assets to earn interest instead of remaining idle.
   </p>
+  <p class="muted mt-2">
+    Rather than focusing on active trading, CoinDepo is structured around
+    time-based yield products that reward patience, planning, and commitment.
+  </p>
 </section>
 
 <section class="card">
   <h2 class="text-2xl font-extrabold mb-2">Supported assets & yield ranges</h2>
   <p class="muted">
     CoinDepo supports a mix of major cryptocurrencies and stablecoins.
-    Yield varies by asset type, term, and product structure.
+    Yield varies by asset type, term length, and product structure.
   </p>
   <ul class="list-disc pl-6 text-gray-300 space-y-2 mt-3">
     <li>Major crypto assets (e.g., BTC, ETH, SOL, XRP)</li>
-    <li>Stablecoins (e.g., USDT, USDC) typically offer higher yield</li>
+    <li>Stablecoins (e.g., USDT, USDC) typically offer higher baseline yield</li>
     <li>Yield commonly falls in the low-to-mid double-digit APR range</li>
   </ul>
   <p class="fine mt-3">
-    Rates are not fixed and should always be verified directly inside the CoinDepo app.
+    Rates are dynamic and should always be verified directly inside the CoinDepo app.
   </p>
 </section>
 
 <section class="card">
   <h2 class="text-2xl font-extrabold mb-2">How yield products are structured</h2>
   <p class="muted">
-    Yield products are structured around time and commitment.
-    Higher yield generally compensates for longer lockups or reduced flexibility.
+    Yield on CoinDepo is primarily compensation for time and reduced liquidity.
+    Higher advertised rates generally reflect longer commitments or stricter withdrawal rules.
   </p>
   <ul class="list-disc pl-6 text-gray-300 space-y-2 mt-3">
     <li>Term-based deposits (e.g., 30, 90, 180, 365 days)</li>
     <li>Simple APR vs compounded APY depending on product</li>
-    <li>Defined payout schedules and withdrawal rules</li>
+    <li>Defined payout schedules and rollover mechanics</li>
   </ul>
 </section>
 
-<!-- CALCULATOR -->
+<!-- CALCULATOR (UNCHANGED + IDLE VS YIELD) -->
 <section id="calculator" class="card">
   <h2 class="text-2xl font-extrabold mb-4">Yield calculator</h2>
 
@@ -218,27 +222,53 @@
 <section class="card">
   <h2 class="text-2xl font-extrabold mb-2">Security & custody model</h2>
   <p class="muted">
-    CoinDepo presents itself as a custodial platform with enterprise-grade security controls.
-    Asset custody, insurance representations, and audits should be reviewed directly in-app.
-  </p>
-  <p class="fine mt-3">
-    Always verify custody structure, insurance scope, and jurisdictional details independently.
+    CoinDepo operates as a custodial platform. Users should independently assess
+    custody structure, internal controls, insurance representations, and jurisdictional exposure.
   </p>
 </section>
 
+<!-- EXPANDED TOKEN SECTION -->
 <section class="card">
   <h2 class="text-2xl font-extrabold mb-2">$COINDEPO Token Advantage</h2>
+
   <p class="muted">
-    Holding the native token may unlock additional benefits.
-    Treat token exposure as a separate investment decision from yield usage.
+    $COINDEPO is the native ecosystem token associated with the CoinDepo platform.
+    It is designed to align long-term users with the platform’s growth rather than replace yield products.
+  </p>
+
+  <p class="muted mt-3">
+    Holding $COINDEPO may unlock platform-level advantages such as enhanced yield tiers,
+    preferential product access, or other incentive structures as defined by CoinDepo.
+    These benefits are optional and evolve over time.
+  </p>
+
+  <div class="mt-4 rounded-xl border border-white/10 bg-white/5 p-4">
+    <div class="font-extrabold mb-2">Important distinction</div>
+    <ul class="list-disc pl-6 text-gray-300 space-y-2">
+      <li>Yield usage does not require holding the token</li>
+      <li>Token exposure introduces market price risk</li>
+      <li>Platform risk and token risk are not the same</li>
+    </ul>
+  </div>
+
+  <p class="fine mt-4">
+    If you choose to acquire $COINDEPO, one venue where it may be available is WEEX:
+    <a href="https://weex.com/register?vipCode=5flql" target="_blank" rel="noopener" class="underline text-emerald-300">
+      Buy $COINDEPO on WEEX →
+    </a>
+  </p>
+
+  <p class="fine mt-2">
+    Token purchases are optional and speculative. Always assess liquidity, volatility,
+    and utility before allocating capital.
   </p>
 </section>
 
 <section class="card">
   <h2 class="text-2xl font-extrabold mb-2">Crypto-backed loans</h2>
   <p class="muted">
-    Loans can provide liquidity without selling assets, but introduce liquidation risk.
-    Conservative usage is critical.
+    Loans can provide liquidity without selling assets but introduce liquidation risk.
+    Conservative usage and margin awareness are critical.
   </p>
 </section>
 
@@ -271,91 +301,52 @@
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
 
-const amt = document.getElementById("amt");
-const rate = document.getElementById("rate");
-const days = document.getElementById("days");
-const mode = document.getElementById("mode");
-const compound = document.getElementById("compound");
-
-const outI = document.getElementById("outInterest");
-const outT = document.getElementById("outTotal");
-const outP = document.getElementById("outPct");
-
-const canvas = document.getElementById("growthChart");
-const ctx = canvas.getContext("2d");
+const amt=document.getElementById("amt"),
+rate=document.getElementById("rate"),
+days=document.getElementById("days"),
+mode=document.getElementById("mode"),
+compound=document.getElementById("compound"),
+outI=document.getElementById("outInterest"),
+outT=document.getElementById("outTotal"),
+outP=document.getElementById("outPct"),
+canvas=document.getElementById("growthChart"),
+ctx=canvas.getContext("2d");
 
 function calc(){
-  const P = parseFloat(amt.value||0);
-  const r = parseFloat(rate.value||0)/100;
-  const d = parseInt(days.value||0);
-  const n = parseInt(compound.value);
-
-  const total = mode.value==="apr"
-    ? P*(1+r*(d/365))
-    : P*Math.pow(1+r/n,n*(d/365));
-
-  const interest = total-P;
-
-  outI.textContent = "$"+interest.toFixed(2);
-  outT.textContent = "$"+total.toFixed(2);
-  outP.textContent = ((interest/P)*100||0).toFixed(2)+"%";
-
+  const P=+amt.value||0,r=+rate.value/100||0,d=+days.value||0,n=+compound.value;
+  const total=mode.value==="apr"?P*(1+r*(d/365)):P*Math.pow(1+r/n,n*(d/365));
+  const interest=total-P;
+  outI.textContent="$"+interest.toFixed(2);
+  outT.textContent="$"+total.toFixed(2);
+  outP.textContent=((interest/P)*100||0).toFixed(2)+"%";
   draw(P,r,d,n);
 }
 
 function draw(P,r,d,n){
   ctx.clearRect(0,0,canvas.width,canvas.height);
-
-  const steps=48;
-  const yieldPts=[];
-  const idlePts=[];
-
+  const steps=48,yieldPts=[],idlePts=[];
   for(let i=0;i<=steps;i++){
     const t=d*(i/steps);
-    yieldPts.push(mode.value==="apr"
-      ? P*(1+r*(t/365))
-      : P*Math.pow(1+r/n,n*(t/365)));
+    yieldPts.push(mode.value==="apr"?P*(1+r*(t/365)):P*Math.pow(1+r/n,n*(t/365)));
     idlePts.push(P);
   }
-
-  const min=Math.min(...yieldPts,...idlePts);
-  const max=Math.max(...yieldPts,...idlePts);
-  const range=max-min||1;
-
-  ctx.setLineDash([6,4]);
-  ctx.strokeStyle="rgba(148,163,184,.7)";
-  ctx.beginPath();
-  idlePts.forEach((v,i)=>{
-    const x=(i/steps)*canvas.width;
-    const y=canvas.height-((v-min)/range)*(canvas.height-16)-8;
-    i?ctx.lineTo(x,y):ctx.moveTo(x,y);
-  });
-  ctx.stroke();
-
-  ctx.setLineDash([]);
-  ctx.strokeStyle="#34d399";
-  ctx.beginPath();
-  yieldPts.forEach((v,i)=>{
-    const x=(i/steps)*canvas.width;
-    const y=canvas.height-((v-min)/range)*(canvas.height-16)-8;
-    i?ctx.lineTo(x,y):ctx.moveTo(x,y);
-  });
-  ctx.stroke();
+  const min=Math.min(...yieldPts),max=Math.max(...yieldPts),range=max-min||1;
+  ctx.setLineDash([6,4]);ctx.strokeStyle="#9ca3af";ctx.beginPath();
+  idlePts.forEach((v,i)=>{const x=i/steps*canvas.width,y=canvas.height-((v-min)/range)*(canvas.height-16)-8;i?ctx.lineTo(x,y):ctx.moveTo(x,y);});ctx.stroke();
+  ctx.setLineDash([]);ctx.strokeStyle="#34d399";ctx.beginPath();
+  yieldPts.forEach((v,i)=>{const x=i/steps*canvas.width,y=canvas.height-((v-min)/range)*(canvas.height-16)-8;i?ctx.lineTo(x,y):ctx.moveTo(x,y);});ctx.stroke();
 }
 
-function preset90(){ amt.value=1000; rate.value=24; days.value=90; mode.value="apr"; compound.value=365; calc(); }
-function presetLadder(){ amt.value=1000; rate.value=22; days.value=180; mode.value="apy"; compound.value=12; calc(); }
-function presetLong(){ amt.value=1000; rate.value=24; days.value=365; mode.value="apy"; compound.value=365; calc(); }
-
-["amt","rate","days","mode","compound"].forEach(id=>{
-  document.getElementById(id).addEventListener("input",calc);
-});
-
+function preset90(){amt.value=1000;rate.value=24;days.value=90;mode.value="apr";compound.value=365;calc();}
+function presetLadder(){amt.value=1000;rate.value=22;days.value=180;mode.value="apy";compound.value=12;calc();}
+function presetLong(){amt.value=1000;rate.value=24;days.value=365;mode.value="apy";compound.value=365;calc();}
+["amt","rate","days","mode","compound"].forEach(id=>document.getElementById(id).addEventListener("input",calc));
 calc();
 </script>
 
 </body>
 </html>
+
 
 
 
