@@ -1,228 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>BTC vs ETH vs SOL vs XRP — The Crypto Monetary Stack | The Degenstein Report</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8" />
+<title>BTC vs ETH vs SOL vs XRP — The Crypto Monetary Stack | The Degenstein Report</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO -->
-  <meta name="description" content="Bitcoin vs Ethereum vs Solana vs XRP explained through the Gold, Silver, Copper, and Clearing monetary stack." />
-  <link rel="canonical" href="https://degenstein.xyz/report/btc-vs-eth-vs-sol/" />
-  <meta name="robots" content="index, follow" />
+<!-- SEO -->
+<meta name="description" content="BTC vs ETH vs SOL vs XRP explained through a four-layer crypto monetary stack. Roles, risks, allocations, and yield — research-first, no hype." />
+<link rel="canonical" href="https://degenstein.xyz/report/btc-vs-eth-vs-sol/" />
+<meta name="robots" content="index, follow" />
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="article" />
-  <meta property="og:site_name" content="The Degenstein Report" />
-  <meta property="og:title" content="BTC vs ETH vs SOL vs XRP — The Crypto Monetary Stack" />
-  <meta property="og:description" content="Gold, Silver, Copper, and Clearing — applied to crypto." />
-  <meta property="og:image" content="https://degenstein.xyz/assets/btcethsol.png" />
+<!-- Open Graph -->
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="The Degenstein Report" />
+<meta property="og:title" content="BTC vs ETH vs SOL vs XRP — The Crypto Monetary Stack" />
+<meta property="og:description" content="Gold, Silver, Copper, and Clearing — applied to Bitcoin, Ethereum, Solana, and XRP." />
+<meta property="og:image" content="https://degenstein.xyz/assets/btcethsol.png" />
 
-  <!-- X -->
-  <meta name="twitter:card" content="summary_large_image" />
+<!-- X -->
+<meta name="twitter:card" content="summary_large_image" />
 
-  <style>
-    :root{
-      --bg:#070A0F;
-      --panel:rgba(255,255,255,0.06);
-      --panel2:rgba(255,255,255,0.085);
-      --text:rgba(255,255,255,0.92);
-      --muted:rgba(255,255,255,0.70);
-      --stroke:rgba(255,255,255,0.12);
-      --accent:#00FFAA;
-      --violet:#7C3AED;
-      --radius:18px;
-      --shadow:0 20px 60px rgba(0,0,0,0.55);
-      --max:1120px;
-      --sans:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
-      --mono:ui-monospace,Menlo,Monaco,Consolas,monospace;
-    }
+<style>
+:root{
+  --bg:#070A0F;
+  --panel:rgba(255,255,255,0.06);
+  --panel2:rgba(255,255,255,0.08);
+  --text:rgba(255,255,255,0.92);
+  --muted:rgba(255,255,255,0.7);
+  --stroke:rgba(255,255,255,0.12);
+  --accent:#00FFAA;
+  --violet:#7C3AED;
+  --radius:18px;
+  --shadow:0 20px 60px rgba(0,0,0,.55);
+  --max:1120px;
+  --sans:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+  --mono:ui-monospace,Menlo,Monaco,Consolas,monospace;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:var(--sans);
+  color:var(--text);
+  background:
+    radial-gradient(1200px 700px at 20% 10%, rgba(0,255,170,0.16), transparent 60%),
+    radial-gradient(900px 600px at 85% 25%, rgba(124,58,237,0.18), transparent 60%),
+    var(--bg);
+  line-height:1.5;
+}
+a{color:var(--accent);text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:28px 18px 70px}
 
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:var(--sans);
-      color:var(--text);
-      background:
-        radial-gradient(1200px 700px at 18% 10%, rgba(0,255,170,.18), transparent 60%),
-        radial-gradient(900px 600px at 85% 20%, rgba(124,58,237,.22), transparent 60%),
-        var(--bg);
-      line-height:1.55;
-    }
+.topbar{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:14px 16px;border:1px solid var(--stroke);
+  border-radius:var(--radius);
+  background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.04));
+  box-shadow:var(--shadow)
+}
+.brand{display:flex;gap:10px;font-weight:900}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 18px rgba(0,255,170,.6)}
+.nav{display:flex;gap:14px;flex-wrap:wrap}
+.nav a{font-size:13px;color:var(--muted);font-weight:600}
 
-    a{color:var(--accent);text-decoration:none}
-    a:hover{text-decoration:underline}
+.hero{
+  margin-top:18px;padding:26px 22px;
+  border:1px solid var(--stroke);
+  border-radius:var(--radius);
+  background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.04));
+  box-shadow:var(--shadow)
+}
+.kicker{
+  display:inline-flex;gap:10px;
+  font-size:12px;color:var(--muted);
+  border:1px solid var(--stroke);
+  padding:6px 10px;border-radius:999px;
+  background:rgba(0,0,0,.25)
+}
+h1{font-size:34px;margin:12px 0}
+.sub{color:var(--muted);max-width:80ch}
 
-    .wrap{max-width:var(--max);margin:0 auto;padding:28px 18px 80px}
+.hero-cover{
+  margin-top:16px;border-radius:16px;
+  border:1px solid var(--stroke);
+  overflow:hidden
+}
+.hero-cover img{width:100%;display:block}
 
-    /* Top Bar */
-    .topbar{
-      display:flex;justify-content:space-between;align-items:center;
-      padding:14px 16px;border:1px solid var(--stroke);
-      border-radius:var(--radius);
-      background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.04));
-      box-shadow:var(--shadow);
-    }
-    .brand{display:flex;gap:10px;font-weight:900}
-    .dot{
-      width:10px;height:10px;border-radius:999px;
-      background:var(--accent);
-      box-shadow:0 0 18px rgba(0,255,170,.6);
-    }
-    .nav{display:flex;gap:14px;flex-wrap:wrap}
-    .nav a{font-size:13px;color:var(--muted);font-weight:600}
+.section{
+  margin-top:22px;
+  padding:22px;
+  border-radius:var(--radius);
+  border:1px solid var(--stroke);
+  background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03));
+  box-shadow:var(--shadow)
+}
+.section h2{margin-top:0}
+.muted{color:var(--muted)}
+.bullets{padding-left:18px;color:var(--muted)}
+.bullets li{margin:8px 0}
 
-    /* Hero */
-    .hero{
-      margin-top:18px;
-      padding:28px 24px;
-      border:1px solid var(--stroke);
-      border-radius:var(--radius);
-      background:
-        radial-gradient(600px 200px at 15% 25%, rgba(0,255,170,.22), transparent 55%),
-        linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.04));
-      box-shadow:var(--shadow);
-    }
-    h1{font-size:36px;margin:12px 0 10px}
-    .sub{color:var(--muted);max-width:78ch}
+.asset{
+  margin-top:18px;padding:18px;
+  border-radius:16px;
+  border:1px solid var(--stroke);
+  background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.03))
+}
+.asset.btc{box-shadow:0 0 0 1px rgba(247,147,26,.2),0 0 25px rgba(247,147,26,.12)}
+.asset.eth{box-shadow:0 0 0 1px rgba(139,156,255,.2),0 0 25px rgba(139,156,255,.12)}
+.asset.sol{box-shadow:0 0 0 1px rgba(20,241,149,.25),0 0 25px rgba(20,241,149,.15)}
+.asset.xrp{box-shadow:0 0 0 1px rgba(74,144,226,.25),0 0 25px rgba(74,144,226,.15)}
 
-    .hero-cover{
-      margin-top:18px;
-      border-radius:16px;
-      border:1px solid var(--stroke);
-      overflow:hidden;
-    }
-    .hero-cover img{width:100%;display:block}
+.asset-tag{
+  font-size:.7rem;font-weight:900;
+  letter-spacing:.12em;text-transform:uppercase;
+  display:inline-block;margin-bottom:6px
+}
 
-    /* Sections */
-    .section{
-      margin-top:22px;
-      padding:22px;
-      border-radius:var(--radius);
-      border:1px solid var(--stroke);
-      background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.03));
-      box-shadow:0 14px 40px rgba(0,0,0,.45);
-    }
-    .section h2{margin-top:0}
+.table{
+  width:100%;border-collapse:collapse;margin-top:12px
+}
+.table th,.table td{
+  padding:10px;border-bottom:1px solid var(--stroke);font-size:13px
+}
+.table th{text-align:left;color:var(--muted)}
 
-    .bullets{padding-left:18px;color:var(--muted)}
-    .bullets li{margin:8px 0}
+.callout{
+  margin-top:18px;
+  padding:18px;
+  border-radius:16px;
+  border:1px solid rgba(0,255,170,.35);
+  background:
+    radial-gradient(700px 240px at 20% 30%, rgba(0,255,170,.22), transparent 60%),
+    linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03))
+}
 
-    /* Asset Cards */
-    .asset{
-      margin-top:16px;
-      padding:18px;
-      border-radius:16px;
-      border:1px solid var(--stroke);
-      background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.04));
-    }
-    .btc{box-shadow:0 0 0 1px rgba(247,147,26,.18),0 0 26px rgba(247,147,26,.10)}
-    .eth{box-shadow:0 0 0 1px rgba(139,156,255,.18),0 0 26px rgba(139,156,255,.12)}
-    .sol{box-shadow:0 0 0 1px rgba(20,241,149,.20),0 0 26px rgba(20,241,149,.14)}
-    .xrp{box-shadow:0 0 0 1px rgba(74,144,226,.20),0 0 26px rgba(74,144,226,.14)}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:10px 14px;border-radius:999px;
+  font-weight:900;margin-right:8px
+}
+.btn.primary{
+  background:linear-gradient(135deg,#22c55e,#06b6d4);
+  color:#020617;
+  box-shadow:0 0 35px rgba(34,197,94,.45)
+}
 
-    .asset-tag{
-      font-size:.7rem;
-      font-weight:900;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      display:inline-block;
-      margin-bottom:6px;
-    }
-
-    /* Callout */
-    .callout{
-      margin-top:16px;
-      padding:18px;
-      border-radius:var(--radius);
-      border:1px solid rgba(0,255,170,.35);
-      background:
-        radial-gradient(600px 220px at 20% 30%, rgba(0,255,170,.25), rgba(0,0,0,.2));
-    }
-
-    .footer{
-      margin-top:20px;
-      font-size:12px;
-      color:rgba(255,255,255,.55);
-    }
-  </style>
+.footer{margin-top:18px;font-size:12px;color:rgba(255,255,255,.55)}
+</style>
 </head>
 
 <body>
 <div class="wrap">
 
-  <div class="topbar">
-    <div class="brand"><span class="dot"></span>The Degenstein Report</div>
-    <div class="nav">
-      <a href="https://degenstein.xyz/">Home</a>
-      <a href="https://degenstein.xyz/report/">Reports</a>
-    </div>
+<div class="topbar">
+  <div class="brand"><span class="dot"></span>The Degenstein Report</div>
+  <div class="nav">
+    <a href="https://degenstein.xyz/">Home</a>
+    <a href="https://degenstein.xyz/report/">Reports</a>
   </div>
+</div>
 
-  <header class="hero">
-    <h1>BTC vs ETH vs SOL vs XRP</h1>
-    <p class="sub">
-      Crypto is converging on a <strong>four-layer monetary stack</strong> —
-      Bitcoin as base collateral, Ethereum as settlement, Solana as execution,
-      and XRP as liquidity clearing.
-    </p>
-    <div class="hero-cover">
-      <img src="https://degenstein.xyz/assets/btcethsol.png" alt="Crypto Monetary Stack Diagram">
-    </div>
-  </header>
+<header class="hero">
+  <div class="kicker">Macro-first • No hopium</div>
+  <h1>BTC vs ETH vs SOL vs XRP</h1>
+  <p class="sub">
+    Crypto is not one asset competing for one role. It is a <strong>monetary stack</strong> —
+    just like gold, silver, copper, and clearing rails were for centuries.
+  </p>
+  <div class="hero-cover">
+    <img src="https://degenstein.xyz/assets/btcethsol.png" alt="Crypto Monetary Stack" />
+  </div>
+</header>
 
-  <section class="section">
-    <h2>The Monetary Stack Explained</h2>
+<section class="section">
+<h2>The Four-Layer Crypto Monetary Stack</h2>
+<ul class="bullets">
+  <li><strong>Bitcoin (Gold):</strong> Pristine collateral and base money</li>
+  <li><strong>Ethereum (Silver):</strong> Settlement and programmable finance</li>
+  <li><strong>Solana (Copper):</strong> High-speed execution and throughput</li>
+  <li><strong>XRP (Clearing):</strong> Liquidity routing between systems</li>
+</ul>
+</section>
 
-    <div class="asset btc">
-      <span class="asset-tag">Bitcoin • Gold</span>
-      <p class="muted">Pristine collateral, censorship resistance, monetary anchor.</p>
-    </div>
+<section class="section">
+<h2>Asset-by-Asset Positioning</h2>
 
-    <div class="asset eth">
-      <span class="asset-tag">Ethereum • Silver</span>
-      <p class="muted">Settlement layer, programmable finance, yield-bearing collateral.</p>
-    </div>
+<div class="asset btc">
+  <span class="asset-tag">Bitcoin • BTC</span>
+  <ul class="bullets">
+    <li>Macro anchor and reserve asset</li>
+    <li>Lowest protocol risk</li>
+    <li>CoinDepo: conservative yield while holding core exposure</li>
+  </ul>
+</div>
 
-    <div class="asset sol">
-      <span class="asset-tag">Solana • Copper</span>
-      <p class="muted">High-velocity execution, consumer-grade throughput.</p>
-    </div>
+<div class="asset eth">
+  <span class="asset-tag">Ethereum • ETH</span>
+  <ul class="bullets">
+    <li>Settlement layer of on-chain finance</li>
+    <li>Primary yield engine</li>
+    <li>CoinDepo: compounding during consolidation</li>
+  </ul>
+</div>
 
-    <div class="asset xrp">
-      <span class="asset-tag">XRP • Clearing</span>
-      <p class="muted">Liquidity routing between networks and institutions.</p>
-    </div>
-  </section>
+<div class="asset sol">
+  <span class="asset-tag">Solana • SOL</span>
+  <ul class="bullets">
+    <li>Execution layer for high-velocity activity</li>
+    <li>Higher risk, higher throughput</li>
+    <li>CoinDepo: yield offsets volatility</li>
+  </ul>
+</div>
 
-  <section class="section">
-    <h2>Earn While You Hold</h2>
-    <p class="muted">
-      Instead of forcing trades during consolidation, many long-term holders
-      reduce time risk by earning yield while remaining positioned.
-    </p>
+<div class="asset xrp">
+  <span class="asset-tag">XRP</span>
+  <ul class="bullets">
+    <li>Liquidity bridge and clearing rail</li>
+    <li>Optimized for cross-network settlement</li>
+    <li>CoinDepo: paid patience for structural thesis</li>
+  </ul>
+</div>
+</section>
 
-    <div class="callout">
-      <p>
-        Platforms like <strong>CoinDepo</strong> allow holders to earn yield on
-        BTC, ETH, SOL, and XRP without exiting long-term exposure.
-      </p>
-      <a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W" target="_blank" rel="noopener">
-        → Explore CoinDepo
-      </a>
-    </div>
-  </section>
+<section class="section">
+<h2>Earn While You Hold</h2>
+<p class="muted">
+Instead of forcing trades during consolidation, yield turns time into an asset.
+</p>
 
-  <section class="section">
-    <h2>Final Take</h2>
-    <p class="muted">
-      These assets are not competing — they are complementary.
-      Like historical monetary systems, strength comes from the stack.
-    </p>
-    <div class="footer">Educational content only. Not financial advice.</div>
-  </section>
+<div class="callout">
+  <p>
+    CoinDepo allows long-term holders to remain positioned across the monetary stack
+    while earning yield on supported assets.
+  </p>
+  <a class="btn primary" href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W" target="_blank" rel="noopener">
+    Access CoinDepo →
+  </a>
+</div>
+</section>
+
+<section class="section">
+<h2>Final Take</h2>
+<p class="muted">
+BTC, ETH, SOL, and XRP are not competitors. They are layers.
+Understanding the stack is how capital survives cycles.
+</p>
+<div class="footer">Educational content only. Not financial advice.</div>
+</section>
 
 </div>
 </body>
 </html>
+
 
 
