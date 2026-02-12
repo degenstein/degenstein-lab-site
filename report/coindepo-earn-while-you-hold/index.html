@@ -26,52 +26,136 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
-    :root { color-scheme: dark; }
-    html, body {
-      background:#020617;
-      color:#e5e7eb;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-      scroll-behavior:smooth;
-    }
-    .wrap{ max-width:72rem; margin:0 auto; padding:0 1rem; }
-    .card{
-      border-radius:1.25rem;
-      padding:1.25rem;
-      background:rgba(15,23,42,.72);
-      border:1px solid rgba(148,163,184,.25);
-      box-shadow:0 18px 55px rgba(0,0,0,.55);
-    }
-    .tag{
-      font-size:.72rem;
-      padding:.35rem .65rem;
-      border-radius:999px;
-      border:1px solid rgba(34,197,94,.55);
-      background:rgba(34,197,94,.10);
-      color:#6ee7b7;
-      font-weight:800;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      display:inline-block;
-    }
-    .btn-primary{
-      display:inline-flex; align-items:center; justify-content:center;
-      background:linear-gradient(135deg,#22c55e,#06b6d4);
-      color:#020617;
-      padding:.85rem 1.1rem;
-      border-radius:999px;
-      font-weight:900;
-    }
-    .btn-outline{
-      display:inline-flex; align-items:center; justify-content:center;
-      border:1px solid rgba(148,163,184,.35);
-      padding:.85rem 1.1rem;
-      border-radius:999px;
-      background:rgba(15,23,42,.55);
-      color:#e5e7eb;
-    }
-    .muted{ color:rgba(229,231,235,.72); }
-    .fine{ font-size:.86rem; color:rgba(229,231,235,.6); }
-  </style>
+  :root { color-scheme: dark; }
+
+  html, body {
+    background:#020617;
+    color:#e5e7eb;
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    scroll-behavior:smooth;
+  }
+
+  .wrap{
+    max-width:72rem;
+    margin:0 auto;
+    padding:0 1rem;
+  }
+
+  /* Core card styling with subtle depth */
+  .card{
+    position:relative;
+    border-radius:1.25rem;
+    padding:1.25rem;
+    background:linear-gradient(
+      180deg,
+      rgba(15,23,42,.85),
+      rgba(15,23,42,.65)
+    );
+    border:1px solid rgba(148,163,184,.25);
+    box-shadow:
+      0 20px 60px rgba(0,0,0,.55),
+      inset 0 1px 0 rgba(255,255,255,.03);
+  }
+
+  /* Left accent bar for visual hierarchy */
+  .card::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:4px;
+    height:100%;
+    border-radius:999px;
+    background:linear-gradient(
+      180deg,
+      #22c55e,
+      #06b6d4
+    );
+    opacity:.75;
+  }
+
+  /* Gradient headline pop */
+  h1.grad, .grad{
+    background:linear-gradient(
+      135deg,
+      #34d399,
+      #60a5fa
+    );
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+
+  .tag{
+    font-size:.72rem;
+    padding:.35rem .65rem;
+    border-radius:999px;
+    border:1px solid rgba(34,197,94,.55);
+    background:rgba(34,197,94,.10);
+    color:#6ee7b7;
+    font-weight:800;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    display:inline-block;
+  }
+
+  /* Primary CTA glow */
+  .btn-primary{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(
+      135deg,
+      #22c55e,
+      #06b6d4
+    );
+    color:#020617;
+    padding:.85rem 1.1rem;
+    border-radius:999px;
+    font-weight:900;
+    box-shadow:
+      0 0 0 rgba(34,197,94,0),
+      0 0 35px rgba(34,197,94,.35);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+
+  .btn-primary:hover{
+    transform:translateY(-1px);
+    box-shadow:
+      0 0 45px rgba(34,197,94,.55);
+  }
+
+  .btn-outline{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid rgba(148,163,184,.35);
+    padding:.85rem 1.1rem;
+    border-radius:999px;
+    background:rgba(15,23,42,.55);
+    color:#e5e7eb;
+    transition:border-color .15s ease, background .15s ease;
+  }
+
+  .btn-outline:hover{
+    border-color:#34d399;
+    background:rgba(15,23,42,.75);
+  }
+
+  .muted{ color:rgba(229,231,235,.72); }
+  .fine{ font-size:.86rem; color:rgba(229,231,235,.6); }
+
+  /* Calculator inputs feel more premium */
+  input, select{
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.02);
+  }
+
+  /* Growth chart subtle glow */
+  canvas{
+    box-shadow:
+      0 0 30px rgba(34,197,94,.18),
+      inset 0 0 0 1px rgba(255,255,255,.04);
+  }
+</style>
 </head>
 
 <body>
