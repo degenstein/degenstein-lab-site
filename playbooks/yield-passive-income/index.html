@@ -6,22 +6,24 @@
 
   <title>Yield & Passive Income Playbook | Degenstein Crypto Playbooks</title>
 
-  <!-- 🧠 SEO -->
-  <meta name="description" content="A rules-based Yield & Passive Income Playbook: earn while you hold. No trading, no timing, no stress. Includes CoinDepo advantages, exact 90-day USDC bonus tiers, and example yield math." />
+  <!-- SEO -->
+  <meta name="description" content="A rules-based Yield & Passive Income Playbook for crypto holders. Structure, laddering, and disciplined compounding — earn while you hold without trading or leverage." />
   <link rel="canonical" href="https://degenstein.xyz/playbooks/yield-passive-income/" />
 
-  <!-- 🌐 Open Graph -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Yield & Passive Income Playbook — Earn While You Hold" />
-  <meta property="og:description" content="Rules-based yield strategy: stablecoin + crypto yield buckets, laddering, exact 90-day USDC bonus tiers, and example earnings. No trading. No leverage. Just yield + rules." />
+  <meta property="og:description" content="A disciplined framework for earning yield on crypto while maintaining long-term exposure. No trading. No timing. No hype." />
   <meta property="og:image" content="https://degenstein.xyz/assets/playbooks-banner-1200x630.png" />
   <meta property="og:url" content="https://degenstein.xyz/playbooks/yield-passive-income/" />
 
-  <!-- 🐦 Twitter -->
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Yield & Passive Income Playbook — Earn While You Hold" />
-  <meta name="twitter:description" content="Rules-based yield strategy with exact 90-day bonus tiers + yield examples. No trading. No stress." />
+  <meta name="twitter:description" content="Rules-based yield strategy for long-term crypto holders. Structure beats hype." />
   <meta name="twitter:image" content="https://degenstein.xyz/assets/playbooks-banner-1200x630.png" />
+
+  <meta name="theme-color" content="#7c5cff" />
 
   <style>
     :root{
@@ -35,102 +37,104 @@
       --accent:#7c5cff;
       --accent2:#22c55e;
       --warn:#f59e0b;
-      --danger:#ef4444;
-      --shadow: 0 18px 60px rgba(0,0,0,.45);
-      --radius: 18px;
-      --radius2: 26px;
-      --max: 1040px;
+      --shadow:0 18px 60px rgba(0,0,0,.45);
+      --radius:18px;
+      --radius2:26px;
+      --max:1040px;
     }
 
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      font-family:system-ui,-apple-system,Segoe UI,sans-serif;
       background:
         radial-gradient(1200px 700px at 20% -10%, rgba(124,92,255,.22), transparent 60%),
         radial-gradient(900px 600px at 95% 0%, rgba(34,197,94,.14), transparent 55%),
-        radial-gradient(900px 700px at 50% 120%, rgba(245,158,11,.10), transparent 50%),
         var(--bg);
       color:var(--text);
       line-height:1.5;
     }
 
-    a{color:inherit; text-decoration:none}
-    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 80px}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:28px 18px 80px}
 
     /* Top nav */
     .topbar{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:14px; padding:10px 0 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      padding:10px 0 18px;
     }
     .brand{
-      display:flex; align-items:center; gap:10px;
-      font-weight:800; letter-spacing:.3px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:800;
     }
     .brand .dot{
-      width:10px; height:10px; border-radius:999px;
-      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      width:10px;height:10px;border-radius:999px;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
       box-shadow:0 0 0 6px rgba(124,92,255,.15);
     }
-    .navlinks{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+    .navlinks{display:flex;gap:10px;flex-wrap:wrap}
     .chip{
-      display:inline-flex; align-items:center; gap:8px;
+      display:inline-flex;
+      align-items:center;
       padding:8px 12px;
       background:rgba(255,255,255,.05);
       border:1px solid var(--border);
       border-radius:999px;
       color:var(--muted);
       font-weight:650;
-      transition:transform .12s ease, background .12s ease;
     }
-    .chip:hover{transform:translateY(-1px); background:rgba(255,255,255,.07)}
 
     /* Hero */
     .hero{
       margin-top:10px;
       border:1px solid var(--border);
-      background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+      background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.03));
       border-radius:var(--radius2);
       box-shadow:var(--shadow);
       overflow:hidden;
     }
     .heroInner{padding:26px 22px 20px}
     .kicker{
-      display:inline-flex; align-items:center; gap:10px;
+      display:inline-flex;
       padding:8px 12px;
       background:rgba(124,92,255,.12);
       border:1px solid rgba(124,92,255,.26);
-      color:rgba(233,237,246,.9);
       border-radius:999px;
       font-weight:800;
-      letter-spacing:.2px;
       font-size:13px;
     }
-    h1{margin:14px 0 10px; font-size:34px; line-height:1.12}
-    .sub{margin:0; color:var(--muted); font-size:16px; max-width:820px}
-    .heroCtas{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+    h1{margin:14px 0 10px;font-size:34px;line-height:1.12}
+    .sub{margin:0;color:var(--muted);font-size:16px;max-width:820px}
+    .heroCtas{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
     .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
       padding:12px 14px;
       border-radius:14px;
       font-weight:850;
       border:1px solid var(--border);
       background:rgba(255,255,255,.06);
-      transition:transform .12s ease, background .12s ease;
-    }
-    .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.08)}
-    .btnPrimary{
-      border-color: rgba(124,92,255,.35);
-      background:linear-gradient(135deg, rgba(124,92,255,.22), rgba(124,92,255,.08));
     }
     .btnGreen{
-      border-color: rgba(34,197,94,.35);
-      background:linear-gradient(135deg, rgba(34,197,94,.20), rgba(34,197,94,.07));
+      border-color:rgba(34,197,94,.35);
+      background:linear-gradient(135deg,rgba(34,197,94,.20),rgba(34,197,94,.07));
     }
+
     .metaRow{
-      display:flex; gap:12px; flex-wrap:wrap;
-      margin-top:14px; color:var(--muted2); font-weight:650; font-size:13px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:14px;
+      color:var(--muted2);
+      font-weight:650;
+      font-size:13px;
     }
     .metaRow span{
       padding:6px 10px;
@@ -139,93 +143,30 @@
       border-radius:999px;
     }
 
-    /* Layout blocks */
-    .grid{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:14px;
-      margin-top:18px;
+    /* Sections */
+    .sectionTitle{
+      margin:26px 2px 10px;
+      font-size:15px;
+      letter-spacing:.35px;
+      text-transform:uppercase;
+      font-weight:900;
+      color:rgba(233,237,246,.92);
     }
-    @media (min-width: 900px){
-      .grid.two{grid-template-columns: 1fr 1fr}
-    }
+
+    .grid{display:grid;gap:14px}
+    @media(min-width:900px){.grid.two{grid-template-columns:1fr 1fr}}
 
     .card{
       border:1px solid var(--border);
       background:rgba(255,255,255,.05);
       border-radius:var(--radius);
       padding:18px 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.22);
+      box-shadow:0 10px 30px rgba(0,0,0,.22);
     }
-    .card h2{
-      margin:0 0 10px;
-      font-size:18px;
-      letter-spacing:.2px;
-    }
-    .card p{margin:0 0 10px; color:var(--muted)}
-    .card p:last-child{margin-bottom:0}
-
-    .callout{
-      border-radius:var(--radius);
-      padding:14px 14px;
-      border:1px solid rgba(124,92,255,.28);
-      background:rgba(124,92,255,.10);
-      color:rgba(233,237,246,.92);
-      font-weight:700;
-    }
-    .callout strong{color:#fff}
-
-    .warn{
-      border:1px solid rgba(245,158,11,.35);
-      background:rgba(245,158,11,.10);
-      color:rgba(233,237,246,.90);
-    }
-
-    .sectionTitle{
-      margin:26px 2px 10px;
-      color:rgba(233,237,246,.92);
-      font-size:15px;
-      letter-spacing:.35px;
-      text-transform:uppercase;
-      font-weight:900;
-    }
-
-    /* Lists */
-    ul{margin:10px 0 0 18px; color:var(--muted)}
+    .card h2{margin:0 0 10px;font-size:18px}
+    .card p{margin:0 0 10px;color:var(--muted)}
+    ul{margin:10px 0 0 18px;color:var(--muted)}
     li{margin:6px 0}
-
-    /* Table */
-    .tableWrap{
-      overflow:auto;
-      border-radius:16px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(0,0,0,.18);
-    }
-    table{width:100%; border-collapse:collapse; min-width:620px}
-    th,td{padding:14px 14px; text-align:left}
-    th{
-      color:rgba(233,237,246,.90);
-      font-weight:900;
-      border-bottom:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.04);
-    }
-    td{
-      color:rgba(233,237,246,.84);
-      border-bottom:1px solid rgba(255,255,255,.06);
-      font-weight:700;
-    }
-    tr:last-child td{border-bottom:none}
-    .pill{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 10px;
-      border-radius:999px;
-      border:1px solid rgba(34,197,94,.30);
-      background:rgba(34,197,94,.10);
-      color:rgba(233,237,246,.92);
-      font-weight:900;
-      font-size:13px;
-    }
-    .pill .dot{width:8px; height:8px; border-radius:99px; background:var(--accent2)}
 
     /* Footer */
     .footer{
@@ -234,297 +175,131 @@
       font-size:13px;
       text-align:center;
     }
-    .footer a{color:rgba(233,237,246,.82); text-decoration:underline}
-    .divider{height:1px; background:rgba(255,255,255,.10); margin:18px 0}
-    code{
-      padding:2px 6px;
-      border-radius:10px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.05);
-      color:rgba(233,237,246,.92);
-      font-weight:800;
-      font-size: 13px;
-    }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
+<div class="wrap">
 
-    <!-- Topbar -->
-    <div class="topbar">
-      <a class="brand" href="https://degenstein.xyz/">
-        <span class="dot"></span>
-        <span>Degenstein</span>
-      </a>
-
-      <div class="navlinks">
-        <a class="chip" href="https://degenstein.xyz/playbooks/">← Back to Playbooks</a>
-        <a class="chip" href="https://degenstein.xyz/report/">Reports</a>
-        <a class="chip" href="https://degenstein.xyz/">Home</a>
-      </div>
+  <!-- Topbar -->
+  <div class="topbar">
+    <a class="brand" href="https://degenstein.xyz/">
+      <span class="dot"></span>
+      <span>Degenstein</span>
+    </a>
+    <div class="navlinks">
+      <a class="chip" href="https://degenstein.xyz/playbooks/">← Back to Playbooks</a>
+      <a class="chip" href="https://degenstein.xyz/report/">Reports</a>
+      <a class="chip" href="https://degenstein.xyz/">Home</a>
     </div>
-
-    <!-- Hero -->
-    <section class="hero">
-      <div class="heroInner">
-        <span class="kicker">📘 PLAYBOOK • Yield & Passive Income</span>
-        <h1>Earn while you hold.<br/>No trading. No timing. No stress.</h1>
-        <p class="sub">
-          This playbook is for crypto holders who want predictable yield while keeping long-term upside exposure.
-          The strategy is rules-based: buckets, laddering, and disciplined compounding — plus the exact 90-day USDC bonus tiers.
-        </p>
-
-        <div class="heroCtas">
-          <a class="btn btnGreen" href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV" target="_blank" rel="noopener">
-            ✅ Start on CoinDepo
-          </a>
-          <a class="btn btnPrimary" href="#bonus-tiers">
-            🎁 View Bonus Tiers
-          </a>
-          <a class="btn" href="#examples">
-            📊 90-Day Examples
-          </a>
-        </div>
-
-        <div class="metaRow">
-          <span>Strategy: <strong>Discipline → Yield → Bonus → Compounding</strong></span>
-          <span>Referral Code: <code>R-UgAoMRNV</code></span>
-          <span>No leverage • No liquidation risk</span>
-        </div>
-      </div>
-    </section>
-<!-- Playbook Banner -->
-<div style="margin-top:18px;">
-  <img 
-    src="/assets/playbookapr.png" 
-    alt="Yield & Passive Income Playbook — Earn while you hold. No trading. No stress."
-    style="
-      width:100%;
-      max-width:1040px;
-      display:block;
-      margin:0 auto;
-      border-radius:18px;
-      border:1px solid rgba(255,255,255,.12);
-      box-shadow:0 18px 60px rgba(0,0,0,.45);
-    "
-    loading="lazy"
-  />
-</div>
-
-    <div class="sectionTitle">Core Philosophy</div>
-    <div class="grid">
-      <div class="card">
-        <h2>🧠 The problem this solves</h2>
-        <p>Most losses come from over-trading, chasing pumps, and sitting in idle wallets earning nothing.</p>
-        <p>This playbook flips the model: you hold conviction assets and make them work 24/7 with clear rules.</p>
-      </div>
-
-      <div class="card">
-        <h2>✅ The objective</h2>
-        <div class="callout">
-          <strong>Turn idle crypto into yield + bonuses</strong> while keeping your long-term exposure intact.
-        </div>
-      </div>
-    </div>
-
-    <div class="sectionTitle">The Yield Stack</div>
-    <div class="grid two">
-      <div class="card">
-        <h2>1️⃣ Stablecoin Yield (Base Layer)</h2>
-        <p><strong>Purpose:</strong> Capital preservation + predictable income</p>
-        <p><strong>Assets:</strong> USDC, USDT, DAI</p>
-        <p><strong>Target APR:</strong> up to <strong>27%</strong></p>
-        <p>This is your foundation. Reduce volatility, keep consistency.</p>
-      </div>
-
-      <div class="card">
-        <h2>2️⃣ Crypto Yield (Growth Layer)</h2>
-        <p><strong>Purpose:</strong> Earn while holding long-term assets</p>
-        <p><strong>Assets:</strong> BTC, ETH, SOL, XRP (availability varies)</p>
-        <p><strong>Target APR:</strong> up to <strong>~21%</strong></p>
-        <p>You keep upside exposure and earn yield at the same time.</p>
-      </div>
-
-      <div class="card">
-        <h2>3️⃣ Optional Rotation Capital</h2>
-        <p><strong>Purpose:</strong> Flexibility for dips, catalysts, and rebalances</p>
-        <p><strong>Asset:</strong> Stablecoins</p>
-        <p>Keep a small liquid bucket so you can move without touching core positions.</p>
-      </div>
-
-      <div class="card">
-        <h2>🔁 Deposit Laddering</h2>
-        <p>Instead of locking everything at once, stagger entries across terms.</p>
-        <ul>
-          <li>Reduces regret</li>
-          <li>Improves flexibility</li>
-          <li>Lets you roll winners forward without going “all-in” on one date</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="sectionTitle">Why CoinDepo Fits This Playbook</div>
-    <div class="grid two">
-      <div class="card">
-        <h2>🏗️ Execution Layer</h2>
-        <p>CoinDepo is built for earning while you hold — not for trading dopamine.</p>
-        <ul>
-          <li>Yield without active trading</li>
-          <li>Choose lock terms (weekly → annual)</li>
-          <li>Stack <strong>APR + USDC bonus</strong></li>
-          <li>Structure enforces discipline</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h2>✅ Advantages (Reality Check)</h2>
-        <ul>
-          <li><strong>Earn through volatility:</strong> sideways, down, or up markets</li>
-          <li><strong>No leverage / no liquidation risk</strong></li>
-          <li><strong>Bonuses are additive</strong> (separate from yield)</li>
-          <li><strong>Laddering + compounding</strong> makes the strategy scale</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="sectionTitle" id="bonus-tiers">CoinDepo Referral Bonus Tiers (Referred User)</div>
-    <div class="card">
-      <p><strong>Tier is based on the balance maintained during the full 90-day period.</strong> Bonuses are paid in <strong>USDC</strong> and are <strong>separate from yield earnings</strong>.</p>
-
-      <div class="tableWrap" style="margin-top:12px;">
-        <table>
-          <thead>
-            <tr>
-              <th>Balance Maintained (90 Days)</th>
-              <th>Bonus (USDC)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>$100 – $249</td><td>$10</td></tr>
-            <tr><td>$250 – $499</td><td>$25</td></tr>
-            <tr><td>$500 – $999</td><td>$50</td></tr>
-            <tr><td>$1,000 – $4,999</td><td>$100</td></tr>
-            <tr><td>$5,000 – $14,999</td><td>$300</td></tr>
-            <tr><td>$15,000+</td><td>$500</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="divider"></div>
-
-      <div class="callout warn">
-        ⚠️ Promotions and eligibility rules may change. Always verify the latest bonus terms inside CoinDepo.
-      </div>
-    </div>
-
-    <div class="sectionTitle">Why the Bonus Matters</div>
-    <div class="grid">
-      <div class="card">
-        <h2>💡 Bonus = additive return</h2>
-        <p>This is the key: you can earn <strong>APR yield for the full 90 days</strong>, then receive a <strong>USDC bonus on top</strong>.</p>
-        <p>There is no trading requirement and no price speculation needed to qualify.</p>
-        <div style="margin-top:10px;">
-          <span class="pill"><span class="dot"></span> APR Yield + USDC Bonus</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="sectionTitle" id="examples">📊 90-Day Examples (Simple Math)</div>
-    <div class="grid two">
-      <div class="card">
-        <h2>Example: $1,000 USDC (90 Days)</h2>
-        <ul>
-          <li>Approx yield at 21% APR: <strong>~$52</strong></li>
-          <li>Bonus tier: <strong>$100 USDC</strong></li>
-          <li><strong>Total earned:</strong> ~<strong>$152</strong></li>
-        </ul>
-        <p style="margin-top:10px; color:var(--muted2);">No selling. No leverage. Just yield + rules.</p>
-      </div>
-
-      <div class="card">
-        <h2>Example: $5,000 USDC (90 Days)</h2>
-        <ul>
-          <li>Approx yield at 21% APR: <strong>~$262</strong></li>
-          <li>Bonus tier: <strong>$300 USDC</strong></li>
-          <li><strong>Total earned:</strong> ~<strong>$562</strong></li>
-        </ul>
-        <p style="margin-top:10px; color:var(--muted2);">This is why the 90-day structure is powerful.</p>
-      </div>
-
-      <div class="card">
-        <h2>Example: $15,000 USDC (90 Days)</h2>
-        <ul>
-          <li>Approx yield at 21% APR: <strong>~$787</strong></li>
-          <li>Bonus tier: <strong>$500 USDC</strong></li>
-          <li><strong>Total earned:</strong> ~<strong>$1,287</strong></li>
-        </ul>
-        <p style="margin-top:10px; color:var(--muted2);">Bigger base → bigger yield. Bonus still stacks.</p>
-      </div>
-
-      <div class="card">
-        <h2>📌 Note on examples</h2>
-        <p>These are simplified examples to show the structure. Actual yield depends on the rate and product terms at the time you lock.</p>
-        <p>The point is the framework: <strong>yield + bonus</strong> without needing to trade.</p>
-      </div>
-    </div>
-
-    <div class="sectionTitle">Rules (Non-Negotiable)</div>
-    <div class="grid">
-      <div class="card">
-        <h2>🧱 Discipline rules</h2>
-        <ul>
-          <li>Only deploy capital you won’t need short-term</li>
-          <li>Ladder deposits — don’t lock everything at once</li>
-          <li>Treat bonuses as <strong>capital</strong>, not gambling money</li>
-          <li>Reinvest yield or move it to stables</li>
-          <li>Don’t exit yield just because price pumps</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="sectionTitle">Compounding (Optional but Powerful)</div>
-    <div class="grid two">
-      <div class="card">
-        <h2>🔁 Roll strategy</h2>
-        <ul>
-          <li>Re-lock earned yield into new terms</li>
-          <li>Roll bonuses into stablecoin yield</li>
-          <li>Grow principal without adding new capital</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h2>🎯 Final takeaway</h2>
-        <div class="callout">
-          If you believe in crypto long-term, leaving assets idle is inefficient.
-          This playbook turns <strong>Time → Yield → Bonus → Compounding</strong> without sacrificing exposure.
-        </div>
-      </div>
-    </div>
-
-    <div class="sectionTitle">Get Started</div>
-    <div class="card">
-      <p><strong>Use this exact sign-up link to qualify for bonuses:</strong></p>
-      <div class="heroCtas" style="margin-top:10px;">
-        <a class="btn btnGreen" href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV" target="_blank" rel="noopener">
-          ✅ Sign up with my link
-        </a>
-        <a class="btn" href="https://degenstein.xyz/" target="_blank" rel="noopener">
-          🏠 Back to Degenstein Hub
-        </a>
-      </div>
-      <div class="metaRow" style="margin-top:12px;">
-        <span>Referral Code: <code>R-UgAoMRNV</code></span>
-      </div>
-    </div>
-
-    <div class="footer">
-      <p>© Degenstein • Crypto playbooks and reports for rules-based holders.</p>
-      <p><a href="https://degenstein.xyz/playbooks/">Browse all Playbooks</a></p>
-    </div>
-
   </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="heroInner">
+      <span class="kicker">📘 PLAYBOOK • Yield & Passive Income</span>
+      <h1>Earn while you hold.<br>No trading. No timing. No stress.</h1>
+      <p class="sub">
+        This playbook is for long-term crypto holders who want predictable structure instead of constant decision-making.
+        The system is rules-based: buckets, laddering, and disciplined compounding.
+      </p>
+
+      <div class="heroCtas">
+        <a class="btn btnGreen" href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W" target="_blank" rel="noopener noreferrer">
+          Explore CoinDepo
+        </a>
+        <a class="btn" href="#framework">
+          View the Framework
+        </a>
+      </div>
+
+      <div class="metaRow">
+        <span>Strategy: Structure → Yield → Compounding</span>
+        <span>No leverage • No liquidation risk</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Banner -->
+  <div style="margin-top:18px;">
+    <img
+      src="/assets/playbookapr.png"
+      alt="Yield & Passive Income Playbook"
+      style="width:100%;border-radius:18px;border:1px solid rgba(255,255,255,.12);box-shadow:0 18px 60px rgba(0,0,0,.45);"
+      loading="lazy"
+    />
+  </div>
+
+  <div class="sectionTitle" id="framework">Core Philosophy</div>
+  <div class="grid two">
+    <div class="card">
+      <h2>🧠 The problem this solves</h2>
+      <p>
+        Most underperformance comes from overtrading, emotional decisions,
+        and leaving capital idle during long sideways markets.
+      </p>
+    </div>
+    <div class="card">
+      <h2>✅ The objective</h2>
+      <p>
+        Put idle crypto to work using clear rules while maintaining long-term exposure.
+        No timing games. No leverage.
+      </p>
+    </div>
+  </div>
+
+  <div class="sectionTitle">The Yield Stack</div>
+  <div class="grid two">
+    <div class="card">
+      <h2>Stablecoin Layer</h2>
+      <p>Designed for capital stability and consistency.</p>
+    </div>
+    <div class="card">
+      <h2>Crypto Hold Layer</h2>
+      <p>Long-term assets stay exposed to upside while generating yield.</p>
+    </div>
+  </div>
+
+  <div class="sectionTitle">Execution Layer</div>
+  <div class="grid">
+    <div class="card">
+      <h2>Why CoinDepo</h2>
+      <ul>
+        <li>No active trading required</li>
+        <li>Structured terms encourage discipline</li>
+        <li>Designed for holding, not speculation</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sectionTitle">Rules (Non-Negotiable)</div>
+  <div class="grid">
+    <div class="card">
+      <ul>
+        <li>Only deploy capital you don’t need short-term</li>
+        <li>Ladder entries instead of locking everything at once</li>
+        <li>Treat yield as capital, not spending money</li>
+        <li>Avoid chasing rates or reallocating constantly</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="sectionTitle">Final Takeaway</div>
+  <div class="grid">
+    <div class="card">
+      <p>
+        If you believe in crypto long-term, leaving assets idle is inefficient.
+        This playbook turns time into a tool — not a stressor.
+      </p>
+    </div>
+  </div>
+
+  <div class="footer">
+    © Degenstein • Rules-based crypto playbooks for long-term holders
+  </div>
+
+</div>
 </body>
 </html>
+
 
