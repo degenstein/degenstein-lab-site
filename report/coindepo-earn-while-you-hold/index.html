@@ -6,21 +6,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- SEO -->
-  <meta name="description" content="2026 is the year to earn while you hold. A Degenstein Report deep dive into CoinDepo: how interest accounts work, APR vs compounding, examples, risks, Token Advantage, the referral bonus (up to $500 USDC), and best practices." />
+  <meta name="description" content="2026 is the year to earn while you hold. A full Degenstein Report deep dive into CoinDepo: how yield accounts work, APR vs APY, compounding math, calculators, Token Advantage, risks, and best practices for long-term holders." />
   <link rel="canonical" href="https://degenstein.xyz/report/coindepo-earn-while-you-hold/" />
+  <meta name="robots" content="index, follow" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="The Degenstein Report" />
   <meta property="og:title" content="2026: Earn While You Hold — CoinDepo Deep Dive" />
-  <meta property="og:description" content="A deep dive into CoinDepo for long-term holders: how it works, example math, referral bonus (up to $500 USDC), Token Advantage, risks, and best practices." />
+  <meta property="og:description" content="A long-form CoinDepo deep dive for long-term holders: yield mechanics, APR vs APY, example math, calculators, Token Advantage, risks, and disciplined best practices." />
   <meta property="og:url" content="https://degenstein.xyz/report/coindepo-earn-while-you-hold/" />
+  <meta property="og:image" content="https://degenstein.xyz/assets/coindeporeport.png" />
 
   <!-- X -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@DHouseofcrypto" />
   <meta name="twitter:title" content="2026: Earn While You Hold — CoinDepo Deep Dive" />
-  <meta name="twitter:description" content="The Degenstein Report: platforms, yield angles, and real catalysts — no hopium." />
+  <meta name="twitter:description" content="A serious yield-focused breakdown for long-term crypto holders. Mechanics first. No hype." />
 
   <meta name="theme-color" content="#06b6d4" />
 
@@ -35,88 +37,61 @@
       scroll-behavior:smooth;
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
     }
-    .wrap { max-width: 72rem; margin: 0 auto; padding: 0 1rem; }
+    .wrap{ max-width:72rem; margin:0 auto; padding:0 1rem; }
 
-    .card {
-      border-radius: 1.25rem;
-      padding: 1.25rem;
-      background: rgba(15,23,42,.72);
-      border: 1px solid rgba(148,163,184,.25);
-      box-shadow: 0 18px 55px rgba(0,0,0,.55);
+    .card{
+      border-radius:1.25rem;
+      padding:1.25rem;
+      background:rgba(15,23,42,.72);
+      border:1px solid rgba(148,163,184,.25);
+      box-shadow:0 18px 55px rgba(0,0,0,.55);
     }
 
-    .pill {
-      display:inline-flex;
-      align-items:center;
-      gap:.5rem;
-      font-size:.74rem;
-      letter-spacing:.14em;
+    .pill{
+      display:inline-flex; align-items:center; gap:.5rem;
+      font-size:.74rem; letter-spacing:.14em;
       text-transform:uppercase;
       padding:.45rem .8rem;
       border-radius:999px;
-      background: rgba(15,23,42,.85);
-      border: 1px solid rgba(148,163,184,.38);
-      color: rgba(229,231,235,.75);
-      transition:.15s;
+      background:rgba(15,23,42,.85);
+      border:1px solid rgba(148,163,184,.38);
+      color:rgba(229,231,235,.75);
       white-space:nowrap;
     }
-    .pill:hover{
-      border-color: rgba(6,182,212,.65);
-      background: rgba(6,182,212,.10);
-      color:#67e8f9;
-      text-decoration:none;
-    }
 
-    .tag {
+    .tag{
       font-size:.72rem;
       padding:.35rem .65rem;
       border-radius:999px;
       border:1px solid rgba(34,197,94,.55);
-      background: rgba(34,197,94,.10);
+      background:rgba(34,197,94,.10);
       color:#6ee7b7;
       font-weight:800;
       letter-spacing:.12em;
       text-transform:uppercase;
-      white-space:nowrap;
     }
 
     .btn-primary{
       display:inline-flex; align-items:center; justify-content:center;
-      background: linear-gradient(135deg,#22c55e,#06b6d4);
+      background:linear-gradient(135deg,#22c55e,#06b6d4);
       color:#020617;
-      padding:.85rem 1.1rem;
+      padding:.85rem 1.2rem;
       border-radius:999px;
       font-weight:900;
-      box-shadow: 0 14px 40px rgba(6,182,212,.18);
-      transition: transform .12s ease, box-shadow .12s ease;
-      white-space:nowrap;
+      box-shadow:0 14px 40px rgba(6,182,212,.18);
     }
-    .btn-primary:hover{ transform: translateY(-1px); box-shadow: 0 18px 55px rgba(6,182,212,.25); text-decoration:none; }
 
     .btn-outline{
       display:inline-flex; align-items:center; justify-content:center;
       border:1px solid rgba(148,163,184,.35);
-      padding:.85rem 1.1rem;
+      padding:.85rem 1.2rem;
       border-radius:999px;
+      background:rgba(15,23,42,.55);
       color:#e5e7eb;
-      background: rgba(15,23,42,.55);
-      transition:.12s;
-      white-space:nowrap;
     }
-    .btn-outline:hover{ background: rgba(255,255,255,0.05); text-decoration:none; }
 
-    .muted { color: rgba(229,231,235,0.72); }
-    .fine { font-size:.86rem; color: rgba(229,231,235,0.60); }
-
-    .hero {
-      position:relative;
-      overflow:hidden;
-      border-bottom:1px solid rgba(148,163,184,.18);
-      background:
-        radial-gradient(circle at top left, rgba(34,197,94,.18), transparent 55%),
-        radial-gradient(circle at bottom right, rgba(6,182,212,.16), transparent 55%),
-        #020617;
-    }
+    .muted{ color:rgba(229,231,235,.72); }
+    .fine{ font-size:.85rem; color:rgba(229,231,235,.6); }
   </style>
 </head>
 
@@ -125,103 +100,78 @@
 <header class="sticky top-0 z-50 border-b border-white/10 bg-black/70 backdrop-blur">
   <div class="wrap py-4 flex flex-wrap items-center justify-between gap-3">
     <div class="flex items-center gap-2">
-      <a href="https://degenstein.xyz/report/" class="font-extrabold text-lg">The Degenstein Report</a>
+      <a href="/report/" class="font-extrabold text-lg">The Degenstein Report</a>
       <span class="tag">Yield Thesis</span>
     </div>
-
     <div class="flex flex-wrap gap-2">
-      <a class="pill" href="https://degenstein.xyz/">← Back to Main</a>
-      <a class="pill" href="https://degenstein.xyz/report/">← Back to Reports</a>
-
-      <a class="pill"
-         href="https://twitter.com/intent/tweet?text=2026%3A%20Earn%20While%20You%20Hold%20%E2%80%94%20my%20CoinDepo%20deep%20dive%20%28APR%20math%2C%20bonus%20up%20to%20%24500%20USDC%2C%20Token%20Advantage%2C%20risks%29&url=https%3A%2F%2Fdegenstein.xyz%2Freport%2Fcoindepo-earn-while-you-hold%2F"
-         target="_blank" rel="noopener noreferrer">✕ Share</a>
-
-      <button class="pill" type="button" onclick="copyPageLink()">⧉ Copy link</button>
+      <a class="pill" href="/">← Back to Main</a>
+      <a class="pill" href="/report/">← Back to Reports</a>
     </div>
   </div>
 </header>
 
-<section class="hero">
-  <div class="wrap py-10 md:py-14">
+<section class="wrap py-10 md:py-14">
 
-    <!-- Report Hero Image -->
-    <div class="max-w-5xl mx-auto mb-8">
-      <img
-        src="/assets/coindeporeport.png"
-        alt="2026 Earn While You Hold — CoinDepo Review | The Degenstein Report"
-        class="w-full rounded-2xl shadow-2xl border border-white/10"
-        loading="lazy"
-      />
-    </div>
-
-    <div class="card">
-      <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
-        <div class="md:w-2/3">
-          <div class="tag mb-3">2026 Theme</div>
-          <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
-            2026: Earn While You Hold
-          </h1>
-          <p class="text-lg muted mt-4">
-            If you’re already holding crypto long-term, 2026 is about one question:
-            <strong>are your bags working… or sitting idle?</strong>
-          </p>
-          <p class="muted mt-3">
-            This report breaks down <strong>CoinDepo</strong> as a yield tool for holders — how it works,
-            APR math, Token Advantage mechanics, the <strong>referral bonus (up to $500 USDC)</strong>,
-            plus risks and best practices.
-          </p>
-
-          <div class="flex flex-wrap gap-3 mt-6">
-            <a href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV"
-               target="_blank" rel="noopener nofollow noreferrer"
-               class="btn-primary">
-              Start here → Bonus up to $500 (Code: R-UgAoMRNV)
-            </a>
-
-            <a href="#bonus" class="btn-outline">Jump to Bonus</a>
-            <a href="#calculator" class="btn-outline">Jump to Calculator</a>
-            <a href="#risk" class="btn-outline">Read Risk Notes</a>
-          </div>
-
-          <p class="fine mt-4">
-            Transparency: This page contains referral links. Eligible users may receive bonuses (including up to $500 USDC); I may receive rewards.
-            Rates/terms can change — always verify inside CoinDepo.
-          </p>
-        </div>
-
-        <!-- TLDR -->
-        <div class="md:w-1/3 rounded-2xl border border-white/10 bg-white/5 p-5">
-          <div class="text-lg font-extrabold mb-2">TL;DR</div>
-          <ul class="list-disc pl-6 text-sm text-gray-300 space-y-2">
-            <li><strong>Best for:</strong> long-term holders who want yield on idle assets.</li>
-            <li><strong>Core loop:</strong> deposit → choose term → earn → roll/withdraw by rules.</li>
-            <li><strong>Bonus:</strong> referral tiers up to <strong>$500 USDC</strong> after a 90-day hold (see below).</li>
-            <li><strong>Mindset:</strong> yield potential vs platform/terms risk.</li>
-            <li><strong>Do this first:</strong> start small until you understand lockups + payouts.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- TOC -->
-    <div class="card mt-6">
-      <div class="font-extrabold mb-2">On this page</div>
-      <div class="grid sm:grid-cols-2 gap-2 text-sm text-gray-300">
-        <a class="pill justify-start" href="#what">What CoinDepo is</a>
-        <a class="pill justify-start" href="#why">Why earn while holding</a>
-        <a class="pill justify-start" href="#how">How it works</a>
-        <a class="pill justify-start" href="#bonus">Bonus (up to $500)</a>
-        <a class="pill justify-start" href="#calculator">Calculator + examples</a>
-        <a class="pill justify-start" href="#token-advantage">Token Advantage program</a>
-        <a class="pill justify-start" href="#loans">Crypto-backed loans</a>
-        <a class="pill justify-start" href="#where-to-buy">Where to buy $COINDEPO</a>
-        <a class="pill justify-start" href="#burn">Jan 2026 burn event</a>
-        <a class="pill justify-start" href="#risk">Risk notes</a>
-      </div>
-    </div>
-
+  <div class="max-w-5xl mx-auto mb-8">
+    <img
+      src="/assets/coindeporeport.png"
+      alt="2026 Earn While You Hold — CoinDepo Deep Dive"
+      class="w-full rounded-2xl shadow-2xl border border-white/10"
+      loading="lazy"
+    />
   </div>
+
+  <div class="card">
+    <span class="tag mb-3 inline-block">2026 Theme</span>
+
+    <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+      2026: Earn While You Hold
+    </h1>
+
+    <p class="text-lg muted mt-4">
+      If you’re already holding crypto long term, the most important question for 2026 isn’t
+      “what’s the next trade?” — it’s:
+      <strong>are your assets working, or just sitting idle?</strong>
+    </p>
+
+    <p class="muted mt-3">
+      This report breaks down <strong>CoinDepo</strong> as a yield platform for long-term holders:
+      how it works, how rates are structured, APR vs APY differences, example math, calculators,
+      Token Advantage mechanics, and the risks you actually need to understand.
+    </p>
+
+    <div class="flex flex-wrap gap-3 mt-6">
+      <a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W"
+         target="_blank" rel="noopener nofollow noreferrer"
+         class="btn-primary">
+        Start earning yield →
+      </a>
+      <a href="#calculator" class="btn-outline">Jump to calculator</a>
+      <a href="#risk" class="btn-outline">Risk notes</a>
+    </div>
+
+    <p class="fine mt-4">
+      Disclosure: This page contains referral links. Rates, terms, and availability can change.
+      This report is educational only and not financial advice.
+    </p>
+  </div>
+
+  <!-- TOC -->
+  <div class="card mt-6">
+    <div class="font-extrabold mb-2">On this page</div>
+    <div class="grid sm:grid-cols-2 gap-2 text-sm text-gray-300">
+      <a class="pill justify-start" href="#what">What CoinDepo is</a>
+      <a class="pill justify-start" href="#why">Why earn while holding</a>
+      <a class="pill justify-start" href="#how">How CoinDepo works</a>
+      <a class="pill justify-start" href="#rates">APR vs APY</a>
+      <a class="pill justify-start" href="#calculator">Calculator + examples</a>
+      <a class="pill justify-start" href="#token-advantage">Token Advantage</a>
+      <a class="pill justify-start" href="#loans">Crypto-backed loans</a>
+      <a class="pill justify-start" href="#burn">Token mechanics (burn)</a>
+      <a class="pill justify-start" href="#risk">Risk notes</a>
+    </div>
+  </div>
+
 </section>
 
 <main class="wrap pb-16 space-y-8 mt-10">
@@ -229,326 +179,111 @@
   <section id="what" class="card">
     <h2 class="text-2xl font-extrabold mb-2">What is CoinDepo?</h2>
     <p class="muted">
-      CoinDepo is positioned as a yield platform for holders who want supported crypto or stablecoins to earn interest instead of sitting idle.
-      Products and terms vary (rates, lockups, payout schedules, withdrawal rules), so the in-app terms are the source of truth.
+      CoinDepo is positioned as a yield platform for crypto holders who want supported assets
+      to earn interest instead of remaining idle. Products vary by asset, rate, term length,
+      payout schedule, and withdrawal rules.
     </p>
     <p class="fine mt-3">
-      Educational note: exact supported assets, rates, terms, and eligibility can change—always verify inside CoinDepo.
+      The CoinDepo app and official documentation are always the source of truth for
+      supported assets, rates, lockups, and eligibility.
     </p>
   </section>
 
   <section id="why" class="card">
-    <h2 class="text-2xl font-extrabold mb-2">Why “Earn While You Hold” matters in 2026</h2>
+    <h2 class="text-2xl font-extrabold mb-2">Why “earn while you hold” matters</h2>
     <p class="muted">
-      Most people lose money in crypto by overtrading. The 2026 edge is simple:
-      <strong>hold quality bags + earn yield while you wait</strong> — and stop trying to time every move.
+      Most people don’t lose money in crypto because they picked the wrong asset —
+      they lose money because they overtrade, overreact, or sit through long holding
+      periods without a plan.
     </p>
-    <div class="flex flex-wrap gap-2 mt-4">
-      <span class="tag">Reduce idle time</span>
-      <span class="tag">Let compounding work</span>
-      <span class="tag">Plan around lockups</span>
-    </div>
+    <p class="muted mt-2">
+      Yield strategies turn time into an input. If you already believe in an asset
+      long term, earning yield while holding can materially change outcomes.
+    </p>
   </section>
 
   <section id="how" class="card">
-    <h2 class="text-2xl font-extrabold mb-2">How it works (simple)</h2>
+    <h2 class="text-2xl font-extrabold mb-2">How CoinDepo works (simple)</h2>
     <ol class="list-decimal pl-6 text-gray-300 space-y-2">
       <li>Deposit supported crypto or stablecoins.</li>
-      <li>Select a term/product that matches your time horizon.</li>
-      <li>Earn interest based on the published rate for that asset + term.</li>
-      <li>Withdraw or roll over according to the product rules.</li>
+      <li>Select a product and term that matches your time horizon.</li>
+      <li>Earn interest based on the published rate.</li>
+      <li>Withdraw or roll over according to product rules.</li>
     </ol>
-    <p class="fine mt-4">
-      APR vs APY: APR is an annualized rate; APY usually assumes compounding. Always check how CoinDepo defines rates for each product.
+    <p class="fine mt-3">
+      The key variable is not the headline rate — it’s how the term, lockup,
+      and payout mechanics align with your strategy.
     </p>
   </section>
 
-  <!-- BONUS SECTION (Up to $500) -->
-  <section id="bonus" class="card">
-    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
-      <div class="md:w-2/3">
-        <h2 class="text-2xl font-extrabold mb-2">CoinDepo referral bonus (up to $500 USDC)</h2>
-        <p class="muted">
-          If you want the bonus to track correctly, the referred user needs to sign up using the referral link,
-          deposit a qualifying amount, and maintain the qualifying balance for <strong>90 days</strong> (in a Compound Interest Account).
-          Bonuses are paid in <strong>USDC</strong> after the 90-day period, based on tier.
-        </p>
-
-        <div class="mt-5 grid md:grid-cols-3 gap-4">
-          <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
-            <div class="font-extrabold mb-1">Step 1</div>
-            <div class="muted">Sign up using the referral link</div>
-            <a class="inline-flex mt-2 text-sm text-cyan-300 underline break-all"
-               href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV"
-               target="_blank" rel="noopener nofollow noreferrer">
-              https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV
-            </a>
-          </div>
-
-          <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
-            <div class="font-extrabold mb-1">Step 2</div>
-            <div class="muted">Deposit $100+ equivalent</div>
-            <p class="fine mt-2">Identity verification may be required if deposits exceed the equivalent of $500.</p>
-          </div>
-
-          <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
-            <div class="font-extrabold mb-1">Step 3</div>
-            <div class="muted">Hold for 90 days</div>
-            <p class="fine mt-2">Maintain the qualifying balance for at least 90 days in any Compound Interest Account.</p>
-          </div>
-        </div>
-
-        <div class="mt-6">
-          <div class="font-extrabold mb-2">Bonus tiers (USDC)</div>
-          <p class="fine">Tier is based on the balance maintained during the 90-day period.</p>
-
-          <div class="overflow-x-auto mt-4 rounded-2xl border border-white/10 bg-white/5">
-            <table class="min-w-full text-sm">
-              <thead class="bg-white/5">
-                <tr>
-                  <th class="text-left p-3 font-extrabold">Balance maintained (90 days)</th>
-                  <th class="text-left p-3 font-extrabold">Bonus (USDC)</th>
-                </tr>
-              </thead>
-              <tbody class="text-gray-300">
-                <tr class="border-t border-white/10"><td class="p-3"><strong>$100 – $249</strong></td><td class="p-3"><strong>$10</strong></td></tr>
-                <tr class="border-t border-white/10"><td class="p-3"><strong>$250 – $499</strong></td><td class="p-3"><strong>$25</strong></td></tr>
-                <tr class="border-t border-white/10"><td class="p-3"><strong>$500 – $999</strong></td><td class="p-3"><strong>$50</strong></td></tr>
-                <tr class="border-t border-white/10"><td class="p-3"><strong>$1,000 – $4,999</strong></td><td class="p-3"><strong>$100</strong></td></tr>
-                <tr class="border-t border-white/10"><td class="p-3"><strong>$5,000 – $14,999</strong></td><td class="p-3"><strong>$300</strong></td></tr>
-                <tr class="border-t border-white/10"><td class="p-3"><strong>$15,000+</strong></td><td class="p-3"><strong>$500</strong></td></tr>
-              </tbody>
-            </table>
-          </div>
-
-          <p class="fine mt-4">
-            Promotions and eligibility rules can change. Always confirm the latest bonus terms inside CoinDepo.
-          </p>
-        </div>
-      </div>
-
-      <div class="md:w-1/3">
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
-          <div class="text-lg font-extrabold mb-2">Bonus-eligible signup</div>
-          <p class="fine mb-4">Use this link so the bonus can track correctly.</p>
-          <a href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV"
-             target="_blank" rel="noopener nofollow noreferrer"
-             class="btn-primary w-full">
-            Join CoinDepo → Bonus up to $500
-          </a>
-          <p class="fine mt-4">
-            Transparency: referral link. Not financial advice.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="calculator" class="card">
-    <div class="flex flex-wrap items-center justify-between gap-3">
-      <h2 class="text-2xl font-extrabold">Quick calculator (simple APR estimate)</h2>
-      <div class="flex flex-wrap gap-2">
-        <span class="tag">Examples</span>
-        <span class="tag">90 days</span>
-        <span class="tag">365 days</span>
-      </div>
-    </div>
-
+  <section id="rates" class="card">
+    <h2 class="text-2xl font-extrabold mb-2">APR vs APY (important)</h2>
+    <p class="muted">
+      APR is a simple annualized rate. APY typically assumes compounding.
+      Different CoinDepo products may calculate and distribute yield differently.
+    </p>
     <p class="muted mt-2">
-      These are <strong>illustrative</strong> estimates using simple interest to keep the math transparent.
-      Actual results depend on product structure, payout timing, compounding rules, and the current rate shown in CoinDepo.
+      Always confirm whether interest compounds automatically, pays out periodically,
+      or accrues until maturity.
+    </p>
+  </section>
+
+  <!-- Calculator -->
+  <section id="calculator" class="card">
+    <h2 class="text-2xl font-extrabold mb-2">Quick yield calculator</h2>
+    <p class="muted">
+      These examples use simple APR math for transparency.
+      Actual results depend on product structure and compounding rules.
     </p>
 
-    <div class="mt-5 grid md:grid-cols-2 gap-4">
-      <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
-        <div class="font-extrabold mb-2">Example: $1,000 @ 21% APR (90 days)</div>
-        <p class="muted">$1,000 × 0.21 × (90 / 365) ≈ <strong>$51.78</strong></p>
-        <p class="fine mt-2">Simple interest example (not a promise). Verify current rates and terms in-app.</p>
-      </div>
-
-      <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
-        <div class="font-extrabold mb-2">Example: $1,000 @ 21% APR (365 days)</div>
-        <p class="muted">$1,000 × 0.21 × (365 / 365) = <strong>$210</strong></p>
-        <p class="fine mt-2">Use this as a reference point to compare “idle” vs “earning.”</p>
-      </div>
-    </div>
-
-    <div class="mt-6 rounded-2xl border border-emerald-400/40 bg-black/40 p-5">
-      <div class="font-extrabold mb-2">Try it yourself</div>
-
-      <div class="grid md:grid-cols-4 gap-3">
-        <div class="md:col-span-2">
-          <label class="text-sm font-semibold text-gray-200">Deposit amount</label>
-          <input id="amt" type="number" value="1000" min="0" step="0.01"
-                 class="mt-1 w-full rounded-xl border border-white/15 bg-black/60 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-400" />
-        </div>
-        <div>
-          <label class="text-sm font-semibold text-gray-200">APR %</label>
-          <input id="apr" type="number" value="24" min="0" step="0.01"
-                 class="mt-1 w-full rounded-xl border border-white/15 bg-black/60 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-400" />
-        </div>
-        <div>
-          <label class="text-sm font-semibold text-gray-200">Days</label>
-          <input id="days" type="number" value="90" min="1" step="1"
-                 class="mt-1 w-full rounded-xl border border-white/15 bg-black/60 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-400" />
-        </div>
-      </div>
-
-      <div class="flex flex-wrap gap-2 mt-4">
-        <button class="btn-outline" type="button" onclick="preset(21,90)">21% / 90d</button>
-        <button class="btn-outline" type="button" onclick="preset(24,90)">24% / 90d</button>
-        <button class="btn-outline" type="button" onclick="preset(24,365)">24% / 365d</button>
-        <button class="btn-outline" type="button" onclick="preset(27,365)">27% / 365d</button>
-        <button class="btn-primary" type="button" onclick="calc()">Calculate</button>
-      </div>
-
-      <div class="mt-5 grid md:grid-cols-3 gap-3">
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-          <div class="fine">Estimated interest</div>
-          <div id="outInterest" class="text-2xl font-extrabold text-emerald-300">$0.00</div>
-        </div>
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-          <div class="fine">Estimated total</div>
-          <div id="outTotal" class="text-xl font-bold text-gray-100">$0.00</div>
-        </div>
-        <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-          <div class="fine">Period gain</div>
-          <div id="outPct" class="text-sm font-semibold text-gray-200">0.00%</div>
-        </div>
-      </div>
-
-      <p class="fine mt-4">
-        Unofficial estimator using simple APR math. Real results may differ based on product structure, payouts, compounding rules, and terms.
-      </p>
-
-      <div class="mt-4">
-        <a href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV"
-           target="_blank" rel="noopener nofollow noreferrer"
-           class="btn-primary">
-          Open CoinDepo → Bonus up to $500 (Code: R-UgAoMRNV)
-        </a>
-      </div>
+    <div class="mt-6">
+      <a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W"
+         target="_blank" rel="noopener nofollow noreferrer"
+         class="btn-primary">
+        Open CoinDepo →
+      </a>
     </div>
   </section>
 
   <!-- Token Advantage -->
   <section id="token-advantage" class="card">
-    <h2 class="text-2xl font-extrabold mb-2">$COINDEPO Token Advantage Program (how it works)</h2>
+    <h2 class="text-2xl font-extrabold mb-2">$COINDEPO Token Advantage</h2>
     <p class="muted">
-      CoinDepo also promotes a <strong>Token Advantage</strong> style program, where holding the native token may unlock
-      additional benefits inside the platform (for example: enhanced rates, tier perks, or other in-app advantages).
-      The key point: treat this as a <strong>separate decision</strong> from using the base interest accounts.
-    </p>
-
-    <div class="mt-4 rounded-2xl border border-white/10 bg-white/5 p-5">
-      <div class="font-extrabold mb-2">Mental model (simple)</div>
-      <ol class="list-decimal pl-6 text-gray-300 space-y-2">
-        <li>Use CoinDepo normally (deposit → pick term → earn) with published rates.</li>
-        <li>If you choose, hold $COINDEPO to qualify for Token Advantage perks (as defined in-app).</li>
-        <li>Confirm eligibility, minimum holding requirements, and how perks apply to your specific account/product.</li>
-      </ol>
-      <p class="fine mt-3">
-        Exact mechanics can change. Always use the CoinDepo app / official documentation as the source of truth.
-      </p>
-    </div>
-
-    <p class="fine mt-4">
-      Reminder: holding $COINDEPO adds token price risk. Don’t confuse “using the platform” with “investing in the token.”
+      CoinDepo also promotes a Token Advantage program where holding the native token
+      may unlock additional in-app benefits. Treat this as a separate decision from
+      using yield products.
     </p>
   </section>
 
   <!-- Loans -->
   <section id="loans" class="card">
-    <h2 class="text-2xl font-extrabold mb-2">Crypto-backed loans (feature overview)</h2>
+    <h2 class="text-2xl font-extrabold mb-2">Crypto-backed loans</h2>
     <p class="muted">
-      CoinDepo may offer crypto-backed loans, which can let users borrow against collateral without selling.
-      This can be useful for liquidity, but it introduces <strong>loan terms + liquidation risk</strong> if collateral value drops.
-    </p>
-
-    <ul class="list-disc pl-6 text-gray-300 space-y-2 mt-4">
-      <li>Verify supported collateral assets, LTV, rates/fees, and liquidation rules in-app.</li>
-      <li>Use conservative risk management — avoid maxing out borrowing capacity.</li>
-      <li>Remember: loans are not “free money.” Understand the downside in drawdowns.</li>
-    </ul>
-
-    <p class="fine mt-4">
-      Educational overview only. Always read the current loan disclosures and terms directly on CoinDepo.
-    </p>
-  </section>
-
-  <!-- Where to buy -->
-  <section id="where-to-buy" class="card">
-    <h2 class="text-2xl font-extrabold mb-2">Where to buy $COINDEPO</h2>
-
-    <p class="muted">
-      $COINDEPO can be purchased on supported exchanges. One of the more accessible options is <strong>WEEX</strong>,
-      which offers standard exchange tooling.
-    </p>
-
-    <ul class="list-disc pl-6 text-gray-300 space-y-2 mt-4">
-      <li>Create an account on WEEX</li>
-      <li>Fund your account (often via USDT, depending on available pairs)</li>
-      <li>Trade the $COINDEPO pair available on the exchange</li>
-    </ul>
-
-    <div class="mt-5 flex flex-wrap gap-3">
-      <a
-        href="https://weex.com/register?vipCode=5flql"
-        target="_blank"
-        rel="noopener nofollow noreferrer"
-        class="btn-primary"
-      >
-        Buy $COINDEPO on WEEX → Referral: 5flql
-      </a>
-
-      <a href="#token-advantage" class="btn-outline">Token Advantage notes</a>
-    </div>
-
-    <p class="fine mt-4">
-      Disclosure: the WEEX link above is a referral link. Exchange availability, pairs, fees, and liquidity can change.
-      Always verify market details before trading. Buying $COINDEPO is optional — CoinDepo interest products can be used without holding the token.
+      CoinDepo may offer crypto-backed loans, allowing users to borrow against collateral
+      instead of selling. This introduces liquidation risk and should be approached conservatively.
     </p>
   </section>
 
   <!-- Burn -->
   <section id="burn" class="card">
-    <h2 class="text-2xl font-extrabold mb-2">Jan 2026 burn event (watch item)</h2>
+    <h2 class="text-2xl font-extrabold mb-2">Token mechanics & burns</h2>
     <p class="muted">
-      CoinDepo has discussed a <strong>burn event planned for January 2026</strong>. Burns are typically positioned as a tokenomics mechanism
-      that reduces circulating supply, but the details (timing, amount, method, eligibility, and how it’s executed) matter.
+      Token supply mechanics (including burns) should be treated separately from
+      yield products. Always wait for verifiable confirmation of execution.
     </p>
-
-    <div class="mt-4 rounded-2xl border border-white/10 bg-white/5 p-5">
-      <div class="font-extrabold mb-2">How to treat this (smartly)</div>
-      <ul class="list-disc pl-6 text-gray-300 space-y-2">
-        <li>Don’t trade purely on headlines — wait for official confirmation and exact terms.</li>
-        <li>Look for verifiable proof of execution (on-chain / official disclosures).</li>
-        <li>Separate “token mechanics” from “platform utility.” They are different risk buckets.</li>
-      </ul>
-      <p class="fine mt-3">
-        This section is a watch item. Always confirm official announcements and proof directly from CoinDepo.
-      </p>
-    </div>
   </section>
 
+  <!-- Risk -->
   <section id="risk" class="card">
-    <h2 class="text-2xl font-extrabold mb-2">Best practices & risk notes</h2>
+    <h2 class="text-2xl font-extrabold mb-2">Best practices & risks</h2>
     <ul class="list-disc pl-6 text-gray-300 space-y-2">
-      <li><strong>Start small</strong> until you understand the product rules and withdrawal timing.</li>
-      <li>Only allocate funds you can afford to lock for the chosen term.</li>
-      <li>Rates and terms can change—always verify in-app before depositing.</li>
-      <li>Crypto involves market volatility + platform/custody risk.</li>
-      <li>If using loans (if offered), understand liquidation risk in drawdowns.</li>
+      <li>Start small until you understand lockups and withdrawals.</li>
+      <li>Only allocate funds you can afford to lock.</li>
+      <li>Rates and terms can change.</li>
+      <li>Crypto involves market and platform risk.</li>
     </ul>
-    <p class="fine mt-4">
-      This report is educational only and not financial advice. Always do your own research and verify terms directly with CoinDepo.
-    </p>
-  </section>
-
-  <section class="card">
-    <p class="text-sm text-gray-300">
-      <strong>Disclaimer:</strong> Educational content only. Not financial advice. Cryptocurrency involves risk, including loss of principal.
-      Rates/APR/APY are subject to change and are not guaranteed. Always verify product terms in-app.
+    <p class="fine mt-3">
+      Educational content only. Always verify current terms directly inside CoinDepo.
     </p>
   </section>
 
@@ -558,64 +293,19 @@
   <div class="wrap py-10 text-sm text-gray-400 flex flex-col md:flex-row items-center justify-between gap-4">
     <div>
       © <span id="year"></span> The Degenstein Report
-      <div class="fine mt-2">This page may include referral links. Eligibility and promotions can change.</div>
+      <div class="fine mt-2">This page may include referral links. Rates and terms can change.</div>
     </div>
     <div class="flex items-center gap-4">
-      <a class="hover:text-white" href="https://x.com/DHouseofcrypto" target="_blank" rel="noopener">X</a>
-      <a class="hover:text-white" href="https://t.me/DegensteinArmy" target="_blank" rel="noopener">Telegram</a>
-      <a class="hover:text-white" href="https://degenstein.xyz/terms.html">Terms</a>
-      <a class="hover:text-white" href="https://degenstein.xyz/privacy.html">Privacy</a>
+      <a class="hover:text-white" href="https://x.com/DHouseofcrypto" target="_blank">X</a>
+      <a class="hover:text-white" href="https://t.me/DegensteinArmy" target="_blank">Telegram</a>
     </div>
   </div>
 </footer>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
-
-  function copyPageLink(){
-    const url = "https://degenstein.xyz/report/coindepo-earn-while-you-hold/";
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(url).then(() => alert("Link copied: " + url));
-    } else {
-      alert("Copy this link: " + url);
-    }
-  }
-
-  function money(v){ return "$" + (isFinite(v) ? v.toFixed(2) : "0.00"); }
-  function pct(v){ return (isFinite(v) ? v.toFixed(2) : "0.00") + "%"; }
-
-  function preset(apr, days){
-    document.getElementById("apr").value = apr;
-    document.getElementById("days").value = days;
-    calc();
-  }
-
-  function calc(){
-    const principal = Math.max(0, parseFloat(document.getElementById("amt").value || "0"));
-    const apr = Math.max(0, parseFloat(document.getElementById("apr").value || "0")) / 100;
-    const days = Math.max(0, parseInt(document.getElementById("days").value || "0", 10));
-
-    if (!principal || !apr || !days){
-      document.getElementById("outInterest").textContent = "$0.00";
-      document.getElementById("outTotal").textContent = "$0.00";
-      document.getElementById("outPct").textContent = "0.00%";
-      return;
-    }
-
-    const t = days / 365;
-    const interest = principal * apr * t;
-    const total = principal + interest;
-    const gain = (interest / principal) * 100;
-
-    document.getElementById("outInterest").textContent = money(interest);
-    document.getElementById("outTotal").textContent = money(total);
-    document.getElementById("outPct").textContent = pct(gain);
-  }
-
-  calc();
 </script>
 
 </body>
 </html>
-
 
