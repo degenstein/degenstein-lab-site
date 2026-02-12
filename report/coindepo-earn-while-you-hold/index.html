@@ -230,20 +230,95 @@
 
   <!-- Calculator -->
   <section id="calculator" class="card">
-    <h2 class="text-2xl font-extrabold mb-2">Quick yield calculator</h2>
-    <p class="muted">
-      These examples use simple APR math for transparency.
-      Actual results depend on product structure and compounding rules.
+  <div class="flex flex-wrap items-center justify-between gap-3">
+    <h2 class="text-2xl font-extrabold">Quick calculator (simple APR estimate)</h2>
+    <div class="flex flex-wrap gap-2">
+      <span class="tag">Examples</span>
+      <span class="tag">90 days</span>
+      <span class="tag">365 days</span>
+    </div>
+  </div>
+
+  <p class="muted mt-2">
+    These are <strong>illustrative</strong> estimates using simple interest to keep the math transparent.
+    Actual results depend on product structure, payout timing, compounding rules, and the current rate shown in CoinDepo.
+  </p>
+
+  <div class="mt-5 grid md:grid-cols-2 gap-4">
+    <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+      <div class="font-extrabold mb-2">Example: $1,000 @ 21% APR (90 days)</div>
+      <p class="muted">$1,000 × 0.21 × (90 / 365) ≈ <strong>$51.78</strong></p>
+      <p class="fine mt-2">Simple interest example (not a promise). Verify current rates and terms in-app.</p>
+    </div>
+
+    <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+      <div class="font-extrabold mb-2">Example: $1,000 @ 21% APR (365 days)</div>
+      <p class="muted">$1,000 × 0.21 × (365 / 365) = <strong>$210</strong></p>
+      <p class="fine mt-2">Use this as a reference point to compare “idle” vs “earning.”</p>
+    </div>
+  </div>
+
+  <div class="mt-6 rounded-2xl border border-emerald-400/40 bg-black/40 p-5">
+    <div class="font-extrabold mb-2">Try it yourself</div>
+
+    <div class="grid md:grid-cols-4 gap-3">
+      <div class="md:col-span-2">
+        <label class="text-sm font-semibold text-gray-200">Deposit amount</label>
+        <input id="amt" type="number" value="1000" min="0" step="0.01"
+          class="mt-1 w-full rounded-xl border border-white/15 bg-black/60 px-3 py-2 text-sm
+                 focus:outline-none focus:ring-2 focus:ring-emerald-400" />
+      </div>
+      <div>
+        <label class="text-sm font-semibold text-gray-200">APR %</label>
+        <input id="apr" type="number" value="24" min="0" step="0.01"
+          class="mt-1 w-full rounded-xl border border-white/15 bg-black/60 px-3 py-2 text-sm
+                 focus:outline-none focus:ring-2 focus:ring-emerald-400" />
+      </div>
+      <div>
+        <label class="text-sm font-semibold text-gray-200">Days</label>
+        <input id="days" type="number" value="90" min="1" step="1"
+          class="mt-1 w-full rounded-xl border border-white/15 bg-black/60 px-3 py-2 text-sm
+                 focus:outline-none focus:ring-2 focus:ring-emerald-400" />
+      </div>
+    </div>
+
+    <div class="flex flex-wrap gap-2 mt-4">
+      <button class="btn-outline" type="button" onclick="preset(21,90)">21% / 90d</button>
+      <button class="btn-outline" type="button" onclick="preset(24,90)">24% / 90d</button>
+      <button class="btn-outline" type="button" onclick="preset(24,365)">24% / 365d</button>
+      <button class="btn-outline" type="button" onclick="preset(27,365)">27% / 365d</button>
+      <button class="btn-primary" type="button" onclick="calc()">Calculate</button>
+    </div>
+
+    <div class="mt-5 grid md:grid-cols-3 gap-3">
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+        <div class="fine">Estimated interest</div>
+        <div id="outInterest" class="text-2xl font-extrabold text-emerald-300">$0.00</div>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+        <div class="fine">Estimated total</div>
+        <div id="outTotal" class="text-xl font-bold text-gray-100">$0.00</div>
+      </div>
+      <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+        <div class="fine">Period gain</div>
+        <div id="outPct" class="text-sm font-semibold text-gray-200">0.00%</div>
+      </div>
+    </div>
+
+    <p class="fine mt-4">
+      Unofficial estimator using simple APR math. Real results may differ based on product structure,
+      payout timing, compounding rules, and current rates.
     </p>
 
-    <div class="mt-6">
+    <div class="mt-4">
       <a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W"
          target="_blank" rel="noopener nofollow noreferrer"
          class="btn-primary">
         Open CoinDepo →
       </a>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- Token Advantage -->
   <section id="token-advantage" class="card">
