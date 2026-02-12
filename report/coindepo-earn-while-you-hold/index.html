@@ -276,7 +276,7 @@
   <h2 class="text-2xl font-extrabold mb-4">Yield calculator</h2>
 
   <div class="grid md:grid-cols-5 gap-3">
-    <input id="amt" type="number" value="1000" class="p-2 rounded bg-black/60 border border-white/10">
+   <input id="amt" type="number" value="2000" class="p-2 rounded bg-black/60 border border-white/10">
     <input id="rate" type="number" value="24" class="p-2 rounded bg-black/60 border border-white/10">
     <input id="days" type="number" value="90" class="p-2 rounded bg-black/60 border border-white/10">
     <select id="mode" class="p-2 rounded bg-black/60 border border-white/10">
@@ -439,7 +439,7 @@ function preset90(){amt.value=1000;rate.value=24;days.value=90;mode.value="apr";
 function presetLadder(){amt.value=1000;rate.value=22;days.value=180;mode.value="apy";compound.value=12;calc();}
 function presetLong(){amt.value=1000;rate.value=24;days.value=365;mode.value="apy";compound.value=365;calc();}
 ["amt","rate","days","mode","compound"].forEach(id=>document.getElementById(id).addEventListener("input",calc));
-calc();
+presetLong();
 </script>
 
 </body>
