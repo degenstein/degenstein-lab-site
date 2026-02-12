@@ -110,7 +110,7 @@
 
     <p class="muted mt-3">
       This report breaks down <strong>CoinDepo</strong> as a yield platform for disciplined holders:
-      yield mechanics, APR vs APY, compounding math, Token Advantage, loans, and the risks that matter.
+      yield mechanics, APR vs APY, compounding math, Token Advantage, loans, and real risks.
     </p>
 
     <div class="flex flex-wrap gap-3 mt-6">
@@ -133,30 +133,27 @@
 
 <main class="wrap pb-16 space-y-8">
 
-<!-- WHAT -->
 <section class="card">
   <h2 class="text-2xl font-extrabold mb-2">What is CoinDepo?</h2>
   <p class="muted">
-    CoinDepo is a yield platform for crypto holders who want supported assets to earn
-    interest instead of remaining idle. Products vary by asset, term, payout structure,
-    and withdrawal rules.
+    CoinDepo is a yield platform for crypto holders who want supported assets
+    to earn interest instead of remaining idle.
   </p>
 </section>
 
-<!-- HOW -->
 <section class="card">
   <h2 class="text-2xl font-extrabold mb-2">How it works</h2>
   <ol class="list-decimal pl-6 text-gray-300 space-y-2">
-    <li>Deposit supported crypto or stablecoins.</li>
-    <li>Select a product and term.</li>
-    <li>Yield accrues per published mechanics.</li>
-    <li>Withdraw or roll based on rules.</li>
+    <li>Deposit supported assets</li>
+    <li>Select a product and term</li>
+    <li>Yield accrues per mechanics</li>
+    <li>Withdraw or roll by rules</li>
   </ol>
 </section>
 
 <!-- CALCULATOR -->
 <section id="calculator" class="card">
-  <h2 class="text-2xl font-extrabold mb-4">Yield calculator (APR / APY)</h2>
+  <h2 class="text-2xl font-extrabold mb-4">Yield calculator</h2>
 
   <div class="grid md:grid-cols-5 gap-3">
     <input id="amt" type="number" value="1000" class="p-2 rounded bg-black/60 border border-white/10">
@@ -174,44 +171,50 @@
     </select>
   </div>
 
+  <!-- Presets -->
+  <div class="mt-4 flex flex-wrap gap-2">
+    <button class="btn-outline" onclick="preset90()">90-Day Park</button>
+    <button class="btn-outline" onclick="presetLadder()">Yield Ladder</button>
+    <button class="btn-outline" onclick="presetLong()">Long-Term Hold</button>
+  </div>
+
+  <!-- Results -->
   <div class="mt-4 grid md:grid-cols-3 gap-3">
     <div><strong>Interest:</strong> <span id="outInterest">$0.00</span></div>
     <div><strong>Total:</strong> <span id="outTotal">$0.00</span></div>
     <div><strong>Gain:</strong> <span id="outPct">0.00%</span></div>
   </div>
 
-  <p class="fine mt-4">
-    APR = simple interest. APY = compound interest using selected frequency.
-  </p>
+  <!-- Chart -->
+  <div class="mt-6">
+    <div class="font-extrabold mb-2">Estimated growth curve</div>
+    <canvas id="growthChart" width="600" height="140"
+            class="w-full rounded-xl border border-white/10 bg-black/40"></canvas>
+    <p class="fine mt-2">Illustrative only. Actual results depend on product rules.</p>
+  </div>
 </section>
 
-<!-- TOKEN ADVANTAGE -->
 <section class="card">
   <h2 class="text-2xl font-extrabold mb-2">$COINDEPO Token Advantage</h2>
   <p class="muted">
-    Token Advantage is optional. Treat token exposure as a separate risk decision
-    from yield usage.
+    Optional. Treat token exposure separately from yield usage.
   </p>
 </section>
 
-<!-- LOANS -->
 <section class="card">
   <h2 class="text-2xl font-extrabold mb-2">Crypto-backed loans</h2>
   <p class="muted">
-    Loans can provide liquidity but introduce liquidation risk.
-    Use conservatively.
+    Loans provide liquidity but introduce liquidation risk.
   </p>
 </section>
 
-<!-- BURN -->
 <section class="card">
   <h2 class="text-2xl font-extrabold mb-2">Token mechanics & burns</h2>
   <p class="muted">
-    Burns are watch items, not guarantees. Execution matters.
+    Burns are watch items, not guarantees.
   </p>
 </section>
 
-<!-- DYOR -->
 <section class="card">
   <h2 class="text-2xl font-extrabold mb-2">DYOR checklist</h2>
   <ul class="list-disc pl-6 text-gray-300 space-y-2">
@@ -222,7 +225,6 @@
   </ul>
 </section>
 
-<!-- RISK -->
 <section id="risk" class="card">
   <h2 class="text-2xl font-extrabold mb-2">Final risk notes</h2>
   <p class="muted">
@@ -242,37 +244,66 @@
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
 
-function money(v){ return "$" + v.toFixed(2); }
-function pct(v){ return v.toFixed(2) + "%"; }
+const amt = document.getElementById("amt");
+const rate = document.getElementById("rate");
+const days = document.getElementById("days");
+const mode = document.getElementById("mode");
+const compound = document.getElementById("compound");
+
+const outI = document.getElementById("outInterest");
+const outT = document.getElementById("outTotal");
+const outP = document.getElementById("outPct");
+
+const canvas = document.getElementById("growthChart");
+const ctx = canvas.getContext("2d");
 
 function calc(){
-  const P = parseFloat(amt.value || 0);
-  const r = parseFloat(rate.value || 0) / 100;
-  const d = parseInt(days.value || 0);
-  const mode = document.getElementById("mode").value;
-  const n = parseInt(document.getElementById("compound").value);
+  const P = parseFloat(amt.value||0);
+  const r = parseFloat(rate.value||0)/100;
+  const d = parseInt(days.value||0);
+  const n = parseInt(compound.value);
 
-  let total = 0;
-  if(mode === "apr"){
-    total = P * (1 + r * (d / 365));
-  } else {
-    total = P * Math.pow(1 + r / n, n * (d / 365));
-  }
+  let total = mode.value==="apr"
+    ? P*(1+r*(d/365))
+    : P*Math.pow(1+r/n,n*(d/365));
 
-  const interest = total - P;
-  outInterest.textContent = money(interest);
-  outTotal.textContent = money(total);
-  outPct.textContent = pct((interest / P) * 100);
+  const interest = total-P;
+
+  outI.textContent = "$"+interest.toFixed(2);
+  outT.textContent = "$"+total.toFixed(2);
+  outP.textContent = ((interest/P)*100||0).toFixed(2)+"%";
+
+  draw(P,r,d);
 }
 
-["amt","rate","days","mode","compound"].forEach(id =>
-  document.getElementById(id).addEventListener("input", calc)
-);
+function draw(P,r,d){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.beginPath();
+  ctx.strokeStyle="#34d399";
+  ctx.lineWidth=2;
+  for(let i=0;i<=24;i++){
+    const t=d*(i/24);
+    const v=P*(1+r*(t/365));
+    const x=(i/24)*canvas.width;
+    const y=canvas.height-(v/P)*canvas.height;
+    i?ctx.lineTo(x,y):ctx.moveTo(x,y);
+  }
+  ctx.stroke();
+}
+
+function preset90(){ amt.value=1000; rate.value=24; days.value=90; mode.value="apr"; compound.value=365; calc(); }
+function presetLadder(){ amt.value=1000; rate.value=22; days.value=180; mode.value="apy"; compound.value=12; calc(); }
+function presetLong(){ amt.value=1000; rate.value=24; days.value=365; mode.value="apy"; compound.value=365; calc(); }
+
+["amt","rate","days","mode","compound"].forEach(id=>{
+  document.getElementById(id).addEventListener("input",calc);
+});
 
 calc();
 </script>
 
 </body>
 </html>
+
 
 
