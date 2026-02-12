@@ -435,9 +435,9 @@ function draw(P,r,d,n){
   yieldPts.forEach((v,i)=>{const x=i/steps*canvas.width,y=canvas.height-((v-min)/range)*(canvas.height-16)-8;i?ctx.lineTo(x,y):ctx.moveTo(x,y);});ctx.stroke();
 }
 
-function preset90(){amt.value=1000;rate.value=24;days.value=90;mode.value="apr";compound.value=365;calc();}
-function presetLadder(){amt.value=1000;rate.value=22;days.value=180;mode.value="apy";compound.value=12;calc();}
-function presetLong(){amt.value=1000;rate.value=24;days.value=365;mode.value="apy";compound.value=365;calc();}
+function preset90(){amt.value=2000;rate.value=24;days.value=90;mode.value="apr";compound.value=365;calc();}
+function presetLadder(){amt.value=2000;rate.value=22;days.value=180;mode.value="apy";compound.value=12;calc();}
+function presetLong(){amt.value=2000;rate.value=24;days.value=365;mode.value="apy";compound.value=365;calc();}
 ["amt","rate","days","mode","compound"].forEach(id=>document.getElementById(id).addEventListener("input",calc));
 presetLong();
 </script>
