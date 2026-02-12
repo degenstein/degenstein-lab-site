@@ -6,320 +6,222 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- SEO -->
-  <meta name="description" content="Bitcoin vs Ethereum vs Solana explained through the Gold, Silver, and Copper monetary standard analogy. Roles, risks, price history, and onchain context — research-first, no hopium." />
+  <meta name="description" content="Bitcoin vs Ethereum vs Solana vs XRP explained through the Gold, Silver, Copper, and Clearing monetary stack." />
   <link rel="canonical" href="https://degenstein.xyz/report/btc-vs-eth-vs-sol/" />
   <meta name="robots" content="index, follow" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="article" />
-  <meta property="og:site_name" content="Degenstein Bonus Hub" />
+  <meta property="og:site_name" content="The Degenstein Report" />
   <meta property="og:title" content="BTC vs ETH vs SOL vs XRP — The Crypto Monetary Stack" />
-  <meta property="og:description" content="Bitcoin as digital gold, Ethereum as programmable silver, Solana as execution copper. A serious framework for understanding crypto's monetary stack." />
+  <meta property="og:description" content="Gold, Silver, Copper, and Clearing — applied to crypto." />
   <meta property="og:image" content="https://degenstein.xyz/assets/btcethsol.png" />
 
-  <!-- Twitter -->
+  <!-- X -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="BTC vs ETH vs SOL vs XRP — The Crypto Monetary Stack" />
-  <meta name="twitter:description" content="Gold, Silver, Copper — applied to Bitcoin, Ethereum, and Solana." />
-  <meta name="twitter:image" content="https://degenstein.xyz/assets/btcethsol.png" />
 
   <style>
     :root{
-      --bg:#070A0F; --panel:rgba(255,255,255,0.06); --panel2:rgba(255,255,255,0.08);
-      --text:rgba(255,255,255,0.90); --muted:rgba(255,255,255,0.70); --muted2:rgba(255,255,255,0.55);
-      --stroke:rgba(255,255,255,0.12); --glow:rgba(0,255,170,0.16);
-      --accent:#00FFAA; --accent2:#7C3AED; --warn:#FFB703;
-      --radius:18px; --shadow:0 18px 55px rgba(0,0,0,0.55); --shadow2:0 12px 40px rgba(0,0,0,0.45);
-      --max:1120px; --mono:ui-monospace, Menlo, Monaco, Consolas, monospace; --sans:system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      --bg:#070A0F;
+      --panel:rgba(255,255,255,0.06);
+      --panel2:rgba(255,255,255,0.085);
+      --text:rgba(255,255,255,0.92);
+      --muted:rgba(255,255,255,0.70);
+      --stroke:rgba(255,255,255,0.12);
+      --accent:#00FFAA;
+      --violet:#7C3AED;
+      --radius:18px;
+      --shadow:0 20px 60px rgba(0,0,0,0.55);
+      --max:1120px;
+      --sans:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      --mono:ui-monospace,Menlo,Monaco,Consolas,monospace;
     }
+
     *{box-sizing:border-box}
     body{
-      margin:0; font-family:var(--sans); color:var(--text);
+      margin:0;
+      font-family:var(--sans);
+      color:var(--text);
       background:
-        radial-gradient(1200px 700px at 20% 10%, rgba(0,255,170,0.16), transparent 60%),
-        radial-gradient(900px 600px at 85% 25%, rgba(124,58,237,0.18), transparent 60%),
+        radial-gradient(1200px 700px at 18% 10%, rgba(0,255,170,.18), transparent 60%),
+        radial-gradient(900px 600px at 85% 20%, rgba(124,58,237,.22), transparent 60%),
         var(--bg);
-      line-height:1.45;
+      line-height:1.55;
     }
-    a{color:var(--accent); text-decoration:none} a:hover{text-decoration:underline}
-    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 70px}
-    .topbar{display:flex; justify-content:space-between; align-items:center; padding:14px 16px; border:1px solid var(--stroke); border-radius:var(--radius); background:linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.04)); box-shadow:var(--shadow2)}
-    .brand{display:flex; gap:10px; font-weight:800}
-    .dot{width:10px; height:10px; border-radius:999px; background:var(--accent); box-shadow:0 0 18px var(--glow)}
-    .nav{display:flex; gap:14px; flex-wrap:wrap} .nav a{font-size:13px; color:var(--muted); font-weight:600}
-    .hero{margin-top:18px; padding:26px 22px; border:1px solid var(--stroke); border-radius:var(--radius); background:linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04)); box-shadow:var(--shadow)}
-    .kicker{display:inline-flex; gap:10px; font-size:12px; color:var(--muted); border:1px solid var(--stroke); padding:8px 10px; border-radius:999px; background:rgba(0,0,0,0.25)}
-    h1{font-size:34px; margin:12px 0 10px}
-    .sub{color:var(--muted); max-width:75ch}
-    .hero-cover{margin-top:16px; border:1px solid var(--stroke); border-radius:16px; overflow:hidden}
-    .hero-cover img{
-      width:100%;
-      max-height:420px;
-      object-fit:contain;
-      display:block;
+
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .wrap{max-width:var(--max);margin:0 auto;padding:28px 18px 80px}
+
+    /* Top Bar */
+    .topbar{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:14px 16px;border:1px solid var(--stroke);
+      border-radius:var(--radius);
+      background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.04));
+      box-shadow:var(--shadow);
     }
-    .grid{display:grid; grid-template-columns:1.2fr .8fr; gap:16px; margin-top:16px}
-    @media(max-width:980px){.grid{grid-template-columns:1fr}}
-    .card{padding:18px; border:1px solid var(--stroke); border-radius:var(--radius); background:linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.035)); box-shadow:var(--shadow2)}
-    .card h2{margin:0 0 10px}
-    .muted{color:var(--muted)}
-    .bullets{padding-left:18px; color:var(--muted)} .bullets li{margin:6px 0}
-    .table{width:100%; border-collapse:collapse; margin-top:10px; border:1px solid var(--stroke); border-radius:16px; overflow:hidden}
-    .table th,.table td{padding:10px; border-bottom:1px solid var(--stroke); font-size:13px}
-    .table th{background:rgba(255,255,255,0.05); text-align:left}
-    .section{margin-top:18px; padding:18px; border:1px solid var(--stroke); border-radius:var(--radius); background:linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.03))}
-    .two{display:grid; grid-template-columns:1fr 1fr; gap:14px} @media(max-width:980px){.two{grid-template-columns:1fr}}
-    .chartbox{border:1px solid var(--stroke); border-radius:16px; overflow:hidden; background:rgba(0,0,0,0.22); min-height:420px}
-    .charthead{display:flex; justify-content:space-between; padding:10px 12px; border-bottom:1px solid var(--stroke)}
-    .tag{font-family:var(--mono); font-size:11px; padding:4px 8px; border-radius:999px; border:1px solid var(--stroke)}
-    .callout{margin-top:14px; padding:16px; border:1px solid rgba(0,255,170,0.28); border-radius:var(--radius); background:radial-gradient(650px 220px at 20% 30%, rgba(0,255,170,0.18), rgba(0,0,0,0.15))}
-    .footer{margin-top:18px; font-size:12px; color:var(--muted2)}
-      .sharex{display:inline-flex;align-items:center;justify-content:center;padding:8px 10px;border-radius:12px;border:1px solid var(--stroke);background:rgba(255,255,255,0.07);color:var(--text);font-weight:800;font-size:13px;cursor:pointer}
-    .sharex:hover{border-color:rgba(0,255,170,0.35);background:linear-gradient(180deg, rgba(0,255,170,0.18), rgba(255,255,255,0.06))}
+    .brand{display:flex;gap:10px;font-weight:900}
+    .dot{
+      width:10px;height:10px;border-radius:999px;
+      background:var(--accent);
+      box-shadow:0 0 18px rgba(0,255,170,.6);
+    }
+    .nav{display:flex;gap:14px;flex-wrap:wrap}
+    .nav a{font-size:13px;color:var(--muted);font-weight:600}
+
+    /* Hero */
+    .hero{
+      margin-top:18px;
+      padding:28px 24px;
+      border:1px solid var(--stroke);
+      border-radius:var(--radius);
+      background:
+        radial-gradient(600px 200px at 15% 25%, rgba(0,255,170,.22), transparent 55%),
+        linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.04));
+      box-shadow:var(--shadow);
+    }
+    h1{font-size:36px;margin:12px 0 10px}
+    .sub{color:var(--muted);max-width:78ch}
+
+    .hero-cover{
+      margin-top:18px;
+      border-radius:16px;
+      border:1px solid var(--stroke);
+      overflow:hidden;
+    }
+    .hero-cover img{width:100%;display:block}
+
+    /* Sections */
+    .section{
+      margin-top:22px;
+      padding:22px;
+      border-radius:var(--radius);
+      border:1px solid var(--stroke);
+      background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.03));
+      box-shadow:0 14px 40px rgba(0,0,0,.45);
+    }
+    .section h2{margin-top:0}
+
+    .bullets{padding-left:18px;color:var(--muted)}
+    .bullets li{margin:8px 0}
+
+    /* Asset Cards */
+    .asset{
+      margin-top:16px;
+      padding:18px;
+      border-radius:16px;
+      border:1px solid var(--stroke);
+      background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.04));
+    }
+    .btc{box-shadow:0 0 0 1px rgba(247,147,26,.18),0 0 26px rgba(247,147,26,.10)}
+    .eth{box-shadow:0 0 0 1px rgba(139,156,255,.18),0 0 26px rgba(139,156,255,.12)}
+    .sol{box-shadow:0 0 0 1px rgba(20,241,149,.20),0 0 26px rgba(20,241,149,.14)}
+    .xrp{box-shadow:0 0 0 1px rgba(74,144,226,.20),0 0 26px rgba(74,144,226,.14)}
+
+    .asset-tag{
+      font-size:.7rem;
+      font-weight:900;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      display:inline-block;
+      margin-bottom:6px;
+    }
+
+    /* Callout */
+    .callout{
+      margin-top:16px;
+      padding:18px;
+      border-radius:var(--radius);
+      border:1px solid rgba(0,255,170,.35);
+      background:
+        radial-gradient(600px 220px at 20% 30%, rgba(0,255,170,.25), rgba(0,0,0,.2));
+    }
+
+    .footer{
+      margin-top:20px;
+      font-size:12px;
+      color:rgba(255,255,255,.55);
+    }
   </style>
 </head>
+
 <body>
 <div class="wrap">
+
   <div class="topbar">
-    <div class="brand"><span class="dot"></span><span>Degenstein Bonus Hub</span></div>
+    <div class="brand"><span class="dot"></span>The Degenstein Report</div>
     <div class="nav">
-        <a href="https://degenstein.xyz/">Home</a>
-        <a href="https://degenstein.xyz/report/">Reports</a>
-        <a href="#framework">Framework</a>
-        <a href="#allocation">Allocations</a>
-        <a href="#final">Final Take</a>
-        <button class="sharex" type="button" onclick="shareOnX()">✕ Share on X</button>
-      </div>
+      <a href="https://degenstein.xyz/">Home</a>
+      <a href="https://degenstein.xyz/report/">Reports</a>
+    </div>
   </div>
 
   <header class="hero">
-    <div class="kicker"><span>The Degenstein Report</span><span>Macro-first • no hopium</span></div>
     <h1>BTC vs ETH vs SOL vs XRP</h1>
-    <p class="sub">Understanding crypto through the <strong>Gold, Silver, and Copper</strong> monetary standard: Bitcoin as pristine collateral, Ethereum as programmable settlement, and Solana as high-speed economic throughput.</p>
-    <div class="hero-cover" style="max-height:420px;"><img src="https://degenstein.xyz/assets/btcethsol.png" alt="BTC ETH SOL Monetary Stack" /></div>
-
-    <div class="grid">
-      <div class="card">
-        <h2 id="framework">The Four-Layer Crypto Monetary Stack</h2>
-        <ul class="bullets">
-          <li><strong>Gold → Bitcoin (BTC):</strong> Scarce, neutral, hardest money. Optimized for security and long-term value storage.</li>
-          <li><strong>Silver → Ethereum (ETH):</strong> Monetary premium + utility. Settlement, collateral, and programmable finance.</li>
-          <li><strong>Copper → Solana (SOL):</strong> High velocity. Cheap, fast execution for everyday economic activity.</li>
-          <li><strong>Clearing Layer → XRP:</strong> Liquidity bridge. Optimized for rapid cross-network and cross-border value transfer.</li>
-        </ul>
-        <p class="muted">Historically, societies didn’t choose one metal — they used a <strong>stack</strong>. Crypto is converging on the same structure, now with a dedicated liquidity-clearing layer.</p>
-      </div>
-
-      <div class="card">
-        <h2 id="roles">Roles at a Glance</h2>
-        <table class="table">
-      <thead>
-        <tr><th>Asset</th><th>Monetary Role</th><th>Portfolio Function</th><th>Risk Profile</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Bitcoin (BTC)</td><td>Gold</td><td>Base collateral, macro hedge</td><td>Lowest protocol risk</td></tr>
-        <tr><td>Ethereum (ETH)</td><td>Silver</td><td>Settlement, yield-bearing collateral</td><td>Medium (complexity)</td></tr>
-        <tr><td>Solana (SOL)</td><td>Copper</td><td>Growth, throughput, UX adoption</td><td>Higher (execution focus)</td></tr>
-        <tr><td>XRP</td><td>Clearing Asset</td><td>Liquidity routing, interoperability</td><td>Unique (regulatory + adoption)</td></tr>
-      </tbody>
-    </table>
-      </div>
+    <p class="sub">
+      Crypto is converging on a <strong>four-layer monetary stack</strong> —
+      Bitcoin as base collateral, Ethereum as settlement, Solana as execution,
+      and XRP as liquidity clearing.
+    </p>
+    <div class="hero-cover">
+      <img src="https://degenstein.xyz/assets/btcethsol.png" alt="Crypto Monetary Stack Diagram">
     </div>
   </header>
 
-  <section class="section" id="macro-history">
-    <h2>From Gold & Silver to Crypto: A Monetary History</h2>
-    <p class="muted">
-      For most of human history, monetary systems were <strong>layered</strong>, not singular. Societies used
-      <strong>gold</strong> for long-term reserves and sovereign settlement, <strong>silver</strong> for commercial settlement and banking,
-      and <strong>copper</strong> for day-to-day transactions.
-    </p>
-    <ul class="bullets">
-      <li><strong>Bimetallic standards:</strong> Gold anchored trust and reserves; silver handled broader economic circulation.</li>
-      <li><strong>Copper coinage:</strong> Enabled high-velocity local trade where precious metals were impractical.</li>
-      <li><strong>Failure mode:</strong> Systems broke when one layer was forced to do every job.</li>
-    </ul>
-    <p class="muted">
-      Crypto is rediscovering this same structure organically. Instead of metals, we now have
-      <strong>BTC, ETH, and SOL</strong> filling distinct monetary roles.
-    </p>
-  </section>
+  <section class="section">
+    <h2>The Monetary Stack Explained</h2>
 
-  <section class="section" id="full-diagram">
-    <h2>The Four-Layer Crypto Monetary Stack (Full Diagram)</h2>
-    <p class="muted">
-      The full visual below shows the complete monetary stack — from base collateral to execution
-      and clearing — in a single reference view.
-    </p>
-    <div class="hero-cover" style="max-height:none; margin-top:12px;">
-      <img src="https://degenstein.xyz/assets/btcethsol.png" alt="Four-Layer Crypto Monetary Stack Diagram" />
+    <div class="asset btc">
+      <span class="asset-tag">Bitcoin • Gold</span>
+      <p class="muted">Pristine collateral, censorship resistance, monetary anchor.</p>
+    </div>
+
+    <div class="asset eth">
+      <span class="asset-tag">Ethereum • Silver</span>
+      <p class="muted">Settlement layer, programmable finance, yield-bearing collateral.</p>
+    </div>
+
+    <div class="asset sol">
+      <span class="asset-tag">Solana • Copper</span>
+      <p class="muted">High-velocity execution, consumer-grade throughput.</p>
+    </div>
+
+    <div class="asset xrp">
+      <span class="asset-tag">XRP • Clearing</span>
+      <p class="muted">Liquidity routing between networks and institutions.</p>
     </div>
   </section>
 
-  <section class="section" id="price-history">
-    <h2>Price History</h2>
-    <p class="muted">Side-by-side TradingView embeds for long-term context.</p>
-    <div class="two">
-      <div class="chartbox"><div class="charthead"><strong>Bitcoin</strong><span class="tag">BTCUSD</span></div><div id="tv-btc" style="height:420px"></div></div>
-      <div class="chartbox"><div class="charthead"><strong>Ethereum</strong><span class="tag">ETHUSD</span></div><div id="tv-eth" style="height:420px"></div></div>
-    </div>
-    <div class="chartbox" style="margin-top:14px"><div class="charthead"><strong>Solana</strong><span class="tag">SOLUSD</span></div><div id="tv-sol" style="height:420px"></div></div>
-  </section>
+  <section class="section">
+    <h2>Earn While You Hold</h2>
+    <p class="muted">
+      Instead of forcing trades during consolidation, many long-term holders
+      reduce time risk by earning yield while remaining positioned.
+    </p>
 
-  <section class="section" id="allocation">
-    <h2>Why Portfolios Hold the Full Stack</h2>
-    <p class="muted">
-      As crypto matures, portfolios increasingly resemble a <strong>four-layer monetary system</strong>.
-      Each asset solves a different coordination problem — removing one creates friction elsewhere.
-    </p>
-    <h2>Why Portfolios Hold All Three</h2>
-    <p class="muted">
-      Sophisticated portfolios don’t try to pick a single winner. They allocate across the
-      <strong>monetary stack</strong> to balance security, utility, and velocity.
-    </p>
-    <table class="table">
-      <thead>
-        <tr><th>Asset</th><th>Role</th><th>Portfolio Function</th><th>Risk Profile</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Bitcoin (BTC)</td><td>Gold</td><td>Base collateral, macro hedge</td><td>Lowest protocol risk</td></tr>
-        <tr><td>Ethereum (ETH)</td><td>Silver</td><td>Settlement, yield-bearing collateral</td><td>Medium (complexity)</td></tr>
-        <tr><td>Solana (SOL)</td><td>Copper</td><td>Growth, throughput, UX adoption</td><td>Higher (execution focus)</td></tr>
-      </tbody>
-    </table>
-    <p class="muted">
-      Removing one layer forces the others to do jobs they are not optimized for — historically a losing strategy.
-    </p>
-  </section>
-
-  <section class="section" id="sample-allocations">
-    <h2>Sample Allocation Ranges (Including XRP)</h2>
-    <p class="muted">
-      XRP is typically sized as a <strong>liquidity layer</strong>, not a growth layer. Allocations remain smaller
-      but persistent across profiles.
-    </p>
-    <table class="table">
-      <thead>
-        <tr><th>Profile</th><th>BTC</th><th>ETH</th><th>SOL</th><th>XRP</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Conservative</td><td>55–65%</td><td>20–30%</td><td>5–10%</td><td>3–5%</td></tr>
-        <tr><td>Balanced</td><td>40–50%</td><td>30–35%</td><td>15–20%</td><td>5–8%</td></tr>
-        <tr><td>Aggressive</td><td>25–35%</td><td>30–40%</td><td>25–30%</td><td>5–10%</td></tr>
-      </tbody>
-    </table>
-    <p class="muted">
-      XRP’s role is structural — providing optionality if traditional finance increasingly interfaces with public rails.
-    </p>
-  </section>
-
-  <section class="section" id="yield-strategy">
-    <h2>Gold, Silver & Copper — Earn While You Hold</h2>
-    <p class="muted">
-      In traditional systems, each monetary layer also generated yield in different ways.
-      Crypto mirrors this dynamic through modern yield platforms.
-    </p>
-    <ul class="bullets">
-      <li><strong>BTC (Gold):</strong> Lower yield, highest confidence. Often used sparingly to generate conservative returns.</li>
-      <li><strong>ETH (Silver):</strong> Core yield engine via staking and collateralized strategies.</li>
-      <li><strong>SOL (Copper):</strong> Higher-velocity yield tied to network activity and growth.</li>
-    </ul>
     <div class="callout">
-      <strong>Practical approach:</strong> Use a platform like CoinDepo to earn yield across all three layers
-      while maintaining long-term exposure — instead of trying to trade in and out.
-    </div>
-    <p class="muted">
-      The objective isn’t maximum APR — it’s <strong>compounding aligned with monetary role</strong>.
-    </p>
-  </section>
-
-  <section class="section" id="xrp-myths">
-    <h2>Why XRP Isn’t Trying to Be ETH or SOL</h2>
-    <p class="muted">
-      A common mistake is evaluating XRP using the same criteria as smart-contract platforms.
-      XRP is not competing for DeFi TVL, NFT volume, or consumer apps — and it doesn’t need to.
-    </p>
-    <ul class="bullets">
-      <li><strong>Not a smart-contract hub:</strong> XRP doesn’t aim to host generalized DeFi or app ecosystems.</li>
-      <li><strong>Optimized for clearing:</strong> Fast finality and low-cost transfers matter more than programmability.</li>
-      <li><strong>Different buyer:</strong> XRP adoption is driven by financial institutions and payment corridors, not retail dApp users.</li>
-    </ul>
-    <p class="muted">
-      Judging XRP by ETH or SOL metrics is like judging SWIFT by how many apps run on it — category error.
-    </p>
-  </section>
-
-  <section class="section" id="institutional-lens">
-    <h2>The Institutional Lens</h2>
-    <p class="muted">
-      Institutional allocators rarely ask which chain is “best.” Instead, they ask which assets
-      function as <strong>pristine collateral</strong>, which enable <strong>settlement and yield</strong>, and which
-      support <strong>economic throughput</strong>. In that framing, Bitcoin anchors balance sheets,
-      Ethereum underwrites financial activity, and Solana captures transactional growth.
-      The stack reduces single-network dependency while preserving upside across adoption curves.
-    </p>
-  </section>
-
-  <section class="section" id="regulatory-asymmetry">
-    <h2>Regulatory Asymmetry: Why XRP’s Path Differs</h2>
-    <p class="muted">
-      Unlike most crypto assets, XRP has spent years operating under intense regulatory scrutiny.
-      While painful in the short term, this has created a unique asymmetry.
-    </p>
-    <ul class="bullets">
-      <li><strong>Early legal clarity:</strong> XRP’s regulatory battles forced structural separation between token utility and issuer.</li>
-      <li><strong>Institution-first posture:</strong> XRP integrations often prioritize compliance, reporting, and auditability.</li>
-      <li><strong>Asymmetric upside:</strong> If regulatory clarity expands, XRP is already positioned for enterprise adoption.</li>
-    </ul>
-    <p class="muted">
-      BTC, ETH, and SOL face evolving regulatory frameworks. XRP has already been stress-tested by one.
-    </p>
-  </section>
-
-  <section class="section" id="earn-while-you-hold">
-    <h2>Earn While You Hold (CoinDepo)</h2>
-    <p class="muted">
-      Instead of overtrading, many investors focus on compounding yield while staying positioned
-      across the Four-Layer Crypto Monetary Stack.
-    </p>
-    <div class="callout">
-      <strong>CoinDepo Strategy:</strong> Earn yield on BTC, ETH, SOL, and XRP while maintaining long-term exposure.
-      <div style="margin-top:10px;">
-        <a class="btn primary" href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV" target="_blank" rel="noopener">Join CoinDepo</a>
-        <a class="btn" href="https://degenstein.xyz/report/">Return to Reports</a>
-        <a class="btn" href="https://degenstein.xyz/">Return to Home</a>
-      </div>
-      <p class="tiny" style="margin-top:10px;">Referral Code: <strong>R-UgAoMRNV</strong></p>
+      <p>
+        Platforms like <strong>CoinDepo</strong> allow holders to earn yield on
+        BTC, ETH, SOL, and XRP without exiting long-term exposure.
+      </p>
+      <a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W" target="_blank" rel="noopener">
+        → Explore CoinDepo
+      </a>
     </div>
   </section>
 
-  <section class="section" id="final">
+  <section class="section">
     <h2>Final Take</h2>
-    <p class="muted">Bitcoin, Ethereum, Solana, and XRP are not competitors in a zero-sum game. They occupy different monetary niches — just like gold, silver, copper, and clearing rails did for centuries — with <strong>XRP explicitly serving the liquidity and clearing function between networks and institutions</strong>.</p>
-    <div class="callout">
-      <strong>The winning strategy historically:</strong> hold the base money (BTC), use the settlement layer (ETH), and transact on the fastest rails (SOL).
-    </div>
+    <p class="muted">
+      These assets are not competing — they are complementary.
+      Like historical monetary systems, strength comes from the stack.
+    </p>
     <div class="footer">Educational content only. Not financial advice.</div>
   </section>
-</div>
 
-<script src="https://s3.tradingview.com/tv.js"></script>
-<script>
-  function mount(id, symbol){
-    new TradingView.widget({ autosize:true, symbol, interval:"D", timezone:"Etc/UTC", theme:"dark", style:"1", container_id:id });
-  }
-  mount("tv-btc","COINBASE:BTCUSD");
-  mount("tv-eth","COINBASE:ETHUSD");
-  mount("tv-sol","COINBASE:SOLUSD");
-</script>
-<script>
-  function shareOnX(){
-    const url = 'https://degenstein.xyz/report/four-layer-crypto-monetary-stack';
-    const text = 'The Four-Layer Crypto Monetary Stack: BTC (Gold), ETH (Settlement), SOL (Execution), XRP (Clearing).';
-    const intent = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(url);
-    window.open(intent, '_blank', 'noopener,noreferrer');
-  }
-</script>
+</div>
 </body>
 </html>
 
