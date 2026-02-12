@@ -12,26 +12,23 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="article" />
-  <meta property="og:site_name" content="Degenstein Bonus Hub" />
+  <meta property="og:site_name" content="The Degenstein Report" />
   <meta property="og:title" content="Spring Crypto Outlook — Positioning Before the Move" />
-  <meta property="og:description" content="Macro, regulation, catalysts, and yield. Spring is the setup phase." />
+  <meta property="og:description" content="Macro, regulation, catalysts, and yield during consolidation." />
   <meta property="og:image" content="https://degenstein.xyz/assets/spring-crypto-outlook.png" />
 
-  <!-- Twitter -->
+  <!-- X -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Spring Crypto Outlook — Positioning Before the Move" />
-  <meta name="twitter:description" content="Spring is the setup phase. Positioning beats chasing." />
-  <meta name="twitter:image" content="https://degenstein.xyz/assets/spring-crypto-outlook.png" />
 
   <style>
     :root{
       --bg:#070A0F;
-      --text:rgba(255,255,255,0.92);
-      --muted:rgba(255,255,255,0.70);
-      --stroke:rgba(255,255,255,0.12);
+      --text:rgba(255,255,255,.92);
+      --muted:rgba(255,255,255,.70);
+      --stroke:rgba(255,255,255,.12);
       --accent:#00FFAA;
       --radius:18px;
-      --shadow:0 18px 55px rgba(0,0,0,0.55);
+      --shadow:0 18px 55px rgba(0,0,0,.55);
       --max:1120px;
       --sans:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
     }
@@ -41,408 +38,190 @@
       font-family:var(--sans);
       color:var(--text);
       background:
-        radial-gradient(1200px 700px at 20% 10%, rgba(0,255,170,0.16), transparent 60%),
-        radial-gradient(900px 600px at 85% 25%, rgba(124,58,237,0.18), transparent 60%),
+        radial-gradient(1200px 700px at 20% 10%, rgba(0,255,170,0.14), transparent 60%),
+        radial-gradient(900px 600px at 85% 25%, rgba(124,58,237,0.16), transparent 60%),
         var(--bg);
       line-height:1.55;
     }
     a{color:var(--accent);text-decoration:none}
-    .wrap{max-width:var(--max);margin:0 auto;padding:28px 18px 70px}
-
-    .topbar{
-      display:flex;justify-content:space-between;align-items:center;
-      padding:14px 16px;border:1px solid var(--stroke);
-      border-radius:var(--radius);background:rgba(255,255,255,0.05);
+    .wrap{max-width:var(--max);margin:0 auto;padding:28px 18px 80px}
+    .card{
+      margin-top:22px;
+      padding:22px;
+      border-radius:var(--radius);
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.05);
       box-shadow:var(--shadow)
     }
-    .brand{display:flex;gap:10px;font-weight:800}
-    .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 16px rgba(0,255,170,.5)}
-    .nav{display:flex;gap:12px;flex-wrap:wrap}
-    .nav a{font-size:13px;color:var(--muted);font-weight:600}
-    .sharex{
-      padding:8px 10px;border-radius:12px;border:1px solid var(--stroke);
-      background:rgba(255,255,255,0.07);color:var(--text);
-      font-weight:800;font-size:13px;cursor:pointer
-    }
-    .sharex:hover{border-color:rgba(0,255,170,0.35);background:rgba(0,255,170,0.18)}
-
-    .hero{
-      margin-top:18px;padding:26px 22px;border:1px solid var(--stroke);
-      border-radius:var(--radius);background:rgba(255,255,255,0.06);
-      box-shadow:var(--shadow)
-    }
-    h1{font-size:34px;margin:12px 0 10px}
-    h2.section-title{font-size:1.35rem;letter-spacing:.02em;margin-bottom:6px}
-    .sub{color:var(--muted);max-width:75ch}
-
-    .hero-cover{margin-top:16px}
-    .hero-cover img{width:100%;border-radius:16px;border:1px solid var(--stroke)}
-
-    .section{
-      margin-top:22px;padding:20px;border:1px solid var(--stroke);
-      border-radius:var(--radius);background:rgba(255,255,255,0.04)
-    }
-
+    h1{font-size:34px;margin:8px 0}
+    h2{font-size:1.35rem;margin-bottom:6px}
+    .sub{color:var(--muted);max-width:78ch}
     .bullets{padding-left:18px;color:var(--muted)}
     .bullets li{margin:8px 0}
-
-    .table{width:100%;border-collapse:collapse;margin-top:12px}
-    .table th,.table td{padding:10px;border-bottom:1px solid var(--stroke);font-size:13px}
-    .table th{text-align:left;color:var(--muted)}
-
+    .hero img{width:100%;border-radius:16px;border:1px solid var(--stroke)}
+    .asset{margin-top:16px;padding:18px;border-radius:14px;border:1px solid var(--stroke)}
+    .tag{font-size:.7rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
     .callout{
-      margin-top:16px;padding:16px;border:1px solid rgba(0,255,170,0.3);
-      border-radius:var(--radius);background:rgba(0,255,170,0.12)
+      margin-top:18px;
+      padding:18px;
+      border-radius:16px;
+      border:1px solid rgba(0,255,170,.35);
+      background:rgba(0,255,170,.12)
     }
-
-    /* Asset styling */
-    .asset{margin-top:18px;padding:18px;border-radius:14px;border:1px solid var(--stroke);
-      background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02))}
-    .asset-tag{font-size:.7rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase;display:inline-block;margin-bottom:6px}
-
-    .btc{color:#f7931a}.eth{color:#8b9cff}.sol{color:#14f195}.avax{color:#e84142}
-    .xrp{color:#4a90e2}.ondo{color:#7c3aed}.link{color:#2a5ada}
-
-    .glow-btc{box-shadow:0 0 0 1px rgba(247,147,26,.15),0 0 22px rgba(247,147,26,.08)}
-    .glow-sol{box-shadow:0 0 0 1px rgba(20,241,149,.18),0 0 22px rgba(20,241,149,.10)}
-    .glow-avax{box-shadow:0 0 0 1px rgba(232,65,66,.18),0 0 22px rgba(232,65,66,.10)}
-    .glow-xrp{box-shadow:0 0 0 1px rgba(74,144,226,.18),0 0 22px rgba(74,144,226,.10)}
-    .glow-ondo{box-shadow:0 0 0 1px rgba(124,58,237,.18),0 0 22px rgba(124,58,237,.10)}
-    .glow-link{box-shadow:0 0 0 1px rgba(42,90,218,.18),0 0 22px rgba(42,90,218,.10)}
-
-    .footer{margin-top:18px;font-size:12px;color:rgba(255,255,255,0.55)}
+    .btn{
+      display:inline-block;
+      margin-top:10px;
+      padding:10px 14px;
+      border-radius:999px;
+      background:linear-gradient(135deg,#00ffaa,#22c55e);
+      color:#020617;
+      font-weight:900
+    }
+    footer{margin-top:22px;font-size:12px;color:rgba(255,255,255,.55)}
   </style>
 </head>
 
 <body>
 <div class="wrap">
 
-<div class="topbar">
-  <div class="brand"><span class="dot"></span>Degenstein Bonus Hub</div>
-  <div class="nav">
-    <a href="https://degenstein.xyz/">Home</a>
-    <a href="https://degenstein.xyz/report/">Reports</a>
-    <button class="sharex" onclick="shareOnX()">✕ Share on X</button>
-  </div>
-</div>
-
-<header class="hero">
+<header class="card hero">
   <h1>Spring Crypto Outlook</h1>
   <p class="sub">
     Spring is not about chasing momentum. It is about positioning ahead of macro inflection,
     regulatory clarity, and ecosystem-level catalysts — while earning yield during consolidation.
   </p>
-  <div class="hero-cover">
-    <img src="https://degenstein.xyz/assets/spring-crypto-outlook.png" alt="Spring Crypto Outlook" />
-  </div>
+  <img src="https://degenstein.xyz/assets/spring-crypto-outlook.png" alt="Spring Crypto Outlook">
 </header>
 
-<section class="section">
-<h2 class="section-title">Why Spring Matters</h2>
-
-<p class="sub">
-Spring has historically functioned as a <strong>transition phase</strong> in crypto markets.
-It sits between winter-style risk compression and summer narrative expansion — a period where
-volatility declines, liquidity stabilizes, and capital quietly repositions.
-</p>
-
-<p class="sub">
-This phase rarely produces explosive price action. Instead, it produces
-<strong>structural signals</strong>: improving market depth, tighter ranges,
-and selective accumulation by longer-term participants.
-Retail attention often fades during this window — which is precisely why it matters.
-</p>
-
-<ul class="bullets">
-  <li><strong>Volatility compression:</strong> Large directional moves pause as markets digest prior cycles</li>
-  <li><strong>Liquidity normalization:</strong> Bid–ask spreads tighten and downside tails shorten</li>
-  <li><strong>Positioning over performance:</strong> Capital allocates before narratives return</li>
-</ul>
-
-<p class="sub">
-From a behavioral perspective, spring is uncomfortable. Prices move sideways,
-conviction is tested, and patience is punished emotionally. Historically,
-this is when weak hands exit and strategic exposure is quietly built.
-</p>
-
-<p class="sub">
-Macro conditions reinforce this dynamic. Policy expectations, regulatory signals,
-and institutional participation tend to clarify during spring months —
-often before price reflects those changes.
-Markets respond first to <em>predictability</em>, not stimulus.
-</p>
-
-<p class="sub">
-For disciplined investors, spring is not about prediction.
-It is about <strong>alignment</strong>: holding assets that benefit from stabilization,
-maintaining exposure across key market layers, and reducing time risk while waiting
-for confirmation.
-</p>
-
-<p class="sub">
-In short, spring is where cycles are set up, not where they are resolved.
-Those who treat it as dead time often re-enter later at materially worse prices.
-</p>
-</section>
-
-
-<section class="section">
-<h2 class="section-title">Macro Deep Dive: The Fed Transition</h2>
-<ul class="bullets">
-  <li>Leadership changes often precede repricing</li>
-  <li>Markets react to tone before policy</li>
-  <li>Crypto historically front-runs liquidity shifts</li>
-</ul>
-</section>
-
-<section class="section">
-<h2 class="section-title">Regulatory Outlook: CLARITY Act</h2>
-<ul class="bullets">
-  <li>Reduced jurisdictional uncertainty</li>
-  <li>Favors infrastructure and compliant rails</li>
-  <li>Encourages sidelined capital to re-enter</li>
-</ul>
-</section>
-
-<section class="section">
-<h2 class="section-title">Asset-by-Asset Outlook</h2>
-
-<div class="asset glow-btc">
-  <span class="asset-tag btc">Bitcoin • BTC</span>
-  <ul class="bullets">
-    <li>Macro anchor and balance-sheet asset</li>
-    <li>CoinDepo: conservative yield while holding core exposure</li>
-    <li><strong>Indicative allocation:</strong> 30–45%</li>
-  </ul>
-</div>
-  
-<div class="asset glow-eth">
-  <span class="asset-tag eth">Ethereum • ETH</span>
-  <ul class="bullets">
-    <li>Settlement layer for on-chain finance and tokenized assets</li>
-    <li>Primary yield engine via staking and collateral strategies</li>
-    <li>Benefits from regulatory clarity around commodity treatment</li>
-    <li>CoinDepo: core yield-bearing exposure during consolidation</li>
-    <li><strong>Indicative allocation:</strong> 20–30%</li>
-  </ul>
-</div>
-
-<div class="asset glow-sol">
-  <span class="asset-tag sol">Solana • SOL</span>
-  <ul class="bullets">
-    <li>Execution layer with visible on-chain growth</li>
-    <li>CoinDepo: higher-yield compounding for growth exposure</li>
-    <li><strong>Indicative allocation:</strong> 15–25%</li>
-  </ul>
-</div>
-
-<div class="asset glow-avax">
-  <span class="asset-tag avax">Avalanche • AVAX</span>
-  <ul class="bullets">
-    <li>Event-driven ecosystem and gaming incentives</li>
-    <li>CoinDepo: yield offsets volatility during catalyst wait</li>
-    <li><strong>Indicative allocation:</strong> 8–15%</li>
-  </ul>
-</div>
-
-<div class="asset glow-xrp">
-  <span class="asset-tag xrp">XRP</span>
-  <ul class="bullets">
-    <li>Regulatory asymmetry and institutional settlement</li>
-    <li>CoinDepo: paid patience for structural thesis</li>
-    <li><strong>Indicative allocation:</strong> 5–10%</li>
-  </ul>
-</div>
-
-<div class="asset glow-ondo">
-  <span class="asset-tag ondo">ONDO</span>
-  <ul class="bullets">
-    <li>Tokenized Treasuries and real-world yield</li>
-    <li>CoinDepo: yield-on-yield compounding</li>
-    <li><strong>Indicative allocation:</strong> 5–10%</li>
-  </ul>
-</div>
-
-<div class="asset glow-link">
-  <span class="asset-tag link">Chainlink • LINK</span>
-  <ul class="bullets">
-    <li>Infrastructure backbone for tokenization</li>
-    <li>CoinDepo: long-duration infrastructure yield</li>
-    <li><strong>Indicative allocation:</strong> 5–10%</li>
-  </ul>
-</div>
-</section>
-
-<section class="section">
-<h2 class="section-title">Spring Catalyst Timeline</h2>
-<table class="table">
-<tr><th>Phase</th><th>Focus</th><th>Market Effect</th></tr>
-<tr><td>March</td><td>Accumulation</td><td>Volatility compression</td></tr>
-<tr><td>April</td><td>Regulatory signals</td><td>Risk repricing</td></tr>
-<tr><td>May</td><td>Fed transition</td><td>Liquidity anticipation</td></tr>
-<tr><td>Late Spring</td><td>Rotation</td><td>Alt expansion</td></tr>
-</table>
-</section>
-
-<section class="section" style="
-  border:1px solid rgba(0,255,170,.35);
-  background:
-    radial-gradient(700px 220px at 15% 20%, rgba(0,255,170,.22), transparent 55%),
-    linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
-">
-
-<span style="
-  display:inline-block;
-  padding:6px 10px;
-  font-size:.7rem;
-  font-weight:900;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  border-radius:999px;
-  border:1px solid rgba(0,255,170,.45);
-  color:#00FFAA;
-  margin-bottom:10px;
-">
-  Yield Strategy
-</span>
-
-<h2 class="section-title" style="margin-top:6px;">
-Why Yield Matters Right Now
-</h2>
-
-<p class="sub">
-Spring is a <strong>waiting phase</strong>. Volatility compresses, narratives stall,
-and conviction builds quietly. In this environment, the biggest hidden risk is not
-missing upside — it’s holding capital that does nothing.
-</p>
-
-<p class="sub">
-Yield turns time into an asset. Instead of forcing trades or exiting positions,
-investors can stay exposed while compounding through uncertainty.
-</p>
-
-<div style="
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px;
-  margin-top:16px;
-">
-  <div style="
-    padding:14px;
-    border-radius:14px;
-    border:1px solid var(--stroke);
-    background:rgba(0,0,0,.25);
-  ">
-    <strong>Holding Idle</strong>
-    <ul class="bullets">
-      <li>No compounding</li>
-      <li>Rising impatience</li>
-      <li>Pressure to chase moves</li>
-      <li>Time decay on conviction</li>
-    </ul>
-  </div>
-
-  <div style="
-    padding:14px;
-    border-radius:14px;
-    border:1px solid rgba(0,255,170,.35);
-    background:rgba(0,255,170,.12);
-  ">
-    <strong>Earning Yield</strong>
-    <ul class="bullets">
-      <li>Continuous compounding</li>
-      <li>Reduced time risk</li>
-      <li>More disciplined positioning</li>
-      <li>Improved risk-adjusted outcome</li>
-    </ul>
-  </div>
-</div>
-
-<p class="sub" style="margin-top:14px;">
-This is where platforms like <strong>CoinDepo</strong> fit. Not as a trade,
-but as infrastructure — enabling holders to remain positioned while earning
-return during consolidation.
-</p>
-
-<div class="callout" style="
-  margin-top:18px;
-  background:
-    radial-gradient(600px 200px at 20% 30%, rgba(0,255,170,.25), rgba(0,0,0,.2));
-">
-
-  <ul class="bullets">
-    <li>Earn up to <strong>21%+ APY</strong> depending on asset and term</li>
-    <li>Earn up to <strong>$500 USDC</strong> for holding <strong>90 days</strong></li>
-    <li>Stay exposed — no need to exit positions</li>
-  </ul>
-
-  <a href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV" target="_blank">
-    👉 Access CoinDepo (exclusive link)
-  </a>
-
-  <p class="sub" style="font-size:12px;margin-top:10px;">
-    <a href="https://degenstein.xyz/coindepo-review/#referral-bonus" target="_blank">
-      How the bonus works →
-    </a>
-    &nbsp;•&nbsp;
-    <a href="https://degenstein.xyz/coindepo-review/#calculator" target="_blank">
-      Calculate your earnings →
-    </a>
+<section class="card">
+  <h2>Why Spring Matters</h2>
+  <p class="sub">
+    Spring historically acts as a transition phase. Volatility compresses, liquidity stabilizes,
+    and capital repositions quietly before narrative expansion resumes.
   </p>
+  <ul class="bullets">
+    <li>Volatility compression and range-bound price action</li>
+    <li>Capital rotation beneath the surface</li>
+    <li>Strategic accumulation while attention fades</li>
+  </ul>
+</section>
+
+<section class="card">
+  <h2>Macro Deep Dive: The Fed Transition</h2>
+  <ul class="bullets">
+    <li>Markets price tone before policy</li>
+    <li>Leadership shifts historically precede repricing</li>
+    <li>Crypto tends to front-run liquidity shifts</li>
+  </ul>
+</section>
+
+<section class="card">
+  <h2>Regulatory Outlook</h2>
+  <ul class="bullets">
+    <li>Improving jurisdictional clarity</li>
+    <li>Infrastructure and compliant rails favored</li>
+    <li>Lower perceived headline risk</li>
+  </ul>
+</section>
+
+<section class="card">
+  <h2>Asset-by-Asset Positioning</h2>
+
+  <div class="asset"><span class="tag">BTC</span>
+    <ul class="bullets">
+      <li>Macro anchor and balance-sheet asset</li>
+      <li>Conservative yield while maintaining exposure</li>
+    </ul>
+  </div>
+
+  <div class="asset"><span class="tag">ETH</span>
+    <ul class="bullets">
+      <li>Settlement layer for on-chain finance</li>
+      <li>Core yield-bearing exposure</li>
+    </ul>
+  </div>
+
+  <div class="asset"><span class="tag">SOL</span>
+    <ul class="bullets">
+      <li>Execution layer with visible growth</li>
+      <li>Higher-yield compounding for growth exposure</li>
+    </ul>
+  </div>
+
+  <div class="asset"><span class="tag">AVAX</span>
+    <ul class="bullets">
+      <li>Event-driven ecosystem</li>
+      <li>Yield offsets volatility</li>
+    </ul>
+  </div>
+
+  <div class="asset"><span class="tag">XRP</span>
+    <ul class="bullets">
+      <li>Regulatory asymmetry</li>
+      <li>Paid patience for long-duration thesis</li>
+    </ul>
+  </div>
+
+  <div class="asset"><span class="tag">ONDO</span>
+    <ul class="bullets">
+      <li>Tokenized real-world yield</li>
+      <li>Yield-on-yield compounding</li>
+    </ul>
+  </div>
+
+  <div class="asset"><span class="tag">LINK</span>
+    <ul class="bullets">
+      <li>Infrastructure backbone</li>
+      <li>Long-duration infrastructure yield</li>
+    </ul>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Why Yield Matters During Consolidation</h2>
+  <p class="sub">
+    Spring is a waiting phase. Yield reduces time risk, maintains exposure,
+    and improves risk-adjusted outcomes without forcing trades.
+  </p>
+
+  <div class="callout">
+    <ul class="bullets">
+      <li>Earn competitive APY depending on asset and term</li>
+      <li>Remain positioned without selling</li>
+      <li>Turn idle time into compounding exposure</li>
+    </ul>
+
+    <a class="btn" href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W" target="_blank">
+      Access CoinDepo →
+    </a>
+
+    <p class="sub" style="font-size:12px;margin-top:10px">
+      Rates vary by asset and term. Always review in-app conditions before allocating.
+    </p>
+  </div>
+</section>
+
+<section class="card">
+  <h2>What Breaks This Thesis</h2>
+  <ul class="bullets">
+    <li>Unexpected macro tightening</li>
+    <li>Regulatory reversals</li>
+    <li>Liquidity shocks</li>
+  </ul>
+</section>
+
+<section class="card">
+  <h2>Final Take</h2>
+  <p class="sub">
+    Spring is the setup phase. Position early, reduce time risk, and wait for confirmation.
+  </p>
+</section>
+
+<footer>
+  Educational content only. Not financial advice.
+</footer>
+
 </div>
-
-<p class="sub" style="font-size:12px;margin-top:14px;">
-<strong>Yield disclaimer:</strong> APY rates are variable and not guaranteed.
-Yield strategies introduce additional risk and should be evaluated alongside
-overall portfolio objectives.
-</p>
-
-<p class="sub">
-Yield is not a substitute for conviction — it is how conviction survives
-the quiet parts of the cycle.
-</p>
-
-</section>
-
-
-<section class="section">
-<h2 class="section-title">What Breaks This Thesis</h2>
-<ul class="bullets">
-  <li>Unexpected macro tightening</li>
-  <li>Regulatory reversals or delays</li>
-  <li>Liquidity shocks across risk assets</li>
-</ul>
-</section>
-
-<section class="section">
-<h2 class="section-title">Final Take</h2>
-<p class="sub">
-Spring is the setup phase. Position early, earn yield, and wait for confirmation.
-</p>
-<p style="margin-top:12px;">
-← <a href="https://degenstein.xyz/report/">Back to Reports</a>
-</p>
-<div class="footer">Educational content only. Not financial advice.</div>
-</section>
-
-</div>
-
-<script>
-function shareOnX(){
-  const url = 'https://degenstein.xyz/report/spring-crypto-outlook/';
-  const text =
-    'Spring Crypto Outlook: positioning before the move.\n\n' +
-    'Macro shifts, regulation, catalysts, and earning yield during consolidation.\n\n';
-  window.open(
-    'https://twitter.com/intent/tweet?text=' +
-    encodeURIComponent(text) +
-    '&url=' + encodeURIComponent(url),
-    '_blank',
-    'noopener,noreferrer'
-  );
-}
-</script>
-
 </body>
 </html>
 
