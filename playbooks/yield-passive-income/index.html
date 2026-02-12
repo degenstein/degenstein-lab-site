@@ -28,15 +28,12 @@
   <style>
     :root{
       --bg:#07090d;
-      --panel:rgba(255,255,255,.06);
-      --panel2:rgba(255,255,255,.08);
       --border:rgba(255,255,255,.12);
       --text:#e9edf6;
       --muted:rgba(233,237,246,.72);
       --muted2:rgba(233,237,246,.55);
       --accent:#7c5cff;
       --accent2:#22c55e;
-      --warn:#f59e0b;
       --shadow:0 18px 60px rgba(0,0,0,.45);
       --radius:18px;
       --radius2:26px;
@@ -44,7 +41,6 @@
     }
 
     *{box-sizing:border-box}
-    html,body{height:100%}
     body{
       margin:0;
       font-family:system-ui,-apple-system,Segoe UI,sans-serif;
@@ -62,14 +58,12 @@
     /* Top nav */
     .topbar{
       display:flex;
-      align-items:center;
       justify-content:space-between;
-      gap:14px;
-      padding:10px 0 18px;
+      align-items:center;
+      padding-bottom:18px;
     }
     .brand{
       display:flex;
-      align-items:center;
       gap:10px;
       font-weight:800;
     }
@@ -80,77 +74,42 @@
     }
     .navlinks{display:flex;gap:10px;flex-wrap:wrap}
     .chip{
-      display:inline-flex;
-      align-items:center;
       padding:8px 12px;
-      background:rgba(255,255,255,.05);
       border:1px solid var(--border);
       border-radius:999px;
       color:var(--muted);
-      font-weight:650;
     }
 
     /* Hero */
     .hero{
-      margin-top:10px;
       border:1px solid var(--border);
-      background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.03));
       border-radius:var(--radius2);
       box-shadow:var(--shadow);
-      overflow:hidden;
+      background:rgba(255,255,255,.05);
     }
-    .heroInner{padding:26px 22px 20px}
-    .kicker{
-      display:inline-flex;
-      padding:8px 12px;
-      background:rgba(124,92,255,.12);
-      border:1px solid rgba(124,92,255,.26);
-      border-radius:999px;
-      font-weight:800;
-      font-size:13px;
-    }
-    h1{margin:14px 0 10px;font-size:34px;line-height:1.12}
-    .sub{margin:0;color:var(--muted);font-size:16px;max-width:820px}
+    .heroInner{padding:26px}
+    h1{margin:14px 0;font-size:34px}
+    .sub{color:var(--muted);max-width:820px}
+
     .heroCtas{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
     .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:12px 14px;
+      padding:12px 16px;
       border-radius:14px;
-      font-weight:850;
       border:1px solid var(--border);
-      background:rgba(255,255,255,.06);
+      font-weight:800;
     }
     .btnGreen{
-      border-color:rgba(34,197,94,.35);
-      background:linear-gradient(135deg,rgba(34,197,94,.20),rgba(34,197,94,.07));
+      background:linear-gradient(135deg,rgba(34,197,94,.25),rgba(34,197,94,.10));
+      border-color:rgba(34,197,94,.4);
     }
 
-    .metaRow{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      margin-top:14px;
-      color:var(--muted2);
-      font-weight:650;
-      font-size:13px;
-    }
-    .metaRow span{
-      padding:6px 10px;
-      border:1px solid rgba(255,255,255,.10);
-      background:rgba(255,255,255,.04);
-      border-radius:999px;
-    }
-
-    /* Sections */
     .sectionTitle{
-      margin:26px 2px 10px;
-      font-size:15px;
-      letter-spacing:.35px;
+      margin:32px 0 10px;
       text-transform:uppercase;
       font-weight:900;
-      color:rgba(233,237,246,.92);
+      font-size:14px;
+      letter-spacing:.3px;
+      color:var(--muted2);
     }
 
     .grid{display:grid;gap:14px}
@@ -158,21 +117,41 @@
 
     .card{
       border:1px solid var(--border);
-      background:rgba(255,255,255,.05);
       border-radius:var(--radius);
-      padding:18px 16px;
+      padding:18px;
+      background:rgba(255,255,255,.05);
       box-shadow:0 10px 30px rgba(0,0,0,.22);
     }
-    .card h2{margin:0 0 10px;font-size:18px}
-    .card p{margin:0 0 10px;color:var(--muted)}
     ul{margin:10px 0 0 18px;color:var(--muted)}
     li{margin:6px 0}
 
-    /* Footer */
+    /* CoinDepo block */
+    .coindepo{
+      margin-top:22px;
+      padding:20px;
+      border-radius:18px;
+      border:1px solid rgba(34,197,94,.35);
+      background:
+        radial-gradient(circle at top left,rgba(34,197,94,.14),transparent 60%),
+        rgba(15,23,42,.92);
+      box-shadow:var(--shadow);
+    }
+    .coindepo h2{margin:0 0 8px;font-size:18px}
+    .coindepo p{color:var(--muted);max-width:860px}
+    .coindepo a{
+      display:inline-flex;
+      margin-top:12px;
+      padding:10px 18px;
+      border-radius:999px;
+      font-weight:900;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      color:#020617;
+    }
+
     .footer{
-      margin-top:26px;
-      color:var(--muted2);
+      margin-top:32px;
       font-size:13px;
+      color:var(--muted2);
       text-align:center;
     }
   </style>
@@ -184,12 +163,10 @@
   <!-- Topbar -->
   <div class="topbar">
     <a class="brand" href="https://degenstein.xyz/">
-      <span class="dot"></span>
-      <span>Degenstein</span>
+      <span class="dot"></span>Degenstein
     </a>
     <div class="navlinks">
-      <a class="chip" href="https://degenstein.xyz/playbooks/">← Back to Playbooks</a>
-      <a class="chip" href="https://degenstein.xyz/report/">Reports</a>
+      <a class="chip" href="https://degenstein.xyz/playbooks/">← Playbooks</a>
       <a class="chip" href="https://degenstein.xyz/">Home</a>
     </div>
   </div>
@@ -197,100 +174,65 @@
   <!-- Hero -->
   <section class="hero">
     <div class="heroInner">
-      <span class="kicker">📘 PLAYBOOK • Yield & Passive Income</span>
-      <h1>Earn while you hold.<br>No trading. No timing. No stress.</h1>
+      <h1>Earn while you hold.<br>No trading. No timing.</h1>
       <p class="sub">
-        This playbook is for long-term crypto holders who want predictable structure instead of constant decision-making.
-        The system is rules-based: buckets, laddering, and disciplined compounding.
+        A rules-based yield framework for long-term crypto holders who want structure instead of constant decision-making.
       </p>
 
       <div class="heroCtas">
         <a class="btn btnGreen" href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W" target="_blank" rel="noopener noreferrer">
           Explore CoinDepo
         </a>
-        <a class="btn" href="#framework">
-          View the Framework
-        </a>
-      </div>
-
-      <div class="metaRow">
-        <span>Strategy: Structure → Yield → Compounding</span>
-        <span>No leverage • No liquidation risk</span>
+        <a class="btn" href="#framework">View the Framework</a>
       </div>
     </div>
   </section>
 
-  <!-- Banner -->
-  <div style="margin-top:18px;">
-    <img
-      src="/assets/playbookapr.png"
-      alt="Yield & Passive Income Playbook"
-      style="width:100%;border-radius:18px;border:1px solid rgba(255,255,255,.12);box-shadow:0 18px 60px rgba(0,0,0,.45);"
-      loading="lazy"
-    />
-  </div>
-
+  <!-- Framework -->
   <div class="sectionTitle" id="framework">Core Philosophy</div>
   <div class="grid two">
     <div class="card">
-      <h2>🧠 The problem this solves</h2>
-      <p>
-        Most underperformance comes from overtrading, emotional decisions,
-        and leaving capital idle during long sideways markets.
-      </p>
+      <h2>The problem</h2>
+      <p>Overtrading, emotional decisions, and idle capital destroy returns.</p>
     </div>
     <div class="card">
-      <h2>✅ The objective</h2>
-      <p>
-        Put idle crypto to work using clear rules while maintaining long-term exposure.
-        No timing games. No leverage.
-      </p>
-    </div>
-  </div>
-
-  <div class="sectionTitle">The Yield Stack</div>
-  <div class="grid two">
-    <div class="card">
-      <h2>Stablecoin Layer</h2>
-      <p>Designed for capital stability and consistency.</p>
-    </div>
-    <div class="card">
-      <h2>Crypto Hold Layer</h2>
-      <p>Long-term assets stay exposed to upside while generating yield.</p>
+      <h2>The solution</h2>
+      <p>Rules, structure, and yield while holding long-term positions.</p>
     </div>
   </div>
 
   <div class="sectionTitle">Execution Layer</div>
   <div class="grid">
     <div class="card">
-      <h2>Why CoinDepo</h2>
       <ul>
         <li>No active trading required</li>
-        <li>Structured terms encourage discipline</li>
-        <li>Designed for holding, not speculation</li>
+        <li>Designed for holding through volatility</li>
+        <li>Structure enforces discipline</li>
       </ul>
     </div>
+  </div>
+
+  <!-- CoinDepo -->
+  <div class="coindepo">
+    <h2>Where I hold while I wait</h2>
+    <p>
+      When I’m holding through chop, I prefer parking part of my crypto where it can still work for me.
+      CoinDepo fits this playbook because it’s built for earning while holding — not chasing trades.
+    </p>
+    <a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W" target="_blank" rel="noopener noreferrer">
+      Explore CoinDepo →
+    </a>
   </div>
 
   <div class="sectionTitle">Rules (Non-Negotiable)</div>
   <div class="grid">
     <div class="card">
       <ul>
-        <li>Only deploy capital you don’t need short-term</li>
-        <li>Ladder entries instead of locking everything at once</li>
+        <li>Only deploy capital you won’t need short-term</li>
+        <li>Ladder entries — don’t lock everything at once</li>
         <li>Treat yield as capital, not spending money</li>
-        <li>Avoid chasing rates or reallocating constantly</li>
+        <li>Avoid chasing rates</li>
       </ul>
-    </div>
-  </div>
-
-  <div class="sectionTitle">Final Takeaway</div>
-  <div class="grid">
-    <div class="card">
-      <p>
-        If you believe in crypto long-term, leaving assets idle is inefficient.
-        This playbook turns time into a tool — not a stressor.
-      </p>
     </div>
   </div>
 
@@ -301,5 +243,6 @@
 </div>
 </body>
 </html>
+
 
 
