@@ -24,6 +24,33 @@
   <meta name="theme-color" content="#06b6d4" />
 
   <!-- Tailwind -->
+  <script src="h<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>2026: Earn While You Hold — CoinDepo Deep Dive | The Degenstein Report</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <meta name="description" content="2026 is the year to earn while you hold. A long-form Degenstein Report deep dive into CoinDepo: how yield products work, APR vs APY, compounding math, calculators, Token Advantage, loans, risks, and DYOR best practices." />
+  <link rel="canonical" href="https://degenstein.xyz/report/coindepo-earn-while-you-hold/" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="The Degenstein Report" />
+  <meta property="og:title" content="2026: Earn While You Hold — CoinDepo Deep Dive" />
+  <meta property="og:description" content="A mechanics-first CoinDepo deep dive for long-term holders. Yield math, compounding, risks, and disciplined frameworks — no hype." />
+  <meta property="og:url" content="https://degenstein.xyz/report/coindepo-earn-while-you-hold/" />
+
+  <!-- X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@DHouseofcrypto" />
+  <meta name="twitter:title" content="2026: Earn While You Hold — CoinDepo Deep Dive" />
+  <meta name="twitter:description" content="Mechanics-first yield research for long-term crypto holders. No hopium." />
+
+  <meta name="theme-color" content="#06b6d4" />
+
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
@@ -34,25 +61,24 @@
       scroll-behavior:smooth;
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
     }
-    .wrap{ max-width:72rem; margin:0 auto; padding:0 1rem; }
-    .card{
+    .wrap { max-width:72rem; margin:0 auto; padding:0 1rem; }
+    .card {
       border-radius:1.25rem;
       padding:1.25rem;
       background:rgba(15,23,42,.72);
       border:1px solid rgba(148,163,184,.25);
       box-shadow:0 18px 55px rgba(0,0,0,.55);
     }
-    .pill{
+    .pill {
       display:inline-flex; align-items:center; gap:.5rem;
-      font-size:.74rem; letter-spacing:.14em;
-      text-transform:uppercase;
-      padding:.45rem .8rem;
-      border-radius:999px;
+      font-size:.74rem; letter-spacing:.14em; text-transform:uppercase;
+      padding:.45rem .8rem; border-radius:999px;
       background:rgba(15,23,42,.85);
       border:1px solid rgba(148,163,184,.38);
       color:rgba(229,231,235,.75);
+      white-space:nowrap;
     }
-    .tag{
+    .tag {
       font-size:.72rem;
       padding:.35rem .65rem;
       border-radius:999px;
@@ -64,104 +90,127 @@
       text-transform:uppercase;
     }
     .btn-primary{
+      display:inline-flex; align-items:center; justify-content:center;
       background:linear-gradient(135deg,#22c55e,#06b6d4);
       color:#020617;
-      padding:.85rem 1.2rem;
+      padding:.85rem 1.1rem;
       border-radius:999px;
       font-weight:900;
     }
     .btn-outline{
+      display:inline-flex; align-items:center; justify-content:center;
       border:1px solid rgba(148,163,184,.35);
-      padding:.85rem 1.2rem;
+      padding:.85rem 1.1rem;
       border-radius:999px;
-      background:rgba(15,23,42,.55);
       color:#e5e7eb;
+      background:rgba(15,23,42,.55);
     }
     .muted{ color:rgba(229,231,235,.72); }
-    .fine{ font-size:.85rem; color:rgba(229,231,235,.6); }
+    .fine{ font-size:.86rem; color:rgba(229,231,235,.60); }
   </style>
 </head>
 
 <body>
 
 <header class="sticky top-0 z-50 border-b border-white/10 bg-black/70 backdrop-blur">
-  <div class="wrap py-4 flex justify-between">
-    <div class="flex gap-2 items-center">
-      <a href="/report/" class="font-extrabold text-lg">The Degenstein Report</a>
-      <span class="tag">Yield Thesis</span>
-    </div>
-    <div class="flex gap-2">
-      <a class="pill" href="/">← Main</a>
-      <a class="pill" href="/report/">← Reports</a>
-    </div>
+  <div class="wrap py-4 flex justify-between items-center">
+    <a href="/report/" class="font-extrabold text-lg">The Degenstein Report</a>
+    <span class="tag">Yield Thesis</span>
   </div>
 </header>
 
 <section class="wrap py-12">
-  <div class="card">
-    <span class="tag">2026 Theme</span>
-    <h1 class="text-4xl md:text-5xl font-extrabold mt-4">2026: Earn While You Hold</h1>
 
-    <p class="muted mt-4">
-      If you’re already holding crypto long term, the question isn’t timing —
-      it’s whether your capital is working or idle.
+  <div class="card">
+    <span class="tag">2026 Framework</span>
+
+    <h1 class="text-4xl md:text-5xl font-extrabold mt-3">
+      Earn While You Hold
+    </h1>
+
+    <p class="text-lg muted mt-4">
+      If you’re already holding crypto long term, 2026 isn’t about trading more —
+      it’s about making time work for you.
     </p>
 
-    <div class="flex gap-3 mt-6 flex-wrap">
+    <p class="muted mt-3">
+      This report breaks down <strong>CoinDepo</strong> as a yield platform for disciplined holders:
+      how yield products work, APR vs APY, compounding math, calculators, Token Advantage mechanics,
+      loans, and the risks that actually matter.
+    </p>
+
+    <div class="flex flex-wrap gap-3 mt-6">
       <a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W"
-         class="btn-primary" target="_blank">Open CoinDepo →</a>
+         target="_blank" rel="noopener"
+         class="btn-primary">
+        Open CoinDepo →
+      </a>
       <a href="#calculator" class="btn-outline">Calculator</a>
-      <a href="#risk" class="btn-outline">Risks</a>
+      <a href="#risk" class="btn-outline">Risk notes</a>
     </div>
+
+    <p class="fine mt-4">
+      Disclosure: This page contains referral links. Rates and terms can change.
+      Educational content only — not financial advice.
+    </p>
   </div>
+
 </section>
 
-<main class="wrap space-y-8 pb-16">
+<main class="wrap pb-16 space-y-8 mt-10">
+
+<!-- WHAT -->
+<section id="what" class="card">
+  <h2 class="text-2xl font-extrabold mb-2">What is CoinDepo?</h2>
+  <p class="muted">
+    CoinDepo is positioned as a yield platform for holders who want supported crypto
+    or stablecoins to earn interest instead of sitting idle.
+  </p>
+  <p class="muted mt-2">
+    Products vary by asset, rate, term length, payout schedule, and withdrawal rules.
+    The in-app terms are always the source of truth.
+  </p>
+</section>
+
+<!-- WHY -->
+<section id="why" class="card">
+  <h2 class="text-2xl font-extrabold mb-2">Why earn while holding matters</h2>
+  <p class="muted">
+    Most long-term underperformance comes from impatience, not bad asset selection.
+    Yield converts time from a liability into an input.
+  </p>
+</section>
+
+<!-- HOW -->
+<section id="how" class="card">
+  <h2 class="text-2xl font-extrabold mb-2">How CoinDepo works</h2>
+  <ol class="list-decimal pl-6 text-gray-300 space-y-2">
+    <li>Deposit supported assets.</li>
+    <li>Select a product and term.</li>
+    <li>Earn yield per published rules.</li>
+    <li>Withdraw or roll by design.</li>
+  </ol>
+</section>
 
 <!-- CALCULATOR -->
 <section id="calculator" class="card">
-  <h2 class="text-2xl font-extrabold mb-4">Yield calculator</h2>
-
-  <div class="flex gap-3 mb-4">
-    <label class="flex items-center gap-2 text-sm">
-      <input type="radio" name="mode" value="simple" checked> Simple APR
-    </label>
-    <label class="flex items-center gap-2 text-sm">
-      <input type="radio" name="mode" value="compound"> Compounding (APY-style)
-    </label>
-  </div>
+  <h2 class="text-2xl font-extrabold mb-4">Yield calculator (APR / APY)</h2>
 
   <div class="grid md:grid-cols-4 gap-3">
-    <input id="amt" type="number" value="1000" class="rounded-xl px-3 py-2 bg-black/60 border border-white/15">
-    <input id="apr" type="number" value="24" class="rounded-xl px-3 py-2 bg-black/60 border border-white/15">
-    <input id="days" type="number" value="90" class="rounded-xl px-3 py-2 bg-black/60 border border-white/15">
-    <select id="compoundFreq" class="rounded-xl px-3 py-2 bg-black/60 border border-white/15">
-      <option value="365">Daily</option>
-      <option value="52">Weekly</option>
-      <option value="12">Monthly</option>
+    <input id="amt" type="number" value="1000" class="p-2 rounded bg-black/60 border border-white/10">
+    <input id="rate" type="number" value="24" class="p-2 rounded bg-black/60 border border-white/10">
+    <input id="days" type="number" value="90" class="p-2 rounded bg-black/60 border border-white/10">
+    <select id="mode" class="p-2 rounded bg-black/60 border border-white/10">
+      <option value="apr">APR (simple)</option>
+      <option value="apy">APY (compound)</option>
     </select>
   </div>
 
-  <div class="flex gap-2 mt-4 flex-wrap">
-    <button class="btn-outline" onclick="preset(21,90)">21% / 90d</button>
-    <button class="btn-outline" onclick="preset(24,90)">24% / 90d</button>
-    <button class="btn-outline" onclick="preset(24,365)">24% / 365d</button>
-    <button class="btn-primary" onclick="calc()">Calculate</button>
-  </div>
+  <button onclick="calc()" class="btn-primary mt-4">Calculate</button>
 
-  <div class="grid md:grid-cols-3 gap-3 mt-4">
-    <div class="p-4 bg-white/5 rounded-xl">
-      <div class="fine">Interest</div>
-      <div id="outInterest" class="text-2xl font-extrabold">$0.00</div>
-    </div>
-    <div class="p-4 bg-white/5 rounded-xl">
-      <div class="fine">Total</div>
-      <div id="outTotal" class="text-xl font-bold">$0.00</div>
-    </div>
-    <div class="p-4 bg-white/5 rounded-xl">
-      <div class="fine">Gain</div>
-      <div id="outPct" class="text-sm font-semibold">0.00%</div>
-    </div>
+  <div class="mt-4 space-y-1">
+    <div>Estimated interest: <strong id="outInterest">$0.00</strong></div>
+    <div>Estimated total: <strong id="outTotal">$0.00</strong></div>
   </div>
 </section>
 
@@ -169,8 +218,8 @@
 <section id="token-advantage" class="card">
   <h2 class="text-2xl font-extrabold mb-2">$COINDEPO Token Advantage</h2>
   <p class="muted">
-    CoinDepo offers a Token Advantage program where holding the native token may unlock
-    additional in-app benefits. Treat this as a separate risk decision from using yield products.
+    Token Advantage is optional. Treat token exposure as a separate risk decision
+    from using yield products.
   </p>
 </section>
 
@@ -178,8 +227,8 @@
 <section id="loans" class="card">
   <h2 class="text-2xl font-extrabold mb-2">Crypto-backed loans</h2>
   <p class="muted">
-    CoinDepo may offer crypto-backed loans, allowing users to borrow against collateral.
-    This introduces liquidation risk and should be used conservatively.
+    Loans provide liquidity but introduce liquidation risk.
+    Use conservatively and tactically.
   </p>
 </section>
 
@@ -187,78 +236,62 @@
 <section id="burn" class="card">
   <h2 class="text-2xl font-extrabold mb-2">Token mechanics & burns</h2>
   <p class="muted">
-    Token supply mechanics should be evaluated independently from yield products.
-    Always wait for verifiable confirmation of execution.
+    Burns are watch items, not guarantees.
+    Execution matters more than announcements.
   </p>
+</section>
+
+<!-- DYOR -->
+<section id="dyor" class="card">
+  <h2 class="text-2xl font-extrabold mb-2">DYOR checklist</h2>
+  <ul class="list-disc pl-6 text-gray-300 space-y-2">
+    <li>Understand lockups and exits</li>
+    <li>Verify rate mechanics in-app</li>
+    <li>Assess platform risk vs yield</li>
+    <li>Never deploy funds you need liquid</li>
+  </ul>
 </section>
 
 <!-- RISK -->
 <section id="risk" class="card">
-  <h2 class="text-2xl font-extrabold mb-2">Risks & best practices</h2>
-  <ul class="list-disc pl-6 space-y-2 text-gray-300">
-    <li>Rates and terms can change.</li>
-    <li>Only allocate funds you can afford to lock.</li>
-    <li>Crypto involves platform and market risk.</li>
-  </ul>
+  <h2 class="text-2xl font-extrabold mb-2">Final risk notes</h2>
+  <p class="muted">
+    Yield compensates for constraints and risk.
+    If you can’t explain the exit, you’re not ready to deploy.
+  </p>
 </section>
 
 </main>
 
 <footer class="border-t border-white/10">
-  <div class="wrap py-10 text-sm text-gray-400 flex justify-between">
-    <div>© <span id="year"></span> The Degenstein Report</div>
-    <div class="flex gap-4">
-      <a href="https://x.com/DHouseofcrypto" target="_blank">X</a>
-      <a href="https://t.me/DegensteinArmy" target="_blank">Telegram</a>
-    </div>
+  <div class="wrap py-8 text-sm text-gray-400">
+    © <span id="year"></span> The Degenstein Report
   </div>
 </footer>
 
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
 
-function money(v){ return "$" + v.toFixed(2); }
-function pct(v){ return v.toFixed(2) + "%"; }
-
-function preset(apr, days){
-  document.getElementById("apr").value = apr;
-  document.getElementById("days").value = days;
-  calc();
-}
-
 function calc(){
-  const amt = parseFloat(amtInput.value || 0);
-  const apr = parseFloat(aprInput.value || 0) / 100;
-  const days = parseInt(daysInput.value || 0, 10);
-  const mode = document.querySelector('input[name="mode"]:checked').value;
-  const freq = parseInt(compoundFreq.value, 10);
+  const amt = parseFloat(document.getElementById("amt").value || 0);
+  const rate = parseFloat(document.getElementById("rate").value || 0) / 100;
+  const days = parseInt(document.getElementById("days").value || 0);
+  const mode = document.getElementById("mode").value;
 
   let interest = 0;
-
-  if (mode === "simple") {
-    interest = amt * apr * (days / 365);
+  if(mode === "apr"){
+    interest = amt * rate * (days / 365);
   } else {
-    const t = days / 365;
-    interest = amt * (Math.pow(1 + apr / freq, freq * t) - 1);
+    interest = amt * (Math.pow(1 + rate, days / 365) - 1);
   }
 
-  outInterest.textContent = money(interest);
-  outTotal.textContent = money(amt + interest);
-  outPct.textContent = pct((interest / amt) * 100);
+  document.getElementById("outInterest").textContent = "$" + interest.toFixed(2);
+  document.getElementById("outTotal").textContent = "$" + (amt + interest).toFixed(2);
 }
-
-const amtInput = document.getElementById("amt");
-const aprInput = document.getElementById("apr");
-const daysInput = document.getElementById("days");
-const compoundFreq = document.getElementById("compoundFreq");
-const outInterest = document.getElementById("outInterest");
-const outTotal = document.getElementById("outTotal");
-const outPct = document.getElementById("outPct");
-
-calc();
 </script>
 
 </body>
 </html>
+
 
 
