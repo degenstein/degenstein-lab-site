@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- SEO -->
-  <meta name="description" content="2026 is the year to earn while you hold. A long-form CoinDepo deep dive covering yield mechanics, APR vs APY, compounding math, calculators, Token Advantage, loans, risks, and DYOR frameworks." />
+  <meta name="description" content="2026 is the year to earn while you hold. A long-form CoinDepo deep dive covering yield mechanics, APR vs APY, compounding math, calculators, Token Advantage, loans, security, risks, and DYOR frameworks." />
   <link rel="canonical" href="https://degenstein.xyz/report/coindepo-earn-while-you-hold/" />
   <meta name="robots" content="index, follow" />
 
@@ -14,7 +14,7 @@
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="The Degenstein Report" />
   <meta property="og:title" content="2026: Earn While You Hold — CoinDepo Deep Dive" />
-  <meta property="og:description" content="Mechanics-first CoinDepo research for long-term holders. Yield math, compounding, and real risk — no hype." />
+  <meta property="og:description" content="Mechanics-first CoinDepo research for long-term holders. Yield math, compounding, structure, and real risk — no hype." />
   <meta property="og:image" content="https://degenstein.xyz/assets/coindeporeport.png" />
 
   <!-- X -->
@@ -23,7 +23,6 @@
 
   <meta name="theme-color" content="#06b6d4" />
 
-  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
@@ -86,7 +85,6 @@
 
 <section class="wrap py-12">
 
-  <!-- Hero Image -->
   <div class="mx-auto mb-8" style="max-width:700px;">
     <img
       src="/assets/coindeporeport.png"
@@ -109,8 +107,9 @@
     </p>
 
     <p class="muted mt-3">
-      This report breaks down <strong>CoinDepo</strong> as a yield platform for disciplined holders:
-      yield mechanics, APR vs APY, compounding math, Token Advantage, loans, and real risks.
+      This report examines <strong>CoinDepo</strong> through a systems lens:
+      yield mechanics, APR vs APY, compounding structure, asset coverage,
+      Token Advantage, loans, security posture, and real-world risk.
     </p>
 
     <div class="flex flex-wrap gap-3 mt-6">
@@ -136,19 +135,38 @@
 <section class="card">
   <h2 class="text-2xl font-extrabold mb-2">What is CoinDepo?</h2>
   <p class="muted">
-    CoinDepo is a yield platform for crypto holders who want supported assets
-    to earn interest instead of remaining idle.
+    CoinDepo is a centralized yield platform designed for crypto holders who want
+    supported assets to earn interest instead of remaining idle.
   </p>
 </section>
 
 <section class="card">
-  <h2 class="text-2xl font-extrabold mb-2">How it works</h2>
-  <ol class="list-decimal pl-6 text-gray-300 space-y-2">
-    <li>Deposit supported assets</li>
-    <li>Select a product and term</li>
-    <li>Yield accrues per mechanics</li>
-    <li>Withdraw or roll by rules</li>
-  </ol>
+  <h2 class="text-2xl font-extrabold mb-2">Supported assets & yield ranges</h2>
+  <p class="muted">
+    CoinDepo supports a mix of major cryptocurrencies and stablecoins.
+    Yield varies by asset type, term, and product structure.
+  </p>
+  <ul class="list-disc pl-6 text-gray-300 space-y-2 mt-3">
+    <li>Major crypto assets (e.g., BTC, ETH, SOL, XRP)</li>
+    <li>Stablecoins (e.g., USDT, USDC) typically offer higher yield</li>
+    <li>Yield commonly falls in the low-to-mid double-digit APR range</li>
+  </ul>
+  <p class="fine mt-3">
+    Rates are not fixed and should always be verified directly inside the CoinDepo app.
+  </p>
+</section>
+
+<section class="card">
+  <h2 class="text-2xl font-extrabold mb-2">How yield products are structured</h2>
+  <p class="muted">
+    Yield products are structured around time and commitment.
+    Higher yield generally compensates for longer lockups or reduced flexibility.
+  </p>
+  <ul class="list-disc pl-6 text-gray-300 space-y-2 mt-3">
+    <li>Term-based deposits (e.g., 30, 90, 180, 365 days)</li>
+    <li>Simple APR vs compounded APY depending on product</li>
+    <li>Defined payout schedules and withdrawal rules</li>
+  </ul>
 </section>
 
 <!-- CALCULATOR -->
@@ -171,70 +189,74 @@
     </select>
   </div>
 
-  <!-- Presets -->
   <div class="mt-4 flex flex-wrap gap-2">
     <button class="btn-outline" onclick="preset90()">90-Day Park</button>
     <button class="btn-outline" onclick="presetLadder()">Yield Ladder</button>
     <button class="btn-outline" onclick="presetLong()">Long-Term Hold</button>
   </div>
 
-  <!-- Results -->
   <div class="mt-4 grid md:grid-cols-3 gap-3">
     <div><strong>Interest:</strong> <span id="outInterest">$0.00</span></div>
     <div><strong>Total:</strong> <span id="outTotal">$0.00</span></div>
     <div><strong>Gain:</strong> <span id="outPct">0.00%</span></div>
   </div>
 
-  <!-- Chart -->
   <div class="mt-6">
     <div class="font-extrabold mb-2">Estimated growth curve</div>
     <canvas id="growthChart" width="600" height="140"
             class="w-full rounded-xl border border-white/10 bg-black/40"></canvas>
 
-    <!-- Legend -->
     <div class="flex gap-4 text-xs text-gray-400 mt-2">
-      <span class="flex items-center gap-1">
-        <span class="inline-block w-3 h-0.5 bg-emerald-400"></span> Yield
-      </span>
-      <span class="flex items-center gap-1">
-        <span class="inline-block w-3 h-0.5 bg-gray-400"></span> Idle (no yield)
-      </span>
+      <span class="flex items-center gap-1"><span class="w-3 h-0.5 bg-emerald-400 inline-block"></span> Yield</span>
+      <span class="flex items-center gap-1"><span class="w-3 h-0.5 bg-gray-400 inline-block"></span> Idle</span>
     </div>
 
-    <p class="fine mt-2">Illustrative only. Actual results depend on product rules.</p>
+    <p class="fine mt-2">Illustrative only. Not a performance guarantee.</p>
   </div>
 </section>
 
 <section class="card">
+  <h2 class="text-2xl font-extrabold mb-2">Security & custody model</h2>
+  <p class="muted">
+    CoinDepo presents itself as a custodial platform with enterprise-grade security controls.
+    Asset custody, insurance representations, and audits should be reviewed directly in-app.
+  </p>
+  <p class="fine mt-3">
+    Always verify custody structure, insurance scope, and jurisdictional details independently.
+  </p>
+</section>
+
+<section class="card">
   <h2 class="text-2xl font-extrabold mb-2">$COINDEPO Token Advantage</h2>
-  <p class="muted">Optional. Treat token exposure separately from yield usage.</p>
+  <p class="muted">
+    Holding the native token may unlock additional benefits.
+    Treat token exposure as a separate investment decision from yield usage.
+  </p>
 </section>
 
 <section class="card">
   <h2 class="text-2xl font-extrabold mb-2">Crypto-backed loans</h2>
-  <p class="muted">Loans provide liquidity but introduce liquidation risk.</p>
-</section>
-
-<section class="card">
-  <h2 class="text-2xl font-extrabold mb-2">Token mechanics & burns</h2>
-  <p class="muted">Burns are watch items, not guarantees.</p>
+  <p class="muted">
+    Loans can provide liquidity without selling assets, but introduce liquidation risk.
+    Conservative usage is critical.
+  </p>
 </section>
 
 <section class="card">
   <h2 class="text-2xl font-extrabold mb-2">DYOR checklist</h2>
   <ul class="list-disc pl-6 text-gray-300 space-y-2">
-    <li>Understand lockups and exits</li>
-    <li>Verify compounding mechanics</li>
-    <li>Assess platform risk vs yield</li>
-    <li>Never deploy funds you need liquid</li>
+    <li>Understand lockups, exits, and rollover mechanics</li>
+    <li>Confirm APR vs APY and compounding frequency</li>
+    <li>Assess platform risk versus yield compensation</li>
+    <li>Never allocate funds you may need liquid</li>
   </ul>
 </section>
 
 <section id="risk" class="card">
   <h2 class="text-2xl font-extrabold mb-2">Final risk notes</h2>
   <p class="muted">
-    Yield compensates for constraints and risk.
-    If you can’t explain the exit, you’re not ready.
+    Yield is compensation for constraints and risk.
+    If you cannot explain the downside, you are not ready to deploy.
   </p>
 </section>
 
@@ -278,34 +300,31 @@ function calc(){
   outT.textContent = "$"+total.toFixed(2);
   outP.textContent = ((interest/P)*100||0).toFixed(2)+"%";
 
-  drawGrowth(P,r,d,n);
+  draw(P,r,d,n);
 }
 
-function drawGrowth(P,r,d,n){
+function draw(P,r,d,n){
   ctx.clearRect(0,0,canvas.width,canvas.height);
 
-  const steps = 48;
-  const yieldPts = [];
-  const idlePts = [];
+  const steps=48;
+  const yieldPts=[];
+  const idlePts=[];
 
   for(let i=0;i<=steps;i++){
     const t=d*(i/steps);
-    const y = mode.value==="apr"
+    yieldPts.push(mode.value==="apr"
       ? P*(1+r*(t/365))
-      : P*Math.pow(1+r/n,n*(t/365));
-    yieldPts.push(y);
+      : P*Math.pow(1+r/n,n*(t/365)));
     idlePts.push(P);
   }
 
-  const min = Math.min(...idlePts,...yieldPts);
-  const max = Math.max(...idlePts,...yieldPts);
-  const range = max-min || 1;
+  const min=Math.min(...yieldPts,...idlePts);
+  const max=Math.max(...yieldPts,...idlePts);
+  const range=max-min||1;
 
-  // Idle
-  ctx.beginPath();
   ctx.setLineDash([6,4]);
   ctx.strokeStyle="rgba(148,163,184,.7)";
-  ctx.lineWidth=1.5;
+  ctx.beginPath();
   idlePts.forEach((v,i)=>{
     const x=(i/steps)*canvas.width;
     const y=canvas.height-((v-min)/range)*(canvas.height-16)-8;
@@ -313,11 +332,9 @@ function drawGrowth(P,r,d,n){
   });
   ctx.stroke();
 
-  // Yield
-  ctx.beginPath();
   ctx.setLineDash([]);
   ctx.strokeStyle="#34d399";
-  ctx.lineWidth=2;
+  ctx.beginPath();
   yieldPts.forEach((v,i)=>{
     const x=(i/steps)*canvas.width;
     const y=canvas.height-((v-min)/range)*(canvas.height-16)-8;
