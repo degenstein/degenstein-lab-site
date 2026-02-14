@@ -108,17 +108,35 @@
 
 <section id="portfolio" class="max-w-6xl mx-auto px-4 py-12">
   <div class="card">
-    <h2 class="text-2xl font-extrabold mb-4">The 6‑Token Allocation</h2>
-    <p class="text-gray-300 mb-4">Equal‑weight deployment: <strong>$1,000 per asset</strong>.</p>
+    <h2 class="text-2xl font-extrabold mb-4">Token-by-Token Mini Thesis</h2>
+    <p class="text-gray-300 mb-6">Each position is equal-weighted but plays a distinct role in the portfolio.</p>
 
 ```
-<div class="grid md:grid-cols-3 gap-4 text-sm">
-  <div class="pill">$ETH — settlement & collateral</div>
-  <div class="pill">$SOL — consumer liquidity & throughput</div>
-  <div class="pill">$XRP — liquidity rails</div>
-  <div class="pill">$LINK — tokenization infrastructure</div>
-  <div class="pill">$ONDO — RWA yield proxy</div>
-  <div class="pill">$AVAX — app‑specific networks</div>
+<div class="grid md:grid-cols-2 gap-4 text-sm">
+  <div class="border border-white/10 rounded-xl p-4">
+    <h3 class="font-bold text-emerald-300">$ETH</h3>
+    <p>Core settlement and collateral layer. Institutional access + staking normalization underpin downside support.</p>
+  </div>
+  <div class="border border-white/10 rounded-xl p-4">
+    <h3 class="font-bold text-emerald-300">$SOL</h3>
+    <p>High-throughput consumer chain. Liquidity clusters where UX and daily active users concentrate.</p>
+  </div>
+  <div class="border border-white/10 rounded-xl p-4">
+    <h3 class="font-bold text-emerald-300">$XRP</h3>
+    <p>Liquidity rail thesis. Value accrues if access and real settlement volumes continue scaling.</p>
+  </div>
+  <div class="border border-white/10 rounded-xl p-4">
+    <h3 class="font-bold text-emerald-300">$LINK</h3>
+    <p>Non-optional infrastructure for tokenization. CCIP adoption compounds long-term demand.</p>
+  </div>
+  <div class="border border-white/10 rounded-xl p-4">
+    <h3 class="font-bold text-emerald-300">$ONDO</h3>
+    <p>On-chain yield proxy. Captures migration of treasury-style returns into crypto rails.</p>
+  </div>
+  <div class="border border-white/10 rounded-xl p-4">
+    <h3 class="font-bold text-emerald-300">$AVAX</h3>
+    <p>App-specific networks. Upside if subnets convert pilots into sustained fee activity.</p>
+  </div>
 </div>
 ```
 
@@ -127,42 +145,81 @@
 
 <section id="scenarios" class="max-w-6xl mx-auto px-4 pb-12">
   <div class="card">
-    <h2 class="text-2xl font-extrabold mb-4">6‑Month Outcome Scenarios</h2>
-    <p class="text-sm text-gray-300 mb-6">Assumes assets are held on CoinDepo earning ~16% APR (prorated over 6 months).</p>
+    <h2 class="text-2xl font-extrabold mb-2">6-Month Outcome Scenarios</h2>
+    <p class="text-sm text-gray-300 mb-4">Equal-weight portfolio ($1,000 per asset). Yield assumes ~16% APR, prorated over 6 months.</p>
 
 ```
+<!-- SCROLL-STOPPER PnL BAR -->
+<div class="mb-6">
+  <div class="text-xs uppercase tracking-widest text-gray-400 mb-2">PnL Snapshot</div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+    <div class="rounded-xl border border-white/10 bg-white/5 p-4">
+      <div class="text-sm font-bold">Base Case</div>
+      <div class="text-2xl font-extrabold text-emerald-300 mt-1">+$480</div>
+      <div class="text-xs text-gray-400">Yield only</div>
+    </div>
+    <div class="rounded-xl border border-emerald-400/40 bg-emerald-500/10 p-4">
+      <div class="text-sm font-bold">Bull Case</div>
+      <div class="text-2xl font-extrabold text-emerald-300 mt-1">+$2,580</div>
+      <div class="text-xs text-gray-300">Yield + 35% avg price move</div>
+    </div>
+    <div class="rounded-xl border border-cyan-400/40 bg-cyan-500/10 p-4">
+      <div class="text-sm font-bold">Mega Bull</div>
+      <div class="text-2xl font-extrabold text-cyan-200 mt-1">+$4,980</div>
+      <div class="text-xs text-gray-300">Yield + 75% avg price move</div>
+    </div>
+  </div>
+</div>
+
+<!-- SCENARIO TABLE -->
 <div class="overflow-x-auto">
   <table class="min-w-full text-sm border border-white/10 rounded-xl overflow-hidden">
     <thead class="bg-white/5">
       <tr>
         <th class="px-3 py-2 text-left">Scenario</th>
-        <th class="px-3 py-2 text-left">Price Action</th>
-        <th class="px-3 py-2 text-left">Portfolio Value*</th>
+        <th class="px-3 py-2 text-left">Price Assumption</th>
+        <th class="px-3 py-2 text-left">Yield</th>
+        <th class="px-3 py-2 text-left">Total Value</th>
       </tr>
     </thead>
     <tbody class="divide-y divide-white/10">
       <tr>
         <td class="px-3 py-2 font-bold">Base</td>
-        <td class="px-3 py-2">Flat prices + yield only</td>
-        <td class="px-3 py-2 font-bold text-emerald-300">≈ $6,480</td>
+        <td class="px-3 py-2">0% price appreciation</td>
+        <td class="px-3 py-2">+$480</td>
+        <td class="px-3 py-2 font-bold text-emerald-300">$6,480</td>
       </tr>
       <tr>
         <td class="px-3 py-2 font-bold">Bull</td>
-        <td class="px-3 py-2">+35% avg appreciation</td>
-        <td class="px-3 py-2 font-bold text-emerald-300">≈ $8,580</td>
+        <td class="px-3 py-2">+35% avg across assets</td>
+        <td class="px-3 py-2">+$480</td>
+        <td class="px-3 py-2 font-bold text-emerald-300">$8,580</td>
       </tr>
       <tr>
         <td class="px-3 py-2 font-bold">Mega Bull</td>
-        <td class="px-3 py-2">+75% avg appreciation</td>
-        <td class="px-3 py-2 font-bold text-emerald-300">≈ $10,980</td>
+        <td class="px-3 py-2">+75% avg across assets</td>
+        <td class="px-3 py-2">+$480</td>
+        <td class="px-3 py-2 font-bold text-cyan-200">$10,980</td>
       </tr>
     </tbody>
   </table>
 </div>
 
-<p class="mt-3 text-xs text-gray-400">*Illustrative math. Yield: $6,000 × 0.16 × (6/12) ≈ $480.</p>
+<p class="mt-3 text-xs text-gray-400">Illustrative math only. Yield: $6,000 × 0.16 × (6/12) = $480. Price outcomes are scenarios, not forecasts.</p>
 ```
 
+  </div>
+</section>
+
+<section id="deep-thesis" class="max-w-6xl mx-auto px-4 pb-12">
+  <div class="card">
+    <h2 class="text-2xl font-extrabold mb-4">Deeper Portfolio Thesis</h2>
+    <div class="space-y-4 text-sm text-gray-200">
+      <p><strong>1. Time arbitrage:</strong> This portfolio monetizes time via yield, reducing dependency on perfect entry timing.</p>
+      <p><strong>2. Liquidity hierarchy:</strong> ETH, SOL, and XRP anchor liquidity; LINK, ONDO, and AVAX add convex upside.</p>
+      <p><strong>3. Scenario resilience:</strong> Base case still wins. Bull cases add asymmetry without leverage.</p>
+      <p><strong>4. Risk discipline:</strong> No leverage, no forced lockups, no narrative chasing mid-cycle.</p>
+    </div>
   </div>
 </section>
 
@@ -213,4 +270,5 @@
 
 </body>
 </html>
+
 
