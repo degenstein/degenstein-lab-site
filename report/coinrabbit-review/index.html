@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- SEO -->
-  <meta name="description" content="A deep dive into CoinRabbit crypto-backed loans. How it works, supported assets, loan structure, risks, and who CoinRabbit is best for in 2026." />
+  <meta name="description" content="A mechanics-first CoinRabbit review. How crypto-backed loans work, LTV structure, repayment flexibility, supported assets, risks, and who CoinRabbit is best for in 2026." />
   <link rel="canonical" href="https://degenstein.xyz/report/coinrabbit-review/" />
   <meta name="robots" content="index, follow" />
 
@@ -14,7 +14,7 @@
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="The Degenstein Report" />
   <meta property="og:title" content="CoinRabbit Review 2026 — Crypto-Backed Loans Explained" />
-  <meta property="og:description" content="A mechanics-first look at CoinRabbit. Crypto-backed loans, collateral structure, risks, and real-world use cases." />
+  <meta property="og:description" content="A deep dive into CoinRabbit crypto-backed loans. Structure, LTV mechanics, loan types, risks, and real-world use cases." />
   <meta property="og:image" content="https://degenstein.xyz/assets/coinrabbitreport.png" />
 
   <!-- X -->
@@ -123,13 +123,13 @@ html, body {
     </h1>
 
     <p class="text-lg muted mt-4">
-      CoinRabbit is built for one thing: borrowing against crypto without selling it.
+      CoinRabbit is built for one thing: unlocking liquidity from crypto without selling it.
     </p>
 
     <p class="muted mt-3">
-      This report breaks down CoinRabbit through a mechanics-first lens —
-      loan structure, collateral behavior, supported assets, risk exposure,
-      and who this platform actually makes sense for.
+      This report examines CoinRabbit through a mechanics-first lens — how its
+      crypto-backed loans work, how LTV and liquidation are managed, what kind
+      of borrowers it’s designed for, and where the real risks live.
     </p>
 
     <div class="flex flex-wrap gap-3 mt-6">
@@ -144,9 +144,7 @@ html, body {
 
     <div class="flex flex-wrap gap-3 mt-4">
       <a href="https://degenstein.xyz/" class="btn-outline">← Back to Main</a>
-
       <a href="/report/" class="btn-outline">← Back to Reports</a>
-
       <a href="https://twitter.com/intent/tweet?text=CoinRabbit%20Review%202026%20—%20Crypto-Backed%20Loans%20Explained&url=https%3A%2F%2Fdegenstein.xyz%2Freport%2Fcoinrabbit-review%2F"
          target="_blank" rel="noopener"
          class="btn-outline">
@@ -164,65 +162,106 @@ html, body {
 <main class="wrap pb-16 space-y-8">
 
 <section class="card">
-  <h2 class="text-2xl font-extrabold mb-2">What is CoinRabbit?</h2>
+  <h2 class="text-2xl font-extrabold mb-2">What Is CoinRabbit?</h2>
   <p class="muted">
-    CoinRabbit is a crypto-backed lending platform that allows users to unlock
-    liquidity without selling their digital assets. Loans are issued based on
-    collateral value rather than creditworthiness.
+    CoinRabbit is a crypto-backed lending platform that allows users to borrow
+    against their digital assets instead of selling them. Loans are issued based
+    solely on collateral value — not credit history, income, or geography.
   </p>
 </section>
 
 <section class="card">
-  <h2 class="text-2xl font-extrabold mb-2">How CoinRabbit Works</h2>
+  <h2 class="text-2xl font-extrabold mb-2">How CoinRabbit Loans Work</h2>
   <ul class="list-disc pl-6 text-gray-300 space-y-2">
-    <li>Select loan currency</li>
-    <li>Choose crypto collateral</li>
-    <li>Deposit collateral</li>
-    <li>Receive loan</li>
-    <li>Repay to unlock assets</li>
+    <li>Select the asset you want to borrow</li>
+    <li>Choose from a wide range of supported crypto collateral</li>
+    <li>Review LTV, interest rate, and liquidation thresholds</li>
+    <li>Deposit collateral to CoinRabbit</li>
+    <li>Receive funds — often within minutes</li>
+    <li>Repay at any time to unlock collateral</li>
   </ul>
 </section>
 
 <section class="card">
-  <h2 class="text-2xl font-extrabold mb-2">Supported Assets</h2>
+  <h2 class="text-2xl font-extrabold mb-2">Loan Types & Repayment Flexibility</h2>
+
   <p class="muted">
-    CoinRabbit supports a wide range of major and alternative cryptocurrencies,
-    making it useful for borrowers holding non-mainstream assets.
+    CoinRabbit supports both fixed-term and open-ended loan structures, giving
+    borrowers flexibility depending on how predictable their capital needs are.
+  </p>
+
+  <div class="mt-4 grid md:grid-cols-2 gap-4">
+    <div class="rounded-xl border border-white/10 bg-white/5 p-4">
+      <div class="font-extrabold mb-2">Fixed-Term Loans</div>
+      <ul class="list-disc pl-6 text-gray-300 space-y-2">
+        <li>Interest and duration set upfront</li>
+        <li>Predictable total borrowing cost</li>
+        <li>Best for planned, short-term needs</li>
+      </ul>
+    </div>
+
+    <div class="rounded-xl border border-white/10 bg-white/5 p-4">
+      <div class="font-extrabold mb-2">Open-Ended Loans</div>
+      <ul class="list-disc pl-6 text-gray-300 space-y-2">
+        <li>No fixed repayment schedule</li>
+        <li>Partial or full repayment at any time</li>
+        <li>Designed for flexible liquidity access</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="card">
+  <h2 class="text-2xl font-extrabold mb-2">Crypto Loans: LTV & Liquidation Mechanics</h2>
+
+  <p class="muted">
+    CoinRabbit loans are overcollateralized. Your loan-to-value (LTV) ratio
+    determines how much you can borrow relative to the value of your crypto.
+  </p>
+
+  <div class="mt-4 rounded-xl border border-white/10 bg-white/5 p-4">
+    <ul class="list-disc pl-6 text-gray-300 space-y-2">
+      <li>Higher LTV provides more liquidity but less downside buffer</li>
+      <li>Lower LTV reduces liquidation risk during volatility</li>
+      <li>Collateral value is monitored in real time</li>
+      <li>Borrowers can add collateral or repay to restore LTV</li>
+    </ul>
+  </div>
+</section>
+
+<section class="card">
+  <h2 class="text-2xl font-extrabold mb-2">Supported Collateral Assets</h2>
+  <p class="muted">
+    CoinRabbit supports a broad range of cryptocurrencies — including major
+    assets and long-tail tokens — allowing borrowers to use assets they already hold.
   </p>
 </section>
 
 <section class="card">
-  <h2 class="text-2xl font-extrabold mb-2">Loan Structure & LTV</h2>
-  <p class="muted">
-    Loans are overcollateralized and structured with fixed terms.
-    If collateral value drops, borrowers may need to add funds or repay
-    part of the loan to avoid liquidation.
-  </p>
-</section>
-
-<section class="card">
-  <h2 class="text-2xl font-extrabold mb-2">Who CoinRabbit Is Best For</h2>
+  <h2 class="text-2xl font-extrabold mb-2">Why Borrow Instead of Selling?</h2>
   <ul class="list-disc pl-6 text-gray-300 space-y-2">
-    <li>Users needing short-term liquidity</li>
-    <li>Crypto holders avoiding taxable sales</li>
-    <li>Traders bridging capital</li>
-    <li>Borrowers prioritizing speed and simplicity</li>
+    <li>Avoid triggering taxable sales</li>
+    <li>Maintain long-term market exposure</li>
+    <li>Access liquidity without exiting positions</li>
+    <li>Deploy capital while waiting for future price appreciation</li>
   </ul>
 </section>
 
 <section id="risk" class="card">
   <h2 class="text-2xl font-extrabold mb-2">Risk Notes</h2>
   <p class="muted">
-    Crypto-backed loans expose users to market volatility and platform risk.
-    Always understand liquidation thresholds before borrowing.
+    Crypto-backed loans carry market risk and platform risk.
+    Borrow conservatively, monitor LTV, and understand liquidation thresholds
+    before deploying capital.
   </p>
 </section>
 
 <section class="card relative ring-1 ring-orange-400/40 shadow-[0_0_70px_rgba(249,115,22,0.35)]">
   <h2 class="text-2xl font-extrabold mb-2">Final Take</h2>
   <p class="muted">
-    CoinRabbit is a focused borrowing tool — not an investment platform.
-    Used intentionally, it can provide liquidity while keeping crypto exposure intact.
+    CoinRabbit is a specialized borrowing tool. It does not attempt to be an
+    investment platform — it exists to convert crypto holdings into liquidity
+    without selling them.
   </p>
 
   <div class="mt-4">
@@ -248,4 +287,5 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 </body>
 </html>
+
 
