@@ -236,6 +236,67 @@ html, body {
     assets and long-tail tokens — allowing borrowers to use assets they already hold.
   </p>
 </section>
+<section class="card">
+  <h2 class="text-2xl font-extrabold mb-2">Loan Borrowing Example (With Real Numbers)</h2>
+
+  <p class="muted">
+    To make CoinRabbit’s loan structure more concrete, here’s a simplified
+    example using round numbers. This is illustrative only, but it reflects
+    how crypto-backed borrowing works in practice.
+  </p>
+
+  <div class="mt-4 rounded-xl border border-white/10 bg-white/5 p-4">
+    <div class="font-extrabold mb-2">Starting position</div>
+    <ul class="list-disc pl-6 text-gray-300 space-y-2">
+      <li>Collateral deposited: <strong>$10,000</strong> in crypto</li>
+      <li>Selected LTV: <strong>50%</strong></li>
+      <li>Loan amount received: <strong>$5,000</strong></li>
+    </ul>
+  </div>
+
+  <p class="muted mt-3">
+    In this scenario, the borrower retains exposure to their crypto while
+    accessing $5,000 in liquidity without selling the underlying asset.
+  </p>
+
+  <div class="mt-4 rounded-xl border border-white/10 bg-white/5 p-4">
+    <div class="font-extrabold mb-2">Market movement scenarios</div>
+
+    <ul class="list-disc pl-6 text-gray-300 space-y-2">
+      <li>
+        <strong>Price stays flat:</strong>
+        collateral remains near $10,000 — loan remains healthy
+      </li>
+      <li>
+        <strong>Price drops 20%:</strong>
+        collateral falls to $8,000 — effective LTV rises to ~62.5%
+      </li>
+      <li>
+        <strong>Price drops further:</strong>
+        borrower may need to add collateral or repay part of the loan
+      </li>
+    </ul>
+  </div>
+
+  <p class="muted mt-3">
+    This is why conservative borrowing matters. Lower starting LTV gives
+    you more room to absorb volatility without forced liquidation.
+  </p>
+
+  <div class="mt-4 rounded-xl border border-white/10 bg-black/40 p-4">
+    <div class="font-extrabold mb-2">Why this matters</div>
+    <ul class="list-disc pl-6 text-gray-300 space-y-2">
+      <li>Borrowing too aggressively increases liquidation risk</li>
+      <li>Moderate LTV improves survivability during drawdowns</li>
+      <li>Loans should be actively monitored during volatile markets</li>
+    </ul>
+  </div>
+
+  <p class="fine mt-3">
+    Numbers shown are simplified for clarity. Actual thresholds and rates
+    depend on market conditions and platform terms.
+  </p>
+</section>
 
 <section class="card">
   <h2 class="text-2xl font-extrabold mb-2">Why Borrow Instead of Selling?</h2>
