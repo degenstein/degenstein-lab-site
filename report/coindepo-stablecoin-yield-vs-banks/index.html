@@ -95,29 +95,59 @@ CoinDepo stablecoin yields — compared directly against traditional savings, CD
 
 <!-- Growth Chart -->
 <div class="card">
-<h3>12-Month Growth Comparison ($10,000)</h3>
-<svg viewBox="0 0 600 260" width="100%" height="260">
-  <line x1="40" y1="20" x2="40" y2="220" stroke="#666"/>
-  <line x1="40" y1="220" x2="560" y2="220" stroke="#666"/>
+  <h3>12-Month Growth Comparison ($10,000)</h3>
 
-  <polyline points="40,220 260,210 460,205"
-            stroke="#888" fill="none" stroke-width="2"/>
-  <polyline points="40,220 260,175 460,150"
-            stroke="#3ddc97" fill="none" stroke-width="3"/>
-  <polyline points="40,220 260,170 460,140"
-            stroke="#7c7cff" fill="none" stroke-width="3"/>
-</svg>
+  <svg viewBox="0 0 600 300" width="100%" height="300" role="img" aria-label="12 month growth comparison">
+    <!-- Axes -->
+    <line x1="70" y1="20" x2="70" y2="260" stroke="#666"/>
+    <line x1="70" y1="260" x2="560" y2="260" stroke="#666"/>
 
-<!-- Legend -->
-<div style="display:flex;gap:18px;margin-top:12px;font-size:.9rem;color:var(--muted)">
-  <span><strong style="color:#888">—</strong> Bank / CD (~5%)</span>
-  <span><strong style="color:#3ddc97">—</strong> CoinDepo Quarterly (20%)</span>
-  <span><strong style="color:#7c7cff">—</strong> CoinDepo Annual (23%)</span>
-</div>
+    <!-- Y-axis labels -->
+    <text x="20" y="40" fill="#9aa0c3" font-size="12">$12.5k</text>
+    <text x="20" y="100" fill="#9aa0c3" font-size="12">$12k</text>
+    <text x="20" y="160" fill="#9aa0c3" font-size="12">$11k</text>
+    <text x="20" y="260" fill="#9aa0c3" font-size="12">$10k</text>
 
-<p style="font-size:.9rem">
-Illustrative growth curves based on stated APRs.
-</p>
+    <!-- X-axis labels -->
+    <text x="70" y="285" fill="#9aa0c3" font-size="12">Start</text>
+    <text x="260" y="285" fill="#9aa0c3" font-size="12">6 months</text>
+    <text x="460" y="285" fill="#9aa0c3" font-size="12">12 months</text>
+
+    <!-- Bank / CD line (~5%) -->
+    <polyline
+      points="70,260 260,245 460,235"
+      fill="none"
+      stroke="#888"
+      stroke-width="2"
+    />
+
+    <!-- CoinDepo Quarterly (20%) -->
+    <polyline
+      points="70,260 260,190 460,165"
+      fill="none"
+      stroke="#3ddc97"
+      stroke-width="3"
+    />
+
+    <!-- CoinDepo Annual (23%) -->
+    <polyline
+      points="70,260 260,180 460,150"
+      fill="none"
+      stroke="#7c7cff"
+      stroke-width="3"
+    />
+  </svg>
+
+  <!-- Legend -->
+  <div style="display:flex;gap:18px;margin-top:12px;font-size:.9rem;color:var(--muted)">
+    <span><strong style="color:#888">—</strong> Bank / CD (~5%)</span>
+    <span><strong style="color:#3ddc97">—</strong> CoinDepo Quarterly (20%)</span>
+    <span><strong style="color:#7c7cff">—</strong> CoinDepo Annual (23%)</span>
+  </div>
+
+  <p style="font-size:.9rem">
+    Illustrative growth curves based on stated APRs.
+  </p>
 </div>
 
 <!-- Bar Chart -->
