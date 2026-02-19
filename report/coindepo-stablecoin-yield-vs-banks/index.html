@@ -1,1 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CoinDepo Stablecoin Yield vs Banks | Full Report</title>
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --card: #12172a;
+      --accent: #7c7cff;
+      --accent-glow: rgba(124,124,255,0.5);
+      --text: #e6e8f0;
+      --muted: #9aa0c3;
+      --success: #3ddc97;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: radial-gradient(circle at top, #12183a, var(--bg));
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+    header {
+      margin-bottom: 40px;
+    }
+    h1 {
+      font-size: 2.6rem;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #b8b8ff, var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    h2 {
+      margin-top: 50px;
+      font-size: 1.9rem;
+      color: #ffffff;
+    }
+    h3 {
+      margin-top: 30px;
+      font-size: 1.3rem;
+      color: #ffffff;
+    }
+    p {
+      color: var(--muted);
+      max-width: 860px;
+    }
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
+      border: 1px solid rgba(124,124,255,0.2);
+      border-radius: 16px;
+      padding: 24px;
+      margin-top: 20px;
+      box-shadow: 0 0 40px rgba(124,124,255,0.1);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 14px;
+      text-align: left;
+    }
+    th {
+      color: #ffffff;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
+    td {
+      color: var(--muted);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .highlight {
+      color: var(--success);
+      font-weight: 600;
+    }
+    .cta {
+      margin: 50px 0;
+      padding: 30px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(124,124,255,0.2), rgba(61,220,151,0.15));
+      border: 1px solid rgba(124,124,255,0.4);
+      box-shadow: 0 0 60px rgba(124,124,255,0.25);
+    }
+    .cta h3 { margin-top: 0; }
+    .cta a {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #0b0f1a;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 0 25px var(--accent-glow);
+    }
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 60px;
+    }
+    .buttons a {
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.2);
+      text-decoration: none;
+      color: var(--text);
+      background: rgba(255,255,255,0.05);
+    }
+    footer {
+      margin-top: 80px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>$10,000 Stablecoins vs Banks</h1>
+      <p>A full breakdown of what $10,000 can realistically earn over 90 days, 6 months, and 12 months using CoinDepo stablecoin yields — compared directly against traditional savings accounts, CDs, and money market funds.</p>
+
+      <!-- Hero Image -->
+      <div class="card" style="margin-top:30px; text-align:center;">
+        <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a" alt="Crypto yield growth visualization" style="width:100%; max-width:820px; border-radius:14px; box-shadow:0 0 40px rgba(124,124,255,0.35);" />
+        <p style="margin-top:12px; font-size:0.9rem;">Visualizing the difference between traditional savings and high-yield stablecoin strategies.</p>
+      </div>
+
+      <!-- Hero Growth Chart -->
+      <div class="card" style="margin-top:30px;">
+        <h3>12-Month Growth Comparison ($10,000)</h3>
+        <svg viewBox="0 0 600 260" width="100%" height="260" role="img" aria-label="Growth curve comparison">
+          <!-- Axes -->
+          <line x1="40" y1="20" x2="40" y2="220" stroke="#666" />
+          <line x1="40" y1="220" x2="560" y2="220" stroke="#666" />
+
+          <!-- Labels -->
+          <text x="20" y="30" fill="#9aa0c3" font-size="12">$12.5k</text>
+          <text x="20" y="130" fill="#9aa0c3" font-size="12">$11k</text>
+          <text x="20" y="220" fill="#9aa0c3" font-size="12">$10k</text>
+
+          <text x="80" y="245" fill="#9aa0c3" font-size="12">Start</text>
+          <text x="260" y="245" fill="#9aa0c3" font-size="12">6 mo</text>
+          <text x="460" y="245" fill="#9aa0c3" font-size="12">12 mo</text>
+
+          <!-- Bank line -->
+          <polyline points="40,220 260,210 460,205" fill="none" stroke="#888" stroke-width="2" />
+          <text x="470" y="205" fill="#888" font-size="12">Bank / CD</text>
+
+          <!-- Quarterly CoinDepo line -->
+          <polyline points="40,220 260,175 460,150" fill="none" stroke="#3ddc97" stroke-width="3" />
+          <text x="470" y="150" fill="#3ddc97" font-size="12">CoinDepo Quarterly</text>
+
+          <!-- Annual CoinDepo line -->
+          <polyline points="40,220 260,170 460,140" fill="none" stroke="#7c7cff" stroke-width="3" />
+          <text x="470" y="140" fill="#7c7cff" font-size="12">CoinDepo Annual</text>
+        </svg>
+        <p style="font-size:0.9rem;">Illustrative growth curve based on stated APRs. Bank line reflects ~5% annual yield.</p>
+      </div>
+
+      <!-- Hero Bar Chart -->
+      <div class="card" style="margin-top:30px;">
+        <h3>12-Month Ending Balance — Side-by-Side</h3>
+        <svg viewBox="0 0 600 300" width="100%" height="300" role="img" aria-label="Bar chart comparison of ending balances" class="bar-chart">
+          <!-- Y-axis -->
+          <line x1="60" y1="20" x2="60" y2="260" stroke="#666" />
+          <!-- X-axis -->
+          <line x1="60" y1="260" x2="560" y2="260" stroke="#666" />
+
+          <!-- Y labels -->
+          <text x="20" y="40" fill="#9aa0c3" font-size="12">$12.5k</text>
+          <text x="20" y="120" fill="#9aa0c3" font-size="12">$11.5k</text>
+          <text x="20" y="200" fill="#9aa0c3" font-size="12">$10.5k</text>
+          <text x="20" y="260" fill="#9aa0c3" font-size="12">$10k</text>
+
+          <!-- Bars -->
+          <!-- Bank / CD -->
+          <rect x="120" y="260" width="80" height="0" fill="#888">
+            <animate attributeName="height" from="0" to="50" dur="0.8s" begin="0s" fill="freeze" />
+            <animate attributeName="y" from="260" to="210" dur="0.8s" begin="0s" fill="freeze" />
+          </rect>
+          <text x="120" y="280" fill="#9aa0c3" font-size="12">Bank / CD</text>
+          <text x="120" y="200" fill="#888" font-size="12">
+            <tspan>$</tspan><tspan id="bankCount">0</tspan>
+            <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.8s" fill="freeze" />
+          </text>
+          <script><![CDATA[
+            let bank=0;const bInt=setInterval(()=>{bank+=500;if(bank>=10500){bank=10500;clearInterval(bInt);}document.getElementById('bankCount').textContent=bank.toLocaleString();},40);
+          ]]></script>
+
+          <!-- Quarterly -->
+          <rect x="260" y="260" width="80" height="0" fill="#3ddc97">
+            <animate attributeName="height" from="0" to="100" dur="0.9s" begin="0.1s" fill="freeze" />
+            <animate attributeName="y" from="260" to="160" dur="0.9s" begin="0.1s" fill="freeze" />
+          </rect>
+          <text x="260" y="280" fill="#9aa0c3" font-size="12">Quarterly 20%</text>
+          <text x="260" y="150" fill="#3ddc97" font-size="12">
+            <tspan>$</tspan><tspan id="qCount">0</tspan>
+            <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1s" fill="freeze" />
+          </text>
+          <script><![CDATA[
+            let q=0;const qInt=setInterval(()=>{q+=800;if(q>=12155){q=12155;clearInterval(qInt);}document.getElementById('qCount').textContent=q.toLocaleString();},40);
+          ]]></script>
+
+          <!-- Annual -->
+          <rect x="400" y="260" width="80" height="0" fill="#7c7cff" stroke="#b8b8ff" stroke-width="2" style="filter: drop-shadow(0 0 12px rgba(124,124,255,0.9));">
+            <animate attributeName="height" from="0" to="115" dur="1s" begin="0.2s" fill="freeze" />
+            <animate attributeName="y" from="260" to="145" dur="1s" begin="0.2s" fill="freeze" />
+          </rect>
+          <text x="400" y="280" fill="#9aa0c3" font-size="12">Annual 23%</text>
+          <text x="400" y="135" fill="#7c7cff" font-size="12" style="font-weight:600;">
+            <tspan>$</tspan><tspan id="aCount">0</tspan>
+            <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.2s" fill="freeze" />
+          </text>
+          <script><![CDATA[
+            let a=0;const aInt=setInterval(()=>{a+=900;if(a>=12300){a=12300;clearInterval(aInt);}document.getElementById('aCount').textContent=a.toLocaleString();},40);
+          ]]></script>
+        <!-- +$1,800 Badge -->
+        <div style="position:relative; margin-top:-260px; margin-left:420px; width:160px;">
+          <div style="background:linear-gradient(135deg, rgba(124,124,255,0.9), rgba(61,220,151,0.9)); color:#0b0f1a; font-weight:700; padding:10px 14px; border-radius:999px; box-shadow:0 0 25px rgba(124,124,255,0.7); text-align:center;">
+            +$1,800 vs banks
+          </div>
+        </div>
+        </svg>
+        <p style="font-size:0.9rem;">Bars show ending balances after 12 months on $10,000. Heights are proportional and rounded for clarity.</p>
+
+        <!-- CTA below chart -->
+        <div style="text-align:center; margin-top:30px;">
+          <a href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV" target="_blank" style="display:inline-block; padding:16px 28px; border-radius:999px; background:linear-gradient(135deg, #7c7cff, #3ddc97); color:#0b0f1a; font-weight:800; text-decoration:none; box-shadow:0 0 35px rgba(124,124,255,0.6);">Start earning →</a>
+          <p style="margin-top:10px; font-size:0.85rem; color:#9aa0c3;">USA & international sign-up available</p>
+          <div style="margin-top:12px; font-size:0.95rem; color:#e6e8f0; font-weight:600;">
+            ⏱️ <span style="color:#3ddc97;">90 days ≈ $500</span> on $10,000 at 20% APR
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <h2>CoinDepo Stablecoin Yields (Based on Current Rates)</h2>
+    <div class="card">
+      <p>CoinDepo offers fixed-term interest options on major stablecoins like USDT, USDC, and DAI. For this report, we focus on the two most relevant choices:</p>
+      <ul>
+        <li><strong>Quarterly:</strong> 20% APR (interest paid every 90 days, compounding possible)</li>
+        <li><strong>Annual:</strong> 23% APR (locked for 12 months)</li>
+      </ul>
+    </div>
+
+    <h2>What $10,000 Earns on CoinDepo</h2>
+    <div class="card">
+      <table>
+        <tr><th>Time Held</th><th>Strategy</th><th>Interest Earned</th><th>Ending Balance</th></tr>
+        <tr><td>90 Days</td><td>Quarterly (20%)</td><td class="highlight">$500</td><td>$10,500</td></tr>
+        <tr><td>6 Months</td><td>Quarterly Compounded</td><td class="highlight">$1,025</td><td>$11,025</td></tr>
+        <tr><td>12 Months</td><td>Quarterly Compounded</td><td class="highlight">$2,155</td><td>$12,155</td></tr>
+        <tr><td>12 Months</td><td>Annual Lock (23%)</td><td class="highlight">$2,300</td><td>$12,300</td></tr>
+      </table>
+    </div>
+
+    <h2>How This Compares to Traditional Banking</h2>
+    <div class="card">
+      <table>
+        <tr><th>Option</th><th>Typical Rate</th><th>Interest Earned</th><th>Ending Balance</th></tr>
+        <tr><td>Savings Account</td><td>~0.5%</td><td>$50</td><td>$10,050</td></tr>
+        <tr><td>High-Yield Savings</td><td>~4.5%</td><td>$450</td><td>$10,450</td></tr>
+        <tr><td>Money Market</td><td>~4.8%</td><td>$480</td><td>$10,480</td></tr>
+        <tr><td>12-Month CD</td><td>~5.0%</td><td>$500</td><td>$10,500</td></tr>
+      </table>
+    </div>
+
+    <h2>Quarterly vs Annual: Which Should You Choose?</h2>
+    <div class="card">
+      <p><strong>Choose Quarterly (20%) if:</strong></p>
+      <ul>
+        <li>You want access to funds every 90 days</li>
+        <li>You want the option to react to rate changes</li>
+        <li>You value flexibility almost as much as yield</li>
+      </ul>
+      <p><strong>Choose Annual (23%) if:</strong></p>
+      <ul>
+        <li>You do not need the funds for 12 months</li>
+        <li>You want the highest guaranteed return</li>
+        <li>You prefer a set-it-and-forget-it strategy</li>
+      </ul>
+    </div>
+
+    <div class="cta">
+      <h3>Start Earning With CoinDepo</h3>
+      <p><strong>USA residents only:</strong></p>
+      <a href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV" target="_blank">Join CoinDepo (USA)</a>
+      <p style="margin-top:20px;"><strong>All other countries:</strong></p>
+      <a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W" target="_blank">Join CoinDepo (International)</a>
+    </div>
+
+    <div class="buttons">
+      <a href="/">⬅ Back to Main Page</a>
+      <a href="/reports">📊 Back to Reports</a>
+      <a href="https://twitter.com/intent/tweet?text=$10,000%20stablecoins%20vs%20banks%20%E2%80%94%20see%20the%20full%20yield%20breakdown&url=https://degenstein.xyz" target="_blank">🐦 Share on X</a>
+    </div>
+
+    <footer>
+      <p>Disclaimer: This report is for informational purposes only and does not constitute financial advice. Rates may change. Stablecoins and crypto platforms involve risks, including platform and counterparty risk. Always do your own research.</p>
+    </footer>
+  </div>
+</body>
+</html>
 
