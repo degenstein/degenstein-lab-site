@@ -25,7 +25,7 @@
   --bg:#0b0f1a;
   --card:#12172a;
   --accent:#7c7cff;
-  --accent-glow:rgba(124,124,255,.6);
+  --accent-glow:rgba(124,124,255,.5);
   --text:#e6e8f0;
   --muted:#9aa0c3;
   --success:#3ddc97;
@@ -36,6 +36,7 @@ body{
   font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
   background:radial-gradient(circle at top,#12183a,var(--bg));
   color:var(--text);
+  line-height:1.6;
 }
 .container{max-width:980px;margin:0 auto;padding:40px 20px 80px}
 h1{
@@ -45,17 +46,17 @@ h1{
   -webkit-text-fill-color:transparent;
 }
 h2{margin-top:50px}
-h3{margin-top:24px}
-p{color:var(--muted)}
+h3{margin-top:28px}
+p{color:var(--muted);max-width:860px}
 .card{
-  margin-top:24px;
+  margin-top:28px;
   padding:24px;
   border-radius:16px;
   background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,0));
   border:1px solid rgba(124,124,255,.2);
   box-shadow:0 0 40px rgba(124,124,255,.1);
 }
-table{width:100%;border-collapse:collapse;margin-top:16px}
+table{width:100%;border-collapse:collapse;margin-top:18px}
 th,td{padding:12px;text-align:left}
 th{border-bottom:1px solid rgba(255,255,255,.15)}
 td{border-bottom:1px solid rgba(255,255,255,.08);color:var(--muted)}
@@ -70,110 +71,115 @@ td{border-bottom:1px solid rgba(255,255,255,.08);color:var(--muted)}
 }
 footer{margin-top:80px;color:var(--muted);font-size:.9rem}
 </style>
-
-<script>
-window.addEventListener("load",()=>{
-  animateBar("bar-bank","val-bank",10500,70,0);
-  animateBar("bar-quarterly","val-quarterly",12155,130,150);
-  animateBar("bar-annual","val-annual",12300,155,300);
-});
-
-function animateBar(barId,labelId,value,height,delay){
-  const bar=document.getElementById(barId);
-  const label=document.getElementById(labelId);
-  const baseY=280;
-
-  setTimeout(()=>{
-    bar.animate([
-      {height:0,y:baseY},
-      {height:height,y:baseY-height}
-    ],{duration:900,easing:"ease-out",fill:"forwards"});
-
-    label.setAttribute("y",baseY-height-8);
-    label.setAttribute("opacity","1");
-
-    let current=0;
-    const step=Math.ceil(value/30);
-    const counter=setInterval(()=>{
-      current+=step;
-      if(current>=value){current=value;clearInterval(counter);}
-      label.textContent="$"+current.toLocaleString();
-    },30);
-  },delay);
-}
-</script>
 </head>
 
 <body>
 <div class="container">
 
 <h1>$10,000 Stablecoins vs Banks</h1>
-<p>What $10,000 actually earns over 90 days, 6 months, and 12 months — CoinDepo stablecoin yield vs traditional banking.</p>
+<p>
+A clear breakdown of what $10,000 earns over 90 days, 6 months, and 12 months using
+CoinDepo stablecoin yields — compared directly against traditional savings, CDs, and money markets.
+</p>
 
+<!-- Hero Image -->
 <div class="card" style="text-align:center">
-  <img src="/assets/10000save.png" style="width:100%;max-width:820px;border-radius:14px;box-shadow:0 0 40px rgba(124,124,255,.35)">
+  <img src="/assets/10000save.png"
+       alt="Where does $10,000 earn the most"
+       style="width:100%;max-width:820px;border-radius:14px;
+       box-shadow:0 0 40px rgba(124,124,255,.35)">
+  <p style="font-size:.9rem;margin-top:10px">
+    Visual comparison of traditional banking vs stablecoin yield.
+  </p>
 </div>
 
-<!-- Growth -->
+<!-- Growth Chart -->
 <div class="card">
 <h3>12-Month Growth Comparison ($10,000)</h3>
 <svg viewBox="0 0 600 260" width="100%" height="260">
   <line x1="40" y1="20" x2="40" y2="220" stroke="#666"/>
   <line x1="40" y1="220" x2="560" y2="220" stroke="#666"/>
-  <polyline points="40,220 260,210 460,205" stroke="#888" fill="none"/>
-  <polyline points="40,220 260,175 460,150" stroke="#3ddc97" fill="none" stroke-width="3"/>
-  <polyline points="40,220 260,170 460,140" stroke="#7c7cff" fill="none" stroke-width="3"/>
+
+  <polyline points="40,220 260,210 460,205"
+            stroke="#888" fill="none" stroke-width="2"/>
+  <polyline points="40,220 260,175 460,150"
+            stroke="#3ddc97" fill="none" stroke-width="3"/>
+  <polyline points="40,220 260,170 460,140"
+            stroke="#7c7cff" fill="none" stroke-width="3"/>
 </svg>
+<p style="font-size:.9rem">
+Illustrative growth curves based on stated APRs. Bank line reflects ~5% annual yield.
+</p>
 </div>
 
-<!-- Bars -->
+<!-- Bar Chart -->
 <div class="card" style="position:relative">
 <h3>12-Month Ending Balance — Side-by-Side</h3>
 
-<div style="position:absolute;top:56px;right:28px;
+<div style="
+position:absolute;top:54px;right:28px;
 background:linear-gradient(135deg,#7c7cff,#3ddc97);
-color:#0b0f1a;font-weight:900;padding:10px 16px;
-border-radius:999px;box-shadow:0 0 25px var(--accent-glow)">
+color:#0b0f1a;font-weight:800;
+padding:10px 16px;border-radius:999px;
+box-shadow:0 0 25px rgba(124,124,255,.7)">
 +$1,800 vs banks
 </div>
 
-<svg viewBox="0 0 600 320" width="100%" height="320">
-<line x1="60" y1="280" x2="560" y2="280" stroke="#666"/>
-<line x1="60" y1="20" x2="60" y2="280" stroke="#666"/>
+<svg viewBox="0 0 600 300" width="100%" height="300">
+  <line x1="60" y1="260" x2="560" y2="260" stroke="#666"/>
+  <line x1="60" y1="20" x2="60" y2="260" stroke="#666"/>
 
-<rect id="bar-bank" x="120" y="280" width="80" height="0" fill="#888"/>
-<text x="120" y="300" fill="#9aa0c3" font-size="12">Bank / CD</text>
-<text id="val-bank" x="120" y="260" fill="#888" font-size="12" opacity="0">$0</text>
+  <!-- Bank -->
+  <rect x="120" y="260" width="80" height="0" fill="#888">
+    <animate attributeName="height" from="0" to="50" dur="0.8s" fill="freeze"/>
+    <animate attributeName="y" from="260" to="210" dur="0.8s" fill="freeze"/>
+  </rect>
+  <text x="120" y="280" fill="#9aa0c3" font-size="12">Bank / CD</text>
+  <text x="120" y="200" fill="#888" font-size="12">$10,500</text>
 
-<rect id="bar-quarterly" x="260" y="280" width="80" height="0" fill="#3ddc97"/>
-<text x="260" y="300" fill="#9aa0c3" font-size="12">Quarterly 20%</text>
-<text id="val-quarterly" x="260" y="260" fill="#3ddc97" font-size="12" opacity="0">$0</text>
+  <!-- Quarterly -->
+  <rect x="260" y="260" width="80" height="0" fill="#3ddc97">
+    <animate attributeName="height" from="0" to="100" dur="0.9s" begin="0.1s" fill="freeze"/>
+    <animate attributeName="y" from="260" to="160" dur="0.9s" begin="0.1s" fill="freeze"/>
+  </rect>
+  <text x="260" y="280" fill="#9aa0c3" font-size="12">Quarterly 20%</text>
+  <text x="260" y="150" fill="#3ddc97" font-size="12">$12,155</text>
 
-<rect id="bar-annual" x="400" y="280" width="80" height="0"
-fill="#7c7cff" stroke="#b8b8ff" stroke-width="2"
-style="filter:drop-shadow(0 0 14px rgba(124,124,255,.9))"/>
-<text x="400" y="300" fill="#9aa0c3" font-size="12">Annual 23%</text>
-<text id="val-annual" x="400" y="260" fill="#7c7cff" font-size="12" font-weight="700" opacity="0">$0</text>
+  <!-- Annual -->
+  <rect x="400" y="260" width="80" height="0"
+        fill="#7c7cff" stroke="#b8b8ff" stroke-width="2"
+        style="filter:drop-shadow(0 0 12px rgba(124,124,255,.9))">
+    <animate attributeName="height" from="0" to="115" dur="1s" begin="0.2s" fill="freeze"/>
+    <animate attributeName="y" from="260" to="145" dur="1s" begin="0.2s" fill="freeze"/>
+  </rect>
+  <text x="400" y="280" fill="#9aa0c3" font-size="12">Annual 23%</text>
+  <text x="400" y="135" fill="#7c7cff" font-size="12" font-weight="700">$12,300</text>
 </svg>
 
-<p style="font-size:.9rem">Bars show ending balances after 12 months on $10,000.</p>
+<p style="font-size:.9rem">
+Bars show ending balances after 12 months on $10,000.
+</p>
 </div>
 
-<!-- CTA -->
+<!-- Editorial CTA -->
 <div style="display:flex;justify-content:center;margin-top:28px">
 <div class="card" style="max-width:720px;text-align:center">
-<p style="text-transform:uppercase;letter-spacing:.05em">Want these yields working for you?</p>
+<p style="text-transform:uppercase;letter-spacing:.05em">
+Want these yields working for you?
+</p>
 
 <a href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV"
-style="display:inline-block;padding:16px 34px;border-radius:999px;
-background:linear-gradient(135deg,#7c7cff,#3ddc97);
-color:#0b0f1a;font-weight:900;text-decoration:none">
+   style="display:inline-block;padding:16px 34px;border-radius:999px;
+   background:linear-gradient(135deg,#7c7cff,#3ddc97);
+   color:#0b0f1a;font-weight:900;text-decoration:none">
 Start earning → (USA)
 </a>
 
 <p style="margin-top:10px">
 <a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W"
-style="color:var(--success)">International sign-up →</a>
+   style="color:var(--success);text-decoration:none">
+International sign-up →
+</a>
 </p>
 
 <p style="margin-top:10px">
@@ -183,24 +189,24 @@ style="color:var(--success)">International sign-up →</a>
 </div>
 
 <!-- Tables -->
-<h2>What $10,000 Earns</h2>
+<h2>What $10,000 Earns on CoinDepo</h2>
 <div class="card">
 <table>
-<tr><th>Strategy</th><th>Interest</th><th>Ending</th></tr>
-<tr><td>Quarterly (90 days)</td><td class="highlight">$500</td><td>$10,500</td></tr>
-<tr><td>6 months</td><td class="highlight">$1,025</td><td>$11,025</td></tr>
-<tr><td>12 months (Quarterly)</td><td class="highlight">$2,155</td><td>$12,155</td></tr>
-<tr><td>12 months (Annual)</td><td class="highlight">$2,300</td><td>$12,300</td></tr>
+<tr><th>Time Held</th><th>Strategy</th><th>Interest</th><th>Ending</th></tr>
+<tr><td>90 days</td><td>Quarterly</td><td class="highlight">$500</td><td>$10,500</td></tr>
+<tr><td>6 months</td><td>Quarterly (compounded)</td><td class="highlight">$1,025</td><td>$11,025</td></tr>
+<tr><td>12 months</td><td>Quarterly (compounded)</td><td class="highlight">$2,155</td><td>$12,155</td></tr>
+<tr><td>12 months</td><td>Annual lock</td><td class="highlight">$2,300</td><td>$12,300</td></tr>
 </table>
 </div>
 
-<h2>Traditional Banking</h2>
+<h2>Traditional Banking Comparison</h2>
 <div class="card">
 <table>
 <tr><th>Product</th><th>Interest</th></tr>
 <tr><td>Savings</td><td>$50</td></tr>
-<tr><td>HYSA</td><td>$450</td></tr>
-<tr><td>CD</td><td>$500</td></tr>
+<tr><td>High-Yield Savings</td><td>$450</td></tr>
+<tr><td>12-Month CD</td><td>$500</td></tr>
 </table>
 </div>
 
@@ -210,12 +216,13 @@ style="color:var(--success)">International sign-up →</a>
 </div>
 
 <footer>
-This content is informational only and not financial advice.
+This report is informational only and not financial advice.
 </footer>
 
 </div>
 </body>
 </html>
+
 
 
 
