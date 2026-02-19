@@ -71,43 +71,35 @@
   </style>
 </head>
 <script>
-(function () {
+window.addEventListener("load", () => {
+  requestAnimationFrame(() => {
+    animateBar("bar-bank", "val-bank", 10500, 70, 0);
+    animateBar("bar-quarterly", "val-quarterly", 12155, 130, 150);
+    animateBar("bar-annual", "val-annual", 12300, 155, 300);
+  });
+});
 
-  function animateBar(barId, valueId, finalValue, finalHeight, delay) {
-    const bar = document.getElementById(barId);
-    const label = document.getElementById(valueId);
+function animateBar(barId, labelId, value, height, delay) {
+  const bar = document.getElementById(barId);
+  const label = document.getElementById(labelId);
 
-    setTimeout(() => {
-      // Animate bar
-      bar.animate([
-        { height: '0px', y: 280 },
-        { height: finalHeight + 'px', y: 280 - finalHeight }
-      ], {
-        duration: 900,
-        fill: 'forwards',
-        easing: 'ease-out'
-      });
+  setTimeout(() => {
+    bar.setAttribute("height", height);
+    bar.setAttribute("y", 280 - height);
 
-      // Count-up number
-      let current = 0;
-      const step = Math.ceil(finalValue / 30);
-      const interval = setInterval(() => {
-        current += step;
-        if (current >= finalValue) {
-          current = finalValue;
-          clearInterval(interval);
-        }
-        label.textContent = '$' + current.toLocaleString();
-      }, 30);
+    let current = 0;
+    const step = Math.ceil(value / 30);
 
-    }, delay);
-  }
-
-  animateBar('bar-bank', 'val-bank', 10500, 70, 0);
-  animateBar('bar-quarterly', 'val-quarterly', 12155, 130, 150);
-  animateBar('bar-annual', 'val-annual', 12300, 155, 300);
-
-})();
+    const counter = setInterval(() => {
+      current += step;
+      if (current >= value) {
+        current = value;
+        clearInterval(counter);
+      }
+      label.textContent = "$" + current.toLocaleString();
+    }, 30);
+  }, delay);
+}
 </script>
 
 <body>
@@ -133,11 +125,9 @@
     </svg>
   </div>
 
- <!-- BAR CHART (ANIMATED + COUNT-UP, CLEAN) -->
 <div class="card" style="position:relative">
   <h3>12-Month Ending Balance — Side-by-Side</h3>
 
-  <!-- Floating Badge -->
   <div style="
     position:absolute;
     top:60px;
@@ -152,21 +142,21 @@
     +$1,800 vs banks
   </div>
 
-  <svg viewBox="0 0 600 320" width="100%" height="320" aria-label="Bar chart comparison">
+  <svg id="barChart" viewBox="0 0 600 320" width="100%" height="320">
 
     <!-- Axes -->
-    <line x1="60" y1="20" x2="60" y2="280" stroke="#666"/>
     <line x1="60" y1="280" x2="560" y2="280" stroke="#666"/>
+    <line x1="60" y1="20" x2="60" y2="280" stroke="#666"/>
 
     <!-- Bank -->
     <rect id="bar-bank" x="120" y="280" width="80" height="0" fill="#888"/>
     <text x="120" y="300" fill="#9aa0c3" font-size="12">Bank / CD</text>
-    <text id="val-bank" x="120" y="210" fill="#888" font-size="12">$0</text>
+    <text id="val-bank" x="120" y="215" fill="#888" font-size="12">$0</text>
 
     <!-- Quarterly -->
     <rect id="bar-quarterly" x="260" y="280" width="80" height="0" fill="#3ddc97"/>
     <text x="260" y="300" fill="#9aa0c3" font-size="12">Quarterly 20%</text>
-    <text id="val-quarterly" x="260" y="150" fill="#3ddc97" font-size="12">$0</text>
+    <text id="val-quarterly" x="260" y="155" fill="#3ddc97" font-size="12">$0</text>
 
     <!-- Annual -->
     <rect id="bar-annual"
@@ -176,8 +166,8 @@
           stroke-width="2"
           style="filter:drop-shadow(0 0 14px rgba(124,124,255,.9))"/>
     <text x="400" y="300" fill="#9aa0c3" font-size="12">Annual 23%</text>
-    <text id="val-annual" x="400" y="135" fill="#7c7cff" font-size="12" font-weight="700">$0</text>
-
+    <text id="val-annual" x="400" y="135"
+          fill="#7c7cff" font-size="12" font-weight="700">$0</text>
   </svg>
 
   <p style="font-size:.9rem">
