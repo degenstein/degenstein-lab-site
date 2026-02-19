@@ -25,7 +25,6 @@
   --bg:#0b0f1a;
   --card:#12172a;
   --accent:#7c7cff;
-  --accent-glow:rgba(124,124,255,.5);
   --text:#e6e8f0;
   --muted:#9aa0c3;
   --success:#3ddc97;
@@ -36,7 +35,6 @@ body{
   font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
   background:radial-gradient(circle at top,#12183a,var(--bg));
   color:var(--text);
-  line-height:1.6;
 }
 .container{max-width:980px;margin:0 auto;padding:40px 20px 80px}
 h1{
@@ -63,11 +61,9 @@ td{border-bottom:1px solid rgba(255,255,255,.08);color:var(--muted)}
 .highlight{color:var(--success);font-weight:700}
 .buttons{display:flex;gap:12px;margin-top:48px;flex-wrap:wrap}
 .buttons a{
-  padding:10px 16px;
-  border-radius:999px;
+  padding:10px 16px;border-radius:999px;
   border:1px solid rgba(255,255,255,.2);
-  color:var(--text);
-  text-decoration:none;
+  color:var(--text);text-decoration:none;
 }
 footer{margin-top:80px;color:var(--muted);font-size:.9rem}
 </style>
@@ -79,115 +75,104 @@ footer{margin-top:80px;color:var(--muted);font-size:.9rem}
 <h1>$10,000 Stablecoins vs Banks</h1>
 <p>
 A clear breakdown of what $10,000 earns over 90 days, 6 months, and 12 months using
-CoinDepo stablecoin yields — compared directly against traditional savings, CDs, and money markets.
+<strong>CoinDepo</strong> stablecoin yields — compared directly against traditional banking.
 </p>
 
 <!-- Hero Image -->
 <div class="card" style="text-align:center">
-  <img src="/assets/10000save.png"
-       alt="Where does $10,000 earn the most"
-       style="width:100%;max-width:820px;border-radius:14px;
-       box-shadow:0 0 40px rgba(124,124,255,.35)">
-  <p style="font-size:.9rem;margin-top:10px">
-    Visual comparison of traditional banking vs stablecoin yield.
-  </p>
+  <img src="/assets/10000save.png" alt="Where does $10,000 earn the most"
+       style="width:100%;max-width:820px;border-radius:14px;box-shadow:0 0 40px rgba(124,124,255,.35)">
 </div>
 
 <!-- Growth Chart -->
 <div class="card">
-  <h3>12-Month Growth Comparison ($10,000)</h3>
+<h3>12-Month Growth Comparison ($10,000)</h3>
 
-  <svg viewBox="0 0 600 300" width="100%" height="300" role="img" aria-label="12 month growth comparison">
-    <!-- Axes -->
-    <line x1="70" y1="20" x2="70" y2="260" stroke="#666"/>
-    <line x1="70" y1="260" x2="560" y2="260" stroke="#666"/>
+<svg viewBox="0 0 640 320" width="100%" height="320">
 
-    <!-- Y-axis labels -->
-    <text x="20" y="40" fill="#9aa0c3" font-size="12">$12.5k</text>
-    <text x="20" y="100" fill="#9aa0c3" font-size="12">$12k</text>
-    <text x="20" y="160" fill="#9aa0c3" font-size="12">$11k</text>
-    <text x="20" y="260" fill="#9aa0c3" font-size="12">$10k</text>
+  <!-- Axes -->
+  <line x1="80" y1="40" x2="80" y2="280" stroke="#666"/>
+  <line x1="80" y1="280" x2="600" y2="280" stroke="#666"/>
 
-    <!-- X-axis labels -->
-    <text x="70" y="285" fill="#9aa0c3" font-size="12">Start</text>
-    <text x="260" y="285" fill="#9aa0c3" font-size="12">6 months</text>
-    <text x="460" y="285" fill="#9aa0c3" font-size="12">12 months</text>
+  <!-- Gridlines -->
+  <g stroke="rgba(255,255,255,.08)" stroke-dasharray="4 4">
+    <line x1="80" y1="80" x2="600" y2="80"/>
+    <line x1="80" y1="140" x2="600" y2="140"/>
+    <line x1="80" y1="200" x2="600" y2="200"/>
+  </g>
 
-    <!-- Bank / CD line (~5%) -->
-    <polyline
-      points="70,260 260,245 460,235"
-      fill="none"
-      stroke="#888"
-      stroke-width="2"
-    />
+  <!-- Y labels -->
+  <text x="20" y="85" fill="#9aa0c3" font-size="12">$12.5k</text>
+  <text x="20" y="145" fill="#9aa0c3" font-size="12">$12k</text>
+  <text x="20" y="205" fill="#9aa0c3" font-size="12">$11k</text>
+  <text x="20" y="285" fill="#9aa0c3" font-size="12">$10k</text>
 
-    <!-- CoinDepo Quarterly (20%) -->
-    <polyline
-      points="70,260 260,190 460,165"
-      fill="none"
-      stroke="#3ddc97"
-      stroke-width="3"
-    />
+  <!-- X labels -->
+  <text x="80" y="305" fill="#9aa0c3" font-size="12">Start</text>
+  <text x="300" y="305" fill="#9aa0c3" font-size="12">6 months</text>
+  <text x="520" y="305" fill="#9aa0c3" font-size="12">12 months</text>
 
-    <!-- CoinDepo Annual (23%) -->
-    <polyline
-      points="70,260 260,180 460,150"
-      fill="none"
-      stroke="#7c7cff"
-      stroke-width="3"
-    />
-  </svg>
+  <!-- Lines -->
+  <polyline points="80,280 300,265 520,255" stroke="#888" fill="none" stroke-width="2"/>
+  <polyline points="80,280 300,210 520,185" stroke="#3ddc97" fill="none" stroke-width="3"/>
+  <polyline points="80,280 300,200 520,170" stroke="#7c7cff" fill="none" stroke-width="3"/>
+</svg>
 
-  <!-- Legend -->
-  <div style="display:flex;gap:18px;margin-top:12px;font-size:.9rem;color:var(--muted)">
-    <span><strong style="color:#888">—</strong> Bank / CD (~5%)</span>
-    <span><strong style="color:#3ddc97">—</strong> CoinDepo Quarterly (20%)</span>
-    <span><strong style="color:#7c7cff">—</strong> CoinDepo Annual (23%)</span>
-  </div>
-
-  <p style="font-size:.9rem">
-    Illustrative growth curves based on stated APRs.
-  </p>
+<div style="display:flex;gap:18px;margin-top:12px;font-size:.9rem;color:var(--muted)">
+  <span><strong style="color:#888">—</strong> Bank / CD (~5%)</span>
+  <span><strong style="color:#3ddc97">—</strong> CoinDepo Quarterly (20%)</span>
+  <span><strong style="color:#7c7cff">—</strong> CoinDepo Annual (23%)</span>
+</div>
 </div>
 
 <!-- Bar Chart -->
 <div class="card" style="position:relative">
 <h3>12-Month Ending Balance — Side-by-Side</h3>
 
-<div style="position:absolute;top:54px;right:28px;
+<div style="position:absolute;top:48px;right:28px;
 background:linear-gradient(135deg,#7c7cff,#3ddc97);
-color:#0b0f1a;font-weight:800;
-padding:10px 16px;border-radius:999px;
-box-shadow:0 0 25px rgba(124,124,255,.7)">
+color:#0b0f1a;font-weight:800;padding:10px 16px;border-radius:999px">
 +$1,800 vs banks
 </div>
 
-<svg viewBox="0 0 600 300" width="100%" height="300">
-  <line x1="60" y1="260" x2="560" y2="260" stroke="#666"/>
-  <line x1="60" y1="20" x2="60" y2="260" stroke="#666"/>
+<svg viewBox="0 0 640 360" width="100%" height="360">
 
-  <rect x="120" y="260" width="80" height="50" fill="#888"/>
-  <text x="120" y="280" fill="#9aa0c3" font-size="12">Bank / CD</text>
-  <text id="bankVal" x="120" y="200" fill="#888" font-size="12">$0</text>
+  <!-- Axes -->
+  <line x1="80" y1="40" x2="80" y2="300" stroke="#666"/>
+  <line x1="80" y1="300" x2="600" y2="300" stroke="#666"/>
 
-  <rect x="260" y="160" width="80" height="100" fill="#3ddc97"/>
-  <text x="260" y="280" fill="#9aa0c3" font-size="12">CoinDepo Quarterly 20%</text>
-  <text id="quarterVal" x="260" y="150" fill="#3ddc97" font-size="12">$0</text>
+  <!-- Gridlines -->
+  <g stroke="rgba(255,255,255,.08)" stroke-dasharray="4 4">
+    <line x1="80" y1="80" x2="600" y2="80"/>
+    <line x1="80" y1="140" x2="600" y2="140"/>
+    <line x1="80" y1="200" x2="600" y2="200"/>
+  </g>
 
-  <rect x="400" y="145" width="80" height="115"
+  <!-- Y labels -->
+  <text x="20" y="85" fill="#9aa0c3" font-size="12">$12.5k</text>
+  <text x="20" y="145" fill="#9aa0c3" font-size="12">$12k</text>
+  <text x="20" y="205" fill="#9aa0c3" font-size="12">$11k</text>
+  <text x="20" y="305" fill="#9aa0c3" font-size="12">$10k</text>
+
+  <!-- Bars -->
+  <rect x="150" y="260" width="90" height="40" fill="#888"/>
+  <text x="150" y="330" fill="#9aa0c3" font-size="12">Bank / CD</text>
+  <text id="bankVal" x="150" y="245" fill="#888" font-size="12">$0</text>
+
+  <rect x="300" y="190" width="90" height="110" fill="#3ddc97"/>
+  <text x="300" y="330" fill="#9aa0c3" font-size="12">CoinDepo Quarterly 20%</text>
+  <text id="quarterVal" x="300" y="175" fill="#3ddc97" font-size="12">$0</text>
+
+  <rect x="450" y="170" width="90" height="130"
         fill="#7c7cff" stroke="#b8b8ff" stroke-width="2"
-        style="filter:drop-shadow(0 0 12px rgba(124,124,255,.9))"/>
-  <text x="400" y="280" fill="#9aa0c3" font-size="12">CoinDepo Annual 23%</text>
-  <text id="annualVal" x="400" y="135" fill="#7c7cff" font-size="12" font-weight="700">$0</text>
+        style="filter:drop-shadow(0 0 14px rgba(124,124,255,.9))"/>
+  <text x="450" y="330" fill="#9aa0c3" font-size="12">CoinDepo Annual 23%</text>
+  <text id="annualVal" x="450" y="155" fill="#7c7cff" font-size="12" font-weight="700">$0</text>
 </svg>
-
-<p style="font-size:.9rem">
-Bars show ending balances after 12 months on $10,000.
-</p>
 </div>
 
 <!-- CTA -->
-<div style="display:flex;justify-content:center;margin-top:28px">
+<div style="display:flex;justify-content:center;margin-top:32px">
 <div class="card" style="max-width:720px;text-align:center">
 
 <p style="text-transform:uppercase;letter-spacing:.05em">
@@ -201,11 +186,11 @@ Want these yields working for you?
 Start earning → (USA)
 </a>
 
-<br/><br/>
+<br><br>
 
 <a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W"
    style="display:inline-block;padding:16px 34px;border-radius:999px;
-   background:linear-gradient(135deg,rgba(124,124,255,.4),rgba(61,220,151,.4));
+   background:linear-gradient(135deg,#7c7cff,#3ddc97);
    color:#0b0f1a;font-weight:900;text-decoration:none">
 Start earning → (International)
 </a>
@@ -213,35 +198,7 @@ Start earning → (International)
 <p style="margin-top:12px">
 ⏱️ <span style="color:var(--success)">90 days ≈ $500</span> on $10,000
 </p>
-
 </div>
-</div>
-
-<!-- Tables -->
-<h2>What $10,000 Earns on CoinDepo</h2>
-<div class="card">
-<table>
-<tr><th>Time Held</th><th>Strategy</th><th>Interest</th><th>Ending</th></tr>
-<tr><td>90 days</td><td>Quarterly</td><td class="highlight">$500</td><td>$10,500</td></tr>
-<tr><td>6 months</td><td>Quarterly (compounded)</td><td class="highlight">$1,025</td><td>$11,025</td></tr>
-<tr><td>12 months</td><td>Quarterly (compounded)</td><td class="highlight">$2,155</td><td>$12,155</td></tr>
-<tr><td>12 months</td><td>Annual lock</td><td class="highlight">$2,300</td><td>$12,300</td></tr>
-</table>
-</div>
-
-<h2>Traditional Banking Comparison</h2>
-<div class="card">
-<table>
-<tr><th>Product</th><th>Interest</th></tr>
-<tr><td>Savings</td><td>$50</td></tr>
-<tr><td>High-Yield Savings</td><td>$450</td></tr>
-<tr><td>12-Month CD</td><td>$500</td></tr>
-</table>
-</div>
-
-<div class="buttons">
-<a href="/">← Main Page</a>
-<a href="/report/">Back to Reports</a>
 </div>
 
 <footer>
@@ -251,26 +208,20 @@ This report is informational only and not financial advice.
 </div>
 
 <script>
-function countUp(id, target, duration) {
-  const el = document.getElementById(id);
-  if (!el) return;
-  let start = 0;
-  const step = Math.max(1, target / (duration / 16));
-  function tick() {
-    start += step;
-    if (start >= target) {
-      el.textContent = "$" + target.toLocaleString();
-      return;
-    }
-    el.textContent = "$" + Math.floor(start).toLocaleString();
-    requestAnimationFrame(tick);
-  }
-  requestAnimationFrame(tick);
+function countUp(id, target, duration=900){
+  const el=document.getElementById(id);
+  let start=0;
+  const step=Math.max(1,Math.floor(target/(duration/30)));
+  const t=setInterval(()=>{
+    start+=step;
+    if(start>=target){start=target;clearInterval(t);}
+    el.textContent="$"+start.toLocaleString();
+  },30);
 }
-window.addEventListener("load", () => {
-  countUp("bankVal", 10500, 700);
-  countUp("quarterVal", 12155, 900);
-  countUp("annualVal", 12300, 1100);
+window.addEventListener("load",()=>{
+  countUp("bankVal",10500);
+  countUp("quarterVal",12155);
+  countUp("annualVal",12300);
 });
 </script>
 
