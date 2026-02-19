@@ -1,200 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Where Does $10,000 Earn the Most? | CoinDepo vs Banks</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Open Graph / Twitter Card -->
-  <meta property="og:type" content="article" />
-  <meta property="og:title" content="Where Does $10,000 Earn the Most in 1 Year?" />
-  <meta property="og:description" content="See how $10,000 performs in savings accounts, CDs, money markets, and CoinDepo stablecoin yields. Real math. Real comparisons." />
-  <meta property="og:image" content="https://degenstein.xyz/assets/10000save.png" />
-  <meta property="og:url" content="https://degenstein.xyz/report/coindepo-stablecoin-yield-vs-banks.html" />
-  <meta property="og:site_name" content="Degenstein Research" />
+<title>Where Does $10,000 Earn the Most? | CoinDepo vs Banks</title>
 
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Where Does $10,000 Earn the Most in 1 Year?" />
-  <meta name="twitter:description" content="$10k in a bank vs stablecoins. The difference isn’t subtle." />
-  <meta name="twitter:image" content="https://degenstein.xyz/assets/10000save.png" />
+<!-- Open Graph -->
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Where Does $10,000 Earn the Most in 1 Year?" />
+<meta property="og:description" content="See how $10,000 performs in banks vs CoinDepo stablecoin yield. Real math. No hype." />
+<meta property="og:image" content="https://degenstein.xyz/assets/10000save.png" />
+<meta property="og:url" content="https://degenstein.xyz/report/coindepo-stablecoin-yield-vs-banks.html" />
+<meta property="og:site_name" content="Degenstein Research" />
 
-  <style>
-    :root {
-      --bg:#0b0f1a;
-      --card:#12172a;
-      --accent:#7c7cff;
-      --accent-glow:rgba(124,124,255,.5);
-      --text:#e6e8f0;
-      --muted:#9aa0c3;
-      --success:#3ddc97;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-      background:radial-gradient(circle at top,#12183a,var(--bg));
-      color:var(--text);
-      line-height:1.6;
-    }
-    .container{max-width:980px;margin:0 auto;padding:40px 20px 80px}
-    h1{
-      font-size:2.6rem;
-      background:linear-gradient(90deg,#b8b8ff,var(--accent));
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-      margin-bottom:10px;
-    }
-    h2{margin-top:50px;font-size:1.9rem}
-    h3{margin-top:24px;font-size:1.3rem}
-    p{color:var(--muted)}
-    .card{
-      background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,0));
-      border:1px solid rgba(124,124,255,.2);
-      border-radius:16px;
-      padding:24px;
-      margin-top:24px;
-      box-shadow:0 0 40px rgba(124,124,255,.1);
-    }
-    table{width:100%;border-collapse:collapse;margin-top:16px}
-    th,td{padding:12px;text-align:left}
-    th{border-bottom:1px solid rgba(255,255,255,.15)}
-    td{border-bottom:1px solid rgba(255,255,255,.08);color:var(--muted)}
-    .highlight{color:var(--success);font-weight:600}
-    footer{margin-top:80px;color:var(--muted);font-size:.9rem}
-    .buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:48px}
-    .buttons a{
-      padding:10px 16px;border-radius:999px;
-      border:1px solid rgba(255,255,255,.2);
-      color:var(--text);text-decoration:none;
-      background:rgba(255,255,255,.05);
-    }
-  </style>
-</head>
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Where Does $10,000 Earn the Most?" />
+<meta name="twitter:description" content="$10k in a bank vs stablecoins. The difference isn’t subtle." />
+<meta name="twitter:image" content="https://degenstein.xyz/assets/10000save.png" />
+
+<style>
+:root{
+  --bg:#0b0f1a;
+  --card:#12172a;
+  --accent:#7c7cff;
+  --accent-glow:rgba(124,124,255,.6);
+  --text:#e6e8f0;
+  --muted:#9aa0c3;
+  --success:#3ddc97;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  background:radial-gradient(circle at top,#12183a,var(--bg));
+  color:var(--text);
+}
+.container{max-width:980px;margin:0 auto;padding:40px 20px 80px}
+h1{
+  font-size:2.6rem;
+  background:linear-gradient(90deg,#b8b8ff,var(--accent));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+h2{margin-top:50px}
+h3{margin-top:24px}
+p{color:var(--muted)}
+.card{
+  margin-top:24px;
+  padding:24px;
+  border-radius:16px;
+  background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,0));
+  border:1px solid rgba(124,124,255,.2);
+  box-shadow:0 0 40px rgba(124,124,255,.1);
+}
+table{width:100%;border-collapse:collapse;margin-top:16px}
+th,td{padding:12px;text-align:left}
+th{border-bottom:1px solid rgba(255,255,255,.15)}
+td{border-bottom:1px solid rgba(255,255,255,.08);color:var(--muted)}
+.highlight{color:var(--success);font-weight:700}
+.buttons{display:flex;gap:12px;margin-top:48px;flex-wrap:wrap}
+.buttons a{
+  padding:10px 16px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.2);
+  color:var(--text);
+  text-decoration:none;
+}
+footer{margin-top:80px;color:var(--muted);font-size:.9rem}
+</style>
+
 <script>
-window.addEventListener("load", () => {
-  requestAnimationFrame(() => {
-    animateBar("bar-bank", "val-bank", 10500, 70, 0);
-    animateBar("bar-quarterly", "val-quarterly", 12155, 130, 150);
-    animateBar("bar-annual", "val-annual", 12300, 155, 300);
-  });
+window.addEventListener("load",()=>{
+  animateBar("bar-bank","val-bank",10500,70,0);
+  animateBar("bar-quarterly","val-quarterly",12155,130,150);
+  animateBar("bar-annual","val-annual",12300,155,300);
 });
 
-function animateBar(barId, labelId, value, height, delay) {
-  const bar = document.getElementById(barId);
-  const label = document.getElementById(labelId);
+function animateBar(barId,labelId,value,height,delay){
+  const bar=document.getElementById(barId);
+  const label=document.getElementById(labelId);
+  const baseY=280;
 
-  setTimeout(() => {
-    bar.setAttribute("height", height);
-    bar.setAttribute("y", 280 - height);
+  setTimeout(()=>{
+    bar.animate([
+      {height:0,y:baseY},
+      {height:height,y:baseY-height}
+    ],{duration:900,easing:"ease-out",fill:"forwards"});
 
-    let current = 0;
-    const step = Math.ceil(value / 30);
+    label.setAttribute("y",baseY-height-8);
+    label.setAttribute("opacity","1");
 
-    const counter = setInterval(() => {
-      current += step;
-      if (current >= value) {
-        current = value;
-        clearInterval(counter);
-      }
-      label.textContent = "$" + current.toLocaleString();
-    }, 30);
-  }, delay);
+    let current=0;
+    const step=Math.ceil(value/30);
+    const counter=setInterval(()=>{
+      current+=step;
+      if(current>=value){current=value;clearInterval(counter);}
+      label.textContent="$"+current.toLocaleString();
+    },30);
+  },delay);
 }
 </script>
+</head>
 
 <body>
 <div class="container">
 
-<header>
-  <h1>$10,000 Stablecoins vs Banks</h1>
-  <p>What $10,000 actually earns over 90 days, 6 months, and 12 months — comparing CoinDepo stablecoin yield vs traditional banking.</p>
+<h1>$10,000 Stablecoins vs Banks</h1>
+<p>What $10,000 actually earns over 90 days, 6 months, and 12 months — CoinDepo stablecoin yield vs traditional banking.</p>
 
-  <div class="card" style="text-align:center">
-    <img src="/assets/10000save.png" style="width:100%;max-width:820px;border-radius:14px;box-shadow:0 0 40px rgba(124,124,255,.35)">
-  </div>
-
-  <!-- Growth Curve -->
-  <div class="card">
-    <h3>12-Month Growth Comparison ($10,000)</h3>
-    <svg viewBox="0 0 600 260" width="100%" height="260">
-      <line x1="40" y1="20" x2="40" y2="220" stroke="#666"/>
-      <line x1="40" y1="220" x2="560" y2="220" stroke="#666"/>
-      <polyline points="40,220 260,210 460,205" stroke="#888" fill="none"/>
-      <polyline points="40,220 260,175 460,150" stroke="#3ddc97" fill="none" stroke-width="3"/>
-      <polyline points="40,220 260,170 460,140" stroke="#7c7cff" fill="none" stroke-width="3"/>
-    </svg>
-  </div>
-
-<div class="card" style="position:relative">
-  <h3>12-Month Ending Balance — Side-by-Side</h3>
-
-  <div style="
-    position:absolute;
-    top:60px;
-    right:32px;
-    background:linear-gradient(135deg,rgba(124,124,255,.9),rgba(61,220,151,.9));
-    color:#0b0f1a;
-    font-weight:800;
-    padding:10px 16px;
-    border-radius:999px;
-    box-shadow:0 0 25px rgba(124,124,255,.7);
-    z-index:2;">
-    +$1,800 vs banks
-  </div>
-
-  <svg id="barChart" viewBox="0 0 600 320" width="100%" height="320">
-
-    <!-- Axes -->
-    <line x1="60" y1="280" x2="560" y2="280" stroke="#666"/>
-    <line x1="60" y1="20" x2="60" y2="280" stroke="#666"/>
-
-    <!-- Bank -->
-    <rect id="bar-bank" x="120" y="280" width="80" height="0" fill="#888"/>
-    <text x="120" y="300" fill="#9aa0c3" font-size="12">Bank / CD</text>
-    <text id="val-bank" x="120" y="215" fill="#888" font-size="12">$0</text>
-
-    <!-- Quarterly -->
-    <rect id="bar-quarterly" x="260" y="280" width="80" height="0" fill="#3ddc97"/>
-    <text x="260" y="300" fill="#9aa0c3" font-size="12">Quarterly 20%</text>
-    <text id="val-quarterly" x="260" y="155" fill="#3ddc97" font-size="12">$0</text>
-
-    <!-- Annual -->
-    <rect id="bar-annual"
-          x="400" y="280" width="80" height="0"
-          fill="#7c7cff"
-          stroke="#b8b8ff"
-          stroke-width="2"
-          style="filter:drop-shadow(0 0 14px rgba(124,124,255,.9))"/>
-    <text x="400" y="300" fill="#9aa0c3" font-size="12">Annual 23%</text>
-    <text id="val-annual" x="400" y="135"
-          fill="#7c7cff" font-size="12" font-weight="700">$0</text>
-  </svg>
-
-  <p style="font-size:.9rem">
-    Bars show ending balances after 12 months on $10,000. Heights are proportional and rounded for clarity.
-  </p>
+<div class="card" style="text-align:center">
+  <img src="/assets/10000save.png" style="width:100%;max-width:820px;border-radius:14px;box-shadow:0 0 40px rgba(124,124,255,.35)">
 </div>
 
-  <!-- Editorial CTA -->
-  <div style="display:flex;justify-content:center;margin-top:24px">
-    <div class="card" style="max-width:720px;text-align:center">
-      <p style="text-transform:uppercase;letter-spacing:.05em;color:var(--muted)">
-        Want these yields working for you?
-      </p>
-      <a href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV"
-        style="display:inline-block;margin-top:12px;padding:16px 32px;
-        border-radius:999px;background:linear-gradient(135deg,#7c7cff,#3ddc97);
-        color:#0b0f1a;font-weight:800;text-decoration:none">
-        Start earning →
-      </a>
-      <p style="margin-top:10px;font-size:.9rem">
-        ⏱️ <span style="color:#3ddc97">90 days ≈ $500</span> on $10,000
-      </p>
-    </div>
-  </div>
-</header>
+<!-- Growth -->
+<div class="card">
+<h3>12-Month Growth Comparison ($10,000)</h3>
+<svg viewBox="0 0 600 260" width="100%" height="260">
+  <line x1="40" y1="20" x2="40" y2="220" stroke="#666"/>
+  <line x1="40" y1="220" x2="560" y2="220" stroke="#666"/>
+  <polyline points="40,220 260,210 460,205" stroke="#888" fill="none"/>
+  <polyline points="40,220 260,175 460,150" stroke="#3ddc97" fill="none" stroke-width="3"/>
+  <polyline points="40,220 260,170 460,140" stroke="#7c7cff" fill="none" stroke-width="3"/>
+</svg>
+</div>
 
-<!-- TABLES -->
+<!-- Bars -->
+<div class="card" style="position:relative">
+<h3>12-Month Ending Balance — Side-by-Side</h3>
+
+<div style="position:absolute;top:56px;right:28px;
+background:linear-gradient(135deg,#7c7cff,#3ddc97);
+color:#0b0f1a;font-weight:900;padding:10px 16px;
+border-radius:999px;box-shadow:0 0 25px var(--accent-glow)">
++$1,800 vs banks
+</div>
+
+<svg viewBox="0 0 600 320" width="100%" height="320">
+<line x1="60" y1="280" x2="560" y2="280" stroke="#666"/>
+<line x1="60" y1="20" x2="60" y2="280" stroke="#666"/>
+
+<rect id="bar-bank" x="120" y="280" width="80" height="0" fill="#888"/>
+<text x="120" y="300" fill="#9aa0c3" font-size="12">Bank / CD</text>
+<text id="val-bank" x="120" y="260" fill="#888" font-size="12" opacity="0">$0</text>
+
+<rect id="bar-quarterly" x="260" y="280" width="80" height="0" fill="#3ddc97"/>
+<text x="260" y="300" fill="#9aa0c3" font-size="12">Quarterly 20%</text>
+<text id="val-quarterly" x="260" y="260" fill="#3ddc97" font-size="12" opacity="0">$0</text>
+
+<rect id="bar-annual" x="400" y="280" width="80" height="0"
+fill="#7c7cff" stroke="#b8b8ff" stroke-width="2"
+style="filter:drop-shadow(0 0 14px rgba(124,124,255,.9))"/>
+<text x="400" y="300" fill="#9aa0c3" font-size="12">Annual 23%</text>
+<text id="val-annual" x="400" y="260" fill="#7c7cff" font-size="12" font-weight="700" opacity="0">$0</text>
+</svg>
+
+<p style="font-size:.9rem">Bars show ending balances after 12 months on $10,000.</p>
+</div>
+
+<!-- CTA -->
+<div style="display:flex;justify-content:center;margin-top:28px">
+<div class="card" style="max-width:720px;text-align:center">
+<p style="text-transform:uppercase;letter-spacing:.05em">Want these yields working for you?</p>
+
+<a href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV"
+style="display:inline-block;padding:16px 34px;border-radius:999px;
+background:linear-gradient(135deg,#7c7cff,#3ddc97);
+color:#0b0f1a;font-weight:900;text-decoration:none">
+Start earning → (USA)
+</a>
+
+<p style="margin-top:10px">
+<a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W"
+style="color:var(--success)">International sign-up →</a>
+</p>
+
+<p style="margin-top:10px">
+⏱️ <span style="color:var(--success)">90 days ≈ $500</span> on $10,000
+</p>
+</div>
+</div>
+
+<!-- Tables -->
 <h2>What $10,000 Earns</h2>
 <div class="card">
 <table>
@@ -217,18 +205,17 @@ function animateBar(barId, labelId, value, height, delay) {
 </div>
 
 <div class="buttons">
-  <a href="/">← Main Page</a>
-  <a href="/report/">Back to Reports</a>
+<a href="/">← Main Page</a>
+<a href="/report/">Back to Reports</a>
 </div>
 
 <footer>
-  This is informational content only. Not financial advice.
+This content is informational only and not financial advice.
 </footer>
 
 </div>
 </body>
 </html>
-
 
 
 
