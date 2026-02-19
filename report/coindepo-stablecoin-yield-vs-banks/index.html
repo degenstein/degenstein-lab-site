@@ -107,8 +107,16 @@ CoinDepo stablecoin yields — compared directly against traditional savings, CD
   <polyline points="40,220 260,170 460,140"
             stroke="#7c7cff" fill="none" stroke-width="3"/>
 </svg>
+
+<!-- Legend -->
+<div style="display:flex;gap:18px;margin-top:12px;font-size:.9rem;color:var(--muted)">
+  <span><strong style="color:#888">—</strong> Bank / CD (~5%)</span>
+  <span><strong style="color:#3ddc97">—</strong> CoinDepo Quarterly (20%)</span>
+  <span><strong style="color:#7c7cff">—</strong> CoinDepo Annual (23%)</span>
+</div>
+
 <p style="font-size:.9rem">
-Illustrative growth curves based on stated APRs. Bank line reflects ~5% annual yield.
+Illustrative growth curves based on stated APRs.
 </p>
 </div>
 
@@ -116,8 +124,7 @@ Illustrative growth curves based on stated APRs. Bank line reflects ~5% annual y
 <div class="card" style="position:relative">
 <h3>12-Month Ending Balance — Side-by-Side</h3>
 
-<div style="
-position:absolute;top:54px;right:28px;
+<div style="position:absolute;top:54px;right:28px;
 background:linear-gradient(135deg,#7c7cff,#3ddc97);
 color:#0b0f1a;font-weight:800;
 padding:10px 16px;border-radius:999px;
@@ -129,31 +136,19 @@ box-shadow:0 0 25px rgba(124,124,255,.7)">
   <line x1="60" y1="260" x2="560" y2="260" stroke="#666"/>
   <line x1="60" y1="20" x2="60" y2="260" stroke="#666"/>
 
-  <!-- Bank -->
-  <rect x="120" y="260" width="80" height="0" fill="#888">
-    <animate attributeName="height" from="0" to="50" dur="0.8s" fill="freeze"/>
-    <animate attributeName="y" from="260" to="210" dur="0.8s" fill="freeze"/>
-  </rect>
+  <rect x="120" y="260" width="80" height="50" fill="#888"/>
   <text x="120" y="280" fill="#9aa0c3" font-size="12">Bank / CD</text>
-  <text x="120" y="200" fill="#888" font-size="12">$10,500</text>
+  <text id="bankVal" x="120" y="200" fill="#888" font-size="12">$0</text>
 
-  <!-- Quarterly -->
-  <rect x="260" y="260" width="80" height="0" fill="#3ddc97">
-    <animate attributeName="height" from="0" to="100" dur="0.9s" begin="0.1s" fill="freeze"/>
-    <animate attributeName="y" from="260" to="160" dur="0.9s" begin="0.1s" fill="freeze"/>
-  </rect>
-  <text x="260" y="280" fill="#9aa0c3" font-size="12">Quarterly 20%</text>
-  <text x="260" y="150" fill="#3ddc97" font-size="12">$12,155</text>
+  <rect x="260" y="160" width="80" height="100" fill="#3ddc97"/>
+  <text x="260" y="280" fill="#9aa0c3" font-size="12">CoinDepo Quarterly 20%</text>
+  <text id="quarterVal" x="260" y="150" fill="#3ddc97" font-size="12">$0</text>
 
-  <!-- Annual -->
-  <rect x="400" y="260" width="80" height="0"
+  <rect x="400" y="145" width="80" height="115"
         fill="#7c7cff" stroke="#b8b8ff" stroke-width="2"
-        style="filter:drop-shadow(0 0 12px rgba(124,124,255,.9))">
-    <animate attributeName="height" from="0" to="115" dur="1s" begin="0.2s" fill="freeze"/>
-    <animate attributeName="y" from="260" to="145" dur="1s" begin="0.2s" fill="freeze"/>
-  </rect>
-  <text x="400" y="280" fill="#9aa0c3" font-size="12">Annual 23%</text>
-  <text x="400" y="135" fill="#7c7cff" font-size="12" font-weight="700">$12,300</text>
+        style="filter:drop-shadow(0 0 12px rgba(124,124,255,.9))"/>
+  <text x="400" y="280" fill="#9aa0c3" font-size="12">CoinDepo Annual 23%</text>
+  <text id="annualVal" x="400" y="135" fill="#7c7cff" font-size="12" font-weight="700">$0</text>
 </svg>
 
 <p style="font-size:.9rem">
@@ -161,9 +156,10 @@ Bars show ending balances after 12 months on $10,000.
 </p>
 </div>
 
-<!-- Editorial CTA -->
+<!-- CTA -->
 <div style="display:flex;justify-content:center;margin-top:28px">
 <div class="card" style="max-width:720px;text-align:center">
+
 <p style="text-transform:uppercase;letter-spacing:.05em">
 Want these yields working for you?
 </p>
@@ -175,16 +171,19 @@ Want these yields working for you?
 Start earning → (USA)
 </a>
 
-<p style="margin-top:10px">
-<a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W"
-   style="color:var(--success);text-decoration:none">
-International sign-up →
-</a>
-</p>
+<br/><br/>
 
-<p style="margin-top:10px">
+<a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W"
+   style="display:inline-block;padding:16px 34px;border-radius:999px;
+   background:linear-gradient(135deg,rgba(124,124,255,.4),rgba(61,220,151,.4));
+   color:#0b0f1a;font-weight:900;text-decoration:none">
+Start earning → (International)
+</a>
+
+<p style="margin-top:12px">
 ⏱️ <span style="color:var(--success)">90 days ≈ $500</span> on $10,000
 </p>
+
 </div>
 </div>
 
@@ -220,8 +219,34 @@ This report is informational only and not financial advice.
 </footer>
 
 </div>
+
+<script>
+function countUp(id, target, duration) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  let start = 0;
+  const step = Math.max(1, target / (duration / 16));
+  function tick() {
+    start += step;
+    if (start >= target) {
+      el.textContent = "$" + target.toLocaleString();
+      return;
+    }
+    el.textContent = "$" + Math.floor(start).toLocaleString();
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+window.addEventListener("load", () => {
+  countUp("bankVal", 10500, 700);
+  countUp("quarterVal", 12155, 900);
+  countUp("annualVal", 12300, 1100);
+});
+</script>
+
 </body>
 </html>
+
 
 
 
