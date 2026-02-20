@@ -607,7 +607,123 @@
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
 
+  const amt = document.getElementById("amt");
+  const rate = document.getElementById("rate");
+  const days = document.getElementById("days");
+  const mode = document.getElementById("mode");
+  const compound = document.getElementById("compound");
+
+  const outI = document.getElementById("outInterest");
+  const outT = document.getElementById("outTotal");
+  const outP = document.getElementById("outPct");
+
+  const canvas = document.getElementById("growthChart");
+  const ctx = canvas.getContext("2d");
+
+  function calc(){
+    const P = +amt.value || 0;
+    const r = (+rate.value || 0) / 100;
+    const d = +days.value || 0;
+    const n = +compound.value || 365;
+
+    const total =
+      mode.value === "apr"
+        ? P * (1 + r * (d / 365))
+        : P * Math.pow(1 + r / n, n * (d / 365));
+
+    const interest = total - P;
+
+    outI.textContent = "$" + interest.toFixed(2);
+    outT.textContent = "$" + total.toFixed(2);
+    outP.textContent = ((interest / P) * 100 || 0).toFixed(2) + "%";
+
+    draw(P, r, d, n);
+  }
+
+  function draw(P, r, d, n){
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    const steps = 48;
+    const yieldPts = [];
+    const idlePts = [];
+
+    for (let i = 0; i <= steps; i++) {
+      const t = d * (i / steps);
+      yieldPts.push(
+        mode.value === "apr"
+          ? P * (1 + r * (t / 365))
+          : P * Math.pow(1 + r / n, n * (t / 365))
+      );
+      idlePts.push(P);
+    }
+
+    const min = Math.min(...yieldPts, ...idlePts);
+    const max = Math.max(...yieldPts, ...idlePts);
+    const range = max - min || 1;
+
+    // Idle line
+    ctx.setLineDash([6,4]);
+    ctx.strokeStyle = "#9ca3af";
+    ctx.beginPath();
+    idlePts.forEach((v,i)=>{
+      const x = (i/steps)*canvas.width;
+      const y = canvas.height - ((v-min)/range)*(canvas.height-16) - 8;
+      i ? ctx.lineTo(x,y) : ctx.moveTo(x,y);
+    });
+    ctx.stroke();
+
+    // Yield line
+    ctx.setLineDash([]);
+    ctx.strokeStyle = "#34d399";
+    ctx.beginPath();
+    yieldPts.forEach((v,i)=>{
+      const x = (i/steps)*canvas.width;
+      const y = canvas.height - ((v-min)/range)*(canvas.height-16) - 8;
+      i ? ctx.lineTo(x,y) : ctx.moveTo(x,y);
+    });
+    ctx.stroke();
+  }
+
+  // Presets (called by buttons)
+  window.preset90 = () => {
+    amt.value = 2000;
+    rate.value = 24;
+    days.value = 90;
+    mode.value = "apr";
+    compound.value = 365;
+    calc();
+  };
+
+  window.presetLadder = () => {
+    amt.value = 2000;
+    rate.value = 22;
+    days.value = 180;
+    mode.value = "apy";
+    compound.value = 12;
+    calc();
+  };
+
+  window.presetLong = () => {
+    amt.value = 2000;
+    rate.value = 24;
+    days.value = 365;
+    mode.value = "apy";
+    compound.value = 365;
+    calc();
+  };
+
+  // Live updates
+  ["amt","rate","days","mode","compound"].forEach(id =>
+    document.getElementById(id).addEventListener("input", calc)
+  );
+
+  // Initial render
+  presetLong();
+});
+</script>
 </body>
 </html>
 
