@@ -3,119 +3,198 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>$COINDEPO Token Ecosystem Report</title>
+  <title>$COINDEPO Token | Ecosystem Utility Report</title>
 
-  <meta name="description" content="A visual breakdown of the COINDEPO token, its ecosystem role, and how it integrates with the COINDEPO platform." />
-
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta name="description" content="A premium visual breakdown of the COINDEPO token, its ecosystem role, and potential utility within the COINDEPO platform." />
 
   <style>
+    :root {
+      --accent: #7c3aed;
+      --accent-glow: rgba(124, 58, 237, 0.45);
+      --bg-dark: #0b0e14;
+      --card-bg: #111827;
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+    }
+
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      background: #0b0e14;
-      color: #e5e7eb;
-      line-height: 1.6;
+      background: radial-gradient(circle at top, #0f172a, var(--bg-dark));
+      color: var(--text-main);
+      line-height: 1.65;
     }
 
+    /* HERO */
     .hero {
-      background: radial-gradient(circle at top left, #7c3aed, #111827 60%);
-      padding: 80px 24px;
+      background:
+        radial-gradient(circle at top left, var(--accent-glow), transparent 60%),
+        linear-gradient(180deg, #111827, #0b0e14);
+      padding: 96px 24px 88px;
       text-align: center;
-      box-shadow: inset 0 -40px 80px rgba(0,0,0,0.6);
+      position: relative;
+      overflow: hidden;
     }
 
     .hero h1 {
-      font-size: 2.8rem;
-      margin-bottom: 12px;
+      font-size: 3rem;
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
     }
 
     .hero p {
-      max-width: 720px;
+      max-width: 780px;
       margin: auto;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       color: #d1d5db;
     }
 
     .nav-buttons {
-      margin-top: 32px;
+      margin-top: 36px;
       display: flex;
-      gap: 12px;
+      gap: 14px;
       justify-content: center;
       flex-wrap: wrap;
     }
 
     .btn {
-      padding: 12px 18px;
-      border-radius: 8px;
-      background: #1f2933;
+      padding: 12px 20px;
+      border-radius: 10px;
+      background: linear-gradient(180deg, #1f2937, #111827);
       color: #fff;
       text-decoration: none;
       font-size: 0.95rem;
-      transition: all 0.2s ease;
+      border: 1px solid rgba(255,255,255,0.06);
+      box-shadow: 0 0 0 0 transparent;
+      transition: all 0.25s ease;
     }
 
     .btn:hover {
-      background: #7c3aed;
-      transform: translateY(-1px);
+      box-shadow: 0 0 22px var(--accent-glow);
+      transform: translateY(-2px);
     }
 
+    /* CONTENT */
     .container {
       max-width: 1100px;
       margin: auto;
-      padding: 56px 24px;
+      padding: 72px 24px;
     }
 
-    h2 {
-      margin-top: 64px;
-      margin-bottom: 16px;
-      font-size: 1.7rem;
-      border-left: 4px solid #7c3aed;
-      padding-left: 12px;
+    .section {
+      margin-bottom: 72px;
     }
 
-    p {
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent), #4c1d95);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      box-shadow: 0 0 18px var(--accent-glow);
+    }
+
+    .section h2 {
+      font-size: 1.9rem;
+      margin: 0;
+    }
+
+    .section p {
       max-width: 900px;
       color: #d1d5db;
     }
 
-    .chart-grid {
+    /* CARDS */
+    .card-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 32px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
       margin-top: 32px;
     }
 
     .card {
-      background: #111827;
-      padding: 24px;
-      border-radius: 14px;
-      box-shadow: 0 0 0 1px rgba(255,255,255,0.04);
+      background: linear-gradient(180deg, #111827, #0f172a);
+      border-radius: 16px;
+      padding: 28px;
+      border: 1px solid rgba(255,255,255,0.05);
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.03),
+        0 20px 40px rgba(0,0,0,0.4);
+      position: relative;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      box-shadow: inset 0 0 40px rgba(124,58,237,0.05);
+      pointer-events: none;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    /* LINKS BOX */
+    .link-box {
+      background: linear-gradient(180deg, #0f172a, #020617);
+      border-radius: 18px;
+      padding: 36px;
+      border: 1px solid rgba(124,58,237,0.25);
+      box-shadow: 0 0 30px var(--accent-glow);
+    }
+
+    a {
+      color: #a78bfa;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
 
     footer {
       text-align: center;
-      padding: 40px 20px;
+      padding: 48px 20px;
       font-size: 0.9rem;
-      color: #9ca3af;
+      color: var(--text-muted);
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HERO BANNER -->
+  <!-- HERO -->
   <section class="hero">
     <h1>$COINDEPO Token</h1>
     <p>
-      A visual, ecosystem-level breakdown of how the COINDEPO token integrates with the platform and supports participation, utility, and engagement.
+      A premium ecosystem overview showing how the COINDEPO token integrates with the platform
+      and supports participation, utility, and engagement.
     </p>
 
     <div class="nav-buttons">
       <a class="btn" href="https://degenstein.xyz/">← Return to Main Page</a>
       <a class="btn" href="https://degenstein.xyz/report/">← Return to Reports</a>
       <a class="btn" target="_blank"
-         href="https://twitter.com/intent/tweet?text=Visual%20breakdown%20of%20the%20%24COINDEPO%20token%20ecosystem%20👇&url=https://degenstein.xyz/report/">
+         href="https://twitter.com/intent/tweet?text=Deep%20dive%20into%20the%20%24COINDEPO%20token%20ecosystem%20👇&url=https://degenstein.xyz/report/">
         Share on X
       </a>
     </div>
@@ -123,126 +202,112 @@
 
   <div class="container">
 
-    <h2>1. Ecosystem Overview</h2>
-    <p>
-      The COINDEPO token functions as the connective layer between users and the COINDEPO platform.
-      Rather than operating in isolation, the token is designed to integrate directly into platform
-      participation, engagement, and reward mechanisms.
-    </p>
+    <!-- SECTION 1 -->
+    <div class="section">
+      <div class="section-title">
+        <div class="icon">①</div>
+        <h2>COINDEPO Token Overview</h2>
+      </div>
+      <p>
+        The COINDEPO token is the native utility asset of the COINDEPO ecosystem, designed to function
+        as a core participation and engagement layer within the platform.
+      </p>
+    </div>
 
-    <div class="chart-grid">
-      <div class="card">
-        <h3>Token Utility Distribution</h3>
-        <canvas id="utilityChart"></canvas>
+    <!-- SECTION 2 -->
+    <div class="section">
+      <div class="section-title">
+        <div class="icon">②</div>
+        <h2>How the Token Meshes With the Platform</h2>
       </div>
 
-      <div class="card">
-        <h3>Platform Interaction Flow</h3>
-        <canvas id="flowChart"></canvas>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Platform Participation</h3>
+          <p>The token supports interaction with COINDEPO features and participation layers.</p>
+        </div>
+
+        <div class="card">
+          <h3>Utility Alignment</h3>
+          <p>Designed to connect user activity with ecosystem functionality.</p>
+        </div>
+
+        <div class="card">
+          <h3>Ecosystem Engagement</h3>
+          <p>Encourages ongoing engagement through structured platform use.</p>
+        </div>
       </div>
     </div>
 
-    <h2>2. How the Token Meshes With the Platform</h2>
-    <p>
-      The COINDEPO ecosystem is structured so that token ownership aligns with platform activity.
-      This visual model illustrates how holding, participation, and rewards interact together.
-    </p>
-
-    <div class="chart-grid">
-      <div class="card">
-        <h3>User Participation Layers</h3>
-        <canvas id="participationChart"></canvas>
+    <!-- SECTION 3 -->
+    <div class="section">
+      <div class="section-title">
+        <div class="icon">③</div>
+        <h2>Possible Benefits of Ownership</h2>
       </div>
 
-      <div class="card">
-        <h3>Value Alignment Model</h3>
-        <canvas id="alignmentChart"></canvas>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Feature Access</h3>
+          <p>May provide access to specific tools, modules, or participation tiers.</p>
+        </div>
+
+        <div class="card">
+          <h3>Reward Participation</h3>
+          <p>Utility tokens are commonly used within ecosystem reward structures.</p>
+        </div>
+
+        <div class="card">
+          <h3>Platform Alignment</h3>
+          <p>Ownership aligns users with platform activity and engagement.</p>
+        </div>
       </div>
     </div>
 
-    <h2>3. Possible Benefits of Ownership</h2>
-    <p>
-      Utility tokens within platform ecosystems are commonly associated with access, participation,
-      and engagement benefits. The chart below visualizes typical utility-token advantage categories.
-    </p>
+    <!-- SECTION 4 -->
+    <div class="section">
+      <div class="section-title">
+        <div class="icon">④</div>
+        <h2>Platform Access & Resources</h2>
+      </div>
 
-    <div class="card">
-      <canvas id="benefitsChart"></canvas>
+      <div class="link-box">
+        <p><strong>Token Availability (Informational):</strong><br />
+          WEEX:<br />
+          <a href="https://weex.com/register?vipCode=5flql" target="_blank">
+            https://weex.com/register?vipCode=5flql
+          </a>
+        </p>
+
+        <p><strong>Join COINDEPO:</strong></p>
+
+        <p>
+          USA residents only:<br />
+          <a href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV" target="_blank">
+            https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV
+          </a>
+        </p>
+
+        <p>
+          All other countries:<br />
+          <a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W" target="_blank">
+            https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W
+          </a>
+        </p>
+
+        <p><strong>Full COINDEPO Ecosystem Report:</strong><br />
+          <a href="https://degenstein.xyz/report/coindepo-earn-while-you-hold/" target="_blank">
+            https://degenstein.xyz/report/coindepo-earn-while-you-hold/
+          </a>
+        </p>
+      </div>
     </div>
-
-    <h2>4. Additional Platform Access</h2>
-    <p>
-      Users interested in participating in the COINDEPO ecosystem can explore platform access and
-      supporting resources below.
-    </p>
-
-    <ul>
-      <li>Token access information: WEEX</li>
-      <li>COINDEPO platform registration (region-specific)</li>
-      <li>Full ecosystem breakdown report</li>
-    </ul>
 
   </div>
 
   <footer>
-    Informational use only. Not financial or investment advice. © 2026 Degenstein
+    Informational content only. Not financial or investment advice. © 2026 Degenstein
   </footer>
-
-  <!-- CHARTS -->
-  <script>
-    new Chart(document.getElementById('utilityChart'), {
-      type: 'doughnut',
-      data: {
-        labels: ['Platform Access', 'Rewards', 'Participation', 'Ecosystem Utility'],
-        datasets: [{
-          data: [30, 25, 25, 20]
-        }]
-      }
-    });
-
-    new Chart(document.getElementById('flowChart'), {
-      type: 'bar',
-      data: {
-        labels: ['Hold', 'Engage', 'Participate', 'Earn'],
-        datasets: [{
-          label: 'User Interaction Strength',
-          data: [60, 75, 85, 90]
-        }]
-      }
-    });
-
-    new Chart(document.getElementById('participationChart'), {
-      type: 'pie',
-      data: {
-        labels: ['Basic Access', 'Active Participation', 'Advanced Engagement'],
-        datasets: [{
-          data: [40, 35, 25]
-        }]
-      }
-    });
-
-    new Chart(document.getElementById('alignmentChart'), {
-      type: 'line',
-      data: {
-        labels: ['Low', 'Moderate', 'High'],
-        datasets: [{
-          label: 'Alignment With Platform Activity',
-          data: [30, 65, 90]
-        }]
-      }
-    });
-
-    new Chart(document.getElementById('benefitsChart'), {
-      type: 'radar',
-      data: {
-        labels: ['Access', 'Rewards', 'Engagement', 'Utility', 'Participation'],
-        datasets: [{
-          label: 'Potential Utility Strength',
-          data: [80, 70, 85, 75, 90]
-        }]
-      }
-    });
-  </script>
 
 </body>
 </html>
