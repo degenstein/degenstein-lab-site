@@ -41,7 +41,6 @@
     padding:0 1rem;
   }
 
-  /* Core card styling with subtle depth */
   .card{
     position:relative;
     border-radius:1.25rem;
@@ -57,7 +56,6 @@
       inset 0 1px 0 rgba(255,255,255,.03);
   }
 
-  /* Left accent bar for visual hierarchy */
   .card::before{
     content:"";
     position:absolute;
@@ -74,7 +72,6 @@
     opacity:.75;
   }
 
-  /* Gradient headline pop */
   h1.grad, .grad{
     background:linear-gradient(
       135deg,
@@ -98,7 +95,6 @@
     display:inline-block;
   }
 
-  /* Primary CTA glow */
   .btn-primary{
     display:inline-flex;
     align-items:center;
@@ -144,12 +140,10 @@
   .muted{ color:rgba(229,231,235,.72); }
   .fine{ font-size:.86rem; color:rgba(229,231,235,.6); }
 
-  /* Calculator inputs feel more premium */
   input, select{
     box-shadow:inset 0 0 0 1px rgba(255,255,255,.02);
   }
 
-  /* Growth chart subtle glow */
   canvas{
     box-shadow:
       0 0 30px rgba(34,197,94,.18),
@@ -185,6 +179,14 @@
       Earn While You Hold
     </h1>
 
+    <!-- SEO ADDITION START -->
+    <p class="fine mt-3">
+      This CoinDepo report focuses on earning yield on crypto without selling,
+      comparing APR vs APY, compounding behavior, and risk-adjusted strategies
+      designed for long-term holders in 2026.
+    </p>
+    <!-- SEO ADDITION END -->
+
     <p class="text-lg muted mt-4">
       If you’re already holding crypto long term, 2026 isn’t about trading more —
       it’s about making time work for you.
@@ -212,6 +214,7 @@
       <a href="#calculator" class="btn-outline">Calculator</a>
       <a href="#risk" class="btn-outline">Risk notes</a>
     </div>
+
 <div class="flex flex-wrap gap-3 mt-4">
   <a href="https://degenstein.xyz/"
      class="btn-outline">
@@ -235,7 +238,8 @@
 
 </section>
 
-<main class="wrap pb-16 space-y-8">
+<!-- CONTINUES IN PART 2 -->
+  <main class="wrap pb-16 space-y-8">
 
 <section class="card">
   <h2 class="text-2xl font-extrabold mb-2">What is CoinDepo?</h2>
@@ -256,23 +260,38 @@
   <p class="muted mt-2">
     Beyond yield, CoinDepo is expanding into a broader crypto-native financial
     stack. This includes <strong>crypto-backed loans</strong>, enabling users to
-    unlock liquidity without selling long-term positions — a tool often used to
-    manage cash flow while maintaining market exposure.
+    unlock liquidity without selling long-term positions.
   </p>
 
   <p class="muted mt-2">
     Looking ahead, CoinDepo has also announced a forthcoming <strong>crypto
-    rewards credit card</strong>. The card is expected to offer up to
-    <strong>8% cashback paid in crypto</strong>, allowing everyday spending to
-    passively accumulate digital assets rather than traditional points or miles.
+    rewards credit card</strong>, expected to offer up to
+    <strong>8% cashback paid in crypto</strong>.
   </p>
 
   <p class="muted mt-2">
     Taken together, CoinDepo positions itself not just as a yield platform, but
-    as an emerging hub where holding, earning, borrowing, and spending crypto
-    converge under one ecosystem.
+    as an ecosystem where holding, earning, borrowing, and spending converge.
   </p>
 </section>
+
+<!-- SEO ADDITION START -->
+<section class="card">
+  <h2 class="text-2xl font-extrabold mb-2">Who CoinDepo Is Built For</h2>
+
+  <p class="muted">
+    CoinDepo is best suited for crypto holders who already believe in long-term
+    asset utility and want to generate yield without actively trading.
+  </p>
+
+  <ul class="list-disc pl-6 text-gray-300 space-y-2 mt-3">
+    <li>Long-term holders seeking passive yield</li>
+    <li>Stablecoin users looking for alternatives to banks</li>
+    <li>Crypto investors who want liquidity without selling</li>
+    <li>Users comfortable evaluating platform risk</li>
+  </ul>
+</section>
+<!-- SEO ADDITION END -->
 
 <section class="card">
   <h2 class="text-2xl font-extrabold mb-2">Supported assets & yield ranges up to 24% APR</h2>
@@ -281,34 +300,56 @@
     Yield varies by asset type, term length, and product structure.
   </p>
   <ul class="list-disc pl-6 text-gray-300 space-y-2 mt-3">
-    <li>Major crypto assets (e.g., BTC, ETH, SOL, XRP) can earn you 21%</li>
-    <li>Stablecoins (e.g., USDT, USDC) typically offer higher baseline yield upwards of 24%</li>
-    <li>Yield commonly falls in the low-to-mid double-digit APR range</li>
+    <li>Major crypto assets (e.g., BTC, ETH, SOL, XRP) can earn up to ~21%</li>
+    <li>Stablecoins (e.g., USDT, USDC) often offer higher yield, up to ~24%</li>
+    <li>Rates scale with duration and account type</li>
   </ul>
   <p class="fine mt-3">
-    Rates are dynamic and should always be verified directly inside the CoinDepo app.
+    Rates are dynamic and must always be verified directly in the CoinDepo app.
   </p>
 </section>
 
 <section class="card">
   <h2 class="text-2xl font-extrabold mb-2">How yield products are structured</h2>
   <p class="muted">
-    Yield on CoinDepo is primarily compensation for time and reduced liquidity.
-    Higher advertised rates generally reflect longer commitments or stricter withdrawal rules.
+    Yield on CoinDepo compensates users for time commitment and reduced liquidity.
+    Higher advertised returns typically correspond to longer lockups or defined
+    withdrawal windows.
   </p>
   <ul class="list-disc pl-6 text-gray-300 space-y-2 mt-3">
-    <li>Term-based deposits (e.g., 30, 90, 180, 365 days)</li>
-    <li>Simple APR vs compounded APY depending on product</li>
-    <li>Defined payout schedules and rollover mechanics</li>
+    <li>Fixed-term deposits (30, 90, 180, 365 days)</li>
+    <li>APR vs APY depending on compounding rules</li>
+    <li>Defined rollover or maturity behavior</li>
   </ul>
 </section>
+
+<!-- SEO ADDITION START -->
+<section class="card">
+  <h2 class="text-2xl font-extrabold mb-2">APR vs APY: Why the Difference Matters</h2>
+
+  <p class="muted">
+    APR reflects simple interest, while APY accounts for compounding.
+    Understanding this distinction is critical when comparing yield products.
+  </p>
+
+  <ul class="list-disc pl-6 text-gray-300 space-y-2 mt-3">
+    <li>APR assumes no reinvestment of earned interest</li>
+    <li>APY reflects compound growth over time</li>
+    <li>Longer durations amplify APY advantages</li>
+  </ul>
+
+  <p class="fine mt-3">
+    Always confirm whether quoted rates are APR or APY before depositing.
+  </p>
+</section>
+<!-- SEO ADDITION END -->
 
 <!-- CALCULATOR (UNCHANGED + IDLE VS YIELD) -->
 <section id="calculator" class="card">
   <h2 class="text-2xl font-extrabold mb-4">Yield calculator</h2>
 
   <div class="grid md:grid-cols-5 gap-3">
-   <input id="amt" type="number" value="2000" class="p-2 rounded bg-black/60 border border-white/10">
+    <input id="amt" type="number" value="2000" class="p-2 rounded bg-black/60 border border-white/10">
     <input id="rate" type="number" value="24" class="p-2 rounded bg-black/60 border border-white/10">
     <input id="days" type="number" value="90" class="p-2 rounded bg-black/60 border border-white/10">
     <select id="mode" class="p-2 rounded bg-black/60 border border-white/10">
@@ -349,11 +390,13 @@
   </div>
 </section>
 
-<section class="card">
+<!-- CONTINUES IN PART 3 -->
+    <section class="card">
   <h2 class="text-2xl font-extrabold mb-2">Security & custody model</h2>
   <p class="muted">
     CoinDepo operates as a custodial platform. Users should independently assess
-    custody structure, internal controls, insurance representations, and jurisdictional exposure.
+    custody structure, internal controls, insurance representations, and
+    jurisdictional exposure before depositing assets.
   </p>
 </section>
 
@@ -363,34 +406,28 @@
 
   <p class="muted">
     $COINDEPO is the native ecosystem token associated with the CoinDepo platform.
-    It is designed to align long-term users with the platform’s growth rather than replace yield products.
+    It is designed to align long-term users with the platform’s growth rather
+    than replace yield products.
   </p>
 
   <p class="muted mt-3">
-    Holding $COINDEPO may unlock platform-level advantages such as enhanced yield tiers,
-    preferential product access, or other incentive structures as defined by CoinDepo.
-    These benefits are optional and evolve over time.
+    Holding $COINDEPO may unlock platform-level advantages such as enhanced yield
+    tiers, preferential access, or incentive programs. These benefits are
+    optional and evolve over time.
   </p>
 
   <div class="mt-4 rounded-xl border border-white/10 bg-white/5 p-4">
     <div class="font-extrabold mb-2">Important distinction</div>
     <ul class="list-disc pl-6 text-gray-300 space-y-2">
       <li>Yield usage does not require holding the token</li>
-      <li>Token exposure introduces market price risk</li>
+      <li>Token exposure introduces separate market risk</li>
       <li>Platform risk and token risk are not the same</li>
     </ul>
   </div>
 
   <p class="fine mt-4">
-    If you choose to acquire $COINDEPO, one venue where it may be available is WEEX:
-    <a href="https://weex.com/register?vipCode=5flql" target="_blank" rel="noopener" class="underline text-emerald-300">
-      Buy $COINDEPO on WEEX →
-    </a>
-  </p>
-
-  <p class="fine mt-2">
-    Token purchases are optional and speculative. Always assess liquidity, volatility,
-    and utility before allocating capital.
+    Token ownership is optional and speculative. Always assess liquidity,
+    volatility, and utility before allocating capital.
   </p>
 </section>
 
@@ -398,54 +435,34 @@
   <h2 class="text-2xl font-extrabold mb-2">Crypto-backed loans</h2>
 
   <p class="muted">
-    CoinDepo’s lending product is built around an **Instant Credit Line** that lets
-    you borrow crypto or stablecoins against the value of your existing CoinDepo
-    portfolio — without freezing assets in a separate collateral account. :contentReference[oaicite:0]{index=0}
+    CoinDepo offers an Instant Credit Line that allows users to borrow crypto or
+    stablecoins against their existing CoinDepo balances without selling assets.
   </p>
 
   <p class="muted mt-2">
-    Unlike traditional loans that require paperwork, credit checks, or fixed terms,
-    CoinDepo credit lines are available immediately once you have a positive
-    balance in your Compound Interest Accounts. You can borrow repeatedly up to
-    your available limit, repay in full or in part at any time, and continue
-    earning interest on your underlying crypto even while you borrow. :contentReference[oaicite:1]{index=1}
+    Unlike traditional loans, CoinDepo lending does not require credit checks or
+    fixed repayment schedules. Borrowers can access liquidity immediately and
+    repay at any time.
   </p>
 
   <div class="mt-4 rounded-xl border border-white/10 bg-white/5 p-4">
-    <div class="font-extrabold mb-2">Key features of CoinDepo lending</div>
+    <div class="font-extrabold mb-2">Key lending characteristics</div>
     <ul class="list-disc pl-6 text-gray-300 space-y-2">
-      <li><strong>No collateral account freeze</strong> — your crypto stays in interest-bearing accounts while serving as collateral. :contentReference[oaicite:2]{index=2}</li>
-      <li><strong>Instant availability</strong> — loans are credited immediately to your account. :contentReference[oaicite:3]{index=3}</li>
-      <li><strong>Flexible repayment</strong> — repay fully or partially at any time with no mandatory term. :contentReference[oaicite:4]{index=4}</li>
-      <li><strong>50% LTV limit</strong> — borrow up to roughly half the value of your eligible portfolio. :contentReference[oaicite:5]{index=5}</li>
-      <li><strong>Continued interest accrual</strong> — assets used as collateral continue earning yield while you borrow. :contentReference[oaicite:6]{index=6}</li>
-      <li><strong>Real-time monitoring</strong> — CoinDepo tracks your loan health and LTV levels to help manage risk. :contentReference[oaicite:7]{index=7}</li>
+      <li>Borrow up to ~50% LTV depending on asset</li>
+      <li>No forced liquidation timeline — monitored dynamically</li>
+      <li>Collateral may continue earning yield while borrowed against</li>
+      <li>Flexible repayment with no fixed term</li>
     </ul>
   </div>
 
   <p class="muted mt-3">
-    The Instant Credit Line model differs from a typical bank loan: there’s no underwriting
-    based on credit history, and no separate collateral account that halts your yield
-    generation. Instead, the value of your existing assets under CoinDepo’s Compound
-    Interest Accounts determines your borrowing capacity. :contentReference[oaicite:8]{index=8}
-  </p>
-
-  <p class="muted mt-2">
-    Because interest on a loan is calculated on the outstanding balance and your
-    collateral continues to accrue yield, in many cases the effective cost of borrowing
-    can be lower relative to traditional credit, depending on rates and market performance. :contentReference[oaicite:9]{index=9}
-  </p>
-
-  <p class="muted mt-2">
-    Loans can be withdrawn to an external wallet or used with a CoinDepo credit card
-    (when available), and repayment is flexible — giving users liquidity without
-    having to sell long-term positions. :contentReference[oaicite:10]{index=10}
+    As with all crypto-backed lending, volatility introduces liquidation risk.
+    Conservative LTV management is essential.
   </p>
 </section>
-<div class="mt-4 rounded-xl border border-white/10 bg-black/40 p-4">
-  <div class="font-extrabold mb-3">
-    Crypto-backed loans vs traditional loan products
-  </div>
+
+<section class="card">
+  <h2 class="text-2xl font-extrabold mb-2">Crypto-backed loans vs traditional loans</h2>
 
   <div class="overflow-x-auto">
     <table class="w-full text-sm text-gray-300 border-collapse">
@@ -453,169 +470,129 @@
         <tr class="text-left text-gray-400">
           <th class="py-2 pr-3">Feature</th>
           <th class="py-2 pr-3">Traditional loans</th>
-          <th class="py-2">CoinDepo crypto-backed loans</th>
+          <th class="py-2">CoinDepo loans</th>
         </tr>
       </thead>
-      <tbody class="align-top">
+      <tbody>
         <tr class="border-t border-white/10">
-          <td class="py-2 pr-3">Collateral type</td>
-          <td class="py-2 pr-3">Income, credit history, or physical assets</td>
-          <td class="py-2">Crypto assets held on platform</td>
+          <td class="py-2 pr-3">Approval speed</td>
+          <td class="py-2 pr-3">Days to weeks</td>
+          <td class="py-2">Instant</td>
         </tr>
-
         <tr class="border-t border-white/10">
           <td class="py-2 pr-3">Credit check</td>
           <td class="py-2 pr-3">Required</td>
           <td class="py-2">Not required</td>
         </tr>
-
         <tr class="border-t border-white/10">
-          <td class="py-2 pr-3">Approval speed</td>
-          <td class="py-2 pr-3">Days to weeks</td>
-          <td class="py-2">Instant credit line</td>
+          <td class="py-2 pr-3">Collateral</td>
+          <td class="py-2 pr-3">Income / assets</td>
+          <td class="py-2">Crypto balances</td>
         </tr>
-
         <tr class="border-t border-white/10">
-          <td class="py-2 pr-3">Loan structure</td>
-          <td class="py-2 pr-3">Fixed term, fixed payments</td>
-          <td class="py-2">Flexible, revolving credit line</td>
-        </tr>
-
-        <tr class="border-t border-white/10">
-          <td class="py-2 pr-3">Collateral productivity</td>
-          <td class="py-2 pr-3">Idle while loan is active</td>
-          <td class="py-2">Continues earning yield</td>
-        </tr>
-
-        <tr class="border-t border-white/10">
-          <td class="py-2 pr-3">Liquidity access</td>
-          <td class="py-2 pr-3">One-time disbursement</td>
-          <td class="py-2">Borrow, repay, and re-borrow as needed</td>
-        </tr>
-
-        <tr class="border-t border-white/10">
-          <td class="py-2 pr-3">Risk profile</td>
-          <td class="py-2 pr-3">Default risk, credit score impact</td>
-          <td class="py-2">Market volatility & liquidation risk</td>
-        </tr>
-
-        <tr class="border-t border-white/10">
-          <td class="py-2 pr-3">Primary trade-off</td>
-          <td class="py-2 pr-3">Time & credit constraints</td>
-          <td class="py-2">Price volatility exposure</td>
+          <td class="py-2 pr-3">Liquidity</td>
+          <td class="py-2 pr-3">One-time</td>
+          <td class="py-2">Revolving credit line</td>
         </tr>
       </tbody>
     </table>
   </div>
-</div>
+</section>
 
 <section class="card">
-  <h2 class="text-2xl font-extrabold mb-2">Credit Card (Coming Soon)</h2>
+  <h2 class="text-2xl font-extrabold mb-2">Credit card (Coming Soon)</h2>
 
   <p class="muted">
-    CoinDepo has announced plans for a forthcoming crypto rewards credit card,
-    designed to bridge everyday spending with long-term digital asset accumulation.
-    Instead of traditional points or airline miles, rewards are expected to be
-    paid directly in crypto.
+    CoinDepo has announced plans for a crypto rewards credit card that converts
+    everyday spending into crypto accumulation.
   </p>
 
   <p class="muted mt-2">
-    According to platform disclosures, the card is expected to offer up to
-    <strong>8% cashback in crypto</strong>, allowing users to earn digital assets
-    passively through normal spending — groceries, subscriptions, travel, and
-    routine expenses.
+    Rewards are expected to be paid directly in crypto, with reported rates of
+    up to <strong>8% cashback</strong>, subject to final terms and availability.
   </p>
 
-  <p class="muted mt-2">
-    This positions the card as a complementary layer to CoinDepo’s yield products:
-    deposits generate interest while spending activity continuously feeds new
-    crypto into the ecosystem, creating multiple inflows without additional trading.
-  </p>
-
-  <div class="mt-4 rounded-xl border border-white/10 bg-white/5 p-4">
-    <div class="font-extrabold mb-2">Why this matters</div>
-    <ul class="list-disc pl-6 text-gray-300 space-y-2">
-      <li>Transforms everyday spending into crypto accumulation</li>
-      <li>Potentially offsets volatility through consistent reward inflows</li>
-      <li>Aligns short-term consumption with long-term holding strategies</li>
-    </ul>
-  </div>
-
-  <p class="fine mt-4">
-    The credit card is not yet live. Features, reward rates, availability, and
-    regional eligibility may change prior to launch and should be verified
-    directly with CoinDepo when released.
+  <p class="fine mt-3">
+    Card features and eligibility may change before launch. Always verify
+    details directly with CoinDepo.
   </p>
 </section>
 
 <section class="card">
   <h2 class="text-2xl font-extrabold mb-2">DYOR checklist</h2>
   <ul class="list-disc pl-6 text-gray-300 space-y-2">
-    <li>Understand lockups, exits, and rollover mechanics</li>
     <li>Confirm APR vs APY and compounding frequency</li>
-    <li>Assess platform risk versus yield compensation</li>
-    <li>Never allocate funds you may need liquid</li>
+    <li>Understand lockups, exits, and rollover mechanics</li>
+    <li>Evaluate custody and counterparty risk</li>
+    <li>Never deploy funds you may need liquid</li>
   </ul>
 </section>
-  <div class="flex items-center gap-3 my-10 opacity-60">
+
+<!-- SEO ADDITION START -->
+<section class="card">
+  <h2 class="text-2xl font-extrabold mb-2">CoinDepo FAQ</h2>
+
+  <p class="muted"><strong>Is CoinDepo safe?</strong><br>
+  CoinDepo is a custodial platform. Safety depends on internal controls,
+  risk management, and user discipline.</p>
+
+  <p class="muted mt-3"><strong>Is yield guaranteed?</strong><br>
+  No. Yield is compensation for risk and constraints. Rates may change.</p>
+
+  <p class="muted mt-3"><strong>Can you lose money?</strong><br>
+  Yes. Platform risk, market risk, and liquidity risk all exist.</p>
+</section>
+<!-- SEO ADDITION END -->
+
+<div class="flex items-center gap-3 my-10 opacity-60">
   <div class="h-px flex-1 bg-gradient-to-r from-transparent via-emerald-400 to-transparent"></div>
   <span class="text-xs tracking-widest uppercase text-emerald-400 font-bold">
     Final take
   </span>
   <div class="h-px flex-1 bg-gradient-to-r from-transparent via-emerald-400 to-transparent"></div>
 </div>
+
 <section class="card relative overflow-hidden ring-1 ring-emerald-400/40 shadow-[0_0_80px_rgba(16,185,129,0.35)]">
-  <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/10 via-transparent to-cyan-500/10 pointer-events-none"></div>
   <h2 class="text-2xl font-extrabold mb-2">Operational highlights</h2>
-<span class="inline-block mb-3 text-xs font-extrabold tracking-widest uppercase text-emerald-400">
-  Decision checkpoint
-</span>
 
   <ul class="list-disc pl-6 text-gray-300 space-y-2 mt-2">
-    <li>Deposit or withdraw funds at any time (subject to product terms)</li>
-    <li>Fully insured deposited assets, per platform representations</li>
-    <li>No minimum deposit requirements</li>
-    <li>Zero commissions on yield products</li>
+    <li>No minimum deposits</li>
+    <li>Flexible access subject to product terms</li>
+    <li>No commissions on yield products</li>
+    <li>Designed for long-term holders</li>
   </ul>
 
   <p class="muted mt-4">
-    These features make CoinDepo accessible for both smaller allocations and
-    larger long-term positions, while preserving flexibility relative to
-    traditional lockup-based yield models.
-  </p>
-
-  <p class="muted mt-3">
-    If this report was informative and you want to start earning while holding,
-    you can go directly to CoinDepo no minimum deposits, you choose whats right for you no pressure $100, $1000 $50,000 or anything in between, it's all up to you :
+    CoinDepo is best viewed as a yield and liquidity layer for disciplined
+    holders — not a replacement for risk management.
   </p>
 
   <div class="mt-4">
-   <a href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV"
-   target="_blank" rel="noopener"
-   class="btn-primary">
-  Start earning while holding (USA) →
-</a>
+    <a href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV"
+       target="_blank" rel="noopener"
+       class="btn-primary">
+      Start earning while holding (USA) →
+    </a>
+  </div>
 
-<div class="mt-3">
-  <a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W"
-     target="_blank" rel="noopener"
-     class="btn-outline">
-    Start earning while holding (International)
-  </a>
-</div>
-
+  <div class="mt-3">
+    <a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W"
+       target="_blank" rel="noopener"
+       class="btn-outline">
+      Start earning while holding (International)
+    </a>
   </div>
 
   <p class="fine mt-3">
-    Always review product terms in-app before deploying capital.
+    Always review product terms directly inside the app.
   </p>
 </section>
 
 <section id="risk" class="card">
   <h2 class="text-2xl font-extrabold mb-2">Final risk notes</h2>
   <p class="muted">
-    Yield is compensation for constraints and risk.
-    If you cannot explain the downside, you are not ready to deploy.
+    Yield exists because risk exists. If you cannot explain the downside,
+    you are not ready to deploy capital.
   </p>
 </section>
 
@@ -629,53 +606,8 @@
 
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
-
-const amt=document.getElementById("amt"),
-rate=document.getElementById("rate"),
-days=document.getElementById("days"),
-mode=document.getElementById("mode"),
-compound=document.getElementById("compound"),
-outI=document.getElementById("outInterest"),
-outT=document.getElementById("outTotal"),
-outP=document.getElementById("outPct"),
-canvas=document.getElementById("growthChart"),
-ctx=canvas.getContext("2d");
-
-function calc(){
-  const P=+amt.value||0,r=+rate.value/100||0,d=+days.value||0,n=+compound.value;
-  const total=mode.value==="apr"?P*(1+r*(d/365)):P*Math.pow(1+r/n,n*(d/365));
-  const interest=total-P;
-  outI.textContent="$"+interest.toFixed(2);
-  outT.textContent="$"+total.toFixed(2);
-  outP.textContent=((interest/P)*100||0).toFixed(2)+"%";
-  draw(P,r,d,n);
-}
-
-function draw(P,r,d,n){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  const steps=48,yieldPts=[],idlePts=[];
-  for(let i=0;i<=steps;i++){
-    const t=d*(i/steps);
-    yieldPts.push(mode.value==="apr"?P*(1+r*(t/365)):P*Math.pow(1+r/n,n*(t/365)));
-    idlePts.push(P);
-  }
-  const min=Math.min(...yieldPts),max=Math.max(...yieldPts),range=max-min||1;
-  ctx.setLineDash([6,4]);ctx.strokeStyle="#9ca3af";ctx.beginPath();
-  idlePts.forEach((v,i)=>{const x=i/steps*canvas.width,y=canvas.height-((v-min)/range)*(canvas.height-16)-8;i?ctx.lineTo(x,y):ctx.moveTo(x,y);});ctx.stroke();
-  ctx.setLineDash([]);ctx.strokeStyle="#34d399";ctx.beginPath();
-  yieldPts.forEach((v,i)=>{const x=i/steps*canvas.width,y=canvas.height-((v-min)/range)*(canvas.height-16)-8;i?ctx.lineTo(x,y):ctx.moveTo(x,y);});ctx.stroke();
-}
-
-function preset90(){amt.value=2000;rate.value=24;days.value=90;mode.value="apr";compound.value=365;calc();}
-function presetLadder(){amt.value=2000;rate.value=22;days.value=180;mode.value="apy";compound.value=12;calc();}
-function presetLong(){amt.value=2000;rate.value=24;days.value=365;mode.value="apy";compound.value=365;calc();}
-["amt","rate","days","mode","compound"].forEach(id=>document.getElementById(id).addEventListener("input",calc));
-presetLong();
 </script>
 
 </body>
 </html>
-
-
-
 
