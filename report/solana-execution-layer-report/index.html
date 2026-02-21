@@ -1,1 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Solana ($SOL) Report — The Execution Layer Thesis | The Degenstein Report</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+<!-- SEO -->
+<meta name="description" content="A deep-dive Solana ($SOL) report: execution-layer thesis, adoption drivers, onchain metrics, risks, and an earn-while-you-hold strategy. Research-first. No hopium." />
+<link rel="canonical" href="https://degenstein.xyz/report/solana/" />
+<meta name="robots" content="index, follow" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Degenstein Bonus Hub" />
+<meta property="og:title" content="Solana ($SOL) — The Execution Layer Thesis" />
+<meta property="og:description" content="Why Solana is positioning itself as crypto’s execution layer: speed, UX, consumer adoption, and real usage." />
+<meta property="og:image" content="https://degenstein.xyz/assets/solana-report.png" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Solana ($SOL) — The Execution Layer Thesis" />
+<meta name="twitter:description" content="A research-first Solana report covering adoption, metrics, risks, and strategy." />
+<meta name="twitter:image" content="https://degenstein.xyz/assets/solana-report.png" />
+
+<style>
+:root{
+  --bg:#070A0F;
+  --panel:rgba(255,255,255,0.06);
+  --text:rgba(255,255,255,0.92);
+  --muted:rgba(255,255,255,0.7);
+  --stroke:rgba(255,255,255,0.12);
+  --accent:#00FFAA;
+  --glow:rgba(0,255,170,0.18);
+  --radius:18px;
+  --shadow:0 18px 55px rgba(0,0,0,0.55);
+  --max:1120px;
+  --sans:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:var(--sans);
+  color:var(--text);
+  background:
+    radial-gradient(900px 500px at 20% 10%, rgba(0,255,170,0.16), transparent 60%),
+    radial-gradient(800px 600px at 85% 20%, rgba(124,58,237,0.18), transparent 60%),
+    var(--bg);
+}
+a{color:var(--accent);text-decoration:none}
+.wrap{max-width:var(--max);margin:0 auto;padding:26px 18px 70px}
+
+.topbar{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:14px 16px;
+  border:1px solid var(--stroke);
+  border-radius:var(--radius);
+  background:linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.04));
+  box-shadow:var(--shadow);
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 18px var(--glow)}
+.nav{display:flex;gap:14px;flex-wrap:wrap}
+.nav a{font-size:13px;color:var(--muted);font-weight:600}
+
+.hero{
+  margin-top:18px;
+  padding:26px 22px;
+  border:1px solid var(--stroke);
+  border-radius:var(--radius);
+  background:linear-gradient(180deg,rgba(255,255,255,0.08),rgba(255,255,255,0.04));
+  box-shadow:var(--shadow);
+}
+.kicker{
+  display:inline-flex;gap:10px;
+  font-size:12px;color:var(--muted);
+  border:1px solid var(--stroke);
+  padding:8px 10px;border-radius:999px;
+  background:rgba(0,0,0,0.25);
+}
+h1{margin:14px 0 8px;font-size:34px;letter-spacing:-0.4px}
+.sub{color:var(--muted);max-width:72ch}
+
+.section{
+  margin-top:18px;
+  padding:18px;
+  border:1px solid var(--stroke);
+  border-radius:var(--radius);
+  background:linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03));
+  box-shadow:var(--shadow);
+}
+.section h2{margin:0 0 10px;font-size:20px}
+.section h3{margin:14px 0 6px;font-size:15px}
+
+.bullets{padding-left:18px;color:var(--muted)}
+.bullets li{margin:6px 0}
+
+.callout{
+  margin-top:14px;
+  padding:16px;
+  border-radius:var(--radius);
+  border:1px solid rgba(0,255,170,0.3);
+  background:radial-gradient(600px 200px at 20% 20%,rgba(0,255,170,0.18),rgba(0,0,0,0.15));
+}
+.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.btn{
+  padding:10px 12px;
+  border-radius:12px;
+  border:1px solid var(--stroke);
+  background:rgba(255,255,255,0.07);
+  color:var(--text);
+  font-weight:700;
+  font-size:13px;
+}
+.btn.primary{
+  border-color:rgba(0,255,170,0.35);
+  background:linear-gradient(180deg,rgba(0,255,170,0.25),rgba(255,255,255,0.06));
+}
+
+.footer{margin-top:18px;color:var(--muted);font-size:12px}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+<div class="topbar">
+  <div class="brand"><span class="dot"></span>Degenstein Bonus Hub</div>
+  <div class="nav">
+    <a href="https://degenstein.xyz/">Home</a>
+    <a href="https://degenstein.xyz/report/">Reports</a>
+    <a href="#metrics">Metrics</a>
+    <a href="#strategy">Strategy</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="kicker">The Degenstein Report • Solana Deep Dive</div>
+  <h1>Solana ($SOL): The Execution Layer Thesis</h1>
+  <p class="sub">
+    Solana is not trying to be everything. It is optimizing for one thing extremely well:
+    <strong>high-speed, low-cost execution at global scale</strong>.
+    This report breaks down why that matters, where adoption is coming from,
+    and how long-term holders think about positioning.
+  </p>
+</header>
+
+<section class="section">
+  <h2>What Solana Is Actually Optimizing For</h2>
+  <ul class="bullets">
+    <li>Single-layer architecture designed for speed and composability.</li>
+    <li>Low fees that remain predictable even during high usage.</li>
+    <li>User experiences that feel closer to Web2 than legacy crypto UX.</li>
+    <li>Throughput that supports payments, trading, gaming, and social apps.</li>
+  </ul>
+</section>
+
+<section class="section">
+  <h2>Why Developers Keep Coming Back</h2>
+  <p class="muted">
+    Despite early reliability issues, Solana has become one of the most active
+    developer ecosystems due to fast iteration cycles, strong tooling,
+    and a focus on consumer-facing products.
+  </p>
+  <ul class="bullets">
+    <li>High transaction ceilings unlock entirely new app designs.</li>
+    <li>Composable programs enable real-time financial interactions.</li>
+    <li>Improving validator and client diversity reduces historical risk.</li>
+  </ul>
+</section>
+
+<section class="section" id="metrics">
+  <h2>Onchain Reality Check</h2>
+  <ul class="bullets">
+    <li>Consistently high transaction counts relative to other L1s.</li>
+    <li>Growing DeFi and NFT activity driven by low-cost execution.</li>
+    <li>Increasing institutional and payment-focused experimentation.</li>
+  </ul>
+</section>
+
+<section class="section">
+  <h2>Risks (No Sugarcoating)</h2>
+  <ul class="bullets">
+    <li>Validator hardware requirements can limit decentralization optics.</li>
+    <li>Network performance is improving, but trust is earned over time.</li>
+    <li>Competition from modular and rollup-based ecosystems remains real.</li>
+  </ul>
+</section>
+
+<section class="section" id="strategy">
+  <h2>Positioning Without Overtrading</h2>
+  <p class="muted">
+    Many long-term SOL holders avoid constant trading and instead focus on
+    staying exposed while letting time and compounding work.
+  </p>
+
+  <div class="callout">
+    <h3>Earn While You Hold SOL</h3>
+    <p class="muted">
+      Platforms like CoinDepo allow users to stay positioned in assets like SOL
+      while earning yield — reducing the pressure to time the market.
+    </p>
+    <div class="btnrow">
+      <a class="btn primary" href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W" target="_blank" rel="noopener">
+        Start on CoinDepo
+      </a>
+      <a class="btn" href="https://degenstein.xyz/report/">More Degenstein Reports</a>
+    </div>
+  </div>
+</section>
+
+<div class="footer">
+  Educational content only. Not financial advice.
+</div>
+
+</div>
+</body>
+</html>
