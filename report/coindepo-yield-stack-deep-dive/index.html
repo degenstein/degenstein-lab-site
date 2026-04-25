@@ -14,6 +14,7 @@ background:#020617;
 color:#e5e7eb;
 font-family:system-ui;
 line-height:1.6;
+scroll-behavior:smooth;
 }
 
 .wrap{max-width:1100px;margin:auto;padding:20px;}
@@ -21,10 +22,16 @@ line-height:1.6;
 .card{
 background:linear-gradient(180deg,#0f172a,#020617);
 border:1px solid rgba(148,163,184,.2);
-border-radius:20px;
-padding:28px;
-margin-bottom:28px;
-box-shadow:0 25px 80px rgba(0,0,0,.7);
+border-radius:22px;
+padding:30px;
+margin-bottom:30px;
+box-shadow:0 30px 100px rgba(0,0,0,.8);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-4px);
+box-shadow:0 40px 120px rgba(34,197,94,.15);
 }
 
 .grad{
@@ -35,16 +42,16 @@ background:linear-gradient(135deg,#22c55e,#06b6d4);
 
 .btn-primary{
 background:linear-gradient(135deg,#22c55e,#06b6d4);
-padding:12px 22px;
+padding:12px 24px;
 border-radius:999px;
 font-weight:900;
 color:black;
-box-shadow:0 0 30px rgba(34,197,94,.5);
+box-shadow:0 0 35px rgba(34,197,94,.5);
 }
 
 .btn-outline{
 border:1px solid rgba(148,163,184,.3);
-padding:12px 22px;
+padding:12px 24px;
 border-radius:999px;
 }
 
@@ -53,8 +60,11 @@ background:linear-gradient(135deg,rgba(34,197,94,.15),rgba(6,182,212,.15));
 border:1px solid rgba(34,197,94,.3);
 }
 
-.big{font-size:2rem;font-weight:900;}
+.big{font-size:2.2rem;font-weight:900;}
 .muted{color:#9ca3af;}
+
+.fade{opacity:0;transform:translateY(20px);transition:.6s;}
+.fade.show{opacity:1;transform:translateY(0);}
 </style>
 </head>
 
@@ -62,13 +72,13 @@ border:1px solid rgba(34,197,94,.3);
 <div class="wrap">
 
 <!-- HERO -->
-<section class="card highlight text-center">
+<section class="card highlight text-center fade">
 <h1 class="text-5xl font-extrabold grad">
 Turn $2,500 Into $3,100+
 </h1>
 
 <p class="mt-4 text-lg muted">
-Earn → Borrow → Spend — The Full CoinDepo Yield Stack
+Earn → Borrow → Spend — The Complete CoinDepo Yield Stack
 </p>
 
 <div class="mt-6 flex flex-wrap justify-center gap-3">
@@ -76,47 +86,41 @@ Earn → Borrow → Spend — The Full CoinDepo Yield Stack
 <a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W" class="btn-outline">International</a>
 <a href="https://degenstein.xyz/" class="btn-outline">Main Page</a>
 <a href="https://degenstein.xyz/report/" class="btn-outline">More Reports</a>
-<a href="https://twitter.com/intent/tweet?text=CoinDepo%20Yield%20Stack%20Deep%20Dive&url=https://degenstein.xyz/report/coindepo-yield-stack-deep-dive/" target="_blank" class="btn-outline">Share on X</a>
+<a href="https://twitter.com/intent/tweet?text=CoinDepo%20Yield%20Stack&url=https://degenstein.xyz/report/coindepo-yield-stack-deep-dive/" target="_blank" class="btn-outline">Share on X</a>
 </div>
 </section>
 
 <!-- WHAT -->
-<section class="card">
+<section class="card fade">
 <h2 class="text-2xl font-bold">What CoinDepo Actually Is</h2>
 
 <p class="mt-4">
-CoinDepo is a centralized crypto platform designed for long-term holders who want their assets to generate yield instead of sitting idle.
+CoinDepo is a centralized crypto platform designed to turn long-term holdings into income-producing assets.
 </p>
 
 <p class="mt-3">
-Unlike exchanges that prioritize trading, CoinDepo focuses on capital efficiency — turning crypto into an income-producing asset.
+Instead of focusing on trading, it focuses on capital efficiency — allowing users to earn yield on crypto while maintaining exposure.
 </p>
 
 <p class="mt-3">
-It combines three core functions:
+It operates as a hybrid between a high-yield savings account and a crypto-native financial system.
 </p>
-
-<ul class="mt-4 space-y-2">
-<li>• Earn yield on crypto</li>
-<li>• Borrow against holdings</li>
-<li>• Spend via upcoming credit card</li>
-</ul>
 </section>
 
 <!-- WHO -->
-<section class="card">
+<section class="card fade">
 <h2 class="text-2xl font-bold">Who This Is For</h2>
 
 <ul class="mt-4 space-y-2">
-<li>• Long-term holders (BTC / ETH believers)</li>
-<li>• Stablecoin users seeking yield</li>
-<li>• Investors who want passive income</li>
-<li>• Users comfortable evaluating platform risk</li>
+<li>• Long-term holders (BTC / ETH conviction)</li>
+<li>• Stablecoin yield seekers</li>
+<li>• Passive income focused investors</li>
+<li>• Users comfortable with platform risk</li>
 </ul>
 </section>
 
 <!-- TOKENS -->
-<section class="card">
+<section class="card fade">
 <h2 class="text-2xl font-bold">Supported Assets</h2>
 
 <div class="grid md:grid-cols-2 mt-4 gap-2">
@@ -126,38 +130,37 @@ It combines three core functions:
 <li>• Solana (SOL)</li>
 <li>• XRP</li>
 </ul>
-
 <ul>
 <li>• USDT</li>
 <li>• USDC</li>
 <li>• DAI</li>
-<li>• Others (vary by product)</li>
+<li>• Other supported assets</li>
 </ul>
 </div>
 </section>
 
 <!-- EARN -->
-<section class="card">
+<section class="card fade">
 <h2 class="text-2xl font-bold">Earn — The Core Engine</h2>
 
 <p class="mt-4">
-CoinDepo offers structured yield products that reward time commitment and reduced liquidity.
+CoinDepo offers structured yield accounts where returns scale with time commitment.
 </p>
 
 <ul class="mt-4 space-y-2">
 <li>• 12–18% on BTC / ETH</li>
-<li>• 18–24% on USDT / USDC</li>
+<li>• 18–24% on stablecoins</li>
 <li>• Fixed-term deposits (30–365 days)</li>
-<li>• Compounding yield options</li>
+<li>• Compounding yield</li>
 </ul>
 
 <p class="mt-4">
-Yield increases with duration — meaning patience is directly rewarded.
+Higher yield is achieved by locking assets — meaning patience is directly rewarded.
 </p>
 </section>
 
 <!-- EARNINGS -->
-<section class="card">
+<section class="card fade">
 <h2 class="text-2xl font-bold">What You Can Earn</h2>
 
 <div class="grid md:grid-cols-2 gap-5 mt-5">
@@ -178,47 +181,66 @@ Yield increases with duration — meaning patience is directly rewarded.
 </section>
 
 <!-- CALCULATOR -->
-<section class="card">
-<h2 class="text-2xl font-bold mb-4">Yield Calculator</h2>
+<section class="card highlight fade">
+<h2 class="text-2xl font-bold mb-3">Calculate Your Earnings</h2>
 
-<div class="grid md:grid-cols-3 gap-3">
-<input id="amt" value="2500" class="p-2 bg-black/50 rounded">
-<input id="rate" value="24" class="p-2 bg-black/50 rounded">
-<input id="days" value="365" class="p-2 bg-black/50 rounded">
+<div class="grid md:grid-cols-4 gap-4">
+<input id="amt" value="2500" class="p-3 bg-black/50 rounded">
+<input id="rate" value="24" class="p-3 bg-black/50 rounded">
+<input id="days" value="365" class="p-3 bg-black/50 rounded">
+<select id="mode" class="p-3 bg-black/50 rounded">
+<option value="apr">APR</option>
+<option value="apy">APY</option>
+</select>
 </div>
 
-<div class="mt-4">
-<p>Interest: <span id="outI"></span></p>
-<p>Total: <span id="outT"></span></p>
+<div class="mt-4 grid grid-cols-3 gap-4 text-center">
+<div><span id="outI"></span><br>Interest</div>
+<div><span id="outT"></span><br>Total</div>
+<div><span id="outP"></span><br>Return</div>
 </div>
+
+<canvas id="chart" height="150" class="mt-6"></canvas>
 </section>
 
 <!-- BORROW -->
-<section class="card">
+<section class="card fade">
 <h2 class="text-2xl font-bold">Borrow — Liquidity Without Selling</h2>
 
 <p class="mt-4">
-CoinDepo allows you to borrow against your crypto while still maintaining your position.
+CoinDepo allows you to borrow against your crypto while keeping your position intact.
 </p>
 
 <ul class="mt-4 space-y-2">
 <li>• No credit checks</li>
-<li>• ~50% loan-to-value</li>
+<li>• ~50% LTV</li>
 <li>• Flexible repayment</li>
 </ul>
+</section>
+
+<!-- STRATEGY -->
+<section class="card fade">
+<h2 class="text-2xl font-bold">Strategy Layer</h2>
 
 <p class="mt-4">
-This allows you to access cash without triggering taxable events.
+CoinDepo becomes powerful when integrated into a broader portfolio strategy:
 </p>
+
+<ul class="mt-4 space-y-3">
+<li><strong>BTC / ETH:</strong> Core long-term holdings + yield</li>
+<li><strong>USDC / USDT:</strong> Stable income generation</li>
+<li><strong>$LINK / $XRP:</strong> Infrastructure + settlement narratives</li>
+<li><strong>$SOL / $ONDO:</strong> High-growth + tokenized asset exposure</li>
+<li><strong>Laddering:</strong> Balance yield and liquidity</li>
+<li><strong>Borrowing:</strong> Access liquidity without selling</li>
+</ul>
 </section>
 
 <!-- CREDIT CARD -->
-<section class="card highlight">
+<section class="card highlight fade">
 <h2 class="text-2xl font-bold">Crypto Credit Card</h2>
 
-<p class="mt-4">
-Join the waitlist now:
-</p>
+<p class="mt-4">Join the waitlist now:</p>
 
 <div class="big text-emerald-400 mt-3">
 500 USDC BONUS
@@ -234,7 +256,7 @@ Earn up to 8% cashback in crypto.
 </section>
 
 <!-- COMPARISON -->
-<section class="card">
+<section class="card fade">
 <h2 class="text-2xl font-bold">Comparison</h2>
 
 <ul class="mt-4 space-y-2">
@@ -247,20 +269,8 @@ Earn up to 8% cashback in crypto.
 </ul>
 </section>
 
-<!-- STRATEGY -->
-<section class="card">
-<h2 class="text-2xl font-bold">Strategy Layer</h2>
-
-<ul class="mt-4 space-y-2">
-<li>• Use ETH for growth + yield</li>
-<li>• Use USDC for stable income</li>
-<li>• Ladder deposits for flexibility</li>
-<li>• Borrow instead of selling</li>
-</ul>
-</section>
-
 <!-- RISK -->
-<section class="card">
+<section class="card fade">
 <h2 class="text-2xl font-bold">Risk</h2>
 
 <p class="mt-4">
@@ -268,12 +278,12 @@ Higher yield comes with higher risk — including custody, liquidity, and counte
 </p>
 
 <p class="mt-3">
-CoinDepo should be used as a portion of a diversified strategy.
+CoinDepo should be used as part of a diversified strategy — not your entire portfolio.
 </p>
 </section>
 
 <!-- CTA -->
-<section class="card text-center">
+<section class="card text-center fade">
 <h2 class="text-2xl font-bold">Start Earning</h2>
 
 <div class="mt-4 flex flex-wrap justify-center gap-3">
@@ -283,7 +293,7 @@ CoinDepo should be used as a portion of a diversified strategy.
 </section>
 
 <!-- DISCLAIMER -->
-<section class="card">
+<section class="card fade">
 <h2 class="text-2xl font-bold">Disclaimer (DYOR)</h2>
 
 <p class="mt-4">
@@ -302,15 +312,23 @@ function calc(){
 let P=+amt.value;
 let r=+rate.value/100;
 let d=+days.value;
-
 let total=P*(1+r*(d/365));
 let interest=total-P;
 
 outT.innerText="$"+total.toFixed(2);
 outI.innerText="$"+interest.toFixed(2);
+outP.innerText=((interest/P)*100).toFixed(2)+"%";
 }
-document.querySelectorAll("input").forEach(i=>i.addEventListener("input",calc));
+document.querySelectorAll("input,select").forEach(e=>e.addEventListener("input",calc));
 calc();
+
+const faders=document.querySelectorAll(".fade");
+const obs=new IntersectionObserver(entries=>{
+entries.forEach(e=>{
+if(e.isIntersecting)e.target.classList.add("show");
+});
+});
+faders.forEach(f=>obs.observe(f));
 </script>
 
 </body>
