@@ -1,1 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>CoinDepo Yield Stack Deep Dive</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+body{background:#020617;color:#e5e7eb;font-family:system-ui;}
+.wrap{max-width:1100px;margin:auto;padding:20px;}
+.card{
+background:linear-gradient(180deg,#0f172a,#020617);
+border:1px solid rgba(255,255,255,.08);
+border-radius:20px;
+padding:24px;margin-bottom:20px;
+box-shadow:0 25px 70px rgba(0,0,0,.6);
+}
+.grad{
+background:linear-gradient(135deg,#22c55e,#06b6d4);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+.btn-primary{
+background:linear-gradient(135deg,#22c55e,#06b6d4);
+padding:12px 18px;border-radius:999px;font-weight:800;color:black;
+box-shadow:0 0 25px rgba(34,197,94,.5);
+}
+.btn-outline{
+border:1px solid rgba(255,255,255,.2);
+padding:12px 18px;border-radius:999px;
+}
+.sticky-cta{
+position:fixed;bottom:0;left:0;right:0;
+background:rgba(2,6,23,.95);
+border-top:1px solid rgba(255,255,255,.1);
+padding:12px;display:flex;justify-content:center;gap:10px;z-index:999;
+}
+canvas{background:#020617;border-radius:10px;}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+
+<!-- HERO -->
+<section class="card text-center">
+<h1 class="text-5xl font-extrabold grad">CoinDepo Yield Stack</h1>
+<p class="mt-4 text-lg text-gray-300">
+Earn → Borrow → Spend — a full crypto financial system
+</p>
+
+<div class="mt-6">
+<a href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV" class="btn-primary">Start (USA)</a>
+<a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W" class="btn-outline ml-2">International</a>
+</div>
+</section>
+
+<!-- WHAT IS -->
+<section class="card">
+<h2 class="text-2xl font-bold">What is CoinDepo?</h2>
+<p class="mt-4 text-gray-300">
+CoinDepo is a centralized crypto platform designed for long-term holders who want their assets to generate yield instead of sitting idle.
+</p>
+<p class="mt-3 text-gray-300">
+It offers structured yield products where users commit assets for defined periods in exchange for higher returns.
+</p>
+<ul class="mt-4 space-y-2 text-gray-300">
+<li>• Earn yield</li>
+<li>• Borrow without selling</li>
+<li>• Spend via upcoming crypto credit card</li>
+</ul>
+</section>
+
+<!-- WHY -->
+<section class="card">
+<h2 class="text-2xl font-bold">Why Earn While You Hold</h2>
+<p class="mt-4 text-gray-300">
+Idle capital earns 0%. CoinDepo introduces a second return layer: yield.
+</p>
+</section>
+
+<!-- COMPARISON -->
+<section class="card">
+<h2 class="text-2xl font-bold">Comparison</h2>
+<table class="w-full mt-4 text-sm text-gray-300">
+<tr><td>Bank</td><td>0.5–4%</td></tr>
+<tr><td>CD</td><td>4–5.5%</td></tr>
+<tr><td>Mutual Funds</td><td>6–10%</td></tr>
+<tr><td>Coinbase</td><td>2–6%</td></tr>
+<tr><td>Gemini</td><td>1–5%</td></tr>
+<tr class="bg-emerald-500/10"><td><strong>CoinDepo</strong></td><td><strong>12–24%</strong></td></tr>
+</table>
+</section>
+
+<!-- REAL -->
+<section class="card">
+<h2 class="text-2xl font-bold">$2,500 Example</h2>
+<ul class="mt-4 space-y-2 text-gray-300">
+<li>Bank → $75</li>
+<li>CD → $125</li>
+<li>CoinDepo → $600+</li>
+</ul>
+</section>
+
+<!-- TOKENS -->
+<section class="card">
+<h2 class="text-2xl font-bold">Supported Assets</h2>
+<ul class="mt-4 text-gray-300">
+<li>BTC, ETH, SOL, XRP</li>
+<li>USDT, USDC</li>
+</ul>
+</section>
+
+<!-- CALCULATOR -->
+<section class="card">
+<h2 class="text-2xl font-bold mb-4">Yield Calculator</h2>
+
+<input id="amt" type="number" value="2500">
+<input id="rate" type="number" value="24">
+<input id="days" type="number" value="365">
+
+<div class="mt-4">
+<p>Interest: <span id="outInterest"></span></p>
+<p>Total: <span id="outTotal"></span></p>
+</div>
+
+<canvas id="chart" height="120"></canvas>
+</section>
+
+<!-- STRATEGY -->
+<section class="card">
+<h2 class="text-2xl font-bold">Strategy</h2>
+<ul class="mt-4 text-gray-300">
+<li>Laddering</li>
+<li>Stablecoin income</li>
+<li>Compounding</li>
+</ul>
+</section>
+
+<!-- BORROW -->
+<section class="card">
+<h2 class="text-2xl font-bold">Borrow</h2>
+<p class="text-gray-300">Access liquidity without selling.</p>
+</section>
+
+<!-- CARD -->
+<section class="card">
+<h2 class="text-2xl font-bold">Credit Card</h2>
+<p class="mt-3 text-gray-300">
+500 USDC bonus after $3,000 spend in 3 months
+</p>
+</section>
+
+<!-- WHO NOT -->
+<section class="card">
+<h2 class="text-2xl font-bold">Not For</h2>
+<ul class="mt-4 text-gray-300">
+<li>Need liquidity</li>
+<li>Hate lockups</li>
+<li>Want guaranteed returns</li>
+</ul>
+</section>
+
+<!-- RISK -->
+<section class="card">
+<h2 class="text-2xl font-bold">Risk</h2>
+<p class="text-gray-300">
+Higher yield = higher risk.
+</p>
+</section>
+
+<!-- FINAL -->
+<section class="card">
+<h2 class="text-2xl font-bold">Final Take</h2>
+<p class="mt-3 text-gray-300">
+CoinDepo turns idle crypto into productive capital.
+</p>
+</section>
+
+<!-- CTA -->
+<section class="card text-center">
+<a href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV" class="btn-primary">Start (USA)</a>
+<a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W" class="btn-outline ml-2">International</a>
+</section>
+
+<!-- DISCLAIMER -->
+<section class="card">
+<h2 class="text-2xl font-bold">DYOR</h2>
+<p class="text-gray-300">
+Crypto involves risk. Not financial advice.
+</p>
+</section>
+
+</div>
+
+<div class="sticky-cta">
+<a href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV" class="btn-primary">Start USA</a>
+<a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W" class="btn-outline">Global</a>
+</div>
+
+<script>
+function calc(){
+let P=+amt.value;
+let r=+rate.value/100;
+let d=+days.value;
+let total=P*(1+r*(d/365));
+outTotal.innerText="$"+total.toFixed(2);
+outInterest.innerText="$"+(total-P).toFixed(2);
+draw(P,r,d);
+}
+
+function draw(P,r,d){
+let c=document.getElementById("chart");
+let ctx=c.getContext("2d");
+ctx.clearRect(0,0,c.width,c.height);
+
+let vals=[];
+for(let i=0;i<40;i++){
+let t=d*(i/40);
+vals.push(P*(1+r*(t/365)));
+}
+
+let min=Math.min(...vals);
+let max=Math.max(...vals);
+
+ctx.beginPath();
+vals.forEach((v,i)=>{
+let x=(i/40)*c.width;
+let y=c.height-((v-min)/(max-min))*(c.height-20);
+i?ctx.lineTo(x,y):ctx.moveTo(x,y);
+});
+ctx.strokeStyle="#22c55e";
+ctx.stroke();
+}
+
+document.querySelectorAll("input").forEach(e=>e.addEventListener("input",calc));
+calc();
+</script>
+
+</body>
+</html>
