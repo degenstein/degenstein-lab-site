@@ -9,47 +9,82 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
 <style>
-body{background:#020617;color:#e5e7eb;font-family:system-ui;}
+body{
+background:#020617;
+color:#e5e7eb;
+font-family:system-ui;
+scroll-behavior:smooth;
+}
+
 .wrap{max-width:1100px;margin:auto;padding:20px;}
+
 .card{
 background:linear-gradient(180deg,#0f172a,#020617);
-border:1px solid rgba(255,255,255,.08);
-border-radius:20px;
-padding:24px;margin-bottom:20px;
-box-shadow:0 25px 70px rgba(0,0,0,.6);
+border:1px solid rgba(148,163,184,.2);
+border-radius:18px;
+padding:24px;
+margin-bottom:24px;
+box-shadow:0 20px 60px rgba(0,0,0,.6);
+transition:all .3s ease;
 }
+
+.card:hover{
+transform:translateY(-4px);
+box-shadow:0 30px 80px rgba(34,197,94,.15);
+}
+
 .grad{
-background:linear-gradient(135deg,#22c55e,#06b6d4);
+background:linear-gradient(135deg,#34d399,#60a5fa);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
+
 .btn-primary{
 background:linear-gradient(135deg,#22c55e,#06b6d4);
-padding:12px 18px;border-radius:999px;font-weight:800;color:black;
+padding:12px 18px;
+border-radius:999px;
+font-weight:800;
+color:black;
 box-shadow:0 0 25px rgba(34,197,94,.5);
+transition:.2s;
 }
+.btn-primary:hover{transform:translateY(-1px);}
+
 .btn-outline{
-border:1px solid rgba(255,255,255,.2);
-padding:12px 18px;border-radius:999px;
+border:1px solid rgba(148,163,184,.3);
+padding:12px 18px;
+border-radius:999px;
 }
-.sticky-cta{
-position:fixed;bottom:0;left:0;right:0;
-background:rgba(2,6,23,.95);
+
+.sticky{
+position:fixed;
+bottom:0;left:0;right:0;
+background:rgba(2,6,23,.9);
+backdrop-filter:blur(10px);
+padding:10px;
+display:flex;
+justify-content:center;
+gap:10px;
 border-top:1px solid rgba(255,255,255,.1);
-padding:12px;display:flex;justify-content:center;gap:10px;z-index:999;
+z-index:999;
 }
-canvas{background:#020617;border-radius:10px;}
+
+.fade{opacity:0;transform:translateY(20px);transition:all .6s ease;}
+.fade.show{opacity:1;transform:translateY(0);}
+
+canvas{border-radius:12px;}
 </style>
 </head>
 
 <body>
+
 <div class="wrap">
 
 <!-- HERO -->
-<section class="card text-center">
+<section class="card text-center fade">
 <h1 class="text-5xl font-extrabold grad">CoinDepo Yield Stack</h1>
-<p class="mt-4 text-lg text-gray-300">
-Earn → Borrow → Spend — a full crypto financial system
+<p class="mt-4 text-lg text-gray-400">
+Earn → Borrow → Spend — Turn crypto into a working asset
 </p>
 
 <div class="mt-6">
@@ -58,185 +93,130 @@ Earn → Borrow → Spend — a full crypto financial system
 </div>
 </section>
 
-<!-- WHAT IS -->
-<section class="card">
+<!-- WHAT -->
+<section class="card fade">
 <h2 class="text-2xl font-bold">What is CoinDepo?</h2>
 <p class="mt-4 text-gray-300">
-CoinDepo is a centralized crypto platform designed for long-term holders who want their assets to generate yield instead of sitting idle.
-</p>
-<p class="mt-3 text-gray-300">
-It offers structured yield products where users commit assets for defined periods in exchange for higher returns.
-</p>
-<ul class="mt-4 space-y-2 text-gray-300">
-<li>• Earn yield</li>
-<li>• Borrow without selling</li>
-<li>• Spend via upcoming crypto credit card</li>
-</ul>
-</section>
-
-<!-- WHY -->
-<section class="card">
-<h2 class="text-2xl font-bold">Why Earn While You Hold</h2>
-<p class="mt-4 text-gray-300">
-Idle capital earns 0%. CoinDepo introduces a second return layer: yield.
+CoinDepo is a yield platform for long-term crypto holders, allowing assets to generate income instead of remaining idle.
 </p>
 </section>
 
 <!-- COMPARISON -->
-<section class="card">
-<h2 class="text-2xl font-bold">Comparison</h2>
-<table class="w-full mt-4 text-sm text-gray-300">
-<tr><td>Bank</td><td>0.5–4%</td></tr>
-<tr><td>CD</td><td>4–5.5%</td></tr>
-<tr><td>Mutual Funds</td><td>6–10%</td></tr>
-<tr><td>Coinbase</td><td>2–6%</td></tr>
-<tr><td>Gemini</td><td>1–5%</td></tr>
-<tr class="bg-emerald-500/10"><td><strong>CoinDepo</strong></td><td><strong>12–24%</strong></td></tr>
-</table>
-</section>
-
-<!-- REAL -->
-<section class="card">
-<h2 class="text-2xl font-bold">$2,500 Example</h2>
+<section class="card fade">
+<h2 class="text-2xl font-bold">Yield Comparison</h2>
 <ul class="mt-4 space-y-2 text-gray-300">
-<li>Bank → $75</li>
-<li>CD → $125</li>
-<li>CoinDepo → $600+</li>
-</ul>
-</section>
-
-<!-- TOKENS -->
-<section class="card">
-<h2 class="text-2xl font-bold">Supported Assets</h2>
-<ul class="mt-4 text-gray-300">
-<li>BTC, ETH, SOL, XRP</li>
-<li>USDT, USDC</li>
+<li>Bank → 1–4%</li>
+<li>CD → 4–5%</li>
+<li>Coinbase → 2–6%</li>
+<li class="text-emerald-400 font-semibold">CoinDepo → 12–24%</li>
 </ul>
 </section>
 
 <!-- CALCULATOR -->
-<section class="card">
-<h2 class="text-2xl font-bold mb-4">Yield Calculator</h2>
+<section class="card fade">
+<h2 class="text-2xl font-bold mb-4">Yield Engine</h2>
 
-<input id="amt" type="number" value="2500">
-<input id="rate" type="number" value="24">
-<input id="days" type="number" value="365">
-
-<div class="mt-4">
-<p>Interest: <span id="outInterest"></span></p>
-<p>Total: <span id="outTotal"></span></p>
+<div class="grid md:grid-cols-3 gap-3">
+<input id="amt" value="2500" class="p-2 bg-black/50 rounded">
+<input id="rate" value="24" class="p-2 bg-black/50 rounded">
+<input id="days" value="365" class="p-2 bg-black/50 rounded">
 </div>
 
-<canvas id="chart" height="120"></canvas>
-</section>
+<div class="mt-4 grid grid-cols-3 gap-3">
+<div>Interest <br><span id="outI"></span></div>
+<div>Total <br><span id="outT"></span></div>
+<div>Return <br><span id="outP"></span></div>
+</div>
 
-<!-- STRATEGY -->
-<section class="card">
-<h2 class="text-2xl font-bold">Strategy</h2>
-<ul class="mt-4 text-gray-300">
-<li>Laddering</li>
-<li>Stablecoin income</li>
-<li>Compounding</li>
-</ul>
-</section>
-
-<!-- BORROW -->
-<section class="card">
-<h2 class="text-2xl font-bold">Borrow</h2>
-<p class="text-gray-300">Access liquidity without selling.</p>
+<canvas id="chart" height="140" class="mt-6"></canvas>
 </section>
 
 <!-- CARD -->
-<section class="card">
+<section class="card fade">
 <h2 class="text-2xl font-bold">Credit Card</h2>
 <p class="mt-3 text-gray-300">
-500 USDC bonus after $3,000 spend in 3 months
-</p>
-</section>
-
-<!-- WHO NOT -->
-<section class="card">
-<h2 class="text-2xl font-bold">Not For</h2>
-<ul class="mt-4 text-gray-300">
-<li>Need liquidity</li>
-<li>Hate lockups</li>
-<li>Want guaranteed returns</li>
-</ul>
-</section>
-
-<!-- RISK -->
-<section class="card">
-<h2 class="text-2xl font-bold">Risk</h2>
-<p class="text-gray-300">
-Higher yield = higher risk.
+500 USDC bonus after $3,000 spend in first 3 months.
 </p>
 </section>
 
 <!-- FINAL -->
-<section class="card">
-<h2 class="text-2xl font-bold">Final Take</h2>
-<p class="mt-3 text-gray-300">
-CoinDepo turns idle crypto into productive capital.
-</p>
-</section>
-
-<!-- CTA -->
-<section class="card text-center">
-<a href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV" class="btn-primary">Start (USA)</a>
-<a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W" class="btn-outline ml-2">International</a>
-</section>
-
-<!-- DISCLAIMER -->
-<section class="card">
-<h2 class="text-2xl font-bold">DYOR</h2>
-<p class="text-gray-300">
-Crypto involves risk. Not financial advice.
-</p>
+<section class="card text-center fade">
+<h2 class="text-2xl font-bold">Start Earning</h2>
+<div class="mt-4">
+<a href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV" class="btn-primary">USA</a>
+<a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W" class="btn-outline ml-2">Global</a>
+</div>
 </section>
 
 </div>
 
-<div class="sticky-cta">
-<a href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV" class="btn-primary">Start USA</a>
+<!-- STICKY CTA -->
+<div class="sticky">
+<a href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV" class="btn-primary">Start (USA)</a>
 <a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W" class="btn-outline">Global</a>
 </div>
 
 <script>
+// Fade in
+const faders=document.querySelectorAll(".fade");
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(e=>{
+if(e.isIntersecting)e.target.classList.add("show");
+});
+});
+faders.forEach(f=>observer.observe(f));
+
+// Calculator + Chart
 function calc(){
 let P=+amt.value;
 let r=+rate.value/100;
 let d=+days.value;
+
 let total=P*(1+r*(d/365));
-outTotal.innerText="$"+total.toFixed(2);
-outInterest.innerText="$"+(total-P).toFixed(2);
+let interest=total-P;
+
+outI.innerText="$"+interest.toFixed(2);
+outT.innerText="$"+total.toFixed(2);
+outP.innerText=((interest/P)*100).toFixed(1)+"%";
+
 draw(P,r,d);
 }
 
 function draw(P,r,d){
-let c=document.getElementById("chart");
+let c=chart;
 let ctx=c.getContext("2d");
 ctx.clearRect(0,0,c.width,c.height);
 
-let vals=[];
-for(let i=0;i<40;i++){
+let yieldPts=[];
+let idlePts=[];
+
+for(let i=0;i<=40;i++){
 let t=d*(i/40);
-vals.push(P*(1+r*(t/365)));
+yieldPts.push(P*(1+r*(t/365)));
+idlePts.push(P);
 }
 
-let min=Math.min(...vals);
-let max=Math.max(...vals);
+let min=Math.min(...yieldPts);
+let max=Math.max(...yieldPts);
 
+function plot(data,color,dash=false){
 ctx.beginPath();
-vals.forEach((v,i)=>{
+ctx.setLineDash(dash?[6,4]:[]);
+data.forEach((v,i)=>{
 let x=(i/40)*c.width;
 let y=c.height-((v-min)/(max-min))*(c.height-20);
 i?ctx.lineTo(x,y):ctx.moveTo(x,y);
 });
-ctx.strokeStyle="#22c55e";
+ctx.strokeStyle=color;
+ctx.lineWidth=2;
 ctx.stroke();
 }
 
-document.querySelectorAll("input").forEach(e=>e.addEventListener("input",calc));
+plot(idlePts,"#9ca3af",true);
+plot(yieldPts,"#34d399");
+}
+
+document.querySelectorAll("input").forEach(i=>i.addEventListener("input",calc));
 calc();
 </script>
 
