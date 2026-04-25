@@ -13,7 +13,7 @@ body{
 background:#020617;
 color:#e5e7eb;
 font-family:system-ui;
-overflow-x:hidden;
+line-height:1.6;
 }
 
 .wrap{max-width:1100px;margin:auto;padding:20px;}
@@ -21,15 +21,10 @@ overflow-x:hidden;
 .card{
 background:linear-gradient(180deg,#0f172a,#020617);
 border:1px solid rgba(148,163,184,.2);
-border-radius:22px;
+border-radius:20px;
 padding:28px;
 margin-bottom:28px;
-box-shadow:0 30px 90px rgba(0,0,0,.8);
-transition:.3s;
-}
-.card:hover{
-transform:translateY(-6px);
-box-shadow:0 40px 120px rgba(34,197,94,.2);
+box-shadow:0 25px 80px rgba(0,0,0,.7);
 }
 
 .grad{
@@ -40,181 +35,266 @@ background:linear-gradient(135deg,#22c55e,#06b6d4);
 
 .btn-primary{
 background:linear-gradient(135deg,#22c55e,#06b6d4);
-padding:14px 22px;
+padding:12px 22px;
 border-radius:999px;
 font-weight:900;
 color:black;
-box-shadow:0 0 40px rgba(34,197,94,.5);
-transition:.2s;
+box-shadow:0 0 30px rgba(34,197,94,.5);
 }
-.btn-primary:hover{transform:translateY(-2px);}
 
 .btn-outline{
 border:1px solid rgba(148,163,184,.3);
-padding:14px 22px;
+padding:12px 22px;
 border-radius:999px;
 }
 
 .highlight{
-background:linear-gradient(135deg,rgba(34,197,94,.2),rgba(6,182,212,.2));
-border:1px solid rgba(34,197,94,.4);
+background:linear-gradient(135deg,rgba(34,197,94,.15),rgba(6,182,212,.15));
+border:1px solid rgba(34,197,94,.3);
 }
 
-.big{
-font-size:2.4rem;
-font-weight:900;
-}
-
-canvas{
-background:#020617;
-border-radius:14px;
-}
-
-.sticky{
-position:fixed;
-bottom:0;
-left:0;
-right:0;
-background:rgba(2,6,23,.9);
-backdrop-filter:blur(10px);
-padding:12px;
-display:flex;
-justify-content:center;
-gap:12px;
-border-top:1px solid rgba(255,255,255,.1);
-z-index:999;
-}
+.big{font-size:2rem;font-weight:900;}
+.muted{color:#9ca3af;}
 </style>
 </head>
 
 <body>
-
 <div class="wrap">
 
 <!-- HERO -->
-<section class="card text-center highlight">
-<h1 class="text-6xl font-extrabold grad">
+<section class="card highlight text-center">
+<h1 class="text-5xl font-extrabold grad">
 Turn $2,500 Into $3,100+
 </h1>
 
-<p class="mt-5 text-lg text-gray-400">
-Earn → Borrow → Spend — The Complete Crypto Financial Stack
+<p class="mt-4 text-lg muted">
+Earn → Borrow → Spend — The Full CoinDepo Yield Stack
 </p>
 
 <div class="mt-6 flex flex-wrap justify-center gap-3">
-
-<a href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV" class="btn-primary">
-Start Earning (USA)
-</a>
-
-<a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W" class="btn-outline">
-International
-</a>
-
-<a href="https://degenstein.xyz/" class="btn-outline">
-Main Page
-</a>
-
-<a href="https://degenstein.xyz/report/" class="btn-outline">
-More Reports
-</a>
-
-<a href="https://twitter.com/intent/tweet?text=CoinDepo%20Yield%20Stack%20Deep%20Dive&url=https://degenstein.xyz/report/coindepo-yield-stack-deep-dive/" target="_blank" class="btn-outline">
-Share on X
-</a>
-
+<a href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV" class="btn-primary">Start Earning (USA)</a>
+<a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W" class="btn-outline">International</a>
+<a href="https://degenstein.xyz/" class="btn-outline">Main Page</a>
+<a href="https://degenstein.xyz/report/" class="btn-outline">More Reports</a>
+<a href="https://twitter.com/intent/tweet?text=CoinDepo%20Yield%20Stack%20Deep%20Dive&url=https://degenstein.xyz/report/coindepo-yield-stack-deep-dive/" target="_blank" class="btn-outline">Share on X</a>
 </div>
 </section>
 
-<!-- EARNINGS -->
+<!-- WHAT -->
 <section class="card">
-<h2 class="text-2xl font-bold mb-5">What You Can Earn</h2>
+<h2 class="text-2xl font-bold">What CoinDepo Actually Is</h2>
 
-<div class="grid md:grid-cols-2 gap-5">
+<p class="mt-4">
+CoinDepo is a centralized crypto platform designed for long-term holders who want their assets to generate yield instead of sitting idle.
+</p>
 
-<div class="p-6 rounded-xl highlight">
-<div class="text-gray-400">ETH Example</div>
-<div class="big mt-2">$2,500 → ~$2,990</div>
-<div class="text-sm mt-2 text-gray-400">~18% APY</div>
-</div>
+<p class="mt-3">
+Unlike exchanges that prioritize trading, CoinDepo focuses on capital efficiency — turning crypto into an income-producing asset.
+</p>
 
-<div class="p-6 rounded-xl highlight">
-<div class="text-gray-400">USDC Example</div>
-<div class="big mt-2">$2,500 → ~$3,100+</div>
-<div class="text-sm mt-2 text-gray-400">Up to ~24% APY</div>
-</div>
+<p class="mt-3">
+It combines three core functions:
+</p>
 
-</div>
+<ul class="mt-4 space-y-2">
+<li>• Earn yield on crypto</li>
+<li>• Borrow against holdings</li>
+<li>• Spend via upcoming credit card</li>
+</ul>
+</section>
+
+<!-- WHO -->
+<section class="card">
+<h2 class="text-2xl font-bold">Who This Is For</h2>
+
+<ul class="mt-4 space-y-2">
+<li>• Long-term holders (BTC / ETH believers)</li>
+<li>• Stablecoin users seeking yield</li>
+<li>• Investors who want passive income</li>
+<li>• Users comfortable evaluating platform risk</li>
+</ul>
 </section>
 
 <!-- TOKENS -->
 <section class="card">
 <h2 class="text-2xl font-bold">Supported Assets</h2>
-<ul class="mt-4 grid md:grid-cols-2 gap-2 text-gray-300">
-<li>BTC</li>
-<li>ETH</li>
-<li>SOL</li>
-<li>XRP</li>
-<li>USDT</li>
-<li>USDC</li>
+
+<div class="grid md:grid-cols-2 mt-4 gap-2">
+<ul>
+<li>• Bitcoin (BTC)</li>
+<li>• Ethereum (ETH)</li>
+<li>• Solana (SOL)</li>
+<li>• XRP</li>
 </ul>
+
+<ul>
+<li>• USDT</li>
+<li>• USDC</li>
+<li>• DAI</li>
+<li>• Others (vary by product)</li>
+</ul>
+</div>
+</section>
+
+<!-- EARN -->
+<section class="card">
+<h2 class="text-2xl font-bold">Earn — The Core Engine</h2>
+
+<p class="mt-4">
+CoinDepo offers structured yield products that reward time commitment and reduced liquidity.
+</p>
+
+<ul class="mt-4 space-y-2">
+<li>• 12–18% on BTC / ETH</li>
+<li>• 18–24% on USDT / USDC</li>
+<li>• Fixed-term deposits (30–365 days)</li>
+<li>• Compounding yield options</li>
+</ul>
+
+<p class="mt-4">
+Yield increases with duration — meaning patience is directly rewarded.
+</p>
+</section>
+
+<!-- EARNINGS -->
+<section class="card">
+<h2 class="text-2xl font-bold">What You Can Earn</h2>
+
+<div class="grid md:grid-cols-2 gap-5 mt-5">
+
+<div class="p-5 rounded-xl highlight">
+<div class="muted">ETH Example</div>
+<div class="big mt-2">$2,500 → ~$2,990</div>
+<div class="muted mt-2">~18% APY</div>
+</div>
+
+<div class="p-5 rounded-xl highlight">
+<div class="muted">USDC Example</div>
+<div class="big mt-2">$2,500 → ~$3,100+</div>
+<div class="muted mt-2">Up to ~24% APY</div>
+</div>
+
+</div>
 </section>
 
 <!-- CALCULATOR -->
 <section class="card">
-<h2 class="text-2xl font-bold mb-4">Yield Engine</h2>
+<h2 class="text-2xl font-bold mb-4">Yield Calculator</h2>
 
-<div class="grid md:grid-cols-4 gap-3">
+<div class="grid md:grid-cols-3 gap-3">
 <input id="amt" value="2500" class="p-2 bg-black/50 rounded">
 <input id="rate" value="24" class="p-2 bg-black/50 rounded">
 <input id="days" value="365" class="p-2 bg-black/50 rounded">
-<select id="mode" class="p-2 bg-black/50 rounded">
-<option value="apr">APR</option>
-<option value="apy">APY</option>
-</select>
 </div>
 
-<div class="mt-5 grid grid-cols-3 gap-4">
-<div>Interest<br><span id="outI"></span></div>
-<div>Total<br><span id="outT"></span></div>
-<div>Return<br><span id="outP"></span></div>
+<div class="mt-4">
+<p>Interest: <span id="outI"></span></p>
+<p>Total: <span id="outT"></span></p>
 </div>
+</section>
 
-<canvas id="chart" height="150" class="mt-6"></canvas>
+<!-- BORROW -->
+<section class="card">
+<h2 class="text-2xl font-bold">Borrow — Liquidity Without Selling</h2>
 
+<p class="mt-4">
+CoinDepo allows you to borrow against your crypto while still maintaining your position.
+</p>
+
+<ul class="mt-4 space-y-2">
+<li>• No credit checks</li>
+<li>• ~50% loan-to-value</li>
+<li>• Flexible repayment</li>
+</ul>
+
+<p class="mt-4">
+This allows you to access cash without triggering taxable events.
+</p>
 </section>
 
 <!-- CREDIT CARD -->
 <section class="card highlight">
 <h2 class="text-2xl font-bold">Crypto Credit Card</h2>
 
-<p class="mt-3">
-Join the waitlist:
+<p class="mt-4">
+Join the waitlist now:
 </p>
 
 <div class="big text-emerald-400 mt-3">
 500 USDC BONUS
 </div>
 
-<p class="mt-2 text-gray-400">
-After $3,000 spend in first 3 months
+<p class="mt-2">
+After spending $3,000 within the first 3 months
 </p>
+
+<p class="mt-4 muted">
+Earn up to 8% cashback in crypto.
+</p>
+</section>
+
+<!-- COMPARISON -->
+<section class="card">
+<h2 class="text-2xl font-bold">Comparison</h2>
+
+<ul class="mt-4 space-y-2">
+<li>Bank → 1–4%</li>
+<li>CD → 4–5%</li>
+<li>Mutual Funds → 6–10%</li>
+<li>Coinbase → 2–6%</li>
+<li>Gemini → 1–5%</li>
+<li class="text-emerald-400 font-bold">CoinDepo → 12–24%</li>
+</ul>
+</section>
+
+<!-- STRATEGY -->
+<section class="card">
+<h2 class="text-2xl font-bold">Strategy Layer</h2>
+
+<ul class="mt-4 space-y-2">
+<li>• Use ETH for growth + yield</li>
+<li>• Use USDC for stable income</li>
+<li>• Ladder deposits for flexibility</li>
+<li>• Borrow instead of selling</li>
+</ul>
+</section>
+
+<!-- RISK -->
+<section class="card">
+<h2 class="text-2xl font-bold">Risk</h2>
+
+<p class="mt-4">
+Higher yield comes with higher risk — including custody, liquidity, and counterparty exposure.
+</p>
+
+<p class="mt-3">
+CoinDepo should be used as a portion of a diversified strategy.
+</p>
+</section>
+
+<!-- CTA -->
+<section class="card text-center">
+<h2 class="text-2xl font-bold">Start Earning</h2>
+
+<div class="mt-4 flex flex-wrap justify-center gap-3">
+<a href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV" class="btn-primary">USA Residents</a>
+<a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W" class="btn-outline">All Other Countries</a>
+</div>
 </section>
 
 <!-- DISCLAIMER -->
 <section class="card">
 <h2 class="text-2xl font-bold">Disclaimer (DYOR)</h2>
-<p class="mt-3 text-gray-300">
-Crypto involves risk. Yield is not guaranteed. Always do your own research.
+
+<p class="mt-4">
+Crypto involves risk. Yield is not guaranteed.
+</p>
+
+<p class="mt-3">
+Always do your own research before depositing funds.
 </p>
 </section>
 
-</div>
-
-<!-- STICKY -->
-<div class="sticky">
-<a href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV" class="btn-primary">Start (USA)</a>
-<a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W" class="btn-outline">Global</a>
 </div>
 
 <script>
@@ -223,54 +303,13 @@ let P=+amt.value;
 let r=+rate.value/100;
 let d=+days.value;
 
-let total = mode.value==="apr"
-? P*(1+r*(d/365))
-: P*Math.pow(1+r/365,365*(d/365));
-
+let total=P*(1+r*(d/365));
 let interest=total-P;
 
-outI.innerText="$"+interest.toFixed(2);
 outT.innerText="$"+total.toFixed(2);
-outP.innerText=((interest/P)*100).toFixed(2)+"%";
-
-draw(P,r,d);
+outI.innerText="$"+interest.toFixed(2);
 }
-
-function draw(P,r,d){
-let c=chart;
-let ctx=c.getContext("2d");
-ctx.clearRect(0,0,c.width,c.height);
-
-let yieldPts=[];
-let idlePts=[];
-
-for(let i=0;i<=40;i++){
-let t=d*(i/40);
-yieldPts.push(P*(1+r*(t/365)));
-idlePts.push(P);
-}
-
-let min=Math.min(...yieldPts);
-let max=Math.max(...yieldPts);
-
-function plot(data,color,dash){
-ctx.beginPath();
-ctx.setLineDash(dash?[6,4]:[]);
-data.forEach((v,i)=>{
-let x=(i/40)*c.width;
-let y=c.height-((v-min)/(max-min))*(c.height-20);
-i?ctx.lineTo(x,y):ctx.moveTo(x,y);
-});
-ctx.strokeStyle=color;
-ctx.lineWidth=2;
-ctx.stroke();
-}
-
-plot(idlePts,"#9ca3af",true);
-plot(yieldPts,"#34d399",false);
-}
-
-document.querySelectorAll("input,select").forEach(e=>e.addEventListener("input",calc));
+document.querySelectorAll("input").forEach(i=>i.addEventListener("input",calc));
 calc();
 </script>
 
