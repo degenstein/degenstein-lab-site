@@ -860,7 +860,9 @@ document.getElementById("deltaIdle").textContent =
 
     // Yield line
     ctx.setLineDash([]);
-    ctx.strokeStyle = "#34d399";
+    ctx.shadowColor = "#34d399";
+ctx.shadowBlur = 10;
+ctx.strokeStyle = "#34d399";
     ctx.beginPath();
     yieldPts.forEach((v,i)=>{
       const x = (i/steps)*canvas.width;
