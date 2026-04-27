@@ -899,12 +899,13 @@ document.getElementById("deltaIdle").textContent =
   };
 
   // Live updates
-  ["amt","rate","days","mode","compound"].forEach(id =>
-    document.getElementById(id).addEventListener("input", calc)
-  );
+  ["amt","rate","days"].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) el.addEventListener("input", calc);
+});
 
   // Initial render
-  presetLong();
+  calc();
 });
 </script>
 </body>
