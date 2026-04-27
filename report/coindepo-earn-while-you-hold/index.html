@@ -68,8 +68,17 @@
       inset 0 1px 0 rgba(255,255,255,.03);
   }
 
-  .card-primary::before
-    content:"";
+  .card-primary::before {
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:4px;
+  height:100%;
+  border-radius:999px;
+  background:linear-gradient(180deg,#22c55e,#06b6d4);
+  opacity:.75;
+}
     position:absolute;
     left:0;
     top:0;
