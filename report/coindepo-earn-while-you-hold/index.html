@@ -359,36 +359,114 @@
 </section>
 
 <!-- SEO ADDITION START -->
-<section class="card">
-  <h2 class="text-2xl font-extrabold mb-2">APR vs APY: Why the Difference Matters</h2>
+<div class="flex items-center gap-3 my-10 opacity-60">
+  <div class="h-px flex-1 bg-gradient-to-r from-transparent via-emerald-400 to-transparent"></div>
+  <span class="text-xs tracking-widest uppercase text-emerald-400 font-bold">
+    Yield Mechanics
+  </span>
+  <div class="h-px flex-1 bg-gradient-to-r from-transparent via-emerald-400 to-transparent"></div>
+</div>
 
-  <p class="muted">
-    APR reflects simple interest, while APY accounts for compounding.
-    Understanding this distinction is critical when comparing yield products.
-  </p>
+<section class="grid md:grid-cols-2 gap-6">
 
-  <ul class="list-disc pl-6 text-gray-300 space-y-2 mt-3">
-    <li>APR assumes no reinvestment of earned interest</li>
-    <li>APY reflects compound growth over time</li>
-    <li>Longer durations amplify APY advantages</li>
-  </ul>
+  <!-- APR -->
+  <div class="card">
+    <h2 class="text-2xl font-extrabold mb-2">APR</h2>
+    <p class="muted">Simple interest. No compounding.</p>
 
-  <p class="fine mt-3">
-    Always confirm whether quoted rates are APR or APY before depositing.
-  </p>
+    <div class="mt-4 p-4 rounded-xl bg-white/5 border border-white/10">
+      <div class="text-xs text-gray-400">Example</div>
+      <div class="text-lg font-bold">$2,000 → $2,480</div>
+      <div class="text-xs text-gray-400">90 days @ 24%</div>
+    </div>
+  </div>
+
+  <!-- APY -->
+  <div class="card">
+    <h2 class="text-2xl font-extrabold mb-2">APY</h2>
+    <p class="muted">Compounding interest. Growth accelerates over time.</p>
+
+    <div class="mt-4 p-4 rounded-xl bg-emerald-400/5 border border-emerald-400/30">
+      <div class="text-xs text-gray-400">Key Insight</div>
+      <div class="text-lg font-bold text-emerald-400">
+        Time increases your effective yield
+      </div>
+    </div>
+  </div>
+
 </section>
-<!-- SEO ADDITION END -->
-<section class="card fade">
-<h2 class="text-2xl font-bold">Comparison</h2>
 
-<ul class="mt-4 space-y-2">
-<li>Bank → 1–4%</li>
-<li>CD → 4–5%</li>
-<li>Mutual Funds → 6–10%</li>
-<li>Coinbase → 2–6%</li>
-<li>Gemini → 1–5%</li>
-<li class="text-emerald-400 font-bold">CoinDepo → 12–24%</li>
-</ul>
+<!-- COMPARISON VISUAL -->
+<section class="card mt-6">
+
+  <h2 class="text-2xl font-extrabold mb-6">Yield Comparison</h2>
+
+  <div class="space-y-4">
+
+    <!-- BANK -->
+    <div>
+      <div class="flex justify-between text-sm">
+        <span>Bank</span><span>4%</span>
+      </div>
+      <div class="h-2 bg-gray-700 rounded">
+        <div class="h-2 bg-gray-400 w-[15%] rounded"></div>
+      </div>
+    </div>
+
+    <!-- CD -->
+    <div>
+      <div class="flex justify-between text-sm">
+        <span>CD</span><span>5%</span>
+      </div>
+      <div class="h-2 bg-gray-700 rounded">
+        <div class="h-2 bg-gray-400 w-[20%] rounded"></div>
+      </div>
+    </div>
+
+    <!-- FUNDS -->
+    <div>
+      <div class="flex justify-between text-sm">
+        <span>Mutual Funds</span><span>10%</span>
+      </div>
+      <div class="h-2 bg-gray-700 rounded">
+        <div class="h-2 bg-blue-400 w-[40%] rounded"></div>
+      </div>
+    </div>
+
+    <!-- COINBASE -->
+    <div>
+      <div class="flex justify-between text-sm">
+        <span>Coinbase</span><span>6%</span>
+      </div>
+      <div class="h-2 bg-gray-700 rounded">
+        <div class="h-2 bg-blue-400 w-[25%] rounded"></div>
+      </div>
+    </div>
+
+    <!-- COINDEPO -->
+    <div>
+      <div class="flex justify-between text-sm font-bold">
+        <span class="text-emerald-400">CoinDepo</span>
+        <span class="text-emerald-400">24%</span>
+      </div>
+      <div class="h-2 bg-gray-700 rounded">
+        <div class="h-2 bg-emerald-400 w-full rounded shadow-[0_0_10px_rgba(34,197,94,.6)]"></div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- KILL SHOT -->
+<section class="card-primary mt-6 text-center">
+  <div class="text-sm text-gray-400">Reality check</div>
+  <div class="text-3xl font-extrabold mt-2">
+    Your money is either earning…
+  </div>
+  <div class="text-3xl font-extrabold text-emerald-400">
+    or doing nothing.
+  </div>
 </section>
 <!-- CALCULATOR (UNCHANGED + IDLE VS YIELD) -->
 <section id="calculator" class="card">
