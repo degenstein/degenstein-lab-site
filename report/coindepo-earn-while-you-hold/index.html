@@ -477,7 +477,9 @@
   <input id="rate" type="number" value="24" class="p-2 rounded bg-black/60 border border-white/10">
   <input id="days" type="number" value="90" class="p-2 rounded bg-black/60 border border-white/10">
 </div>
-
+<select id="compound" class="hidden">
+  <option value="365" selected>Daily</option>
+</select>
 <div class="mt-4 grid md:grid-cols-3 gap-3">
   <div><strong>Interest:</strong> <span id="outInterest">$0.00</span></div>
   <div><strong>Total:</strong> <span id="outTotal">$0.00</span></div>
