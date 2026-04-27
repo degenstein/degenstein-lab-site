@@ -812,7 +812,8 @@ document.addEventListener("DOMContentLoaded", () => {
         : P * Math.pow(1 + r / n, n * (d / 365));
 
     const interest = total - P;
-
+document.getElementById("deltaIdle").textContent =
+  "+$" + interest.toFixed(2);
     outI.textContent = "$" + interest.toFixed(2);
     outT.textContent = "$" + total.toFixed(2);
     outP.textContent = ((interest / P) * 100 || 0).toFixed(2) + "%";
