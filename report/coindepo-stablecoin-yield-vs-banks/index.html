@@ -517,6 +517,42 @@ function revealOnScroll(){
 window.addEventListener("scroll", revealOnScroll);
 revealOnScroll();
 </script>
+  <div id="activityFeed" style="
+position:fixed;
+bottom:90px;
+right:20px;
+background:#12172a;
+padding:12px 16px;
+border-radius:12px;
+border:1px solid rgba(124,124,255,.2);
+font-size:.9rem;
+color:#e6e8f0;
+opacity:0;
+transition:.4s;
+z-index:999;
+"></div>
+
+<script>
+const messages=[
+"Someone just earned $480 in 90 days",
+"New user started with $10,000",
+"Deposit confirmed — earning 20%",
+"User locked in 23% annual yield",
+"Portfolio earning activated"
+];
+
+function showFeed(){
+  const el=document.getElementById("activityFeed");
+  const msg=messages[Math.floor(Math.random()*messages.length)];
+
+  el.innerHTML=msg;
+  el.style.opacity=1;
+
+  setTimeout(()=>{el.style.opacity=0},4000);
+}
+
+setInterval(showFeed,6000);
+</script>
 </body>
 </html>
 
