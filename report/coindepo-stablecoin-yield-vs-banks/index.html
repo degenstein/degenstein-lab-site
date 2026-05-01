@@ -26,6 +26,28 @@
 <meta name="twitter:image" content="https://degenstein.xyz/assets/10000save.png" />
 
 <style>
+  /* CONVERSION UPGRADE */
+.card{
+  transition: all .25s ease;
+}
+.card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(124,124,255,.2);
+}
+
+a:hover{
+  opacity:.9;
+}
+
+/* CHART ANIMATION */
+svg polyline{
+  stroke-dasharray:1000;
+  stroke-dashoffset:1000;
+  animation:drawLine 2s ease forwards;
+}
+@keyframes drawLine{
+  to{stroke-dashoffset:0}
+}
 :root{
   --bg:#0b0f1a;
   --card:#12172a;
