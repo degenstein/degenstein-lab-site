@@ -211,7 +211,36 @@ and side-by-side comparisons.
        style="width:100%;max-width:820px;border-radius:14px;
        box-shadow:0 0 40px rgba(124,124,255,.35)">
 </div>
+<!-- CALCULATOR -->
+<div class="card">
+<h3>Live Earnings Calculator</h3>
 
+<label>Amount: $<span id="amtVal">10000</span></label>
+<input type="range" min="1000" max="100000" value="10000" id="amt" style="width:100%">
+
+<div style="margin-top:16px">
+Bank: <span id="bankCalc">$0</span><br>
+CoinDepo: <span id="cryptoCalc" class="highlight">$0</span>
+</div>
+</div>
+
+<script>
+const amt=document.getElementById("amt");
+
+function calc(){
+let a=amt.value;
+document.getElementById("amtVal").textContent=a;
+
+let bank=a*1.05;
+let crypto=a*1.23;
+
+document.getElementById("bankCalc").textContent="$"+Math.round(bank).toLocaleString();
+document.getElementById("cryptoCalc").textContent="$"+Math.round(crypto).toLocaleString();
+}
+
+amt.oninput=calc;
+calc();
+</script>
 <!-- GROWTH CHART -->
 <div class="card">
 <h3>12-Month Growth Comparison ($10,000)</h3>
