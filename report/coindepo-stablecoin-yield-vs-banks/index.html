@@ -65,7 +65,29 @@ ul{color:var(--muted)}
 footer{margin-top:80px;color:var(--muted);font-size:.9rem}
 </style>
 </head>
+<!-- STICKY CTA -->
+<div id="stickyCTA" style="
+position:fixed;
+bottom:20px;
+left:50%;
+transform:translateX(-50%);
+background:linear-gradient(135deg,#7c7cff,#3ddc97);
+color:#0b0f1a;
+padding:14px 26px;
+border-radius:999px;
+font-weight:900;
+box-shadow:0 0 20px rgba(124,124,255,.5);
+z-index:999;
+cursor:pointer;
+">
+Start earning 20–23% →
+</div>
 
+<script>
+document.getElementById("stickyCTA").onclick = function(){
+  window.open("https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W","_blank");
+}
+</script>
 <body>
 <div class="container">
   <!-- CONVERSION HERO -->
