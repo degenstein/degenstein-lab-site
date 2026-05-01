@@ -26,6 +26,15 @@
 <meta name="twitter:image" content="https://degenstein.xyz/assets/10000save.png" />
 
 <style>
+  .reveal{
+  opacity:0;
+  transform:translateY(30px);
+  transition:all .6s ease;
+}
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
   /* CONVERSION UPGRADE */
 .card{
   transition: all .25s ease;
