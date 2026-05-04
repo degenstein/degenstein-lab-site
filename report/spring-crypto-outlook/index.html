@@ -75,7 +75,14 @@
       background:rgba(255,255,255,.06);
       box-shadow:var(--shadow)
     }
+.asset{
+  transition:.25s;
+}
 
+.asset:hover{
+  transform:translateY(-6px) scale(1.01);
+  box-shadow:0 0 40px rgba(0,255,170,.2);
+}
     h1{
       font-size:36px;
       margin:12px 0;
@@ -198,7 +205,17 @@
   gap:10px;
   font-size:14px;
 }
-
+.trade-btn{
+  display:inline-block;
+  margin-top:14px;
+  padding:12px 18px;
+  border-radius:10px;
+  background:#00ffaa;
+  color:#000;
+  font-weight:900;
+  letter-spacing:.05em;
+  box-shadow:0 0 30px rgba(0,255,170,.4);
+}
 .highlight{
   color:#00ffaa;
   font-weight:700;
@@ -438,8 +455,9 @@ If you want to explore yield infrastructure for long-term holdings, CoinDepo is 
 platform offering up to ~24% APY depending on asset and term.
 </p>
 
-<a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W" target="_blank">
-👉 Explore CoinDepo →
+<a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W" target="_blank"
+class="trade-btn">
+EXECUTE: EARN YIELD →
 </a>
 </section>
 <section class="section">
