@@ -186,7 +186,24 @@
         rgba(0,0,0,.35);
       box-shadow:0 0 60px rgba(0,255,170,.18);
     }
+.ticker{
+  overflow:hidden;
+  border-top:1px solid rgba(255,255,255,.1);
+  border-bottom:1px solid rgba(255,255,255,.1);
+  margin-top:14px;
+}
 
+.ticker-track{
+  display:inline-block;
+  white-space:nowrap;
+  padding:10px 0;
+  animation:tickerMove 18s linear infinite;
+}
+
+@keyframes tickerMove{
+  0%{transform:translateX(0)}
+  100%{transform:translateX(-50%)}
+}
     .footer{
       margin-top:24px;
       font-size:12px;
@@ -235,7 +252,11 @@ font-family:monospace;
 Markets are coiling. Liquidity is building.  
 The next move won’t be gradual — it will be violent.
 </p>
-
+<div class="ticker">
+<div class="ticker-track">
+BTC Accumulation • ETH Yield Dominance • SOL Expansion Setup • ALT Liquidity Rising • Phase 1 Positioning •
+</div>
+</div>
 <p class="sub" style="margin-top:10px;">
 Smart capital is not chasing — it’s positioning.  
 This report shows where money flows <strong style="color:#00ffaa;">before it moves</strong>.
