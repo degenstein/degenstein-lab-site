@@ -138,13 +138,23 @@
         @media (prefers-reduced-motion: reduce) {
           * { transition: none !important; animation: none !important; }
         }
-      </style>
+      
+/* Resources page compact hero fixes */
+.hero.resources-hero { min-height:auto; }
+.resources-hero .section { padding-top:3rem; padding-bottom:3rem; }
+.resources-hero .card { max-width:900px; margin:0 auto; }
+.resources-hero h1 { font-size:clamp(2rem,5vw,4rem); }
+@media (max-width:700px){
+  .resources-hero .section { padding-top:2rem; padding-bottom:2rem; }
+}
+
+</style>
 </head>
 <body>
 <header class="sticky top-0 z-50 backdrop-blur bg-black/60 border-b border-white/10">
       <div class="container-max mx-auto px-4 py-3 flex items-center justify-between">
         <a href="/" class="flex items-center gap-3">
-          <img src="assets/dan-degenstein-crypto-avatar.png"
+          <img src="/assets/dan-degenstein-crypto-avatar.png"
                alt="Dan Degenstein | House of Crypto"
                class="w-14 h-14 md:w-20 md:h-20 rounded-full object-cover"
                width="80" height="80" />
@@ -181,9 +191,7 @@
       </div>
     </header>
 <main>
-<section class="hero">
-  <img class="bg" src="/assets/crypto-hub-banner-1920x720.jpg" alt="" aria-hidden="true">
-  <div class="overlay"></div>
+<section class="hero resources-hero">
   <div class="container section rel">
     <div class="card">
       <div class="eyebrow">🧰 Resources &amp; Tools Directory</div>
@@ -276,5 +284,6 @@ document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
+
 
 
