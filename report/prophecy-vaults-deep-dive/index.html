@@ -1,765 +1,238 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Prophecy Vaults Deep Dive | The Degenstein Report</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ </body>
+    </html><!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="robots" content="index, follow" />
 
-  <!-- SEO -->
-  <meta name="description" content="Prophecy Vaults deep dive covering 7% weekly vaults, crypto-to-fiat payouts, weekly compounding, vault examples, security systems, and risk analysis." />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://degenstein.xyz/report/prophecy-vaults-deep-dive.html" />
+      <title>Prophecy Vaults Risk Review | The Degenstein Report</title>
+      <meta name="description" content="A risk-focused editorial review of Prophecy Vaults, its advertised weekly return claims, security representations, domain reputation signals, and due-diligence concerns." />
+      <link rel="canonical" href="https://degenstein.xyz/report/prophecy-vaults-deep-dive.html" />
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="article" />
-  <meta property="og:site_name" content="The Degenstein Report" />
-  <meta property="og:title" content="Prophecy Vaults Deep Dive" />
-  <meta property="og:description" content="Unlock weekly yield. Turn time into wealth." />
-  <meta property="og:image" content="https://degenstein.xyz/assets/propweb.png" />
+      <meta property="og:type" content="article" />
+      <meta property="og:site_name" content="The Degenstein Report" />
+      <meta property="og:title" content="Prophecy Vaults Risk Review" />
+      <meta property="og:description" content="A research-first review of unusually high weekly return claims and the verification questions investors should ask." />
+      <meta property="og:image" content="https://degenstein.xyz/assets/propweb.png" />
 
-  <!-- X -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Prophecy Vaults Deep Dive" />
-  <meta name="twitter:description" content="Unlock weekly yield. Turn time into wealth." />
-  <meta name="twitter:image" content="https://degenstein.xyz/assets/propweb.png" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Prophecy Vaults Risk Review" />
+      <meta name="twitter:description" content="High advertised weekly returns require high scrutiny. A Degenstein risk review." />
+      <meta name="twitter:image" content="https://degenstein.xyz/assets/propweb.png" />
 
-  <meta name="theme-color" content="#06b6d4" />
+      <meta name="theme-color" content="#06b6d4" />
+      <script src="https://cdn.tailwindcss.com"></script>
 
-  <script src="https://cdn.tailwindcss.com"></script>
+      <style>
+        :root{color-scheme:dark}
+        html,body{background:#020617;color:#e5e7eb;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;scroll-behavior:smooth}
+        .wrap{max-width:78rem;margin:0 auto;padding:0 1rem}
+        .hero-wrap{position:relative;overflow:hidden}
+        .hero-glow{position:absolute;inset:-120px;background:radial-gradient(circle at 50% 0%,rgba(34,211,238,.18),transparent 70%);filter:blur(100px);z-index:0}
+        .card{position:relative;border-radius:1.5rem;padding:1.5rem;background:linear-gradient(180deg,rgba(15,23,42,.92),rgba(15,23,42,.68));border:1px solid rgba(255,255,255,.08);box-shadow:0 10px 40px rgba(0,0,0,.45)}
+        .grad{background:linear-gradient(135deg,#22d3ee,#facc15,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .tag{display:inline-block;padding:.45rem .8rem;border-radius:999px;border:1px solid rgba(34,211,238,.45);background:rgba(34,211,238,.08);color:#67e8f9;font-size:.72rem;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
+        .btn-outline{display:inline-flex;align-items:center;justify-content:center;padding:.95rem 1.3rem;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.03);transition:.15s ease}
+        .btn-outline:hover{border-color:#22d3ee;background:rgba(255,255,255,.05)}
+        .muted{color:rgba(229,231,235,.72)}
+        .fine{color:rgba(229,231,235,.55);font-size:.9rem}
+        .warning{border:1px solid rgba(248,113,113,.35);background:rgba(248,113,113,.07)}
+      </style>
+    </head>
 
-  <style>
+    <body>
+    <header class="sticky top-0 z-50 border-b border-white/10 bg-black/70 backdrop-blur">
+      <div class="wrap py-4 flex justify-between items-center">
+        <a href="/report/" class="font-extrabold text-lg">The Degenstein Report</a>
+        <span class="tag">High-Risk Platform Review</span>
+      </div>
+    </header>
 
-    :root{
-      color-scheme:dark;
-    }
+    <section class="wrap py-16 hero-wrap">
+      <div class="hero-glow"></div>
 
-    html,body{
-      background:#020617;
-      color:#e5e7eb;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      scroll-behavior:smooth;
-    }
-
-    .wrap{
-      max-width:78rem;
-      margin:0 auto;
-      padding:0 1rem;
-    }
-
-    .hero-wrap{
-      position:relative;
-      overflow:hidden;
-    }
-
-    .hero-glow{
-      position:absolute;
-      inset:-120px;
-      background:radial-gradient(circle at 50% 0%, rgba(34,211,238,.18), transparent 70%);
-      filter:blur(100px);
-      z-index:0;
-    }
-
-    .card{
-      position:relative;
-      border-radius:1.5rem;
-      padding:1.5rem;
-      background:linear-gradient(
-        180deg,
-        rgba(15,23,42,.92),
-        rgba(15,23,42,.68)
-      );
-      border:1px solid rgba(255,255,255,.08);
-      box-shadow:0 10px 40px rgba(0,0,0,.45);
-    }
-
-    .grad{
-      background:linear-gradient(
-        135deg,
-        #22d3ee,
-        #facc15,
-        #a78bfa
-      );
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-    }
-
-    .tag{
-      display:inline-block;
-      padding:.45rem .8rem;
-      border-radius:999px;
-      border:1px solid rgba(34,211,238,.45);
-      background:rgba(34,211,238,.08);
-      color:#67e8f9;
-      font-size:.72rem;
-      font-weight:900;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-    }
-
-    .btn-primary{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:.95rem 1.3rem;
-      border-radius:999px;
-      font-weight:900;
-      color:#020617;
-      background:linear-gradient(
-        135deg,
-        #facc15,
-        #22d3ee
-      );
-      transition:.15s ease;
-      box-shadow:0 0 35px rgba(34,211,238,.35);
-    }
-
-    .btn-primary:hover{
-      transform:translateY(-2px);
-      box-shadow:0 0 55px rgba(34,211,238,.55);
-    }
-
-    .btn-outline{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:.95rem 1.3rem;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.03);
-      transition:.15s ease;
-    }
-
-    .btn-outline:hover{
-      border-color:#22d3ee;
-      background:rgba(255,255,255,.05);
-    }
-
-    .muted{
-      color:rgba(229,231,235,.72);
-    }
-
-    .fine{
-      color:rgba(229,231,235,.55);
-      font-size:.9rem;
-    }
-
-    canvas{
-      background:rgba(0,0,0,.3);
-      border-radius:1rem;
-      border:1px solid rgba(255,255,255,.08);
-    }
-
-  </style>
-
-</head>
-
-<body>
-
-<header class="sticky top-0 z-50 border-b border-white/10 bg-black/70 backdrop-blur">
-  <div class="wrap py-4 flex justify-between items-center">
-
-    <a href="https://degenstein.xyz/"
-       class="font-extrabold text-lg">
-      The Degenstein Report
-    </a>
-
-    <span class="tag">
-      Weekly Yield Thesis
-    </span>
-
-  </div>
-</header>
-
-<section class="wrap py-16 hero-wrap">
-
-  <div class="hero-glow"></div>
-
-  <!-- HERO IMAGE -->
-  <div class="mx-auto mb-10 relative z-10" style="max-width:950px;">
-
-    <img
-      src="https://degenstein.xyz/assets/propweb.png"
-      alt="Prophecy Vaults Deep Dive"
-      class="w-full rounded-2xl border border-white/10 shadow-[0_0_80px_rgba(34,211,238,.25)]"
-      loading="lazy"
-    />
-
-  </div>
-
-  <!-- HERO CONTENT -->
-  <div class="card relative z-10">
-
-    <span class="tag">
-      Prophecy Vaults Research
-    </span>
-
-    <h1 class="text-5xl md:text-7xl font-extrabold mt-5 leading-tight">
-      Unlock Weekly Yield.<br>
-      <span class="grad">
-        Turn Time Into Wealth.
-      </span>
-    </h1>
-
-    <p class="text-xl muted mt-6 max-w-4xl">
-      Prophecy Vaults is positioning itself as a crypto-to-fiat yield platform
-      focused on short-term vault locking, weekly payouts, and aggressive
-      compounding strategies.
-    </p>
-
-    <p class="muted mt-4 max-w-4xl">
-      This report explores vault mechanics, weekly compounding behavior,
-      payout systems, platform infrastructure, security claims,
-      and real-world risk considerations.
-    </p>
-
-    <!-- EXAMPLE -->
-    <div class="mt-8 p-5 rounded-2xl border border-cyan-400/20 bg-cyan-400/5 max-w-md">
-
-      <div class="text-sm text-gray-400">
-        Example outcome
+      <div class="mx-auto mb-10 relative z-10" style="max-width:950px;">
+        <img src="/assets/propweb.png" alt="Prophecy Vaults risk review" class="w-full rounded-2xl border border-white/10 shadow-[0_0_80px_rgba(34,211,238,.25)]" loading="lazy" />
       </div>
 
-      <div class="text-5xl font-extrabold text-cyan-300 mt-2">
-        $500 → $535
+      <div class="card relative z-10">
+        <span class="tag">July 2026 Editorial Review</span>
+
+        <h1 class="text-5xl md:text-7xl font-extrabold mt-5 leading-tight">
+          Prophecy Vaults.<br>
+          <span class="grad">High Return Claims Require High Scrutiny.</span>
+        </h1>
+
+        <p class="text-xl muted mt-6 max-w-4xl">
+          This page was originally published as a promotional-style deep dive. After reviewing the platform's advertised return claims and external reputation signals, Degenstein Crypto Hub has changed its editorial position.
+        </p>
+
+        <p class="muted mt-4 max-w-4xl">
+          I am not currently recommending deposits into Prophecy Vaults. This report is preserved as a risk-focused research review so readers can see the claims, the math, and the verification gaps that should be resolved before capital is placed at risk.
+        </p>
+
+        <div class="warning mt-8 p-5 rounded-2xl max-w-4xl">
+          <div class="text-sm text-red-300 font-extrabold uppercase tracking-widest">Editorial warning</div>
+          <div class="text-2xl font-extrabold mt-2">No deposit or referral link is provided on this page.</div>
+          <p class="muted mt-3">
+            A third-party automated reputation scan published in March 2026 classified the domain as suspicious, reported one security-provider warning, and assigned a 23/100 trust score. Automated scanners can produce false positives, but this signal is material enough to require caution and independent verification.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap gap-3 mt-8">
+          <a href="#claims" class="btn-outline">Review the Claims</a>
+          <a href="#math" class="btn-outline">Check the Math</a>
+          <a href="#security" class="btn-outline">Security Questions</a>
+          <a href="#risk" class="btn-outline">Risk Checklist</a>
+          <a href="/report/" class="btn-outline">← Back to Reports</a>
+        </div>
+
+        <p class="fine mt-5">
+          Research disclosure: This is an independent editorial review. It is not financial, investment, legal, or tax advice. Degenstein does not currently provide a Prophecy Vaults referral link on this page.
+        </p>
+      </div>
+    </section>
+
+    <main class="wrap pb-20 space-y-8">
+    <section id="claims" class="grid md:grid-cols-2 gap-6">
+      <div class="card">
+        <h2 class="text-3xl font-extrabold mb-4">What the Platform Advertises</h2>
+        <p class="muted">
+          Prophecy Vaults has advertised crypto vault products with short lock periods and bonuses of up to 7%. Its public-facing language has also referenced fiat payout methods and principal-protection concepts.
+        </p>
+        <p class="muted mt-4">
+          These are platform claims. A claim appearing on a provider's website is not the same as independent verification of the return source, reserve structure, solvency, payout sustainability, or legal protections.
+        </p>
       </div>
 
-      <div class="text-sm text-gray-400 mt-2">
-        7-day vault @ 7% weekly
+      <div class="card warning">
+        <h2 class="text-3xl font-extrabold mb-4 text-red-300">Why I Changed This Report</h2>
+        <ul class="list-disc pl-6 space-y-3 text-gray-300">
+          <li>The advertised weekly return is unusually high.</li>
+          <li>The domain has limited long-term public reputation history.</li>
+          <li>An external automated reputation service reported a security-provider warning.</li>
+          <li>Security-brand references should not be treated as proof that the full platform or business model has been independently audited.</li>
+          <li>The return source and sustainability require stronger independent verification.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="math" class="card">
+      <h2 class="text-3xl font-extrabold mb-5">The 7% Weekly Math Is the Biggest Warning Sign</h2>
+
+      <p class="muted">
+        A 7% return every week is not equivalent to a 7% annual return. If 7% were compounded weekly for 52 weeks, $100 would mathematically grow to approximately $3,372. The implied effective annual return is roughly 3,272%.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-5 mt-6">
+        <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
+          <div class="text-sm text-gray-400">Starting example</div>
+          <div class="text-4xl font-extrabold text-cyan-300 mt-2">$100</div>
+        </div>
+        <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
+          <div class="text-sm text-gray-400">52 weeks at 7% compounded</div>
+          <div class="text-4xl font-extrabold text-cyan-300 mt-2">≈ $3,372</div>
+        </div>
+        <div class="p-5 rounded-2xl warning">
+          <div class="text-sm text-red-300">Research question</div>
+          <div class="text-xl font-extrabold mt-2">What independently verifiable economic activity could sustainably fund that return?</div>
+        </div>
       </div>
 
-    </div>
-
-    <!-- BUTTONS -->
-    <div class="flex flex-wrap gap-3 mt-8">
-
-      <a href="https://prophecyvaults.com/r/0C63B9AD"
-         target="_blank"
-         rel="noopener"
-         class="btn-primary">
-        Start Vault →
-      </a>
-
-      <a href="#calculator"
-         class="btn-outline">
-        Calculator
-      </a>
-
-      <a href="#security"
-         class="btn-outline">
-        Security
-      </a>
-
-      <a href="#risk"
-         class="btn-outline">
-        Risk Notes
-      </a>
-
-    </div>
-<div class="flex flex-wrap gap-3 mt-4">
-
-  <a href="/report/"
-     class="btn-outline">
-    ← Back to Reports
-  </a>
-
-  <a
-    href="https://twitter.com/intent/tweet?text=Prophecy%20Vaults%20Deep%20Dive%20%E2%80%94%20Weekly%20yield%2C%20vault%20strategies%20%26%20compounding.&url=https%3A%2F%2Fdegenstein.xyz%2Freport%2Fprophecy-vaults-deep-dive%2F"
-    target="_blank"
-    rel="noopener"
-    class="btn-outline">
-    Share on X
-  </a>
-
-</div>
-    <p class="fine mt-5">
-      Disclosure: Referral links may be used. Always perform your own research before depositing capital.
-    </p>
-
-  </div>
-
-</section>
-
-<main class="wrap pb-20 space-y-8">
-
-<!-- OVERVIEW -->
-<section class="grid md:grid-cols-2 gap-6">
-
-  <div class="card">
-
-    <h2 class="text-3xl font-extrabold mb-4">
-      What Is Prophecy Vaults?
-    </h2>
-
-    <p class="muted">
-      Prophecy Vaults is a crypto-to-fiat platform focused on stablecoin
-      vault locking strategies designed to generate short-term yield.
-    </p>
-
-    <p class="muted mt-4">
-      Users lock supported assets like USDT or USDC into vaults ranging from
-      1–7 days while earning advertised weekly bonus payouts.
-    </p>
-
-    <div class="grid grid-cols-3 gap-3 mt-6 text-center text-sm">
-
-      <div class="p-3 rounded-xl bg-white/5 border border-white/10">
-        Lock
-      </div>
-
-      <div class="p-3 rounded-xl bg-white/5 border border-white/10">
-        Earn
-      </div>
-
-      <div class="p-3 rounded-xl bg-white/5 border border-white/10">
-        Compound
-      </div>
-
-    </div>
-
-  </div>
-
-  <div class="card">
-
-    <h2 class="text-3xl font-extrabold mb-4">
-      Platform Highlights
-    </h2>
-
-    <ul class="list-disc pl-6 space-y-3 text-gray-300">
-
-      <li>Up to 7% weekly vault bonus</li>
-
-      <li>1–7 day flexible lock periods</li>
-
-      <li>Crypto-to-fiat payout integrations</li>
-
-      <li>Weekly compounding strategies</li>
-
-      <li>Cash App / Venmo / PayPal withdrawals</li>
-
-      <li>Referral commission structure</li>
-
-      <li>Chainlink and audit-based branding</li>
-
-    </ul>
-
-  </div>
-
-</section>
-
-<!-- EXAMPLES -->
-<section class="card">
-
-  <h2 class="text-3xl font-extrabold mb-6">
-    Vault Examples
-  </h2>
-
-  <div class="grid md:grid-cols-4 gap-5">
-
-    <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
-
-      <div class="text-sm text-gray-400">
-        Starter Vault
-      </div>
-
-      <div class="text-4xl font-extrabold text-cyan-300 mt-2">
-        $100
-      </div>
-
-      <div class="mt-3 text-lg font-bold">
-        $107 after 7 days
-      </div>
-
-    </div>
-
-    <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
-
-      <div class="text-sm text-gray-400">
-        Popular Vault
-      </div>
-
-      <div class="text-4xl font-extrabold text-cyan-300 mt-2">
-        $500
-      </div>
-
-      <div class="mt-3 text-lg font-bold">
-        $535 after 7 days
-      </div>
-
-    </div>
-
-    <div class="p-5 rounded-2xl bg-cyan-400/5 border border-cyan-400/20">
-
-      <div class="text-sm text-gray-400">
-        Growth Vault
-      </div>
-
-      <div class="text-4xl font-extrabold text-cyan-300 mt-2">
-        $750
-      </div>
-
-      <div class="mt-3 text-lg font-bold">
-        $802.50 after 7 days
-      </div>
-
-    </div>
-
-    <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
-
-      <div class="text-sm text-gray-400">
-        Power Vault
-      </div>
-
-      <div class="text-4xl font-extrabold text-cyan-300 mt-2">
-        $1,500
-      </div>
-
-      <div class="mt-3 text-lg font-bold">
-        $1,605 after 7 days
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- COMPOUNDING -->
-<section class="card text-center">
-
-  <div class="text-sm text-gray-400">
-    Weekly compounding example
-  </div>
-
-  <div class="text-6xl font-extrabold grad mt-4">
-    $100 → $3,372
-  </div>
-
-  <div class="text-lg muted mt-4">
-    1 year at 7% weekly compounding
-  </div>
-
-</section>
-
-<!-- CALCULATOR -->
-<section id="calculator" class="card">
-
-  <h2 class="text-3xl font-extrabold mb-5">
-    Weekly Yield Calculator
-  </h2>
-
-  <div class="grid md:grid-cols-2 gap-6">
-
-    <div>
-
-      <input id="amount"
-             type="number"
-             value="500"
-             class="w-full p-3 rounded-xl bg-black/40 border border-white/10 mb-4">
-
-      <input id="weeks"
-             type="number"
-             value="12"
-             class="w-full p-3 rounded-xl bg-black/40 border border-white/10 mb-4">
-
-      <button onclick="calculate()"
-              class="btn-primary w-full">
-        Calculate Growth
-      </button>
-
-    </div>
-
-    <div class="p-5 rounded-2xl bg-black/30 border border-white/10">
-
-      <div class="text-sm text-gray-400">
-        Estimated Result
-      </div>
-
-      <div id="result"
-           class="text-5xl font-extrabold text-cyan-300 mt-4">
-        $0.00
-      </div>
-
-      <div class="fine mt-4">
-        Example uses weekly 7% compounding.
-      </div>
-
-    </div>
-
-  </div>
-
-  <canvas id="chart"
-          width="800"
-          height="200"
-          class="mt-8 w-full"></canvas>
-
-</section>
-
-<!-- SECURITY -->
-<section id="security" class="card">
-
-  <h2 class="text-3xl font-extrabold mb-5">
-    Security & Infrastructure
-  </h2>
-
-  <div class="grid md:grid-cols-2 gap-5">
-
-    <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
-
-      <div class="text-xl font-bold mb-2">
-        Infrastructure Claims
-      </div>
-
-      <ul class="list-disc pl-6 space-y-2 text-gray-300">
-
-        <li>Chainlink-secured systems</li>
-
-        <li>Ethereum / Optimism infrastructure</li>
-
-        <li>OpenZeppelin integrations</li>
-
-        <li>Hacken audit references</li>
-
+      <p class="fine mt-5">
+        The calculation above illustrates compound mathematics only. It is not a forecast, promise, or statement that the platform will make those payments for 52 consecutive weeks.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2 class="text-3xl font-extrabold mb-5">Questions the Original Page Did Not Ask Clearly Enough</h2>
+      <ul class="list-disc pl-6 space-y-3 text-gray-300">
+        <li>What is the documented source of the advertised vault bonus?</li>
+        <li>Is revenue generated by lending, trading, market making, protocol incentives, fees, or another activity?</li>
+        <li>Are reserves or liabilities independently attested by a recognized accounting or assurance firm?</li>
+        <li>Can users independently verify the smart-contract addresses that hold or route deposited assets?</li>
+        <li>Is there a public audit report tied to the exact deployed contract version used by depositors?</li>
+        <li>Which legal entity is the counterparty to a user deposit, and in which jurisdiction is it organized?</li>
+        <li>What happens to user claims in an insolvency, exploit, frozen-account, or payment interruption scenario?</li>
+        <li>Are fiat payout integrations direct provider relationships or user-directed payment methods?</li>
       </ul>
+    </section>
 
-    </div>
-
-    <div class="p-5 rounded-2xl bg-white/5 border border-white/10">
-
-      <div class="text-xl font-bold mb-2">
-        Vault Safeguards
+    <section id="security" class="grid md:grid-cols-2 gap-6">
+      <div class="card">
+        <h2 class="text-3xl font-extrabold mb-4">Security References Are Not the Same as a Full Audit</h2>
+        <p class="muted">
+          The original Degenstein page repeated references to Chainlink, Ethereum or Optimism infrastructure, OpenZeppelin, and Hacken. That wording could incorrectly imply that those organizations had verified or endorsed the entire Prophecy Vaults platform.
+        </p>
+        <p class="muted mt-4">
+          Using an oracle, a software library, or audited code component does not by itself verify a platform's treasury, business model, operator controls, private-key security, solvency, or every deployed contract.
+        </p>
       </div>
 
-      <ul class="list-disc pl-6 space-y-2 text-gray-300">
+      <div class="card warning">
+        <h2 class="text-3xl font-extrabold mb-4 text-red-300">Reputation Signal</h2>
+        <p class="muted">
+          A March 2026 Gridinsoft automated report classified the domain as suspicious, cited a relatively young domain and limited independent reputation data, and reported one provider warning. The same report showed Google Safe Browsing and many other providers as clean at the time of its scan.
+        </p>
+        <p class="muted mt-4">
+          That mixed result is not proof of fraud or malware. It is a reason to avoid promotional certainty and require more verification before recommending the platform.
+        </p>
+      </div>
+    </section>
 
-        <li>Principal protection claims</li>
-
-        <li>72-hour payout buffer</li>
-
-        <li>ReentrancyGuard references</li>
-
-        <li>Multi-oracle fallback systems</li>
-
+    <section id="risk" class="card border border-red-400/20">
+      <h2 class="text-3xl font-extrabold mb-5 text-red-400">Degenstein Risk Checklist</h2>
+      <ul class="list-disc pl-6 space-y-3 text-gray-300">
+        <li>Do not interpret a high advertised return as evidence of safety.</li>
+        <li>Do not rely on referral payouts or social-media testimonials as independent verification.</li>
+        <li>Verify the legal entity, jurisdiction, terms, and dispute process.</li>
+        <li>Locate the exact deployed contracts and match them to any claimed audit report.</li>
+        <li>Look for independent reserve, liability, or financial attestations.</li>
+        <li>Understand where deposited assets move and who controls the relevant keys.</li>
+        <li>Assume total loss is possible when independent verification is incomplete.</li>
       </ul>
+    </section>
 
-    </div>
-
-  </div>
-
-</section>
-
-<!-- FAQ -->
-<section class="card">
-
-  <h2 class="text-3xl font-extrabold mb-5">
-    FAQ
-  </h2>
-
-  <div class="space-y-5">
-
-    <div>
-
-      <div class="font-bold text-lg">
-        Is Prophecy Vaults risk free?
-      </div>
-
-      <p class="muted mt-2">
-        No crypto platform is risk free. Users should independently verify all platform claims.
+    <section class="card">
+      <h2 class="text-3xl font-extrabold mb-5">Current Degenstein Editorial Position</h2>
+      <p class="text-xl muted">
+        I do not have enough independently verified information to recommend Prophecy Vaults to Degenstein readers.
       </p>
-
-    </div>
-
-    <div>
-
-      <div class="font-bold text-lg">
-        How are payouts received?
-      </div>
-
-      <p class="muted mt-2">
-        The platform advertises fiat payout integrations including Cash App,
-        Venmo, PayPal, Apple Pay, and Zelle.
+      <p class="muted mt-4">
+        The original page was too promotional. It emphasized weekly return examples, compounding, and referral access while giving insufficient weight to verification of the return source, legal counterparty, reserve structure, and domain-reputation concerns.
       </p>
-
-    </div>
-
-    <div>
-
-      <div class="font-bold text-lg">
-        Can users compound weekly?
-      </div>
-
-      <p class="muted mt-2">
-        Yes. Users can reportedly reinvest weekly vault payouts for accelerated growth.
+      <p class="muted mt-4">
+        If stronger independent evidence becomes available, this report can be updated. Until then, Degenstein's position is research first, capital protection first, and no promotional referral CTA.
       </p>
+    </section>
 
-    </div>
+    <section class="card">
+      <h2 class="text-3xl font-extrabold mb-5">Final Take</h2>
+      <p class="muted">
+        The most important number on this page is not 7%. It is the implied result of repeatedly compounding 7% every week. Extraordinary return claims deserve extraordinary verification.
+      </p>
+      <p class="text-xl font-extrabold mt-5">
+        Verify the source of returns → verify the contracts → verify the legal counterparty → then decide whether the risk is acceptable.
+      </p>
+    </section>
+    </main>
 
-  </div>
+    <footer class="border-t border-white/10">
+      <div class="wrap py-8 text-sm text-gray-400">
+        <div class="flex flex-wrap gap-5 mb-5">
+          <a href="/">Home</a>
+          <a href="/about/">About</a>
+          <a href="/contact/">Contact</a>
+          <a href="/report/">Reports</a>
+          <a href="/editorial-policy/">Editorial Policy</a>
+          <a href="/privacy.html">Privacy</a>
+          <a href="/terms.html">Terms</a>
+        </div>
+        <p>
+          <strong>Research &amp; Risk Disclosure:</strong> This content is educational and does not constitute financial, investment, legal, or tax advice. Crypto and third-party platforms can result in partial or total loss. Degenstein may revise an editorial position when new evidence or risk signals become available.
+        </p>
+        <p class="mt-4">© 2026 The Degenstein Report</p>
+      </div>
+    </footer>
 
-</section>
-
-<!-- RISK -->
-<section id="risk" class="card border border-red-400/20">
-
-  <h2 class="text-3xl font-extrabold mb-5 text-red-400">
-    Risk Considerations
-  </h2>
-
-  <ul class="list-disc pl-6 space-y-3 text-gray-300">
-
-    <li>Crypto platforms carry counterparty risk</li>
-
-    <li>Smart contracts may contain vulnerabilities</li>
-
-    <li>Yield claims should always be independently verified</li>
-
-    <li>Never deploy funds you cannot afford to lose</li>
-
-  </ul>
-
-</section>
-
-<!-- CTA -->
-<section class="card text-center overflow-hidden relative">
-
-  <div class="hero-glow"></div>
-
-  <div class="relative z-10">
-
-    <div class="text-sm text-gray-400">
-      Ready to explore vault strategies?
-    </div>
-
-    <h2 class="text-5xl font-extrabold mt-4">
-      Unlock Weekly Yield
-    </h2>
-
-    <a href="https://prophecyvaults.com/r/0C63B9AD"
-       target="_blank"
-       rel="noopener"
-       class="btn-primary mt-8">
-      Launch Vault →
-    </a>
-
-  </div>
-
-</section>
-
-</main>
-  <!-- EXCLUSIVE LINK CTA -->
-<section class="card text-center border border-cyan-400/20">
-
-  <div class="text-sm text-gray-400 uppercase tracking-[0.2em]">
-    Exclusive Access
-  </div>
-
-  <h2 class="text-4xl font-extrabold mt-4">
-    Start Your First Vault
-  </h2>
-
-  <p class="muted mt-4 max-w-2xl mx-auto">
-    Explore Prophecy Vaults and unlock weekly yield strategies
-    with crypto-to-fiat payouts and compounding potential.
-  </p>
-
-  <div class="mt-8">
-
-    <a href="https://prophecyvaults.com/r/0C63B9AD"
-       target="_blank"
-       rel="noopener nofollow"
-       class="btn-primary text-lg px-8 py-4">
-      Launch Prophecy Vault →
-    </a>
-
-  </div>
-
-  <div class="mt-5 text-cyan-300 font-bold break-all">
-    https://prophecyvaults.com/r/0C63B9AD
-  </div>
-
-  <p class="fine mt-4">
-    Referral link may provide platform benefits or commissions.
-  </p>
-
-</section>
-
-<footer class="border-t border-white/10">
-
-  <div class="wrap py-8 text-sm text-gray-400">
-    © 2026 The Degenstein Report
-  </div>
-
-</footer>
-
-<script>
-
-function calculate(){
-
-  const amount =
-    parseFloat(document.getElementById("amount").value) || 0;
-
-  const weeks =
-    parseFloat(document.getElementById("weeks").value) || 0;
-
-  const total =
-    amount * Math.pow(1.07, weeks);
-
-  document.getElementById("result").innerText =
-    "$" + total.toFixed(2);
-
-  drawChart(amount,weeks);
-}
-
-function drawChart(amount,weeks){
-
-  const canvas =
-    document.getElementById("chart");
-
-  const ctx =
-    canvas.getContext("2d");
-
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-
-  let values = [];
-
-  for(let i=0;i<=weeks;i++){
-
-    values.push(
-      amount * Math.pow(1.07, i)
-    );
-
-  }
-
-  const max = Math.max(...values);
-
-  ctx.beginPath();
-
-  ctx.strokeStyle = "#22d3ee";
-
-  ctx.lineWidth = 4;
-
-  values.forEach((v,i)=>{
-
-    const x =
-      (i/weeks) * canvas.width;
-
-    const y =
-      canvas.height -
-      ((v/max) * (canvas.height-20));
-
-    if(i===0){
-      ctx.moveTo(x,y);
-    } else {
-      ctx.lineTo(x,y);
-    }
-
-  });
-
-  ctx.stroke();
-}
-
-calculate();
-
-</script>
-
-</body>
-</html>
