@@ -1,527 +1,553 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Memecoin Trio Report — PEPE, DOGE & SHIB | The Degenstein Report</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <title>Memecoin Trio — July 2026 DOGE, SHIB & PEPE Liquidity Report | The Degenstein Report</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO -->
-  <meta name="description" content="A research-driven breakdown of the memecoin trio: PEPE, DOGE & SHIB. Liquidity, culture, reflexive demand, cycle behavior & risks — no hopium." />
-  <link rel="canonical" href="https://degenstein.xyz/report/memecoin-trio/" />
+      <!-- SEO -->
+      <meta name="description" content="A July 2026 research report on DOGE, SHIB and PEPE covering liquidity, market capitalization, payments, burns, reflexive demand, cycle behavior and risk." />
+      <link rel="canonical" href="https://degenstein.xyz/report/memecoin-trio/" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Memecoin Trio Report — PEPE, DOGE & SHIB" />
-  <meta property="og:description" content="Liquidity, culture & reflexive demand. A serious look at crypto’s most powerful memecoins — no hopium." />
-  <meta property="og:image" content="https://degenstein.xyz/assets/memecoinreport.png" />
-  <meta property="og:url" content="https://degenstein.xyz/report/memecoin-trio/" />
-  <meta property="og:type" content="article" />
+      <!-- Open Graph -->
+      <meta property="og:title" content="Memecoin Trio — July 2026 DOGE, SHIB & PEPE" />
+      <meta property="og:description" content="July 2026 research on liquidity, payments, supply, culture and reflexive demand across DOGE, SHIB and PEPE." />
+      <meta property="og:image" content="https://degenstein.xyz/assets/memecoinreport.png" />
+      <meta property="og:url" content="https://degenstein.xyz/report/memecoin-trio/" />
+      <meta property="og:type" content="article" />
 
-  <!-- X -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Memecoin Trio Report — PEPE, DOGE & SHIB" />
-  <meta name="twitter:description" content="Liquidity, culture & reflexive demand — no hopium." />
-  <meta name="twitter:image" content="https://degenstein.xyz/assets/memecoinreport.png" />
-  <meta name="twitter:site" content="@DHouseofcrypto" />
+      <!-- X -->
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Memecoin Trio — July 2026 DOGE, SHIB & PEPE" />
+      <meta name="twitter:description" content="July 2026 liquidity, payments, supply and reflexive-demand research." />
+      <meta name="twitter:image" content="https://degenstein.xyz/assets/memecoinreport.png" />
+      <meta name="twitter:site" content="@DHouseofcrypto" />
 
-  <meta name="theme-color" content="#06b6d4" />
+      <meta name="theme-color" content="#06b6d4" />
 
-  <style>
-    :root{
-      --bg:#020617;
-      --card:#020617;
-      --card-alt:#020817;
-      --accent:#22c55e;
-      --accent2:#06b6d4;
-      --text-main:#f9fafb;
-      --text-muted:#9ca3af;
-      --radius:18px;
-      --shadow:0 18px 55px rgba(0,0,0,.75);
-    }
+      <style>
+        :root{
+          --bg:#020617;
+          --card:#020617;
+          --card-alt:#020817;
+          --accent:#22c55e;
+          --accent2:#06b6d4;
+          --text-main:#f9fafb;
+          --text-muted:#9ca3af;
+          --radius:18px;
+          --shadow:0 18px 55px rgba(0,0,0,.75);
+        }
 
-    body{
-      margin:0;
-      font-family:system-ui,-apple-system,Segoe UI,sans-serif;
-      background:
-        radial-gradient(circle at top left,rgba(34,197,94,.14),transparent 55%),
-        radial-gradient(circle at bottom right,rgba(6,182,212,.14),transparent 55%),
-        var(--bg);
-      color:var(--text-main);
-    }
+        body{
+          margin:0;
+          font-family:system-ui,-apple-system,Segoe UI,sans-serif;
+          background:
+            radial-gradient(circle at top left,rgba(34,197,94,.14),transparent 55%),
+            radial-gradient(circle at bottom right,rgba(6,182,212,.14),transparent 55%),
+            var(--bg);
+          color:var(--text-main);
+        }
 
-    .page{padding:40px 16px 64px;display:flex;justify-content:center;}
-    .container{max-width:920px;width:100%;}
+        .page{padding:40px 16px 64px;display:flex;justify-content:center;}
+        .container{max-width:920px;width:100%;}
 
-    a{color:var(--accent);text-decoration:none;}
-    a:hover{text-decoration:underline;}
+        a{color:var(--accent);text-decoration:none;}
+        a:hover{text-decoration:underline;}
 
-    .banner{
-      width:100%;
-      border-radius:18px;
-      box-shadow:0 20px 70px rgba(0,0,0,.6);
-      margin-bottom:18px;
-      display:block;
-    }
+        .banner{
+          width:100%;
+          border-radius:18px;
+          box-shadow:0 20px 70px rgba(0,0,0,.6);
+          margin-bottom:18px;
+          display:block;
+        }
 
-    .nav-row{
-      margin: 8px 0 18px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      align-items:center;
-    }
-    .nav-pill{
-      display:inline-flex;
-      gap:6px;
-      padding:7px 14px;
-      border-radius:999px;
-      font-size:.74rem;
-      letter-spacing:.14em;
-      background:rgba(15,23,42,.85);
-      border:1px solid rgba(148,163,184,.4);
-      color:var(--text-muted);
-      text-transform:uppercase;
-      transition:.15s;
-      text-decoration:none;
-      font-weight:650;
-    }
-    .nav-pill:hover{
-      background:rgba(6,182,212,.12);
-      border-color:rgba(6,182,212,.6);
-      color:#67e8f9;
-      text-decoration:none;
-    }
+        .nav-row{
+          margin: 8px 0 18px;
+          display:flex;
+          flex-wrap:wrap;
+          gap:10px;
+          align-items:center;
+        }
+        .nav-pill{
+          display:inline-flex;
+          gap:6px;
+          padding:7px 14px;
+          border-radius:999px;
+          font-size:.74rem;
+          letter-spacing:.14em;
+          background:rgba(15,23,42,.85);
+          border:1px solid rgba(148,163,184,.4);
+          color:var(--text-muted);
+          text-transform:uppercase;
+          transition:.15s;
+          text-decoration:none;
+          font-weight:650;
+        }
+        .nav-pill:hover{
+          background:rgba(6,182,212,.12);
+          border-color:rgba(6,182,212,.6);
+          color:#67e8f9;
+          text-decoration:none;
+        }
 
-    .badge{
-      display:inline-flex;gap:8px;
-      padding:4px 10px;
-      border-radius:999px;
-      border:1px solid rgba(148,163,184,.35);
-      background:rgba(15,23,42,.85);
-      font-size:11px;
-      letter-spacing:.16em;
-      text-transform:uppercase;
-      margin-bottom:10px;
-    }
-    .dot{
-      width:6px;height:6px;border-radius:999px;
-      background:var(--accent);
-      box-shadow:0 0 10px rgba(34,197,94,.9);
-    }
+        .badge{
+          display:inline-flex;gap:8px;
+          padding:4px 10px;
+          border-radius:999px;
+          border:1px solid rgba(148,163,184,.35);
+          background:rgba(15,23,42,.85);
+          font-size:11px;
+          letter-spacing:.16em;
+          text-transform:uppercase;
+          margin-bottom:10px;
+        }
+        .dot{
+          width:6px;height:6px;border-radius:999px;
+          background:var(--accent);
+          box-shadow:0 0 10px rgba(34,197,94,.9);
+        }
 
-    h1{font-size:clamp(2.2rem,4vw,3rem);margin:12px 0 6px;}
-    .subtitle{color:var(--text-muted);font-size:1.05rem;max-width:720px;line-height:1.6;}
+        h1{font-size:clamp(2.2rem,4vw,3rem);margin:12px 0 6px;}
+        .subtitle{color:var(--text-muted);font-size:1.05rem;max-width:720px;line-height:1.6;}
 
-    .share-row{
-      margin:16px 0 6px;
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
-    .share-btn{
-      padding:7px 12px;
-      border-radius:999px;
-      border:1px solid rgba(148,163,184,.4);
-      background:rgba(15,23,42,.85);
-      font-size:.82rem;
-      color:var(--text-muted);
-      font-weight:650;
-      cursor:pointer;
-      transition:.15s;
-      text-decoration:none;
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-    }
-    .share-btn:hover{
-      background:rgba(6,182,212,.12);
-      border-color:rgba(6,182,212,.6);
-      color:#67e8f9;
-      text-decoration:none;
-    }
+        .share-row{
+          margin:16px 0 6px;
+          display:flex;
+          gap:10px;
+          flex-wrap:wrap;
+          align-items:center;
+        }
+        .share-btn{
+          padding:7px 12px;
+          border-radius:999px;
+          border:1px solid rgba(148,163,184,.4);
+          background:rgba(15,23,42,.85);
+          font-size:.82rem;
+          color:var(--text-muted);
+          font-weight:650;
+          cursor:pointer;
+          transition:.15s;
+          text-decoration:none;
+          display:inline-flex;
+          align-items:center;
+          gap:6px;
+        }
+        .share-btn:hover{
+          background:rgba(6,182,212,.12);
+          border-color:rgba(6,182,212,.6);
+          color:#67e8f9;
+          text-decoration:none;
+        }
 
-    .divider{
-      margin:28px 0;
-      border-bottom:1px solid rgba(148,163,184,.3);
-    }
+        .divider{
+          margin:28px 0;
+          border-bottom:1px solid rgba(148,163,184,.3);
+        }
 
-    .section{margin-bottom:34px;}
-    .section h2{font-size:1.25rem;margin-bottom:10px;}
-    .section p{color:var(--text-muted);line-height:1.7;max-width:780px;}
+        .section{margin-bottom:34px;}
+        .section h2{font-size:1.25rem;margin-bottom:10px;}
+        .section p{color:var(--text-muted);line-height:1.7;max-width:780px;}
 
-    .grid{
-      display:grid;
-      grid-template-columns:1fr 1fr 1fr;
-      gap:18px;
-    }
-    @media(max-width:900px){.grid{grid-template-columns:1fr;}}
+        .grid{
+          display:grid;
+          grid-template-columns:1fr 1fr 1fr;
+          gap:18px;
+        }
+        @media(max-width:900px){.grid{grid-template-columns:1fr;}}
 
-    .card{
-      padding:18px;
-      border-radius:var(--radius);
-      background:
-        radial-gradient(circle at top left,rgba(34,197,94,.12),transparent 70%),
-        linear-gradient(180deg,rgba(2,6,23,.75),rgba(2,6,23,.95));
-      border:1px solid rgba(148,163,184,.32);
-      box-shadow:var(--shadow);
-      position:relative;
-      overflow:hidden;
-    }
-    .card h3{margin:6px 0 8px;line-height:1.25;}
-    .card p{color:var(--text-muted);line-height:1.55;margin:0;}
+        .card{
+          padding:18px;
+          border-radius:var(--radius);
+          background:
+            radial-gradient(circle at top left,rgba(34,197,94,.12),transparent 70%),
+            linear-gradient(180deg,rgba(2,6,23,.75),rgba(2,6,23,.95));
+          border:1px solid rgba(148,163,184,.32);
+          box-shadow:var(--shadow);
+          position:relative;
+          overflow:hidden;
+        }
+        .card h3{margin:6px 0 8px;line-height:1.25;}
+        .card p{color:var(--text-muted);line-height:1.55;margin:0;}
 
-    .tag-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px;}
-    .tag{
-      padding:3px 8px;
-      border-radius:999px;
-      font-size:.7rem;
-      text-transform:uppercase;
-      letter-spacing:.12em;
-      border:1px solid rgba(148,163,184,.4);
-      color:var(--text-muted);
-      background:rgba(15,23,42,.55);
-    }
-    .tag-primary{
-      color:var(--accent);
-      border-color:rgba(34,197,94,.6);
-      background:rgba(34,197,94,.08);
-      font-weight:800;
-    }
+        .tag-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px;}
+        .tag{
+          padding:3px 8px;
+          border-radius:999px;
+          font-size:.7rem;
+          text-transform:uppercase;
+          letter-spacing:.12em;
+          border:1px solid rgba(148,163,184,.4);
+          color:var(--text-muted);
+          background:rgba(15,23,42,.55);
+        }
+        .tag-primary{
+          color:var(--accent);
+          border-color:rgba(34,197,94,.6);
+          background:rgba(34,197,94,.08);
+          font-weight:800;
+        }
 
-    /* Mini timelines */
-    .timeline-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr 1fr;
-      gap:18px;
-      margin-top:14px;
-    }
-    @media(max-width:900px){.timeline-grid{grid-template-columns:1fr;}}
-    .timeline-card{
-      padding:18px;
-      border-radius:var(--radius);
-      border:1px solid rgba(148,163,184,.32);
-      background:
-        radial-gradient(circle at 20% 0%,rgba(6,182,212,.12),transparent 55%),
-        linear-gradient(180deg,rgba(2,6,23,.70),rgba(2,6,23,.95));
-      box-shadow:var(--shadow);
-    }
-    .timeline-title{
-      font-weight:900;
-      letter-spacing:.01em;
-      margin:0 0 8px;
-      display:flex;
-      align-items:center;
-      gap:10px;
-    }
-    .timeline-title span{
-      padding:3px 8px;
-      border-radius:999px;
-      font-size:.72rem;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      border:1px solid rgba(6,182,212,.5);
-      background:rgba(6,182,212,.08);
-      color:#67e8f9;
-      font-weight:900;
-    }
-    .timeline-list{
-      margin:0;
-      padding-left:16px;
-      color:var(--text-muted);
-      line-height:1.65;
-    }
-    .timeline-note{
-      margin-top:10px;
-      font-size:.82rem;
-      color:rgba(156,163,175,.95);
-      line-height:1.6;
-    }
+        /* Mini timelines */
+        .timeline-grid{
+          display:grid;
+          grid-template-columns:1fr 1fr 1fr;
+          gap:18px;
+          margin-top:14px;
+        }
+        @media(max-width:900px){.timeline-grid{grid-template-columns:1fr;}}
+        .timeline-card{
+          padding:18px;
+          border-radius:var(--radius);
+          border:1px solid rgba(148,163,184,.32);
+          background:
+            radial-gradient(circle at 20% 0%,rgba(6,182,212,.12),transparent 55%),
+            linear-gradient(180deg,rgba(2,6,23,.70),rgba(2,6,23,.95));
+          box-shadow:var(--shadow);
+        }
+        .timeline-title{
+          font-weight:900;
+          letter-spacing:.01em;
+          margin:0 0 8px;
+          display:flex;
+          align-items:center;
+          gap:10px;
+        }
+        .timeline-title span{
+          padding:3px 8px;
+          border-radius:999px;
+          font-size:.72rem;
+          letter-spacing:.12em;
+          text-transform:uppercase;
+          border:1px solid rgba(6,182,212,.5);
+          background:rgba(6,182,212,.08);
+          color:#67e8f9;
+          font-weight:900;
+        }
+        .timeline-list{
+          margin:0;
+          padding-left:16px;
+          color:var(--text-muted);
+          line-height:1.65;
+        }
+        .timeline-note{
+          margin-top:10px;
+          font-size:.82rem;
+          color:rgba(156,163,175,.95);
+          line-height:1.6;
+        }
 
-    .cta{
-      margin-top:32px;
-      padding:18px;
-      border-radius:18px;
-      border:1px solid rgba(6,182,212,.35);
-      background:rgba(15,23,42,.95);
-      box-shadow:0 18px 60px rgba(0,0,0,.45);
-    }
-    .cta p{color:var(--text-muted);line-height:1.65;margin:8px 0 0;max-width:760px;}
+        .cta{
+          margin-top:32px;
+          padding:18px;
+          border-radius:18px;
+          border:1px solid rgba(6,182,212,.35);
+          background:rgba(15,23,42,.95);
+          box-shadow:0 18px 60px rgba(0,0,0,.45);
+        }
+        .cta p{color:var(--text-muted);line-height:1.65;margin:8px 0 0;max-width:760px;}
 
-    .bonus-pill{
-      margin-top:10px;
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:6px 12px;
-      border-radius:999px;
-      border:1px solid rgba(34,197,94,.55);
-      background: rgba(34,197,94,.10);
-      color:#6ee7b7;
-      font-size:.74rem;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      font-weight:900;
-    }
+        .bonus-pill{
+          margin-top:10px;
+          display:inline-flex;
+          align-items:center;
+          gap:8px;
+          padding:6px 12px;
+          border-radius:999px;
+          border:1px solid rgba(34,197,94,.55);
+          background: rgba(34,197,94,.10);
+          color:#6ee7b7;
+          font-size:.74rem;
+          letter-spacing:.12em;
+          text-transform:uppercase;
+          font-weight:900;
+        }
 
-    .example{
-      margin-top:10px;
-      padding:12px 14px;
-      border-radius:14px;
-      border:1px solid rgba(6,182,212,.30);
-      background: rgba(6,182,212,.08);
-      color: rgba(226,232,240,.95);
-      line-height:1.65;
-      max-width: 760px;
-    }
-    .example strong{color:#67e8f9;}
-    .example code{
-      color:#67e8f9;
-      font-weight:900;
-      background: rgba(2,6,23,.55);
-      border: 1px solid rgba(148,163,184,.22);
-      padding: 2px 6px;
-      border-radius: 8px;
-    }
+        .example{
+          margin-top:10px;
+          padding:12px 14px;
+          border-radius:14px;
+          border:1px solid rgba(6,182,212,.30);
+          background: rgba(6,182,212,.08);
+          color: rgba(226,232,240,.95);
+          line-height:1.65;
+          max-width: 760px;
+        }
+        .example strong{color:#67e8f9;}
+        .example code{
+          color:#67e8f9;
+          font-weight:900;
+          background: rgba(2,6,23,.55);
+          border: 1px solid rgba(148,163,184,.22);
+          padding: 2px 6px;
+          border-radius: 8px;
+        }
 
-    .cta-btn{
-      display:inline-flex;
-      margin-top:12px;
-      padding:10px 18px;
-      border-radius:999px;
-      background:linear-gradient(135deg,var(--accent),var(--accent2));
-      color:#020617;
-      font-weight:900;
-      text-decoration:none;
-      box-shadow:0 14px 40px rgba(6,182,212,.18);
-    }
-    .cta-btn:hover{transform:translateY(-1px);text-decoration:none;}
-    .small-note{margin-top:10px;font-size:.82rem;color:rgba(156,163,175,.95);line-height:1.55;}
-  </style>
-</head>
+        .cta-btn{
+          display:inline-flex;
+          margin-top:12px;
+          padding:10px 18px;
+          border-radius:999px;
+          background:linear-gradient(135deg,var(--accent),var(--accent2));
+          color:#020617;
+          font-weight:900;
+          text-decoration:none;
+          box-shadow:0 14px 40px rgba(6,182,212,.18);
+        }
+        .cta-btn:hover{transform:translateY(-1px);text-decoration:none;}
+        .small-note{margin-top:10px;font-size:.82rem;color:rgba(156,163,175,.95);line-height:1.55;}
+      </style>
+    </head>
 
-<body>
-<div class="page">
-<div class="container">
+    <body>
+    <div class="page">
+    <div class="container">
 
-  <img src="/assets/memecoinreport.png" alt="Memecoin Trio Report" class="banner" />
+      <img src="/assets/memecoinreport.png" alt="Memecoin Trio Report" class="banner" />
 
-  <!-- ✅ Back buttons (requested) -->
-  <div class="nav-row">
-    <a class="nav-pill" href="https://degenstein.xyz/">← Back to Main Page</a>
-    <a class="nav-pill" href="/report/">← Back to Reports</a>
-  </div>
-
-  <div class="badge"><span class="dot"></span> The Degenstein Report</div>
-  <h1>The Memecoin Trio: $PEPE, $DOGE &amp; $SHIB</h1>
-  <p class="subtitle">
-    Liquidity, culture &amp; reflexive demand — a serious look at crypto’s most powerful memecoins.
-    <strong>No hopium.</strong> Just how these assets actually behave when the market turns risk-on.
-  </p>
-
-  <div class="share-row">
-    <a class="share-btn"
-       href="https://twitter.com/intent/tweet?text=Memecoin%20Trio%20Report%3A%20%24PEPE%2C%20%24DOGE%20%26%20%24SHIB%20%E2%80%94%20liquidity%2C%20culture%20%26%20cycle%20behavior%20(no%20hopium).&url=https%3A%2F%2Fdegenstein.xyz%2Freport%2Fmemecoin-trio%2F"
-       target="_blank" rel="noopener">
-      ✕ Share on X
-    </a>
-    <button class="share-btn" type="button" onclick="copyLink()">
-      ⧉ Copy link
-    </button>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="section">
-    <h2>Why This Report Exists</h2>
-    <p>
-      Memecoins are often dismissed as jokes — yet $PEPE, $DOGE, and $SHIB consistently rank among the
-      most liquid, widely held, and culturally entrenched assets in crypto.
-      This report breaks down <em>why</em> they persist, <em>how</em> they tend to move in cycles,
-      and what risks actually matter if you’re positioning for the next risk-on phase.
-    </p>
-  </div>
-
-  <div class="grid">
-
-    <div class="card">
-      <div class="tag-row">
-        <span class="tag tag-primary">$DOGE</span>
-        <span class="tag">Liquidity</span>
-        <span class="tag">Retail Signal</span>
+      <!-- ✅ Back buttons (requested) -->
+      <div class="nav-row">
+        <a class="nav-pill" href="https://degenstein.xyz/">← Back to Main Page</a>
+        <a class="nav-pill" href="/report/">← Back to Reports</a>
       </div>
-      <h3>DOGE — The “Base Layer Meme”</h3>
-      <p>
-        DOGE acts like the reserve memecoin: deep liquidity, broad recognition, and a history of becoming
-        a “risk-on” sentiment gauge when retail flows return.
-      </p>
-    </div>
 
-    <div class="card">
-      <div class="tag-row">
-        <span class="tag tag-primary">$SHIB</span>
-        <span class="tag">Holder Base</span>
-        <span class="tag">Narrative</span>
+      <div class="badge"><span class="dot"></span> The Degenstein Report</div>
+      <h1>The Memecoin Trio: $DOGE, $SHIB &amp; $PEPE — July 2026</h1>
+      <p class="subtitle">
+        Memecoins remain a liquidity and attention trade, but the July 2026 picture is more nuanced.
+        <strong>DOGE now has a measurable merchant-payments rollout, SHIB is testing whether ecosystem activity can matter against enormous supply, and PEPE remains the purest momentum asset of the trio.</strong>
+      </p>
+
+      <div class="share-row">
+        <a class="share-btn"
+           href="https://twitter.com/intent/tweet?text=Memecoin%20Trio%20Report%3A%20%24PEPE%2C%20%24DOGE%20%26%20%24SHIB%20%E2%80%94%20liquidity%2C%20culture%20%26%20cycle%20behavior%20(no%20hopium).&url=https%3A%2F%2Fdegenstein.xyz%2Freport%2Fmemecoin-trio%2F"
+           target="_blank" rel="noopener">
+          ✕ Share on X
+        </a>
+        <button class="share-btn" type="button" onclick="copyLink()">
+          ⧉ Copy link
+        </button>
       </div>
-      <h3>SHIB — Narrative + Retail Gravity</h3>
-      <p>
-        SHIB blends meme culture with ecosystem ambition, but its real strength is the size and persistence
-        of its retail holder base — which matters when attention rotates back to memes.
-      </p>
-    </div>
 
-    <div class="card">
-      <div class="tag-row">
-        <span class="tag tag-primary">$PEPE</span>
-        <span class="tag">Velocity</span>
-        <span class="tag">Momentum</span>
+      <div class="divider"></div>
+
+      <div class="section">
+        <h2>Why This Report Exists</h2>
+        <p>
+          DOGE, SHIB, and PEPE remain among the largest meme assets by market capitalization, but they no longer have identical theses.
+          DOGE has the deepest brand and a developing payments angle. SHIB combines a massive holder community with Shibarium and burn mechanics.
+          PEPE remains a high-velocity culture and liquidity asset with little fundamental cash-flow or protocol-utility support.
+          This report separates those structures instead of treating every memecoin as the same trade.
+        </p>
       </div>
-      <h3>PEPE — Pure Culture &amp; Velocity</h3>
-      <p>
-        PEPE is the cleanest example of reflexive momentum: when meme liquidity heats up,
-        PEPE can move fast because it’s built for speed, not utility.
-      </p>
-    </div>
 
-  </div>
+      <div class="grid">
 
-  <!-- ✅ Mini pump timelines (cycle examples) -->
-  <div class="section" style="margin-top:30px;">
-    <h2>Mini Pump Timelines (Cycle Examples)</h2>
-    <p>
-      These aren’t price targets — they’re <strong>pattern recognition</strong>. Memecoins tend to pump when
-      liquidity returns, social attention concentrates, and “risk-on” behavior spreads across crypto.
-      Here’s what the market has already demonstrated in prior runs:
-    </p>
+        <div class="card">
+          <div class="tag-row">
+            <span class="tag tag-primary">$DOGE</span>
+            <span class="tag">Liquidity</span>
+            <span class="tag">Retail Signal</span>
+          </div>
+          <h3>DOGE — The “Base Layer Meme”</h3>
+          <p>
+            DOGE remains the largest memecoin by market capitalization and the clearest sector liquidity benchmark.
+            The fresh 2026 development is payments infrastructure: House of Doge and MoonPay launched ÐOGE Pay in June with access across more than 6,000 merchants and a broader Q3 rollout targeted.
+            That does not turn DOGE into a cash-flow asset, but it gives the thesis a measurable adoption metric beyond social attention.
+          </p>
+        </div>
 
-    <div class="timeline-grid">
+        <div class="card">
+          <div class="tag-row">
+            <span class="tag tag-primary">$SHIB</span>
+            <span class="tag">Holder Base</span>
+            <span class="tag">Narrative</span>
+          </div>
+          <h3>SHIB — Narrative + Retail Gravity</h3>
+          <p>
+            SHIB still depends heavily on community persistence and exchange liquidity, but its ecosystem thesis is broader than the older version of this report showed.
+            Shibarium-linked burns and multichain expansion create measurable network and supply metrics. The challenge is scale: roughly 589 trillion SHIB remain in circulation, so short-term burn-rate spikes should not be confused with rapid supply transformation.
+          </p>
+        </div>
 
-      <div class="timeline-card">
-        <p class="timeline-title">$DOGE <span>Cycle Leader</span></p>
-        <ul class="timeline-list">
-          <li>Early cycle: retail sentiment returns and DOGE becomes a “mood indicator.”</li>
-          <li>Mid cycle: narratives + mainstream attention can accelerate moves quickly.</li>
-          <li>Late cycle: DOGE often spikes during broad meme mania / “everything pumps” phases.</li>
-        </ul>
-        <div class="timeline-note">
-          Key idea: DOGE tends to benefit first because it’s the most recognized + most liquid meme brand.
+        <div class="card">
+          <div class="tag-row">
+            <span class="tag tag-primary">$PEPE</span>
+            <span class="tag">Velocity</span>
+            <span class="tag">Momentum</span>
+          </div>
+          <h3>PEPE — Pure Culture &amp; Velocity</h3>
+          <p>
+            PEPE remains the cleanest reflexive-momentum asset in the trio. CoinGecko currently tracks roughly 420 trillion tradable PEPE and a market capitalization around the $1 billion area.
+            That supply math matters: price targets should always be converted into implied market capitalization. PEPE's thesis remains liquidity, culture, exchange access, and attention — not protocol cash flow.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- ✅ Mini pump timelines (cycle examples) -->
+      <div class="section" style="margin-top:30px;">
+        <h2>Cycle Rotation Map — What to Measure</h2>
+        <p>
+          These are not price targets. They are <strong>research checkpoints</strong> for identifying when meme-sector liquidity is strengthening or weakening.
+          Social attention matters, but volume, market depth, exchange flows, derivatives positioning, and broader crypto liquidity should be measured alongside it.
+        </p>
+
+        <div class="timeline-grid">
+
+          <div class="timeline-card">
+            <p class="timeline-title">$DOGE <span>Cycle Leader</span></p>
+            <ul class="timeline-list">
+              <li>Watch DOGE's share of meme-sector market capitalization and trading volume.</li>
+              <li>Track ÐOGE Pay merchant rollout and whether payment usage becomes measurable.</li>
+              <li>Watch derivatives leverage and vertical price acceleration for late-cycle risk.</li>
+            </ul>
+            <div class="timeline-note">
+              Key idea: DOGE remains the sector benchmark, but payment adoption now gives investors an additional metric to test.
+            </div>
+          </div>
+
+          <div class="timeline-card">
+            <p class="timeline-title">$SHIB <span>Retail Gravity</span></p>
+            <ul class="timeline-list">
+              <li>Track Shibarium activity and whether network usage supports sustained burn mechanics.</li>
+              <li>Measure exchange inflows and outflows rather than relying on isolated whale headlines.</li>
+              <li>Compare cumulative burns with the roughly 589 trillion circulating supply.</li>
+            </ul>
+            <div class="timeline-note">
+              Key idea: SHIB's community remains an advantage, but supply reduction and ecosystem activity must be judged at scale.
+            </div>
+          </div>
+
+          <div class="timeline-card">
+            <p class="timeline-title">$PEPE <span>High Velocity</span></p>
+            <ul class="timeline-list">
+              <li>Track meme-sector market capitalization, PEPE volume, and exchange liquidity.</li>
+              <li>Convert every price target into implied market capitalization using PEPE's enormous supply.</li>
+              <li>Watch whale concentration, leverage, and abrupt liquidity withdrawal during rotations.</li>
+            </ul>
+            <div class="timeline-note">
+              Key idea: PEPE remains a momentum and culture thesis. Position sizing and liquidity discipline matter more than utility narratives.
+            </div>
+          </div>
+
+        </div>
+
+        <p style="margin-top:12px;">
+          Translation: meme assets can appreciate without traditional cash flows, but that does not make price appreciation durable.
+          The thesis requires <strong>liquidity + attention + risk appetite</strong>, while each token's market capitalization and supply determine how much capital a target actually requires.
+        </p>
+      </div>
+
+      <!-- ✅ Option 4: Rename + strengthen section -->
+      <div class="section" style="margin-top:10px;">
+        <h2>Why Memecoins Still Matter Every Cycle</h2>
+        <p>
+          Memecoins remain a useful expression of crypto risk appetite because price can respond quickly to concentrated liquidity and attention.
+          CoinGecko currently tracks the meme category in the tens of billions of dollars, with DOGE, SHIB, and PEPE still among the largest names.
+          Their persistence matters, but leadership can rotate quickly as new tokens compete for the same speculative capital.
+        </p>
+        <p>
+          The research framework is not to invent traditional fundamentals where they do not exist.
+          Treat meme exposure as a <strong>liquidity, market-cap, culture, and reflexivity thesis</strong> and measure those variables directly.
+        </p>
+      </div>
+
+      <div class="section" style="margin-top:-8px;">
+        <h2>Key Risks (Read This)</h2>
+        <p>
+          These assets are volatile, sentiment-driven, and cycle-dependent. Liquidity can disappear quickly in risk-off regimes.
+          Major risks include oversizing, chasing vertical candles, leverage, whale concentration, exchange-flow shocks, and assuming a previous-cycle leader must lead again.
+          Burns, merchant integrations, holder counts, or social engagement do not guarantee token price appreciation.
+        </p>
+      </div>
+
+      <div class="section" style="margin-top:10px;">
+        <h2>July 2026 Market Snapshot</h2>
+        <div class="timeline-grid">
+          <div class="timeline-card">
+            <p class="timeline-title">$DOGE <span>Payments Test</span></p>
+            <ul class="timeline-list">
+              <li>Largest memecoin by market capitalization.</li>
+              <li>ÐOGE Pay launched in June with access across 6,000+ merchants.</li>
+              <li>Broader merchant rollout is targeted for Q3 2026.</li>
+            </ul>
+            <div class="timeline-note">Research question: does merchant access become measurable DOGE payment volume?</div>
+          </div>
+          <div class="timeline-card">
+            <p class="timeline-title">$SHIB <span>Supply Test</span></p>
+            <ul class="timeline-list">
+              <li>Roughly 589 trillion SHIB remain in circulation.</li>
+              <li>Shibarium-linked burns create a usage-to-burn mechanism.</li>
+              <li>Short-term burn-rate spikes can be dramatic but must be measured against total supply.</li>
+            </ul>
+            <div class="timeline-note">Research question: can ecosystem activity reduce supply at a scale that becomes economically meaningful?</div>
+          </div>
+          <div class="timeline-card">
+            <p class="timeline-title">$PEPE <span>Liquidity Test</span></p>
+            <ul class="timeline-list">
+              <li>Roughly 420 trillion PEPE are tradable.</li>
+              <li>Market capitalization remains around the billion-dollar area.</li>
+              <li>No traditional cash-flow thesis supports valuation.</li>
+            </ul>
+            <div class="timeline-note">Research question: can PEPE keep attracting disproportionate meme-sector liquidity during the next rotation?</div>
+          </div>
         </div>
       </div>
 
-      <div class="timeline-card">
-        <p class="timeline-title">$SHIB <span>Retail Gravity</span></p>
-        <ul class="timeline-list">
-          <li>Rotation phase: money flows from majors → large memes with deep communities.</li>
-          <li>Acceleration: viral narratives pull in new buyers faster than fundamentals ever could.</li>
-          <li>Afterglow: SHIB can remain “sticky” due to holder base + repeated attention waves.</li>
-        </ul>
-        <div class="timeline-note">
-          Key idea: SHIB’s strength is community scale — it can re-ignite when the meme narrative returns.
+      <div class="cta">
+        <div style="font-size:1.05rem;font-weight:900;">Third-Party Yield Is a Separate Thesis</div>
+        <p>
+          Holding DOGE, SHIB, or PEPE and transferring crypto to a custodial interest platform are different risk decisions.
+          A platform interest rate is not protocol yield from a memecoin and should not be used to justify the meme investment thesis.
+        </p>
+        <p>
+          Degenstein maintains a separate CoinDepo research review covering advertised rates, custody terms, and platform risks.
+          Some links in that separate report are referral links and are clearly disclosed there.
+        </p>
+        <a href="/report/coindepo-earn-while-you-hold/" class="cta-btn">Read the CoinDepo research review →</a>
+        <div class="small-note">
+          Educational research only. Memecoins can experience extreme volatility and partial or total loss. Market-cap, supply, payment, burn, and liquidity data can change quickly and should be independently verified.
         </div>
       </div>
 
-      <div class="timeline-card">
-        <p class="timeline-title">$PEPE <span>High Velocity</span></p>
-        <ul class="timeline-list">
-          <li>Trigger: meme sector turns risk-on → PEPE is a top momentum magnet.</li>
-          <li>Expansion: sharp upside moves during concentrated attention and fast rotations.</li>
-          <li>Cooldown: volatility is extreme — pullbacks are part of the asset’s “design.”</li>
-        </ul>
-        <div class="timeline-note">
-          Key idea: PEPE is reflexive momentum. When it runs, it can run hard — but sizing matters.
-        </div>
+      <div class="section" style="margin-top:30px;">
+        <h2>Research &amp; Risk Disclosure</h2>
+        <p>
+          This report is for informational and educational purposes only and does not constitute financial, investment, legal, or tax advice.
+          DOGE, SHIB, and PEPE are highly volatile. Merchant access, burns, ecosystem activity, exchange listings, holder growth, or social attention do not guarantee price appreciation.
+          <a href="/about/">About</a> · <a href="/contact/">Contact</a> · <a href="/editorial-policy/">Editorial Policy</a> · <a href="/terms.html">Terms</a> · <a href="/privacy.html">Privacy</a>
+        </p>
       </div>
-
+    </div>
     </div>
 
-    <p style="margin-top:12px;">
-      Translation: you don’t need these assets to “build tech” to pump.
-      You need <strong>liquidity + attention + risk appetite</strong> — and historically, those return in cycles.
-    </p>
-  </div>
-
-  <!-- ✅ Option 4: Rename + strengthen section -->
-  <div class="section" style="margin-top:10px;">
-    <h2>Why Memecoins Still Matter Every Cycle</h2>
-    <p>
-      Memecoins are the purest expression of market psychology: they’re a stress test for liquidity,
-      narrative, and reflexivity. When money gets aggressive, memecoins become a scoreboard for risk appetite.
-      That’s why the same handful of “blue-chip memes” often re-appear every cycle.
-    </p>
-    <p>
-      The smarter approach isn’t pretending they’re fundamentals plays — it’s treating them as a
-      <strong>liquidity trade with cycle behavior</strong>, and managing risk accordingly.
-    </p>
-  </div>
-
-  <div class="section" style="margin-top:-8px;">
-    <h2>Key Risks (Read This)</h2>
-    <p>
-      These assets are volatile, sentiment-driven, and cycle-dependent. Liquidity can vanish quickly in risk-off regimes.
-      The biggest mistakes are (1) oversizing, (2) chasing vertical candles, and (3) ignoring time horizon.
-      If you’re going to play memes, play them like memes.
-    </p>
-  </div>
-
-  <!-- ✅ Updated CTA: correct link + bonus + $1,000 example -->
-  <div class="cta">
-    <div style="font-size:1.05rem;font-weight:900;">Earn While You Hold (My Strategy)</div>
-
-    <p>
-      Memecoins can take time between rotations. Instead of letting capital sit idle, I use an “earn while I hold” approach.
-      One platform I personally use is <strong>CoinDepo</strong>, where supported crypto setups can earn up to
-      <strong>18% APR</strong> while holding — no trading, no selling, just compounding while cycles play out.
-      When you use <strong>my link</strong>
-    </p>
-
-    <!-- ✅ Correct link + correct referral code -->
-    <a
-  href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W"
-  class="cta-btn"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  Earn 18% APY for holding your memecoins on CoinDepo
-</a>
- <p style="margin-top:10px;font-size:.85rem;color:rgba(156,163,175,.95);">
-    For a full breakdown of rates, bonuses, and risks, see the
-    <a href="/report/coindepo-earn-while-you-hold/" target="_blank" rel="noopener">CoinDepo deep dive →</a>
-  </p>
-
-    <div class="small-note">
-      Rates and eligibility can change, and yield platforms carry risk. This is not financial advice — always review terms and risks before using any platform.
-    </div>
-  </div>
-
-</div>
-</div>
-
-<script>
-  function copyLink(){
-    const url = "https://degenstein.xyz/report/memecoin-trio/";
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(url).then(function () {
-        alert("Link copied: " + url);
-      }, function () {
-        alert("Could not copy link — please copy manually: " + url);
-      });
-    } else {
-      const temp = document.createElement("input");
-      temp.value = url;
-      document.body.appendChild(temp);
-      temp.select();
-      try {
-        document.execCommand("copy");
-        alert("Link copied: " + url);
-      } catch (e) {
-        alert("Could not copy link — please copy manually: " + url);
+    <script>
+      function copyLink(){
+        const url = "https://degenstein.xyz/report/memecoin-trio/";
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(url).then(function () {
+            alert("Link copied: " + url);
+          }, function () {
+            alert("Could not copy link — please copy manually: " + url);
+          });
+        } else {
+          const temp = document.createElement("input");
+          temp.value = url;
+          document.body.appendChild(temp);
+          temp.select();
+          try {
+            document.execCommand("copy");
+            alert("Link copied: " + url);
+          } catch (e) {
+            alert("Could not copy link — please copy manually: " + url);
+          }
+          document.body.removeChild(temp);
+        }
       }
-      document.body.removeChild(temp);
-    }
-  }
-</script>
+    </script>
 
-</body>
-</html>
-
+    </body>
+    </html>
 
 
