@@ -1,340 +1,348 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>$10,000 Portfolio Example (2026) | Degenstein’s Crypto Playbooks</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <title>$10,000 Crypto Portfolio — July 2026 Conviction Playbook | Degenstein</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO -->
-  <meta name="description" content="$10,000 Portfolio Example (2026) — a larger-cap, conviction-weighted crypto playbook with stronger core exposure, structured themes, and a disciplined upside sleeve. DYOR." />
-  <link rel="canonical" href="https://degenstein.xyz/playbooks/10000-portfolio-2026/" />
+      <!-- SEO -->
+      <meta name="description" content="A July 2026 educational $10,000 crypto allocation example using BTC, ETH, XRP, SOL, LINK and ONDO with staged deployment, thesis checkpoints and risk controls." />
+      <link rel="canonical" href="https://degenstein.xyz/playbooks/10000-portfolio-2026/" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="$10,000 Portfolio Example (2026)" />
-  <meta property="og:description" content="A disciplined $10K portfolio example: conviction core + tokenization themes + capped upside. Built for 2026 narratives. DYOR." />
-  <meta property="og:image" content="https://degenstein.xyz/assets/10000playbook.png" />
-  <meta property="og:url" content="https://degenstein.xyz/playbooks/10000-portfolio-2026/" />
-  <meta property="og:type" content="website" />
+      <!-- Open Graph -->
+      <meta property="og:title" content="$10,000 Crypto Portfolio — July 2026 Example" />
+      <meta property="og:description" content="A July 2026 $10K crypto allocation example: 60% BTC and ETH core plus settlement, execution, interoperability and tokenized-market themes." />
+      <meta property="og:image" content="https://degenstein.xyz/assets/10000playbook.png" />
+      <meta property="og:url" content="https://degenstein.xyz/playbooks/10000-portfolio-2026/" />
+      <meta property="og:type" content="website" />
 
-  <!-- X -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="$10,000 Portfolio Example (2026)" />
-  <meta name="twitter:description" content="A conviction-weighted $10K crypto playbook built for 2026. Core + themes + strict rules. DYOR." />
-  <meta name="twitter:image" content="https://degenstein.xyz/assets/10000playbook.png" />
-  <meta name="twitter:site" content="@DHouseofcrypto" />
+      <!-- X -->
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="$10,000 Crypto Portfolio — July 2026 Example" />
+      <meta name="twitter:description" content="July 2026 $10K crypto playbook: exact weights, staged deployment, thesis checkpoints and strict risk rules." />
+      <meta name="twitter:image" content="https://degenstein.xyz/assets/10000playbook.png" />
+      <meta name="twitter:site" content="@DHouseofcrypto" />
 
-  <meta name="theme-color" content="#06b6d4" />
+      <meta name="theme-color" content="#06b6d4" />
 
-  <style>
-    :root{
-      --bg:#020617;
-      --card:#020617;
-      --card-alt:#020817;
+      <style>
+        :root{
+          --bg:#020617;
+          --card:#020617;
+          --card-alt:#020817;
 
-      --accent:#22c55e;
-      --accent2:#06b6d4;
+          --accent:#22c55e;
+          --accent2:#06b6d4;
 
-      --text-main:#f9fafb;
-      --text-muted:#9ca3af;
+          --text-main:#f9fafb;
+          --text-muted:#9ca3af;
 
-      --shadow-soft:0 18px 45px rgba(0,0,0,.75);
-      --radius-lg:18px;
-    }
+          --shadow-soft:0 18px 45px rgba(0,0,0,.75);
+          --radius-lg:18px;
+        }
 
-    body{
-      margin:0;
-      font-family:system-ui,-apple-system,Segoe UI,sans-serif;
-      background:
-        radial-gradient(circle at top left,rgba(34,197,94,.16),transparent 55%),
-        radial-gradient(circle at bottom right,rgba(6,182,212,.14),transparent 55%),
-        var(--bg);
-      color:var(--text-main);
-    }
+        body{
+          margin:0;
+          font-family:system-ui,-apple-system,Segoe UI,sans-serif;
+          background:
+            radial-gradient(circle at top left,rgba(34,197,94,.16),transparent 55%),
+            radial-gradient(circle at bottom right,rgba(6,182,212,.14),transparent 55%),
+            var(--bg);
+          color:var(--text-main);
+        }
 
-    .page{min-height:100vh;padding:40px 16px 64px;display:flex;justify-content:center;}
-    .container{max-width:980px;width:100%;}
+        .page{min-height:100vh;padding:40px 16px 64px;display:flex;justify-content:center;}
+        .container{max-width:980px;width:100%;}
 
-    a{color:var(--accent);text-decoration:none;}
-    a:hover{text-decoration:underline;}
+        a{color:var(--accent);text-decoration:none;}
+        a:hover{text-decoration:underline;}
 
-    .cover-wrap{max-width:760px;margin:0 auto 22px;}
-    .cover-img{width:100%;border-radius:18px;display:block;box-shadow:0 18px 60px rgba(0,0,0,.55);}
+        .cover-wrap{max-width:760px;margin:0 auto 22px;}
+        .cover-img{width:100%;border-radius:18px;display:block;box-shadow:0 18px 60px rgba(0,0,0,.55);}
 
-    .home-pill{
-      display:inline-flex;gap:6px;margin:14px 8px 14px 0;padding:7px 14px;
-      border-radius:999px;font-size:.74rem;letter-spacing:.14em;
-      background:rgba(15,23,42,.8);border:1px solid rgba(148,163,184,.4);
-      color:var(--text-muted);text-transform:uppercase;transition:.15s;
-    }
-    .home-pill:hover{
-      background:rgba(6,182,212,.12);
-      border-color:rgba(6,182,212,.65);
-      color:#67e8f9;
-      text-decoration:none;
-    }
+        .home-pill{
+          display:inline-flex;gap:6px;margin:14px 8px 14px 0;padding:7px 14px;
+          border-radius:999px;font-size:.74rem;letter-spacing:.14em;
+          background:rgba(15,23,42,.8);border:1px solid rgba(148,163,184,.4);
+          color:var(--text-muted);text-transform:uppercase;transition:.15s;
+        }
+        .home-pill:hover{
+          background:rgba(6,182,212,.12);
+          border-color:rgba(6,182,212,.65);
+          color:#67e8f9;
+          text-decoration:none;
+        }
 
-    .badge{
-      display:inline-flex;gap:8px;padding:4px 10px;border-radius:999px;
-      background:rgba(15,23,42,.85);border:1px solid rgba(148,163,184,.35);
-      font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:10px;
-    }
-    .badge-dot{width:6px;height:6px;border-radius:999px;background:var(--accent);box-shadow:0 0 10px rgba(34,197,94,.9);}    
+        .badge{
+          display:inline-flex;gap:8px;padding:4px 10px;border-radius:999px;
+          background:rgba(15,23,42,.85);border:1px solid rgba(148,163,184,.35);
+          font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:10px;
+        }
+        .badge-dot{width:6px;height:6px;border-radius:999px;background:var(--accent);box-shadow:0 0 10px rgba(34,197,94,.9);}    
 
-    h1{font-size:clamp(2.0rem,4vw,3.0rem);margin:12px 0 6px;}
-    .subtitle{font-size:1rem;color:var(--text-muted);max-width:860px;line-height:1.7;}
+        h1{font-size:clamp(2.0rem,4vw,3.0rem);margin:12px 0 6px;}
+        .subtitle{font-size:1rem;color:var(--text-muted);max-width:860px;line-height:1.7;}
 
-    .divider{border-bottom:1px solid rgba(148,163,184,.3);margin:26px 0 18px;position:relative;}
-    .divider:after{content:"";display:block;height:1px;width:200px;margin-top:-1px;background:linear-gradient(90deg, rgba(6,182,212,.0), rgba(6,182,212,.75), rgba(6,182,212,.0));}
+        .divider{border-bottom:1px solid rgba(148,163,184,.3);margin:26px 0 18px;position:relative;}
+        .divider:after{content:"";display:block;height:1px;width:200px;margin-top:-1px;background:linear-gradient(90deg, rgba(6,182,212,.0), rgba(6,182,212,.75), rgba(6,182,212,.0));}
 
-    .disclaimer{margin-top:14px;padding:12px 14px;border-radius:14px;background:rgba(15,23,42,.9);border:1px solid rgba(148,163,184,.35);color:var(--text-muted);font-size:.9rem;line-height:1.6;}
-    .disclaimer strong{color:var(--text-main);}    
+        .disclaimer{margin-top:14px;padding:12px 14px;border-radius:14px;background:rgba(15,23,42,.9);border:1px solid rgba(148,163,184,.35);color:var(--text-muted);font-size:.9rem;line-height:1.6;}
+        .disclaimer strong{color:var(--text-main);}    
 
-    .section{padding:18px;border-radius:var(--radius-lg);border:1px solid rgba(148,163,184,.28);background:linear-gradient(180deg, rgba(2,6,23,.70), rgba(2,6,23,.95));box-shadow:var(--shadow-soft);margin-bottom:18px;}
-    .section h2{margin:0 0 8px;font-size:1.15rem;}
-    .section p{margin:0;color:var(--text-muted);line-height:1.7;}
+        .section{padding:18px;border-radius:var(--radius-lg);border:1px solid rgba(148,163,184,.28);background:linear-gradient(180deg, rgba(2,6,23,.70), rgba(2,6,23,.95));box-shadow:var(--shadow-soft);margin-bottom:18px;}
+        .section h2{margin:0 0 8px;font-size:1.15rem;}
+        .section p{margin:0;color:var(--text-muted);line-height:1.7;}
 
-    ul{margin:10px 0 0 18px;color:var(--text-muted);line-height:1.75;}
-    li{margin:6px 0;}
+        ul{margin:10px 0 0 18px;color:var(--text-muted);line-height:1.75;}
+        li{margin:6px 0;}
 
-    .callout{margin-top:12px;padding:12px 14px;border-radius:14px;border:1px solid rgba(6,182,212,.35);background:rgba(6,182,212,.08);color:rgba(226,232,240,.92);line-height:1.7;}
+        .callout{margin-top:12px;padding:12px 14px;border-radius:14px;border:1px solid rgba(6,182,212,.35);background:rgba(6,182,212,.08);color:rgba(226,232,240,.92);line-height:1.7;}
 
-    .alloc{margin-top:10px;border:1px solid rgba(148,163,184,.22);border-radius:14px;overflow:hidden;}
-    .alloc-row{display:flex;justify-content:space-between;gap:12px;padding:10px 12px;background:rgba(15,23,42,.65);border-bottom:1px solid rgba(148,163,184,.18);color:rgba(226,232,240,.95);}    
-    .alloc-row:last-child{border-bottom:none;}    
+        .alloc{margin-top:10px;border:1px solid rgba(148,163,184,.22);border-radius:14px;overflow:hidden;}
+        .alloc-row{display:flex;justify-content:space-between;gap:12px;padding:10px 12px;background:rgba(15,23,42,.65);border-bottom:1px solid rgba(148,163,184,.18);color:rgba(226,232,240,.95);}    
+        .alloc-row:last-child{border-bottom:none;}    
 
-    .pill{display:inline-flex;padding:2px 10px;border-radius:999px;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;border:1px solid rgba(148,163,184,.35);background:rgba(2,6,23,.45);color:var(--text-muted);font-weight:800;}
-    .pill-green{border-color:rgba(34,197,94,.55);background:rgba(34,197,94,.10);color:#6ee7b7;}
-    .pill-cyan{border-color:rgba(6,182,212,.55);background:rgba(6,182,212,.10);color:#67e8f9;}
-    .pill-amber{border-color:rgba(245,158,11,.45);background:rgba(245,158,11,.08);color:rgba(253,230,138,.95);}    
+        .pill{display:inline-flex;padding:2px 10px;border-radius:999px;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;border:1px solid rgba(148,163,184,.35);background:rgba(2,6,23,.45);color:var(--text-muted);font-weight:800;}
+        .pill-green{border-color:rgba(34,197,94,.55);background:rgba(34,197,94,.10);color:#6ee7b7;}
+        .pill-cyan{border-color:rgba(6,182,212,.55);background:rgba(6,182,212,.10);color:#67e8f9;}
+        .pill-amber{border-color:rgba(245,158,11,.45);background:rgba(245,158,11,.08);color:rgba(253,230,138,.95);}    
 
-    code{color:#67e8f9;font-weight:800;background: rgba(6,182,212,.10);border: 1px solid rgba(6,182,212,.22);padding: 2px 6px;border-radius: 8px;}
+        code{color:#67e8f9;font-weight:800;background: rgba(6,182,212,.10);border: 1px solid rgba(6,182,212,.22);padding: 2px 6px;border-radius: 8px;}
 
-    .cta-button{display:inline-flex;align-items:center;margin-top:12px;padding:9px 18px;border-radius:999px;font-weight:900;background:linear-gradient(135deg, var(--accent), var(--accent2));color:#020617;box-shadow:0 14px 40px rgba(6,182,212,.20);}    
-  </style>
-</head>
+        .cta-button{display:inline-flex;align-items:center;margin-top:12px;padding:9px 18px;border-radius:999px;font-weight:900;background:linear-gradient(135deg, var(--accent), var(--accent2));color:#020617;box-shadow:0 14px 40px rgba(6,182,212,.20);}    
+      </style>
+    </head>
 
-<body>
-<div class="page">
-<div class="container">
+    <body>
+    <div class="page">
+    <div class="container">
 
-  <div class="cover-wrap">
-    <img src="/assets/10000playbook.png" alt="$10,000 Portfolio Example (2026) Cover" class="cover-img" loading="lazy" />
-  </div>
+      <div class="cover-wrap">
+        <img src="/assets/10000playbook.png" alt="$10,000 Crypto Portfolio — July 2026 Example Cover" class="cover-img" loading="lazy" />
+      </div>
 
-  <div class="badge"><span class="badge-dot"></span> Playbook #4</div>
-  <h1>$10,000 Portfolio Example (2026)</h1>
-  <p class="subtitle">
-    This playbook is built for conviction sizing. With <code>$10,000</code>, the edge comes from disciplined concentration,
-    stronger core exposure, and resisting the urge to over-diversify.
-  </p>
+      <div class="badge"><span class="badge-dot"></span> Playbook #4</div>
+      <h1>$10,000 Crypto Portfolio — July 2026 Example</h1>
+      <p class="subtitle">
+        With <code>$10,000</code>, this July 2026 example puts the majority of capital in BTC and ETH, then uses smaller positions for settlement,
+        high-throughput execution, interoperability, and tokenized-market exposure. Structure first. Narratives second.
+      </p>
 
-  <div class="disclaimer">⚠️ <strong>Not financial advice.</strong> This is a portfolio example and framework only. Always DYOR.</div>
+      <div class="disclaimer">⚠️ <strong>Not financial advice.</strong> This is a portfolio example and framework only. Always DYOR.</div>
 
-  <a href="https://degenstein.xyz/playbooks/" class="home-pill">← Back to Playbooks</a>
-  <a href="https://degenstein.xyz/" class="home-pill">← Main Page</a>
+      <a href="https://degenstein.xyz/playbooks/" class="home-pill">← Back to Playbooks</a>
+      <a href="https://degenstein.xyz/" class="home-pill">← Main Page</a>
 
-  <div class="divider"></div>
+      <div class="divider"></div>
 
-  <div class="section">
-    <h2>Goal of this playbook</h2>
-    <p>
-      Optimize for survivability and upside in a full-cycle environment. This portfolio leans into assets with
-      institutional relevance, real demand, and multi-year narratives — not short-term hype.
-    </p>
-  </div>
+      <div class="section">
+        <h2>Goal of this playbook</h2>
+        <p>
+          Build a crypto-only allocation that is easier to monitor through a volatile cycle. The goal is not maximum theoretical upside.
+          The goal is to combine deep-liquidity core assets with four measurable 2026 infrastructure theses and explicit review rules.
+        </p>
+      </div>
 
-  <div class="section">
-    <h2>Portfolio structure</h2>
-    <ul>
-      <li><strong>Core (65–75%)</strong>: assets you can confidently hold through volatility.</li>
-      <li><strong>Themes (20–25%)</strong>: tokenization, infrastructure, and settlement layers.</li>
-      <li><strong>Upside sleeve (5–10%)</strong>: capped exposure to higher-beta L1s.</li>
-    </ul>
-  </div>
+      <div class="section">
+        <h2>Portfolio structure</h2>
+        <ul>
+          <li><strong>Core (60%)</strong>: BTC and ETH — the two largest crypto networks by market capitalization.</li>
+          <li><strong>Infrastructure themes (30%)</strong>: XRP, SOL, and LINK across settlement, execution, and interoperability.</li>
+          <li><strong>Tokenized markets (10%)</strong>: ONDO as a higher-risk RWA ecosystem and value-capture thesis.</li>
+        </ul>
+      </div>
 
-  <div class="section">
-    <h2>Suggested allocation (example)</h2>
-    <div class="alloc">
-      <div class="alloc-row"><div><span class="pill pill-green">Core</span> <strong>$ETH</strong></div><div><strong>25%</strong> ($2,500)</div></div>
-      <div class="alloc-row"><div><span class="pill pill-green">Core</span> <strong>$XRP</strong></div><div><strong>20%</strong> ($2,000)</div></div>
-      <div class="alloc-row"><div><span class="pill pill-green">Core</span> <strong>$SOL</strong></div><div><strong>15%</strong> ($1,500)</div></div>
-      <div class="alloc-row"><div><span class="pill pill-cyan">Theme</span> <strong>$LINK</strong></div><div><strong>10%</strong> ($1,000)</div></div>
-      <div class="alloc-row"><div><span class="pill pill-cyan">Theme</span> <strong>$ONDO</strong></div><div><strong>10%</strong> ($1,000)</div></div>
-      <div class="alloc-row"><div><span class="pill pill-amber">Upside</span> <strong>$AVAX / $NEAR</strong></div><div><strong>10%</strong> ($1,000)</div></div>
+      <div class="section">
+        <h2>Suggested allocation (example)</h2>
+        <div class="alloc">
+          <div class="alloc-row"><div><span class="pill pill-green">Core</span> <strong>$BTC</strong></div><div><strong>35%</strong> ($3,500)</div></div>
+          <div class="alloc-row"><div><span class="pill pill-green">Core</span> <strong>$ETH</strong></div><div><strong>25%</strong> ($2,500)</div></div>
+          <div class="alloc-row"><div><span class="pill pill-cyan">Theme</span> <strong>$XRP</strong></div><div><strong>10%</strong> ($1,000)</div></div>
+          <div class="alloc-row"><div><span class="pill pill-cyan">Theme</span> <strong>$SOL</strong></div><div><strong>10%</strong> ($1,000)</div></div>
+          <div class="alloc-row"><div><span class="pill pill-cyan">Theme</span> <strong>$LINK</strong></div><div><strong>10%</strong> ($1,000)</div></div>
+          <div class="alloc-row"><div><span class="pill pill-cyan">Theme</span> <strong>$ONDO</strong></div><div><strong>10%</strong> ($1,000)</div></div>
+          
+        </div>
+      </div>
+    <div class="section">
+      <h2>Why these assets</h2>
+
+      <p>
+        Asset selection in this portfolio is intentional. Each position serves a specific role
+        within the broader structure — balancing network dominance, institutional relevance,
+        and asymmetric upside without relying on speculative narratives alone.
+      </p>
+
+      <ul style="margin-top:12px;">
+        <li>
+          <strong>$BTC — Monetary core and liquidity anchor</strong><br />
+          Bitcoin remains the largest crypto asset and the deepest institutional liquidity pool in the sector.
+          July 2026 has also shown why it belongs in a larger playbook: geopolitical stress can hit BTC hard, but spot ETF flows remain a measurable institutional demand channel.
+          BTC is the portfolio anchor, not the highest-upside bet.
+        </li>
+
+        <li>
+          <strong>$ETH — Smart-contract settlement and tokenization</strong><br />
+          Ethereum remains core infrastructure for smart contracts, stablecoins, and tokenized assets.
+          The thesis depends on settlement activity, scaling economics, fees, staking demand, and whether ecosystem growth creates durable ETH value capture.
+        </li>
+
+        <li>
+          <strong>$XRP — Settlement rails and institutional-product demand</strong><br />
+          XRP adds a differentiated settlement and liquidity thesis. In 2026, exchange-traded product flows provide a measurable demand channel,
+          but investors still need to separate institutional product demand, XRPL usage, and Ripple ecosystem growth from direct XRP value capture.
+        </li>
+
+        <li>
+          <strong>$SOL — High-throughput execution, payments and tokenized assets</strong><br />
+          Solana adds higher-beta exposure to high-throughput execution, stablecoins, payments, and tokenized assets.
+          The research checkpoints are fees, stablecoin activity, RWA growth, resilience, and sustained economic demand for SOL.
+        </li>
+
+        <li>
+          <strong>$LINK — CCIP, CRE and institutional data infrastructure</strong><br />
+          Chainlink is the interoperability and data-infrastructure position. CCIP, the Chainlink Runtime Environment, institutional data integrations,
+          fees, staking economics, and direct LINK demand are the measurable checkpoints.
+        </li>
+
+        <li>
+          <strong>$ONDO — Tokenized markets and RWA infrastructure</strong><br />
+          Ondo has expanded beyond tokenized Treasuries into tokenized stocks and securities infrastructure.
+          Product growth strengthens the Ondo ecosystem thesis, but direct ONDO governance utility, supply, unlock pressure, and token value capture remain open questions.
+        </li>
+      </ul>
+
+      <div class="callout">
+        <strong>Selection principle:</strong> 60% stays in BTC and ETH. The remaining 40% is divided equally across four distinct research theses:
+        settlement, high-throughput execution, interoperability/data, and tokenized markets.
+      </div>
     </div>
-  </div>
-<div class="section">
-  <h2>Why these assets</h2>
+    <div class="section">
+      <h2>Bear case & risks</h2>
 
-  <p>
-    Asset selection in this portfolio is intentional. Each position serves a specific role
-    within the broader structure — balancing network dominance, institutional relevance,
-    and asymmetric upside without relying on speculative narratives alone.
-  </p>
+      <p>
+        This portfolio is designed for durability, not certainty. Even with larger-cap assets
+        and institutional narratives, several risks could materially impact outcomes.
+      </p>
 
-  <ul style="margin-top:12px;">
-    <li>
-      <strong>$ETH — Core infrastructure layer</strong><br />
-      Ethereum remains the primary settlement and execution layer for smart contracts,
-      stablecoins, and tokenized assets. Its role as base infrastructure, combined with
-      deep liquidity and developer adoption, makes it a long-term core holding despite
-      cyclical volatility.
-    </li>
+      <ul style="margin-top:12px;">
+        <li>
+          <strong>Market structure risk:</strong> prolonged risk-off conditions, liquidity tightening,
+          or macroeconomic stress could suppress crypto valuations for extended periods,
+          regardless of fundamentals.
+        </li>
 
-    <li>
-      <strong>$XRP — Institutional payments & settlement</strong><br />
-      XRP is positioned around cross-border settlement and liquidity provisioning,
-      particularly in regulated and enterprise contexts. Its focus on payments
-      infrastructure and growing clarity around use cases make it a differentiated
-      non-EVM core asset.
-    </li>
+        <li>
+          <strong>Regulatory risk:</strong> while regulatory clarity is improving in some regions,
+          adverse policy decisions, enforcement actions, or jurisdictional fragmentation
+          could slow adoption or impair specific use cases.
+        </li>
 
-    <li>
-      <strong>$SOL — High-throughput execution layer</strong><br />
-      Solana provides high-speed, low-cost execution optimized for consumer-scale
-      applications. It adds growth exposure to on-chain activity and application demand
-      while remaining large-cap enough to justify meaningful allocation.
-    </li>
+        <li>
+          <strong>Execution risk:</strong> even strong networks can lose momentum if developer activity,
+          user growth, or ecosystem incentives weaken relative to competitors.
+        </li>
 
-    <li>
-      <strong>$LINK — Oracle & data infrastructure</strong><br />
-      Chainlink acts as middleware between blockchains and real-world data.
-      As tokenization and institutional on-chain activity expand, secure data feeds
-      and cross-chain communication become critical infrastructure rather than optional tooling.
-    </li>
+        <li>
+          <strong>Narrative risk:</strong> themes such as tokenization and institutional adoption may
+          take longer to materialize than expected, or adoption may occur in ways that do not
+          accrue value to public tokens.
+        </li>
+      </ul>
 
-    <li>
-      <strong>$ONDO — Tokenized real-world assets</strong><br />
-      Ondo represents exposure to the tokenization of traditional financial products.
-      This allocation targets the convergence of TradFi and crypto, where regulated
-      yield-bearing assets move on-chain.
-    </li>
+      <div class="callout">
+        <strong>Risk discipline:</strong> position sizing, diversification across roles, and capped
+        exposure to higher-beta assets are intentional safeguards — not guarantees.
+      </div>
+    </div>
+    <div class="section">
+      <h2>Why Bitcoin is now included</h2>
 
-    <li>
-      <strong>$AVAX / $NEAR — Higher-beta infrastructure optionality</strong><br />
-      This sleeve captures additional upside from alternative Layer 1 ecosystems.
-      Allocation is capped to maintain risk discipline while allowing participation
-      if one network meaningfully outperforms during expansion phases.
-    </li>
-  </ul>
+      <p>
+        The old version excluded Bitcoin to chase more application-driven upside. I no longer think that is the right structure for a $10,000 educational playbook.
+        A larger crypto allocation should acknowledge concentration and tail risk, especially after Bitcoin's 2026 drawdown and renewed geopolitical volatility.
+      </p>
 
-  <div class="callout">
-    <strong>Selection principle:</strong> each asset earns its place by solving a distinct problem
-    within the crypto stack — settlement, execution, data, or tokenization — rather than
-    overlapping exposure to the same narrative.
-  </div>
-</div>
-<div class="section">
-  <h2>Bear case & risks</h2>
+      <p style="margin-top:10px;">
+        Bitcoin does not need to be programmable infrastructure to serve a portfolio role. Its scale, liquidity, institutional access, and spot ETF demand channel make it a different type of crypto exposure.
+        Recent U.S. spot Bitcoin ETF data has also shown both heavy outflow days and sharp inflow reversals — a reminder that institutional access can amplify two-way flow rather than remove volatility.
+      </p>
 
-  <p>
-    This portfolio is designed for durability, not certainty. Even with larger-cap assets
-    and institutional narratives, several risks could materially impact outcomes.
-  </p>
+      <ul style="margin-top:12px;">
+        <li><strong>Liquidity anchor:</strong> BTC remains the sector's largest asset and deepest institutional market.</li>
+        <li><strong>Different role:</strong> BTC provides monetary-asset exposure rather than smart-contract or tokenization exposure.</li>
+        <li><strong>Risk control:</strong> a 35% BTC weight reduces dependence on every altcoin thesis working at the same time.</li>
+      </ul>
 
-  <ul style="margin-top:12px;">
-    <li>
-      <strong>Market structure risk:</strong> prolonged risk-off conditions, liquidity tightening,
-      or macroeconomic stress could suppress crypto valuations for extended periods,
-      regardless of fundamentals.
-    </li>
+      <div class="callout">
+        <strong>July 2026 change:</strong> BTC is now the largest position at 35%. This is a deliberate move away from the old all-altcoin structure.
+      </div>
+    </div>
 
-    <li>
-      <strong>Regulatory risk:</strong> while regulatory clarity is improving in some regions,
-      adverse policy decisions, enforcement actions, or jurisdictional fragmentation
-      could slow adoption or impair specific use cases.
-    </li>
+    <div class="section">
+      <h2>Quarterly thesis review</h2>
+      <ul>
+        <li><strong>BTC:</strong> spot ETF flows, liquidity, network security, macro sensitivity, and miner economics.</li>
+        <li><strong>ETH:</strong> settlement activity, stablecoins, tokenization, fees, staking demand, and ETH value capture.</li>
+        <li><strong>XRP:</strong> institutional-product flows, XRPL usage, payment activity, liquidity demand, and direct XRP value capture.</li>
+        <li><strong>SOL:</strong> stablecoin activity, payments, tokenized assets, fees, resilience, and SOL economic demand.</li>
+        <li><strong>LINK:</strong> CCIP usage, CRE adoption, institutional data integrations, fees, staking economics, and LINK demand.</li>
+        <li><strong>ONDO:</strong> tokenized-stock and Treasury growth, governance utility, circulating supply, unlock pressure, and ONDO value capture.</li>
+      </ul>
+      <div class="callout">
+        Rebalancing rule: review quarterly or after a material thesis break. Do not rebalance simply because one token had a loud week on X.
+      </div>
+    </div>
 
-    <li>
-      <strong>Execution risk:</strong> even strong networks can lose momentum if developer activity,
-      user growth, or ecosystem incentives weaken relative to competitors.
-    </li>
+     <div class="section" style="border-color:rgba(34,197,94,.45);">
+      <h2>Custody, staking and third-party yield are separate decisions</h2>
 
-    <li>
-      <strong>Narrative risk:</strong> themes such as tokenization and institutional adoption may
-      take longer to materialize than expected, or adoption may occur in ways that do not
-      accrue value to public tokens.
-    </li>
-  </ul>
+      <p>
+        With a <strong>$10,000 crypto portfolio</strong>, custody decisions deserve their own risk analysis.
+        Self-custody, native staking, exchange custody, and third-party interest accounts are not interchangeable.
+      </p>
 
-  <div class="callout">
-    <strong>Risk discipline:</strong> position sizing, diversification across roles, and capped
-    exposure to higher-beta assets are intentional safeguards — not guarantees.
-  </div>
-</div>
-<div class="section">
-  <h2>Why Bitcoin is not included</h2>
+      <p style="margin-top:10px;">
+        A high advertised interest rate should never be the reason an asset enters this portfolio.
+        Third-party custodial interest is separate from protocol economics and adds counterparty, custody, liquidity, legal, and asset-use risks.
+      </p>
 
-  <p>
-    Bitcoin is the foundational asset of the crypto market and remains a valid long-term
-    store-of-value allocation for many investors. Its exclusion here is a matter of
-    portfolio design, not a negative view.
-  </p>
+      <div class="callout">
+        <strong>Framework:</strong> choose the asset thesis first, then evaluate custody or staking separately.
+      </div>
 
-  <p style="margin-top:10px;">
-    This playbook prioritizes assets with direct exposure to on-chain activity,
-    infrastructure growth, and application-driven demand. Bitcoin’s primary role as
-    a monetary asset means it does not directly benefit from trends such as smart contracts,
-    tokenization, or data infrastructure in the same way.
-  </p>
+      <ul style="margin-top:12px;">
+        <li><strong>Self-custody:</strong> key-management and wallet-security responsibility.</li>
+        <li><strong>Native staking:</strong> protocol, validator, slashing, smart-contract, and lockup risks can apply.</li>
+        <li><strong>Custodial interest:</strong> counterparty, custody, liquidity, legal, and asset-use risks.</li>
+      </ul>
 
-  <ul style="margin-top:12px;">
-    <li><strong>Lower beta:</strong> BTC typically offers less upside relative to altcoins during expansion phases.</li>
-    <li><strong>Different role:</strong> functions more as digital collateral than programmable infrastructure.</li>
-    <li><strong>Opportunity cost:</strong> limited capital is allocated toward assets with
-        higher sensitivity to adoption and usage growth.</li>
-  </ul>
+      <a class="cta-button" href="/report/coindepo-earn-while-you-hold/">
+        Read the separate CoinDepo research review →
+      </a>
 
-  <div class="callout">
-    <strong>Note:</strong> Bitcoin can still serve as a separate core holding or portfolio anchor.
-    Its omission here reflects a targeted allocation strategy, not a dismissal of its importance.
-  </div>
-</div>
+      <p style="margin-top:10px;font-size:.85rem;color:rgba(156,163,175,.95);">
+        For a separate review of advertised rates, custody terms, and platform risks, see the
+        <a href="/report/coindepo-earn-while-you-hold/" target="_blank" rel="noopener">CoinDepo research review →</a>
+      </p>
 
- <div class="section" style="border-color:rgba(34,197,94,.45);">
-  <h2>Where I hold & earn</h2>
+      <p style="margin-top:8px;color:rgba(156,163,175,.95);font-size:.8rem;">
+        CoinDepo rates, terms, and availability can change. Some links in the separate CoinDepo report are referral links and are clearly disclosed there.
+        Third-party interest is not protocol yield and is not used to justify this portfolio example.
+      </p>
+    </div>
 
-  <p>
-    With a <strong>$10,000 portfolio</strong>, the objective isn’t constant action — it’s capital efficiency.
-    If I’m holding assets through multi-month or multi-year narratives, I prefer setups that allow
-    capital to <em>earn</em> while I wait.
-  </p>
+    <div class="disclaimer">
+      <strong>Research &amp; Risk Disclosure:</strong> This playbook is for informational and educational purposes only and does not constitute financial,
+      investment, legal, or tax advice. It is an illustrative crypto-only allocation, not a complete diversified financial plan.
+      Crypto can experience extreme volatility and partial or total loss. Diversification and staged deployment do not guarantee profit or prevent loss.
+      Verify current market, token, custody, staking, and platform information independently.<br><br>
+      <a href="/about/">About</a> · <a href="/contact/">Contact</a> · <a href="/editorial-policy/">Editorial Policy</a> · <a href="/terms.html">Terms</a> · <a href="/privacy.html">Privacy</a>
+    </div>
 
-  <p style="margin-top:10px;">
-    CoinDepo fits this approach because it’s designed for holders, not traders.
-    Deposits are intentional, terms are defined, and yield compounds in the background
-    without encouraging overtrading or emotional exits.
-  </p>
+    </div>
+    </div>
+    </body>
+    </html>
 
-  <div class="callout">
-    <strong>Framework:</strong> long-term conviction assets + defined holding rules + yield where appropriate.
-  </div>
-
-  <ul style="margin-top:12px;">
-    <li><strong>Built for patience:</strong> choose a term, earn yield, reassess at maturity.</li>
-    <li><strong>Clear trade-off:</strong> higher APRs come with lockups — plan allocations accordingly.</li>
-    <li><strong>Behavioral edge:</strong> fewer impulsive trades during volatility.</li>
-  </ul>
-
-  <a class="cta-button"
-     href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W"
-     target="_blank" rel="noopener">
-    CoinDepo — earn while holding →
-  </a>
-
-  <p style="margin-top:10px;font-size:.85rem;color:rgba(156,163,175,.95);">
-    For a full breakdown of rates, bonuses, and risks, see the
-    <a href="/report/coindepo-earn-while-you-hold/" target="_blank" rel="noopener">CoinDepo deep dive →</a>
-  </p>
-
-  <p style="margin-top:8px;color:rgba(156,163,175,.95);font-size:.8rem;">
-    Transparency: referral link. APRs, bonuses, and terms vary by asset and region.
-    This is not financial advice.
-  </p>
-</div>
-
-</div>
-</div>
-</body>
-</html>
 
