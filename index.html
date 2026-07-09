@@ -250,8 +250,9 @@
     }
 
     .security-grade {
-      width:27px;
+      min-width:27px;
       height:27px;
+      padding:0 5px;
       display:inline-flex;
       align-items:center;
       justify-content:center;
@@ -553,6 +554,20 @@
           <span class="pill pill-secondary">🛡️ Risk-Focused</span>
           <span class="pill pill-secondary">📘 Educational Content</span>
           <span class="pill pill-secondary">🔍 Transparent Reviews</span>
+        </div>
+
+        <div class="mt-5 rounded-2xl border border-emerald-500/25 bg-emerald-500/5 p-4">
+          <h3 class="text-sm font-extrabold text-emerald-300">
+            🛡️ Security &amp; Visitor Trust
+          </h3>
+
+          <p class="mt-2 text-xs md:text-sm text-gray-300 leading-relaxed">
+            Degenstein Crypto Hub takes website security and visitor trust seriously.
+            The site received an <strong>A+ web security rating from ImmuniWeb</strong>
+            and was <strong>independently reviewed and cleared by Bitdefender following a URL security review</strong>.
+            Security configurations, third-party links, and site infrastructure are reviewed
+            as part of maintaining a transparent research environment for readers.
+          </p>
         </div>
 
       </div>
@@ -1081,7 +1096,7 @@
     <div class="security-trust-content">
 
       <div class="security-trust-title">
-        Independent Security Testing
+        Security &amp; Visitor Trust
       </div>
 
       <div class="security-trust-rating">
@@ -1090,18 +1105,23 @@
       </div>
 
       <div class="security-trust-rating" style="margin-top:7px;">
-        <span class="security-grade">A</span>
-        <span>ImmuniWeb Website Security Test</span>
+        <span class="security-grade">A+</span>
+        <span>ImmuniWeb Website Security Rating</span>
+      </div>
+
+      <div class="security-trust-rating" style="margin-top:7px;">
+        <span aria-hidden="true">✓</span>
+        <span>Reviewed &amp; Cleared by Bitdefender</span>
       </div>
 
       <p>
-        Degenstein Crypto Hub has received <strong>A ratings</strong>
-        from two independent website security testing services.
-        Results reflect the tested security configurations and protections
-        observed at the time of each scan.
+        Independently reviewed and cleared by Bitdefender following a URL security review.
+        Degenstein Crypto Hub also received an <strong>A+ security rating from ImmuniWeb</strong>.
+        Results reflect the site and security configurations reviewed at the time of each assessment.
       </p>
 
       <div style="display:flex;flex-wrap:wrap;gap:12px;">
+
         <a
           href="https://securityheaders.com/?q=degenstein.xyz&amp;followRedirects=on"
           target="_blank"
@@ -1119,6 +1139,7 @@
         >
           View ImmuniWeb Report →
         </a>
+
       </div>
 
     </div>
@@ -1216,8 +1237,6 @@
 
 </body>
 </html>
-
-
 
 
 
