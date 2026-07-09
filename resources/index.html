@@ -148,6 +148,17 @@
   .resources-hero .section { padding-top:2rem; padding-bottom:2rem; }
 }
 
+
+.security-trust-card{max-width:560px;margin:28px auto 18px;padding:18px 22px;display:flex;align-items:center;gap:18px;background:linear-gradient(135deg,rgba(16,185,129,.10),rgba(20,184,166,.04));border:1px solid rgba(16,185,129,.32);border-radius:18px;box-shadow:0 0 30px rgba(16,185,129,.08)}
+.security-trust-icon{width:54px;height:54px;min-width:54px;display:flex;align-items:center;justify-content:center;font-size:25px;background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.35);border-radius:50%}
+.security-trust-title{color:#fff;font-size:17px;font-weight:800;margin-bottom:7px}
+.security-trust-rating{display:flex;align-items:center;gap:8px;color:#6ee7b7;font-size:13px;font-weight:700}
+.security-grade{width:27px;height:27px;display:inline-flex;align-items:center;justify-content:center;background:#16a34a;color:#fff;font-size:16px;font-weight:900;border-radius:7px;box-shadow:0 0 14px rgba(22,163,74,.35)}
+.security-trust-content p{margin:9px 0;color:#94a3b8;font-size:12px;line-height:1.55}
+.security-report-links{display:flex;flex-wrap:wrap;gap:12px}
+.security-report-link{color:#5eead4;font-size:12px;font-weight:700;text-decoration:none}
+.security-report-link:hover{color:#fff}
+@media(max-width:640px){.security-trust-card{margin:24px 16px 18px;padding:16px;align-items:flex-start}.security-trust-icon{width:44px;height:44px;min-width:44px;font-size:20px}}
 </style>
 </head>
 <body>
@@ -256,6 +267,22 @@
     <p>Nothing on this page is financial, legal, tax, or investment advice. Conduct independent research and consult qualified professionals when appropriate.</p>
   </div>
 </section>
+
+<section class="container section">
+  <div class="security-trust-card">
+    <div class="security-trust-icon">🛡️</div>
+    <div class="security-trust-content">
+      <div class="security-trust-title">Independent Security Testing</div>
+      <div class="security-trust-rating"><span class="security-grade">A</span><span>Security Headers Rating</span></div>
+      <div class="security-trust-rating" style="margin-top:7px;"><span class="security-grade">A</span><span>ImmuniWeb Website Security Test</span></div>
+      <p>Degenstein Crypto Hub has received <strong>A ratings</strong> from two independent website security testing services. Results reflect the tested security configurations and protections observed at the time of each scan.</p>
+      <div class="security-report-links">
+        <a href="https://securityheaders.com/?q=degenstein.xyz&amp;followRedirects=on" target="_blank" rel="noopener noreferrer" class="security-report-link">View Security Headers Report →</a>
+        <a href="https://www.immuniweb.com/websec/www.degenstein.xyz/D61AbpxK/" target="_blank" rel="noopener noreferrer" class="security-report-link">View ImmuniWeb Report →</a>
+      </div>
+    </div>
+  </div>
+</section>
 </main>
 <footer class="border-t border-white/10">
       <div class="container-max mx-auto px-4 py-10 text-sm text-gray-400 flex flex-col md:flex-row items-center justify-between gap-4">
@@ -284,6 +311,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
+
 
 
 
