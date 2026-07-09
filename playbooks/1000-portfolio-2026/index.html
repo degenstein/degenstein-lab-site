@@ -1,382 +1,449 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>$1,000 Portfolio Example (2026) | Degenstein’s Crypto Playbooks</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <title>$1,000 Crypto Portfolio — July 2026 Risk-Managed Example | Degenstein Playbooks</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO -->
-  <meta name="description" content="$1,000 Portfolio Example (2026) — a beginner-proof crypto playbook with simple allocations, rules, and no-FOMO discipline. DYOR." />
-  <link rel="canonical" href="https://degenstein.xyz/playbooks/1000-portfolio-2026/" />
+      <!-- SEO -->
+      <meta name="description" content="A July 2026 educational $1,000 crypto portfolio example using BTC, ETH, XRP, LINK, ONDO and SOL with staged entries, rebalancing rules and risk controls." />
+      <link rel="canonical" href="https://degenstein.xyz/playbooks/1000-portfolio-2026/" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="$1,000 Portfolio Example (2026)" />
-  <meta property="og:description" content="A simple, beginner-proof portfolio example with clear rules. No hopium. DYOR." />
-  <meta property="og:image" content="https://degenstein.xyz/assets/1000playbook.png" />
-  <meta property="og:url" content="https://degenstein.xyz/playbooks/1000-portfolio-2026/" />
-  <meta property="og:type" content="website" />
+      <!-- Open Graph -->
+      <meta property="og:title" content="$1,000 Crypto Portfolio — July 2026 Example" />
+      <meta property="og:description" content="A July 2026 educational crypto allocation example with staged entries, thesis checkpoints, rebalancing rules and no-FOMO discipline." />
+      <meta property="og:image" content="https://degenstein.xyz/assets/1000playbook.png" />
+      <meta property="og:url" content="https://degenstein.xyz/playbooks/1000-portfolio-2026/" />
+      <meta property="og:type" content="website" />
 
-  <!-- X -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="$1,000 Portfolio Example (2026)" />
-  <meta name="twitter:description" content="A simple, beginner-proof portfolio example with clear rules. No hopium. DYOR." />
-  <meta name="twitter:image" content="https://degenstein.xyz/assets/1000playbook.png" />
-  <meta name="twitter:site" content="@DHouseofcrypto" />
+      <!-- X -->
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="$1,000 Crypto Portfolio — July 2026 Example" />
+      <meta name="twitter:description" content="A July 2026 educational crypto allocation example with staged entries, thesis checkpoints, rebalancing rules and no-FOMO discipline." />
+      <meta name="twitter:image" content="https://degenstein.xyz/assets/1000playbook.png" />
+      <meta name="twitter:site" content="@DHouseofcrypto" />
 
-  <meta name="theme-color" content="#06b6d4" />
+      <meta name="theme-color" content="#06b6d4" />
 
-  <style>
-    :root{
-      --bg:#020617;
-      --card:#020617;
-      --card-alt:#020817;
+      <style>
+        :root{
+          --bg:#020617;
+          --card:#020617;
+          --card-alt:#020817;
 
-      --accent:#22c55e;
-      --accent2:#06b6d4;
+          --accent:#22c55e;
+          --accent2:#06b6d4;
 
-      --text-main:#f9fafb;
-      --text-muted:#9ca3af;
+          --text-main:#f9fafb;
+          --text-muted:#9ca3af;
 
-      --shadow-soft:0 18px 45px rgba(0,0,0,.75);
-      --radius-lg:18px;
-    }
+          --shadow-soft:0 18px 45px rgba(0,0,0,.75);
+          --radius-lg:18px;
+        }
 
-    body{
-      margin:0;
-      font-family:system-ui,-apple-system,Segoe UI,sans-serif;
-      background:
-        radial-gradient(circle at top left,rgba(34,197,94,.16),transparent 55%),
-        radial-gradient(circle at bottom right,rgba(6,182,212,.14),transparent 55%),
-        var(--bg);
-      color:var(--text-main);
-    }
+        body{
+          margin:0;
+          font-family:system-ui,-apple-system,Segoe UI,sans-serif;
+          background:
+            radial-gradient(circle at top left,rgba(34,197,94,.16),transparent 55%),
+            radial-gradient(circle at bottom right,rgba(6,182,212,.14),transparent 55%),
+            var(--bg);
+          color:var(--text-main);
+        }
 
-    .page{min-height:100vh;padding:40px 16px 64px;display:flex;justify-content:center;}
-    .container{max-width:980px;width:100%;}
+        .page{min-height:100vh;padding:40px 16px 64px;display:flex;justify-content:center;}
+        .container{max-width:980px;width:100%;}
 
-    a{color:var(--accent);text-decoration:none;}
-    a:hover{text-decoration:underline;}
+        a{color:var(--accent);text-decoration:none;}
+        a:hover{text-decoration:underline;}
 
-    /* ✅ COVER IMAGE */
-    .cover-wrap{
-      max-width:760px;
-      margin:0 auto 22px;
-    }
-    .cover-img{
-      width:100%;
-      border-radius:18px;
-      display:block;
-      box-shadow:0 18px 60px rgba(0,0,0,.55);
-    }
+        /* ✅ COVER IMAGE */
+        .cover-wrap{
+          max-width:760px;
+          margin:0 auto 22px;
+        }
+        .cover-img{
+          width:100%;
+          border-radius:18px;
+          display:block;
+          box-shadow:0 18px 60px rgba(0,0,0,.55);
+        }
 
-    .home-pill{
-      display:inline-flex;gap:6px;margin:14px 8px 14px 0;padding:7px 14px;
-      border-radius:999px;font-size:.74rem;letter-spacing:.14em;
-      background:rgba(15,23,42,.8);border:1px solid rgba(148,163,184,.4);
-      color:var(--text-muted);text-transform:uppercase;transition:.15s;
-    }
-    .home-pill:hover{
-      background:rgba(6,182,212,.12);
-      border-color:rgba(6,182,212,.65);
-      color:#67e8f9;
-      text-decoration:none;
-    }
+        .home-pill{
+          display:inline-flex;gap:6px;margin:14px 8px 14px 0;padding:7px 14px;
+          border-radius:999px;font-size:.74rem;letter-spacing:.14em;
+          background:rgba(15,23,42,.8);border:1px solid rgba(148,163,184,.4);
+          color:var(--text-muted);text-transform:uppercase;transition:.15s;
+        }
+        .home-pill:hover{
+          background:rgba(6,182,212,.12);
+          border-color:rgba(6,182,212,.65);
+          color:#67e8f9;
+          text-decoration:none;
+        }
 
-    .badge{
-      display:inline-flex;gap:8px;padding:4px 10px;border-radius:999px;
-      background:rgba(15,23,42,.85);border:1px solid rgba(148,163,184,.35);
-      font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:10px;
-    }
-    .badge-dot{
-      width:6px;height:6px;border-radius:999px;
-      background:var(--accent);
-      box-shadow:0 0 10px rgba(34,197,94,.9);
-    }
+        .badge{
+          display:inline-flex;gap:8px;padding:4px 10px;border-radius:999px;
+          background:rgba(15,23,42,.85);border:1px solid rgba(148,163,184,.35);
+          font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:10px;
+        }
+        .badge-dot{
+          width:6px;height:6px;border-radius:999px;
+          background:var(--accent);
+          box-shadow:0 0 10px rgba(34,197,94,.9);
+        }
 
-    h1{font-size:clamp(2.0rem,4vw,3.0rem);margin:12px 0 6px;}
-    .subtitle{font-size:1rem;color:var(--text-muted);max-width:820px;line-height:1.7;}
+        h1{font-size:clamp(2.0rem,4vw,3.0rem);margin:12px 0 6px;}
+        .subtitle{font-size:1rem;color:var(--text-muted);max-width:820px;line-height:1.7;}
 
-    .divider{
-      border-bottom:1px solid rgba(148,163,184,.3);
-      margin:26px 0 18px;
-      position:relative;
-    }
-    .divider:after{
-      content:"";
-      display:block;
-      height:1px;
-      width:200px;
-      margin-top:-1px;
-      background:linear-gradient(90deg, rgba(6,182,212,.0), rgba(6,182,212,.75), rgba(6,182,212,.0));
-    }
+        .divider{
+          border-bottom:1px solid rgba(148,163,184,.3);
+          margin:26px 0 18px;
+          position:relative;
+        }
+        .divider:after{
+          content:"";
+          display:block;
+          height:1px;
+          width:200px;
+          margin-top:-1px;
+          background:linear-gradient(90deg, rgba(6,182,212,.0), rgba(6,182,212,.75), rgba(6,182,212,.0));
+        }
 
-    .disclaimer{
-      margin-top:14px;
-      padding:12px 14px;
-      border-radius:14px;
-      background:rgba(15,23,42,.9);
-      border:1px solid rgba(148,163,184,.35);
-      color:var(--text-muted);
-      font-size:.9rem;
-      line-height:1.6;
-    }
-    .disclaimer strong{color:var(--text-main);}
+        .disclaimer{
+          margin-top:14px;
+          padding:12px 14px;
+          border-radius:14px;
+          background:rgba(15,23,42,.9);
+          border:1px solid rgba(148,163,184,.35);
+          color:var(--text-muted);
+          font-size:.9rem;
+          line-height:1.6;
+        }
+        .disclaimer strong{color:var(--text-main);}
 
-    .section{
-      padding:18px;
-      border-radius:var(--radius-lg);
-      border:1px solid rgba(148,163,184,.28);
-      background:linear-gradient(180deg, rgba(2,6,23,.70), rgba(2,6,23,.95));
-      box-shadow:var(--shadow-soft);
-      margin-bottom:18px;
-    }
-    .section h2{
-      margin:0 0 8px;
-      font-size:1.15rem;
-      letter-spacing:.01em;
-    }
-    .section p{margin:0;color:var(--text-muted);line-height:1.7;}
+        .section{
+          padding:18px;
+          border-radius:var(--radius-lg);
+          border:1px solid rgba(148,163,184,.28);
+          background:linear-gradient(180deg, rgba(2,6,23,.70), rgba(2,6,23,.95));
+          box-shadow:var(--shadow-soft);
+          margin-bottom:18px;
+        }
+        .section h2{
+          margin:0 0 8px;
+          font-size:1.15rem;
+          letter-spacing:.01em;
+        }
+        .section p{margin:0;color:var(--text-muted);line-height:1.7;}
 
-    ul{margin:10px 0 0 18px;color:var(--text-muted);line-height:1.75;}
-    li{margin:6px 0;}
+        ul{margin:10px 0 0 18px;color:var(--text-muted);line-height:1.75;}
+        li{margin:6px 0;}
 
-    .callout{
-      margin-top:12px;
-      padding:12px 14px;
-      border-radius:14px;
-      border:1px solid rgba(6,182,212,.35);
-      background:rgba(6,182,212,.08);
-      color:rgba(226,232,240,.92);
-      line-height:1.7;
-    }
+        .callout{
+          margin-top:12px;
+          padding:12px 14px;
+          border-radius:14px;
+          border:1px solid rgba(6,182,212,.35);
+          background:rgba(6,182,212,.08);
+          color:rgba(226,232,240,.92);
+          line-height:1.7;
+        }
 
-    /* ✅ allocation mini-table */
-    .alloc{
-      margin-top:10px;
-      border:1px solid rgba(148,163,184,.22);
-      border-radius:14px;
-      overflow:hidden;
-    }
-    .alloc-row{
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      padding:10px 12px;
-      background:rgba(15,23,42,.65);
-      border-bottom:1px solid rgba(148,163,184,.18);
-      color:rgba(226,232,240,.95);
-    }
-    .alloc-row:last-child{border-bottom:none;}
-    .alloc-left{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
+        /* ✅ allocation mini-table */
+        .alloc{
+          margin-top:10px;
+          border:1px solid rgba(148,163,184,.22);
+          border-radius:14px;
+          overflow:hidden;
+        }
+        .alloc-row{
+          display:flex;
+          justify-content:space-between;
+          gap:12px;
+          padding:10px 12px;
+          background:rgba(15,23,42,.65);
+          border-bottom:1px solid rgba(148,163,184,.18);
+          color:rgba(226,232,240,.95);
+        }
+        .alloc-row:last-child{border-bottom:none;}
+        .alloc-left{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
 
-    .pill{
-      display:inline-flex;
-      padding:2px 10px;
-      border-radius:999px;
-      font-size:.72rem;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      border:1px solid rgba(148,163,184,.35);
-      background:rgba(2,6,23,.45);
-      color:var(--text-muted);
-      font-weight:800;
-    }
-    .pill-green{
-      border-color:rgba(34,197,94,.55);
-      background:rgba(34,197,94,.10);
-      color:#6ee7b7;
-    }
-    .pill-cyan{
-      border-color:rgba(6,182,212,.55);
-      background:rgba(6,182,212,.10);
-      color:#67e8f9;
-    }
+        .pill{
+          display:inline-flex;
+          padding:2px 10px;
+          border-radius:999px;
+          font-size:.72rem;
+          letter-spacing:.12em;
+          text-transform:uppercase;
+          border:1px solid rgba(148,163,184,.35);
+          background:rgba(2,6,23,.45);
+          color:var(--text-muted);
+          font-weight:800;
+        }
+        .pill-green{
+          border-color:rgba(34,197,94,.55);
+          background:rgba(34,197,94,.10);
+          color:#6ee7b7;
+        }
+        .pill-cyan{
+          border-color:rgba(6,182,212,.55);
+          background:rgba(6,182,212,.10);
+          color:#67e8f9;
+        }
 
-    code{
-      color:#67e8f9;
-      font-weight:800;
-      background: rgba(6,182,212,.10);
-      border: 1px solid rgba(6,182,212,.22);
-      padding: 2px 6px;
-      border-radius: 8px;
-    }
+        code{
+          color:#67e8f9;
+          font-weight:800;
+          background: rgba(6,182,212,.10);
+          border: 1px solid rgba(6,182,212,.22);
+          padding: 2px 6px;
+          border-radius: 8px;
+        }
 
-    .cta-button{
-      display:inline-flex;
-      align-items:center;
-      margin-top:12px;
-      padding:9px 18px;
-      border-radius:999px;
-      font-weight:900;
-      background:linear-gradient(135deg, var(--accent), var(--accent2));
-      color:#020617;
-      box-shadow:0 14px 40px rgba(6,182,212,.20);
-      transition: transform .12s ease, box-shadow .12s ease;
-    }
-    .cta-button:hover{
-      transform: translateY(-1px);
-      box-shadow:0 18px 55px rgba(6,182,212,.28);
-      text-decoration:none;
-    }
-  </style>
-</head>
+        .cta-button{
+          display:inline-flex;
+          align-items:center;
+          margin-top:12px;
+          padding:9px 18px;
+          border-radius:999px;
+          font-weight:900;
+          background:linear-gradient(135deg, var(--accent), var(--accent2));
+          color:#020617;
+          box-shadow:0 14px 40px rgba(6,182,212,.20);
+          transition: transform .12s ease, box-shadow .12s ease;
+        }
+        .cta-button:hover{
+          transform: translateY(-1px);
+          box-shadow:0 18px 55px rgba(6,182,212,.28);
+          text-decoration:none;
+        }
+      </style>
+    </head>
 
-<body>
-  <div class="page">
-    <div class="container">
+    <body>
+      <div class="page">
+        <div class="container">
 
-      <!-- ✅ COVER -->
-      <div class="cover-wrap">
-        <img src="/assets/1000playbook.png" alt="$1,000 Portfolio Example (2026) Cover" class="cover-img" loading="lazy" />
-      </div>
+          <!-- ✅ COVER -->
+          <div class="cover-wrap">
+            <img src="/assets/1000playbook.png" alt="$1,000 Crypto Portfolio — July 2026 Example Cover" class="cover-img" loading="lazy" />
+          </div>
 
-      <div class="badge"><span class="badge-dot"></span> Playbook #2</div>
-      <h1>$1,000 Portfolio Example (2026)</h1>
-      <p class="subtitle">
-        A beginner-proof setup designed to keep things simple, reduce FOMO behavior, and build exposure to the biggest narratives.
-        Clear rules &gt; vibes.
+          <div class="badge"><span class="badge-dot"></span> Playbook #2</div>
+          <h1>$1,000 Crypto Portfolio — July 2026 Example</h1>
+          <p class="subtitle">
+            A simple July 2026 example designed to reduce FOMO behavior and spread risk across monetary assets, settlement rails, infrastructure, tokenization and high-throughput execution.
+            Clear rules &gt; vibes.
+          </p>
+
+          <div class="disclaimer">
+            ⚠️ This is <strong>not financial advice</strong>. It’s a <strong>portfolio example</strong> based on how I think about cycles.
+            Always <strong>DYOR</strong> and adjust for your goals, time horizon, and risk tolerance.
+          </div>
+
+          <a href="https://degenstein.xyz/playbooks/" class="home-pill">← Back to Playbooks</a>
+          <a href="https://degenstein.xyz/" class="home-pill">← Main Page</a>
+
+          <div class="divider"></div>
+
+          <!-- GOAL -->
+          <div class="section">
+            <h2>Goal of this playbook</h2>
+            <p>
+              Build a six-asset crypto example with <strong>50% in BTC + ETH</strong> and the other half spread across four distinct 2026 theses.
+              This is not designed to maximize upside. It is designed to make a $1,000 crypto allocation easier to understand, monitor, and rebalance.
+            </p>
+            <div class="callout">
+              No-FOMO principle: if you’re tempted to “go all in” after a pump, your plan isn’t simple enough.
+            </div>
+          </div>
+
+          <!-- ALLOCATION -->
+          <div class="section">
+            <h2>Suggested allocation (example)</h2>
+            <p>
+              This July 2026 example uses <code>$1,000</code>. The percentages are illustrative research weights, not personalized recommendations.
+            </p>
+
+            <div class="alloc">
+              <div class="alloc-row">
+                <div class="alloc-left">
+                  <span class="pill pill-green">Core</span>
+                  <strong>$BTC</strong>
+                  <span style="color:var(--text-muted);">Monetary asset / deepest crypto liquidity</span>
+                </div>
+                <div><strong>30% · $300</strong></div>
+              </div>
+
+              <div class="alloc-row">
+                <div class="alloc-left">
+                  <span class="pill pill-green">Core</span>
+                  <strong>$ETH</strong>
+                  <span style="color:var(--text-muted);">Smart-contract settlement / tokenization</span>
+                </div>
+                <div><strong>20% · $200</strong></div>
+              </div>
+
+              <div class="alloc-row">
+                <div class="alloc-left">
+                  <span class="pill pill-cyan">Theme</span>
+                  <strong>$XRP</strong>
+                  <span style="color:var(--text-muted);">Payments / settlement rails / ETF demand</span>
+                </div>
+                <div><strong>15% · $150</strong></div>
+              </div>
+
+              <div class="alloc-row">
+                <div class="alloc-left">
+                  <span class="pill pill-cyan">Theme</span>
+                  <strong>$LINK</strong>
+                  <span style="color:var(--text-muted);">CCIP / CRE / institutional data infrastructure</span>
+                </div>
+                <div><strong>15% · $150</strong></div>
+              </div>
+
+              <div class="alloc-row">
+                <div class="alloc-left">
+                  <span class="pill pill-cyan">Theme</span>
+                  <strong>$ONDO</strong>
+                  <span style="color:var(--text-muted);">Tokenized stocks / Treasuries / RWA rails</span>
+                </div>
+                <div><strong>10% · $100</strong></div>
+              </div>
+
+              <div class="alloc-row">
+                <div class="alloc-left">
+                  <span class="pill">Upside</span>
+                  <strong>$SOL</strong>
+                  <span style="color:var(--text-muted);">High-throughput execution / payments / tokenization</span>
+                </div>
+                <div><strong>10% · $100</strong></div>
+              </div>
+            </div>
+
+            <div class="callout">
+              Keep it boring on purpose. In July 2026, crypto remains highly sensitive to macro and geopolitical risk. A structure is useful only if you can follow it through volatility.
+            </div>
+          </div>
+
+          <div class="section" style="border-color:rgba(6,182,212,.38);">
+            <h2>Why I changed the allocation for July 2026</h2>
+            <p>
+              The earlier version grouped BTC and ETH into one 40% bucket and asked the reader to pick SOL, AVAX, or NEAR for the final 10%.
+              That made a beginner playbook less clear than it should be. This version assigns an exact dollar amount to every asset.
+            </p>
+            <ul>
+              <li><strong>BTC + ETH = 50%:</strong> half of the example stays in the two largest crypto networks by market capitalization.</li>
+              <li><strong>XRP = 15%:</strong> settlement-rail exposure with a 2026 institutional-product demand thesis.</li>
+              <li><strong>LINK = 15%:</strong> CCIP, CRE, data, and tokenization infrastructure exposure.</li>
+              <li><strong>ONDO = 10%:</strong> tokenized-market exposure, with direct ONDO value capture still treated as an open question.</li>
+              <li><strong>SOL = 10%:</strong> higher-beta execution exposure tied to payments, stablecoins, and tokenized assets.</li>
+            </ul>
+            <div class="callout">
+              July 2026 context: Bitcoin recently traded in the low-$60,000 area amid renewed geopolitical and risk-asset volatility. This is exactly why the playbook now emphasizes staged entries instead of pretending one entry date is optimal.
+            </div>
+          </div>
+
+          <div class="section">
+            <h2>Four-tranche entry example</h2>
+            <p>
+              One simple implementation is to divide the entire portfolio into four equal deployment rounds. Each round invests <strong>$250</strong> using the same target weights.
+            </p>
+            <div class="alloc">
+              <div class="alloc-row"><div class="alloc-left"><strong>BTC</strong><span style="color:var(--text-muted);">$75 per tranche</span></div><div><strong>$300 total</strong></div></div>
+              <div class="alloc-row"><div class="alloc-left"><strong>ETH</strong><span style="color:var(--text-muted);">$50 per tranche</span></div><div><strong>$200 total</strong></div></div>
+              <div class="alloc-row"><div class="alloc-left"><strong>XRP</strong><span style="color:var(--text-muted);">$37.50 per tranche</span></div><div><strong>$150 total</strong></div></div>
+              <div class="alloc-row"><div class="alloc-left"><strong>LINK</strong><span style="color:var(--text-muted);">$37.50 per tranche</span></div><div><strong>$150 total</strong></div></div>
+              <div class="alloc-row"><div class="alloc-left"><strong>ONDO</strong><span style="color:var(--text-muted);">$25 per tranche</span></div><div><strong>$100 total</strong></div></div>
+              <div class="alloc-row"><div class="alloc-left"><strong>SOL</strong><span style="color:var(--text-muted);">$25 per tranche</span></div><div><strong>$100 total</strong></div></div>
+            </div>
+            <div class="callout">
+              Staging does not guarantee a better return. It is a behavior and entry-risk framework designed to reduce the pressure of choosing one “perfect” buy day.
+            </div>
+          </div>
+
+          <!-- RULES -->
+          <div class="section">
+            <h2>Rules (this is what makes it work)</h2>
+            <ul>
+              <li><strong>No automatic chasing:</strong> a vertical candle is a reason to re-check entry risk, not proof you must buy immediately.</li>
+              <li><strong>Stage entries:</strong> for this example, split each allocation into four 25% tranches instead of deploying the full $1,000 at once.</li>
+              <li><strong>Review quarterly:</strong> rebalance only when weights or theses materially change. Avoid constant tinkering.</li>
+              <li><strong>Define thesis failure:</strong> ecosystem growth without token value capture, weakening liquidity, adverse supply changes, or a broken catalyst should trigger review.</li>
+            </ul>
+          </div>
+
+          <!-- WHEN TO ADD -->
+          <div class="section">
+            <h2>When I add (simple triggers)</h2>
+            <ul>
+              <li>After a planned tranche date or meaningful pullback when the asset thesis remains intact.</li>
+              <li>After consolidation or improving market structure rather than during vertical price expansion.</li>
+              <li>When measurable adoption, flows, fees, volume, or infrastructure usage strengthen the thesis.</li>
+            </ul>
+            <div class="callout">
+              If your only reason to buy is “it’s going up,” you do not yet have a thesis or an exit rule.
+            </div>
+          </div>
+
+          <!-- WHERE TO HOLD -->
+          <div class="section" style="border-color:rgba(34,197,94,.45);">
+            <h2>Custody and yield are separate decisions</h2>
+            <p>
+              Buying a token, choosing where to custody it, staking through a protocol, and transferring assets to a third-party interest platform are separate risk decisions.
+              Do not choose a token because a platform advertises a high rate.
+            </p>
+            <ul>
+              <li><strong>Self-custody:</strong> wallet-security responsibility and loss-of-key risk.</li>
+              <li><strong>Protocol staking:</strong> validator, smart-contract, slashing, lockup, and protocol risks can apply.</li>
+              <li><strong>Custodial interest platforms:</strong> add counterparty, custody, liquidity, legal, and asset-use risks.</li>
+            </ul>
+
+            <a class="cta-button" href="/report/coindepo-earn-while-you-hold/">
+              Read the separate CoinDepo research review →
+            </a>
+    <p style="margin-top:10px;font-size:.85rem;color:rgba(156,163,175,.95);">
+        For a separate review of advertised rates, custody terms, and platform risks, see the
+        <a href="/report/coindepo-earn-while-you-hold/" target="_blank" rel="noopener">CoinDepo research review →</a>
       </p>
+            <p style="margin-top:10px;color:rgba(156,163,175,.95);font-size:.82rem;line-height:1.55;">
+              CoinDepo rates, terms, and availability can change. Some links in the separate CoinDepo report are referral links and are clearly disclosed there. Third-party interest is not protocol yield and is not used to justify this portfolio example.
+            </p>
+          </div>
 
-      <div class="disclaimer">
-        ⚠️ This is <strong>not financial advice</strong>. It’s a <strong>portfolio example</strong> based on how I think about cycles.
-        Always <strong>DYOR</strong> and adjust for your goals, time horizon, and risk tolerance.
-      </div>
+          <div class="section">
+            <h2>Research checklist before every quarterly review</h2>
+            <ul>
+              <li><strong>BTC:</strong> ETF flows, liquidity, network security, and macro sensitivity.</li>
+              <li><strong>ETH:</strong> settlement activity, tokenization, scaling economics, and ETH value capture.</li>
+              <li><strong>XRP:</strong> ETF demand, payment activity, XRPL usage, and direct XRP liquidity demand.</li>
+              <li><strong>LINK:</strong> CCIP usage, CRE adoption, fees, staking economics, and LINK demand.</li>
+              <li><strong>ONDO:</strong> tokenized-asset growth, governance utility, supply, unlocks, and token value capture.</li>
+              <li><strong>SOL:</strong> stablecoins, RWAs, payments, fees, resilience, and SOL economic demand.</li>
+            </ul>
+          </div>
 
-      <a href="https://degenstein.xyz/playbooks/" class="home-pill">← Back to Playbooks</a>
-      <a href="https://degenstein.xyz/" class="home-pill">← Main Page</a>
+          <!-- NEXT -->
+          <div class="section" style="border-color:rgba(6,182,212,.35);">
+            <h2>Next playbooks</h2>
+            <ul>
+              <li><strong>$5,000 Portfolio Playbook</strong> (core + small upside sleeve)</li>
+              <li><strong>Memecoin Sleeve Playbook</strong> (strict risk rules)</li>
+            </ul>
+          </div>
 
-      <div class="divider"></div>
+          <div class="disclaimer">
+            <strong>Research &amp; Risk Disclosure:</strong> This playbook is for informational and educational purposes only and is not financial,
+            investment, legal, or tax advice. It is an illustrative crypto-only allocation, not a complete diversified financial plan.
+            Crypto can experience extreme volatility and partial or total loss. Diversification and staged entries do not guarantee profit or prevent loss.
+            Verify current information independently.<br><br>
+            <a href="/about/">About</a> · <a href="/contact/">Contact</a> · <a href="/editorial-policy/">Editorial Policy</a> · <a href="/terms.html">Terms</a> · <a href="/privacy.html">Privacy</a>
+          </div>
 
-      <!-- GOAL -->
-      <div class="section">
-        <h2>Goal of this playbook</h2>
-        <p>
-          Build a simple base portfolio with <strong>core exposure</strong> + a small upside sleeve — without constantly trading.
-          This is meant for people who want to participate in 2026 catalysts while staying disciplined.
-        </p>
-        <div class="callout">
-          No-FOMO principle: if you’re tempted to “go all in” after a pump, your plan isn’t simple enough.
         </div>
       </div>
+    </body>
+    </html>
 
-      <!-- ALLOCATION -->
-      <div class="section">
-        <h2>Suggested allocation (example)</h2>
-        <p>
-          This is a clean structure for <code>$1,000</code>. You can swap tickers, but keep the structure.
-        </p>
-
-        <div class="alloc">
-          <div class="alloc-row">
-            <div class="alloc-left">
-              <span class="pill pill-green">Core</span>
-              <strong>$BTC / $ETH</strong>
-              <span style="color:var(--text-muted);">Base exposure</span>
-            </div>
-            <div><strong>40%</strong></div>
-          </div>
-
-          <div class="alloc-row">
-            <div class="alloc-left">
-              <span class="pill pill-green">Core</span>
-              <strong>$XRP</strong>
-              <span style="color:var(--text-muted);">Payments / rails thesis</span>
-            </div>
-            <div><strong>20%</strong></div>
-          </div>
-
-          <div class="alloc-row">
-            <div class="alloc-left">
-              <span class="pill pill-cyan">Theme</span>
-              <strong>$LINK</strong>
-              <span style="color:var(--text-muted);">Infrastructure / tokenization</span>
-            </div>
-            <div><strong>15%</strong></div>
-          </div>
-
-          <div class="alloc-row">
-            <div class="alloc-left">
-              <span class="pill pill-cyan">Theme</span>
-              <strong>$ONDO</strong>
-              <span style="color:var(--text-muted);">RWA / real yield narrative</span>
-            </div>
-            <div><strong>15%</strong></div>
-          </div>
-
-          <div class="alloc-row">
-            <div class="alloc-left">
-              <span class="pill">Upside</span>
-              <strong>$SOL / $AVAX / $NEAR</strong>
-              <span style="color:var(--text-muted);">Pick one</span>
-            </div>
-            <div><strong>10%</strong></div>
-          </div>
-        </div>
-
-        <div class="callout">
-          Keep it boring on purpose. The edge is <strong>staying invested</strong> without panic-selling or chasing.
-        </div>
-      </div>
-
-      <!-- RULES -->
-      <div class="section">
-        <h2>Rules (this is what makes it work)</h2>
-        <ul>
-          <li><strong>No chasing pumps:</strong> if it’s up hard today, you don’t buy today.</li>
-          <li><strong>Buy in steps:</strong> split entries into 2–4 buys instead of one big buy.</li>
-          <li><strong>Rebalance, don’t freestyle:</strong> if one position becomes huge, trim it back to structure.</li>
-          <li><strong>Don’t add risk when emotional:</strong> reduce size when stressed — not increase it.</li>
-        </ul>
-      </div>
-
-      <!-- WHEN TO ADD -->
-      <div class="section">
-        <h2>When I add (simple triggers)</h2>
-        <ul>
-          <li>Red days where fear is high and nothing actually broke.</li>
-          <li>After consolidation (not during the vertical candle).</li>
-          <li>When the thesis improves (real catalysts), not when Twitter is loud.</li>
-        </ul>
-        <div class="callout">
-          If your reason to buy is “it’s going up,” that’s FOMO — not a plan.
-        </div>
-      </div>
-
-      <!-- WHERE TO HOLD -->
-      <div class="section" style="border-color:rgba(34,197,94,.45);">
-        <h2>Where I hold (so I don’t feel forced to trade)</h2>
-        <p>
-          No-FOMO is easier when your holdings are earning while you wait. For long-term bags, I like yield setups
-          that reduce the urge to constantly flip positions.
-        </p>
-        <ul>
-          <li>Earn up to <strong>21%+ (or more)</strong> on select assets (rates vary)</li>
-          <li>Simple mindset: <strong>hold + earn</strong> instead of chase + stress</li>
-        </ul>
-
-        <a class="cta-button" href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W" target="_blank" rel="noopener">
-          CoinDepo — start here (Referral: A-32wqw35W) →
-        </a>
-<p style="margin-top:10px;font-size:.85rem;color:rgba(156,163,175,.95);">
-    For a full breakdown of rates, bonuses, and risks, see the
-    <a href="/report/coindepo-earn-while-you-hold/" target="_blank" rel="noopener">CoinDepo deep dive →</a>
-  </p>
-        <p style="margin-top:10px;color:rgba(156,163,175,.95);font-size:.82rem;line-height:1.55;">
-          Disclaimer: APR, eligibility, and availability vary by region/asset and can change. Always confirm terms inside the platform.
-        </p>
-      </div>
-
-      <!-- NEXT -->
-      <div class="section" style="border-color:rgba(6,182,212,.35);">
-        <h2>Next playbooks</h2>
-        <ul>
-          <li><strong>$5,000 Portfolio Playbook</strong> (core + small upside sleeve)</li>
-          <li><strong>Memecoin Sleeve Playbook</strong> (strict risk rules)</li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-</body>
-</html>
 
