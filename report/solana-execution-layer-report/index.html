@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -9,7 +9,7 @@
 
 <meta
   name="description"
-  content="A research-first Solana ($SOL) report covering the execution-layer thesis, adoption, live network metrics, market performance, and long-term positioning. No hopium."
+  content="A research-first Solana ($SOL) report covering the execution-layer thesis, adoption, network metrics, market performance, and long-term positioning. No hopium."
 />
 
 <link
@@ -20,18 +20,9 @@
 <meta name="robots" content="index, follow" />
 
 <!-- OPEN GRAPH -->
-
 <meta property="og:type" content="article" />
-
-<meta
-  property="og:site_name"
-  content="The Degenstein Report"
-/>
-
-<meta
-  property="og:title"
-  content="Solana ($SOL) — The Execution Layer Thesis"
-/>
+<meta property="og:site_name" content="The Degenstein Report" />
+<meta property="og:title" content="Solana ($SOL) — The Execution Layer Thesis" />
 
 <meta
   property="og:description"
@@ -49,26 +40,10 @@
 />
 
 <!-- X / TWITTER -->
-
-<meta
-  name="twitter:card"
-  content="summary_large_image"
-/>
-
-<meta
-  name="twitter:site"
-  content="@DHouseofcrypto"
-/>
-
-<meta
-  name="twitter:creator"
-  content="@DHouseofcrypto"
-/>
-
-<meta
-  name="twitter:title"
-  content="Solana ($SOL) — The Execution Layer Thesis"
-/>
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@DHouseofcrypto" />
+<meta name="twitter:creator" content="@DHouseofcrypto" />
+<meta name="twitter:title" content="Solana ($SOL) — The Execution Layer Thesis" />
 
 <meta
   name="twitter:description"
@@ -174,11 +149,8 @@ a:hover{
   width:10px;
   height:10px;
   border-radius:50%;
-
   background:var(--accent);
-
-  box-shadow:
-    0 0 18px var(--glow);
+  box-shadow:0 0 18px var(--glow);
 }
 
 .nav{
@@ -197,19 +169,14 @@ a:hover{
 
 .sharex{
   cursor:pointer;
-
   padding:8px 10px;
-
   border-radius:12px;
   border:1px solid var(--stroke);
-
-  background:
-    rgba(255,255,255,0.07);
+  background:rgba(255,255,255,0.07);
 }
 
 .sharex:hover{
-  border-color:
-    rgba(0,255,170,0.35);
+  border-color:rgba(0,255,170,0.35);
 
   background:
     linear-gradient(
@@ -221,9 +188,7 @@ a:hover{
 
 .hero{
   margin-top:18px;
-
   padding:26px 22px;
-
   border:1px solid var(--stroke);
   border-radius:var(--radius);
 
@@ -240,36 +205,24 @@ a:hover{
 .kicker{
   display:inline-flex;
   gap:10px;
-
   font-size:12px;
   color:var(--muted);
-
   border:1px solid var(--stroke);
-
   padding:8px 10px;
-
   border-radius:999px;
-
-  background:
-    rgba(0,0,0,0.25);
+  background:rgba(0,0,0,0.25);
 }
 
 h1{
   margin:14px 0 8px;
-
-  font-size:
-    clamp(30px,5vw,42px);
-
+  font-size:clamp(30px,5vw,42px);
   line-height:1.1;
-
   letter-spacing:-0.7px;
 }
 
 .sub{
   color:var(--muted);
-
   max-width:72ch;
-
   line-height:1.55;
 }
 
@@ -280,16 +233,10 @@ h1{
 
 .hero-cover{
   position:relative;
-
   margin-top:16px;
-
   border-radius:16px;
-
   overflow:hidden;
-
   border:1px solid var(--stroke);
-
-  min-height:240px;
 
   background:
     radial-gradient(
@@ -313,41 +260,29 @@ h1{
 
 .hero-cover-fallback{
   display:none;
-
   min-height:300px;
-
   align-items:center;
   justify-content:center;
-
   text-align:center;
-
   padding:40px;
 }
 
 .hero-cover-fallback strong{
   display:block;
-
-  font-size:
-    clamp(28px,5vw,48px);
-
+  font-size:clamp(28px,5vw,48px);
   color:#fff;
 }
 
 .hero-cover-fallback span{
   display:block;
-
   margin-top:12px;
-
   color:var(--muted);
 }
 
 .section{
   margin-top:18px;
-
   padding:18px;
-
   border:1px solid var(--stroke);
-
   border-radius:var(--radius);
 
   background:
@@ -362,21 +297,17 @@ h1{
 
 .section h2{
   margin:0 0 10px;
-
   font-size:20px;
 }
 
 .section h3{
   margin:14px 0 6px;
-
   font-size:15px;
 }
 
 .bullets{
   padding-left:20px;
-
   color:var(--muted);
-
   line-height:1.55;
 }
 
@@ -384,120 +315,50 @@ h1{
   margin:7px 0;
 }
 
-.chartbox{
-  margin-top:14px;
-
-  border:1px solid var(--stroke);
-
-  border-radius:16px;
-
-  overflow:hidden;
-
-  background:
-    rgba(0,0,0,0.25);
-}
-
-.charthead{
-  padding:10px 12px;
-
-  border-bottom:
-    1px solid var(--stroke);
-
-  font-weight:800;
-
-  font-size:13px;
-}
-
-.chart-widget{
-  height:500px;
-  width:100%;
-}
-
-.tradingview-widget-container{
-  height:100%;
-  width:100%;
-}
-
-.tradingview-widget-container__widget{
-  height:calc(100% - 32px);
-  width:100%;
-}
-
-.tradingview-widget-copyright{
-  font-size:11px !important;
-  padding:5px 10px;
-}
-
-.tradingview-widget-copyright .blue-text{
-  color:#5eead4 !important;
-}
-
 .metrics{
   display:grid;
-
-  grid-template-columns:
-    repeat(2,1fr);
-
+  grid-template-columns:repeat(2,1fr);
   gap:14px;
-
   margin-top:12px;
 }
 
 .metric{
-  border:
-    1px solid var(--stroke);
-
+  border:1px solid var(--stroke);
   border-radius:16px;
-
-  background:
-    rgba(0,0,0,0.25);
-
-  padding:14px;
+  background:rgba(0,0,0,0.25);
+  padding:18px;
 }
 
 .metric .label{
   font-size:12px;
-
   color:var(--muted2);
 }
 
 .metric .value{
   font-size:22px;
-
   font-weight:900;
-
   margin-top:6px;
 }
 
 .metric .note{
-  font-size:11px;
-
+  font-size:12px;
   color:var(--muted2);
-
-  margin-top:6px;
-
-  line-height:1.45;
+  margin-top:8px;
+  line-height:1.5;
 }
 
 .metric-link{
   display:inline-block;
-
-  margin-top:8px;
-
-  font-size:11px;
-
-  font-weight:700;
+  margin-top:12px;
+  font-size:12px;
+  font-weight:800;
 }
 
 .callout{
   margin-top:14px;
-
   padding:16px;
-
   border-radius:var(--radius);
-
-  border:
-    1px solid rgba(0,255,170,0.3);
+  border:1px solid rgba(0,255,170,0.3);
 
   background:
     radial-gradient(
@@ -509,48 +370,31 @@ h1{
 
 .btnrow{
   display:flex;
-
   gap:10px;
-
   flex-wrap:wrap;
-
   margin-top:10px;
 }
 
 .btn{
   display:inline-flex;
-
   align-items:center;
-
   justify-content:center;
-
   padding:10px 12px;
-
   border-radius:12px;
-
-  border:
-    1px solid var(--stroke);
-
-  background:
-    rgba(255,255,255,0.07);
-
+  border:1px solid var(--stroke);
+  background:rgba(255,255,255,0.07);
   color:var(--text);
-
   font-weight:700;
-
   font-size:13px;
 }
 
 .btn:hover{
   text-decoration:none;
-
-  transform:
-    translateY(-1px);
+  transform:translateY(-1px);
 }
 
 .btn.primary{
-  border-color:
-    rgba(0,255,170,0.35);
+  border-color:rgba(0,255,170,0.35);
 
   background:
     linear-gradient(
@@ -562,31 +406,19 @@ h1{
 
 .source-note{
   margin-top:12px;
-
   padding:12px 14px;
-
   border-radius:12px;
-
-  border:
-    1px solid rgba(255,255,255,0.10);
-
-  background:
-    rgba(0,0,0,0.20);
-
+  border:1px solid rgba(255,255,255,0.10);
+  background:rgba(0,0,0,0.20);
   color:var(--muted2);
-
   font-size:12px;
-
   line-height:1.55;
 }
 
 .footer{
   margin-top:18px;
-
   color:var(--muted2);
-
   font-size:12px;
-
   line-height:1.55;
 }
 
@@ -594,7 +426,6 @@ h1{
 
   .topbar{
     align-items:flex-start;
-
     flex-direction:column;
   }
 
@@ -604,10 +435,6 @@ h1{
 
   .metrics{
     grid-template-columns:1fr;
-  }
-
-  .chart-widget{
-    height:440px;
   }
 
   .hero{
@@ -641,11 +468,8 @@ h1{
 <div class="topbar">
 
   <div class="brand">
-
     <span class="dot"></span>
-
     The Degenstein Report
-
   </div>
 
   <div class="nav">
@@ -663,7 +487,7 @@ h1{
     </a>
 
     <a href="#price">
-      Price
+      Market Data
     </a>
 
     <a href="#metrics">
@@ -691,18 +515,11 @@ h1{
 <header class="hero">
 
   <div class="kicker">
-
-    The Degenstein Report
-    •
-    Solana Deep Dive
-
+    The Degenstein Report • Solana Deep Dive
   </div>
 
   <h1>
-
-    Solana ($SOL):
-    The Execution Layer Thesis
-
+    Solana ($SOL): The Execution Layer Thesis
   </h1>
 
   <p class="sub">
@@ -713,9 +530,9 @@ h1{
       fast, cheap, global execution at scale
     </strong>.
 
-    This report breaks down why that matters
-    and the measurable adoption signals and
-    risks investors should monitor.
+    This report breaks down why that matters and the
+    measurable adoption signals and risks investors
+    should monitor.
 
   </p>
 
@@ -727,38 +544,32 @@ h1{
     style="margin-top:14px;"
   >
 
-    <h2
-      style="font-size:16px;margin-bottom:8px;"
-    >
+    <h2 style="font-size:16px;margin-bottom:8px;">
       TL;DR
     </h2>
 
-    <p
-      class="muted"
-      style="max-width:78ch;"
-    >
+    <p class="muted" style="max-width:78ch;">
 
-      Solana ($SOL) is an execution-layer thesis
-      built around high throughput, low transaction
-      costs, and a shared global state.
+      Solana ($SOL) is an execution-layer thesis built
+      around high throughput, low transaction costs,
+      and a shared global state.
 
       The 2026 research case is increasingly measurable:
-      Western Union launched USDPT on Solana,
-      Solana's RWA sector grew 58% in Q1 to more than
-      $2.5 billion, crossed $2.8 billion in May,
-      and surpassed $3 billion in June.
+      Western Union launched USDPT on Solana, Solana's
+      RWA sector grew 58% in Q1 to more than $2.5 billion,
+      crossed $2.8 billion in May, and surpassed $3 billion
+      in June.
 
-      June also pushed cumulative tokenized-stock
-      volume above $10 billion, while daily
-      tokenized-stock volume reached a record
-      $683 million.
+      June also pushed cumulative tokenized-stock volume
+      above $10 billion, while daily tokenized-stock volume
+      reached a record $683 million.
 
-      Those adoption signals do not guarantee SOL
-      price appreciation.
+      Those adoption signals do not guarantee SOL price
+      appreciation.
 
       The key question is whether network usage,
-      institutional integrations, and economic
-      value capture continue to strengthen together.
+      institutional integrations, and economic value
+      capture continue to strengthen together.
 
     </p>
 
@@ -813,9 +624,8 @@ h1{
 
   <p class="muted">
 
-    Solana is not competing to be a generalized
-    settlement layer or a modular base for dozens
-    of fragmented rollups.
+    Solana is not competing to be a generalized settlement
+    layer or a modular base for dozens of fragmented rollups.
 
     Its design philosophy is far more opinionated:
     optimize aggressively for
@@ -830,26 +640,24 @@ h1{
 
   <p class="muted">
 
-    This matters because consumer-facing crypto
-    applications break down quickly when latency
-    is high, fees are volatile, or liquidity is
-    fragmented.
+    This matters because consumer-facing crypto applications
+    break down quickly when latency is high, fees are volatile,
+    or liquidity is fragmented.
 
-    Payments, trading, gaming, and social applications
-    require responsive execution and low marginal costs —
-    conditions that Solana explicitly targets at the
-    protocol level.
+    Payments, trading, gaming, and social applications require
+    responsive execution and low marginal costs — conditions
+    that Solana explicitly targets at the protocol level.
 
   </p>
 
   <p class="muted">
 
-    Rather than pushing complexity to users through
-    layered abstractions, Solana absorbs more of that
-    complexity at the validator and protocol layer.
+    Rather than pushing complexity to users through layered
+    abstractions, Solana absorbs more of that complexity at the
+    validator and protocol layer.
 
-    The result is an ecosystem designed for applications
-    to interact with a shared state in real time.
+    The result is an ecosystem designed for applications to
+    interact with a shared state in real time.
 
   </p>
 
@@ -868,8 +676,7 @@ h1{
         rgba(255,204,0,0.10),
         rgba(255,255,255,0.03)
       );
-    box-shadow:
-      0 0 40px rgba(255,204,0,0.12);
+    box-shadow:0 0 40px rgba(255,204,0,0.12);
   "
 >
 
@@ -881,69 +688,61 @@ h1{
       letter-spacing:0.3px;
     "
   >
-
-    ⚡ Institutional Signal:
-    Western Union Moves On-Chain
-
+    ⚡ Institutional Signal: Western Union Moves On-Chain
   </h2>
 
   <p class="muted">
 
-    On May 4, 2026, Western Union announced
-    the launch of USDPT on Solana.
+    On May 4, 2026, Western Union announced the launch
+    of USDPT on Solana.
 
-    USDPT is issued by Anchorage Digital Bank,
-    N.A. and Western Union says it is backed 1:1
-    by reserves that include U.S. dollar deposits,
-    Treasury bills, and similar cash equivalents.
-
-  </p>
-
-  <p class="muted">
-
-    Western Union is developing USDPT for exchange
-    access, digital-asset cash-out infrastructure,
-    consumer spending, money-transfer receipt,
-    and near-instant 24/7 treasury and agent settlement.
-
-    In June 2026, Bybit became the first major crypto
-    exchange announced as an integration partner
-    for USDPT.
+    USDPT is issued by Anchorage Digital Bank, N.A. and
+    Western Union says it is backed 1:1 by reserves that
+    include U.S. dollar deposits, Treasury bills, and
+    similar cash equivalents.
 
   </p>
 
   <p class="muted">
 
-    This is a meaningful payments-infrastructure
-    signal for Solana, but rollout, transaction volume,
-    user adoption, and value capture for SOL still
-    need to be measured over time.
+    Western Union is developing USDPT for exchange access,
+    digital-asset cash-out infrastructure, consumer spending,
+    money-transfer receipt, and near-instant 24/7 treasury
+    and agent settlement.
+
+    In June 2026, Bybit became the first major crypto exchange
+    announced as an integration partner for USDPT.
+
+  </p>
+
+  <p class="muted">
+
+    This is a meaningful payments-infrastructure signal for
+    Solana, but rollout, transaction volume, user adoption,
+    and value capture for SOL still need to be measured over time.
 
   </p>
 
   <ul class="bullets">
 
     <li>
-      Western Union operates across more than
-      200 countries and territories, creating
-      a potentially large distribution surface.
+      Western Union operates across more than 200 countries
+      and territories, creating a potentially large distribution surface.
     </li>
 
     <li>
-      USDPT settlement and application activity
-      can add on-chain usage, though the direct
-      economic impact on SOL must be measured.
+      USDPT settlement and application activity can add on-chain
+      usage, though the direct economic impact on SOL must be measured.
     </li>
 
     <li>
-      Bybit was announced in June 2026 as the
-      first major exchange integration for USDPT.
+      Bybit was announced in June 2026 as the first major
+      exchange integration for USDPT.
     </li>
 
     <li>
-      Anchorage Digital Bank issues USDPT on Solana,
-      adding regulated financial infrastructure
-      to the thesis.
+      Anchorage Digital Bank issues USDPT on Solana, adding
+      regulated financial infrastructure to the thesis.
     </li>
 
   </ul>
@@ -960,9 +759,9 @@ h1{
     "
   >
 
-    This is real infrastructure going live —
-    but adoption, transaction volume, and SOL
-    value capture remain the metrics that matter.
+    This is real infrastructure going live — but adoption,
+    transaction volume, and SOL value capture remain the
+    metrics that matter.
 
   </div>
 
@@ -981,61 +780,53 @@ h1{
 
   <p class="muted">
 
-    The Solana thesis has moved beyond speed
-    benchmarks alone.
+    The Solana thesis has moved beyond speed benchmarks alone.
 
-    Galaxy Research reported that Solana's
-    Q1 2026 TVL declined 22% quarter over quarter
-    to about $15.0 billion, while RWAs grew 58%
-    to more than $2.5 billion and stablecoin
-    supply increased to $15.45 billion.
+    Galaxy Research reported that Solana's Q1 2026 TVL declined
+    22% quarter over quarter to about $15.0 billion, while RWAs
+    grew 58% to more than $2.5 billion and stablecoin supply
+    increased to $15.45 billion.
 
-    Solana Foundation later reported stablecoin
-    supply reaching $17 billion in March.
+    Solana Foundation later reported stablecoin supply reaching
+    $17 billion in March.
 
   </p>
 
   <p class="muted">
 
-    May brought another important payments signal:
-    Western Union's USDPT went live on Solana,
-    and June brought the first major exchange
-    integration announcement with Bybit.
+    May brought another important payments signal: Western Union's
+    USDPT went live on Solana, and June brought the first major
+    exchange integration announcement with Bybit.
 
-    Solana's May ecosystem update also highlighted
-    Cash App support for USDC on Solana and
-    SoFiUSD becoming available on the network.
+    Solana's May ecosystem update also highlighted Cash App support
+    for USDC on Solana and SoFiUSD becoming available on the network.
 
   </p>
 
   <p class="muted">
 
-    The June 2026 ecosystem data strengthened
-    the tokenization thesis further.
+    The June 2026 ecosystem data strengthened the tokenization thesis
+    further.
 
-    Solana's RWA value crossed $3 billion for
-    the first time, cumulative tokenized-stock
-    volume passed $10 billion, and daily
-    tokenized-stock volume reached an all-time
-    high of $683 million.
+    Solana's RWA value crossed $3 billion for the first time,
+    cumulative tokenized-stock volume passed $10 billion, and daily
+    tokenized-stock volume reached an all-time high of $683 million.
 
-    MoneyGram also joined the Solana Developer
-    Platform as an infrastructure partner and
-    active validator, adding another global
-    money-movement company at the protocol level.
+    MoneyGram also joined the Solana Developer Platform as an
+    infrastructure partner and active validator, adding another
+    global money-movement company at the protocol level.
 
   </p>
 
   <p class="muted">
 
-    Solana also introduced native subscriptions
-    and delegated spending as a shared on-chain
-    primitive for recurring billing and allowances.
+    Solana also introduced native subscriptions and delegated
+    spending as a shared on-chain primitive for recurring billing
+    and allowances.
 
-    That expands the execution thesis beyond trading
-    into SaaS billing, payroll-style flows,
-    API payments, media subscriptions, and other
-    recurring-payment use cases.
+    That expands the execution thesis beyond trading into SaaS
+    billing, payroll-style flows, API payments, media subscriptions,
+    and other recurring-payment use cases.
 
   </p>
 
@@ -1048,39 +839,38 @@ h1{
     <ul class="bullets">
 
       <li>
-        Whether USDPT moves from launch and
-        integrations into measurable settlement volume.
+        Whether USDPT moves from launch and integrations into
+        measurable settlement volume.
       </li>
 
       <li>
-        Whether RWA value holds above the new
-        $3 billion milestone and tokenized-stock
-        volume continues expanding.
+        Whether RWA value holds above the new $3 billion milestone
+        and tokenized-stock volume continues expanding.
       </li>
 
       <li>
-        Whether MoneyGram's validator and infrastructure
-        role develops into measurable payment activity.
+        Whether MoneyGram's validator and infrastructure role
+        develops into measurable payment activity.
       </li>
 
       <li>
-        Whether native subscriptions and delegated
-        spending attract real recurring-payment applications.
+        Whether native subscriptions and delegated spending attract
+        real recurring-payment applications.
       </li>
 
       <li>
-        Whether stablecoin supply and payment activity
-        translate into durable network economics.
+        Whether stablecoin supply and payment activity translate
+        into durable network economics.
       </li>
 
       <li>
-        Whether client diversity and ongoing Alpenglow
-        engineering work improve resilience and finality.
+        Whether client diversity and ongoing Alpenglow engineering
+        work improve resilience and finality.
       </li>
 
       <li>
-        Whether SOL captures value from rising activity
-        instead of usage growing faster than token economics.
+        Whether SOL captures value from rising activity instead of
+        usage growing faster than token economics.
       </li>
 
     </ul>
@@ -1129,8 +919,7 @@ h1{
       </div>
 
       <div class="note">
-        Cumulative volume reported by
-        Solana's June roundup.
+        Cumulative volume reported by Solana's June roundup.
       </div>
 
     </div>
@@ -1162,35 +951,29 @@ h1{
       </div>
 
       <div class="note">
-        Joined SDP and became an active
-        Solana validator.
+        Joined SDP and became an active Solana validator.
       </div>
 
     </div>
 
   </div>
 
-  <p
-    class="muted"
-    style="margin-top:14px;"
-  >
+  <p class="muted" style="margin-top:14px;">
 
-    These milestones strengthen the case that
-    Solana is competing for tokenized-market
-    and payments execution.
+    These milestones strengthen the case that Solana is competing
+    for tokenized-market and payments execution.
 
-    They do not prove that SOL will appreciate
-    in price.
+    They do not prove that SOL will appreciate in price.
 
-    The research question remains whether increased
-    network activity creates durable fees, demand,
-    and economic value capture for the native asset.
+    The research question remains whether increased network activity
+    creates durable fees, demand, and economic value capture for the
+    native asset.
 
   </p>
 
 </section>
 
-<!-- SOL PRICE CHART -->
+<!-- SOL MARKET DATA -->
 
 <section
   class="section"
@@ -1198,77 +981,75 @@ h1{
 >
 
   <h2>
-    Solana Price History
+    Solana Market Data
   </h2>
 
-  <div class="chartbox">
+  <p class="muted">
 
-    <div class="charthead">
-      SOL / USD — Interactive Market Chart
-    </div>
+    SOL price and relative market performance can change rapidly.
 
-    <div class="chart-widget">
+    Rather than relying on an embedded third-party chart that may
+    be blocked by browser privacy settings, content-security rules,
+    or external widget availability, use the live market sources
+    below to verify current pricing and chart history.
 
-      <!-- TradingView Widget BEGIN -->
+  </p>
 
-      <div
-        class="tradingview-widget-container"
-      >
+  <div class="metrics">
 
-        <div
-          class="tradingview-widget-container__widget"
-        ></div>
+    <div class="metric">
 
-        <div
-          class="tradingview-widget-copyright"
-        >
+      <div class="label">
+        SOL / USD
+      </div>
 
-          <a
-            href="https://www.tradingview.com/symbols/SOLUSD/"
-            rel="noopener nofollow"
-            target="_blank"
-          >
+      <div class="value">
+        Live Chart
+      </div>
 
-            <span class="blue-text">
-              SOLUSD chart
-            </span>
+      <div class="note">
 
-          </a>
-
-          <span class="trademark">
-            by TradingView
-          </span>
-
-        </div>
-
-        <script
-          type="text/javascript"
-          src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js"
-          async
-        >
-        {
-          "autosize": true,
-          "symbol": "COINBASE:SOLUSD",
-          "interval": "D",
-          "timezone": "Etc/UTC",
-          "theme": "dark",
-          "backgroundColor": "rgba(7, 10, 15, 1)",
-          "style": "1",
-          "locale": "en",
-          "allow_symbol_change": false,
-          "calendar": false,
-          "support_host": "https://www.tradingview.com",
-          "withdateranges": true,
-          "save_image": false,
-          "hide_side_toolbar": true,
-          "details": false,
-          "hotlist": false
-        }
-        </script>
+        View current SOL price action, historical candles,
+        volume, and technical chart data.
 
       </div>
 
-      <!-- TradingView Widget END -->
+      <a
+        class="metric-link"
+        href="https://www.tradingview.com/symbols/SOLUSD/"
+        target="_blank"
+        rel="noopener noreferrer nofollow"
+      >
+        Open SOL Chart on TradingView →
+      </a>
+
+    </div>
+
+    <div class="metric">
+
+      <div class="label">
+        SOL Market Overview
+      </div>
+
+      <div class="value">
+        Verify Live
+      </div>
+
+      <div class="note">
+
+        Review current market price, market capitalization,
+        volume, supply data, and recent performance.
+
+      </div>
+
+      <a
+        class="metric-link"
+        href="https://www.coingecko.com/en/coins/solana"
+        target="_blank"
+        rel="noopener noreferrer nofollow"
+      >
+        View Solana Market Data →
+      </a>
 
     </div>
 
@@ -1276,8 +1057,9 @@ h1{
 
   <div class="source-note">
 
-    Interactive market chart supplied by TradingView.
-    Exchange pricing can vary slightly by venue.
+    Market data is supplied by independent third-party sources.
+    Exchange pricing and reported metrics may vary by provider.
+    Always verify current data before making an investment decision.
 
   </div>
 
@@ -1302,18 +1084,15 @@ h1{
         Solana TVL
       </div>
 
-      <div
-        class="value"
-        id="sol-tvl"
-      >
-        Loading…
+      <div class="value">
+        Verify Live
       </div>
 
-      <div
-        class="note"
-        id="sol-tvl-note"
-      >
-        Best-effort live data from DeFiLlama.
+      <div class="note">
+
+        Review current Solana total value locked,
+        protocol activity, and DeFi sector data.
+
       </div>
 
       <a
@@ -1330,7 +1109,7 @@ h1{
     <div class="metric">
 
       <div class="label">
-        Network Throughput
+        Network Activity
       </div>
 
       <div class="value">
@@ -1339,11 +1118,8 @@ h1{
 
       <div class="note">
 
-        TPS can vary by measurement method,
-        transaction classification, and sample window.
-
-        A fragile browser-side public RPC estimate
-        has been removed from this report.
+        Review transactions, blocks, epochs,
+        validators, and current network activity.
 
       </div>
 
@@ -1362,10 +1138,11 @@ h1{
 
   <div class="source-note">
 
-    Live metrics may fail, lag, or reflect third-party
-    methodology. Degenstein Crypto Hub does not treat
-    a single network metric as an investment signal
-    in isolation.
+    Network metrics can vary by methodology, sample window,
+    transaction classification, and data provider.
+
+    Degenstein Crypto Hub does not treat a single network metric
+    as an investment signal in isolation.
 
   </div>
 
@@ -1379,97 +1156,96 @@ h1{
 >
 
   <h2>
-    SOL vs Market Performance
+    SOL vs BTC vs ETH
   </h2>
 
-  <div class="chartbox">
+  <p class="muted">
 
-    <div class="charthead">
-      SOL • BTC • ETH Market Comparison
-    </div>
+    Relative performance matters because SOL should not be evaluated
+    only against the U.S. dollar.
 
-    <div class="chart-widget">
+    Investors should also consider whether Solana is gaining or
+    losing value relative to Bitcoin and Ethereum across a full
+    market cycle.
 
-      <!-- TradingView Widget BEGIN -->
+  </p>
 
-      <div
-        class="tradingview-widget-container"
-      >
+  <div class="metrics">
 
-        <div
-          class="tradingview-widget-container__widget"
-        ></div>
+    <div class="metric">
 
-        <div
-          class="tradingview-widget-copyright"
-        >
+      <div class="label">
+        SOL vs Bitcoin
+      </div>
 
-          <a
-            href="https://www.tradingview.com/markets/cryptocurrencies/"
-            rel="noopener nofollow"
-            target="_blank"
-          >
+      <div class="value">
+        SOL / BTC
+      </div>
 
-            <span class="blue-text">
-              Crypto market data
-            </span>
+      <div class="note">
 
-          </a>
-
-          <span class="trademark">
-            by TradingView
-          </span>
-
-        </div>
-
-        <script
-          type="text/javascript"
-          src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js"
-          async
-        >
-        {
-          "title": "SOL vs BTC vs ETH",
-          "title_raw": "SOL vs BTC vs ETH",
-          "tabs": [
-            {
-              "title": "Market Comparison",
-              "title_raw": "Market Comparison",
-              "symbols": [
-                {
-                  "s": "COINBASE:SOLUSD"
-                },
-                {
-                  "s": "COINBASE:BTCUSD"
-                },
-                {
-                  "s": "COINBASE:ETHUSD"
-                }
-              ]
-            }
-          ],
-          "width": "100%",
-          "height": "100%",
-          "showChart": true,
-          "showFloatingTooltip": false,
-          "locale": "en",
-          "showSymbolLogo": true,
-          "colorTheme": "dark"
-        }
-        </script>
+        Track whether SOL is outperforming or underperforming
+        Bitcoin over time.
 
       </div>
 
-      <!-- TradingView Widget END -->
+      <a
+        class="metric-link"
+        href="https://www.tradingview.com/symbols/SOLBTC/"
+        target="_blank"
+        rel="noopener noreferrer nofollow"
+      >
+        View SOL / BTC Chart →
+      </a>
+
+    </div>
+
+    <div class="metric">
+
+      <div class="label">
+        SOL vs Ethereum
+      </div>
+
+      <div class="value">
+        SOL / ETH
+      </div>
+
+      <div class="note">
+
+        Compare Solana's market performance with Ethereum,
+        its largest smart-contract platform benchmark.
+
+      </div>
+
+      <a
+        class="metric-link"
+        href="https://www.tradingview.com/symbols/SOLETH/"
+        target="_blank"
+        rel="noopener noreferrer nofollow"
+      >
+        View SOL / ETH Chart →
+      </a>
 
     </div>
 
   </div>
 
-  <div class="source-note">
+  <div class="callout">
 
-    Use the market comparison as context rather than
-    a price-prediction tool. Relative performance can
-    change rapidly across market cycles.
+    <strong>
+      Degenstein Research View:
+    </strong>
+
+    <p class="muted" style="margin-bottom:0;">
+
+      SOL price appreciation is not the thesis by itself.
+
+      The stronger research signal is whether network adoption,
+      stablecoin activity, tokenization, payments infrastructure,
+      and application usage continue expanding while SOL maintains
+      relative strength against major crypto benchmarks.
+
+    </p>
 
   </div>
 
@@ -1496,45 +1272,39 @@ h1{
         execution, speed, and consumer-scale usage
       </strong>,
 
-      not on modular abstraction or
-      settlement-first design.
+      not on modular abstraction or settlement-first design.
 
     </li>
 
     <li>
 
-      Its strengths show up most clearly in
-      applications where latency and fees materially
-      impact user experience.
+      Its strengths show up most clearly in applications where
+      latency and fees materially impact user experience.
 
     </li>
 
     <li>
 
-      SOL's volatility can coexist with real network
-      usage.
+      SOL's volatility can coexist with real network usage.
 
-      Usage alone, however, does not guarantee
-      proportional token value capture or future
-      price appreciation.
+      Usage alone, however, does not guarantee proportional token
+      value capture or future price appreciation.
 
     </li>
 
     <li>
 
-      Network metrics help validate adoption,
-      but should be interpreted in context,
-      not in isolation.
+      Network metrics help validate adoption, but should be
+      interpreted in context, not in isolation.
 
     </li>
 
     <li>
 
-      A research framework should track stablecoin
-      supply, RWA growth, application activity,
-      validator and client resilience, fees,
-      and token value capture rather than relying
-      only on price momentum.
+      A research framework should track stablecoin supply, RWA
+      growth, application activity, validator and client resilience,
+      fees, and token value capture rather than relying only on
+      price momentum.
 
     </li>
 
@@ -1542,13 +1312,11 @@ h1{
 
   <p class="muted">
 
-    In short, Solana's execution thesis has stronger
-    2026 adoption evidence than the older version of
-    this report showed.
+    In short, Solana's execution thesis has stronger 2026 adoption
+    evidence than the older version of this report showed.
 
-    The remaining investment question is whether
-    growing activity produces durable economics and
-    value capture for SOL over time.
+    The remaining investment question is whether growing activity
+    produces durable economics and value capture for SOL over time.
 
   </p>
 
@@ -1562,8 +1330,7 @@ h1{
 >
 
   <h2>
-    Custodial SOL Interest Accounts —
-    Separate Platform Risk
+    Custodial SOL Interest Accounts — Separate Platform Risk
   </h2>
 
   <div class="callout">
@@ -1587,12 +1354,10 @@ h1{
       "
     >
 
-      For a separate review of advertised rates,
-      custody terms, and platform risks, see the
+      For a separate review of advertised rates, custody terms,
+      and platform risks, see the
 
-      <a
-        href="/report/coindepo-earn-while-you-hold/"
-      >
+      <a href="/report/coindepo-earn-while-you-hold/">
         CoinDepo research review →
       </a>
 
@@ -1613,9 +1378,7 @@ h1{
       "
     >
 
-      <strong
-        style="color:#00FFAA;"
-      >
+      <strong style="color:#00FFAA;">
         Research distinction:
       </strong>
 
@@ -1627,15 +1390,14 @@ h1{
         "
       >
 
-        Holding SOL in self-custody and transferring
-        SOL to a third-party custodial interest platform
-        are different risk decisions.
+        Holding SOL in self-custody and transferring SOL to a
+        third-party custodial interest platform are different
+        risk decisions.
 
-        CoinDepo currently advertises rates that vary
-        by asset and account type and can change.
+        CoinDepo currently advertises rates that vary by asset
+        and account type and can change.
 
-        Always verify current rates and terms directly
-        with the provider.
+        Always verify current rates and terms directly with the provider.
 
       </p>
 
@@ -1662,8 +1424,8 @@ h1{
         </li>
 
         <li>
-          Separate the Solana investment thesis from
-          the third-party platform thesis.
+          Separate the Solana investment thesis from the
+          third-party platform thesis.
         </li>
 
       </ul>
@@ -1676,8 +1438,8 @@ h1{
         "
       >
 
-        Some links in the separate CoinDepo report
-        are referral links and are clearly disclosed there.
+        Some links in the separate CoinDepo report are referral
+        links and are clearly disclosed there.
 
       </p>
 
@@ -1687,8 +1449,8 @@ h1{
 
       Educational research only.
 
-      Crypto assets and third-party custodial platforms
-      can result in partial or total loss.
+      Crypto assets and third-party custodial platforms can result
+      in partial or total loss.
 
     </div>
 
@@ -1704,15 +1466,14 @@ h1{
     Research &amp; Risk Disclosure:
   </strong>
 
-  This report is for informational and educational
-  purposes only and does not constitute financial,
-  investment, legal, or tax advice.
+  This report is for informational and educational purposes only
+  and does not constitute financial, investment, legal, or tax advice.
 
-  SOL is volatile and network adoption does not
-  guarantee token price appreciation.
+  SOL is volatile and network adoption does not guarantee token
+  price appreciation.
 
-  Live metrics may fail, lag, or reflect third-party
-  methodology.
+  Third-party market and network data may lag or reflect different
+  methodologies.
 
   Verify current data independently.
 
@@ -1780,122 +1541,6 @@ function shareOnX(){
   );
 
 }
-
-const fmtUSD = n => {
-
-  if(!Number.isFinite(n)){
-    return "Unavailable";
-  }
-
-  if(n >= 1e9){
-
-    return "$" +
-      (n / 1e9).toFixed(2) +
-      "B";
-
-  }
-
-  if(n >= 1e6){
-
-    return "$" +
-      (n / 1e6).toFixed(2) +
-      "M";
-
-  }
-
-  return "$" +
-    Math.round(n).toLocaleString();
-
-};
-
-async function loadTVL(){
-
-  const value =
-    document.getElementById("sol-tvl");
-
-  const note =
-    document.getElementById("sol-tvl-note");
-
-  try{
-
-    const controller =
-      new AbortController();
-
-    const timeout =
-      setTimeout(
-        () => controller.abort(),
-        8000
-      );
-
-    const response =
-      await fetch(
-        "https://api.llama.fi/v2/chains",
-        {
-          signal:controller.signal
-        }
-      );
-
-    clearTimeout(timeout);
-
-    if(!response.ok){
-
-      throw new Error(
-        "TVL request failed"
-      );
-
-    }
-
-    const data =
-      await response.json();
-
-    const sol =
-      data.find(
-        chain =>
-          String(chain.name)
-            .toLowerCase() ===
-          "solana"
-      );
-
-    if(
-      !sol ||
-      !Number.isFinite(
-        Number(sol.tvl)
-      )
-    ){
-
-      throw new Error(
-        "Solana TVL unavailable"
-      );
-
-    }
-
-    value.textContent =
-      fmtUSD(
-        Number(sol.tvl)
-      );
-
-    note.textContent =
-      "Current TVL reported by DeFiLlama.";
-
-  }
-  catch(error){
-
-    value.textContent =
-      "Verify Live";
-
-    note.textContent =
-      "Live API unavailable. Use the DeFiLlama verification link below.";
-
-  }
-
-}
-
-loadTVL();
-
-setInterval(
-  loadTVL,
-  300000
-);
 
 </script>
 
