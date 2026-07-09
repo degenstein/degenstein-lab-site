@@ -1,579 +1,584 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>CoinRabbit Review 2026 — Crypto-Backed Loans Explained | The Degenstein Report</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <title>CoinRabbit Review 2026 — Crypto Loans, LTV & Liquidation Risk | The Degenstein Report</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO -->
-  <meta name="description" content="A mechanics-first CoinRabbit review. How crypto-backed loans work, LTV structure, repayment flexibility, supported assets, risks, and who CoinRabbit is best for in 2026." />
-  <link rel="canonical" href="https://degenstein.xyz/report/coinrabbit-review/" />
-  <meta name="robots" content="index, follow" />
+      <!-- SEO -->
+      <meta name="description" content="An independent CoinRabbit review covering crypto-backed loans, current advertised APR and LTV ranges, liquidation mechanics, collateral risk, platform terms, and due-diligence questions." />
+      <link rel="canonical" href="https://degenstein.xyz/report/coinrabbit-review/" />
+      <meta name="robots" content="index, follow" />
 
-  <!-- SEO ADDITION START -->
-  <meta name="keywords" content="CoinRabbit review, crypto-backed loans, borrow against crypto, CoinRabbit LTV, crypto loan liquidation, crypto loans explained" />
-  <!-- SEO ADDITION END -->
+      <!-- SEO ADDITION START -->
+      <meta name="keywords" content="CoinRabbit review, crypto-backed loans, borrow against crypto, CoinRabbit LTV, crypto loan liquidation, crypto loans explained" />
+      <!-- SEO ADDITION END -->
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="article" />
-  <meta property="og:site_name" content="The Degenstein Report" />
-  <meta property="og:title" content="CoinRabbit Review 2026 — Crypto-Backed Loans Explained" />
-  <meta property="og:description" content="A deep dive into CoinRabbit crypto-backed loans. Structure, LTV mechanics, loan types, risks, and real-world use cases." />
-  <meta property="og:image" content="https://degenstein.xyz/assets/coinrabbitreport.png" />
+      <!-- Open Graph -->
+      <meta property="og:type" content="article" />
+      <meta property="og:site_name" content="The Degenstein Report" />
+      <meta property="og:title" content="CoinRabbit Review 2026 — Crypto Loans, LTV & Liquidation Risk" />
+      <meta property="og:description" content="Independent research into CoinRabbit crypto-backed loans, LTV mechanics, automatic liquidation, loan terms, and platform risk." />
+      <meta property="og:image" content="https://degenstein.xyz/assets/coinrabbitreport.png" />
 
-  <!-- X -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@DHouseofcrypto" />
+      <!-- X -->
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@DHouseofcrypto" />
 
-  <meta name="theme-color" content="#f97316" />
+      <meta name="theme-color" content="#f97316" />
 
-  <script src="https://cdn.tailwindcss.com"></script>
+      <script src="https://cdn.tailwindcss.com"></script>
 
-<style>
-:root { color-scheme: dark; }
+    <style>
+    :root { color-scheme: dark; }
 
-html, body {
-  background:#020617;
-  color:#e5e7eb;
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-}
+    html, body {
+      background:#020617;
+      color:#e5e7eb;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    }
 
-.wrap{
-  max-width:72rem;
-  margin:0 auto;
-  padding:0 1rem;
-}
+    .wrap{
+      max-width:72rem;
+      margin:0 auto;
+      padding:0 1rem;
+    }
 
-.card{
-  position:relative;
-  border-radius:1.25rem;
-  padding:1.25rem;
-  background:linear-gradient(180deg, rgba(15,23,42,.85), rgba(15,23,42,.65));
-  border:1px solid rgba(148,163,184,.25);
-  box-shadow:0 20px 60px rgba(0,0,0,.55);
-}
+    .card{
+      position:relative;
+      border-radius:1.25rem;
+      padding:1.25rem;
+      background:linear-gradient(180deg, rgba(15,23,42,.85), rgba(15,23,42,.65));
+      border:1px solid rgba(148,163,184,.25);
+      box-shadow:0 20px 60px rgba(0,0,0,.55);
+    }
 
-.card::before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:0;
-  width:4px;
-  height:100%;
-  background:linear-gradient(180deg,#fb923c,#f97316);
-  border-radius:999px;
-  opacity:.75;
-}
+    .card::before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:0;
+      width:4px;
+      height:100%;
+      background:linear-gradient(180deg,#fb923c,#f97316);
+      border-radius:999px;
+      opacity:.75;
+    }
 
-.tag{
-  font-size:.72rem;
-  padding:.35rem .65rem;
-  border-radius:999px;
-  border:1px solid rgba(249,115,22,.55);
-  background:rgba(249,115,22,.12);
-  color:#fdba74;
-  font-weight:800;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-}
+    .tag{
+      font-size:.72rem;
+      padding:.35rem .65rem;
+      border-radius:999px;
+      border:1px solid rgba(249,115,22,.55);
+      background:rgba(249,115,22,.12);
+      color:#fdba74;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
 
-.btn-primary{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  background:linear-gradient(135deg,#fb923c,#f97316);
-  color:#020617;
-  padding:.85rem 1.1rem;
-  border-radius:999px;
-  font-weight:900;
-  box-shadow:0 0 35px rgba(249,115,22,.35);
-}
+    .btn-primary{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(135deg,#fb923c,#f97316);
+      color:#020617;
+      padding:.85rem 1.1rem;
+      border-radius:999px;
+      font-weight:900;
+      box-shadow:0 0 35px rgba(249,115,22,.35);
+    }
 
-.btn-outline{
-  border:1px solid rgba(148,163,184,.35);
-  padding:.85rem 1.1rem;
-  border-radius:999px;
-  background:rgba(15,23,42,.55);
-}
+    .btn-outline{
+      border:1px solid rgba(148,163,184,.35);
+      padding:.85rem 1.1rem;
+      border-radius:999px;
+      background:rgba(15,23,42,.55);
+    }
 
-.muted{ color:rgba(229,231,235,.72); }
-.fine{ font-size:.85rem; color:rgba(229,231,235,.6); }
-</style>
-</head>
+    .muted{ color:rgba(229,231,235,.72); }
+    .fine{ font-size:.85rem; color:rgba(229,231,235,.6); }
+    </style>
+    </head>
 
-<body>
+    <body>
 
-<header class="sticky top-0 z-50 border-b border-white/10 bg-black/70 backdrop-blur">
-  <div class="wrap py-4 flex justify-between items-center">
-    <a href="/report/" class="font-extrabold text-lg">The Degenstein Report</a>
-    <span class="tag">Loan Framework</span>
-  </div>
-</header>
+    <header class="sticky top-0 z-50 border-b border-white/10 bg-black/70 backdrop-blur">
+      <div class="wrap py-4 flex justify-between items-center">
+        <a href="/report/" class="font-extrabold text-lg">The Degenstein Report</a>
+        <span class="tag">Platform Risk Review</span>
+      </div>
+    </header>
 
-<section class="wrap py-12">
+    <section class="wrap py-12">
 
-  <div class="mx-auto mb-8" style="max-width:700px;">
-    <img src="/assets/coinrabbitreport.png"
-         alt="CoinRabbit Review 2026"
-         class="w-full rounded-lg border border-white/10"
-         loading="lazy">
-  </div>
+      <div class="mx-auto mb-8" style="max-width:700px;">
+        <img src="/assets/coinrabbitreport.png"
+             alt="CoinRabbit Review 2026"
+             class="w-full rounded-lg border border-white/10"
+             loading="lazy">
+      </div>
 
-  <div class="card">
-    <span class="tag">2026 Review</span>
+      <div class="card">
+        <span class="tag">July 2026 Review</span>
 
-    <h1 class="text-4xl md:text-5xl font-extrabold mt-3">
-      CoinRabbit Review
-    </h1>
+        <h1 class="text-4xl md:text-5xl font-extrabold mt-3">
+          CoinRabbit Review
+        </h1>
+
+        <!-- SEO ADDITION START -->
+        <p class="muted mt-4">
+          This independent review examines CoinRabbit's crypto-backed loans using current publicly available platform information —
+          including advertised APR starting at 11.95%, LTV options up to 90%, liquidation mechanics,
+          collateral custody, repayment structures, and the risks borrowers should evaluate before transferring crypto.
+        </p>
+        <!-- SEO ADDITION END -->
+
+        <p class="text-lg muted mt-4">
+          CoinRabbit markets a crypto-backed borrowing service that allows users to access stablecoin liquidity by transferring digital assets as collateral.
+        </p>
+
+        <p class="muted mt-3">
+          This report examines the mechanics first: how collateral is transferred, how LTV changes during volatility,
+          when liquidation can occur, what CoinRabbit currently advertises, and where platform,
+          counterparty, market, and tax uncertainty should be considered.
+        </p>
+
+        <div class="flex flex-wrap gap-3 mt-6">
+          <a href="https://coinrabbit.io/?referral=iC2eCagSAK"
+             target="_blank" rel="noopener noreferrer nofollow sponsored"
+             class="btn-primary">
+            Visit CoinRabbit — referral disclosure →
+          </a>
+
+          <a href="#risk" class="btn-outline">Risk notes</a>
+        </div>
+
+        <div class="flex flex-wrap gap-3 mt-4">
+          <a href="https://degenstein.xyz/" class="btn-outline">← Back to Main</a>
+          <a href="/report/" class="btn-outline">← Back to Reports</a>
+          <a href="https://twitter.com/intent/tweet?text=CoinRabbit%20Review%202026%20—%20Crypto-Backed%20Loans%20Explained&url=https%3A%2F%2Fdegenstein.xyz%2Freport%2Fcoinrabbit-review%2F"
+             target="_blank" rel="noopener"
+             class="btn-outline">
+            Share on X
+          </a>
+        </div>
+
+        <p class="fine mt-4">
+          Disclosure: The CoinRabbit link above is a referral link. I may receive compensation if you use it, at no additional cost to you. Referral relationships do not determine research coverage. Educational content only.
+        </p>
+      </div>
+
+    </section>
+
+    <!-- CONTINUES IN PART 2 -->
+      <main class="wrap pb-16 space-y-8">
 
     <!-- SEO ADDITION START -->
-    <p class="muted mt-4">
-      This CoinRabbit review explains how crypto-backed loans work in practice —
-      including loan-to-value (LTV) ratios, liquidation mechanics, repayment flexibility,
-      and the real risks borrowers need to understand before using CoinRabbit.
-    </p>
+    <section class="card">
+      <h2 class="text-2xl font-extrabold mb-2">Crypto-Backed Loans Explained (Quick Overview)</h2>
+      <p class="muted">
+        Crypto-backed loans use digital assets as collateral for a loan. CoinRabbit currently advertises collateral-based lending without a traditional credit check and says funds can be delivered in about 10 minutes after collateral is sent. Availability and service terms can vary by jurisdiction and provider entity.
+      </p>
+    </section>
     <!-- SEO ADDITION END -->
 
-    <p class="text-lg muted mt-4">
-      CoinRabbit is built for one thing: unlocking liquidity from crypto without selling it.
-    </p>
-
-    <p class="muted mt-3">
-      This report examines CoinRabbit through a mechanics-first lens — how its
-      crypto-backed loans work, how LTV and liquidation are managed, what kind
-      of borrowers it’s designed for, and where the real risks live.
-    </p>
-
-    <div class="flex flex-wrap gap-3 mt-6">
-      <a href="https://coinrabbit.io/?referral=iC2eCagSAK"
-         target="_blank" rel="noopener"
-         class="btn-primary">
-        Open CoinRabbit →
-      </a>
-
-      <a href="#risk" class="btn-outline">Risk notes</a>
-    </div>
-
-    <div class="flex flex-wrap gap-3 mt-4">
-      <a href="https://degenstein.xyz/" class="btn-outline">← Back to Main</a>
-      <a href="/report/" class="btn-outline">← Back to Reports</a>
-      <a href="https://twitter.com/intent/tweet?text=CoinRabbit%20Review%202026%20—%20Crypto-Backed%20Loans%20Explained&url=https%3A%2F%2Fdegenstein.xyz%2Freport%2Fcoinrabbit-review%2F"
-         target="_blank" rel="noopener"
-         class="btn-outline">
-        Share on X
-      </a>
-    </div>
-
-    <p class="fine mt-4">
-      Disclosure: Referral links may be used. Educational content only.
-    </p>
-  </div>
-
-</section>
-
-<!-- CONTINUES IN PART 2 -->
-  <main class="wrap pb-16 space-y-8">
-
-<!-- SEO ADDITION START -->
-<section class="card">
-  <h2 class="text-2xl font-extrabold mb-2">Crypto-Backed Loans Explained (Quick Overview)</h2>
-  <p class="muted">
-    Crypto-backed loans allow you to borrow cash or stablecoins using cryptocurrency
-    as collateral instead of selling it. Approval is based entirely on collateral
-    value — not credit score, income, or location.
-  </p>
-</section>
-<!-- SEO ADDITION END -->
-
-<section class="card">
-  <h2 class="text-2xl font-extrabold mb-2">What Is CoinRabbit?</h2>
-  <p class="muted">
-    CoinRabbit is a crypto-backed lending platform that allows users to borrow
-    against their digital assets instead of selling them. Loans are issued based
-    solely on collateral value — not credit history, income, or geography.
-  </p>
-</section>
-
-<section class="card">
-  <h2 class="text-2xl font-extrabold mb-2">How CoinRabbit Loans Work</h2>
-  <ul class="list-disc pl-6 text-gray-300 space-y-2">
-    <li>Select the asset you want to borrow</li>
-    <li>Choose from a wide range of supported crypto collateral</li>
-    <li>Review LTV, interest rate, and liquidation thresholds</li>
-    <li>Deposit collateral to CoinRabbit</li>
-    <li>Receive funds — often within minutes</li>
-    <li>Repay at any time to unlock collateral</li>
-  </ul>
-</section>
-
-<section class="card">
-  <h2 class="text-2xl font-extrabold mb-2">Loan Types & Repayment Flexibility</h2>
-
-  <p class="muted">
-    CoinRabbit supports both fixed-term and open-ended loan structures, giving
-    borrowers flexibility depending on how predictable their capital needs are.
-  </p>
-
-  <div class="mt-4 grid md:grid-cols-2 gap-4">
-    <div class="rounded-xl border border-white/10 bg-white/5 p-4">
-      <div class="font-extrabold mb-2">Fixed-Term Loans</div>
-      <ul class="list-disc pl-6 text-gray-300 space-y-2">
-        <li>Interest and duration set upfront</li>
-        <li>Predictable total borrowing cost</li>
-        <li>Best for planned, short-term needs</li>
-      </ul>
-    </div>
-
-    <div class="rounded-xl border border-white/10 bg-white/5 p-4">
-      <div class="font-extrabold mb-2">Open-Ended Loans</div>
-      <ul class="list-disc pl-6 text-gray-300 space-y-2">
-        <li>No fixed repayment schedule</li>
-        <li>Partial or full repayment at any time</li>
-        <li>Designed for flexible liquidity access</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="card">
-  <h2 class="text-2xl font-extrabold mb-2">Crypto Loans: LTV & Liquidation Mechanics</h2>
-
-  <p class="muted">
-    CoinRabbit loans are overcollateralized. Your loan-to-value (LTV) ratio
-    determines how much you can borrow relative to the value of your crypto.
-  </p>
-
-  <div class="mt-4 rounded-xl border border-white/10 bg-white/5 p-4">
-    <ul class="list-disc pl-6 text-gray-300 space-y-2">
-      <li>Higher LTV provides more liquidity but less downside buffer</li>
-      <li>Lower LTV reduces liquidation risk during volatility</li>
-      <li>Collateral value is monitored in real time</li>
-      <li>Borrowers can add collateral or repay to restore LTV</li>
-    </ul>
-  </div>
-</section>
-
-<section class="card">
-  <h2 class="text-2xl font-extrabold mb-2">Supported Collateral Assets</h2>
-  <p class="muted">
-    CoinRabbit supports a broad range of cryptocurrencies — including major
-    assets and long-tail tokens — allowing borrowers to use assets they already hold.
-  </p>
-</section>
-
-<section class="card">
-  <h2 class="text-2xl font-extrabold mb-2">Loan Borrowing Example (With Real Numbers)</h2>
-
-  <p class="muted">
-    To make CoinRabbit’s loan structure more concrete, here’s a simplified
-    example using round numbers. This is illustrative only, but it reflects
-    how crypto-backed borrowing works in practice.
-  </p>
-
-  <div class="mt-4 rounded-xl border border-white/10 bg-white/5 p-4">
-    <div class="font-extrabold mb-2">Starting position</div>
-    <ul class="list-disc pl-6 text-gray-300 space-y-2">
-      <li>Collateral deposited: <strong>$10,000</strong> in crypto</li>
-      <li>Selected LTV: <strong>50%</strong></li>
-      <li>Loan amount received: <strong>$5,000</strong></li>
-    </ul>
-  </div>
-
-  <p class="muted mt-3">
-    In this scenario, the borrower retains exposure to their crypto while
-    accessing $5,000 in liquidity without selling the underlying asset.
-  </p>
-
-  <div class="mt-4 rounded-xl border border-white/10 bg-white/5 p-4">
-    <div class="font-extrabold mb-2">Market movement scenarios</div>
-
-    <ul class="list-disc pl-6 text-gray-300 space-y-2">
-      <li>
-        <strong>Price stays flat:</strong>
-        collateral remains near $10,000 — loan remains healthy
-      </li>
-      <li>
-        <strong>Price drops 20%:</strong>
-        collateral falls to $8,000 — effective LTV rises to ~62.5%
-      </li>
-      <li>
-        <strong>Price drops further:</strong>
-        borrower may need to add collateral or repay part of the loan
-      </li>
-    </ul>
-  </div>
-
-  <p class="muted mt-3">
-    This is why conservative borrowing matters. Lower starting LTV gives
-    you more room to absorb volatility without forced liquidation.
-  </p>
-
-  <div class="mt-4 rounded-xl border border-white/10 bg-black/40 p-4">
-    <div class="font-extrabold mb-2">Why this matters</div>
-    <ul class="list-disc pl-6 text-gray-300 space-y-2">
-      <li>Borrowing too aggressively increases liquidation risk</li>
-      <li>Moderate LTV improves survivability during drawdowns</li>
-      <li>Loans should be actively monitored during volatile markets</li>
-    </ul>
-  </div>
-
-  <p class="fine mt-3">
-    Numbers shown are simplified for clarity. Actual thresholds and rates
-    depend on market conditions and platform terms.
-  </p>
-</section>
-
-<section class="card">
-  <h2 class="text-2xl font-extrabold mb-2">Why Borrow Instead of Selling?</h2>
-  <ul class="list-disc pl-6 text-gray-300 space-y-2">
-    <li>Avoid triggering taxable sales</li>
-    <li>Maintain long-term market exposure</li>
-    <li>Access liquidity without exiting positions</li>
-    <li>Deploy capital while waiting for future price appreciation</li>
-  </ul>
-</section>
-
-<!-- CONTINUES IN PART 3 -->
     <section class="card">
-  <h2 class="text-2xl font-extrabold mb-2">Earning on CoinRabbit</h2>
+      <h2 class="text-2xl font-extrabold mb-2">What Is CoinRabbit?</h2>
+      <p class="muted">
+        CoinRabbit is a crypto asset management and lending platform operating since 2020. Its loan product allows supported digital assets to be transferred as collateral for stablecoin borrowing. CoinRabbit's website currently advertises more than 350 collateral assets, APR starting at 11.95%, and LTV options from 50% to 90%.
+      </p>
+    </section>
 
-  <p class="muted">
-    In addition to crypto-backed loans, CoinRabbit offers a crypto savings
-    product that lets you earn interest on your assets without selling them.
-    Interest accrues daily and can be withdrawn at any time, giving you
-    passive income with flexibility.
-  </p>
-
-  <p class="muted mt-3">
-    Supported deposits typically include major stablecoins and other assets.
-    Once you deposit, interest begins accruing immediately, and your total
-    earnings are visible in your dashboard.
-  </p>
-
-  <ul class="list-disc pl-6 text-gray-300 space-y-2 mt-3">
-    <li>Interest rewards are credited <strong>daily</strong></li>
-    <li>Withdraw your principal and interest <strong>anytime</strong> you choose</li>
-    <li>No fixed term or lockups — deposits earn as long as they remain active</li>
-    <li>Grow stablecoin holdings or diversify with other supported assets</li>
-    <li>Interest is calculated from the day your deposit settles</li>
-  </ul>
-
-  <p class="fine mt-3">
-    As with all centralized yield products, earnings are subject to rate
-    changes and platform terms.
-  </p>
-</section>
-
-<section class="card">
-  <h2 class="text-2xl font-extrabold mb-2">Sample APY Scenarios & How to Calculate Earnings</h2>
-
-  <p class="muted">
-    APY represents the annualized return assuming interest continues to accrue
-    over time. CoinRabbit interest accrues daily.
-  </p>
-
-  <div class="mt-4 rounded-xl border border-white/10 bg-white/5 p-4">
-    <div class="font-extrabold mb-2">Basic earning formula</div>
-    <p class="text-gray-300">
-      <strong>Estimated Earnings</strong> =
-      Deposit × (APY ÷ 100) × (Days Held ÷ 365)
-    </p>
-  </div>
-
-  <div class="mt-6 grid md:grid-cols-3 gap-4">
-    <div class="rounded-xl border border-white/10 bg-black/40 p-4">
-      <div class="font-extrabold mb-1">Example 1: Short-Term Hold</div>
-      <ul class="text-gray-300 space-y-1">
-        <li>Deposit: $1,000</li>
-        <li>APY: 8%</li>
-        <li>Time: 90 days</li>
+    <section class="card">
+      <h2 class="text-2xl font-extrabold mb-2">Current Advertised Loan Terms — Reviewed July 2026</h2>
+      <ul class="list-disc pl-6 text-gray-300 space-y-2">
+        <li>APR advertised from <strong>11.95%</strong></li>
+        <li>Advertised LTV range of <strong>50% to 90%</strong></li>
+        <li>Advertised liquidation LTV range of <strong>80% to 95%</strong>, depending on loan terms</li>
+        <li>More than <strong>350 collateral assets</strong> advertised</li>
+        <li>CoinRabbit states a <strong>no-rehypothecation</strong> policy for loan collateral</li>
       </ul>
-      <p class="muted mt-2"><strong>$19.73</strong> estimated earnings</p>
-    </div>
+      <p class="fine mt-3">These are CoinRabbit's published representations and may change. Verify the exact terms shown for a specific loan before transferring collateral.</p>
+    </section>
 
-    <div class="rounded-xl border border-white/10 bg-black/40 p-4">
-      <div class="font-extrabold mb-1">Example 2: Medium-Term Hold</div>
-      <ul class="text-gray-300 space-y-1">
-        <li>Deposit: $5,000</li>
-        <li>APY: 10%</li>
-        <li>Time: 180 days</li>
+    <section class="card">
+      <h2 class="text-2xl font-extrabold mb-2">How CoinRabbit Loans Work</h2>
+      <ul class="list-disc pl-6 text-gray-300 space-y-2">
+        <li>Select the collateral asset and review the loan terms</li>
+        <li>Choose from a wide range of supported crypto collateral</li>
+        <li>Review LTV, interest rate, and liquidation thresholds</li>
+        <li>Deposit collateral to CoinRabbit</li>
+        <li>CoinRabbit advertises loan delivery in about 10 minutes after collateral is sent</li>
+        <li>Repay at any time to unlock collateral</li>
       </ul>
-      <p class="muted mt-2"><strong>$246.58</strong> estimated earnings</p>
-    </div>
+    </section>
 
-    <div class="rounded-xl border border-white/10 bg-black/40 p-4">
-      <div class="font-extrabold mb-1">Example 3: Long-Term Hold</div>
-      <ul class="text-gray-300 space-y-1">
-        <li>Deposit: $10,000</li>
-        <li>APY: 10%</li>
-        <li>Time: 365 days</li>
+    <section class="card">
+      <h2 class="text-2xl font-extrabold mb-2">Loan Types & Repayment Flexibility</h2>
+
+      <p class="muted">
+        CoinRabbit's current loan information describes fixed-term and open-ended structures. The applicable APR, duration,
+        LTV, liquidation threshold, and repayment obligations should be confirmed in the specific loan terms before collateral is transferred.
+      </p>
+
+      <div class="mt-4 grid md:grid-cols-2 gap-4">
+        <div class="rounded-xl border border-white/10 bg-white/5 p-4">
+          <div class="font-extrabold mb-2">Fixed-Term Loans</div>
+          <ul class="list-disc pl-6 text-gray-300 space-y-2">
+            <li>Interest and duration set upfront</li>
+            <li>Predictable total borrowing cost</li>
+            <li>Review the due date and full repayment obligation before borrowing</li>
+          </ul>
+        </div>
+
+        <div class="rounded-xl border border-white/10 bg-white/5 p-4">
+          <div class="font-extrabold mb-2">Open-Ended Loans</div>
+          <ul class="list-disc pl-6 text-gray-300 space-y-2">
+            <li>No fixed repayment schedule</li>
+            <li>Partial or full repayment at any time</li>
+            <li>Interest and collateral risk continue while the loan remains open</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 class="text-2xl font-extrabold mb-2">Crypto Loans: LTV & Liquidation Mechanics</h2>
+
+      <p class="muted">
+        Loan-to-value (LTV) measures the loan amount relative to the value of the collateral.
+        CoinRabbit currently advertises LTV options up to 90%. Higher starting LTV leaves less room for a collateral-price decline before a margin call or liquidation threshold is reached.
+      </p>
+
+      <div class="mt-4 rounded-xl border border-white/10 bg-white/5 p-4">
+        <ul class="list-disc pl-6 text-gray-300 space-y-2">
+          <li>Higher LTV provides more liquidity but less downside buffer</li>
+          <li>Lower LTV reduces liquidation risk during volatility</li>
+          <li>CoinRabbit says collateral value is monitored and risk-zone notifications may be sent</li>
+          <li>Borrowers can add collateral or repay to restore LTV</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 class="text-2xl font-extrabold mb-2">Supported Collateral Assets</h2>
+      <p class="muted">
+        CoinRabbit currently advertises more than 350 supported collateral assets, including BTC, XRP, and ETH. Asset support does not remove volatility risk; long-tail tokens may move sharply and can increase liquidation risk.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2 class="text-2xl font-extrabold mb-2">Illustrative Loan Example — LTV Stress Test</h2>
+
+      <p class="muted">
+        The example below demonstrates LTV mathematics only. It is not a CoinRabbit quote, recommendation,
+        or representation of a specific liquidation threshold. Actual APR and liquidation LTV depend on the selected loan terms.
+      </p>
+
+      <div class="mt-4 rounded-xl border border-white/10 bg-white/5 p-4">
+        <div class="font-extrabold mb-2">Starting position</div>
+        <ul class="list-disc pl-6 text-gray-300 space-y-2">
+          <li>Collateral deposited: <strong>$10,000</strong> in crypto</li>
+          <li>Selected LTV: <strong>50%</strong></li>
+          <li>Loan amount received: <strong>$5,000</strong></li>
+        </ul>
+      </div>
+
+      <p class="muted mt-3">
+        In this scenario, the borrower retains exposure to their crypto while
+        accessing $5,000 in liquidity without selling the underlying asset.
+      </p>
+
+      <div class="mt-4 rounded-xl border border-white/10 bg-white/5 p-4">
+        <div class="font-extrabold mb-2">Market movement scenarios</div>
+
+        <ul class="list-disc pl-6 text-gray-300 space-y-2">
+          <li>
+            <strong>Price stays flat:</strong>
+            collateral remains near $10,000 — illustrative LTV remains 50%
+          </li>
+          <li>
+            <strong>Price drops 20%:</strong>
+            collateral falls to $8,000 — effective LTV rises to ~62.5%
+          </li>
+          <li>
+            <strong>Price drops further:</strong>
+            effective LTV continues rising; the borrower may enter a risk zone and could face automatic liquidation at the applicable threshold
+          </li>
+        </ul>
+      </div>
+
+      <p class="muted mt-3">
+        A lower starting LTV generally creates a larger mathematical buffer before a liquidation threshold is reached.
+        CoinRabbit's terms state that liquidation can occur automatically, without borrower approval, when the applicable margin-call price is reached and insufficient additional collateral is provided.
+      </p>
+
+      <div class="mt-4 rounded-xl border border-white/10 bg-black/40 p-4">
+        <div class="font-extrabold mb-2">Why this matters</div>
+        <ul class="list-disc pl-6 text-gray-300 space-y-2">
+          <li>Borrowing too aggressively increases liquidation risk</li>
+          <li>Moderate LTV improves survivability during drawdowns</li>
+          <li>Loans should be actively monitored during volatile markets</li>
+        </ul>
+      </div>
+
+      <p class="fine mt-3">
+        Numbers shown are simplified for clarity. Actual thresholds and rates
+        depend on market conditions and platform terms.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2 class="text-2xl font-extrabold mb-2">Borrowing vs. Selling — Questions to Consider</h2>
+      <ul class="list-disc pl-6 text-gray-300 space-y-2">
+        <li>A loan may be treated differently from a sale for tax purposes, but tax treatment depends on jurisdiction and facts</li>
+        <li>Borrowing may preserve price exposure to collateral while also creating interest and liquidation risk</li>
+        <li>Borrowing can provide liquidity without an immediate sale of the collateral asset</li>
+        <li>Future price appreciation is not guaranteed; collateral can decline and be liquidated</li>
       </ul>
-      <p class="muted mt-2"><strong>$1,000</strong> estimated earnings</p>
-    </div>
-  </div>
+    </section>
 
-  <p class="fine mt-3">
-    Examples are illustrative only. Verify current rates on the platform.
-  </p>
-</section>
+    <!-- CONTINUES IN PART 3 -->
+        <section class="card">
+      <h2 class="text-2xl font-extrabold mb-2">CoinRabbit Earn — Separate Product, Separate Risk</h2>
 
-<section id="earn-calculator" class="card">
-  <h2 class="text-2xl font-extrabold mb-4">Earn Calculator (Estimate)</h2>
+      <p class="muted">
+        CoinRabbit also markets an Earn product. This should be analyzed separately from borrowing.
+        Depositing assets with a centralized platform introduces custody and counterparty exposure, and an advertised yield should not be treated as a bank deposit rate or guaranteed return.
+      </p>
 
-  <p class="muted mb-4">
-    Estimate potential interest based on deposit size, APY, and time held.
-  </p>
+      <p class="muted mt-3">
+        CoinRabbit's current site describes yield features as part of its asset-management platform. Supported assets,
+        rates, withdrawal conditions, and product terms can change and should be verified directly before depositing.
+      </p>
 
-  <div class="grid md:grid-cols-4 gap-3">
-    <input id="earnAmt" type="number" value="1000"
-      class="p-2 rounded bg-black/60 border border-white/10" placeholder="Deposit ($)">
-    <input id="earnApy" type="number" value="8"
-      class="p-2 rounded bg-black/60 border border-white/10" placeholder="APY (%)">
-    <input id="earnDays" type="number" value="90"
-      class="p-2 rounded bg-black/60 border border-white/10" placeholder="Days">
-    <select id="earnMode" class="p-2 rounded bg-black/60 border border-white/10">
-      <option value="simple">Simple (Daily Accrual)</option>
-      <option value="compound">Compound (Daily)</option>
-    </select>
-  </div>
+      <ul class="list-disc pl-6 text-gray-300 space-y-2 mt-3">
+        <li>Verify the current interest-crediting schedule directly with CoinRabbit</li>
+        <li>Review current withdrawal conditions and platform terms before depositing</li>
+        <li>Do not assume a rate, access condition, or product feature will remain unchanged</li>
+        <li>Stablecoins and centralized platforms carry risks that differ from insured bank deposits</li>
+        <li>Separate asset-price risk from custody and counterparty risk</li>
+      </ul>
 
-  <div class="mt-4 grid md:grid-cols-3 gap-3">
-    <div><strong>Estimated Interest:</strong> <span id="earnInterest">$0.00</span></div>
-    <div><strong>Total Balance:</strong> <span id="earnTotal">$0.00</span></div>
-    <div><strong>Gain:</strong> <span id="earnPct">0.00%</span></div>
-  </div>
+      <p class="fine mt-3">
+        As with all centralized yield products, earnings are subject to rate
+        changes and platform terms.
+      </p>
+    </section>
 
-  <div class="mt-4 flex flex-wrap gap-2">
-    <button class="btn-outline" onclick="earnPresetShort()">30 Days</button>
-    <button class="btn-outline" onclick="earnPresetMedium()">90 Days</button>
-    <button class="btn-outline" onclick="earnPresetLong()">365 Days</button>
-  </div>
+    <section class="card">
+      <h2 class="text-2xl font-extrabold mb-2">Illustrative Interest Math — Not CoinRabbit Rate Quotes</h2>
 
-  <p class="fine mt-4">
-    Estimates assume rates remain constant.
-  </p>
-</section>
+      <p class="muted">
+        The examples below demonstrate annualized interest math using user-selected hypothetical rates.
+        The 8% and 10% figures are not presented as current CoinRabbit rate quotes. APY and APR are not interchangeable, and actual product terms should be verified directly.
+      </p>
 
-<section id="risk" class="card">
-  <h2 class="text-2xl font-extrabold mb-2">Risk Notes</h2>
-  <p class="muted">
-    Crypto-backed loans carry market risk and platform risk.
-    Borrow conservatively, monitor LTV, and understand liquidation thresholds
-    before deploying capital.
-  </p>
-</section>
+      <div class="mt-4 rounded-xl border border-white/10 bg-white/5 p-4">
+        <div class="font-extrabold mb-2">Basic earning formula</div>
+        <p class="text-gray-300">
+          <strong>Estimated Earnings</strong> =
+          Deposit × (APY ÷ 100) × (Days Held ÷ 365)
+        </p>
+      </div>
 
-<section class="card relative ring-1 ring-orange-400/40 shadow-[0_0_70px_rgba(249,115,22,0.35)]">
-  <h2 class="text-2xl font-extrabold mb-2">Final Take</h2>
-  <p class="muted">
-    CoinRabbit is a specialized borrowing tool designed to convert crypto
-    holdings into liquidity without selling them.
-  </p>
+      <div class="mt-6 grid md:grid-cols-3 gap-4">
+        <div class="rounded-xl border border-white/10 bg-black/40 p-4">
+          <div class="font-extrabold mb-1">Example 1: Short-Term Hold</div>
+          <ul class="text-gray-300 space-y-1">
+            <li>Deposit: $1,000</li>
+            <li>APY: 8%</li>
+            <li>Time: 90 days</li>
+          </ul>
+          <p class="muted mt-2"><strong>$19.73</strong> estimated earnings</p>
+        </div>
 
-  <div class="mt-4">
-    <a href="https://coinrabbit.io/?referral=iC2eCagSAK"
-       target="_blank" rel="noopener"
-       class="btn-primary">
-      Start a CoinRabbit Loan →
-    </a>
-  </div>
-</section>
+        <div class="rounded-xl border border-white/10 bg-black/40 p-4">
+          <div class="font-extrabold mb-1">Example 2: Medium-Term Hold</div>
+          <ul class="text-gray-300 space-y-1">
+            <li>Deposit: $5,000</li>
+            <li>APY: 10%</li>
+            <li>Time: 180 days</li>
+          </ul>
+          <p class="muted mt-2"><strong>$246.58</strong> estimated earnings</p>
+        </div>
 
-<!-- SEO ADDITION START -->
-<section class="card">
-  <h2 class="text-2xl font-extrabold mb-2">CoinRabbit FAQ</h2>
+        <div class="rounded-xl border border-white/10 bg-black/40 p-4">
+          <div class="font-extrabold mb-1">Example 3: Long-Term Hold</div>
+          <ul class="text-gray-300 space-y-1">
+            <li>Deposit: $10,000</li>
+            <li>APY: 10%</li>
+            <li>Time: 365 days</li>
+          </ul>
+          <p class="muted mt-2"><strong>$1,000</strong> estimated earnings</p>
+        </div>
+      </div>
 
-  <p class="muted"><strong>What is a crypto-backed loan?</strong><br>
-  A loan that uses cryptocurrency as collateral so you can borrow without selling.</p>
+      <p class="fine mt-3">
+        Examples are illustrative only and use hypothetical rates. They are not CoinRabbit quotes, forecasts, or guarantees.
+      </p>
+    </section>
 
-  <p class="muted mt-3"><strong>Can you get liquidated on CoinRabbit?</strong><br>
-  Yes. If collateral value drops and LTV exceeds thresholds, liquidation can occur.</p>
+    <section id="earn-calculator" class="card">
+      <h2 class="text-2xl font-extrabold mb-4">Illustrative Interest Calculator</h2>
 
-  <p class="muted mt-3"><strong>Is borrowing against crypto taxable?</strong><br>
-  Borrowing is typically not a taxable event, but rules vary by jurisdiction.</p>
+      <p class="muted mb-4">
+        Explore hypothetical annualized interest math based on a user-entered rate and time period. This is not a CoinRabbit earnings estimate.
+      </p>
 
-  <p class="muted mt-3"><strong>Who should use CoinRabbit?</strong><br>
-  Experienced holders who understand volatility and manage LTV conservatively.</p>
-</section>
-<!-- SEO ADDITION END -->
+      <div class="grid md:grid-cols-4 gap-3">
+        <input id="earnAmt" type="number" value="1000"
+          class="p-2 rounded bg-black/60 border border-white/10" placeholder="Deposit ($)">
+        <input id="earnApy" type="number" value="8"
+          class="p-2 rounded bg-black/60 border border-white/10" placeholder="APY (%)">
+        <input id="earnDays" type="number" value="90"
+          class="p-2 rounded bg-black/60 border border-white/10" placeholder="Days">
+        <select id="earnMode" class="p-2 rounded bg-black/60 border border-white/10">
+          <option value="simple">Simple (Daily Accrual)</option>
+          <option value="compound">Compound (Daily)</option>
+        </select>
+      </div>
 
-</main>
+      <div class="mt-4 grid md:grid-cols-3 gap-3">
+        <div><strong>Estimated Interest:</strong> <span id="earnInterest">$0.00</span></div>
+        <div><strong>Total Balance:</strong> <span id="earnTotal">$0.00</span></div>
+        <div><strong>Gain:</strong> <span id="earnPct">0.00%</span></div>
+      </div>
 
-<footer class="border-t border-white/10">
-  <div class="wrap py-8 text-sm text-gray-400">
-    © <span id="year"></span> The Degenstein Report
-  </div>
-</footer>
+      <div class="mt-4 flex flex-wrap gap-2">
+        <button class="btn-outline" onclick="earnPresetShort()">30 Days</button>
+        <button class="btn-outline" onclick="earnPresetMedium()">90 Days</button>
+        <button class="btn-outline" onclick="earnPresetLong()">365 Days</button>
+      </div>
 
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+      <p class="fine mt-4">
+        Illustrative math assumes the entered annualized rate remains constant. It does not model platform failure, withdrawal restrictions, stablecoin risk, fees, taxes, or asset-price changes.
+      </p>
+    </section>
 
-<script>
-const earnAmt = document.getElementById("earnAmt");
-const earnApy = document.getElementById("earnApy");
-const earnDays = document.getElementById("earnDays");
-const earnMode = document.getElementById("earnMode");
+    <section id="risk" class="card">
+      <h2 class="text-2xl font-extrabold mb-2">Risk Notes</h2>
+      <p class="muted">
+        Crypto-backed loans carry market, liquidation, custody, counterparty, operational, legal, and platform risk.
+        CoinRabbit's terms state that collateral received by CoinRabbit becomes a deposit and that liquidation may automatically sell collateral to cover the loan and accrued interest when the margin-call price is reached. Alerts may help, but they should not be treated as a guarantee that a borrower can act before liquidation.
+      </p>
+    </section>
 
-const earnInterest = document.getElementById("earnInterest");
-const earnTotal = document.getElementById("earnTotal");
-const earnPct = document.getElementById("earnPct");
+    <section class="card relative ring-1 ring-orange-400/40 shadow-[0_0_70px_rgba(249,115,22,0.35)]">
+      <h2 class="text-2xl font-extrabold mb-2">Final Take</h2>
+      <p class="muted">
+        CoinRabbit offers a broad crypto-backed borrowing product, but the decision should be based on the exact APR,
+        starting LTV, liquidation LTV, collateral volatility, custody terms, and the borrower's ability to withstand a rapid market decline.
+      </p>
 
-function calcEarn() {
-  const P = +earnAmt.value || 0;
-  const r = (+earnApy.value || 0) / 100;
-  const d = +earnDays.value || 0;
+      <div class="mt-4">
+        <a href="https://coinrabbit.io/?referral=iC2eCagSAK"
+           target="_blank" rel="noopener"
+           class="btn-primary">
+          Review CoinRabbit's current loan terms →
+        </a>
+      </div>
+    </section>
 
-  let total;
-  if (earnMode.value === "compound") {
-    total = P * Math.pow(1 + r / 365, d);
-  } else {
-    total = P * (1 + r * (d / 365));
-  }
+    <!-- SEO ADDITION START -->
+    <section class="card">
+      <h2 class="text-2xl font-extrabold mb-2">CoinRabbit FAQ</h2>
 
-  const interest = total - P;
-  earnInterest.textContent = "$" + interest.toFixed(2);
-  earnTotal.textContent = "$" + total.toFixed(2);
-  earnPct.textContent = ((interest / P) * 100 || 0).toFixed(2) + "%";
-}
+      <p class="muted"><strong>What is a crypto-backed loan?</strong><br>
+      A loan that uses cryptocurrency as collateral so you can borrow without selling.</p>
 
-function earnPresetShort(){ earnAmt.value=1000; earnApy.value=8; earnDays.value=30; earnMode.value="simple"; calcEarn(); }
-function earnPresetMedium(){ earnAmt.value=1000; earnApy.value=8; earnDays.value=90; earnMode.value="simple"; calcEarn(); }
-function earnPresetLong(){ earnAmt.value=1000; earnApy.value=8; earnDays.value=365; earnMode.value="compound"; calcEarn(); }
+      <p class="muted mt-3"><strong>Can you get liquidated on CoinRabbit?</strong><br>
+      Yes. If collateral value drops and LTV exceeds thresholds, liquidation can occur.</p>
 
-["earnAmt","earnApy","earnDays","earnMode"].forEach(id =>
-  document.getElementById(id).addEventListener("input", calcEarn)
-);
+      <p class="muted mt-3"><strong>Is borrowing against crypto taxable?</strong><br>
+      Do not assume a crypto-backed loan is automatically tax-free. Tax treatment can vary by jurisdiction and transaction facts; consult a qualified tax professional for your situation.</p>
 
-calcEarn();
-</script>
+      <p class="muted mt-3"><strong>Who should use CoinRabbit?</strong><br>
+      Users who have independently reviewed the loan terms, understand automatic liquidation risk, and can evaluate whether centralized collateral custody fits their risk tolerance.</p>
+    </section>
+    <!-- SEO ADDITION END -->
 
-<!-- SEO ADDITION START -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is a crypto-backed loan?",
-      "acceptedAnswer": { "@type": "Answer", "text": "A crypto-backed loan lets you borrow using cryptocurrency as collateral without selling it." }
-    },
-    {
-      "@type": "Question",
-      "name": "Can you get liquidated on CoinRabbit?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. If collateral value drops and LTV thresholds are breached, liquidation can occur." }
-    },
-    {
-      "@type": "Question",
-      "name": "Is borrowing against crypto taxable?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Borrowing is usually not taxable, but tax rules vary by jurisdiction." }
+    </main>
+
+    <footer class="border-t border-white/10">
+      <div class="wrap py-8 text-sm text-gray-400">
+        <strong>Research &amp; Risk Disclosure:</strong> This independent review is educational and does not constitute financial, investment, legal, or tax advice. Crypto-backed loans can result in automatic liquidation and partial or total loss of collateral. Third-party custodial platforms create counterparty and operational risk. Some links are referral links and may compensate Degenstein at no additional cost to you. Verify current terms directly with the provider.<br><br>
+        <a href="/about/">About</a> · <a href="/contact/">Contact</a> · <a href="/editorial-policy/">Editorial Policy</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a><br><br>
+        © <span id="year"></span> The Degenstein Report
+      </div>
+    </footer>
+
+    <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
+    <script>
+    const earnAmt = document.getElementById("earnAmt");
+    const earnApy = document.getElementById("earnApy");
+    const earnDays = document.getElementById("earnDays");
+    const earnMode = document.getElementById("earnMode");
+
+    const earnInterest = document.getElementById("earnInterest");
+    const earnTotal = document.getElementById("earnTotal");
+    const earnPct = document.getElementById("earnPct");
+
+    function calcEarn() {
+      const P = +earnAmt.value || 0;
+      const r = (+earnApy.value || 0) / 100;
+      const d = +earnDays.value || 0;
+
+      let total;
+      if (earnMode.value === "compound") {
+        total = P * Math.pow(1 + r / 365, d);
+      } else {
+        total = P * (1 + r * (d / 365));
+      }
+
+      const interest = total - P;
+      earnInterest.textContent = "$" + interest.toFixed(2);
+      earnTotal.textContent = "$" + total.toFixed(2);
+      earnPct.textContent = ((interest / P) * 100 || 0).toFixed(2) + "%";
     }
-  ]
-}
-</script>
-<!-- SEO ADDITION END -->
 
-</body>
-</html>
+    function earnPresetShort(){ earnAmt.value=1000; earnApy.value=8; earnDays.value=30; earnMode.value="simple"; calcEarn(); }
+    function earnPresetMedium(){ earnAmt.value=1000; earnApy.value=8; earnDays.value=90; earnMode.value="simple"; calcEarn(); }
+    function earnPresetLong(){ earnAmt.value=1000; earnApy.value=8; earnDays.value=365; earnMode.value="compound"; calcEarn(); }
+
+    ["earnAmt","earnApy","earnDays","earnMode"].forEach(id =>
+      document.getElementById(id).addEventListener("input", calcEarn)
+    );
+
+    calcEarn();
+    </script>
+
+    <!-- SEO ADDITION START -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a crypto-backed loan?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A crypto-backed loan lets you borrow using cryptocurrency as collateral without selling it." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you get liquidated on CoinRabbit?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. If collateral value drops and LTV thresholds are breached, liquidation can occur." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is borrowing against crypto taxable?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Tax treatment of crypto-backed borrowing varies by jurisdiction and transaction facts. Users should consult a qualified tax professional for their situation." }
+        }
+      ]
+    }
+    </script>
+    <!-- SEO ADDITION END -->
+
+    </body>
+    </html>
+
 
