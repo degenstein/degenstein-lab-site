@@ -1,216 +1,232 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <meta name="robots" content="index, follow" />
 
-  <title>Degenstein Weekly — Institutional Flows & RWA Validation</title>
+          <title>Degenstein Weekly — Risk-Off Markets, ETF Flows & RWA Growth</title>
 
-  <meta name="description" content="A no-BS weekly crypto brief covering institutional flows, real-world assets, infrastructure chains, and how to earn yield while markets build structure." />
-  <link rel="canonical" href="https://degenstein.xyz/degenstein-weekly/" />
+          <meta name="description" content="A weekly crypto research brief covering institutional flows, real-world assets, infrastructure networks, market structure, and risk-focused platform research." />
+          <link rel="canonical" href="https://degenstein.xyz/degenstein-weekly/" />
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="article" />
-  <meta property="og:site_name" content="Degenstein" />
-  <meta property="og:title" content="Degenstein Weekly — Institutional Flows & RWA Validation" />
-  <meta property="og:description" content="No hype. Just structure, adoption, and positioning." />
-  <meta property="og:url" content="https://degenstein.xyz/degenstein-weekly/" />
-  <meta property="og:image" content="https://degenstein.xyz/assets/weekly-og-1200x630.png" />
+          <meta property="og:type" content="article" />
+          <meta property="og:site_name" content="Degenstein Crypto Hub" />
+          <meta property="og:title" content="Degenstein Weekly — Risk-Off Markets, ETF Flows & RWA Growth" />
+          <meta property="og:description" content="Independent crypto research focused on structure, adoption, infrastructure, and risk." />
+          <meta property="og:url" content="https://degenstein.xyz/degenstein-weekly/" />
+          <meta property="og:image" content="https://degenstein.xyz/assets/weekly-og-1200x630.png" />
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Degenstein Weekly — Institutional Flows & RWA Validation" />
-  <meta name="twitter:description" content="Institutions, RWAs, and paid patience." />
-  <meta name="twitter:image" content="https://degenstein.xyz/assets/weekly-og-1200x630.png" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="Degenstein Weekly — Risk-Off Markets, ETF Flows & RWA Growth" />
+          <meta name="twitter:description" content="Institutional flows, RWAs, infrastructure, and market structure." />
+          <meta name="twitter:image" content="https://degenstein.xyz/assets/weekly-og-1200x630.png" />
 
-  <style>
-    body { background:#000; color:#fff; font-family:system-ui, sans-serif; line-height:1.7; margin:0; }
-    h1,h2,h3 { font-weight:800; margin-top:1.8rem; letter-spacing:.2px; }
-    .container { max-width:960px; margin:0 auto; padding:2.2rem 1.2rem; }
-    a { color:#34ffa8; text-decoration:none; }
-    a:hover { opacity:.9; }
-    .divider { border-bottom:1px solid #222; margin:2.4rem 0; }
-    ul { padding-left:1.3rem; }
-    li { margin:.45rem 0; }
-    .pill { display:inline-block; padding:4px 12px; border-radius:999px; background:#111; border:1px solid #222; font-size:13px; margin-bottom:1.2rem; }
-    nav { background:#0a0a0a; padding:1rem; border-bottom:1px solid #111; text-align:center; }
-    nav a { margin:0 1rem; font-weight:800; }
-    .updated { font-size:13px; opacity:.65; margin-top:.6rem; }
-    .lede { opacity:.92; max-width:80ch; }
-    .callout { background:#0b0b0b; border:1px solid #222; border-radius:14px; padding:1.4rem; }
-    .grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-    @media (max-width:780px){ .grid { grid-template-columns:1fr; } }
-    .card { background:#0b0b0b; border:1px solid #222; border-radius:14px; padding:1.3rem; }
-    .strategyBox { background:linear-gradient(135deg,#0d1f17,#050505); border:1px solid #1f4d3a; border-radius:16px; padding:1.7rem; }
-    .tag { display:inline-block; font-size:12px; border:1px solid #1f4d3a; color:#34ffa8; background:rgba(52,255,168,.06); padding:4px 12px; border-radius:999px; margin-bottom:.6rem; }
-    .muted { opacity:.7; font-size:14px; }
-  </style>
-</head>
+          <style>
+            body { background:#000; color:#fff; font-family:system-ui, sans-serif; line-height:1.7; margin:0; }
+            h1,h2,h3 { font-weight:800; margin-top:1.8rem; letter-spacing:.2px; }
+            .container { max-width:960px; margin:0 auto; padding:2.2rem 1.2rem; }
+            a { color:#34ffa8; text-decoration:none; }
+            a:hover { opacity:.9; }
+            .divider { border-bottom:1px solid #222; margin:2.4rem 0; }
+            ul { padding-left:1.3rem; }
+            li { margin:.45rem 0; }
+            .pill { display:inline-block; padding:4px 12px; border-radius:999px; background:#111; border:1px solid #222; font-size:13px; margin-bottom:1.2rem; }
+            nav { background:#0a0a0a; padding:1rem; border-bottom:1px solid #111; text-align:center; }
+            nav a { margin:0 1rem; font-weight:800; }
+            .updated { font-size:13px; opacity:.65; margin-top:.6rem; }
+            .lede { opacity:.92; max-width:80ch; }
+            .callout { background:#0b0b0b; border:1px solid #222; border-radius:14px; padding:1.4rem; }
+            .grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+            @media (max-width:780px){ .grid { grid-template-columns:1fr; } }
+            .card { background:#0b0b0b; border:1px solid #222; border-radius:14px; padding:1.3rem; }
+            .strategyBox { background:linear-gradient(135deg,#0d1f17,#050505); border:1px solid #1f4d3a; border-radius:16px; padding:1.7rem; }
+            .tag { display:inline-block; font-size:12px; border:1px solid #1f4d3a; color:#34ffa8; background:rgba(52,255,168,.06); padding:4px 12px; border-radius:999px; margin-bottom:.6rem; }
+            .muted { opacity:.7; font-size:14px; }
+          </style>
+        </head>
 
-<body>
+        <body>
 
-<nav>
-  <a href="/">← Back Home</a>
-  <a href="#latest">Latest Edition</a>
-</nav>
+        <nav>
+          <a href="/">← Back Home</a>
+          <a href="#latest">Latest Edition</a>
+          <a href="/report/">Reports</a>
+          <a href="/editorial-policy/">Editorial Policy</a>
+        </nav>
 
-<div class="container">
-  <span class="pill">🔥 Latest Edition</span>
-  <h1>Degenstein Weekly: Institutional Flows & RWA Validation</h1>
+        <div class="container">
+          <span class="pill">🔥 Research Edition</span>
+          <h1>Degenstein Weekly: Risk-Off Markets, ETF Flows & RWA Growth</h1>
 
-  <p class="lede">
-    Price is the last thing to move.
-    Structure moves first. Infrastructure follows.
-    Capital allocates quietly — then price reacts.
-  </p>
+          <p class="lede">
+            Market structure often develops before price fully reflects a narrative.
+            This edition reviews institutional activity, infrastructure development,
+            and real-world asset themes through a research-first lens.
+          </p>
 
-  <p class="updated">Last updated: <strong>February 2026</strong></p>
+          <p class="updated">Edition date: <strong>July 8, 2026</strong></p>
 
-  <div class="divider"></div>
+          <div class="divider"></div>
 
-  <h2 id="latest">🚀 Top Headlines (Past 7 Days)</h2>
-  <ul>
-    <li><strong>Institutions:</strong> Capital continues flowing into regulated crypto infrastructure, not speculation.</li>
-    <li><strong>RWAs:</strong> Tokenized treasuries and equities hit new on-chain highs despite market chop.</li>
-    <li><strong>XRP Ledger:</strong> RWA issuance accelerates as institutions favor governed settlement layers.</li>
-    <li><strong>ONDO + LINK:</strong> Real-world assets gain deeper liquidity and pricing reliability.</li>
-    <li><strong>Infra Chains:</strong> UX, scaling, and enterprise tooling continue to outperform memes.</li>
-  </ul>
+          <h2 id="latest">🚀 Research Themes</h2>
+          <ul>
+            <li><strong>Institutions:</strong> Watch regulated crypto infrastructure, custody, settlement, and tokenization activity.</li>
+            <li><strong>RWAs:</strong> Tokenized treasuries and other real-world asset structures remain an important area of on-chain development.</li>
+            <li><strong>XRP Ledger:</strong> Monitor issuance, settlement use cases, liquidity, and institutional integrations.</li>
+            <li><strong>ONDO + LINK:</strong> Research tokenized asset infrastructure, data reliability, interoperability, and liquidity.</li>
+            <li><strong>Infrastructure Networks:</strong> User experience, scaling, and enterprise tooling remain key adoption variables.</li>
+          </ul>
 
-  <div class="callout">
-    <span class="tag">No-BS Takeaway</span>
-    <p style="margin:0;">
-      This wasn’t a momentum week — it was a validation week.
-      Institutions kept building while retail stayed distracted.
-    </p>
-  </div>
+          <div class="callout">
+            <span class="tag">Research Takeaway</span>
+            <p style="margin:0;">
+              This edition is less about short-term momentum and more about evaluating whether infrastructure,
+              adoption, and capital formation are supporting longer-term crypto themes.
+            </p>
+          </div>
 
-  <div class="divider"></div>
+          <div class="divider"></div>
 
-  <h2>📊 Market Snapshot</h2>
-  <div class="grid">
-    <div class="card">
-      <h3 style="margin-top:0;">Majors</h3>
-      <ul>
-        <li><strong>BTC:</strong> Consolidation above structural support.</li>
-        <li><strong>ETH:</strong> Base-building as tokenization expands.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3 style="margin-top:0;">Winning Themes</h3>
-      <ul>
-        <li>Payments & settlement rails</li>
-        <li>Tokenized yield & RWAs</li>
-        <li>Chain abstraction & UX</li>
-        <li>Enterprise blockchain infrastructure</li>
-      </ul>
-    </div>
-  </div>
+          <h2>📊 Market Framework</h2>
+          <div class="grid">
+            <div class="card">
+              <h3 style="margin-top:0;">Majors</h3>
+              <ul>
+                <li><strong>BTC:</strong> Monitor market structure, liquidity, and key support or resistance zones.</li>
+                <li><strong>ETH:</strong> Monitor network activity, scaling, and tokenization-related development.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3 style="margin-top:0;">Themes to Research</h3>
+              <ul>
+                <li>Payments & settlement infrastructure</li>
+                <li>Tokenized assets & RWAs</li>
+                <li>Chain abstraction & user experience</li>
+                <li>Enterprise blockchain infrastructure</li>
+              </ul>
+            </div>
+          </div>
 
-  <div class="divider"></div>
+          <div class="divider"></div>
 
-  <h2>🏛️ Real-World Assets</h2>
-  <p>
-    RWAs are doing what most crypto narratives fail to do:
-    absorb capital during volatility.
-  </p>
-  <p>
-    Tokenized treasuries, equities, and yield products continue to grow on-chain —
-    proving this isn’t a trend, it’s a transition.
-  </p>
+          <h2>🏛️ Real-World Assets</h2>
+          <p>
+            Real-world asset tokenization is one of the crypto sectors worth monitoring because it attempts
+            to connect traditional financial instruments with blockchain-based issuance and settlement.
+          </p>
+          <p>
+            Tokenized treasuries, funds, and other asset structures should be evaluated using measurable factors
+            such as assets under management, liquidity, issuer quality, legal structure, custody, and actual on-chain usage.
+          </p>
 
-  <div class="divider"></div>
+          <div class="divider"></div>
 
-  <h2>💎 Infrastructure Check</h2>
-  <p>
-    XRP focuses on compliant global settlement.
-    ONDO tokenizes yield.
-    LINK secures the data layer.
-  </p>
-  <p>
-    These aren’t hype assets;
-    they’re financial plumbing that institutions are adopting first.
-  </p>
+          <h2>💎 Infrastructure Check</h2>
+          <p>
+            XRP is researched for payment and settlement use cases.
+            ONDO is associated with tokenized asset infrastructure.
+            LINK provides oracle and cross-chain infrastructure.
+          </p>
+          <p>
+            These are investment narratives, not guarantees. Adoption, competition, token economics,
+            regulation, execution, and market conditions can materially change an asset thesis.
+          </p>
 
-  <div class="divider"></div>
+          <div class="divider"></div>
 
-  <h2>📘 New CoinDepo Report</h2>
-  <p>
-    This week we published an in-depth report on CoinDepo’s “Earn While You Hold” thesis:
-  </p>
-  <p>
-    <a href="https://degenstein.xyz/report/coindepo-earn-while-you-hold/">
-      https://degenstein.xyz/report/coindepo-earn-while-you-hold/
-    </a>
-  </p>
-  <p class="muted">
-    A detailed breakdown of how structured yield can reduce timing pressure and augment long-term positioning.
-  </p>
+          <h2>📘 CoinDepo Platform Research</h2>
+          <p>
+            Degenstein Crypto Hub published a research review of CoinDepo and its crypto and stablecoin interest-account structure.
+          </p>
+          <p>
+            <a href="/report/coindepo-earn-while-you-hold/">
+              Read the CoinDepo research review →
+            </a>
+          </p>
+          <p class="muted">
+            The review examines account structures, advertised rates, platform mechanics, custody considerations,
+            withdrawal terms, and risks. Rates and platform terms may change.
+          </p>
 
-  <div class="divider"></div>
+          <div class="divider"></div>
 
-  <h2>💼 Earn While You Hold</h2>
-  <p>
-    Volatility punishes impatience.
-    Yield rewards conviction.
-  </p>
+          <h2>💼 Crypto Interest Accounts & Platform Risk</h2>
+          <p>
+            Interest-bearing crypto products can introduce risks that are different from simply holding an asset.
+            Higher advertised rates do not eliminate price volatility and may add custody, counterparty,
+            liquidity, withdrawal, operational, or platform-specific risk.
+          </p>
 
-  <div class="strategyBox">
-    <h3 style="margin-top:0; color:#34ffa8;">Strategy Spotlight: CoinDepo</h3>
-    <ul>
-      <li>Earn competitive APR while holding crypto</li>
-      <li>No active trading or leverage required</li>
-      <li>Turns waiting into a paid strategy</li>
-    </ul>
+          <div class="strategyBox">
+            <h3 style="margin-top:0; color:#34ffa8;">Platform Research Spotlight: CoinDepo</h3>
+            <ul>
+              <li>Review current advertised rates and account structures directly with the provider</li>
+              <li>Understand custody, counterparty, withdrawal, and platform-specific risks</li>
+              <li>Compare interest-account risk with self-custody and other alternatives</li>
+            </ul>
 
-    <p>
-      <strong>USA residents:</strong><br>
-      <a href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV">
-        https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV
-      </a>
-    </p>
+            <p>
+              <strong>Official CoinDepo research review:</strong><br>
+              <a href="/report/coindepo-earn-while-you-hold/">
+                Read Degenstein's platform analysis →
+              </a>
+            </p>
 
-    <p>
-      <strong>All other countries:</strong><br>
-      <a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W">
-        https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W
-      </a>
-    </p>
+            <p class="muted">
+              Some outbound links on Degenstein Crypto Hub may be affiliate or referral links.
+              If you use one, I may receive compensation at no additional cost to you.
+              Referral relationships do not determine research coverage.
+            </p>
+          </div>
 
-    <p class="muted">This is how I stay patient, liquid, and paid.</p>
-  </div>
+          <div class="divider"></div>
 
-  <div class="divider"></div>
+          <h2>✅ Research Checklist</h2>
+          <ul>
+            <li>Evaluate infrastructure and RWA narratives using measurable adoption data</li>
+            <li>Avoid making decisions based only on short-term price action or social-media hype</li>
+            <li>Separate asset-price risk from third-party platform and counterparty risk</li>
+            <li>Verify current platform terms, rates, fees, and withdrawal conditions directly</li>
+          </ul>
 
-  <h2>✅ Positioning</h2>
-  <ul>
-    <li>Overweight infrastructure and RWAs</li>
-    <li>Undertrade noise and volatility</li>
-    <li>Use yield to remove timing pressure</li>
-    <li>Let institutions lead</li>
-  </ul>
+          <div class="divider"></div>
 
-  <div class="divider"></div>
+          <h2>🧠 Final Thoughts</h2>
+          <p>
+            Strong crypto narratives still require evidence.
+            Infrastructure, adoption, liquidity, token economics, and execution should be monitored over time.
+          </p>
+          <p><strong>Research the thesis → identify the risks → verify the data → build a disciplined framework.</strong></p>
 
-  <h2>🧠 Final Thoughts</h2>
-  <p>
-    Bull markets are built quietly.
-    By the time price moves, positioning is already over.
-  </p>
-  <p><strong>Earn yield → hold conviction → deploy with structure.</strong></p>
+          <div class="divider"></div>
 
-  <div class="divider"></div>
+          <p class="muted">
+            <strong>Research & Risk Disclosure:</strong>
+            This content is for informational and educational purposes only and does not constitute financial,
+            investment, legal, or tax advice. Cryptocurrency and third-party platforms involve substantial risk,
+            including loss of principal. Rates, promotions, platform terms, and availability may change.
+            Independently verify information and review provider terms before making a financial decision.
+          </p>
 
-  <p class="muted">
-    ⚠️ Informational only. Not financial advice. Affiliate links may be used.
-  </p>
+          <footer style="margin-top:40px;padding-top:24px;border-top:1px solid #222;">
+            <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;">
+              <a href="/">Home</a>
+              <a href="/about/">About</a>
+              <a href="/contact/">Contact</a>
+              <a href="/report/">Reports</a>
+              <a href="/editorial-policy/">Editorial Policy</a>
+              <a href="/privacy.html">Privacy</a>
+              <a href="/terms.html">Terms</a>
+            </div>
+            <p style="text-align:center;margin-top:15px;opacity:.55;font-size:.8rem;">
+              © 2026 Degenstein Crypto Hub
+            </p>
+          </footer>
+        </div>
 
-  <br>
-  <p><a href="/">← Back to homepage</a></p>
-</div>
-
-</body>
-</html>
+        </body>
+        </html>
 
 
 
