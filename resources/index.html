@@ -1,1 +1,995 @@
+<!DOCTYPE html> 
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+      <title>Crypto Resources & Tools Directory | Degenstein Crypto Hub</title>
+      <meta name="description" content="Independent crypto research, token reports, platform breakdowns, risk-focused playbooks, and educational tools for long-term crypto investors." />
+      <meta name="robots" content="index, follow" />
+      <link rel="canonical" href="https://degenstein.xyz/" />
+
+      <!-- Open Graph -->
+      <meta property="og:type" content="website" />
+      <meta property="og:site_name" content="Degenstein Crypto Hub" />
+      <meta property="og:title" content="Degenstein Crypto Hub — Independent Crypto Research & Playbooks" />
+      <meta property="og:description" content="Systems-first crypto research: token reports, platform breakdowns, risk-focused playbooks, and educational tools. Research first. Hype last." />
+      <meta property="og:url" content="https://degenstein.xyz/" />
+      <meta property="og:locale" content="en_US" />
+
+      <!-- IMPORTANT: Your new 1200x630 OG image -->
+      <meta property="og:image" content="https://degenstein.xyz/assets/og-degenstein-crypto-hub-1200x630.png?v=1" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+
+      <!-- Twitter / X -->
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@DHouseofcrypto" />
+      <meta name="twitter:creator" content="@DHouseofcrypto" />
+      <meta name="twitter:title" content="Degenstein Crypto Hub — Independent Crypto Research & Playbooks" />
+      <meta name="twitter:description" content="Systems-first crypto research: token reports, platform breakdowns, risk-focused playbooks, and educational tools. Research first. Hype last." />
+      <meta name="twitter:image" content="https://degenstein.xyz/assets/og-degenstein-crypto-hub-1200x630.png?v=1" />
+
+      <meta name="theme-color" content="#10b981" />
+
+      <!-- Fonts + Tailwind CDN -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+      <script src="https://cdn.tailwindcss.com"></script>
+
+      <!-- Base styles -->
+      <style>
+        :root { color-scheme: dark; }
+        html, body {
+          background:#000; color:#e5e7eb;
+          font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+          font-size: 16px;
+          line-height: 1.6;
+        }
+        a { text-decoration: none; }
+
+        /* Layout polish */
+        .container-max { max-width: 72rem; } /* ~max-w-6xl */
+        .content-max { max-width: 42rem; }   /* readable paragraphs */
+        .section-pad { padding-top: 3.25rem; padding-bottom: 3.25rem; }
+        @media (min-width: 768px) {
+          .section-pad { padding-top: 4rem; padding-bottom: 4rem; }
+        }
+
+        .glow { box-shadow: 0 0 30px rgba(0,255,170,0.15), inset 0 0 20px rgba(0,255,170,0.05); }
+
+        .btn {
+          display:inline-flex; align-items:center; justify-content:center;
+          padding:0.85rem 1.25rem; border-radius:1rem;
+          font-weight:700; transition:transform .15s ease, opacity .15s ease;
+          backdrop-filter: blur(6px);
+          letter-spacing: -0.01em;
+        }
+        .btn:hover { transform: translateY(-2px); }
+        .btn:active { transform: translateY(0); }
+        .btn:focus { outline: none; box-shadow: 0 0 0 2px rgba(16,185,129,0.35); }
+
+        .btn-primary {
+          background: linear-gradient(135deg,#22c55e,#06b6d4);
+          color:#00110b;
+        }
+        .btn-outline {
+          border:1px solid rgba(255,255,255,0.14);
+          background: rgba(255,255,255,0.03);
+          color:#e5e7eb;
+        }
+
+        .card {
+          border-radius:1.5rem; padding:1.5rem;
+          background: rgba(23,23,23,0.55);
+          border:1px solid rgba(255,255,255,0.10);
+          box-shadow: 0 0 28px rgba(0,255,170,0.12), inset 0 0 18px rgba(0,255,170,0.04);
+        }
+        @media (min-width: 768px) { .card { padding:2rem; } }
+
+        .badge {
+          display:inline-block; font-size:0.75rem;
+          padding:0.25rem 0.5rem; border-radius:9999px;
+          border:1px solid rgba(255,255,255,0.1);
+          background: rgba(255,255,255,0.05);
+        }
+
+        /* Pills */
+        .pill {
+          display:inline-flex;
+          align-items:center;
+          gap:0.35rem;
+          font-size:0.75rem;
+          padding:0.3rem 0.7rem;
+          border-radius:9999px;
+          border:1px solid rgba(16,185,129,0.55);
+          background:rgba(16,185,129,0.12);
+          color:#6ee7b7;
+          font-weight:700;
+          white-space:nowrap;
+        }
+        .pill-secondary {
+          border-color: rgba(148, 163, 184, 0.6);
+          background: rgba(15, 23, 42, 0.6);
+          color:#e5e7eb;
+        }
+        .pill-secondary:hover {
+          border-color: rgba(34, 197, 94, 0.8);
+          color:#6ee7b7;
+        }
+
+        /* ✅ Playbooks pill button */
+        .pill-playbooks{
+          border-color: rgba(6,182,212,0.60);
+          background: rgba(6,182,212,0.10);
+          color:#67e8f9;
+          font-weight:800;
+          transition: transform .15s ease, border-color .15s ease, color .15s ease;
+        }
+        .pill-playbooks:hover{
+          border-color: rgba(34,197,94,0.75);
+          color:#a7f3d0;
+          transform: translateY(-1px);
+        }
+
+        /* Nav */
+        .navlink{
+          display:inline-flex; align-items:center; justify-content:center;
+          padding:0.55rem 0.9rem;
+          border-radius: 1rem;
+          border:1px solid rgba(255,255,255,0.10);
+          background: rgba(0,0,0,0.10);
+          font-size: 0.875rem;
+          transition: border-color .15s ease, color .15s ease, background .15s ease;
+        }
+        .navlink:hover{
+          border-color: rgba(16,185,129,0.35);
+          background: rgba(255,255,255,0.04);
+          color: #fff;
+        }
+        .navlink-active{
+          border-color: rgba(16,185,129,0.55) !important;
+          background: rgba(16,185,129,0.10) !important;
+          color: #a7f3d0 !important;
+        }
+
+        /* Text links for secondary actions */
+        .textlink{
+          display:inline-flex; align-items:center; gap:.45rem;
+          font-weight:700;
+          font-size: 0.85rem;
+          color:#6ee7b7;
+        }
+        .textlink:hover{ color:#a7f3d0; text-decoration: underline; text-underline-offset: 4px; }
+
+        @media (prefers-reduced-motion: reduce) {
+          * { transition: none !important; animation: none !important; }
+        }
+      </style>
+    </head>
+
+    <body>
+<header class="sticky top-0 z-50 backdrop-blur bg-black/60 border-b border-white/10">
+      <div class="container-max mx-auto px-4 py-3 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-3">
+          <img src="assets/dan-degenstein-crypto-avatar.png"
+               alt="Dan Degenstein | House of Crypto"
+               class="w-14 h-14 md:w-20 md:h-20 rounded-full object-cover"
+               width="80" height="80" />
+          <div>
+            <h1 class="text-lg md:text-xl font-extrabold tracking-tight">Degenstein Crypto Hub</h1>
+            <p class="text-[11px] text-gray-400 hidden sm:block">
+              Research • Reports • Playbooks • Tools
+            </p>
+          </div>
+        </a>
+
+        <nav class="flex flex-wrap items-center justify-end gap-2">
+          <a href="#start-here" class="navlink" data-scrollspy="start-here">Start Here</a>
+          <a href="/report/#platforms-yield-tooling" class="navlink">Platforms</a>
+
+          <a href="/playbooks/" class="navlink">📘 Playbooks</a>
+
+          <!-- REMOVED: $COINDEPO Token (Buy) -->
+          <!-- REMOVED: CoinDepo Review -->
+    <a href="/about/" class="navlink">👤 About</a>
+          <a href="/contact/" class="navlink">📬 Contact</a>
+          <a href="/degenstein-weekly/" class="navlink">📰 Weekly</a>
+          <a href="/report/" class="navlink">📊 Reports</a>
+          <a href="/resources/" class="navlink">Resources</a>
+
+          <span class="mx-1 w-px h-6 bg-white/10"></span>
+
+          <a href="/report/#platforms-yield-tooling"
+       class="inline-flex items-center gap-2 px-4 py-2 rounded-2xl font-extrabold text-sm
+              bg-gradient-to-br from-emerald-500 to-cyan-500 text-black">
+      🧰 Compare Platforms
+    </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ====================== MAIN BANNER (NEW) ====================== -->
+    <section id="start-here" class="relative overflow-hidden border-b border-white/10 bg-black">
+      <!-- Background image -->
+      <div class="absolute inset-0">
+        <img
+          src="assets/crypto-hub-banner-1920x720.jpg"
+          alt="Degenstein Crypto Hub"
+          class="w-full h-full object-cover opacity-55"
+          loading="eager"
+        />
+        <!-- Readability overlay -->
+        <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black"></div>
+      </div>
+
+      <!-- Accent glows -->
+      <div class="absolute -top-32 -left-32 w-[520px] h-[520px] rounded-full blur-3xl opacity-20" style="background:radial-gradient(circle,#06b6d4,transparent 60%)"></div>
+      <div class="absolute -bottom-32 -right-32 w-[520px] h-[520px] rounded-full blur-3xl opacity-20" style="background:radial-gradient(circle,#22c55e,transparent 60%)"></div>
+
+      <div class="relative container-max mx-auto px-4 py-14 md:py-20">
+        <div class="card">
+          <div class="grid md:grid-cols-12 gap-8 items-center">
+
+            <div class="md:col-span-8">
+              <div class="mb-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[11px] font-extrabold uppercase tracking-wide text-emerald-200">
+                <span>⚡ Systems-first</span><span>•</span><span>No hopium</span><span>•</span><span>Actionable setups</span>
+              </div>
+
+              <h1 class="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight">
+      Independent <span class="text-emerald-400">Crypto Research</span>, Reports &amp; Playbooks
+    </h1>
+
+              <p class="mt-3 text-base md:text-lg text-gray-200 content-max">
+                Independent research for crypto investors who want less hype and more structure. Explore token deep dives,
+                disciplined playbooks, platform breakdowns, tracking tools, and risk-focused educational resources.
+              </p>
+
+              <div class="mt-6 flex flex-wrap gap-3">
+                <a href="/playbooks/" class="btn btn-primary text-base">
+                  📘 Start with Playbooks
+                </a>
+                <a href="/report/" class="btn btn-outline text-base">
+                  📊 Read the Reports
+                </a>
+                <a href="/report/platforms/" class="btn btn-outline text-base">
+                  🧰 Tools: What you actually need
+                </a>
+              </div>
+
+              <div class="mt-5 flex flex-wrap gap-2 items-center text-xs text-gray-300">
+                <span class="pill pill-secondary">🛡️ Not financial advice</span>
+                <span class="pill pill-secondary">🔍 Transparent reviews</span>
+                <span class="pill">🕒 Last updated: <span class="lastUpdated">—</span></span>
+              </div>
+            </div>
+
+            <aside class="md:col-span-4 space-y-3">
+              <div class="rounded-2xl border border-emerald-500/30 bg-black/55 p-5">
+                <div class="flex items-center gap-3">
+                  <div class="text-3xl">🧭</div>
+                  <div>
+                    <h3 class="text-xl font-extrabold">Start Here</h3>
+                    <p class="text-sm text-gray-200/90">The clean “starter stack” for 90% of people.</p>
+                  </div>
+                </div>
+                <ul class="mt-3 text-sm text-gray-200/90 space-y-1">
+                  <li>• Research: Read independent reports</li>
+                  <li>• Compare: Review platform features and risks</li>
+                  <li>• Track: Build a simple, repeatable system</li>
+                </ul>
+                <a href="/report/platforms/" class="mt-4 inline-flex w-full justify-center btn btn-primary text-sm">
+                  🧰 Get the setup
+                </a>
+              </div>
+
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-4 text-xs text-gray-300/90">
+                <p><strong>Quick note:</strong> Degenstein Crypto Hub is educational. Some outbound links may be affiliate or referral links and are clearly disclosed.</p>
+              </div>
+            </aside>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container-max mx-auto px-4 section-pad">
+      <h2 class="text-xl font-extrabold mb-3">
+        Crypto Reports, Token Research &amp; Yield Strategies
+      </h2>
+      <p class="text-gray-300 content-max">
+        Degenstein publishes independent crypto research covering token reports,
+        platform breakdowns, and earn strategies for long-term holders.
+        Each report focuses on real use cases, risks, and infrastructure — not price predictions or hype.
+      </p>
+    </section>
+      <!-- ====================== ABOUT DAN ====================== -->
+    <section id="about-dan" class="container-max mx-auto px-4 section-pad">
+      <div class="card">
+        <div class="grid md:grid-cols-12 gap-8 items-center">
+
+          <div class="md:col-span-3 flex justify-center">
+            <img
+              src="/assets/dan-degenstein-crypto-avatar.png"
+              alt="Dan Degenstein"
+              class="w-40 h-40 rounded-full border border-emerald-500/30 object-cover"
+            />
+          </div>
+
+          <div class="md:col-span-9">
+            <div class="inline-flex items-center gap-2 rounded-full border border-cyan-400/40 bg-cyan-500/10 px-3 py-1 text-[11px] font-extrabold uppercase tracking-wide text-cyan-200">
+              👤 About Dan Degenstein
+            </div>
+
+            <h2 class="mt-4 text-3xl font-extrabold tracking-tight">
+              Independent Crypto Research. Systems First.
+            </h2>
+
+            <p class="mt-4 text-gray-300">
+              I'm Dan Degenstein, founder of Degenstein Crypto Hub.
+              I created this website to help investors cut through hype and focus on what actually matters:
+              research, risk management, portfolio construction, crypto infrastructure, and long-term opportunities.
+            </p>
+
+            <p class="mt-4 text-gray-300">
+              Instead of chasing every trend, I focus on building repeatable systems,
+              publishing independent reports, reviewing platforms, and sharing practical playbooks
+              that help investors make more informed decisions.
+            </p>
+
+            <div class="mt-5 flex flex-wrap gap-3">
+              <a href="/about/" class="btn btn-primary">
+                👤 Read My Story
+              </a>
+
+              <a href="/report/" class="btn btn-outline">
+                📊 View Research
+              </a>
+            </div>
+
+            <div class="mt-4 flex flex-wrap gap-2">
+              <span class="pill pill-secondary">📊 Independent Research</span>
+              <span class="pill pill-secondary">🛡️ Risk-Focused</span>
+              <span class="pill pill-secondary">📘 Educational Content</span>
+              <span class="pill pill-secondary">🔍 Transparent Reviews</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- Hero -->
+    <section class="relative overflow-hidden border-b border-white/10 bg-black">
+      <div class="absolute -top-40 -left-40 w-[520px] h-[520px] rounded-full blur-3xl opacity-20" style="background:radial-gradient(circle,#06b6d4,transparent 60%)"></div>
+      <div class="absolute -bottom-40 -right-40 w-[520px] h-[520px] rounded-full blur-3xl opacity-20" style="background:radial-gradient(circle,#22c55e,transparent 60%)"></div>
+
+      <div class="container-max mx-auto px-4 py-14 md:py-18">
+        <div class="card">
+          <div class="grid md:grid-cols-2 gap-10 items-start">
+
+            <div>
+
+              <h3 class="text-2xl md:text-3xl font-extrabold leading-tight tracking-tight">
+                Playbooks + reports + tools — built for <span class="text-emerald-400">disciplined crypto research</span>.
+              </h3>
+
+              <p class="mt-3 text-base md:text-lg text-gray-300 content-max">
+                I publish disciplined playbooks, token breakdowns, platform research, and practical tools —
+                so you can compare information without chasing endless threads or hype.
+              </p>
+
+              <div class="mt-6 flex flex-wrap gap-3">
+                <a href="/playbooks/" class="btn btn-primary text-base">
+                  📘 Start with Playbooks
+                </a>
+                <a href="/report/" class="btn btn-outline text-base">
+                  📊 Read Reports
+                </a>
+                <a href="#how-it-works" class="btn btn-outline text-base">
+                  👇 How It Works
+                </a>
+              </div>
+
+              <!-- Playbooks pill row in hero -->
+              <div class="mt-4 flex flex-wrap gap-2 items-center text-xs text-gray-400">
+                <span class="pill pill-secondary">🔍 Transparent reviews</span>
+                <span class="pill pill-secondary">🛡️ Not financial advice</span>
+                <span class="pill">🕒 Last updated: <span class="lastUpdated">—</span></span>
+
+                <a href="/playbooks/" class="pill pill-playbooks">📘 Playbooks (Rules + Portfolios)</a>
+              </div>
+
+              <div class="mt-4 flex flex-wrap gap-4">
+                <a href="/report/" class="textlink">📊 Read Token Reports</a>
+                <a href="/playbooks/" class="textlink">📘 Open Playbooks</a>
+              </div>
+            </div>
+
+            <aside class="space-y-4">
+              <div class="rounded-2xl border border-emerald-500/40 bg-black/60 p-5">
+                <div class="flex items-center gap-3">
+                  <div class="text-3xl">💠</div>
+                  <div>
+                    <h3 class="text-xl font-extrabold">Platform Research: CoinDepo</h3>
+                    <p class="text-sm text-gray-300">
+                      A research overview of crypto and stablecoin interest accounts, platform structure, and key risks to review.
+                    </p>
+                  </div>
+                </div>
+
+                <ul class="mt-4 text-sm text-gray-300 space-y-1">
+                  <li>• Review supported assets and account structures</li>
+                  <li>• Compare rates, terms, custody, and withdrawal conditions</li>
+                </ul>
+
+                <a href="/coindepo-review/" class="mt-4 inline-flex w-full justify-center btn btn-primary text-sm">
+                  🔎 Read the CoinDepo Research Review
+                </a>
+              </div>
+
+              <!-- Playbooks mini-card -->
+              <div class="rounded-2xl border border-cyan-400/30 bg-cyan-500/10 p-5">
+                <div class="flex items-center gap-3">
+                  <div class="text-3xl">📘</div>
+                  <div>
+                    <h3 class="text-xl font-extrabold">New: Playbooks</h3>
+                    <p class="text-sm text-gray-200/90">
+                      Rules + portfolio examples: <span class="font-extrabold">No-FOMO</span>, <span class="font-extrabold">$1k</span>, <span class="font-extrabold">$5k</span>, and a <span class="font-extrabold">memecoin sleeve</span>.
+                    </p>
+                  </div>
+                </div>
+
+                <a href="/playbooks/" class="mt-4 inline-flex w-full justify-center btn btn-outline text-sm">
+                  📘 Open Playbooks
+                </a>
+              </div>
+
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-4 text-xs text-gray-400">
+                <p>
+                  Transparency: Some outbound links are affiliate or referral links. If you use one, I may receive compensation at no additional cost to you. This does not change the research or risk disclosures.
+                </p>
+              </div>
+            </aside>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured card grid (Weekly + Reports + Playbooks) -->
+    <section id="featured" class="container-max mx-auto px-4 section-pad">
+      <div class="grid gap-5 md:grid-cols-3">
+
+        <!-- Weekly -->
+        <div class="card md:col-span-1">
+          <div class="flex items-start justify-between gap-4">
+            <div class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[11px] font-extrabold uppercase tracking-wide text-emerald-300">
+              <span>📰 Weekly</span>
+              <span>•</span>
+              <span>High-signal recap</span>
+            </div>
+            <a href="/degenstein-weekly/" class="pill">Open</a>
+          </div>
+
+          <div class="mt-4">
+            <img
+              src="assets/weekly-og-1200x630.png"
+              alt="Degenstein Weekly — The Week in Crypto (No BS)"
+              class="w-full h-auto rounded-2xl border border-white/10"
+              loading="lazy"
+            />
+          </div>
+
+          <h2 class="mt-4 text-2xl font-extrabold tracking-tight">
+            Degenstein Weekly: The Week in Crypto (No BS)
+          </h2>
+          <p class="mt-2 text-sm md:text-base text-gray-300 content-max">
+            One page, once a week: headlines, market context, macro risks, and real use-case progress — no hype predictions.
+          </p>
+
+          <div class="mt-4 flex flex-wrap gap-3">
+            <a href="/degenstein-weekly/" class="btn btn-primary text-sm md:text-base">
+              📰 Read This Week’s Edition
+            </a>
+            <a href="/degenstein-weekly/#archive" class="btn btn-outline text-sm md:text-base">
+              📁 View Archive
+            </a>
+          </div>
+        </div>
+
+        <!-- Reports -->
+        <div class="card md:col-span-1">
+          <div class="flex items-start justify-between gap-4">
+            <div class="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-500/10 px-3 py-1 text-[11px] font-extrabold uppercase tracking-wide text-emerald-300">
+              <span>📊 Reports</span>
+              <span>•</span>
+              <span>Token deep dives</span>
+            </div>
+            <a href="/report/" class="pill">Browse</a>
+          </div>
+
+          <div class="mt-4">
+            <img
+              src="assets/degenstein-report-banner-1200x630.png"
+              alt="The Degenstein Report — Token breakdowns, yield angles & real catalysts — no hopium."
+              class="w-full h-auto rounded-2xl border border-emerald-400/40"
+              loading="lazy"
+            />
+          </div>
+
+          <h2 class="mt-4 text-2xl font-extrabold tracking-tight">
+            The Degenstein Report — Token Deep Dives
+          </h2>
+          <p class="mt-2 text-sm md:text-base text-gray-300 content-max">
+            When there’s something real to say about a token, I write a full report: narrative, catalysts, including risks, infrastructure, and the factors I monitor over time.
+          </p>
+
+          <div class="mt-4 flex flex-wrap gap-3">
+            <a href="/report/" class="btn btn-primary text-sm md:text-base">
+              📊 View All Reports
+            </a>
+            <a href="/report/xrp/" class="btn btn-outline text-sm md:text-base">
+              💠 XRP
+            </a>
+            <a href="/report/ondo/" class="btn btn-outline text-sm md:text-base">
+              🏦 ONDO
+            </a>
+            <a href="/report/link/" class="btn btn-outline text-sm md:text-base">
+              🔗 LINK
+            </a>
+          </div>
+
+          <p class="mt-3 text-[11px] text-gray-500 content-max">
+            More tokens will be added over time when they deserve a full write-up.
+          </p>
+        </div>
+    <!-- Summ Report -->
+    <div class="card md:col-span-1">
+      <div class="flex items-start justify-between gap-4">
+        <div class="inline-flex items-center gap-2 rounded-full border border-cyan-400/40 bg-cyan-500/10 px-3 py-1 text-[11px] font-extrabold uppercase tracking-wide text-cyan-200">
+          <span>🧾 Report</span>
+          <span>•</span>
+          <span>Crypto Taxes</span>
+        </div>
+        <a href="/report/summ/" class="pill">Read</a>
+      </div>
+
+      <div class="mt-4">
+        <img
+          src="/assets/summ.png"
+          alt="Summ — Crypto Tax Infrastructure Report"
+          class="w-full h-auto rounded-2xl border border-white/10"
+          loading="lazy"
+        />
+      </div>
+
+      <h2 class="mt-4 text-2xl font-extrabold tracking-tight">
+        Summ — Crypto Tax Infrastructure
+      </h2>
+
+      <p class="mt-2 text-sm md:text-base text-gray-300 content-max">
+        Crypto tax software is no longer optional. This report breaks down why
+        on-chain activity now requires dedicated infrastructure — and how Summ
+        fits into a modern compliance stack.
+      </p>
+
+      <!-- Pills -->
+      <div class="mt-3 flex flex-wrap gap-2 items-center text-xs">
+        <span class="pill pill-secondary">🧾 Tax season ready</span>
+        <span class="pill pill-secondary">📅 2025 filing</span>
+        <span class="pill pill-secondary">🧠 Infrastructure, not hype</span>
+      </div>
+
+      <div class="mt-4 flex flex-wrap gap-3">
+        <a href="/report/summ/" class="btn btn-primary text-sm md:text-base">
+          📊 Read the full report
+        </a>
+        <a
+          href="https://summ.com/?via=66tc8ydq"
+          target="_blank"
+          rel="noopener noreferrer nofollow sponsored"
+          class="btn btn-outline text-sm md:text-base"
+        >
+          Save 20% with Summ →
+        </a>
+      </div>
+
+      <p class="mt-3 text-[11px] text-gray-500 content-max">
+        Covers wallets, exchanges, DeFi activity, and capital gains reporting for
+        active crypto users.
+      </p>
+    </div>
+
+        <!-- Playbooks -->
+        <div class="card md:col-span-1">
+          <div class="flex items-start justify-between gap-4">
+            <div class="inline-flex items-center gap-2 rounded-full border border-cyan-400/40 bg-cyan-500/10 px-3 py-1 text-[11px] font-extrabold uppercase tracking-wide text-cyan-200">
+              <span>📘 Playbooks</span>
+              <span>•</span>
+              <span>Rules + setups</span>
+            </div>
+            <a href="/playbooks/" class="pill pill-playbooks">Open</a>
+          </div>
+
+          <div class="mt-4">
+            <img
+              src="assets/playbooks.png"
+              alt="Degenstein’s Crypto Playbooks — Rules + Portfolio Examples"
+              class="w-full h-auto rounded-2xl border border-cyan-400/30"
+              loading="lazy"
+            />
+          </div>
+
+          <h2 class="mt-4 text-2xl font-extrabold tracking-tight">
+            Degenstein’s Crypto Playbooks
+          </h2>
+          <p class="mt-2 text-sm md:text-base text-gray-300 content-max">
+            Simple, repeatable guides: the No-FOMO ruleset, $1,000 and $5,000 portfolio examples, and a memecoin sleeve for DOGE/SHIB/PEPE.
+          </p>
+
+          <div class="mt-4 flex flex-wrap gap-3">
+            <a href="/playbooks/" class="btn btn-primary text-sm md:text-base">
+              📘 Browse Playbooks
+            </a>
+            <a href="/playbooks/no-fomo-ruleset/" class="btn btn-outline text-sm md:text-base">
+              ✅ No-FOMO Rules
+            </a>
+          </div>
+
+          <p class="mt-3 text-[11px] text-gray-500 content-max">
+            Built for discipline: rules first, then upside.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ====================== CRYPTO PLATFORMS REPORT CTA (NEW) ====================== -->
+    <section id="platforms-report-cta" class="container-max mx-auto px-4 section-pad">
+      <div class="card">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+
+          <div class="flex-1">
+            <div class="inline-flex items-center gap-2 rounded-full border border-cyan-400/40 bg-cyan-500/10 px-3 py-1 text-[11px] font-extrabold uppercase tracking-wide text-cyan-200">
+              <span>🧰 New Report</span>
+              <span>•</span>
+              <span>Crypto Platforms</span>
+            </div>
+
+            <h2 class="mt-3 text-2xl md:text-3xl font-extrabold tracking-tight">
+              Too many crypto apps? Here’s the clean setup.
+            </h2>
+
+            <p class="mt-2 text-sm md:text-base text-gray-300 content-max">
+              Most beginners download 10 platforms and still don’t have a system.
+              This report compares common platform roles: <strong>Buy</strong>, <strong>Research</strong>, <strong>Track</strong>,
+              and <strong>Trade (optional)</strong> — with an emphasis on understanding features and risks before choosing a service.
+            </p>
+
+            <div class="mt-4 flex flex-wrap gap-2 items-center">
+              <span class="pill pill-secondary">✅ Beginner-friendly</span>
+              <span class="pill pill-secondary">🧠 No confusion</span>
+              <span class="pill pill-secondary">📌 Exact “starter stack”</span>
+            </div>
+
+            <div class="mt-5 flex flex-wrap gap-3">
+              <a href="/report/platforms/" class="btn btn-primary text-sm md:text-base">
+                🧰 Read the Crypto Platforms report
+              </a>
+              <a href="/report/" class="btn btn-outline text-sm md:text-base">
+                📊 Browse all reports
+              </a>
+            </div>
+          </div>
+
+          <div class="w-full md:w-[360px]">
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-3">
+              <img
+                src="/assets/cryptoplatforms.png"
+                alt="Crypto Platforms Explained — What You Actually Need"
+                class="w-full h-auto rounded-2xl border border-white/10"
+                loading="lazy"
+              />
+              <p class="mt-3 text-[11px] text-gray-400">
+                Compare on-ramps • Review interest platforms • Track portfolios • Understand optional trading tools.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== HOW IT WORKS ====================== -->
+    <section id="how-it-works" class="container-max mx-auto px-4 section-pad">
+      <div class="card">
+        <div class="text-center max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-extrabold mb-3">How to Use Degenstein Crypto Hub</h2>
+          <p class="text-gray-300 text-sm md:text-base">
+            Start with research, compare your options, and verify platform terms directly before making a financial decision.
+          </p>
+        </div>
+
+        <div class="mt-8 grid gap-6 md:grid-cols-3">
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <div class="text-2xl mb-2">①</div>
+            <h3 class="font-extrabold mb-1">Research the Platform</h3>
+            <p class="text-sm text-gray-300">
+              Read the independent platform breakdown, including features, limitations, custody considerations, and risks.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <div class="text-2xl mb-2">②</div>
+            <h3 class="font-extrabold mb-1">Compare Your Options</h3>
+            <p class="text-sm text-gray-300">
+              Compare rates, fees, withdrawal conditions, platform terms, and risk before choosing any service.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <div class="text-2xl mb-2">③</div>
+            <h3 class="font-extrabold mb-1">Visit the Official Platform</h3>
+            <p class="text-sm text-gray-300">
+              If you choose to use a platform, follow the official destination provided and verify current terms. Some links may be affiliate or referral links.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== RESOURCES CTA ====================== -->
+    <section id="community-resources" class="container-max mx-auto px-4 section-pad">
+      <div class="card">
+        <div class="grid md:grid-cols-12 gap-8 items-center">
+          <div class="md:col-span-8">
+            <div class="inline-flex items-center gap-2 rounded-full border border-cyan-400/40 bg-cyan-500/10 px-3 py-1 text-[11px] font-extrabold uppercase tracking-wide text-cyan-200">
+              <span>🧰 Resources</span><span>•</span><span>Platforms &amp; Tools</span>
+            </div>
+            <h2 class="mt-4 text-3xl md:text-4xl font-extrabold tracking-tight">Research platforms and tools in one dedicated directory.</h2>
+            <p class="mt-3 text-gray-300 content-max">
+              Compare exchanges, interest platforms, portfolio trackers, crypto tax tools, and optional trading platforms.
+              Review features, risks, eligibility, fees, custody considerations, and current provider terms before choosing a service.
+            </p>
+            <p class="mt-3 text-sm text-gray-400 content-max">
+              Transparency: Some links in the Resources directory are affiliate or referral links and are clearly disclosed.
+            </p>
+            <div class="mt-5 flex flex-wrap gap-3">
+              <a href="/resources/" class="btn btn-primary text-sm md:text-base">🧰 Open the Resources Directory</a>
+              <a href="/report/platforms/" class="btn btn-outline text-sm md:text-base">📊 Read the Platforms Report</a>
+            </div>
+          </div>
+          <div class="md:col-span-4">
+            <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+              <h3 class="text-xl font-extrabold">Start simple.</h3>
+              <ul class="mt-3 text-sm text-gray-300 space-y-2">
+                <li>• Research where to buy or exchange assets</li>
+                <li>• Compare optional platform services and risks</li>
+                <li>• Track your portfolio and tax records</li>
+                <li>• Verify current terms directly with providers</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container-max mx-auto px-4 py-6">
+      <div class="rounded-2xl border border-yellow-500/30 bg-yellow-500/10 p-5">
+        <h3 class="font-extrabold text-yellow-300">
+          Investment Risk Disclosure
+        </h3>
+
+        <p class="mt-2 text-sm text-gray-300">
+          Cryptocurrency investments involve substantial risk, including the possible loss of principal. Yield rates, bonuses, promotions, and platform terms may change without notice. Past performance does not guarantee future results.
+        </p>
+
+        <p class="mt-2 text-sm text-gray-300">
+          Nothing published on Degenstein Crypto Hub constitutes financial, legal, tax, or investment advice. Readers should conduct independent research and consult qualified professionals before making investment decisions.
+        </p>
+      </div>
+    </section>
+    <!-- ====================== FOOTER ===================== -->
+    <footer class="border-t border-white/10">
+      <div class="container-max mx-auto px-4 py-10 text-sm text-gray-400 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div>
+          © <span id="year"></span> Degenstein. All rights reserved.
+         <p class="mt-2 text-xs text-gray-500 max-w-md leading-relaxed">
+    Cryptocurrency investments involve risk and may result in loss of capital.
+    Degenstein Crypto Hub provides educational content only and does not offer financial, legal, or tax advice.
+    Some links on this website are affiliate links that may provide compensation at no additional cost to users.
+    Always conduct your own research before investing.
+    </p>
+        </div>
+        <div class="flex items-center gap-4">
+          <a class="hover:text-white" href="https://x.com/DHouseofcrypto" target="_blank">X</a>
+          <a class="hover:text-white" href="https://t.me/DegensteinArmy" target="_blank">Telegram</a>
+          <a href="/editorial-policy/">Editorial Policy</a>
+          <a class="hover:text-white" href="/terms.html">Terms</a>
+          <a class="hover:text-white" href="/about/">About</a>
+          <a class="hover:text-white" href="/contact/">Contact</a>
+          <a class="hover:text-white" href="/privacy.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Last updated stamp (local date, readable)
+      (function(){
+        const els = document.querySelectorAll('.lastUpdated');
+        if (!els.length) return;
+        const d = new Date();
+        const stamp = d.toLocaleDateString(undefined, { year:'numeric', month:'short', day:'numeric' });
+        els.forEach(el => el.textContent = stamp);
+      })();
+    </script>
+
+    <!-- Scrollspy highlight for nav sections (simple + lightweight) -->
+    <script>
+    (function(){
+      const links = Array.from(document.querySelectorAll('[data-scrollspy]')).filter(a => a.getAttribute('data-scrollspy'));
+      const sections = links
+        .map(a => document.getElementById(a.getAttribute('data-scrollspy')))
+        .filter(Boolean);
+
+      if (!links.length || !sections.length) return;
+
+      const byId = new Map(links.map(a => [a.getAttribute('data-scrollspy'), a]));
+
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          const id = e.target.id;
+          const link = byId.get(id);
+          if (!link) return;
+          if (e.isIntersecting) {
+            links.forEach(l => l.classList.remove('navlink-active'));
+            link.classList.add('navlink-active');
+          }
+        });
+      }, { rootMargin: "-40% 0px -55% 0px", threshold: 0.01 });
+
+      sections.forEach(s => obs.observe(s));
+    })();
+    </script>
+
+    </body>
+    </html>
+
+
+
+
+<main>
+<section class="hero">
+  <img class="bg" src="/assets/crypto-hub-banner-1920x720.jpg" alt="" aria-hidden="true">
+  <div class="overlay"></div>
+  <div class="container section rel">
+    <div class="card">
+      <div class="eyebrow">🧰 Resources &amp; Tools Directory</div>
+      <h1>Research platforms by <span class="green">use case</span> — not by hype.</h1>
+      <p class="lead">This directory organizes services covered by Degenstein Crypto Hub. A listing is not a guarantee of safety, solvency, performance, or suitability. Review eligibility, fees, custody, withdrawal conditions, leverage risk, tax coverage, and current provider terms before use.</p>
+      <a href="/report/platforms/" class="btn primary">📊 Read the Platform Guide</a>
+      <a href="/" class="btn outline">← Back to Crypto Hub</a>
+    </div>
+  </div>
+</section>
+
+<section class="container section">
+  <div class="notice">
+    <h3>Affiliate &amp; Referral Disclosure</h3>
+    <p>Some provider links on this page are affiliate or referral links. If you use one, I may receive compensation or referral credit at no additional cost to you. Referral relationships do not determine whether a platform is covered.</p>
+    <p>The provider buttons below lead to third-party websites. Verify the destination, eligibility, fees, and current terms before creating an account or transferring assets.</p>
+  </div>
+</section>
+
+<section class="container section">
+  <div class="eyebrow">Buy &amp; Exchange</div>
+  <h2>Crypto Exchanges &amp; On-Ramps</h2>
+  <div class="grid3">
+    <article class="card"><h3>🔷 Gemini</h3><p>A crypto exchange and on-ramp to compare for supported assets, fees, custody features, and regional eligibility.</p><p class="small">Referral code: 9zrdalkh7</p><a href="https://exchange.gemini.com/register?referral=9zrdalkh7&type=referral" target="_blank" rel="noopener noreferrer nofollow sponsored" class="btn primary">Visit Gemini →</a></article>
+    <article class="card"><h3>💳 Coinbase</h3><p>A crypto exchange and on-ramp to compare for supported assets, fees, custody features, and regional eligibility.</p><p class="small">Referral code: MFB6ACG</p><a href="https://coinbase.com/join/MFB6ACG?src=referral-link" target="_blank" rel="noopener noreferrer nofollow sponsored" class="btn primary">Visit Coinbase →</a></article>
+  </div>
+</section>
+
+<section class="container section">
+  <div class="eyebrow">Interest Platform Research</div>
+  <h2>Crypto &amp; Stablecoin Interest Accounts</h2>
+  <div class="grid3">
+    <article class="card"><h3>💠 CoinDepo</h3><p>Review the source of return, account structure, custody, withdrawal conditions, eligibility, counterparty exposure, and current rate terms before depositing.</p><a href="/coindepo-review/" class="btn outline">Read Degenstein Research</a><p class="small">Referral code: A-32wqw35W</p><a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W" target="_blank" rel="noopener noreferrer nofollow sponsored" class="btn primary">Visit CoinDepo →</a></article>
+  </div>
+</section>
+
+<section class="container section">
+  <div class="eyebrow">Portfolio &amp; Tax Tools</div>
+  <h2>Tracking &amp; Recordkeeping</h2>
+  <div class="grid3">
+    <article class="card"><h3>📊 CoinStats</h3><p>A portfolio tracking tool for viewing supported wallets, exchanges, balances, and performance in one interface.</p><p class="small">Referral code: Qm2yTg1745088895231</p><a href="https://invite.coinstats.app/r?i=Qm2yTg1745088895231" target="_blank" rel="noopener noreferrer nofollow sponsored" class="btn primary">Visit CoinStats →</a></article>
+    <article class="card"><h3>🧾 Summ</h3><p>Crypto tax software for organizing supported trades, wallets, and DeFi activity. Review integrations and tax-reporting coverage for your situation.</p><a href="/report/summ/" class="btn outline">Read the Summ Report</a><p class="small">Referral code: 66tc8ydq</p><a href="https://summ.com/?via=66tc8ydq" target="_blank" rel="noopener noreferrer nofollow sponsored" class="btn primary">Visit Summ →</a></article>
+  </div>
+</section>
+
+<section class="container section">
+  <div class="eyebrow">Optional Trading Platforms</div>
+  <h2>Trading Tools to Research Carefully</h2>
+  <p class="lead">Trading and leveraged products can create substantial loss risk. Availability and product rules vary by jurisdiction. These listings are for comparison and research; they are not recommendations to use leverage.</p>
+  <div class="grid3">
+    <article class="card"><h3>📈 BTCC</h3><p>Review regional availability, fees, leverage risk, liquidation mechanics, and current terms.</p><p class="small">Referral code: HC6O49</p><a href="https://www.btcc.com/en-US/invite/HC6O49" target="_blank" rel="noopener noreferrer nofollow sponsored" class="btn primary">Visit BTCC →</a></article>
+    <article class="card"><h3>📊 WEEX</h3><p>Review regional availability, fees, leverage risk, liquidation mechanics, and current terms.</p><p class="small">Referral code: 5flql</p><a href="https://weex.com/register?vipCode=5flql" target="_blank" rel="noopener noreferrer nofollow sponsored" class="btn primary">Visit WEEX →</a></article>
+    <article class="card"><h3>🧰 Bitunix</h3><p>Review regional availability, fees, leverage risk, liquidation mechanics, and current terms.</p><p class="small">Referral code: 57hn7f</p><a href="https://www.bitunix.com/register?inviteCode=57hn7f" target="_blank" rel="noopener noreferrer nofollow sponsored" class="btn primary">Visit Bitunix →</a></article>
+    <article class="card"><h3>⚡ BYDFi</h3><p>Review regional availability, fees, leverage risk, liquidation mechanics, and current terms.</p><p class="small">Referral identifier is contained in the provider link.</p><a href="https://partner.bydfi.com/j/3tLVlEZ0" target="_blank" rel="noopener noreferrer nofollow sponsored" class="btn primary">Visit BYDFi →</a></article>
+  </div>
+</section>
+
+<section class="container section">
+  <div class="notice">
+    <h3>Investment &amp; Platform Risk Disclosure</h3>
+    <p>Cryptocurrency and third-party platforms involve substantial risk, including market, custody, counterparty, liquidity, operational, legal, and total-loss risk. Trading and leverage can magnify losses. Rates, promotions, fees, eligibility, and product terms can change.</p>
+    <p>Nothing on this page is financial, legal, tax, or investment advice. Conduct independent research and consult qualified professionals when appropriate.</p>
+  </div>
+</section>
+</main>
+<footer class="border-t border-white/10">
+      <div class="container-max mx-auto px-4 py-10 text-sm text-gray-400 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div>
+          © <span id="year"></span> Degenstein. All rights reserved.
+         <p class="mt-2 text-xs text-gray-500 max-w-md leading-relaxed">
+    Cryptocurrency investments involve risk and may result in loss of capital.
+    Degenstein Crypto Hub provides educational content only and does not offer financial, legal, or tax advice.
+    Some links on this website are affiliate links that may provide compensation at no additional cost to users.
+    Always conduct your own research before investing.
+    </p>
+        </div>
+        <div class="flex items-center gap-4">
+          <a class="hover:text-white" href="https://x.com/DHouseofcrypto" target="_blank">X</a>
+          <a class="hover:text-white" href="https://t.me/DegensteinArmy" target="_blank">Telegram</a>
+          <a href="/editorial-policy/">Editorial Policy</a>
+          <a class="hover:text-white" href="/terms.html">Terms</a>
+          <a class="hover:text-white" href="/about/">About</a>
+          <a class="hover:text-white" href="/contact/">Contact</a>
+          <a class="hover:text-white" href="/privacy.html">Privacy</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Last updated stamp (local date, readable)
+      (function(){
+        const els = document.querySelectorAll('.lastUpdated');
+        if (!els.length) return;
+        const d = new Date();
+        const stamp = d.toLocaleDateString(undefined, { year:'numeric', month:'short', day:'numeric' });
+        els.forEach(el => el.textContent = stamp);
+      })();
+    </script>
+
+    <!-- Scrollspy highlight for nav sections (simple + lightweight) -->
+    <script>
+    (function(){
+      const links = Array.from(document.querySelectorAll('[data-scrollspy]')).filter(a => a.getAttribute('data-scrollspy'));
+      const sections = links
+        .map(a => document.getElementById(a.getAttribute('data-scrollspy')))
+        .filter(Boolean);
+
+      if (!links.length || !sections.length) return;
+
+      const byId = new Map(links.map(a => [a.getAttribute('data-scrollspy'), a]));
+
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          const id = e.target.id;
+          const link = byId.get(id);
+          if (!link) return;
+          if (e.isIntersecting) {
+            links.forEach(l => l.classList.remove('navlink-active'));
+            link.classList.add('navlink-active');
+          }
+        });
+      }, { rootMargin: "-40% 0px -55% 0px", threshold: 0.01 });
+
+      sections.forEach(s => obs.observe(s));
+    })();
+    </script>
+
+    </body>
+</html>
 
