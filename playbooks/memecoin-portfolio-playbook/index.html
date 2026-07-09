@@ -1,424 +1,435 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Memecoin Portfolio Playbook | Degenstein’s Crypto Playbooks</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <title>Memecoin Portfolio Playbook — July 2026 Risk Sleeve | Degenstein Playbooks</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO -->
-  <meta name="description" content="Memecoin Portfolio Playbook — a strict ruleset for $DOGE, $SHIB, and $PEPE. Position sizing, entries, exits, and how to avoid getting nuked. DYOR." />
-  <link rel="canonical" href="https://degenstein.xyz/playbooks/memecoin-portfolio-playbook/" />
+      <!-- SEO -->
+      <meta name="description" content="A July 2026 high-risk memecoin sleeve framework for DOGE, SHIB and PEPE covering sizing, liquidity, supply, entries, exits, rotation and thesis review." />
+      <link rel="canonical" href="https://degenstein.xyz/playbooks/memecoin-portfolio-playbook/" />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Memecoin Portfolio Playbook (Strict Rules for DOGE / SHIB / PEPE)" />
-  <meta property="og:description" content="A memecoin-only ‘degen sleeve’ with strict rules: sizing, entries, exits, and when to rotate out. DYOR." />
-  <meta property="og:image" content="https://degenstein.xyz/assets/memecoinportfolio.png" />
-  <meta property="og:url" content="https://degenstein.xyz/playbooks/memecoin-portfolio-playbook/" />
-  <meta property="og:type" content="website" />
+      <!-- Open Graph -->
+      <meta property="og:title" content="Memecoin Portfolio Playbook — July 2026 DOGE / SHIB / PEPE Risk Sleeve" />
+      <meta property="og:description" content="A July 2026 DOGE, SHIB and PEPE risk-sleeve framework focused on sizing, liquidity, supply, entries, exits and rotation." />
+      <meta property="og:image" content="https://degenstein.xyz/assets/memecoinportfolio.png" />
+      <meta property="og:url" content="https://degenstein.xyz/playbooks/memecoin-portfolio-playbook/" />
+      <meta property="og:type" content="website" />
 
-  <!-- X / Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Memecoin Portfolio Playbook" />
-  <meta name="twitter:description" content="Strict rules for $DOGE, $SHIB, $PEPE — sizing, entries, exits, rotations. DYOR." />
-  <meta name="twitter:image" content="https://degenstein.xyz/assets/memecoinportfolio.png" />
-  <meta name="twitter:site" content="@DHouseofcrypto" />
+      <!-- X / Twitter -->
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Memecoin Portfolio Playbook" />
+      <meta name="twitter:description" content="July 2026 DOGE, SHIB and PEPE risk rules: sizing, liquidity, supply, entries, exits and rotation." />
+      <meta name="twitter:image" content="https://degenstein.xyz/assets/memecoinportfolio.png" />
+      <meta name="twitter:site" content="@DHouseofcrypto" />
 
-  <meta name="theme-color" content="#06b6d4" />
+      <meta name="theme-color" content="#06b6d4" />
 
-  <style>
-    :root{
-      --bg:#020617;
-      --card:#020617;
-      --card-alt:#020817;
+      <style>
+        :root{
+          --bg:#020617;
+          --card:#020617;
+          --card-alt:#020817;
 
-      --accent:#22c55e;
-      --accent2:#06b6d4;
+          --accent:#22c55e;
+          --accent2:#06b6d4;
 
-      --text-main:#f9fafb;
-      --text-muted:#9ca3af;
+          --text-main:#f9fafb;
+          --text-muted:#9ca3af;
 
-      --shadow-soft:0 18px 45px rgba(0,0,0,.75);
-      --radius-lg:18px;
-    }
+          --shadow-soft:0 18px 45px rgba(0,0,0,.75);
+          --radius-lg:18px;
+        }
 
-    body{
-      margin:0;
-      font-family:system-ui,-apple-system,Segoe UI,sans-serif;
-      background:
-        radial-gradient(circle at top left,rgba(34,197,94,.16),transparent 55%),
-        radial-gradient(circle at bottom right,rgba(6,182,212,.14),transparent 55%),
-        var(--bg);
-      color:var(--text-main);
-    }
+        body{
+          margin:0;
+          font-family:system-ui,-apple-system,Segoe UI,sans-serif;
+          background:
+            radial-gradient(circle at top left,rgba(34,197,94,.16),transparent 55%),
+            radial-gradient(circle at bottom right,rgba(6,182,212,.14),transparent 55%),
+            var(--bg);
+          color:var(--text-main);
+        }
 
-    .page{min-height:100vh;padding:40px 16px 64px;display:flex;justify-content:center;}
-    .container{max-width:980px;width:100%;}
+        .page{min-height:100vh;padding:40px 16px 64px;display:flex;justify-content:center;}
+        .container{max-width:980px;width:100%;}
 
-    a{color:var(--accent);text-decoration:none;}
-    a:hover{text-decoration:underline;}
+        a{color:var(--accent);text-decoration:none;}
+        a:hover{text-decoration:underline;}
 
-    /* Cover image */
-    .banner-wrap{max-width:760px;margin:0 auto 22px;}
-    .banner-img{
-      width:100%;
-      border-radius:18px;
-      display:block;
-      box-shadow:0 18px 60px rgba(0,0,0,.55);
-    }
+        /* Cover image */
+        .banner-wrap{max-width:760px;margin:0 auto 22px;}
+        .banner-img{
+          width:100%;
+          border-radius:18px;
+          display:block;
+          box-shadow:0 18px 60px rgba(0,0,0,.55);
+        }
 
-    .home-pill{
-      display:inline-flex;gap:6px;margin:14px 8px 14px 0;padding:7px 14px;
-      border-radius:999px;font-size:.74rem;letter-spacing:.14em;
-      background:rgba(15,23,42,.8);border:1px solid rgba(148,163,184,.4);
-      color:var(--text-muted);text-transform:uppercase;transition:.15s;
-    }
-    .home-pill:hover{
-      background:rgba(6,182,212,.12);
-      border-color:rgba(6,182,212,.65);
-      color:#67e8f9;
-      text-decoration:none;
-    }
+        .home-pill{
+          display:inline-flex;gap:6px;margin:14px 8px 14px 0;padding:7px 14px;
+          border-radius:999px;font-size:.74rem;letter-spacing:.14em;
+          background:rgba(15,23,42,.8);border:1px solid rgba(148,163,184,.4);
+          color:var(--text-muted);text-transform:uppercase;transition:.15s;
+        }
+        .home-pill:hover{
+          background:rgba(6,182,212,.12);
+          border-color:rgba(6,182,212,.65);
+          color:#67e8f9;
+          text-decoration:none;
+        }
 
-    .badge{
-      display:inline-flex;gap:8px;padding:4px 10px;border-radius:999px;
-      background:rgba(15,23,42,.85);border:1px solid rgba(148,163,184,.35);
-      font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:10px;
-    }
-    .badge-dot{
-      width:6px;height:6px;border-radius:999px;
-      background:var(--accent);
-      box-shadow:0 0 10px rgba(34,197,94,.9);
-    }
+        .badge{
+          display:inline-flex;gap:8px;padding:4px 10px;border-radius:999px;
+          background:rgba(15,23,42,.85);border:1px solid rgba(148,163,184,.35);
+          font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:10px;
+        }
+        .badge-dot{
+          width:6px;height:6px;border-radius:999px;
+          background:var(--accent);
+          box-shadow:0 0 10px rgba(34,197,94,.9);
+        }
 
-    h1{font-size:clamp(2.0rem,4vw,3.0rem);margin:12px 0 6px;}
-    .subtitle{font-size:1rem;color:var(--text-muted);max-width:860px;line-height:1.7;}
+        h1{font-size:clamp(2.0rem,4vw,3.0rem);margin:12px 0 6px;}
+        .subtitle{font-size:1rem;color:var(--text-muted);max-width:860px;line-height:1.7;}
 
-    .divider{
-      border-bottom:1px solid rgba(148,163,184,.3);
-      margin:26px 0 18px;
-      position:relative;
-    }
-    .divider:after{
-      content:"";
-      display:block;
-      height:1px;
-      width:200px;
-      margin-top:-1px;
-      background:linear-gradient(90deg, rgba(6,182,212,.0), rgba(6,182,212,.75), rgba(6,182,212,.0));
-    }
+        .divider{
+          border-bottom:1px solid rgba(148,163,184,.3);
+          margin:26px 0 18px;
+          position:relative;
+        }
+        .divider:after{
+          content:"";
+          display:block;
+          height:1px;
+          width:200px;
+          margin-top:-1px;
+          background:linear-gradient(90deg, rgba(6,182,212,.0), rgba(6,182,212,.75), rgba(6,182,212,.0));
+        }
 
-    .disclaimer{
-      margin-top:14px;
-      padding:12px 14px;
-      border-radius:14px;
-      background:rgba(15,23,42,.9);
-      border:1px solid rgba(148,163,184,.35);
-      color:var(--text-muted);
-      font-size:.92rem;
-      line-height:1.6;
-    }
-    .disclaimer strong{color:var(--text-main);}
+        .disclaimer{
+          margin-top:14px;
+          padding:12px 14px;
+          border-radius:14px;
+          background:rgba(15,23,42,.9);
+          border:1px solid rgba(148,163,184,.35);
+          color:var(--text-muted);
+          font-size:.92rem;
+          line-height:1.6;
+        }
+        .disclaimer strong{color:var(--text-main);}
 
-    .section{
-      padding:18px;
-      border-radius:var(--radius-lg);
-      border:1px solid rgba(148,163,184,.28);
-      background:linear-gradient(180deg, rgba(2,6,23,.70), rgba(2,6,23,.95));
-      box-shadow:var(--shadow-soft);
-      margin-bottom:18px;
-    }
-    .section h2{
-      margin:0 0 8px;
-      font-size:1.15rem;
-      letter-spacing:.01em;
-    }
-    .section p{margin:0;color:var(--text-muted);line-height:1.7;}
+        .section{
+          padding:18px;
+          border-radius:var(--radius-lg);
+          border:1px solid rgba(148,163,184,.28);
+          background:linear-gradient(180deg, rgba(2,6,23,.70), rgba(2,6,23,.95));
+          box-shadow:var(--shadow-soft);
+          margin-bottom:18px;
+        }
+        .section h2{
+          margin:0 0 8px;
+          font-size:1.15rem;
+          letter-spacing:.01em;
+        }
+        .section p{margin:0;color:var(--text-muted);line-height:1.7;}
 
-    ul{margin:10px 0 0 18px;color:var(--text-muted);line-height:1.75;}
-    li{margin:6px 0;}
+        ul{margin:10px 0 0 18px;color:var(--text-muted);line-height:1.75;}
+        li{margin:6px 0;}
 
-    .callout{
-      margin-top:12px;
-      padding:12px 14px;
-      border-radius:14px;
-      border:1px solid rgba(6,182,212,.35);
-      background:rgba(6,182,212,.08);
-      color:rgba(226,232,240,.92);
-      line-height:1.7;
-    }
+        .callout{
+          margin-top:12px;
+          padding:12px 14px;
+          border-radius:14px;
+          border:1px solid rgba(6,182,212,.35);
+          background:rgba(6,182,212,.08);
+          color:rgba(226,232,240,.92);
+          line-height:1.7;
+        }
 
-    .pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
-    .pill{
-      padding:4px 10px;border-radius:999px;font-size:.74rem;
-      letter-spacing:.12em;text-transform:uppercase;
-      background:rgba(15,23,42,.8);border:1px solid rgba(148,163,184,.35);
-      color:var(--text-muted);
-    }
-    .pill-strong{
-      border-color:rgba(34,197,94,.55);
-      background:rgba(34,197,94,.10);
-      color:#6ee7b7;
-      font-weight:900;
-    }
-    .pill-alt{
-      border-color:rgba(6,182,212,.55);
-      background:rgba(6,182,212,.10);
-      color:#67e8f9;
-      font-weight:850;
-    }
+        .pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+        .pill{
+          padding:4px 10px;border-radius:999px;font-size:.74rem;
+          letter-spacing:.12em;text-transform:uppercase;
+          background:rgba(15,23,42,.8);border:1px solid rgba(148,163,184,.35);
+          color:var(--text-muted);
+        }
+        .pill-strong{
+          border-color:rgba(34,197,94,.55);
+          background:rgba(34,197,94,.10);
+          color:#6ee7b7;
+          font-weight:900;
+        }
+        .pill-alt{
+          border-color:rgba(6,182,212,.55);
+          background:rgba(6,182,212,.10);
+          color:#67e8f9;
+          font-weight:850;
+        }
 
-    code{
-      color:#67e8f9;
-      font-weight:800;
-      background: rgba(6,182,212,.10);
-      border: 1px solid rgba(6,182,212,.22);
-      padding: 2px 6px;
-      border-radius: 8px;
-    }
+        code{
+          color:#67e8f9;
+          font-weight:800;
+          background: rgba(6,182,212,.10);
+          border: 1px solid rgba(6,182,212,.22);
+          padding: 2px 6px;
+          border-radius: 8px;
+        }
 
-    /* ✅ CoinDepo CTA */
-    .coindepo-wrap{
-      margin:18px 0 22px;
-      padding:18px;
-      border-radius:18px;
-      border:1px solid rgba(34,197,94,.35);
-      background:
-        radial-gradient(circle at top left,rgba(34,197,94,.14),transparent 65%),
-        radial-gradient(circle at bottom right,rgba(6,182,212,.10),transparent 60%),
-        rgba(15,23,42,.92);
-      box-shadow:0 18px 60px rgba(0,0,0,.45);
-    }
-    .coindepo-title{
-      margin:0 0 6px;
-      font-size:1.05rem;
-      letter-spacing:.01em;
-    }
-    .coindepo-text{
-      margin:0;
-      color:var(--text-muted);
-      line-height:1.7;
-      max-width:860px;
-    }
-    .coindepo-bullets{margin:10px 0 0 18px;color:var(--text-muted);line-height:1.75;}
-    .coindepo-bullets li{margin:6px 0;}
-    .coindepo-btn{
-      display:inline-flex;align-items:center;gap:8px;
-      margin-top:12px;
-      padding:9px 16px;
-      border-radius:999px;
-      font-weight:950;
-      background:linear-gradient(135deg, var(--accent), var(--accent2));
-      color:#020617;
-      box-shadow:0 14px 40px rgba(6,182,212,.20);
-      transition: transform .12s ease, box-shadow .12s ease;
-    }
-    .coindepo-btn:hover{transform:translateY(-1px);box-shadow:0 18px 55px rgba(6,182,212,.28);text-decoration:none;}
-    .coindepo-foot{
-      margin-top:10px;
-      color:rgba(148,163,184,.95);
-      font-size:.9rem;
-      line-height:1.6;
-    }
+        /* ✅ CoinDepo CTA */
+        .coindepo-wrap{
+          margin:18px 0 22px;
+          padding:18px;
+          border-radius:18px;
+          border:1px solid rgba(34,197,94,.35);
+          background:
+            radial-gradient(circle at top left,rgba(34,197,94,.14),transparent 65%),
+            radial-gradient(circle at bottom right,rgba(6,182,212,.10),transparent 60%),
+            rgba(15,23,42,.92);
+          box-shadow:0 18px 60px rgba(0,0,0,.45);
+        }
+        .coindepo-title{
+          margin:0 0 6px;
+          font-size:1.05rem;
+          letter-spacing:.01em;
+        }
+        .coindepo-text{
+          margin:0;
+          color:var(--text-muted);
+          line-height:1.7;
+          max-width:860px;
+        }
+        .coindepo-bullets{margin:10px 0 0 18px;color:var(--text-muted);line-height:1.75;}
+        .coindepo-bullets li{margin:6px 0;}
+        .coindepo-btn{
+          display:inline-flex;align-items:center;gap:8px;
+          margin-top:12px;
+          padding:9px 16px;
+          border-radius:999px;
+          font-weight:950;
+          background:linear-gradient(135deg, var(--accent), var(--accent2));
+          color:#020617;
+          box-shadow:0 14px 40px rgba(6,182,212,.20);
+          transition: transform .12s ease, box-shadow .12s ease;
+        }
+        .coindepo-btn:hover{transform:translateY(-1px);box-shadow:0 18px 55px rgba(6,182,212,.28);text-decoration:none;}
+        .coindepo-foot{
+          margin-top:10px;
+          color:rgba(148,163,184,.95);
+          font-size:.9rem;
+          line-height:1.6;
+        }
 
-    .cta-wrap{
-      margin-top:26px;
-      padding:18px;
-      border:1px solid rgba(6,182,212,.35);
-      border-radius:18px;
-      background:rgba(15,23,42,.95);
-      box-shadow:0 18px 60px rgba(0,0,0,.45);
-    }
-    .cta-title{font-size:1.02rem;margin-bottom:4px;}
-    .cta-text{color:var(--text-muted);line-height:1.65;margin:10px 0 0;max-width:820px;}
-    .cta-button{
-      display:inline-flex;align-items:center;margin-top:12px;
-      padding:9px 18px;border-radius:999px;font-weight:900;
-      background:linear-gradient(135deg, var(--accent), var(--accent2));
-      color:#020617;
-      box-shadow:0 14px 40px rgba(6,182,212,.20);
-      transition: transform .12s ease, box-shadow .12s ease;
-    }
-    .cta-button:hover{transform:translateY(-1px);box-shadow:0 18px 55px rgba(6,182,212,.28);text-decoration:none;}
-  </style>
-</head>
+        .cta-wrap{
+          margin-top:26px;
+          padding:18px;
+          border:1px solid rgba(6,182,212,.35);
+          border-radius:18px;
+          background:rgba(15,23,42,.95);
+          box-shadow:0 18px 60px rgba(0,0,0,.45);
+        }
+        .cta-title{font-size:1.02rem;margin-bottom:4px;}
+        .cta-text{color:var(--text-muted);line-height:1.65;margin:10px 0 0;max-width:820px;}
+        .cta-button{
+          display:inline-flex;align-items:center;margin-top:12px;
+          padding:9px 18px;border-radius:999px;font-weight:900;
+          background:linear-gradient(135deg, var(--accent), var(--accent2));
+          color:#020617;
+          box-shadow:0 14px 40px rgba(6,182,212,.20);
+          transition: transform .12s ease, box-shadow .12s ease;
+        }
+        .cta-button:hover{transform:translateY(-1px);box-shadow:0 18px 55px rgba(6,182,212,.28);text-decoration:none;}
+      </style>
+    </head>
 
-<body>
-  <div class="page">
-    <div class="container">
+    <body>
+      <div class="page">
+        <div class="container">
 
-      <!-- Cover image -->
-      <div class="banner-wrap">
-        <img src="/assets/memecoinportfolio.png"
-             alt="Memecoin Portfolio Playbook — DOGE SHIB PEPE"
-             class="banner-img"
-             loading="lazy" />
-      </div>
+          <!-- Cover image -->
+          <div class="banner-wrap">
+            <img src="/assets/memecoinportfolio.png"
+                 alt="Memecoin Portfolio Playbook — DOGE SHIB PEPE"
+                 class="banner-img"
+                 loading="lazy" />
+          </div>
 
-      <div class="badge"><span class="badge-dot"></span> Playbook</div>
-      <h1>Memecoin Portfolio Playbook</h1>
-      <p class="subtitle">
-        This is a memecoin-only “degen sleeve” with strict rules so you don’t get chopped up.
-        It’s built around three majors: <strong>$DOGE</strong>, <strong>$SHIB</strong>, <strong>$PEPE</strong>.
-        Memecoins can rip your face off (up and down), so the system is: small size, clear triggers, and fast discipline.
-      </p>
+          <div class="badge"><span class="badge-dot"></span> Playbook</div>
+          <h1>Memecoin Portfolio Playbook</h1>
+          <p class="subtitle">
+            This is a high-risk memecoin sleeve built around <strong>$DOGE</strong>, <strong>$SHIB</strong>, and <strong>$PEPE</strong>.
+            The July 2026 framework treats them as three different risk structures: DOGE as the sector liquidity benchmark and payments test,
+            SHIB as a supply-and-ecosystem test, and PEPE as the purest liquidity-and-momentum thesis of the trio.
+          </p>
 
-      <div class="pill-row">
-        <span class="pill pill-strong">$DOGE</span>
-        <span class="pill pill-strong">$SHIB</span>
-        <span class="pill pill-strong">$PEPE</span>
-        <span class="pill pill-alt">Strict Rules</span>
-        <span class="pill">High Risk</span>
-      </div>
+          <div class="pill-row">
+            <span class="pill pill-strong">$DOGE</span>
+            <span class="pill pill-strong">$SHIB</span>
+            <span class="pill pill-strong">$PEPE</span>
+            <span class="pill pill-alt">Strict Rules</span>
+            <span class="pill">High Risk</span>
+          </div>
 
-      <div class="disclaimer">
-        ⚠️ This is <strong>my personal approach</strong> and <strong>not financial advice</strong>. Memecoins are high-risk.
-        Always <strong>DYOR</strong>, use your own risk limits, and never invest money you can’t afford to lose.
-      </div>
+          <div class="disclaimer">
+            ⚠️ This is <strong>my personal approach</strong> and <strong>not financial advice</strong>. Memecoins are high-risk.
+            Always <strong>DYOR</strong>, use your own risk limits, and never invest money you can’t afford to lose.
+          </div>
 
-      <a href="https://degenstein.xyz/playbooks/" class="home-pill">← Back to Playbooks</a>
-      <a href="https://degenstein.xyz/" class="home-pill">← Main Page</a>
+          <a href="https://degenstein.xyz/playbooks/" class="home-pill">← Back to Playbooks</a>
+          <a href="https://degenstein.xyz/" class="home-pill">← Main Page</a>
 
-      <div class="divider"></div>
+          <div class="divider"></div>
 
-      <!-- ✅ COINDEPO (WHERE I HOLD WHILE I WAIT) -->
-      <div class="coindepo-wrap">
-        <h2 class="coindepo-title">Where I hold while I wait (CoinDepo)</h2>
-        <p class="coindepo-text">
-          I’m not trying to time every candle. When I’m holding through chop, I prefer parking part of my crypto
-          where it can still work for me — and CoinDepo is one of the ways I do that.
-        </p>
-        <ul class="coindepo-bullets">
-  <li><strong>No active trading required</strong> — designed for holding through volatility.</li>
-  <li><strong>Portfolio management focused</strong> — intended for longer-term positioning, not short-term speculation.</li>
-</ul>
+          <div class="section" style="border-color:rgba(6,182,212,.38);">
+            <h2>July 2026: DOGE, SHIB and PEPE are not the same thesis</h2>
+            <ul>
+              <li><strong>DOGE:</strong> track meme-sector liquidity, merchant acceptance, payment usage, exchange flows, and derivatives leverage.</li>
+              <li><strong>SHIB:</strong> track Shibarium activity, ecosystem usage, burns relative to total supply, liquidity, and concentration.</li>
+              <li><strong>PEPE:</strong> track spot volume, exchange flows, whale concentration, derivatives leverage, and implied market capitalization.</li>
+            </ul>
+            <div class="callout">
+              Equal dollar allocations can still create unequal thesis risk. The sleeve should be reviewed token by token.
+            </div>
+          </div>
 
-        <a
-  class="coindepo-btn"
-  href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  Join and start earning up to 18% APY CoinDepo
-</a>
-<p style="margin-top:10px;font-size:.85rem;color:rgba(156,163,175,.95);">
-    For a full breakdown of rates, bonuses, and risks, see the
-    <a href="/report/coindepo-earn-while-you-hold/" target="_blank" rel="noopener">CoinDepo deep dive →</a>
-  </p>
-        <div class="coindepo-foot">
-  Always DYOR. Platform terms, eligibility, and risks can change — review details inside the app before using.
-</div>
+          <!-- 0) PURPOSE -->
+          <div class="section">
+            <h2>0) The purpose of the memecoin sleeve</h2>
+            <p>
+              The purpose of a memecoin sleeve is to isolate high-volatility, attention-driven exposure from a broader crypto portfolio.
+              It is not a substitute for a core allocation and it should have its own risk budget, review metrics, and exit rules.
+            </p>
+            <div class="callout">
+              The sleeve has two jobs: <strong>cap portfolio damage if the meme cycle breaks</strong> and <strong>create a process for reducing risk when liquidity and attention reverse</strong>.
+            </div>
+          </div>
 
-      <!-- 0) PURPOSE -->
-      <div class="section">
-        <h2>0) The purpose of the memecoin sleeve</h2>
-        <p>
-          This sleeve is for upside exposure without turning your whole portfolio into a casino.
-          The goal is participation — not “all-in.” If you want long-term survival, keep memecoins small and rule-based.
-        </p>
-        <div class="callout">
-          The only job of the rules: <strong>stop you from chasing</strong> and <strong>stop you from holding trash to zero</strong>.
+          <!-- 1) SIZING -->
+          <div class="section">
+            <h2>1) Position sizing (how I avoid getting wrecked)</h2>
+            <p>
+              Memecoin sizing should assume extreme drawdowns, rapid liquidity changes, and reflexive price moves are possible.
+              Position size is the first risk control because an exit rule is less useful when the position is too large to execute rationally.
+            </p>
+            <ul>
+              <li><strong>Define the total sleeve cap first</strong> as a percentage of the broader crypto portfolio.</li>
+              <li><strong>Do not assume equal weighting means equal risk.</strong> DOGE, SHIB, and PEPE have different liquidity, supply, and ecosystem profiles.</li>
+              <li>Stress-test the sleeve against a severe drawdown before funding it. If the loss would force unplanned financial decisions, the risk budget is too large.</li>
+            </ul>
+            <div class="callout">
+              Sizing rule: if the sleeve needs to succeed for your broader financial plan to work, it is not a speculative sleeve anymore.
+            </div>
+          </div>
+
+          <!-- 2) ENTRIES -->
+          <div class="section">
+            <h2>2) Entries (how I buy without chasing)</h2>
+            <p>
+              Fast meme moves can compress days of price discovery into hours. Entries should be based on a pre-defined risk budget and market conditions, not social urgency.
+            </p>
+            <ul>
+              <li><strong>No automatic buys after vertical expansion.</strong> Re-check liquidity, volume, derivatives leverage, and market structure first.</li>
+              <li>Use <strong>staged entries</strong> when appropriate, with the total sleeve allocation defined before the first tranche.</li>
+              <li>Do not accelerate every remaining tranche simply because the token is trending on X.</li>
+            </ul>
+            <div class="callout">
+              If the only new information is price appreciation, the investment thesis has not necessarily improved.
+            </div>
+          </div>
+
+          <div class="section">
+            <h2>3) Convert price targets into implied market capitalization</h2>
+            <p>
+              Memecoin price targets are often discussed without supply context. Before using a target, multiply the proposed token price by the relevant circulating supply and compare the implied market capitalization with the broader crypto market.
+            </p>
+            <ul>
+              <li>A low token price does not automatically mean an asset is “cheap.”</li>
+              <li>Burn percentages should be compared with total supply, not viewed in isolation.</li>
+              <li>Market-cap math does not predict price, but it exposes targets that require extraordinary capital expansion.</li>
+            </ul>
+            <div class="callout">
+              Rule: never share or use a DOGE, SHIB, or PEPE price target without checking the implied market capitalization first.
+            </div>
+          </div>
+
+          <!-- 3) EXITS -->
+          <div class="section">
+            <h2>4) Exits and staged reductions</h2>
+            <p>
+              Memecoin exits should be planned before euphoria. Price targets alone are not enough; position weight, liquidity, volume, leverage, and implied market capitalization should also be reviewed.
+            </p>
+            <ul>
+              <li>When a position materially exceeds its target sleeve weight, review whether staged trimming is justified.</li>
+              <li>Pre-define <strong>staged reduction rules</strong> instead of relying on one exact top.</li>
+              <li>If liquidity, volume, or market structure deteriorates while the thesis weakens, reduce or exit according to the written plan.</li>
+            </ul>
+            <div class="callout">
+              Exit principle: <strong>an unrealized gain is not a risk-management plan</strong>. Decide in advance what conditions trigger reduction.
+            </div>
+          </div>
+
+          <!-- 4) ROTATIONS -->
+          <div class="section">
+            <h2>5) Rotation rules</h2>
+            <p>
+              Rotation should be based on measurable changes in liquidity and thesis quality rather than loyalty to a ticker or community.
+            </p>
+            <ul>
+              <li>If sector volume, token liquidity, and relative strength deteriorate together, review exposure.</li>
+              <li>If the measurable thesis weakens, resize instead of replacing evidence with hope.</li>
+              <li>Do not rotate automatically into the token that pumped last; compare liquidity, market structure, supply, and catalyst quality.</li>
+            </ul>
+          </div>
+
+          <!-- 5) WHAT I AVOID -->
+          <div class="section">
+            <h2>6) What I avoid</h2>
+            <p>These are the traps that usually end the story fast:</p>
+            <ul>
+              <li>Leverage on memecoins.</li>
+              <li>Illiquid microcaps with no real exit path.</li>
+              <li>Yield or interest claims I cannot explain in terms of custody, counterparty, liquidity, and asset-use risk.</li>
+              <li>Buying because of countdown language, “last chance” posts, or coordinated social urgency.</li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h2>7) Custody and third-party interest are separate decisions</h2>
+            <p>
+              A DOGE, SHIB, or PEPE thesis does not become stronger because a platform advertises an interest rate.
+              Self-custody, exchange custody, and third-party interest accounts introduce different risks and should be evaluated separately from token selection.
+            </p>
+            <div class="callout">
+              Third-party interest is not DOGE, SHIB, or PEPE protocol yield. Counterparty, custody, liquidity, legal, and asset-use risks can apply.
+            </div>
+            <a class="cta-button" href="/report/coindepo-earn-while-you-hold/">
+              Read the separate CoinDepo research review →
+            </a>
+          </div>
+
+          <div class="section" style="border-color:rgba(34,197,94,.35);">
+            <h2>Use this with the No-FOMO Ruleset</h2>
+            <p>
+              The memecoin sleeve adds token-specific risk controls to the broader Degenstein process. Use the No-FOMO Ruleset for position sizing, staged deployment, thesis failure, and custody separation.
+            </p>
+            <p style="margin-top:12px;">
+              <a href="/playbooks/no-fomo-ruleset/">Read the No-FOMO Ruleset →</a><br>
+              <a href="/report/memecoin-trio-doge-shib-pepe/">Read the DOGE / SHIB / PEPE research report →</a><br>
+              <a href="/playbooks/">View all Playbooks →</a>
+            </p>
+          </div>
+
+          <div class="disclaimer">
+            <strong>Research &amp; Risk Disclosure:</strong> This playbook is for informational and educational purposes only and does not constitute financial,
+            investment, legal, or tax advice. Memecoins can experience extreme volatility, liquidity deterioration, concentration risk, manipulation risk,
+            and partial or total loss. Position sizing, diversification, staged entries, and exit rules do not guarantee profit or prevent loss.
+            Verify current supply, liquidity, market, custody, and platform information independently.<br><br>
+            <a href="/about/">About</a> · <a href="/contact/">Contact</a> · <a href="/editorial-policy/">Editorial Policy</a> · <a href="/terms.html">Terms</a> · <a href="/privacy.html">Privacy</a>
+          </div>
+
         </div>
       </div>
+    </body>
+    </html>
 
-      <!-- 1) SIZING -->
-      <div class="section">
-        <h2>1) Position sizing (how I avoid getting wrecked)</h2>
-        <p>
-          Memecoins should be sized so a nasty drawdown doesn’t change your life. If you’re stressed, you’re oversized.
-        </p>
-        <ul>
-          <li><strong>Memecoin sleeve stays small</strong> relative to your total crypto (you decide your cap).</li>
-          <li><strong>No single memecoin dominates the sleeve.</strong> Spread across $DOGE / $SHIB / $PEPE.</li>
-          <li>If you can’t watch <code>-40%</code> without panic, size is too big.</li>
-        </ul>
-        <div class="callout">
-          Rule of sanity: if you feel “I need this to work,” you’re already in danger.
-        </div>
-      </div>
-
-      <!-- 2) ENTRIES -->
-      <div class="section">
-        <h2>2) Entries (how I buy without chasing)</h2>
-        <p>
-          Chasing green candles is how you donate liquidity. I prefer planned buys and patience.
-        </p>
-        <ul>
-          <li><strong>No buys after a massive single-day candle.</strong> I wait for a cooldown.</li>
-          <li>Buy in <strong>small pieces</strong> (not one big click).</li>
-          <li>If it’s trending hard, I assume I’m late — and I act accordingly.</li>
-        </ul>
-        <div class="callout">
-          Simple filter: if your reason to buy is “it’s pumping,” that’s not a plan.
-        </div>
-      </div>
-
-      <!-- 3) EXITS -->
-      <div class="section">
-        <h2>3) Exits (how I actually lock wins)</h2>
-        <p>
-          Memecoin wins disappear fast. I use a simple approach: take some off when it rips, and don’t argue with the market.
-        </p>
-        <ul>
-          <li>When it goes parabolic, I <strong>trim into strength</strong> (I don’t wait for the exact top).</li>
-          <li>I take profits in <strong>steps</strong> — not one emotional decision.</li>
-          <li>If the move breaks down, I respect it and reduce risk.</li>
-        </ul>
-        <div class="callout">
-          Memecoin truth: <strong>you don’t go broke taking profit</strong> — you go broke round-tripping winners.
-        </div>
-      </div>
-
-      <!-- 4) ROTATIONS -->
-      <div class="section">
-        <h2>4) Rotation rules (when I rotate or reduce)</h2>
-        <p>
-          Sometimes the best move is not “hold forever.” When momentum fades, I scale down and protect the bag.
-        </p>
-        <ul>
-          <li>If hype dies and the chart weakens, I reduce exposure.</li>
-          <li>If my conviction drops, I don’t “hope” — I resize.</li>
-          <li>I rotate from the most speculative into the strongest / most liquid.</li>
-        </ul>
-      </div>
-
-      <!-- 5) WHAT I AVOID -->
-      <div class="section">
-        <h2>5) What I avoid (portfolio killers)</h2>
-        <p>These are the traps that usually end the story fast:</p>
-        <ul>
-          <li>Leverage on memecoins.</li>
-          <li>Illiquid microcaps with no real exit path.</li>
-          <li>“Guaranteed” yield or promises that sound unreal.</li>
-          <li>Buying because someone said “last chance.”</li>
-        </ul>
-      </div>
-
-      <!-- NEXT STEPS -->
-      <div class="section" style="border-color:rgba(34,197,94,.35);">
-        <h2>Next steps</h2>
-        <p>
-          If you follow the No-FOMO rules, memecoins become a controlled sleeve — not a portfolio takeover.
-          If you want me to add more memecoins or a full example allocation, DM me with your risk style.
-        </p>
-        <ul>
-          <li>Want a <strong>full allocation example</strong> for your budget? DM me.</li>
-          <li>Want a <strong>strict “entries only” checklist</strong>? I’ll publish it next.</li>
-        </ul>
-      </div>
-
-      <div class="cta-wrap">
-        <div class="cta-title">Want a custom memecoin sleeve?</div>
-        <p class="cta-text">
-          DM me on X with your budget + risk style (safe / balanced / degen) and what you want included.
-          If it’s useful and realistic, I’ll build it into a playbook.
-        </p>
-        <a class="cta-button" href="https://x.com/DHouseofcrypto" target="_blank" rel="noopener">
-          𝕏 Message me on X →
-        </a>
-      </div>
-
-    </div>
-  </div>
-</body>
-</html>
 
