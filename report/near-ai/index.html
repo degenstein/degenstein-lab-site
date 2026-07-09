@@ -1,614 +1,644 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>NEAR + AI — Infrastructure for Autonomous Apps & Agents | The Degenstein Report</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <title>NEAR + AI — July 2026 Agentic Economy, Intents & Chain Abstraction | The Degenstein Report</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- 🧠 SEO -->
-  <meta name="description" content="NEAR + AI deep dive: why NEAR’s UX and scaling can fit the AI/agent wave, key 2026 catalysts, risks, and a long-duration framework. No hopium." />
-  <link rel="canonical" href="https://degenstein.xyz/report/near-ai/" />
+      <!-- 🧠 SEO -->
+      <meta name="description" content="Independent July 2026 NEAR research covering AI agents, NEAR Intents, chain abstraction, confidential AI, dynamic resharding, SPICE, token economics, and value-capture risk." />
+      <link rel="canonical" href="https://degenstein.xyz/report/near-ai/" />
 
-  <!-- 🌐 Open Graph -->
-  <meta property="og:type" content="article" />
-  <meta property="og:site_name" content="The Degenstein Report" />
-  <meta property="og:title" content="NEAR + AI — Infrastructure for Autonomous Apps & Agents" />
-  <meta property="og:description" content="Why NEAR’s UX and scaling can fit the AI/agent wave. Catalysts, risks, and a long-duration framework." />
-  <meta property="og:url" content="https://degenstein.xyz/report/near-ai/" />
-  <meta property="og:image" content="https://degenstein.xyz/assets/report-near-ai.png" />
+      <!-- 🌐 Open Graph -->
+      <meta property="og:type" content="article" />
+      <meta property="og:site_name" content="The Degenstein Report" />
+      <meta property="og:title" content="NEAR + AI — July 2026 Agentic Economy, Intents & Chain Abstraction" />
+      <meta property="og:description" content="NEAR Intents, confidential AI agents, chain abstraction, dynamic resharding and the NEAR token value-capture question." />
+      <meta property="og:url" content="https://degenstein.xyz/report/near-ai/" />
+      <meta property="og:image" content="https://degenstein.xyz/assets/report-near-ai.png" />
 
-  <!-- Twitter / X -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="NEAR + AI — Infrastructure for Autonomous Apps & Agents" />
- <meta name="twitter:description" content="NEAR’s UX and scaling meet AI agents. Catalysts, risks, and long-duration positioning." />
-  <meta name="twitter:image" content="https://degenstein.xyz/assets/report-near-ai.png" />
-  <meta name="twitter:site" content="@DHouseofcrypto" />
+      <!-- Twitter / X -->
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="NEAR + AI — July 2026 Agentic Economy, Intents & Chain Abstraction" />
+     <meta name="twitter:description" content="July 2026 NEAR research: agents, Intents, chain abstraction, scaling and token value capture." />
+      <meta name="twitter:image" content="https://degenstein.xyz/assets/report-near-ai.png" />
+      <meta name="twitter:site" content="@DHouseofcrypto" />
 
-  <meta name="theme-color" content="#06b6d4" />
+      <meta name="theme-color" content="#06b6d4" />
 
-  <style>
-    :root{
-      --bg:#020617;
-      --card:#020617;
-      --card-soft:#020817;
+      <style>
+        :root{
+          --bg:#020617;
+          --card:#020617;
+          --card-soft:#020817;
 
-      --accent:#22c55e;                 /* emerald */
-      --accent-soft:rgba(34,197,94,.10);
+          --accent:#22c55e;                 /* emerald */
+          --accent-soft:rgba(34,197,94,.10);
 
-      --accent2:#06b6d4;                /* cyan */
-      --accent2-soft:rgba(6,182,212,.12);
+          --accent2:#06b6d4;                /* cyan */
+          --accent2-soft:rgba(6,182,212,.12);
 
-      --text-main:#f9fafb;
-      --text-muted:#9ca3af;
-      --border:rgba(148,163,184,.32);
-      --shadow:0 18px 45px rgba(0,0,0,.80);
-      --radius:18px;
-    }
+          --text-main:#f9fafb;
+          --text-muted:#9ca3af;
+          --border:rgba(148,163,184,.32);
+          --shadow:0 18px 45px rgba(0,0,0,.80);
+          --radius:18px;
+        }
 
-    *{box-sizing:border-box;}
+        *{box-sizing:border-box;}
 
-    body{
-      margin:0;
-      font-family:system-ui,-apple-system,Segoe UI,sans-serif;
-      background:
-        radial-gradient(circle at top left,rgba(34,197,94,.16),transparent 55%),
-        radial-gradient(circle at bottom right,rgba(6,182,212,.14),transparent 55%),
-        var(--bg);
-      color:var(--text-main);
-      -webkit-font-smoothing:antialiased;
-    }
+        body{
+          margin:0;
+          font-family:system-ui,-apple-system,Segoe UI,sans-serif;
+          background:
+            radial-gradient(circle at top left,rgba(34,197,94,.16),transparent 55%),
+            radial-gradient(circle at bottom right,rgba(6,182,212,.14),transparent 55%),
+            var(--bg);
+          color:var(--text-main);
+          -webkit-font-smoothing:antialiased;
+        }
 
-    .page{min-height:100vh;padding:38px 16px 70px;display:flex;justify-content:center;}
-    .container{width:100%;max-width:860px;}
+        .page{min-height:100vh;padding:38px 16px 70px;display:flex;justify-content:center;}
+        .container{width:100%;max-width:860px;}
 
-    a{color:var(--accent);text-decoration:none;}
-    a:hover{text-decoration:underline;}
+        a{color:var(--accent);text-decoration:none;}
+        a:hover{text-decoration:underline;}
 
-    /* Banner */
-    .banner-wrap{max-width:860px;margin:0 auto 18px;}
-    .banner-img{
-      width:100%;
-      border-radius:18px;
-      display:block;
-      box-shadow:0 18px 60px rgba(0,0,0,.55);
-      border:1px solid rgba(148,163,184,.18);
-    }
+        /* Banner */
+        .banner-wrap{max-width:860px;margin:0 auto 18px;}
+        .banner-img{
+          width:100%;
+          border-radius:18px;
+          display:block;
+          box-shadow:0 18px 60px rgba(0,0,0,.55);
+          border:1px solid rgba(148,163,184,.18);
+        }
 
-    /* Top nav links */
-    .back-link{
-      font-size:.8rem;
-      text-transform:uppercase;
-      letter-spacing:.14em;
-      color:var(--text-muted);
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      margin: 0 0 10px;
-      opacity:.95;
-    }
-    .back-link span{font-size:1.1rem;}
-    .back-link:hover{color:#cbd5e1;text-decoration:none;}
+        /* Top nav links */
+        .back-link{
+          font-size:.8rem;
+          text-transform:uppercase;
+          letter-spacing:.14em;
+          color:var(--text-muted);
+          display:inline-flex;
+          align-items:center;
+          gap:6px;
+          margin: 0 0 10px;
+          opacity:.95;
+        }
+        .back-link span{font-size:1.1rem;}
+        .back-link:hover{color:#cbd5e1;text-decoration:none;}
 
-    .home-pill{
-      display:inline-flex;align-items:center;gap:6px;
-      margin: 0 0 18px;
-      padding:7px 14px;border-radius:999px;
-      border:1px solid rgba(148,163,184,.4);
-      background:rgba(15,23,42,.8);
-      color:var(--text-muted);
-      font-size:.74rem;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      transition:.15s;
-    }
-    .home-pill:hover{
-      background:var(--accent2-soft);
-      border-color:rgba(6,182,212,.65);
-      color:#67e8f9;
-      text-decoration:none;
-    }
+        .home-pill{
+          display:inline-flex;align-items:center;gap:6px;
+          margin: 0 0 18px;
+          padding:7px 14px;border-radius:999px;
+          border:1px solid rgba(148,163,184,.4);
+          background:rgba(15,23,42,.8);
+          color:var(--text-muted);
+          font-size:.74rem;
+          letter-spacing:.14em;
+          text-transform:uppercase;
+          transition:.15s;
+        }
+        .home-pill:hover{
+          background:var(--accent2-soft);
+          border-color:rgba(6,182,212,.65);
+          color:#67e8f9;
+          text-decoration:none;
+        }
 
-    /* Badges */
-    .badge-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px;}
-    .badge{
-      display:inline-flex;align-items:center;gap:6px;
-      padding:4px 10px;border-radius:999px;
-      background:rgba(15,23,42,.90);
-      border:1px solid rgba(148,163,184,.40);
-      color:var(--text-muted);
-      font-size:11px;
-      letter-spacing:.16em;
-      text-transform:uppercase;
-      font-weight:800;
-    }
-    .badge-dot{
-      width:6px;height:6px;border-radius:999px;
-      background:var(--accent);
-      box-shadow:0 0 10px rgba(34,197,94,.9);
-    }
-    .token-pill{
-      padding:4px 10px;border-radius:999px;
-      background:rgba(6,182,212,.10);
-      border:1px solid rgba(6,182,212,.55);
-      color:#67e8f9;
-      font-size:11px;
-      letter-spacing:.16em;
-      text-transform:uppercase;
-      font-weight:800;
-    }
+        /* Badges */
+        .badge-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px;}
+        .badge{
+          display:inline-flex;align-items:center;gap:6px;
+          padding:4px 10px;border-radius:999px;
+          background:rgba(15,23,42,.90);
+          border:1px solid rgba(148,163,184,.40);
+          color:var(--text-muted);
+          font-size:11px;
+          letter-spacing:.16em;
+          text-transform:uppercase;
+          font-weight:800;
+        }
+        .badge-dot{
+          width:6px;height:6px;border-radius:999px;
+          background:var(--accent);
+          box-shadow:0 0 10px rgba(34,197,94,.9);
+        }
+        .token-pill{
+          padding:4px 10px;border-radius:999px;
+          background:rgba(6,182,212,.10);
+          border:1px solid rgba(6,182,212,.55);
+          color:#67e8f9;
+          font-size:11px;
+          letter-spacing:.16em;
+          text-transform:uppercase;
+          font-weight:800;
+        }
 
-    h1{
-      font-size:clamp(2.1rem,3.4vw,2.8rem);
-      margin: 8px 0 6px;
-      letter-spacing:.02em;
-    }
-    .subtitle{
-      font-size:.95rem;
-      color:var(--text-muted);
-      max-width:640px;
-      line-height:1.6;
-      margin:0;
-    }
+        h1{
+          font-size:clamp(2.1rem,3.4vw,2.8rem);
+          margin: 8px 0 6px;
+          letter-spacing:.02em;
+        }
+        .subtitle{
+          font-size:.95rem;
+          color:var(--text-muted);
+          max-width:640px;
+          line-height:1.6;
+          margin:0;
+        }
 
-    /* Share row */
-    .share-row{
-      margin: 14px 0 6px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      align-items:center;
-    }
-    .share-label{
-      font-size:.78rem;
-      letter-spacing:.16em;
-      text-transform:uppercase;
-      color:var(--text-muted);
-      opacity:.9;
-    }
-    .share-btn{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      padding:7px 12px;
-      border-radius:999px;
-      border:1px solid rgba(148,163,184,.4);
-      background:rgba(15,23,42,.86);
-      color:var(--text-muted);
-      font-size:.82rem;
-      font-weight:700;
-      cursor:pointer;
-      transition:.15s;
-      text-decoration:none;
-    }
-    .share-btn:hover{
-      border-color: rgba(6,182,212,.65);
-      color:#67e8f9;
-      background: var(--accent2-soft);
-      text-decoration:none;
-    }
+        /* Share row */
+        .share-row{
+          margin: 14px 0 6px;
+          display:flex;
+          flex-wrap:wrap;
+          gap:10px;
+          align-items:center;
+        }
+        .share-label{
+          font-size:.78rem;
+          letter-spacing:.16em;
+          text-transform:uppercase;
+          color:var(--text-muted);
+          opacity:.9;
+        }
+        .share-btn{
+          display:inline-flex;
+          align-items:center;
+          gap:6px;
+          padding:7px 12px;
+          border-radius:999px;
+          border:1px solid rgba(148,163,184,.4);
+          background:rgba(15,23,42,.86);
+          color:var(--text-muted);
+          font-size:.82rem;
+          font-weight:700;
+          cursor:pointer;
+          transition:.15s;
+          text-decoration:none;
+        }
+        .share-btn:hover{
+          border-color: rgba(6,182,212,.65);
+          color:#67e8f9;
+          background: var(--accent2-soft);
+          text-decoration:none;
+        }
 
-    /* Cards */
-    .card{
-      margin-top:20px;
-      padding:18px 18px 16px;
-      border-radius:var(--radius);
-      border:1px solid rgba(148,163,184,.38);
-      background:
-        linear-gradient(135deg, rgba(6,182,212,.14), transparent 55%),
-        rgba(15,23,42,.96);
-      box-shadow:var(--shadow);
-    }
-    .card-title{font-size:1.02rem;font-weight:800;margin-bottom:10px;}
+        /* Cards */
+        .card{
+          margin-top:20px;
+          padding:18px 18px 16px;
+          border-radius:var(--radius);
+          border:1px solid rgba(148,163,184,.38);
+          background:
+            linear-gradient(135deg, rgba(6,182,212,.14), transparent 55%),
+            rgba(15,23,42,.96);
+          box-shadow:var(--shadow);
+        }
+        .card-title{font-size:1.02rem;font-weight:800;margin-bottom:10px;}
 
-    .snapshot-grid{
-      display:grid;
-      grid-template-columns:minmax(0,1fr) minmax(0,1fr);
-      gap:10px 22px;
-      font-size:.92rem;
-    }
-    @media(max-width:640px){
-      .page{padding-top:26px;}
-      .snapshot-grid{grid-template-columns:minmax(0,1fr);}
-    }
-    .label{
-      font-size:.78rem;
-      text-transform:uppercase;
-      letter-spacing:.14em;
-      color:var(--text-muted);
-      margin-bottom:2px;
-    }
-    .value{font-weight:650;}
-    .note{
-      margin-top:10px;
-      font-size:.72rem;
-      color:var(--text-muted);
-      opacity:.8;
-      line-height:1.5;
-    }
+        .snapshot-grid{
+          display:grid;
+          grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+          gap:10px 22px;
+          font-size:.92rem;
+        }
+        @media(max-width:640px){
+          .page{padding-top:26px;}
+          .snapshot-grid{grid-template-columns:minmax(0,1fr);}
+        }
+        .label{
+          font-size:.78rem;
+          text-transform:uppercase;
+          letter-spacing:.14em;
+          color:var(--text-muted);
+          margin-bottom:2px;
+        }
+        .value{font-weight:650;}
+        .note{
+          margin-top:10px;
+          font-size:.72rem;
+          color:var(--text-muted);
+          opacity:.8;
+          line-height:1.5;
+        }
 
-    .section{margin-top:26px;}
-    .section h2{font-size:1.2rem;margin:0 0 6px;}
-    .section p{
-      margin:0;
-      font-size:.95rem;
-      line-height:1.75;
-      color:var(--text-muted);
-    }
-    .section p strong{color:var(--text-main);}
-    .list{
-      margin:10px 0 0;
-      padding-left:18px;
-      font-size:.95rem;
-      line-height:1.7;
-      color:var(--text-muted);
-    }
-    .list li{margin-bottom:6px;}
+        .section{margin-top:26px;}
+        .section h2{font-size:1.2rem;margin:0 0 6px;}
+        .section p{
+          margin:0;
+          font-size:.95rem;
+          line-height:1.75;
+          color:var(--text-muted);
+        }
+        .section p strong{color:var(--text-main);}
+        .list{
+          margin:10px 0 0;
+          padding-left:18px;
+          font-size:.95rem;
+          line-height:1.7;
+          color:var(--text-muted);
+        }
+        .list li{margin-bottom:6px;}
 
-    /* “Extra special” featured thesis box */
-    .featured{
-      margin-top:22px;
-      padding:18px 18px 18px;
-      border-radius:var(--radius);
-      border:1px solid rgba(6,182,212,.38);
-      background:
-        radial-gradient(circle at 20% 10%, rgba(6,182,212,.16), transparent 48%),
-        radial-gradient(circle at 85% 0%, rgba(34,197,94,.12), transparent 55%),
-        rgba(2,6,23,.85);
-      box-shadow: 0 18px 55px rgba(0,0,0,.75), 0 0 28px rgba(6,182,212,.12);
-      position:relative;
-      overflow:hidden;
-    }
-    .featured:after{
-      content:"";
-      position:absolute;
-      top:-2px; left:-2px; right:-2px; bottom:-2px;
-      border-radius: calc(var(--radius) + 2px);
-      padding: 2px;
-      background: linear-gradient(135deg, rgba(6,182,212,.55), rgba(34,197,94,.45), rgba(6,182,212,.18));
-      -webkit-mask:
-        linear-gradient(#000 0 0) content-box,
-        linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      pointer-events:none;
-      opacity:.6;
-    }
-    .featured-top{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      align-items:center;
-      justify-content:space-between;
-      margin-bottom:10px;
-      position:relative;
-      z-index:1;
-    }
-    .featured-pill{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      padding:4px 10px;
-      border-radius:999px;
-      border:1px solid rgba(6,182,212,.45);
-      background: rgba(6,182,212,.08);
-      color:#67e8f9;
-      font-size:.68rem;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      font-weight:900;
-    }
-    .featured-dot{
-      width:6px;height:6px;border-radius:999px;
-      background:var(--accent2);
-      box-shadow:0 0 12px rgba(6,182,212,.55);
-    }
-    .featured h3{
-      margin:0;
-      font-size:1.15rem;
-      letter-spacing:.01em;
-      position:relative;
-      z-index:1;
-    }
-    .featured p{position:relative;z-index:1;}
+        /* “Extra special” featured thesis box */
+        .featured{
+          margin-top:22px;
+          padding:18px 18px 18px;
+          border-radius:var(--radius);
+          border:1px solid rgba(6,182,212,.38);
+          background:
+            radial-gradient(circle at 20% 10%, rgba(6,182,212,.16), transparent 48%),
+            radial-gradient(circle at 85% 0%, rgba(34,197,94,.12), transparent 55%),
+            rgba(2,6,23,.85);
+          box-shadow: 0 18px 55px rgba(0,0,0,.75), 0 0 28px rgba(6,182,212,.12);
+          position:relative;
+          overflow:hidden;
+        }
+        .featured:after{
+          content:"";
+          position:absolute;
+          top:-2px; left:-2px; right:-2px; bottom:-2px;
+          border-radius: calc(var(--radius) + 2px);
+          padding: 2px;
+          background: linear-gradient(135deg, rgba(6,182,212,.55), rgba(34,197,94,.45), rgba(6,182,212,.18));
+          -webkit-mask:
+            linear-gradient(#000 0 0) content-box,
+            linear-gradient(#000 0 0);
+          -webkit-mask-composite: xor;
+          mask-composite: exclude;
+          pointer-events:none;
+          opacity:.6;
+        }
+        .featured-top{
+          display:flex;
+          flex-wrap:wrap;
+          gap:10px;
+          align-items:center;
+          justify-content:space-between;
+          margin-bottom:10px;
+          position:relative;
+          z-index:1;
+        }
+        .featured-pill{
+          display:inline-flex;
+          align-items:center;
+          gap:6px;
+          padding:4px 10px;
+          border-radius:999px;
+          border:1px solid rgba(6,182,212,.45);
+          background: rgba(6,182,212,.08);
+          color:#67e8f9;
+          font-size:.68rem;
+          letter-spacing:.14em;
+          text-transform:uppercase;
+          font-weight:900;
+        }
+        .featured-dot{
+          width:6px;height:6px;border-radius:999px;
+          background:var(--accent2);
+          box-shadow:0 0 12px rgba(6,182,212,.55);
+        }
+        .featured h3{
+          margin:0;
+          font-size:1.15rem;
+          letter-spacing:.01em;
+          position:relative;
+          z-index:1;
+        }
+        .featured p{position:relative;z-index:1;}
 
-    /* Income CTA */
-    .income{
-      margin-top:26px;
-      padding:18px 18px 20px;
-      border-radius:var(--radius);
-      border:1px solid rgba(34,197,94,.50);
-      background:
-        linear-gradient(135deg, rgba(34,197,94,.15), transparent 60%),
-        rgba(15,23,42,.96);
-      box-shadow:var(--shadow);
-    }
-    .income h3{margin:0 0 6px;font-size:1.18rem;}
-    .income p{margin:0;color:var(--text-muted);line-height:1.75;font-size:.95rem;}
+        /* Income CTA */
+        .income{
+          margin-top:26px;
+          padding:18px 18px 20px;
+          border-radius:var(--radius);
+          border:1px solid rgba(34,197,94,.50);
+          background:
+            linear-gradient(135deg, rgba(34,197,94,.15), transparent 60%),
+            rgba(15,23,42,.96);
+          box-shadow:var(--shadow);
+        }
+        .income h3{margin:0 0 6px;font-size:1.18rem;}
+        .income p{margin:0;color:var(--text-muted);line-height:1.75;font-size:.95rem;}
 
-    /* NEW: bonus pill + example box */
-    .bonus-pill{
-      margin-top:10px;
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:6px 12px;
-      border-radius:999px;
-      border:1px solid rgba(34,197,94,.55);
-      background: rgba(34,197,94,.10);
-      color:#6ee7b7;
-      font-size:.74rem;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      font-weight:900;
-    }
-    .example-box{
-      margin-top:10px;
-      padding:12px 14px;
-      border-radius:14px;
-      border:1px solid rgba(6,182,212,.30);
-      background: rgba(6,182,212,.08);
-      color: rgba(226,232,240,.95);
-      line-height:1.65;
-      max-width:760px;
-    }
-    .example-box strong{color:#67e8f9;}
-    .example-box code{
-      color:#67e8f9;
-      font-weight:900;
-      background: rgba(2,6,23,.55);
-      border: 1px solid rgba(148,163,184,.22);
-      padding: 2px 6px;
-      border-radius: 8px;
-    }
+        /* NEW: bonus pill + example box */
+        .bonus-pill{
+          margin-top:10px;
+          display:inline-flex;
+          align-items:center;
+          gap:8px;
+          padding:6px 12px;
+          border-radius:999px;
+          border:1px solid rgba(34,197,94,.55);
+          background: rgba(34,197,94,.10);
+          color:#6ee7b7;
+          font-size:.74rem;
+          letter-spacing:.12em;
+          text-transform:uppercase;
+          font-weight:900;
+        }
+        .example-box{
+          margin-top:10px;
+          padding:12px 14px;
+          border-radius:14px;
+          border:1px solid rgba(6,182,212,.30);
+          background: rgba(6,182,212,.08);
+          color: rgba(226,232,240,.95);
+          line-height:1.65;
+          max-width:760px;
+        }
+        .example-box strong{color:#67e8f9;}
+        .example-box code{
+          color:#67e8f9;
+          font-weight:900;
+          background: rgba(2,6,23,.55);
+          border: 1px solid rgba(148,163,184,.22);
+          padding: 2px 6px;
+          border-radius: 8px;
+        }
 
-    .cta{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      margin-top:14px;
-      padding:9px 18px;
-      border-radius:999px;
-      border:none;
-      background:linear-gradient(135deg, var(--accent), var(--accent2));
-      color:#020617;
-      font-size:.9rem;
-      font-weight:900;
-      cursor:pointer;
-      text-decoration:none;
-      box-shadow:0 10px 30px rgba(6,182,212,.22);
-      transition: transform .10s ease-out, box-shadow .10s ease-out;
-    }
-    .cta:hover{
-      transform: translateY(-1px);
-      box-shadow:0 14px 40px rgba(6,182,212,.30);
-      text-decoration:none;
-    }
-    .fineprint{
-      margin-top:8px;
-      font-size:.72rem;
-      color:var(--text-muted);
-      opacity:.82;
-      line-height:1.55;
-    }
+        .cta{
+          display:inline-flex;
+          align-items:center;
+          justify-content:center;
+          margin-top:14px;
+          padding:9px 18px;
+          border-radius:999px;
+          border:none;
+          background:linear-gradient(135deg, var(--accent), var(--accent2));
+          color:#020617;
+          font-size:.9rem;
+          font-weight:900;
+          cursor:pointer;
+          text-decoration:none;
+          box-shadow:0 10px 30px rgba(6,182,212,.22);
+          transition: transform .10s ease-out, box-shadow .10s ease-out;
+        }
+        .cta:hover{
+          transform: translateY(-1px);
+          box-shadow:0 14px 40px rgba(6,182,212,.30);
+          text-decoration:none;
+        }
+        .fineprint{
+          margin-top:8px;
+          font-size:.72rem;
+          color:var(--text-muted);
+          opacity:.82;
+          line-height:1.55;
+        }
 
-    .disclaimer{
-      margin-top:30px;
-      padding-top:10px;
-      border-top:1px solid rgba(148,163,184,.35);
-      font-size:.75rem;
-      color:var(--text-muted);
-      line-height:1.6;
-    }
-  </style>
-</head>
+        .disclaimer{
+          margin-top:30px;
+          padding-top:10px;
+          border-top:1px solid rgba(148,163,184,.35);
+          font-size:.75rem;
+          color:var(--text-muted);
+          line-height:1.6;
+        }
+      </style>
+    </head>
 
-<body>
-  <div class="page">
-    <div class="container">
+    <body>
+      <div class="page">
+        <div class="container">
 
-      <a class="back-link" href="/report/">
-        <span>←</span> Back to all reports
-      </a>
+          <a class="back-link" href="/report/">
+            <span>←</span> Back to all reports
+          </a>
 
-      <a href="https://degenstein.xyz/" class="home-pill">← Back to Main Page</a>
+          <a href="https://degenstein.xyz/" class="home-pill">← Back to Main Page</a>
 
-      <!-- Banner -->
-      <div class="banner-wrap">
-        <img
-          src="/assets/report-near-ai.png"
-          alt="NEAR + AI — Infrastructure for Autonomous Apps, Agents & Scalable UX"
-          class="banner-img"
-          loading="lazy"
-        />
-      </div>
+          <!-- Banner -->
+          <div class="banner-wrap">
+            <img
+              src="/assets/report-near-ai.png"
+              alt="NEAR + AI — Infrastructure for Autonomous Apps, Agents & Scalable UX"
+              class="banner-img"
+              loading="lazy"
+            />
+          </div>
 
-      <div class="badge-row">
-        <div class="badge"><span class="badge-dot"></span> The Degenstein Report</div>
-        <div class="token-pill">$NEAR + AI • Agents • UX</div>
-      </div>
+          <div class="badge-row">
+            <div class="badge"><span class="badge-dot"></span> The Degenstein Report</div>
+            <div class="token-pill">$NEAR + AI • Agents • UX</div>
+          </div>
 
-      <h1>NEAR + AI — Infrastructure for Autonomous Apps & Agents</h1>
-      <p class="subtitle">
-        AI narratives are loud. Infrastructure that actually supports autonomous apps and scalable user experiences is rare.
-        This report is about where <strong>NEAR</strong> can fit — and what has to happen for the thesis to pay.
+          <h1>NEAR + AI — July 2026 Agentic Economy, Intents & Chain Abstraction</h1>
+          <p class="subtitle">
+            NEAR's 2026 thesis is no longer simply “fast chain + AI narrative.”
+            The stack now combines <strong>NEAR AI, Intents, chain abstraction, confidential execution, and protocol scaling</strong>.
+            The investment question is whether real usage across that stack creates durable economic demand and value capture for NEAR.
+          </p>
+
+          <!-- Share -->
+          <div class="share-row">
+            <span class="share-label">Share this report</span>
+
+            <a
+              class="share-btn"
+              href="https://twitter.com/intent/tweet?text=July%202026%20NEAR%20%2B%20AI%3A%20Intents%2C%20chain%20abstraction%2C%20confidential%20agents%20%26%20the%20NEAR%20value-capture%20question.&url=https%3A%2F%2Fdegenstein.xyz%2Freport%2Fnear-ai%2F"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              ✕ Share on X
+            </a>
+
+            <button class="share-btn" type="button" onclick="copyNearAiLink()">
+              ⧉ Copy link
+            </button>
+          </div>
+
+          <!-- Snapshot -->
+          <section class="card">
+            <div class="card-title">Snapshot</div>
+            <div class="snapshot-grid">
+              <div>
+                <div class="label">Pair</div>
+                <div class="value">$NEAR + Agentic Economy</div>
+              </div>
+              <div>
+                <div class="label">Angle</div>
+                <div class="value">AI front end + blockchain settlement + cross-chain execution</div>
+              </div>
+              <div>
+                <div class="label">What I’m watching</div>
+                <div class="value">Intents volume, agent activity, fees, staking economics and production usage</div>
+              </div>
+              <div>
+                <div class="label">Status</div>
+                <div class="value" style="color:var(--accent2);">July 2026 thesis under active review</div>
+              </div>
+            </div>
+            <div class="note">Note: Educational overview only — not financial advice. Always DYOR.</div>
+          </section>
+
+          <!-- Special thesis box -->
+          <section class="featured">
+            <div class="featured-top">
+              <div class="featured-pill"><span class="featured-dot"></span> Core thesis</div>
+            </div>
+            <h3>Why “NEAR + AI” can be a real pairing (not just vibes)</h3>
+            <p style="margin-top:8px;">
+              NEAR's current architecture thesis is that AI interprets user intent at the front end while blockchain infrastructure handles identity,
+              trust, assets, and settlement at the back end. <strong>NEAR Intents</strong> and <strong>Chain Signatures</strong> are designed to reduce multi-chain complexity,
+              while NEAR AI focuses on private, user-owned agents running in secure environments.
+            </p>
+          </section>
+
+          <!-- NEAR + AI in 60 seconds -->
+          <section class="section">
+            <h2>The July 2026 NEAR Thesis in 60 Seconds</h2>
+            <p>
+              NEAR is positioning itself around an <strong>agentic economy</strong>: AI agents that can interpret goals, access assets, and execute economic activity.
+              NEAR Intents provides solver-based cross-chain execution, while Chain Signatures enable a NEAR account to sign transactions across other supported chains.
+              NEAR AI adds confidential agent infrastructure using trusted execution environments.
+            </p>
+            <p style="margin-top:10px;">
+              The thesis is now more concrete than “AI apps need a fast chain.” The measurable test is whether Intents volume, cross-chain settlement,
+              agent deployments, confidential AI usage, and protocol fees grow — and whether those economics create sustained demand for NEAR.
+            </p>
+          </section>
+
+          <section class="card">
+            <div class="card-title">Fresh July 2026 Infrastructure Signals</div>
+            <div class="snapshot-grid">
+              <div><div class="label">NEAR Intents</div><div class="value">$10B+ cumulative volume reported in NEAR's Q2 update</div></div>
+              <div><div class="label">Unified Access</div><div class="value">near.com launched with swaps across 35+ blockchains</div></div>
+              <div><div class="label">Scaling</div><div class="value">Dynamic resharding targeted for Q2 2026 protocol rollout</div></div>
+              <div><div class="label">Next Upgrade</div><div class="value">SPICE previewed for July 2026 launch work</div></div>
+            </div>
+            <div class="note">These are ecosystem and infrastructure signals. They do not automatically prove NEAR token value capture.</div>
+          </section>
+
+          <section class="section">
+            <h2>July 2026 Thesis Update</h2>
+            <p>
+              NEAR's Q2 2026 update says <strong>NEAR Intents surpassed $10 billion in cumulative volume</strong>. That gives the chain-abstraction thesis a measurable usage metric instead of relying only on product announcements.
+              In February, NEAR also launched <strong>near.com</strong>, a unified onchain interface powered by NEAR Intents with cross-chain swaps across more than 35 blockchains.
+            </p>
+            <p style="margin-top:10px;">
+              The base-layer roadmap is moving too. NEAR introduced <strong>dynamic resharding</strong> as an automatic scaling upgrade, and in July previewed <strong>SPICE — Separation of Consensus and Execution</strong>.
+              These upgrades matter because an agentic-economy thesis eventually requires reliable, scalable execution rather than AI branding alone.
+            </p>
+            <p style="margin-top:10px;">
+              NEAR AI now explicitly describes its agent infrastructure as open source, TEE-secured, and designed to deploy and scale confidential AI agents.
+              The research question is whether those agents move from developer infrastructure into sustained economic activity — and whether NEAR captures value from that activity.
+            </p>
+          </section>
+
+          <!-- Catalysts -->
+          <section class="section">
+            <h2>Key 2026 Catalysts I’m Watching</h2>
+            <ul class="list">
+              <li><strong>NEAR Intents:</strong> track cumulative and monthly cross-chain volume, solver competition, supported networks, and repeat usage.</li>
+              <li><strong>Confidential agents:</strong> track real deployments on NEAR AI and whether TEE-secured agents execute meaningful economic activity.</li>
+              <li><strong>Dynamic resharding + SPICE:</strong> watch protocol upgrades that automate shard scaling and separate consensus from execution.</li>
+              <li><strong>Chain abstraction:</strong> measure whether one-account, multi-chain execution becomes a durable distribution advantage.</li>
+              <li><strong>NEAR value capture:</strong> fees, staking demand, token economics, and whether cross-chain and AI activity accrue economically to NEAR.</li>
+            </ul>
+          </section>
+
+          <!-- Where value could show up -->
+          <section class="section">
+            <h2>Where I See Potential Value</h2>
+            <p>
+              NEAR's opportunity is to connect AI interfaces with cross-chain economic execution. The launch of near.com in February unified swaps across 35+ blockchains
+              through NEAR Intents, while NEAR AI is positioning confidential agents as software that can act on behalf of users without exposing private data.
+            </p>
+            <p style="margin-top:10px;">
+              The investment thesis should not be “AI makes NEAR go up.” The test is whether NEAR becomes infrastructure for agent-driven transactions and whether
+              that activity creates fees, staking demand, network security value, or other durable NEAR token demand.
+            </p>
+          </section>
+
+          <!-- Risks -->
+          <section class="section">
+            <h2>Risks (Keep It Real)</h2>
+            <ul class="list">
+              <li><strong>Value-capture risk:</strong> Intents and AI usage can grow without creating proportional demand for the NEAR token.</li>
+              <li><strong>Competition:</strong> other L1s, L2s, intent systems, wallets, and AI-agent platforms can compete on execution and distribution.</li>
+              <li><strong>Agent adoption timing:</strong> autonomous economic agents may take longer to reach trusted mainstream usage than the market expects.</li>
+              <li><strong>Protocol and execution risk:</strong> dynamic resharding, SPICE, chain abstraction, and confidential AI must perform reliably in production.</li>
+            </ul>
+          </section>
+
+          <!-- Income angle -->
+          <section class="income">
+      <h3>NEAR Exposure vs. Third-Party Yield — Separate the Risk Layers</h3>
+      <p>
+        Holding NEAR, staking NEAR through protocol mechanisms, and transferring NEAR to a third-party custodial interest platform are different risk structures.
+        They should not be presented as interchangeable forms of yield.
+      </p>
+      <p style="margin-top:10px;">
+        Degenstein maintains a separate <strong>CoinDepo research review</strong>. CoinDepo currently advertises up to 18% APR on crypto,
+        but a custodial platform rate is not NEAR protocol staking yield and should not be used as evidence for the NEAR investment thesis.
       </p>
 
-      <!-- Share -->
-      <div class="share-row">
-        <span class="share-label">Share this report</span>
+            <!-- ✅ FIXED: correct link + correct referral code -->
+            <a class="cta" href="/report/coindepo-earn-while-you-hold/">
+      Read the CoinDepo research review →
+    </a>
+     <p style="margin-top:10px;font-size:.85rem;color:rgba(156,163,175,.95);">
+        For a separate review of advertised rates, custody terms, and platform risks, see the
+        <a href="/report/coindepo-earn-while-you-hold/" target="_blank" rel="noopener">CoinDepo research review →</a>
+      </p>
+            <div class="fineprint">
+              CoinDepo rates, terms, and availability can change. Some links in the separate CoinDepo report are referral links and are clearly disclosed there.
+              This NEAR report does not treat third-party custodial interest as NEAR protocol yield.
+            </div>
+          </section>
 
-        <a
-          class="share-btn"
-          href="https://twitter.com/intent/tweet?text=New%20Degenstein%20Report%3A%20NEAR%20%2B%20AI%20%E2%80%94%20Infrastructure%20for%20Autonomous%20Apps%20%26%20Agents%20(no%20hopium).&url=https%3A%2F%2Fdegenstein.xyz%2Freport%2Fnear-ai%2F"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          ✕ Share on X
-        </a>
+          <!-- Final thoughts -->
+          <section class="section">
+            <h2>Final Thoughts</h2>
+            <p>
+              NEAR's 2026 thesis is stronger when described as an integrated infrastructure stack rather than an AI narrative token.
+              Intents, Chain Signatures, confidential AI agents, dynamic resharding, and SPICE create measurable technical and economic checkpoints.
+              The remaining question is direct token value capture: ecosystem growth is not enough if NEAR demand, fees, staking economics, and network security value do not scale with it.
+            </p>
+          </section>
 
-        <button class="share-btn" type="button" onclick="copyNearAiLink()">
-          ⧉ Copy link
-        </button>
+          <div class="disclaimer">
+            <strong>Research &amp; Risk Disclosure:</strong> This report is for informational and educational purposes only and does not constitute financial,
+            investment, legal, or tax advice. NEAR is volatile. Growth in NEAR Intents, NEAR AI, chain abstraction, agent deployments, or protocol throughput does not guarantee
+            NEAR price appreciation or direct token value capture. AI-agent systems, cross-chain infrastructure, smart contracts, and third-party custodial platforms introduce separate risks.
+            Verify current information independently.<br><br>
+            <a href="/about/">About</a> · <a href="/contact/">Contact</a> · <a href="/editorial-policy/">Editorial Policy</a> · <a href="/terms.html">Terms</a> · <a href="/privacy.html">Privacy</a>
+          </div>
+
+        </div>
       </div>
 
-      <!-- Snapshot -->
-      <section class="card">
-        <div class="card-title">Snapshot</div>
-        <div class="snapshot-grid">
-          <div>
-            <div class="label">Pair</div>
-            <div class="value">$NEAR + AI Narrative</div>
-          </div>
-          <div>
-            <div class="label">Angle</div>
-            <div class="value">Agents + autonomous apps need UX + throughput</div>
-          </div>
-          <div>
-            <div class="label">What I’m watching</div>
-            <div class="value">Real users, real apps, real integrations (not just announcements)</div>
-          </div>
-          <div>
-            <div class="label">Status</div>
-            <div class="value" style="color:var(--accent2);">Under active 2026 watch</div>
-          </div>
-        </div>
-        <div class="note">Note: Educational overview only — not financial advice. Always DYOR.</div>
-      </section>
-
-      <!-- Special thesis box -->
-      <section class="featured">
-        <div class="featured-top">
-          <div class="featured-pill"><span class="featured-dot"></span> Core thesis</div>
-        </div>
-        <h3>Why “NEAR + AI” can be a real pairing (not just vibes)</h3>
-        <p style="margin-top:8px;">
-          AI agents don’t just need a token. They need <strong>reliable execution</strong>, <strong>low-friction onboarding</strong>,
-          and <strong>scalable UX</strong> so non-crypto users can actually show up. NEAR’s best shot is being the chain that makes
-          autonomous apps feel normal: fast, cheap, and easy to use.
-        </p>
-      </section>
-
-      <!-- NEAR + AI in 60 seconds -->
-      <section class="section">
-        <h2>NEAR + AI in 60 Seconds</h2>
-        <p>
-          The AI narrative in crypto tends to split into two buckets: <strong>AI tokens</strong> (often speculative) and
-          <strong>AI infrastructure</strong> (harder, but stickier). My interest here is the second bucket.
-          If agents and autonomous apps grow, the “winner” chains are the ones that reduce friction and scale cleanly.
-        </p>
-        <p style="margin-top:10px;">
-          NEAR’s positioning: ship UX-forward tooling, keep fees low, and make onboarding feel closer to Web2.
-          If that becomes true at scale, NEAR can be an “AI app layer” candidate.
-        </p>
-      </section>
-
-      <!-- Catalysts -->
-      <section class="section">
-        <h2>Key 2026 Catalysts I’m Watching</h2>
-        <ul class="list">
-          <li><strong>Real AI/agent apps with users:</strong> not demos — daily active users, retention, and usage growth.</li>
-          <li><strong>UX breakthroughs:</strong> smoother onboarding, account abstraction patterns, and fewer “wallet moments.”</li>
-          <li><strong>Ecosystem traction:</strong> developer adoption that converts into shipping products (not just grants).</li>
-          <li><strong>Interop + distribution:</strong> integrations that bring users from other chains / Web2 funnels into NEAR apps.</li>
-          <li><strong>Macro tailwinds:</strong> risk-on liquidity + a market that rewards utility narratives.</li>
-        </ul>
-      </section>
-
-      <!-- Where value could show up -->
-      <section class="section">
-        <h2>Where I See Potential Value</h2>
-        <p>
-          If the AI/agent wave becomes real in consumer apps, the chains that win may not be the “most ideological” —
-          they’ll be the ones that feel the most like a product platform. NEAR’s opportunity is to be
-          <strong>the chain where autonomous apps can onboard users without pain</strong>.
-        </p>
-        <p style="margin-top:10px;">
-          The bet is not “AI makes number go up.” The bet is: AI creates new app categories, and those apps need
-          scalable, usable rails.
-        </p>
-      </section>
-
-      <!-- Risks -->
-      <section class="section">
-        <h2>Risks (Keep It Real)</h2>
-        <ul class="list">
-          <li><strong>Narrative dilution:</strong> “AI” gets slapped on everything; market stops paying for the label.</li>
-          <li><strong>Competition:</strong> other L1s/L2s can compete on UX and distribution.</li>
-          <li><strong>Adoption timing:</strong> agents may take longer to hit mainstream usage than the market expects.</li>
-          <li><strong>Execution risk:</strong> products, dev tooling, and ecosystem growth must actually compound.</li>
-        </ul>
-      </section>
-
-      <!-- Income angle -->
-      <section class="income">
-  <h3>How I Play It: Earn While I Hold</h3>
-  <p>
-    My approach is simple: when holding an infrastructure thesis through volatility,
-    I focus on managing time rather than trading noise.
-    Where appropriate, I use yield strategies to avoid leaving capital idle.
-  </p>
-  <p style="margin-top:10px;">
-    One example is using platforms like <strong>CoinDepo</strong> to earn yield on supported assets
-    while maintaining long-term exposure.
-    This is a framework choice — not a guarantee — and requires assessing platform and market risk.
-  </p>
-
-        <!-- ✅ FIXED: correct link + correct referral code -->
-        <a class="cta" href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W" target="_blank" rel="noopener noreferrer">
-  Earn now with CoinDepo up to 18% just for holding $NEAR
-</a>
- <p style="margin-top:10px;font-size:.85rem;color:rgba(156,163,175,.95);">
-    For a full breakdown of rates, bonuses, and risks, see the
-    <a href="/report/coindepo-earn-while-you-hold/" target="_blank" rel="noopener">CoinDepo deep dive →</a>
-  </p>
-        <div class="fineprint">
-          Always read the platform’s terms and risks. Rates/eligibility can change. Not financial advice.
-          Bonus tiers/eligibility vary by region and can change—confirm inside CoinDepo.
-        </div>
-      </section>
-
-      <!-- Final thoughts -->
-      <section class="section">
-        <h2>Final Thoughts</h2>
-        <p>
-          NEAR + AI becomes interesting when it’s tied to real product outcomes: onboarding, retention, app distribution,
-          and usage at scale. If 2026 rewards utility, this pairing has a lane — but only if execution shows up on-chain.
-        </p>
-      </section>
-
-      <div class="disclaimer">
-        Nothing in this report is financial, legal, or tax advice. It’s a personal perspective based on publicly available information
-        and my own risk tolerance. Crypto is volatile. Never invest more than you can afford to lose. Always do your own research.
-      </div>
-
-    </div>
-  </div>
-
-  <script>
-    function copyNearAiLink() {
-      const url = "https://degenstein.xyz/report/near-ai/";
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(url).then(function () {
-          alert("Link copied: " + url);
-        }, function () {
-          alert("Could not copy link, please copy manually: " + url);
-        });
-      } else {
-        const temp = document.createElement("input");
-        temp.value = url;
-        document.body.appendChild(temp);
-        temp.select();
-        try {
-          document.execCommand("copy");
-          alert("Link copied: " + url);
-        } catch (e) {
-          alert("Could not copy link, please copy manually: " + url);
+      <script>
+        function copyNearAiLink() {
+          const url = "https://degenstein.xyz/report/near-ai/";
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(url).then(function () {
+              alert("Link copied: " + url);
+            }, function () {
+              alert("Could not copy link, please copy manually: " + url);
+            });
+          } else {
+            const temp = document.createElement("input");
+            temp.value = url;
+            document.body.appendChild(temp);
+            temp.select();
+            try {
+              document.execCommand("copy");
+              alert("Link copied: " + url);
+            } catch (e) {
+              alert("Could not copy link, please copy manually: " + url);
+            }
+            document.body.removeChild(temp);
+          }
         }
-        document.body.removeChild(temp);
-      }
-    }
-  </script>
-</body>
-</html>
+      </script>
+    </body>
+    </html>
+
 
 
