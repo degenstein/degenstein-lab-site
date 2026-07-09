@@ -1,755 +1,798 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>$XRP — 2026 ETF Era & Global Payment Rails | The Degenstein Report</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <title>$XRP — July 2026 ETF Flows, MiCA & XRPL Payment Rails | The Degenstein Report</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- ✅ SEO -->
-  <meta name="description" content="$XRP — 2026 ETF era, global payment rails, catalysts, risks, and an earn-while-you-hold strategy. No hopium. Educational only." />
-  <link rel="canonical" href="https://degenstein.xyz/report/xrp/" />
-  <meta name="robots" content="index, follow" />
+      <!-- ✅ SEO -->
+      <meta name="description" content="Independent July 2026 XRP research covering U.S. spot ETF flows, Ripple's EU MiCA authorization, XRPL payments and tokenization, catalysts, value capture, and risk." />
+      <link rel="canonical" href="https://degenstein.xyz/report/xrp/" />
+      <meta name="robots" content="index, follow" />
 
-  <!-- ✅ Open Graph -->
-  <meta property="og:type" content="article" />
-  <meta property="og:site_name" content="The Degenstein Report" />
-  <meta property="og:title" content="$XRP — 2026 ETF Era & Global Payment Rails" />
-  <meta property="og:description" content="Token breakdowns, yield angles & real catalysts — no hopium." />
-  <!-- If you export the SVG below to PNG, save it as /assets/report-xrp.png -->
-  <meta property="og:image" content="https://degenstein.xyz/assets/report-xrp.png" />
-  <meta property="og:url" content="https://degenstein.xyz/report/xrp/" />
+      <!-- ✅ Open Graph -->
+      <meta property="og:type" content="article" />
+      <meta property="og:site_name" content="The Degenstein Report" />
+      <meta property="og:title" content="$XRP — July 2026 ETF Flows, MiCA & XRPL Payment Rails" />
+      <meta property="og:description" content="Current XRP research: ETF demand, regulated payments, XRPL adoption, tokenization, and risks." />
+      <!-- If you export the SVG below to PNG, save it as /assets/report-xrp.png -->
+      <meta property="og:image" content="https://degenstein.xyz/assets/report-xrp.png" />
+      <meta property="og:url" content="https://degenstein.xyz/report/xrp/" />
 
-  <!-- ✅ X / Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="$XRP — 2026 ETF Era & Global Payment Rails" />
-  <meta name="twitter:description" content="Token breakdowns, yield angles & real catalysts — no hopium." />
-  <meta name="twitter:image" content="https://degenstein.xyz/assets/report-xrp.png" />
-  <meta name="twitter:site" content="@DHouseofcrypto" />
+      <!-- ✅ X / Twitter -->
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="$XRP — July 2026 ETF Flows, MiCA & XRPL Payment Rails" />
+      <meta name="twitter:description" content="Current XRP research: ETF demand, regulated payments, XRPL adoption, tokenization, and risks." />
+      <meta name="twitter:image" content="https://degenstein.xyz/assets/report-xrp.png" />
+      <meta name="twitter:site" content="@DHouseofcrypto" />
 
-  <meta name="theme-color" content="#22c55e" />
+      <meta name="theme-color" content="#22c55e" />
 
-  <style>
-    :root {
-      --bg: #020617;
-      --card: #020617;
-      --card-soft: #020817;
-      --border: #1e293b;
-      --accent: #22c55e;
-      --accent-soft: rgba(34, 197, 94, 0.1);
-      --text-main: #f9fafb;
-      --text-muted: #9ca3af;
-      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.8);
-      --radius-lg: 18px;
-    }
+      <style>
+        :root {
+          --bg: #020617;
+          --card: #020617;
+          --card-soft: #020817;
+          --border: #1e293b;
+          --accent: #22c55e;
+          --accent-soft: rgba(34, 197, 94, 0.1);
+          --text-main: #f9fafb;
+          --text-muted: #9ca3af;
+          --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.8);
+          --radius-lg: 18px;
+        }
 
-    * { box-sizing: border-box; }
-.container {
-  max-width: 920px;
-}
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(34, 197, 94, 0.16), transparent 55%),
-        radial-gradient(circle at bottom right, rgba(15, 118, 110, 0.2), transparent 55%),
-        var(--bg);
-      color: var(--text-main);
-      -webkit-font-smoothing: antialiased;
-    }
-.snapshot, .income-card {
-  transition: transform .15s ease, box-shadow .15s ease;
-}
-
-.snapshot:hover, .income-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 25px 70px rgba(0,0,0,.85);
-}
-    .page {
-      min-height: 100vh;
-      padding: 38px 16px 70px;
-      display: flex;
-      justify-content: center;
-    }
-
+        * { box-sizing: border-box; }
     .container {
-      width: 100%;
-      max-width: 860px;
+      max-width: 920px;
+    }
+        body {
+          margin: 0;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+          background:
+            radial-gradient(circle at top left, rgba(34, 197, 94, 0.16), transparent 55%),
+            radial-gradient(circle at bottom right, rgba(15, 118, 110, 0.2), transparent 55%),
+            var(--bg);
+          color: var(--text-main);
+          -webkit-font-smoothing: antialiased;
+        }
+    .snapshot, .income-card {
+      transition: transform .15s ease, box-shadow .15s ease;
     }
 
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    .back-link {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--text-muted);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-bottom: 8px;
+    .snapshot:hover, .income-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 25px 70px rgba(0,0,0,.85);
     }
-    .back-link span { font-size: 1.1rem; }
+        .page {
+          min-height: 100vh;
+          padding: 38px 16px 70px;
+          display: flex;
+          justify-content: center;
+        }
 
-    .home-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-bottom: 16px;
-      padding: 7px 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      background: rgba(15, 23, 42, 0.8);
-      color: var(--text-muted);
-      font-size: 0.74rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: all 0.15s ease-out;
-    }
-    .home-pill:hover {
-      background: var(--accent-soft);
-      border-color: var(--accent);
-      color: var(--accent);
-      text-decoration: none;
-    }
+        .container {
+          width: 100%;
+          max-width: 860px;
+        }
 
-    /* ✅ NEW: Hero cover image (SVG) */
-    .hero-cover {
-      margin: 10px 0 16px;
-      border-radius: 18px;
-      overflow: hidden;
-      border: 1px solid rgba(148, 163, 184, 0.26);
-      background: rgba(15, 23, 42, 0.55);
-      box-shadow: 0 20px 70px rgba(0,0,0,.55);
-    }
-    .hero-cover svg { width: 100%; height: auto; display: block; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
 
-    .badge-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      align-items: center;
-      margin-bottom: 10px;
-    }
+        .back-link {
+          font-size: 0.8rem;
+          text-transform: uppercase;
+          letter-spacing: 0.14em;
+          color: var(--text-muted);
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          margin-bottom: 8px;
+        }
+        .back-link span { font-size: 1.1rem; }
 
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      color: var(--text-muted);
-      font-size: 11px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-    }
+        .home-pill {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          margin-bottom: 16px;
+          padding: 7px 14px;
+          border-radius: 999px;
+          border: 1px solid rgba(148, 163, 184, 0.4);
+          background: rgba(15, 23, 42, 0.8);
+          color: var(--text-muted);
+          font-size: 0.74rem;
+          letter-spacing: 0.14em;
+          text-transform: uppercase;
+          text-decoration: none;
+          transition: all 0.15s ease-out;
+        }
+        .home-pill:hover {
+          background: var(--accent-soft);
+          border-color: var(--accent);
+          color: var(--accent);
+          text-decoration: none;
+        }
 
-    .badge-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 999px;
-      background: var(--accent);
-      box-shadow: 0 0 10px rgba(34, 197, 94, 0.9);
-    }
+        /* ✅ NEW: Hero cover image (SVG) */
+        .hero-cover {
+          margin: 10px 0 16px;
+          border-radius: 18px;
+          overflow: hidden;
+          border: 1px solid rgba(148, 163, 184, 0.26);
+          background: rgba(15, 23, 42, 0.55);
+          box-shadow: 0 20px 70px rgba(0,0,0,.55);
+        }
+        .hero-cover svg { width: 100%; height: auto; display: block; }
 
-    .token-pill {
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(34, 197, 94, 0.12);
-      border: 1px solid rgba(34, 197, 94, 0.6);
-      font-size: 11px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--accent);
-    }
+        .badge-row {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+          align-items: center;
+          margin-bottom: 10px;
+        }
 
-    h1 {
-      font-size: clamp(2.15rem, 3.4vw, 2.8rem);
-      margin: 6px 0 6px;
-      letter-spacing: 0.02em;
-    }
+        .badge {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          padding: 4px 10px;
+          border-radius: 999px;
+          background: rgba(15, 23, 42, 0.9);
+          border: 1px solid rgba(148, 163, 184, 0.4);
+          color: var(--text-muted);
+          font-size: 11px;
+          letter-spacing: 0.16em;
+          text-transform: uppercase;
+        }
 
-    .subtitle {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      max-width: 520px;
-    }
+        .badge-dot {
+          width: 6px;
+          height: 6px;
+          border-radius: 999px;
+          background: var(--accent);
+          box-shadow: 0 0 10px rgba(34, 197, 94, 0.9);
+        }
 
-    .share-row {
-      margin-top: 14px;
-      margin-bottom: 6px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-    }
+        .token-pill {
+          padding: 4px 10px;
+          border-radius: 999px;
+          background: rgba(34, 197, 94, 0.12);
+          border: 1px solid rgba(34, 197, 94, 0.6);
+          font-size: 11px;
+          letter-spacing: 0.16em;
+          text-transform: uppercase;
+          color: var(--accent);
+        }
 
-    .share-label {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-muted);
-    }
+        h1 {
+          font-size: clamp(2.15rem, 3.4vw, 2.8rem);
+          margin: 6px 0 6px;
+          letter-spacing: 0.02em;
+        }
 
-    .share-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 7px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      background: rgba(15, 23, 42, 0.9);
-      color: var(--text-muted);
-      font-size: 0.8rem;
-      text-decoration: none;
-      cursor: pointer;
-      transition: all 0.15s ease-out;
-    }
+        .subtitle {
+          font-size: 0.95rem;
+          color: var(--text-muted);
+          max-width: 520px;
+        }
 
-    .share-btn:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      text-decoration: none;
-      background: var(--accent-soft);
-    }
+        .share-row {
+          margin-top: 14px;
+          margin-bottom: 6px;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+          align-items: center;
+        }
 
-    .share-btn span { font-size: 0.95rem; }
+        .share-label {
+          font-size: 0.8rem;
+          text-transform: uppercase;
+          letter-spacing: 0.16em;
+          color: var(--text-muted);
+        }
 
-    .snapshot {
-      margin-top: 20px;
-      padding: 18px 18px 16px;
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      background:
-        linear-gradient(135deg, rgba(34, 197, 94, 0.16), transparent 55%),
-        rgba(15, 23, 42, 0.96);
-      box-shadow: var(--shadow-soft);
-    }
+        .share-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          padding: 7px 12px;
+          border-radius: 999px;
+          border: 1px solid rgba(148, 163, 184, 0.4);
+          background: rgba(15, 23, 42, 0.9);
+          color: var(--text-muted);
+          font-size: 0.8rem;
+          text-decoration: none;
+          cursor: pointer;
+          transition: all 0.15s ease-out;
+        }
 
-    .snapshot-title {
-      font-size: 0.98rem;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
+        .share-btn:hover {
+          border-color: var(--accent);
+          color: var(--accent);
+          text-decoration: none;
+          background: var(--accent-soft);
+        }
 
-    .snapshot-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: 10px 22px;
-      font-size: 0.9rem;
-    }
+        .share-btn span { font-size: 0.95rem; }
 
-    @media (max-width: 640px) {
-      .page { padding-top: 26px; }
-      .snapshot-grid { grid-template-columns: minmax(0, 1fr); }
-    }
+        .snapshot {
+          margin-top: 20px;
+          padding: 18px 18px 16px;
+          border-radius: var(--radius-lg);
+          border: 1px solid rgba(148, 163, 184, 0.4);
+          background:
+            linear-gradient(135deg, rgba(34, 197, 94, 0.16), transparent 55%),
+            rgba(15, 23, 42, 0.96);
+          box-shadow: var(--shadow-soft);
+        }
 
-    .snapshot-label {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: var(--text-muted);
-      margin-bottom: 2px;
-    }
+        .snapshot-title {
+          font-size: 0.98rem;
+          font-weight: 600;
+          margin-bottom: 10px;
+        }
 
-    .snapshot-value { font-weight: 500; }
+        .snapshot-grid {
+          display: grid;
+          grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+          gap: 10px 22px;
+          font-size: 0.9rem;
+        }
 
-    .snapshot-note {
-      margin-top: 10px;
-      font-size: 0.72rem;
-      color: var(--text-muted);
-      opacity: 0.75;
-    }
+        @media (max-width: 640px) {
+          .page { padding-top: 26px; }
+          .snapshot-grid { grid-template-columns: minmax(0, 1fr); }
+        }
 
-    .section { margin-top: 26px; }
-    .section-title { font-size: 1.2rem; margin-bottom: 6px; }
+        .snapshot-label {
+          font-size: 0.78rem;
+          text-transform: uppercase;
+          letter-spacing: 0.14em;
+          color: var(--text-muted);
+          margin-bottom: 2px;
+        }
 
-    .section-body {
-      font-size: 0.95rem;
-      line-height: 1.75;
-      color: var(--text-muted);
-    }
-    .section-body strong { color: var(--text-main); }
+        .snapshot-value { font-weight: 500; }
 
-    ul.section-list {
-      margin: 8px 0 0 0;
-      padding-left: 18px;
-      font-size: 0.95rem;
-      line-height: 1.7;
-      color: var(--text-muted);
-    }
-    ul.section-list li { margin-bottom: 6px; }
+        .snapshot-note {
+          margin-top: 10px;
+          font-size: 0.72rem;
+          color: var(--text-muted);
+          opacity: 0.75;
+        }
 
-    .income-card {
-      margin-top: 26px;
-      padding: 18px 18px 20px;
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(34, 197, 94, 0.5);
-      background:
-        linear-gradient(135deg, rgba(34, 197, 94, 0.15), transparent 60%),
-        rgba(15, 23, 42, 0.96);
-      box-shadow: var(--shadow-soft);
-    }
+        .section { margin-top: 26px; }
+        .section-title { font-size: 1.2rem; margin-bottom: 6px; }
 
-    .income-title { font-size: 1.18rem; margin-bottom: 6px; }
+        .section-body {
+          font-size: 0.95rem;
+          line-height: 1.75;
+          color: var(--text-muted);
+        }
+        .section-body strong { color: var(--text-main); }
 
-    .income-body {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      line-height: 1.75;
-    }
+        ul.section-list {
+          margin: 8px 0 0 0;
+          padding-left: 18px;
+          font-size: 0.95rem;
+          line-height: 1.7;
+          color: var(--text-muted);
+        }
+        ul.section-list li { margin-bottom: 6px; }
 
-    .income-list {
-      margin-top: 8px;
-      padding-left: 18px;
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-    }
+        .income-card {
+          margin-top: 26px;
+          padding: 18px 18px 20px;
+          border-radius: var(--radius-lg);
+          border: 1px solid rgba(34, 197, 94, 0.5);
+          background:
+            linear-gradient(135deg, rgba(34, 197, 94, 0.15), transparent 60%),
+            rgba(15, 23, 42, 0.96);
+          box-shadow: var(--shadow-soft);
+        }
 
-    .cta-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 14px;
-      padding: 9px 18px;
-      border-radius: 999px;
-      border: none;
-      background: var(--accent);
-      color: #020617;
-      font-size: 0.9rem;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      box-shadow: 0 10px 30px rgba(34, 197, 94, 0.7);
-      transition: transform 0.08s ease-out, box-shadow 0.08s ease-out, background 0.12s ease-out;
-    }
+        .income-title { font-size: 1.18rem; margin-bottom: 6px; }
 
-    .cta-button:hover {
-      transform: translateY(-1px);
-      background: #4ade80;
-      box-shadow: 0 14px 40px rgba(34, 197, 94, 0.9);
-      text-decoration: none;
-    }
+        .income-body {
+          font-size: 0.95rem;
+          color: var(--text-muted);
+          line-height: 1.75;
+        }
 
-    .income-note {
-      margin-top: 8px;
-      font-size: 0.72rem;
-      color: var(--text-muted);
-      opacity: 0.8;
-    }
+        .income-list {
+          margin-top: 8px;
+          padding-left: 18px;
+          font-size: 0.95rem;
+          color: var(--text-muted);
+          line-height: 1.7;
+        }
 
-    .disclaimer {
-      margin-top: 30px;
-      padding-top: 10px;
-      border-top: 1px solid rgba(148, 163, 184, 0.35);
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-  </style>
-</head>
-<body>
-  <div class="page">
-    <div class="container">
+        .cta-button {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          margin-top: 14px;
+          padding: 9px 18px;
+          border-radius: 999px;
+          border: none;
+          background: var(--accent);
+          color: #020617;
+          font-size: 0.9rem;
+          font-weight: 600;
+          cursor: pointer;
+          text-decoration: none;
+          box-shadow: 0 10px 30px rgba(34, 197, 94, 0.7);
+          transition: transform 0.08s ease-out, box-shadow 0.08s ease-out, background 0.12s ease-out;
+        }
 
-      <a class="back-link" href="/report/">
-        <span>←</span> Back to all reports
-      </a>
+        .cta-button:hover {
+          transform: translateY(-1px);
+          background: #4ade80;
+          box-shadow: 0 14px 40px rgba(34, 197, 94, 0.9);
+          text-decoration: none;
+        }
 
-      <a href="https://degenstein.xyz/" class="home-pill">
-        ← Back to Main Page
-      </a>
+        .income-note {
+          margin-top: 8px;
+          font-size: 0.72rem;
+          color: var(--text-muted);
+          opacity: 0.8;
+        }
 
-      <!-- ✅ NEW: XRP COVER IMAGE (SVG). To make a PNG:
-           1) Copy just the <svg> below into a file named report-xrp.svg in /assets/
-           2) Export to 1200x675 PNG as report-xrp.png (optional for OG/Twitter) -->
-      <div class="hero-cover" aria-label="XRP report cover">
-        <svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="XRP — 2026 ETF Era & Global Payment Rails">
-          <defs>
-            <radialGradient id="g1" cx="20%" cy="15%" r="70%">
-              <stop offset="0" stop-color="#22c55e" stop-opacity="0.28"/>
-              <stop offset="0.55" stop-color="#22c55e" stop-opacity="0.06"/>
-              <stop offset="1" stop-color="#020617" stop-opacity="1"/>
-            </radialGradient>
-            <radialGradient id="g2" cx="85%" cy="25%" r="70%">
-              <stop offset="0" stop-color="#06b6d4" stop-opacity="0.22"/>
-              <stop offset="0.55" stop-color="#06b6d4" stop-opacity="0.06"/>
-              <stop offset="1" stop-color="#020617" stop-opacity="1"/>
-            </radialGradient>
-            <linearGradient id="line" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#22c55e" stop-opacity="0.9"/>
-              <stop offset="1" stop-color="#06b6d4" stop-opacity="0.9"/>
-            </linearGradient>
-            <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
-              <feGaussianBlur stdDeviation="10" result="b"/>
-              <feColorMatrix in="b" type="matrix"
-                values="1 0 0 0 0
-                        0 1 0 0 0
-                        0 0 1 0 0
-                        0 0 0 0.55 0" result="g"/>
-              <feMerge>
-                <feMergeNode in="g"/>
-                <feMergeNode in="SourceGraphic"/>
-              </feMerge>
-            </filter>
-          </defs>
+        .disclaimer {
+          margin-top: 30px;
+          padding-top: 10px;
+          border-top: 1px solid rgba(148, 163, 184, 0.35);
+          font-size: 0.75rem;
+          color: var(--text-muted);
+          line-height: 1.6;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="page">
+        <div class="container">
 
-          <!-- background -->
-          <rect width="1200" height="675" fill="#020617"/>
-          <rect width="1200" height="675" fill="url(#g1)"/>
-          <rect width="1200" height="675" fill="url(#g2)"/>
+          <a class="back-link" href="/report/">
+            <span>←</span> Back to all reports
+          </a>
 
-          <!-- subtle grid -->
-          <g opacity="0.10">
-            <path d="M0 120H1200M0 240H1200M0 360H1200M0 480H1200M0 600H1200" stroke="#94a3b8" stroke-width="1"/>
-            <path d="M120 0V675M240 0V675M360 0V675M480 0V675M600 0V675M720 0V675M840 0V675M960 0V675M1080 0V675" stroke="#94a3b8" stroke-width="1"/>
-          </g>
+          <a href="https://degenstein.xyz/" class="home-pill">
+            ← Back to Main Page
+          </a>
 
-          <!-- rails / arcs -->
-          <g opacity="0.9" filter="url(#softGlow)">
-            <path d="M-40 520 C 220 380, 420 610, 680 430 S 1140 240, 1260 360" fill="none" stroke="url(#line)" stroke-width="4" opacity="0.55"/>
-            <path d="M-30 560 C 240 430, 440 650, 720 470 S 1120 280, 1260 420" fill="none" stroke="url(#line)" stroke-width="3" opacity="0.35"/>
-            <circle cx="260" cy="430" r="6" fill="#22c55e" opacity="0.9"/>
-            <circle cx="680" cy="430" r="6" fill="#06b6d4" opacity="0.9"/>
-            <circle cx="980" cy="310" r="6" fill="#22c55e" opacity="0.9"/>
-          </g>
+          <!-- ✅ NEW: XRP COVER IMAGE (SVG). To make a PNG:
+               1) Copy just the <svg> below into a file named report-xrp.svg in /assets/
+               2) Export to 1200x675 PNG as report-xrp.png (optional for OG/Twitter) -->
+          <div class="hero-cover" aria-label="XRP report cover">
+            <svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="XRP — 2026 ETF Era & Global Payment Rails">
+              <defs>
+                <radialGradient id="g1" cx="20%" cy="15%" r="70%">
+                  <stop offset="0" stop-color="#22c55e" stop-opacity="0.28"/>
+                  <stop offset="0.55" stop-color="#22c55e" stop-opacity="0.06"/>
+                  <stop offset="1" stop-color="#020617" stop-opacity="1"/>
+                </radialGradient>
+                <radialGradient id="g2" cx="85%" cy="25%" r="70%">
+                  <stop offset="0" stop-color="#06b6d4" stop-opacity="0.22"/>
+                  <stop offset="0.55" stop-color="#06b6d4" stop-opacity="0.06"/>
+                  <stop offset="1" stop-color="#020617" stop-opacity="1"/>
+                </radialGradient>
+                <linearGradient id="line" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#22c55e" stop-opacity="0.9"/>
+                  <stop offset="1" stop-color="#06b6d4" stop-opacity="0.9"/>
+                </linearGradient>
+                <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+                  <feGaussianBlur stdDeviation="10" result="b"/>
+                  <feColorMatrix in="b" type="matrix"
+                    values="1 0 0 0 0
+                            0 1 0 0 0
+                            0 0 1 0 0
+                            0 0 0 0.55 0" result="g"/>
+                  <feMerge>
+                    <feMergeNode in="g"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+              </defs>
 
-          <!-- XRP mark (simple) -->
-          <g transform="translate(84 92)" opacity="0.95">
-            <circle cx="66" cy="66" r="66" fill="rgba(15,23,42,0.85)" stroke="rgba(148,163,184,0.35)" stroke-width="2"/>
-            <path d="M34 46c14 0 20 6 32 18 12-12 18-18 32-18h18c-18 0-28 8-42 22 14 14 24 22 42 22H98c-14 0-20-6-32-18-12 12-18 18-32 18H16c18 0 28-8 42-22C44 54 34 46 16 46h18z"
-                  fill="#f9fafb" opacity="0.92"/>
-            <circle cx="66" cy="66" r="62" fill="none" stroke="rgba(34,197,94,0.35)" stroke-width="2"/>
-          </g>
+              <!-- background -->
+              <rect width="1200" height="675" fill="#020617"/>
+              <rect width="1200" height="675" fill="url(#g1)"/>
+              <rect width="1200" height="675" fill="url(#g2)"/>
 
-          <!-- text -->
-          <g font-family="system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial" fill="#f9fafb">
-            <text x="84" y="220" font-size="22" letter-spacing="3" opacity="0.78">THE DEGENSTEIN REPORT</text>
-            <text x="84" y="286" font-size="58" font-weight="800">$XRP</text>
-            <text x="84" y="342" font-size="34" font-weight="700" opacity="0.92">2026 ETF Era &amp; Global Payment Rails</text>
+              <!-- subtle grid -->
+              <g opacity="0.10">
+                <path d="M0 120H1200M0 240H1200M0 360H1200M0 480H1200M0 600H1200" stroke="#94a3b8" stroke-width="1"/>
+                <path d="M120 0V675M240 0V675M360 0V675M480 0V675M600 0V675M720 0V675M840 0V675M960 0V675M1080 0V675" stroke="#94a3b8" stroke-width="1"/>
+              </g>
 
-            <text x="84" y="392" font-size="22" opacity="0.72">
-              Real catalysts • infrastructure thesis • earn-while-you-hold angle • no hopium
-            </text>
+              <!-- rails / arcs -->
+              <g opacity="0.9" filter="url(#softGlow)">
+                <path d="M-40 520 C 220 380, 420 610, 680 430 S 1140 240, 1260 360" fill="none" stroke="url(#line)" stroke-width="4" opacity="0.55"/>
+                <path d="M-30 560 C 240 430, 440 650, 720 470 S 1120 280, 1260 420" fill="none" stroke="url(#line)" stroke-width="3" opacity="0.35"/>
+                <circle cx="260" cy="430" r="6" fill="#22c55e" opacity="0.9"/>
+                <circle cx="680" cy="430" r="6" fill="#06b6d4" opacity="0.9"/>
+                <circle cx="980" cy="310" r="6" fill="#22c55e" opacity="0.9"/>
+              </g>
 
-            <!-- pill -->
-            <g transform="translate(84 430)">
-              <rect x="0" y="0" rx="18" ry="18" width="390" height="44" fill="rgba(15,23,42,0.75)" stroke="rgba(148,163,184,0.28)"/>
-              <circle cx="22" cy="22" r="6" fill="#22c55e"/>
-              <text x="40" y="29" font-size="18" font-weight="700" fill="#9ca3af">degenstein.xyz/report/xrp</text>
-            </g>
-          </g>
+              <!-- XRP mark (simple) -->
+              <g transform="translate(84 92)" opacity="0.95">
+                <circle cx="66" cy="66" r="66" fill="rgba(15,23,42,0.85)" stroke="rgba(148,163,184,0.35)" stroke-width="2"/>
+                <path d="M34 46c14 0 20 6 32 18 12-12 18-18 32-18h18c-18 0-28 8-42 22 14 14 24 22 42 22H98c-14 0-20-6-32-18-12 12-18 18-32 18H16c18 0 28-8 42-22C44 54 34 46 16 46h18z"
+                      fill="#f9fafb" opacity="0.92"/>
+                <circle cx="66" cy="66" r="62" fill="none" stroke="rgba(34,197,94,0.35)" stroke-width="2"/>
+              </g>
 
-          <!-- corner glow -->
-          <circle cx="1120" cy="110" r="140" fill="#22c55e" opacity="0.08"/>
-          <circle cx="1100" cy="140" r="170" fill="#06b6d4" opacity="0.07"/>
-        </svg>
-      </div>
+              <!-- text -->
+              <g font-family="system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial" fill="#f9fafb">
+                <text x="84" y="220" font-size="22" letter-spacing="3" opacity="0.78">THE DEGENSTEIN REPORT</text>
+                <text x="84" y="286" font-size="58" font-weight="800">$XRP</text>
+                <text x="84" y="342" font-size="34" font-weight="700" opacity="0.92">July 2026 ETF Flows &amp; Global Payment Rails</text>
 
-      <div class="badge-row">
-        <div class="badge">
-          <span class="badge-dot"></span>
-          The Degenstein Report
-        </div>
-        <div class="token-pill">$XRP • Infrastructure Thesis</div>
-      </div>
+                <text x="84" y="392" font-size="22" opacity="0.72">
+                  ETF flows • regulated payments • XRPL adoption • value-capture risk
+                </text>
 
-      <h1>$XRP — 2026 ETF Era &amp; Global Payment Rails</h1>
-      <p class="subtitle">Token breakdowns, yield angles &amp; real catalysts — no hopium.</p>
-<div style="
-  margin-top:14px;
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  font-size:.75rem;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-">
+                <!-- pill -->
+                <g transform="translate(84 430)">
+                  <rect x="0" y="0" rx="18" ry="18" width="390" height="44" fill="rgba(15,23,42,0.75)" stroke="rgba(148,163,184,0.28)"/>
+                  <circle cx="22" cy="22" r="6" fill="#22c55e"/>
+                  <text x="40" y="29" font-size="18" font-weight="700" fill="#9ca3af">degenstein.xyz/report/xrp</text>
+                </g>
+              </g>
 
-  <div style="
-    padding:6px 10px;
-    border-radius:999px;
-    background:rgba(34,197,94,.12);
-    border:1px solid rgba(34,197,94,.5);
-    color:#22c55e;
-  ">Infrastructure Asset</div>
-
-  <div style="
-    padding:6px 10px;
-    border-radius:999px;
-    background:rgba(6,182,212,.12);
-    border:1px solid rgba(6,182,212,.5);
-    color:#06b6d4;
-  ">Institutional Narrative</div>
-
-  <div style="
-    padding:6px 10px;
-    border-radius:999px;
-    background:rgba(148,163,184,.12);
-    border:1px solid rgba(148,163,184,.4);
-    color:#9ca3af;
-  ">High Conviction Watchlist</div>
-
-</div>
-      <div class="share-row">
-        <span class="share-label">Share this report</span>
-
-        <a
-          class="share-btn"
-          href="https://twitter.com/intent/tweet?text=New%20Degenstein%20Report%3A%20XRP%20%E2%80%94%202026%20ETF%20Era%20%26%20Global%20Payment%20Rails&url=https%3A%2F%2Fdegenstein.xyz%2Freport%2Fxrp%2F"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span>✕</span> Share on X
-        </a>
-
-        <button class="share-btn" type="button" onclick="copyXrpLink()">
-          <span>⧉</span> Copy link
-        </button>
-      </div>
-
-      <!-- Snapshot -->
-      <section class="snapshot">
-        <div class="snapshot-title">Snapshot</div>
-        <div class="snapshot-grid">
-          <div>
-            <div class="snapshot-label">Token</div>
-            <div class="snapshot-value">$XRP (Ripple)</div>
+              <!-- corner glow -->
+              <circle cx="1120" cy="110" r="140" fill="#22c55e" opacity="0.08"/>
+              <circle cx="1100" cy="140" r="170" fill="#06b6d4" opacity="0.07"/>
+            </svg>
           </div>
-          <div>
-            <div class="snapshot-label">Sector</div>
-            <div class="snapshot-value">Payments · FinTech · Banking rails</div>
+
+          <div class="badge-row">
+            <div class="badge">
+              <span class="badge-dot"></span>
+              The Degenstein Report
+            </div>
+            <div class="token-pill">$XRP • Infrastructure Thesis</div>
           </div>
-          <div>
-            <div class="snapshot-label">Narrative</div>
-            <div class="snapshot-value">Cross-border settlement &amp; liquidity bridge</div>
-          </div>
-          <div>
-            <div class="snapshot-label">Status</div>
-            <div class="snapshot-value" style="color: var(--accent);">Under active 2026 watch</div>
-          </div>
-        </div>
-        <div class="snapshot-note">Note: This is an educational overview, not financial advice. Always DYOR.</div>
-      </section>
 
-      <!-- XRP in 60 Seconds -->
-      <section class="section">
-        <h2 class="section-title">XRP in 60 Seconds</h2>
-        <div class="section-body">
-          <p>
-            XRP is built for speed and finality in the world of money plumbing.
-            Instead of being “just another coin,” its core pitch is simple:
-            become a neutral bridge asset for banks, fintechs, and payment providers moving value across borders in seconds instead of days.
-          </p>
-          <p style="margin-top: 10px;">
-            The bigger the global settlement and remittance markets become — and the more pressure there is to move away from slow,
-            expensive legacy systems — the more interesting XRP’s role as a liquidity bridge and settlement asset can be.
-          </p>
-        </div>
-      </section>
+          <h1>$XRP — July 2026 ETF Flows &amp; Global Payment Rails</h1>
+          <p class="subtitle">July 2026 research on XRP ETF demand, regulated payments, XRPL adoption, tokenization, and the risks the market still needs to resolve.</p>
+    <div style="
+      margin-top:14px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      font-size:.75rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    ">
 
-      <!-- Catalysts -->
-      <section class="section">
-        <h2 class="section-title">Key 2026 Catalysts I’m Watching</h2>
-        <ul class="section-list">
-          <li>
-            <strong>Regulatory clarity:</strong> legal clarity for XRP in major markets can open the door for more structured financial products and deeper institutional comfort.
-          </li>
-          <li>
-            <strong>Payment partnerships:</strong> real world usage via banks, remittance firms, and fintechs actually routing value through XRP rails, not just testing in the background.
-          </li>
-          <li>
-            <strong>ETFs &amp; structured products:</strong> interest in XRP-linked strategies (covered calls, baskets, yield overlays, etc.) is a sign of growing institutional appetite.
-          </li>
-          <li>
-            <strong>Liquidity depth:</strong> tighter spreads and deeper books across major exchanges and jurisdictions make XRP more attractive as a settlement asset.
-          </li>
-          <li>
-            <strong>Macro backdrop:</strong> if liquidity returns to crypto and real-utility narratives dominate, XRP is well positioned as a “pipes and rails” asset.
-          </li>
-        </ul>
-      </section>
+      <div style="
+        padding:6px 10px;
+        border-radius:999px;
+        background:rgba(34,197,94,.12);
+        border:1px solid rgba(34,197,94,.5);
+        color:#22c55e;
+      ">Infrastructure Asset</div>
 
-      <!-- Value -->
-      <section class="section">
-        <h2 class="section-title">Where I See Potential Value</h2>
-        <div class="section-body">
-          <p>
-            XRP is not a meme coin bet. It’s a thesis on financial infrastructure:
-            if cross-border payments modernize, there needs to be high-speed, high-liquidity assets and networks underneath.
-            XRP’s edge is speed, low cost, and years of battle-tested uptime.
-          </p>
-          <p style="margin-top: 10px;">
-            The upside case comes from <strong>real settlement volume</strong> flowing through XRP-enabled rails, combined with structural demand
-            from institutions, payment providers, and potentially ETF-style products that need exposure.
-            The risk side is straightforward: if adoption stalls, regulation chokes it in key regions, or other rails win the narrative, that upside is capped.
-          </p>
-        </div>
-      </section>
+      <div style="
+        padding:6px 10px;
+        border-radius:999px;
+        background:rgba(6,182,212,.12);
+        border:1px solid rgba(6,182,212,.5);
+        color:#06b6d4;
+      ">Institutional Narrative</div>
 
-      <!-- ✅ UPDATED INCOME ANGLE -->
-      <section class="income-card">
-        <div class="income-title">How I Play XRP: Earn While I Hold</div>
-
-        <div class="income-body">
-          <p>
-            My personal angle with XRP is simple: I treat it as a long-term infrastructure bet,
-            so I prefer to <strong>earn yield while I wait</strong> instead of letting it sit idle.
-          </p>
-
-          <p style="margin-top:8px;">
-            Rather than trying to out-trade short-term volatility, I focus on strategies that:
-          </p>
-        </div>
-
-        <ul class="income-list">
-          <li>Hold core XRP exposure for the 2026+ catalyst window.</li>
-          <li>Layer yield on top of long-term conviction.</li>
-          <li>Let time work in my favor instead of forcing trades.</li>
-        </ul>
-
-        <div class="income-body" style="margin-top:8px;">
-          <p>
-            One of the platforms I personally use is <strong>CoinDepo</strong>, where it’s possible
-            to earn up to <strong>24% APR</strong> on supported assets while holding —
-            no trading, no selling, just compounding.
-          </p>
-        </div>
-
-        <hr style="margin:16px 0;border:0;border-top:1px solid rgba(148,163,184,0.25);" />
-
-        <div class="income-body">
-          <p>
-            <strong>Important yield note:</strong> CoinDepo also offers time-based yield incentives
-on qualifying assets held for defined periods.
-          </p>
-
-          <p style="margin-top:10px;">
-  <strong>Example:</strong><br />
-  Holding <strong>$5,000 worth of XRP</strong> for <strong>90 days</strong> illustrates
-  how time-based yield strategies can complement long-term holding.
-</p>
-
-          <p style="margin-top:10px;">
-  The key point: these yield mechanics are based on <strong>holding duration</strong>,
-  not short-term price swings. Whether XRP chops sideways or stays volatile,
-  the strategy emphasizes time in the market rather than daily candles.
-</p>
-
-          <p style="margin-top:10px;">
-            For long-term holders already planning to sit through the cycle,
-            this turns idle time into <strong>measurable, non-price-dependent upside</strong>.
-          </p>
-        </div>
-<div style="
-  margin-top:16px;
-  padding:14px;
-  border-radius:14px;
-  background:linear-gradient(135deg, rgba(34,197,94,.18), rgba(6,182,212,.12));
-  border:1px solid rgba(34,197,94,.5);
-  font-size:.95rem;
-  color:#ecfdf5;
-  font-weight:500;
-">
-⚡ Instead of waiting for XRP to move… your position compounds daily.
-</div>
-        <!-- Mini comparison -->
-        <div style="
-          margin-top:14px;
-          padding:12px 14px;
-          border-radius:14px;
-          border:1px solid rgba(148,163,184,0.35);
-          background:rgba(15,23,42,0.85);
-          font-size:0.9rem;
-          color:var(--text-muted);
-        ">
-         <strong style="color:var(--text-main);">Same XRP exposure.</strong><br />
-• Doing nothing: you wait on price.<br />
-• Holding with yield: you wait on price while your position works in the background.
-        </div>
-
-        <!-- ✅ FIXED: correct CoinDepo link + referral code -->
-        <a class="cta-button" href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W
-" target="_blank" rel="noopener noreferrer">
-          Earn while 18% holding $XRP on CoinDepo →
-        </a>
-<p style="margin-top:10px;font-size:.85rem;color:rgba(156,163,175,.95);">
-    For a full breakdown of rates, bonuses, and risks, see the
-    <a href="/report/coindepo-earn-while-you-hold/" target="_blank" rel="noopener">CoinDepo deep dive →</a>
-  </p>
-        <div class="income-note">
-  Rates, terms, and availability can change. Examples shown for illustration only.
-  This is not financial advice. Always do your own research.
-</div>
-      </section>
-<div style="
-  margin-top:30px;
-  padding:18px;
-  text-align:center;
-  border-radius:16px;
-  background:linear-gradient(135deg, rgba(34,197,94,.15), rgba(6,182,212,.1));
-  border:1px solid rgba(148,163,184,.3);
-">
-  <div style="font-size:1.1rem;font-weight:600;">
-    The bet isn’t hype.
-  </div>
-  <div style="margin-top:6px;color:#9ca3af;">
-    The bet is that global money movement gets rebuilt.
-  </div>
-</div>
-      <!-- Final thoughts -->
-      <section class="section">
-        <h2 class="section-title">Final Thoughts</h2>
-        <div class="section-body">
-          <p>
-            XRP is one of the few large-cap assets where the thesis is less about memes and more about
-            <strong>infrastructure, rails, and settlement</strong>. That doesn’t guarantee success, but it does give it a clear role
-            in a more mature crypto cycle where real-world usage and institutional adoption start to matter more.
-          </p>
-          <p style="margin-top: 10px;">
-            My approach is straightforward: accumulate what I’m comfortable with, let time and catalysts play out,
-            and use yield strategies so my bags are working for me instead of just sitting on an exchange.
-          </p>
-        </div>
-      </section>
-
-      <div class="disclaimer">
-        Nothing in this report is financial, legal, or tax advice. It’s a personal perspective based on publicly available information and my own risk tolerance.
-        Crypto is volatile. Never invest more than you can afford to lose. Always do your own research.
-      </div>
+      <div style="
+        padding:6px 10px;
+        border-radius:999px;
+        background:rgba(148,163,184,.12);
+        border:1px solid rgba(148,163,184,.4);
+        color:#9ca3af;
+      ">Research Watchlist</div>
 
     </div>
-  </div>
+          <div class="share-row">
+            <span class="share-label">Share this report</span>
 
-  <script>
-    function copyXrpLink() {
-      const url = "https://degenstein.xyz/report/xrp/";
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(url).then(function () {
-          alert("Link copied: " + url);
-        }, function () {
-          alert("Could not copy link, please copy manually: " + url);
-        });
-      } else {
-        const temp = document.createElement("input");
-        temp.value = url;
-        document.body.appendChild(temp);
-        temp.select();
-        try {
-          document.execCommand("copy");
-          alert("Link copied: " + url);
-        } catch (e) {
-          alert("Could not copy link, please copy manually: " + url);
+            <a
+              class="share-btn"
+              href="https://twitter.com/intent/tweet?text=New%20Degenstein%20Report%3A%20XRP%20%E2%80%94%202026%20ETF%20Era%20%26%20Global%20Payment%20Rails&url=https%3A%2F%2Fdegenstein.xyz%2Freport%2Fxrp%2F"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>✕</span> Share on X
+            </a>
+
+            <button class="share-btn" type="button" onclick="copyXrpLink()">
+              <span>⧉</span> Copy link
+            </button>
+          </div>
+
+          <!-- Snapshot -->
+          <section class="snapshot">
+            <div class="snapshot-title">Snapshot</div>
+            <div class="snapshot-grid">
+              <div>
+                <div class="snapshot-label">Token</div>
+                <div class="snapshot-value">$XRP (Ripple)</div>
+              </div>
+              <div>
+                <div class="snapshot-label">Sector</div>
+                <div class="snapshot-value">Payments · FinTech · Banking rails</div>
+              </div>
+              <div>
+                <div class="snapshot-label">Narrative</div>
+                <div class="snapshot-value">Cross-border settlement &amp; liquidity bridge</div>
+              </div>
+              <div>
+                <div class="snapshot-label">Status</div>
+                <div class="snapshot-value" style="color: var(--accent);">Under active 2026 watch</div>
+              </div>
+            </div>
+            <div class="snapshot-note">Note: This is an educational overview, not financial advice. Always DYOR.</div>
+          </section>
+
+          <!-- XRP in 60 Seconds -->
+          <section class="section">
+            <h2 class="section-title">XRP in 60 Seconds</h2>
+            <div class="section-body">
+              <p>
+                XRP is the native asset of the XRP Ledger, a network designed for fast settlement and low transaction costs.
+                The investment thesis is not that every Ripple customer must use XRP. The research question is whether XRP itself gains durable utility,
+                liquidity demand, or balance-sheet demand as regulated payments, tokenization, and institutional products expand around XRPL.
+              </p>
+              <p style="margin-top: 10px;">
+                That distinction matters in 2026 because Ripple's payments business, RLUSD, tokenized assets on XRPL, and XRP ETF demand are related signals,
+                but they should not automatically be counted as direct XRP value capture. This report tracks the overlap without treating every Ripple headline as an XRP price catalyst.
+              </p>
+            </div>
+          </section>
+
+          <!-- Catalysts -->
+          <section class="section">
+            <h2 class="section-title">Key July 2026 Catalysts I’m Watching</h2>
+            <ul class="section-list">
+              <li>
+                <strong>EU regulatory expansion:</strong> Ripple announced in early July that it received full MiCA authorization in Luxembourg, allowing regulated crypto-asset services across the EEA. The signal is stronger regulatory reach for Ripple's payments infrastructure; the direct effect on XRP demand still needs to be measured.
+              </li>
+              <li>
+                <strong>Bitso + MXNB:</strong> Ripple and Bitso expanded their payments partnership in June. Bitso's regulated Mexican-peso stablecoin, MXNB, is set to be issued on XRPL and integrated into Ripple Payments' DEX infrastructure.
+              </li>
+              <li>
+                <strong>Spot XRP ETF demand:</strong> Ripple reported more than $1.5 billion in cumulative inflows by early March 2026 across five U.S. spot XRP ETFs. June then marked a third straight month of net inflows, with XRP-linked ETFs adding about $59.4 million despite broader Bitcoin and Ether fund weakness.
+              </li>
+              <li>
+                <strong>Custody absorption:</strong> ETF custody has locked a meaningful quantity of XRP. That is measurable institutional-product demand, but ETF holdings alone do not prove payment utility or guarantee price appreciation.
+              </li>
+              <li>
+                <strong>Value capture:</strong> the most important unresolved question is whether growth in XRPL stablecoins, tokenized assets, payments, and institutional DeFi creates sustained economic demand for XRP itself.
+              </li>
+            </ul>
+          </section>
+
+          <section class="section">
+            <h2 class="section-title">July 2026 Thesis Update</h2>
+            <div class="section-body">
+              <p>
+                XRP entered July with a notable divergence between price and institutional-product demand. XRP-linked ETFs added about
+                <strong>$59.4 million in June</strong>, marking a third consecutive month of net inflows even as Bitcoin and Ether products faced heavier de-risking.
+                Ripple had previously reported more than <strong>$1.5 billion in cumulative U.S. spot XRP ETF inflows</strong> by early March 2026.
+              </p>
+              <p style="margin-top:10px;">
+                The regulatory infrastructure also moved forward. In early July, Ripple announced full <strong>MiCA authorization in Luxembourg</strong>,
+                expanding its ability to provide regulated crypto-asset services across the European Economic Area.
+              </p>
+              <p style="margin-top:10px;">
+                On the XRPL side, Ripple and Bitso announced that the regulated Mexican-peso stablecoin <strong>MXNB</strong> will be issued on XRPL and integrated
+                into Ripple Payments' DEX infrastructure. This strengthens the network's stablecoin and cross-border settlement story, but it also sharpens the
+                value-capture question: investors should measure when XRP is actually required for liquidity or settlement rather than assuming all XRPL activity flows to XRP.
+              </p>
+            </div>
+          </section>
+
+          <section class="snapshot">
+            <div class="snapshot-title">Fresh 2026 Signals</div>
+            <div class="snapshot-grid">
+              <div>
+                <div class="snapshot-label">Spot XRP ETFs</div>
+                <div class="snapshot-value">$1.5B+ cumulative inflows by early March</div>
+              </div>
+              <div>
+                <div class="snapshot-label">June ETF Flows</div>
+                <div class="snapshot-value">~$59.4M net inflows · third positive month</div>
+              </div>
+              <div>
+                <div class="snapshot-label">EU Regulation</div>
+                <div class="snapshot-value">Ripple MiCA authorization in Luxembourg</div>
+              </div>
+              <div>
+                <div class="snapshot-label">XRPL Stablecoins</div>
+                <div class="snapshot-value">MXNB issuance and payments DEX integration announced</div>
+              </div>
+            </div>
+            <div class="snapshot-note">Company, ETF, and network adoption signals should not be treated as guaranteed XRP token value capture.</div>
+          </section>
+
+          <!-- Value -->
+          <section class="section">
+            <h2 class="section-title">Where I See Potential Value</h2>
+            <div class="section-body">
+              <p>
+                XRP is an infrastructure and liquidity thesis. The stronger 2026 evidence is no longer limited to legal clarity or partnership announcements:
+                spot ETF products have accumulated meaningful inflows, Ripple has expanded regulated payments reach in Europe, and XRPL is being used for stablecoin and tokenized-asset infrastructure.
+              </p>
+              <p style="margin-top: 10px;">
+                The upside case requires <strong>measurable XRP value capture</strong>: deeper liquidity, greater use as a bridge or settlement asset,
+                sustained ETF demand, or other economic demand for the native token. The risk is that Ripple and XRPL adoption can grow while stablecoins,
+                tokenized deposits, or other assets capture more of the actual transaction demand than XRP.
+              </p>
+            </div>
+          </section>
+
+          <!-- ✅ UPDATED INCOME ANGLE -->
+          <section class="income-card">
+            <div class="income-title">Custodial XRP Interest Accounts — Separate Platform Risk</div>
+
+            <div class="income-body">
+              <p>
+                Holding XRP and transferring XRP to a third-party custodial interest platform are two different risk decisions.
+                A platform rate should not be treated as part of the XRP investment thesis or as a guaranteed return.
+              </p>
+
+              <p style="margin-top:8px;">
+                Before using any custodial interest account, research:
+              </p>
+            </div>
+
+            <ul class="income-list">
+              <li>Custody and counterparty exposure.</li>
+              <li>How the platform may use deposited assets.</li>
+              <li>Withdrawal, liquidity, and account terms.</li>
+              <li>Whether the advertised rate can change.</li>
+            </ul>
+
+            <div class="income-body" style="margin-top:8px;">
+              <p>
+                Degenstein maintains a separate <strong>CoinDepo research review</strong>. CoinDepo currently advertises up to 18% APR on crypto,
+                but rates vary by asset and account type. Its custodial and wallet terms should be reviewed separately from the XRP thesis.
+              </p>
+            </div>
+
+            <hr style="margin:16px 0;border:0;border-top:1px solid rgba(148,163,184,0.25);" />
+
+            <div class="income-body">
+              <p>
+                <strong>Important research distinction:</strong> an advertised interest rate is compensation offered by a third-party platform.
+                It is not XRP protocol yield and it is not created by the XRP Ledger.
+              </p>
+
+              <p style="margin-top:10px;">
+      The XRP thesis should stand on its own: ETF demand, liquidity, payments, tokenization, XRPL usage,
+      and value capture. A custodial interest account adds a separate platform thesis and separate failure modes.
+    </p>
+
+              <p style="margin-top:10px;">
+      Price volatility still matters because XRP can decline while interest accrues.
+      Custody and counterparty risk also matter because assets have been transferred to a third party.
+    </p>
+
+              <p style="margin-top:10px;">
+                Do not describe custodial interest as risk-free or non-price-dependent upside.
+                Evaluate the platform, legal terms, asset-use rights, liquidity, and the possibility of partial or total loss.
+              </p>
+            </div>
+    <div style="
+      margin-top:16px;
+      padding:14px;
+      border-radius:14px;
+      background:linear-gradient(135deg, rgba(34,197,94,.18), rgba(6,182,212,.12));
+      border:1px solid rgba(34,197,94,.5);
+      font-size:.95rem;
+      color:#ecfdf5;
+      font-weight:500;
+    ">
+    Research the XRP thesis and the platform thesis separately.
+    </div>
+            <!-- Mini comparison -->
+            <div style="
+              margin-top:14px;
+              padding:12px 14px;
+              border-radius:14px;
+              border:1px solid rgba(148,163,184,0.35);
+              background:rgba(15,23,42,0.85);
+              font-size:0.9rem;
+              color:var(--text-muted);
+            ">
+             <strong style="color:var(--text-main);">Different custody structure.</strong><br />
+    • Self-custody: XRP price risk and wallet-security responsibility.<br />
+    • Custodial interest account: XRP price risk plus platform, custody, counterparty, liquidity, and legal risk.
+            </div>
+
+            <!-- ✅ FIXED: correct CoinDepo link + referral code -->
+            <a class="cta-button" href="/report/coindepo-earn-while-you-hold/">
+              Read the CoinDepo research review →
+            </a>
+    <p style="margin-top:10px;font-size:.85rem;color:rgba(156,163,175,.95);">
+        For a separate review of advertised rates, custody terms, and platform risks, see the
+        <a href="/report/coindepo-earn-while-you-hold/" target="_blank" rel="noopener">CoinDepo research review →</a>
+      </p>
+            <div class="income-note">
+      CoinDepo rates, terms, and availability can change. Some links in the separate CoinDepo report are referral links and are clearly disclosed there.
+      This report does not treat platform interest as part of XRP's protocol economics.
+    </div>
+          </section>
+    <div style="
+      margin-top:30px;
+      padding:18px;
+      text-align:center;
+      border-radius:16px;
+      background:linear-gradient(135deg, rgba(34,197,94,.15), rgba(6,182,212,.1));
+      border:1px solid rgba(148,163,184,.3);
+    ">
+      <div style="font-size:1.1rem;font-weight:600;">
+        The bet isn’t hype.
+      </div>
+      <div style="margin-top:6px;color:#9ca3af;">
+        The bet is that global money movement gets rebuilt.
+      </div>
+    </div>
+          <!-- Final thoughts -->
+          <section class="section">
+            <h2 class="section-title">Final Thoughts</h2>
+            <div class="section-body">
+              <p>
+                XRP is one of the few large-cap assets where the thesis is less about memes and more about
+                <strong>infrastructure, rails, and settlement</strong>. That doesn’t guarantee success, but it does give it a clear role
+                in a more mature crypto cycle where real-world usage and institutional adoption start to matter more.
+              </p>
+              <p style="margin-top: 10px;">
+                The 2026 research case is stronger than the older version of this report showed, but the standard should remain evidence:
+                ETF flows, payment volume, XRPL activity, liquidity, and direct XRP value capture. Strong infrastructure headlines are useful signals, not price guarantees.
+              </p>
+            </div>
+          </section>
+
+          <div class="disclaimer">
+            <strong>Research &amp; Risk Disclosure:</strong> This report is for informational and educational purposes only and does not constitute financial,
+            investment, legal, or tax advice. XRP is volatile. Ripple company growth, XRPL adoption, ETF inflows, and tokenized-asset activity do not guarantee
+            XRP price appreciation or direct value capture for the native token. Third-party custodial platforms introduce separate risks and can result in partial or total loss.
+            Verify current information independently.<br><br>
+            <a href="/about/">About</a> · <a href="/contact/">Contact</a> · <a href="/editorial-policy/">Editorial Policy</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a>
+          </div>
+
+        </div>
+      </div>
+
+      <script>
+        function copyXrpLink() {
+          const url = "https://degenstein.xyz/report/xrp/";
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(url).then(function () {
+              alert("Link copied: " + url);
+            }, function () {
+              alert("Could not copy link, please copy manually: " + url);
+            });
+          } else {
+            const temp = document.createElement("input");
+            temp.value = url;
+            document.body.appendChild(temp);
+            temp.select();
+            try {
+              document.execCommand("copy");
+              alert("Link copied: " + url);
+            } catch (e) {
+              alert("Could not copy link, please copy manually: " + url);
+            }
+            document.body.removeChild(temp);
+          }
         }
-        document.body.removeChild(temp);
-      }
-    }
-  </script>
-</body>
-</html>
+      </script>
+    </body>
+    </html>
+
 
 
