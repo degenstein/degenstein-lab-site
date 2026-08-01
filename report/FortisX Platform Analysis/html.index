@@ -292,11 +292,9 @@ The Degenstein Report
 <div class="wrap">
 
 <div class="hero-image">
-
-<img
-src="/assets/fortisx-report.png"
-alt="FortisX Platform Analysis 2026">
-
+    <img
+        src="/assets/fortisx-platform-analysis-2026.png"
+        alt="FortisX Platform Analysis 2026">
 </div>
 
 <div class="card">
