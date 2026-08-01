@@ -898,7 +898,7 @@ No. This report is intended solely for educational and informational purposes.
 
 <p>
 
-This calculator is for educational purposes only. It illustrates how estimated annual growth may look if rewards compound once per year. It is <strong>not</strong> a prediction or guarantee of FortisX returns.
+This calculator is provided for educational purposes only. It illustrates how digital assets may grow over time using a hypothetical annual reward rate. It is not a prediction, quote, or guarantee of future FortisX performance.
 
 </p>
 
@@ -906,7 +906,7 @@ This calculator is for educational purposes only. It illustrates how estimated a
 
 <div>
 
-<label class="block mb-2">Starting Amount</label>
+<label class="block mb-2">Starting Amount ($)</label>
 
 <input
 id="amount"
@@ -918,7 +918,7 @@ class="w-full rounded-xl p-3 bg-slate-900 border border-slate-700">
 
 <div>
 
-<label class="block mb-2">Estimated APY (%)</label>
+<label class="block mb-2">Illustrative Annual Reward (%)</label>
 
 <input
 id="apy"
@@ -934,7 +934,7 @@ class="w-full rounded-xl p-3 bg-slate-900 border border-slate-700">
 
 <div class="text-sm text-gray-400">
 
-Estimated Balance After One Year
+Illustrative Value After One Year
 
 </div>
 
@@ -942,11 +942,17 @@ Estimated Balance After One Year
 id="result"
 class="text-5xl font-extrabold gradient mt-2">
 
-$11,800
+$11,800.00
 
 </div>
 
 </div>
+
+<p class="text-sm text-gray-400 mt-6">
+
+Changing the reward percentage demonstrates how different annual rates affect estimated portfolio growth. Actual rewards offered by FortisX may vary depending on the supported asset, network conditions, and platform policies.
+
+</p>
 
 </div>
 
@@ -964,19 +970,19 @@ $11,800
 
 <p>
 
-FortisX presents itself as more than a traditional staking platform. Its focus on managed staking, liquidity pools, portfolio allocation, and institutional custody infrastructure differentiates it from many reward-only platforms.
+FortisX positions itself as a digital asset platform focused on managed staking, liquidity pools, and institutional-grade infrastructure. Rather than concentrating solely on reward rates, the platform emphasizes liquidity management, portfolio allocation, and security technologies designed to support long-term participation across supported blockchain ecosystems.
 
 </p>
 
 <p class="mt-6">
 
-Potential users should evaluate the platform based on several factors—not only estimated rewards—but also custody, transparency, supported assets, operational structure, liquidity, and overall risk.
+For investors researching staking and liquidity platforms, FortisX provides an interesting approach that combines digital asset management with modern custody infrastructure. As with any crypto platform, users should carefully review current terms, supported assets, reward structures, and risk disclosures before participating.
 
 </p>
 
 <p class="mt-6">
 
-As with any digital asset platform, perform your own research, review the latest documentation, and only participate with assets that align with your own financial goals and risk tolerance.
+The most important takeaway is simple: understand how the platform works before making investment decisions. Research the risks, verify current information directly with FortisX, and only invest assets that align with your personal financial goals and risk tolerance.
 
 </p>
 
@@ -994,22 +1000,22 @@ As with any digital asset platform, perform your own research, review the latest
 
 <h2>
 
-Explore FortisX
+Learn More About FortisX
 
 </h2>
 
 <p class="mt-6">
 
-Interested in learning more?
-
-Visit the official FortisX platform to review current products, supported assets, eligibility requirements, and the latest platform updates.
+Visit the official FortisX website to explore the latest supported assets, platform features, documentation, and announcements.
 
 </p>
 
 <div class="mt-10">
 
 <a
-href="YOUR_REFERRAL_LINK"
+href="https://fortisx.fi/"
+target="_blank"
+rel="noopener noreferrer"
 class="btn primary">
 
 Visit FortisX →
@@ -1020,7 +1026,7 @@ Visit FortisX →
 
 <p class="text-sm text-gray-400 mt-8">
 
-Disclosure: If you use my referral link, I may receive compensation at no additional cost to you. This report reflects my independent analysis and should not be considered financial, legal, or tax advice.
+<strong>Disclosure:</strong> This report is an independent educational review created by The Degenstein Report. At the time of publication, I am not affiliated with FortisX and do not receive compensation for visitors who use the link above. If an affiliate relationship is established in the future, this page will be updated with the appropriate disclosures.
 
 </p>
 
@@ -1048,7 +1054,7 @@ Research Disclaimer
 
 <p class="mt-4">
 
-The information contained in this report is provided for educational purposes only. Digital assets involve significant risk, including the potential loss of principal.
+The information contained in this report is provided solely for educational purposes and should not be considered financial, legal, investment, or tax advice. Digital assets are volatile and may result in partial or complete loss of capital.
 
 </p>
 
@@ -1058,13 +1064,13 @@ The information contained in this report is provided for educational purposes on
 
 <h3 class="text-xl font-bold">
 
-Independent Analysis
+Independent Platform Review
 
 </h3>
 
 <p class="mt-4">
 
-This page was prepared by The Degenstein Report as an independent overview of FortisX using publicly available information and should not be interpreted as an endorsement or guarantee of future performance.
+This analysis was prepared independently using publicly available information to help readers better understand the FortisX platform. Readers should always verify the latest information directly through the official FortisX website before making financial decisions.
 
 </p>
 
@@ -1084,7 +1090,7 @@ This page was prepared by The Degenstein Report as an independent overview of Fo
 
 <div>
 
-Built for educational purposes.
+Independent Crypto Research • Educational Content
 
 </div>
 
@@ -1100,15 +1106,13 @@ Built for educational purposes.
 
 function calculate(){
 
-let amount=parseFloat(document.getElementById("amount").value)||0;
+const amount=parseFloat(document.getElementById("amount").value)||0;
 
-let apy=parseFloat(document.getElementById("apy").value)||0;
+const apy=parseFloat(document.getElementById("apy").value)||0;
 
-let total=amount*Math.pow((1+(apy/100)),1);
+const total=amount*Math.pow((1+(apy/100)),1);
 
-document.getElementById("result").innerHTML=
-
-"$"+total.toLocaleString(undefined,{
+document.getElementById("result").innerHTML="$"+total.toLocaleString(undefined,{
 minimumFractionDigits:2,
 maximumFractionDigits:2
 });
@@ -1116,7 +1120,6 @@ maximumFractionDigits:2
 }
 
 document.getElementById("amount").addEventListener("input",calculate);
-
 document.getElementById("apy").addEventListener("input",calculate);
 
 calculate();
