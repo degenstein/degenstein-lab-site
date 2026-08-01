@@ -8,17 +8,17 @@
 <title>FortisX Platform Analysis 2026 | The Degenstein Report</title>
 
 <meta name="description"
-content="Independent FortisX Platform Analysis covering liquidity pools, managed staking, security, supported assets, platform architecture and risk.">
+content="Independent FortisX Platform Analysis covering managed staking, liquidity pools, security, supported assets, platform architecture and risk.">
 
 <meta name="robots" content="index,follow">
 
 <meta property="og:type" content="article">
 <meta property="og:title" content="FortisX Platform Analysis 2026">
 <meta property="og:description"
-content="Independent research covering FortisX, its liquidity pools, managed staking architecture and platform analysis.">
+content="Independent research covering FortisX, its managed staking, liquidity pools, and institutional infrastructure.">
 
 <meta property="og:image"
-content="https://degenstein.xyz/assets/fortisx-report.png">
+content="https://degenstein.xyz/assets/fortisx-platform-analysis-2026.png">
 
 <meta property="og:site_name"
 content="The Degenstein Report">
@@ -38,31 +38,23 @@ scroll-behavior:smooth;
 }
 
 body{
-
 background:#020617;
 color:#E5E7EB;
 font-family:Inter,system-ui,sans-serif;
-
 }
 
 .wrap{
-
 max-width:1200px;
 margin:auto;
 padding:0 20px;
-
 }
 
 .hero{
-
 position:relative;
-overflow:hidden;
-padding:100px 0;
-
+padding:80px 0;
 }
 
 .hero:before{
-
 content:"";
 position:absolute;
 width:700px;
@@ -70,240 +62,136 @@ height:700px;
 left:50%;
 top:-350px;
 transform:translateX(-50%);
-
-background:
-
-radial-gradient(circle,
-rgba(34,197,94,.28),
-transparent 70%);
-
+background:radial-gradient(circle,rgba(34,197,94,.25),transparent 70%);
 filter:blur(90px);
+}
 
+.hero-banner{
+margin-bottom:40px;
+border-radius:24px;
+overflow:hidden;
+border:1px solid rgba(255,255,255,.08);
+box-shadow:0 20px 60px rgba(0,0,0,.45);
+}
+
+.hero-banner img{
+display:block;
+width:100%;
+height:auto;
 }
 
 .card{
-
-background:
-
-linear-gradient(
+background:linear-gradient(
 180deg,
 rgba(15,23,42,.92),
-rgba(15,23,42,.70)
+rgba(15,23,42,.72)
 );
-
 border:1px solid rgba(255,255,255,.08);
-
 border-radius:22px;
-
-padding:32px;
-
-box-shadow:
-
-0 10px 40px rgba(0,0,0,.45);
-
+padding:34px;
+box-shadow:0 12px 45px rgba(0,0,0,.45);
 }
 
 .gradient{
-
-background:
-
-linear-gradient(
-135deg,
-#22C55E,
-#38BDF8);
-
+background:linear-gradient(135deg,#22C55E,#38BDF8);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
-
 }
 
 .tag{
-
 display:inline-block;
-
 padding:8px 16px;
-
 border-radius:999px;
-
-background:
-rgba(34,197,94,.12);
-
-border:
-1px solid rgba(34,197,94,.35);
-
+background:rgba(34,197,94,.12);
+border:1px solid rgba(34,197,94,.35);
 font-size:12px;
-
-letter-spacing:.15em;
-
-text-transform:uppercase;
-
 font-weight:700;
-
+letter-spacing:.15em;
+text-transform:uppercase;
 color:#6EE7B7;
-
 }
 
 .btn{
-
 display:inline-flex;
-
+align-items:center;
+justify-content:center;
 padding:14px 24px;
-
 border-radius:999px;
-
 font-weight:700;
-
-transition:.2s;
-
+transition:.25s;
 }
 
 .primary{
-
-background:
-
-linear-gradient(
-135deg,
-#22C55E,
-#06B6D4);
-
+background:linear-gradient(135deg,#22C55E,#06B6D4);
 color:#02111B;
-
 }
 
 .secondary{
-
-border:1px solid rgba(255,255,255,.15);
-
 background:rgba(255,255,255,.04);
-
+border:1px solid rgba(255,255,255,.15);
+color:white;
 }
 
 .primary:hover{
-
 transform:translateY(-2px);
-
 }
 
 .secondary:hover{
-
 border-color:#22C55E;
-
 }
 
 .grid2{
-
 display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-
-gap:28px;
-
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:24px;
 }
 
 .stat{
-
 padding:22px;
-
-border-radius:18px;
-
 background:rgba(255,255,255,.03);
-
-border:1px solid rgba(255,255,255,.07);
-
+border-radius:18px;
+border:1px solid rgba(255,255,255,.08);
 }
 
 h1{
-
 font-size:64px;
-
 font-weight:900;
-
 line-height:1.05;
-
 }
 
 h2{
-
 font-size:38px;
-
 font-weight:800;
-
 margin-bottom:18px;
-
 }
 
 p{
-
-color:#CBD5E1;
-
 line-height:1.8;
-
+color:#CBD5E1;
 }
 
 nav{
-
 position:sticky;
-
 top:0;
-
-z-index:50;
-
-backdrop-filter:blur(12px);
-
+z-index:100;
 background:rgba(2,6,23,.82);
-
+backdrop-filter:blur(12px);
 border-bottom:1px solid rgba(255,255,255,.06);
-
 }
 
 nav a{
-
-padding:18px;
-
 display:inline-block;
-
+padding:18px;
 font-weight:600;
-
 color:#CBD5E1;
-
 }
 
 nav a:hover{
-
 color:white;
-
 }
 
 .section{
-
 padding:80px 0;
-
-}
-
-table{
-
-width:100%;
-
-border-collapse:collapse;
-
-}
-
-th,td{
-
-padding:16px;
-
-border-bottom:1px solid rgba(255,255,255,.08);
-
-text-align:left;
-
-}
-
-.highlight{
-
-color:#22C55E;
-
-font-weight:700;
-
 }
 
 </style>
@@ -342,7 +230,15 @@ The Degenstein Report
 
 <div class="wrap">
 
-<div class="card relative z-10">
+<div class="hero-banner">
+
+<img
+src="/assets/fortisx-platform-analysis-2026.png"
+alt="FortisX Platform Analysis 2026">
+
+</div>
+
+<div class="card">
 
 <span class="tag">
 
@@ -366,36 +262,40 @@ Platform Analysis 2026
 
 <p class="mt-6 text-xl">
 
-FortisX is a digital asset platform focused on managed staking and liquidity pool infrastructure.
-Rather than simply advertising returns, the platform emphasizes portfolio allocation, liquidity management, institutional-grade custody, and transparent participation across supported blockchain networks.
+An independent educational review of FortisX, examining its managed staking services, liquidity pools, security architecture, supported digital assets, and overall platform design.
 
 </p>
 
 <div class="flex gap-4 mt-8 flex-wrap">
 
-<a href="#overview" class="btn primary">
+<a
+href="#overview"
+class="btn primary">
 
-Read Analysis
+Read Full Analysis
 
 </a>
 
-<a href="YOUR_REFERRAL_LINK"
-
+<a
+href="https://fortisx.fi/"
+target="_blank"
+rel="noopener noreferrer"
 class="btn secondary">
 
-Visit FortisX
+Official FortisX Website
 
 </a>
 
 </div>
 
-<div class="grid2 mt-10">
+<!-- CONTINUE IN PART 1B -->
+  <div class="grid2 mt-10">
 
 <div class="stat">
 
 <div class="text-sm uppercase text-gray-400">
 
-Focus
+Platform Focus
 
 </div>
 
@@ -405,13 +305,19 @@ Managed Staking
 
 </div>
 
+<p class="mt-3 text-sm">
+
+Professional staking infrastructure designed to simplify participation across supported proof-of-stake networks.
+
+</p>
+
 </div>
 
 <div class="stat">
 
 <div class="text-sm uppercase text-gray-400">
 
-Architecture
+Primary Products
 
 </div>
 
@@ -420,6 +326,12 @@ Architecture
 Liquidity Pools
 
 </div>
+
+<p class="mt-3 text-sm">
+
+Multi-asset liquidity solutions designed to improve capital efficiency while maintaining accessibility.
+
+</p>
 
 </div>
 
@@ -433,9 +345,105 @@ Security
 
 <div class="text-2xl font-bold mt-2">
 
-Fireblocks MPC
+MPC Custody
 
 </div>
+
+<p class="mt-3 text-sm">
+
+Institutional-grade custody infrastructure utilizing Multi-Party Computation (MPC) technology.
+
+</p>
+
+</div>
+
+</div>
+
+<hr class="my-10 border-slate-700">
+
+<div class="grid2">
+
+<div>
+
+<h2 style="font-size:30px;">
+
+Why This Report?
+
+</h2>
+
+<p>
+
+The goal of this report is to provide an independent educational overview of the FortisX platform using publicly available information. Instead of focusing solely on advertised yields, this analysis examines how the platform is structured, what services it provides, and the important considerations prospective users should understand before participating.
+
+</p>
+
+<p class="mt-5">
+
+Whether you're researching managed staking, liquidity pools, or simply comparing digital asset platforms, understanding both the potential opportunities and associated risks is essential before committing capital.
+
+</p>
+
+</div>
+
+<div class="stat">
+
+<div class="text-sm uppercase text-gray-400 mb-4">
+
+Quick Facts
+
+</div>
+
+<table style="width:100%;">
+
+<tr>
+
+<td><strong>Platform</strong></td>
+
+<td>FortisX</td>
+
+</tr>
+
+<tr>
+
+<td><strong>Category</strong></td>
+
+<td>Digital Asset Platform</td>
+
+</tr>
+
+<tr>
+
+<td><strong>Primary Focus</strong></td>
+
+<td>Managed Staking</td>
+
+</tr>
+
+<tr>
+
+<td><strong>Additional Products</strong></td>
+
+<td>Liquidity Pools</td>
+
+</tr>
+
+<tr>
+
+<td><strong>Security</strong></td>
+
+<td>MPC Custody Technology</td>
+
+</tr>
+
+<tr>
+
+<td><strong>Report Updated</strong></td>
+
+<td>August 2026</td>
+
+</tr>
+
+</table>
 
 </div>
 
@@ -457,67 +465,25 @@ Executive Summary
 
 </h2>
 
-<p>
-
-This report provides an independent overview of the FortisX platform based on publicly available information and is intended for educational purposes only. Rather than evaluating the platform solely on advertised yields, this analysis focuses on how FortisX is designed, what services it offers, and the factors prospective users should consider before participating.
-
-</p>
-
-<br>
-
-<p>
-
-FortisX positions itself around managed staking and liquidity pools, aiming to provide users with streamlined access to supported blockchain networks while emphasizing liquidity management, custody infrastructure, and portfolio allocation. As with any digital asset platform, users should understand the operational model, custody arrangements, eligibility requirements, and associated risks before transferring assets.
-
-</p>
-
-</div>
-
-</section>
-
-<section id="features" class="section">
-
-<div class="wrap">
-
-<h2>
-
-Platform Overview
-
-</h2>
-
-<div class="grid2">
-
 <div class="card">
 
-<h3 class="text-2xl font-bold mb-4">
-
-Managed Staking
-
-</h3>
-
 <p>
 
-FortisX offers managed staking services designed to simplify participation in supported proof-of-stake networks. Instead of requiring users to operate validator infrastructure themselves, the platform manages the staking process on behalf of participating users, subject to its published terms and supported assets.
+FortisX positions itself as a digital asset platform centered on managed staking, liquidity pools, and institutional-grade infrastructure. Rather than emphasizing reward rates alone, the platform focuses on liquidity management, security, and portfolio participation across supported blockchain ecosystems.
 
 </p>
 
-</div>
+<p class="mt-6">
 
-<div class="card">
-
-<h3 class="text-2xl font-bold mb-4">
-
-Liquidity Pools
-
-</h3>
-
-<p>
-
-The platform also provides liquidity pool products intended to improve capital efficiency and liquidity across supported assets. Participation may involve different mechanics, reward structures, and risks than traditional staking, so users should review the specific terms applicable to each pool.
+This report has been prepared as an independent educational resource to help readers better understand the platform, its core features, and the considerations involved when evaluating managed crypto products. It is not financial advice and should not be interpreted as an endorsement or recommendation to invest.
 
 </p>
 
-</div>
+<p class="mt-6">
+
+As with any digital asset platform, users should carefully evaluate custody arrangements, operational risks, supported assets, and current platform documentation before participating.
+
+</p>
 
 </div>
 
