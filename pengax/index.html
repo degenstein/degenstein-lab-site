@@ -1,1 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>PENGAX | The Expedition Has Begun</title>
+
+<meta name="description" content="PENGAX ($PENGAX) is a community-driven Solana memecoin built for explorers, memes, giveaways, and long-term community growth.">
+
+<meta property="og:title" content="PENGAX">
+<meta property="og:description" content="The Expedition Has Begun.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://degenstein.xyz/pengax">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+
+background:#07111d;
+background:linear-gradient(180deg,#08131f,#0d2036);
+
+color:white;
+
+}
+
+.hero{
+
+padding:80px 20px;
+text-align:center;
+
+}
+
+.hero img{
+
+width:170px;
+border-radius:50%;
+box-shadow:0 0 35px #3fa9ff;
+
+}
+
+h1{
+
+font-size:58px;
+margin-top:30px;
+
+}
+
+.subtitle{
+
+font-size:24px;
+color:#7fc8ff;
+margin-top:15px;
+
+}
+
+.tag{
+
+margin-top:25px;
+font-size:18px;
+color:#b8dfff;
+
+}
+
+.buttons{
+
+margin-top:45px;
+
+}
+
+.btn{
+
+display:inline-block;
+margin:10px;
+padding:15px 30px;
+
+background:#1f8fff;
+
+color:white;
+
+text-decoration:none;
+
+border-radius:12px;
+
+font-weight:700;
+
+transition:.25s;
+
+}
+
+.btn:hover{
+
+transform:translateY(-4px);
+
+background:#37a2ff;
+
+}
+
+.section{
+
+max-width:1100px;
+
+margin:auto;
+
+padding:70px 20px;
+
+}
+
+.card{
+
+background:#13273d;
+
+border-radius:18px;
+
+padding:35px;
+
+box-shadow:0 0 25px rgba(0,0,0,.35);
+
+margin-top:30px;
+
+}
+
+h2{
+
+margin-bottom:25px;
+
+color:#4cb6ff;
+
+font-size:34px;
+
+}
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+}
+
+td{
+
+padding:16px;
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.copy{
+
+margin-top:25px;
+
+padding:15px 25px;
+
+background:#1f8fff;
+
+border:none;
+
+color:white;
+
+font-weight:bold;
+
+border-radius:10px;
+
+cursor:pointer;
+
+}
+
+.grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+
+gap:20px;
+
+}
+
+.feature{
+
+background:#17314d;
+
+padding:25px;
+
+border-radius:15px;
+
+text-align:center;
+
+}
+
+.feature h3{
+
+margin-bottom:12px;
+
+}
+
+a{
+
+color:#69c7ff;
+
+text-decoration:none;
+
+}
+
+footer{
+
+padding:40px;
+
+text-align:center;
+
+color:#98b6d4;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<section class="hero">
+
+<img src="/assets/pengax-logo.png" alt="PENGAX Logo">
+
+<h1>PENGAX</h1>
+
+<div class="subtitle">
+The Expedition Has Begun
+</div>
+
+<div class="tag">
+
+Community Driven • Built on Solana
+
+</div>
+
+<div class="buttons">
+
+<a class="btn" href="#" target="_blank">
+Buy on Jupiter
+</a>
+
+<a class="btn" href="#" target="_blank">
+View DexScreener
+</a>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="card">
+
+<h2>About PENGAX</h2>
+
+<p style="line-height:1.8;font-size:18px;">
+
+PENGAX is a community-driven Solana memecoin created for explorers, believers, and long-term supporters.
+
+Our mission is simple:
+
+Build an active community, reward participation, grow organically, and enjoy the journey together.
+
+The expedition has only just begun.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="card">
+
+<h2>Token Information</h2>
+
+<table>
+
+<tr>
+<td><strong>Name</strong></td>
+<td>PENGA X</td>
+</tr>
+
+<tr>
+<td><strong>Symbol</strong></td>
+<td>$PENGAX</td>
+</tr>
+
+<tr>
+<td><strong>Network</strong></td>
+<td>Solana</td>
+</tr>
+
+<tr>
+<td><strong>Supply</strong></td>
+<td>2,000,000,000</td>
+</tr>
+
+<tr>
+<td><strong>Contract</strong></td>
+<td id="contract">
+BMnSGgU8Jd99fmvMNuqfhFxbEwUFVvw3yAPyVk9upump
+</td>
+</tr>
+
+</table>
+
+<button class="copy" onclick="copyContract()">
+
+Copy Contract Address
+
+</button>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>Why PENGAX?</h2>
+
+<div class="grid">
+
+<div class="feature">
+
+<h3>🐧 Community First</h3>
+
+<p>Organic growth powered by supporters.</p>
+
+</div>
+
+<div class="feature">
+
+<h3>🚀 Solana</h3>
+
+<p>Fast transactions with low fees.</p>
+
+</div>
+
+<div class="feature">
+
+<h3>🎁 Surprise Drops</h3>
+
+<p>Rewarding active community members.</p>
+
+</div>
+
+<div class="feature">
+
+<h3>🌎 Long-Term Vision</h3>
+
+<p>Focused on sustainable community growth.</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="card">
+
+<h2>Official Links</h2>
+
+<p><strong>Website:</strong> <a href="https://degenstein.xyz">degenstein.xyz</a></p>
+
+<br>
+
+<p><strong>X:</strong> <a href="https://x.com/degensteindgn">@degensteindgn</a></p>
+
+<br>
+
+<p><strong>Telegram:</strong> <a href="https://t.me/DegensteinArmy">@DegensteinArmy</a></p>
+
+<br>
+
+<p><strong>DexScreener:</strong>https://dexscreener.com/solana/BMnSGgU8Jd99fmvMNuqfhFxbEwUFVvw3yAPyVk9upump</p>
+
+<br>
+
+<p><strong>Birdeye:</strong>https://birdeye.so/solana/token/BMnSGgU8Jd99fmvMNuqfhFxbEwUFVvw3yAPyVk9upump?tab=trades&trades_layout=table</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="card">
+
+<h2>Roadmap</h2>
+
+<p>✅ Launch</p>
+
+<p>✅ Liquidity Added</p>
+
+<p>✅ Community Formation</p>
+
+<p>⬜ Jupiter Verification</p>
+
+<p>⬜ 100 Holders</p>
+
+<p>⬜ CoinGecko Application</p>
+
+<p>⬜ Continued Community Growth</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="card">
+
+<h2>Disclaimer</h2>
+
+<p style="line-height:1.8">
+
+PENGAX is a community token. Cryptocurrency investments involve risk. Always do your own research before buying, trading, or participating.
+
+</p>
+
+</div>
+
+</section>
+
+<footer>
+
+Part of the <strong>Degenstein Crypto Hub</strong><br><br>
+
+© 2026 PENGAX
+
+</footer>
+
+<script>
+
+function copyContract(){
+
+navigator.clipboard.writeText("BMnSGgU8Jd99fmvMNuqfhFxbEwUFVvw3yAPyVk9upump");
+
+alert("Contract Address Copied!");
+
+}
+
+</script>
+
+</body>
+</html>
