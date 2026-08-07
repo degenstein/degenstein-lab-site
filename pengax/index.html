@@ -41,68 +41,229 @@ text-align:center;
 
 }
 
-.hero img{
+.hero{
 
-width:170px;
-border-radius:50%;
-box-shadow:0 0 35px #3fa9ff;
+position:relative;
+
+overflow:hidden;
+
+padding:120px 20px;
+
+text-align:center;
 
 }
 
-h1{
+.hero-bg{
 
-font-size:58px;
+position:absolute;
+
+top:0;
+left:0;
+right:0;
+bottom:0;
+
+background:
+radial-gradient(circle at top,
+rgba(0,150,255,.25),
+transparent 60%);
+
+z-index:0;
+
+}
+
+.hero-content{
+
+position:relative;
+
+z-index:2;
+
+max-width:900px;
+
+margin:auto;
+
+}
+
+.hero-logo{
+
+width:220px;
+
+border-radius:50%;
+
+box-shadow:
+0 0 30px #0ea5ff,
+0 0 70px rgba(0,160,255,.45);
+
+animation:float 4s ease-in-out infinite;
+
+}
+
+.hero-badge{
+
+display:inline-block;
+
+margin-top:35px;
+
+padding:10px 22px;
+
+background:rgba(40,140,255,.12);
+
+border:1px solid rgba(90,180,255,.35);
+
+border-radius:999px;
+
+font-size:14px;
+
+letter-spacing:1px;
+
+color:#84cfff;
+
+}
+
+.hero h1{
+
+font-size:78px;
+
+font-weight:800;
+
 margin-top:30px;
 
-}
-
-.subtitle{
-
-font-size:24px;
-color:#7fc8ff;
-margin-top:15px;
+letter-spacing:3px;
 
 }
 
-.tag{
+.hero-text{
 
-margin-top:25px;
-font-size:18px;
-color:#b8dfff;
+font-size:34px;
+
+color:#59b8ff;
+
+margin-top:20px;
+
+font-weight:700;
 
 }
 
-.buttons{
+.hero-description{
+
+max-width:700px;
+
+margin:30px auto;
+
+font-size:21px;
+
+line-height:1.8;
+
+color:#c7ddf4;
+
+}
+
+.hero-buttons{
 
 margin-top:45px;
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
 
 }
 
 .btn{
 
-display:inline-block;
-margin:10px;
-padding:15px 30px;
+padding:18px 36px;
 
-background:#1f8fff;
+border-radius:14px;
 
-color:white;
-
-text-decoration:none;
-
-border-radius:12px;
+font-size:18px;
 
 font-weight:700;
 
-transition:.25s;
+transition:.3s;
+
+text-decoration:none;
 
 }
 
-.btn:hover{
+.primary{
+
+background:#1992ff;
+
+color:white;
+
+box-shadow:0 0 25px rgba(25,146,255,.45);
+
+}
+
+.primary:hover{
 
 transform:translateY(-4px);
 
-background:#37a2ff;
+box-shadow:0 0 45px rgba(25,146,255,.8);
+
+}
+
+.secondary{
+
+background:transparent;
+
+border:2px solid #2f9fff;
+
+color:#74c7ff;
+
+}
+
+.secondary:hover{
+
+background:#2f9fff;
+
+color:white;
+
+transform:translateY(-4px);
+
+}
+
+@keyframes float{
+
+0%{transform:translateY(0px);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0px);}
+
+}
+
+@media(max-width:768px){
+
+.hero{
+
+padding:80px 20px;
+
+}
+
+.hero h1{
+
+font-size:54px;
+
+}
+
+.hero-text{
+
+font-size:26px;
+
+}
+
+.hero-description{
+
+font-size:18px;
+
+}
+
+.hero-logo{
+
+width:170px;
+
+}
 
 }
 
@@ -230,33 +391,51 @@ color:#98b6d4;
 
 <section class="hero">
 
-<img src="/assets/pengax-logo.png" alt="PENGAX Logo">
+<div class="hero-bg"></div>
+
+<div class="hero-content">
+
+<img src="/assets/pengax-logo.png"
+alt="PENGAX Logo"
+class="hero-logo">
+
+<div class="hero-badge">
+🐧 COMMUNITY DRIVEN • BUILT ON SOLANA
+</div>
 
 <h1>PENGAX</h1>
 
-<div class="subtitle">
+<p class="hero-text">
 The Expedition Has Begun
-</div>
+</p>
 
-<div class="tag">
+<p class="hero-description">
+Join the growing community behind <strong>$PENGAX</strong>.
+Built on Solana for explorers, believers, and long-term supporters.
+The journey is just getting started.
+</p>
 
-Community Driven • Built on Solana
+<div class="hero-buttons">
 
-</div>
-
-<div class="buttons">
-
-<a class="btn"
+<a class="btn primary"
 href="https://jup.ag/swap?inputMint=So11111111111111111111111111111111111111112&outputMint=BMnSGgU8Jd99fmvMNuqfhFxbEwUFVvw3yAPyVk9upump"
-target="_blank">
-Buy on Jupiter
+target="_blank"
+rel="noopener noreferrer">
+
+🚀 Buy on Jupiter
+
 </a>
 
-<a class="btn"
+<a class="btn secondary"
 href="https://dexscreener.com/solana/BMnSGgU8Jd99fmvMNuqfhFxbEwUFVvw3yAPyVk9upump"
-target="_blank">
-View DexScreener
+target="_blank"
+rel="noopener noreferrer">
+
+📈 View Chart
+
 </a>
+
+</div>
 
 </div>
 
