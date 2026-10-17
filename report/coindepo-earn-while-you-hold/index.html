@@ -1,925 +1,1820 @@
+
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <title>2026 CoinDepo Research Review — Interest Accounts, Custody & Risk | The Degenstein Report</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- SEO -->
-      <meta name="description" content="Independent CoinDepo research covering interest-account mechanics, APR and compounding math, custody terms, platform risk, borrowing, security claims, and a due-diligence framework." />
-      <link rel="canonical" href="https://degenstein.xyz/report/coindepo-earn-while-you-hold/" />
-      <meta name="robots" content="index, follow" />
+  <title>2026 CoinDepo Research Review — Interest Accounts, Custody & Risk | The Degenstein Report</title>
 
-      <!-- Open Graph -->
-      <meta property="og:type" content="article" />
-      <meta property="og:site_name" content="The Degenstein Report" />
-      <meta property="og:title" content="2026 CoinDepo Research Review — Interest Accounts, Custody & Risk" />
-      <meta property="og:description" content="Independent CoinDepo research covering interest-account mechanics, compounding, custody, platform structure, and material risks." />
-      <meta property="og:image" content="https://degenstein.xyz/assets/coindeporeport.png" />
+  <meta name="description" content="An independent CoinDepo research review covering interest accounts, APR vs APY, compounding, custody, platform risks, crypto-backed borrowing, and due diligence.">
+  <link rel="canonical" href="https://degenstein.xyz/report/coindepo-earn-while-you-hold/">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#07111e">
 
-      <!-- X -->
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@DHouseofcrypto" />
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="The Degenstein Report">
+  <meta property="og:title" content="2026 CoinDepo Research Review — Interest Accounts, Custody & Risk">
+  <meta property="og:description" content="The yield is only one part of the equation. Explore CoinDepo's interest-account mechanics, custody terms, borrowing products, and platform risks.">
+  <meta property="og:url" content="https://degenstein.xyz/report/coindepo-earn-while-you-hold/">
+  <meta property="og:image" content="https://degenstein.xyz/assets/coindeporeport.png">
 
-      <meta name="theme-color" content="#06b6d4" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@DHouseofcrypto">
+  <meta name="twitter:title" content="CoinDepo Research Review | The Degenstein Report">
+  <meta name="twitter:description" content="Interest mechanics. Custody. Counterparty risk. A research-first look at CoinDepo.">
+  <meta name="twitter:image" content="https://degenstein.xyz/assets/coindeporeport.png">
 
-      <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
 
-      <style>
-      :root { color-scheme: dark; }
-
-      html, body {
-        background:#020617;
-        color:#e5e7eb;
-        font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-        scroll-behavior:smooth;
-      }
-
-      .wrap{
-        max-width:72rem;
-        margin:0 auto;
-        padding:0 1rem;
-      }
-        
-    .hero-glow{
-      position:absolute;
-      inset:-120px;
-      background:radial-gradient(circle at 50% 0%, rgba(34,197,94,.25), transparent 70%);
-      filter:blur(90px);
-      z-index:0;
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #07111e;
+      --panel: #0d1b2b;
+      --panel2: #102238;
+      --line: rgba(148,163,184,.19);
+      --text: #e7eef7;
+      --muted: #9aabc0;
+      --green: #34d399;
+      --cyan: #22d3ee;
+      --purple: #c4b5fd;
+      --amber: #fbbf24;
+      --red: #f87171;
     }
 
-    .hero-wrap{
-      position:relative;
-      overflow:hidden;
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
     }
-      .card{
-        position:relative;
-        border-radius:1.25rem;
-        padding:1.25rem;
-        background:linear-gradient(
-          180deg,
-          rgba(15,23,42,.85),
-          rgba(15,23,42,.65)
-        );
-        border:1px solid rgba(148,163,184,.25);
-       box-shadow: 0 10px 30px rgba(0,0,0,.4);
-      }
 
-      .card-primary{
-        position:relative;
-        border-radius:1.25rem;
-        padding:1.25rem;
-        background:linear-gradient(180deg,rgba(15,23,42,.85),rgba(15,23,42,.65));
-        border:1px solid rgba(148,163,184,.25);
-        box-shadow:0 10px 30px rgba(0,0,0,.4);
-      }
-      .card-primary::before{
-        content:"";
-        position:absolute;
-        left:0;
-        top:0;
-        width:4px;
-        height:100%;
-        border-radius:999px;
-        background:linear-gradient(180deg,#22c55e,#06b6d4);
-        opacity:.75;
-      }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 10% 0%, rgba(16,185,129,.10), transparent 36rem),
+        radial-gradient(ellipse at 90% 8%, rgba(34,211,238,.08), transparent 35rem),
+        var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
 
-      h1.grad, .grad{
-        background:linear-gradient(
-          135deg,
-          #34d399,
-          #60a5fa
-        );
-        -webkit-background-clip:text;
-        -webkit-text-fill-color:transparent;
-      }
+    a { color: inherit; }
+    button, input, select { font: inherit; }
 
-      .tag{
-        font-size:.72rem;
-        padding:.35rem .65rem;
-        border-radius:999px;
-        border:1px solid rgba(34,197,94,.55);
-        background:rgba(34,197,94,.10);
-        color:#6ee7b7;
-        font-weight:800;
-        letter-spacing:.12em;
-        text-transform:uppercase;
-        display:inline-block;
-      }
+    a:focus-visible, button:focus-visible,
+    input:focus-visible, select:focus-visible {
+      outline: 2px solid var(--cyan);
+      outline-offset: 3px;
+    }
 
-      .btn-primary{
-        display:inline-flex;
-        align-items:center;
-        justify-content:center;
-        background:linear-gradient(
-          135deg,
-          #22c55e,
-          #06b6d4
-        );
-        color:#020617;
-        padding:.85rem 1.1rem;
-        border-radius:999px;
-        font-weight:900;
-        box-shadow:
-          0 0 0 rgba(34,197,94,0),
-          0 0 35px rgba(34,197,94,.35);
-        transition:transform .15s ease, box-shadow .15s ease;
-      }
+    .wrap {
+      width: min(1160px, calc(100% - 36px));
+      margin-inline: auto;
+    }
 
-      .btn-primary:hover{
-        transform:translateY(-1px);
-        box-shadow:
-          0 0 45px rgba(34,197,94,.55);
-      }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(5,12,22,.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
 
-      .btn-outline{
-        display:inline-flex;
-        align-items:center;
-        justify-content:center;
-        border:1px solid rgba(148,163,184,.35);
-        padding:.85rem 1.1rem;
-        border-radius:999px;
-        background:rgba(15,23,42,.55);
-        color:#e5e7eb;
-        transition:border-color .15s ease, background .15s ease;
-      }
+    .header-inner {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
 
-      .btn-outline:hover{
-        border-color:#34d399;
-        background:rgba(15,23,42,.75);
-      }
+    .brand {
+      text-decoration: none;
+      font-weight: 900;
+      letter-spacing: -.04em;
+      font-size: 1.05rem;
+    }
 
-      .muted{ color:rgba(229,231,235,.72); }
-      .fine{ font-size:.86rem; color:rgba(229,231,235,.6); }
+    .brand span { color: var(--green); }
 
-      input, select{
-        box-shadow:inset 0 0 0 1px rgba(255,255,255,.02);
-      }
+    .header-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
 
-      canvas{
-        box-shadow:
-          0 0 30px rgba(34,197,94,.18),
-          inset 0 0 0 1px rgba(255,255,255,.04);
-      }
-    </style>
-    </head>
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 11px;
+      border: 1px solid rgba(52,211,153,.3);
+      border-radius: 999px;
+      color: #a7f3d0;
+      background: rgba(16,185,129,.08);
+      font-size: .72rem;
+      font-weight: 850;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
 
-    <body>
+    .eyebrow::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 12px rgba(52,211,153,.8);
+    }
 
-    <header class="sticky top-0 z-50 border-b border-white/10 bg-black/70 backdrop-blur">
-      <div class="wrap py-4 flex justify-between items-center">
-        <a href="/report/" class="font-extrabold text-lg">The Degenstein Report</a>
-        <span class="tag">Platform Research</span>
+    .hero {
+      position: relative;
+      padding: 76px 0 48px;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 700px;
+      height: 480px;
+      top: -190px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: radial-gradient(ellipse, rgba(16,185,129,.17), transparent 68%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr);
+      gap: 42px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.65rem, 6vw, 5rem);
+      line-height: 1.02;
+      letter-spacing: -.065em;
+      font-weight: 950;
+      margin: 20px 0;
+      max-width: 850px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(110deg, #6ee7b7 4%, #22d3ee 58%, #93c5fd 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-lead {
+      font-size: clamp(1.05rem, 2vw, 1.22rem);
+      color: #bdcad9;
+      max-width: 690px;
+    }
+
+    .muted { color: var(--muted); }
+    .small { font-size: .84rem; color: var(--muted); }
+
+    .hero-image {
+      display: block;
+      width: 100%;
+      border-radius: 22px;
+      border: 1px solid rgba(148,163,184,.23);
+      box-shadow: 0 24px 90px rgba(0,0,0,.36), 0 0 48px rgba(16,185,129,.10);
+    }
+
+    .hero-image-wrap { position: relative; }
+
+    .image-caption {
+      margin-top: 10px;
+      text-align: center;
+      font-size: .75rem;
+      color: #8395aa;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 46px;
+      padding: 11px 17px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: .91rem;
+      font-weight: 850;
+      transition: transform .18s ease, border-color .18s ease, filter .18s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      color: #04131a;
+      background: linear-gradient(115deg, #34d399, #22d3ee);
+      box-shadow: 0 8px 28px rgba(16,185,129,.18);
+    }
+
+    .btn-primary:hover { filter: brightness(1.08); }
+
+    .btn-secondary {
+      border: 1px solid rgba(148,163,184,.27);
+      background: rgba(15,29,47,.8);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover { border-color: rgba(52,211,153,.65); }
+
+    .hero-stat {
+      border: 1px solid rgba(52,211,153,.25);
+      background: linear-gradient(140deg, rgba(16,185,129,.10), rgba(34,211,238,.035));
+      padding: 24px;
+      border-radius: 22px;
+      margin-top: 28px;
+    }
+
+    .stat-label {
+      font-size: .73rem;
+      text-transform: uppercase;
+      letter-spacing: .11em;
+      color: #9db1c4;
+      font-weight: 800;
+    }
+
+    .stat-value {
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      font-weight: 950;
+      letter-spacing: -.055em;
+      line-height: 1.2;
+      margin: 6px 0;
+      color: var(--green);
+    }
+
+    .disclosure {
+      padding: 15px 17px;
+      border: 1px solid rgba(251,191,36,.22);
+      background: rgba(251,191,36,.055);
+      border-radius: 13px;
+      color: #d7cba9;
+      font-size: .83rem;
+      margin-top: 22px;
+    }
+
+    .section { padding: 38px 0; }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 25px;
+    }
+
+    .section-kicker {
+      color: var(--green);
+      font-size: .73rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+    }
+
+    .section-heading h2,
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      letter-spacing: -.045em;
+      line-height: 1.15;
+      font-weight: 900;
+      margin: 8px 0 12px;
+    }
+
+    .section-heading p { color: var(--muted); }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      min-width: 0;
+      padding: 25px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: linear-gradient(150deg, rgba(16,34,56,.94), rgba(9,23,39,.94));
+      box-shadow: 0 14px 40px rgba(0,0,0,.12);
+    }
+
+    .card h3, .card h2 {
+      font-weight: 900;
+      letter-spacing: -.025em;
+      line-height: 1.25;
+      margin: 0 0 12px;
+    }
+
+    .card h2 { font-size: 1.35rem; }
+    .card h3 { font-size: 1.08rem; }
+
+    .card p { color: #b5c3d3; }
+    .card p + p { margin-top: 12px; }
+
+    .accent-card {
+      border-color: rgba(52,211,153,.30);
+      background:
+        radial-gradient(ellipse at top left, rgba(16,185,129,.10), transparent 55%),
+        linear-gradient(150deg, rgba(16,34,56,.97), rgba(9,23,39,.97));
+    }
+
+    .purple-card { border-color: rgba(196,181,253,.28); }
+    .blue-card { border-color: rgba(96,165,250,.28); }
+    .amber-card { border-color: rgba(251,191,36,.25); }
+
+    .icon-box {
+      width: 43px;
+      height: 43px;
+      border-radius: 13px;
+      display: grid;
+      place-items: center;
+      background: rgba(52,211,153,.10);
+      border: 1px solid rgba(52,211,153,.18);
+      color: var(--green);
+      font-size: 1.2rem;
+      margin-bottom: 18px;
+    }
+
+    .list {
+      padding-left: 20px;
+      margin: 14px 0 0;
+      color: #c3cfdd;
+    }
+
+    .list li { padding-left: 4px; margin: 9px 0; }
+    .list li::marker { color: var(--green); }
+
+    .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 17px; }
+
+    .pill {
+      display: inline-flex;
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,.025);
+      color: #bdcad9;
+      font-size: .78rem;
+      font-weight: 750;
+    }
+
+    .notice {
+      padding: 17px 19px;
+      border-radius: 14px;
+      border: 1px solid rgba(34,211,238,.22);
+      background: rgba(34,211,238,.045);
+      color: #c6e7ef;
+    }
+
+    .notice strong { color: var(--cyan); }
+
+    .risk-notice {
+      border-color: rgba(248,113,113,.25);
+      background: rgba(248,113,113,.055);
+      color: #e5c4c4;
+    }
+
+    .risk-notice strong { color: var(--red); }
+
+    .comparison-list { display: grid; gap: 16px; margin-top: 23px; }
+
+    .comparison-row {
+      display: grid;
+      grid-template-columns: 150px minmax(0, 1fr);
+      align-items: center;
+      gap: 15px;
+    }
+
+    .comparison-label { font-size: .88rem; font-weight: 800; }
+    .comparison-description { font-size: .8rem; color: var(--muted); }
+
+    .comparison-track {
+      height: 8px;
+      background: rgba(148,163,184,.13);
+      border-radius: 999px;
+      overflow: hidden;
+      margin-top: 7px;
+    }
+
+    .comparison-fill {
+      height: 100%;
+      width: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #64748b, #94a3b8);
+    }
+
+    .comparison-fill.green {
+      background: linear-gradient(90deg, #10b981, #22d3ee);
+    }
+
+    .comparison-fill.blue {
+      background: linear-gradient(90deg, #60a5fa, #818cf8);
+    }
+
+    .math-box {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: rgba(2,10,20,.38);
+      margin-top: 18px;
+    }
+
+    .math-value {
+      font-size: clamp(1.35rem, 3vw, 2rem);
+      font-weight: 900;
+      letter-spacing: -.04em;
+      color: var(--green);
+    }
+
+    .calculator {
+      border-color: rgba(52,211,153,.33);
+      background:
+        radial-gradient(ellipse at top right, rgba(34,211,238,.075), transparent 50%),
+        linear-gradient(150deg, #102238, #091727);
+    }
+
+    .calculator-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .field label {
+      display: block;
+      color: #b9c8d8;
+      font-size: .83rem;
+      font-weight: 800;
+      margin-bottom: 7px;
+    }
+
+    .field input, .field select {
+      width: 100%;
+      min-width: 0;
+      padding: 12px 13px;
+      border: 1px solid rgba(148,163,184,.25);
+      border-radius: 11px;
+      background: #071422;
+      color: var(--text);
+    }
+
+    .field input:focus, .field select:focus {
+      border-color: var(--green);
+      outline: 2px solid rgba(52,211,153,.12);
+    }
+
+    .results {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .result {
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      padding: 16px;
+      background: rgba(2,10,20,.35);
+    }
+
+    .result-label {
+      color: var(--muted);
+      font-size: .77rem;
+      font-weight: 800;
+    }
+
+    .result-value {
+      font-size: clamp(1.15rem, 2.6vw, 1.7rem);
+      font-weight: 950;
+      letter-spacing: -.04em;
+      margin-top: 4px;
+      overflow-wrap: anywhere;
+    }
+
+    .result-value.green { color: var(--green); }
+
+    .chart-wrap {
+      margin-top: 22px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: rgba(2,10,20,.35);
+    }
+
+    #growthChart {
+      display: block;
+      width: 100%;
+      height: 210px;
+    }
+
+    .chart-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: .79rem;
+      color: var(--muted);
+      margin: 6px 4px 0;
+    }
+
+    .legend-dot {
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      margin-right: 6px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 15px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 580px;
+      font-size: .87rem;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 13px 15px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    th {
+      color: #c2d0df;
+      font-size: .77rem;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      background: rgba(255,255,255,.025);
+    }
+
+    td { color: #b5c3d3; }
+    tr:last-child td { border-bottom: 0; }
+    td:first-child { color: var(--text); font-weight: 800; }
+
+    .token-title { color: var(--purple); }
+    .loan-title { color: #93c5fd; }
+
+    .token-access {
+      margin-top: 18px;
+      padding: 20px;
+      border-radius: 15px;
+      border: 1px solid rgba(196,181,253,.25);
+      background: rgba(139,92,246,.055);
+    }
+
+    .token-access .btn-primary {
+      background: linear-gradient(115deg, #a78bfa, #67e8f9);
+    }
+
+    .faq-list { display: grid; gap: 10px; }
+
+    details {
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: rgba(16,34,56,.65);
+      padding: 17px 19px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 850;
+      color: #e4edf7;
+    }
+
+    details p { color: var(--muted); margin: 12px 0 0; }
+
+    .checklist { display: grid; gap: 11px; margin-top: 16px; }
+
+    .check-item {
+      display: flex;
+      gap: 11px;
+      align-items: flex-start;
+      color: #c2d0df;
+    }
+
+    .check {
+      flex: 0 0 21px;
+      height: 21px;
+      display: grid;
+      place-items: center;
+      border-radius: 6px;
+      border: 1px solid rgba(52,211,153,.3);
+      background: rgba(52,211,153,.09);
+      color: var(--green);
+      font-size: .78rem;
+      font-weight: 900;
+      margin-top: 2px;
+    }
+
+    .final-panel {
+      padding: clamp(24px, 5vw, 48px);
+      border: 1px solid rgba(52,211,153,.32);
+      border-radius: 24px;
+      background:
+        radial-gradient(ellipse at top right, rgba(34,211,238,.09), transparent 45%),
+        linear-gradient(140deg, rgba(16,185,129,.09), rgba(13,27,43,.98) 52%);
+      box-shadow: 0 0 70px rgba(16,185,129,.06);
+    }
+
+    .final-panel h2 {
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      line-height: 1.1;
+      font-weight: 950;
+      letter-spacing: -.055em;
+      margin: 10px 0 18px;
+    }
+
+    .final-panel h2 span { color: var(--green); }
+
+    footer {
+      margin-top: 55px;
+      border-top: 1px solid var(--line);
+      background: rgba(2,8,16,.55);
+    }
+
+    .footer-inner { padding: 30px 0; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 15px; }
+    .footer-links a { color: #91a5bb; text-decoration: none; font-size: .82rem; }
+    .footer-links a:hover { color: var(--green); }
+
+    @media (max-width: 800px) {
+      .hero { padding-top: 45px; }
+      .hero-grid, .grid-2 { grid-template-columns: 1fr; }
+      .hero-grid { gap: 28px; }
+      .hero-image-wrap { max-width: 580px; }
+      .grid-3 { grid-template-columns: 1fr; }
+      .calculator-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .results { grid-template-columns: 1fr; }
+      .comparison-row { grid-template-columns: 1fr; gap: 5px; }
+    }
+
+    @media (max-width: 520px) {
+      .wrap { width: min(100% - 26px, 1160px); }
+      .header-inner { min-height: 62px; }
+      .brand { font-size: .94rem; }
+      .header-links .btn { min-height: 38px; padding: 8px 10px; font-size: .78rem; }
+      .hero h1 { font-size: 2.7rem; }
+      .card { padding: 19px; }
+      .calculator-grid { grid-template-columns: 1fr; }
+      .button-row .btn { width: 100%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="/report/" class="brand">THE <span>DEGENSTEIN</span> REPORT</a>
+      <div class="header-links">
+        <a class="btn btn-secondary" href="https://degenstein.xyz/">Main site</a>
+        <a class="btn btn-secondary" href="#risk">Risk framework</a>
       </div>
-    </header>
-
-    <section class="wrap py-16 hero-wrap">
-
-      <div class="hero-glow"></div>
-
-      <div class="mx-auto mb-10 relative z-10" style="max-width:720px;">
-        <img
-          src="/assets/coindeporeport.png"
-          alt="2026 Earn While You Hold — CoinDepo Deep Dive"
-          class="w-full rounded-xl border border-white/10 shadow-[0_0_60px_rgba(34,197,94,.25)]"
-          loading="lazy"
-        />
-      </div>
-
-      <div class="card relative z-10">
-
-        <span class="tag">2026 Research Review</span>
-        <p class="fine mt-3">Reviewed against publicly available CoinDepo product and wallet information in July 2026.</p>
-
-        <h1 class="text-5xl md:text-6xl font-extrabold mt-4 leading-tight">
-          CoinDepo Research Review.<br>
-          <span class="grad">Interest Accounts, Custody &amp; Risk.</span>
-        </h1>
-
-        <p class="fine mt-4">
-          This independent review examines CoinDepo's crypto and stablecoin interest accounts,
-          APR and compounding mechanics, custody model, borrowing products, platform claims,
-          and the risks users should evaluate before transferring digital assets.
-        </p>
-
-        <p class="text-lg muted mt-5">
-          A high advertised rate should be evaluated alongside custody, counterparty, liquidity, and platform risk.
-        </p>
-
-        <p class="muted mt-3">
-          This report examines <strong>CoinDepo</strong> through a research lens:
-          interest mechanics, APR and compounding structure, asset coverage,
-          token utility, borrowing, security representations, legal terms, and counterparty risk.
-        </p>
-
-        <div class="mt-6 p-4 rounded-xl border border-emerald-400/30 bg-emerald-400/5">
-          <div class="text-sm text-gray-400">Illustrative simple-interest example</div>
-          <div class="text-3xl font-extrabold text-emerald-400">
-            $2,000 → $2,118.36
-          </div>
-          <div class="text-xs text-gray-400">
-            90 days at 24% APR using simple annualized interest; not a quoted CoinDepo return
-          </div>
-        </div>
-
-        <div class="flex flex-wrap gap-3 mt-6">
-          <a href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV"
-             target="_blank" rel="noopener noreferrer nofollow sponsored"
-             class="btn-primary">
-            Visit CoinDepo (USA disclosure link) →
-          </a>
-
-          <a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W"
-             target="_blank" rel="noopener noreferrer nofollow sponsored"
-             class="btn-outline">
-            Visit CoinDepo (International disclosure link)
-          </a>
-
-          <a href="#calculator" class="btn-outline">Calculator</a>
-          <a href="#risk" class="btn-outline">Risk notes</a>
-        </div>
-
-        <div class="flex flex-wrap gap-3 mt-4">
-          <a href="https://degenstein.xyz/" class="btn-outline">
-            ← Back to Main
-          </a>
-
-          <a
-            href="https://twitter.com/intent/tweet?text=2026%3A%20Earn%20While%20You%20Hold%20—%20CoinDepo%20Deep%20Dive&url=https%3A%2F%2Fdegenstein.xyz%2Freport%2Fcoindepo-earn-while-you-hold%2F"
-            target="_blank"
-            rel="noopener noreferrer nofollow sponsored"
-            class="btn-outline">
-            Share on X
-          </a>
-        </div>
-
-        <p class="fine mt-4">
-          Disclosure: The CoinDepo links above are referral links. I may receive compensation if you use them, at no additional cost to you. Rates and terms can change. This report is educational and is not financial advice.
-        </p>
-
-      </div>
-
-    </section>
-
-    <!-- CONTINUES IN PART 2 -->
-      <main class="wrap pb-16 space-y-8">
-
-    <div class="flex items-center gap-3 my-10 opacity-60">
-      <div class="h-px flex-1 bg-gradient-to-r from-transparent via-emerald-400 to-transparent"></div>
-      <span class="text-xs tracking-widest uppercase text-emerald-400 font-bold">
-        Core Framework
-      </span>
-      <div class="h-px flex-1 bg-gradient-to-r from-transparent via-emerald-400 to-transparent"></div>
     </div>
+  </header>
 
-    <section class="grid md:grid-cols-2 gap-6">
-
-      <!-- WHAT IS -->
-      <div class="card">
-        <h2 class="text-2xl font-extrabold mb-2">What is CoinDepo?</h2>
-
-        <p class="muted">
-          CoinDepo is a centralized custodial digital-asset platform offering compound-interest accounts and borrowing products. Users transfer assets to a third-party platform and should evaluate the applicable wallet and product terms before use.
-        </p>
-
-        <p class="muted mt-3">
-          CoinDepo's official site currently advertises compound-interest accounts with rates that vary by asset and account type. Its wallet terms also describe broad rights to lend, pledge, sell, transfer, invest, or otherwise use digital assets where permitted by law.
-        </p>
-
-        <div class="mt-4 grid grid-cols-3 gap-2 text-center text-xs">
-          <div class="p-2 rounded bg-white/5 border border-white/10">Earn</div>
-          <div class="p-2 rounded bg-white/5 border border-white/10">Borrow</div>
-          <div class="p-2 rounded bg-white/5 border border-white/10">Spend</div>
-        </div>
-
-        <p class="muted mt-4">
-          The platform markets Earn, Borrow, and a planned crypto-card product. Each product introduces different contractual and risk considerations that should be reviewed separately.
-        </p>
-      </div>
-
-      <!-- WHO IT'S FOR -->
-      <div class="card">
-        <h2 class="text-2xl font-extrabold mb-2">Who This Is For</h2>
-
-        <ul class="list-disc pl-6 text-gray-300 space-y-2 mt-3">
-          <li>Users researching custodial crypto interest accounts</li>
-          <li>Stablecoin holders comparing interest-account structures</li>
-          <li>Users researching crypto-backed borrowing</li>
-          <li>Users comfortable evaluating platform risk</li>
-        </ul>
-
-        <div class="mt-4 p-3 rounded-lg bg-emerald-400/5 border border-emerald-400/30">
-          <div class="text-xs text-gray-400">Positioning</div>
-          <div class="text-sm font-bold text-emerald-400">
-            Custodial interest accounts — not self-custody and not bank deposits.
-          </div>
-        </div>
-      </div>
-
-    </section>
-
-    <section class="grid md:grid-cols-2 gap-6 mt-6">
-
-      <!-- ASSETS -->
-      <div class="card">
-        <h2 class="text-2xl font-extrabold mb-2">Advertised Rates &amp; Assets</h2>
-
-        <ul class="list-disc pl-6 text-gray-300 space-y-2 mt-3">
-          <li>CoinDepo currently advertises up to 18% APR on crypto</li>
-          <li>CoinDepo currently advertises up to 23% APR on stablecoins</li>
-          <li>Rates vary by asset and account type</li>
-        </ul>
-
-        <p class="fine mt-3">
-          Rates and product terms can change. Verify current figures directly with CoinDepo before making a decision.
-        </p>
-      </div>
-
-      <!-- STRUCTURE -->
-      <div class="card">
-        <h2 class="text-2xl font-extrabold mb-2">Yield Structure</h2>
-
-        <ul class="list-disc pl-6 text-gray-300 space-y-2 mt-3">
-          <li>Daily, weekly, monthly, quarterly, semi-annual, and annual account options are advertised</li>
-          <li>CoinDepo states that its plans compound</li>
-          <li>Review transfer, withdrawal, maturity, and product-specific terms directly</li>
-        </ul>
-
-        <div class="mt-4 p-3 rounded-lg bg-white/5 border border-white/10">
-          <div class="text-xs text-gray-400">Core idea</div>
-          <div class="text-sm font-bold">
-            Do not compare rates without comparing terms and risk
-          </div>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- SEO ADDITION START -->
-    <div class="flex items-center gap-3 my-10 opacity-60">
-      <div class="h-px flex-1 bg-gradient-to-r from-transparent via-emerald-400 to-transparent"></div>
-      <span class="text-xs tracking-widest uppercase text-emerald-400 font-bold">
-        Yield Mechanics
-      </span>
-      <div class="h-px flex-1 bg-gradient-to-r from-transparent via-emerald-400 to-transparent"></div>
-    </div>
-
-    <section class="grid md:grid-cols-2 gap-6">
-
-      <!-- APR -->
-      <div class="card">
-        <h2 class="text-2xl font-extrabold mb-2">APR</h2>
-        <p class="muted">Simple interest. No compounding.</p>
-
-        <div class="mt-4 p-4 rounded-xl bg-white/5 border border-white/10">
-          <div class="text-xs text-gray-400">Example</div>
-          <div class="text-lg font-bold">$2,000 → $2,118.36</div>
-          <div class="text-xs text-gray-400">Illustrative 90-day simple-interest math at 24% APR</div>
-        </div>
-      </div>
-
-      <!-- APY -->
-      <div class="card">
-        <h2 class="text-2xl font-extrabold mb-2">APY</h2>
-        <p class="muted">Compounding interest. Growth accelerates over time.</p>
-
-        <div class="mt-4 p-4 rounded-xl bg-emerald-400/5 border border-emerald-400/30">
-          <div class="text-xs text-gray-400">Key Insight</div>
-          <div class="text-lg font-bold text-emerald-400">
-            Compounding changes the effective annual result
-          </div>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- COMPARISON VISUAL -->
-    <section class="card mt-6">
-
-      <h2 class="text-2xl font-extrabold mb-6">Why Direct Rate Comparisons Need Context</h2>
-
-      <p class="muted mb-5">
-        Bank deposits, CDs, mutual funds, exchange rewards, and custodial crypto interest accounts are not equivalent products.
-        They can differ materially in insurance, volatility, liquidity, counterparty exposure, fees, and legal protections.
-        Comparing a single headline percentage can be misleading.
-      </p>
-      <div class="space-y-4">
-
-        <!-- BANK -->
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap hero-grid">
         <div>
-          <div class="flex justify-between text-sm">
-            <span>Bank savings</span><span>Different protection and rate structure</span>
+          <span class="eyebrow">2026 Platform Research</span>
+
+          <h1>
+            CoinDepo:<br>
+            <span class="gradient-text">Yield, Custody &amp; Risk.</span>
+          </h1>
+
+          <p class="hero-lead">
+            A research-first examination of crypto interest accounts,
+            stablecoin yield, compounding mechanics, borrowing products,
+            token considerations, and the risks that headline rates don't show.
+          </p>
+
+          <p class="small mt-4">
+            Research review · Product terms and rates require direct verification
+          </p>
+
+          <div class="button-row">
+            <a class="btn btn-primary"
+               href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV"
+               target="_blank"
+               rel="noopener noreferrer nofollow sponsored">
+              Explore CoinDepo — USA ↗
+            </a>
+
+            <a class="btn btn-secondary"
+               href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W"
+               target="_blank"
+               rel="noopener noreferrer nofollow sponsored">
+              International ↗
+            </a>
+
+            <a class="btn btn-secondary" href="#calculator">Run the math ↓</a>
           </div>
-          <div class="h-2 bg-gray-700 rounded">
-            <div class="h-2 bg-gray-400 w-[55%] rounded"></div>
+
+          <div class="hero-stat">
+            <div class="stat-label">Illustrative simple-interest example</div>
+            <div class="stat-value">$2,000 → $2,118.36</div>
+            <p class="small">
+              90 days at an assumed 24% APR, using simple annualized interest.
+              This is a mathematical example, not a current CoinDepo quote,
+              forecast, or guaranteed return.
+            </p>
+          </div>
+
+          <div class="disclosure">
+            <strong>Referral disclosure:</strong> The CoinDepo signup links on
+            this page are referral links. Degenstein may receive compensation
+            if you use them, at no additional cost to you. Read the product's
+            current terms before transferring assets.
           </div>
         </div>
 
-        <!-- CD -->
-        <div>
-          <div class="flex justify-between text-sm">
-            <span>Bank CD</span><span>Term and deposit protections differ</span>
-          </div>
-          <div class="h-2 bg-gray-700 rounded">
-            <div class="h-2 bg-gray-400 w-[55%] rounded"></div>
-          </div>
+        <div class="hero-image-wrap">
+          <img
+            src="/assets/coindeporeport.png"
+            alt="The Degenstein Report — CoinDepo interest accounts and risk research"
+            class="hero-image"
+            fetchpriority="high">
+          <p class="image-caption">
+            THE DEGENSTEIN REPORT · Independent research perspective
+          </p>
         </div>
-
-        <!-- FUNDS -->
-        <div>
-          <div class="flex justify-between text-sm">
-            <span>Mutual funds</span><span>Market return is not a fixed interest rate</span>
-          </div>
-          <div class="h-2 bg-gray-700 rounded">
-            <div class="h-2 bg-blue-400 w-[55%] rounded"></div>
-          </div>
-        </div>
-
-        <!-- COINBASE -->
-        <div>
-          <div class="flex justify-between text-sm">
-            <span>Exchange rewards</span><span>Asset and program terms vary</span>
-          </div>
-          <div class="h-2 bg-gray-700 rounded">
-            <div class="h-2 bg-blue-400 w-[55%] rounded"></div>
-          </div>
-        </div>
-
-        <!-- COINDEPO -->
-        <div>
-          <div class="flex justify-between text-sm font-bold">
-            <span class="text-emerald-400">CoinDepo interest accounts</span>
-            <span class="text-emerald-400">Up to 23% APR advertised on stablecoins</span>
-          </div>
-          <div class="h-2 bg-gray-700 rounded">
-            <div class="h-2 bg-emerald-400 w-[55%] rounded"></div>
-          </div>
-        </div>
-
-      </div>
-
-    </section>
-    <section class="card-primary text-center mt-6">
-      <div class="text-sm text-gray-400">Research principle</div>
-      <div class="text-3xl font-extrabold mt-2">
-        A higher advertised rate
-      </div>
-      <div class="text-3xl font-extrabold text-emerald-400">
-        usually requires a deeper risk review.
-      </div>
-    </section>
-    <!-- KILL SHOT -->
-    <section class="card-primary mt-6 text-center">
-      <div class="text-sm text-gray-400">Risk check</div>
-      <div class="text-3xl font-extrabold mt-2">
-        Interest is only one variable.
-      </div>
-      <div class="text-3xl font-extrabold text-emerald-400">
-        Custody and counterparty risk matter too.
       </div>
     </section>
-    <!-- CALCULATOR (UNCHANGED + IDLE VS YIELD) -->
-    <section id="calculator" class="card">
-     <h2 class="text-2xl font-extrabold mb-4">Illustrative Interest Calculator</h2>
-    <p class="fine mb-4">This calculator demonstrates annualized interest math. It is not a CoinDepo quote, forecast, or guarantee.</p>
 
-    <div class="grid md:grid-cols-3 gap-3">
-      <input id="amt" type="number" value="2000" class="p-2 rounded bg-black/60 border border-white/10">
-      <input id="rate" type="number" value="24" class="p-2 rounded bg-black/60 border border-white/10">
-      <input id="days" type="number" value="90" class="p-2 rounded bg-black/60 border border-white/10">
-    </div>
-    <select id="compound" class="hidden">
-      <option value="365" selected>Daily</option>
-    </select>
-      <select id="mode" class="hidden">
-      <option value="apr" selected>APR</option>
-    </select>
-    <div class="mt-4 grid md:grid-cols-3 gap-3">
-      <div><strong>Interest:</strong> <span id="outInterest">$0.00</span></div>
-      <div><strong>Total:</strong> <span id="outTotal">$0.00</span></div>
-      <div><strong>Gain:</strong> <span id="outPct">0.00%</span></div>
-    </div>
+    <!-- QUICK FRAMEWORK -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-heading">
+          <div class="section-kicker">Start here</div>
+          <h2>The rate is only the beginning.</h2>
+          <p>
+            Before comparing advertised returns, understand what you're
+            depositing into, what the provider can do with those assets,
+            and what happens if you need your funds or the platform encounters
+            financial or operational trouble.
+          </p>
+        </div>
 
-    <div class="mt-4 text-emerald-400 font-bold text-lg">
-      Illustrative interest: <span id="deltaIdle">+$0.00</span>
-      <canvas id="growthChart" width="600" height="140"
-      class="w-full rounded-xl border border-white/10 bg-black/40 mt-4"></canvas>
-    </div>
+        <div class="grid-3">
+          <article class="card accent-card">
+            <div class="icon-box">%</div>
+            <h3>1. Understand the yield</h3>
+            <p>
+              Check whether the stated figure is APR or APY, how often interest
+              compounds, which assets qualify, and whether terms differ by plan.
+            </p>
+          </article>
 
-    <!-- CONTINUES IN PART 3 -->
-        <section class="card">
-      <h2 class="text-2xl font-extrabold mb-2">Security & custody model</h2>
-      <p class="muted">
-        CoinDepo operates as a custodial platform. Its wallet terms state that the custodian may, where permitted by law, pledge, sell, lend, transfer, invest, or otherwise use digital assets and may not retain a like amount in its possession or control. The same terms state that funds held in the wallet are not considered bank deposits and are not banking services. Users should read the current legal terms and independently assess counterparty, custody, liquidity, and jurisdictional exposure.
+          <article class="card">
+            <div class="icon-box">⌑</div>
+            <h3>2. Understand custody</h3>
+            <p>
+              Review who controls the assets, whether the terms permit lending
+              or reuse, and what legal protections actually apply.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon-box">!</div>
+            <h3>3. Understand the downside</h3>
+            <p>
+              Evaluate counterparty, liquidity, operational, legal, and market
+              risk. A high advertised return does not eliminate these risks.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLATFORM OVERVIEW -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-heading">
+          <div class="section-kicker">01 · Platform overview</div>
+          <h2>What is CoinDepo?</h2>
+          <p>
+            CoinDepo is a centralized custodial digital-asset platform that
+            advertises compound-interest accounts and borrowing products.
+            Using a custodial service means transferring assets under the
+            provider's applicable contractual terms.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card">
+            <h2>Product structure</h2>
+            <p>
+              CoinDepo's product lineup has included Earn, Borrow, and a
+              planned crypto-card product. Each has separate terms, eligibility
+              requirements, and risk considerations.
+            </p>
+            <div class="pill-row">
+              <span class="pill">Earn</span>
+              <span class="pill">Borrow</span>
+              <span class="pill">Planned card</span>
+            </div>
+            <p class="small mt-4">
+              Verify which products are currently available in your jurisdiction.
+              Product availability and promotional terms can change.
+            </p>
+          </article>
+
+          <article class="card accent-card">
+            <h2>Who should read this?</h2>
+            <ul class="list">
+              <li>Crypto holders researching custodial interest accounts</li>
+              <li>Stablecoin holders comparing yield structures</li>
+              <li>Users considering crypto-backed borrowing</li>
+              <li>Anyone assessing counterparty and platform risk</li>
+            </ul>
+            <div class="notice mt-5">
+              <strong>Important distinction:</strong> A custodial crypto
+              interest account is not self-custody and should not be assumed
+              to have the protections of a bank deposit.
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- RATES -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-heading">
+          <div class="section-kicker">02 · Advertised yield</div>
+          <h2>Rates need context.</h2>
+          <p>
+            The source material for this report references advertised rates
+            of up to 18% APR on crypto assets and up to 23% APR on stablecoins.
+            Treat these as figures cited in the report, not verified live offers.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card accent-card">
+            <div class="stat-label">Crypto assets</div>
+            <div class="stat-value">Up to 18%</div>
+            <h3>APR referenced in this report</h3>
+            <p class="small">
+              Actual terms may differ by asset, account type, duration,
+              eligibility, and current product availability.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="stat-label">Stablecoins</div>
+            <div class="stat-value">Up to 23%</div>
+            <h3>APR referenced in this report</h3>
+            <p class="small">
+              Stablecoin yield does not make the account risk-free. Review
+              custody, counterparty, liquidity, and stablecoin-specific risks.
+            </p>
+          </article>
+        </div>
+
+        <div class="notice mt-5">
+          <strong>Before acting:</strong> Confirm the current rate for your
+          specific asset and account directly with CoinDepo. Do not assume
+          that a maximum advertised rate applies to every deposit or term.
+        </div>
+      </div>
+    </section>
+
+    <!-- APR AND APY -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-heading">
+          <div class="section-kicker">03 · Yield mechanics</div>
+          <h2>APR vs. APY: know what you're comparing.</h2>
+          <p>
+            A percentage is only useful when you know how it is calculated
+            and whether the quoted figure includes compounding.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card">
+            <div class="icon-box">01</div>
+            <h2>APR · Annual percentage rate</h2>
+            <p>
+              APR is a nominal annualized rate. For the simple-interest
+              illustration below, the calculation is principal multiplied
+              by the annual rate and the fraction of the year elapsed.
+            </p>
+            <div class="math-box">
+              <div class="small">Illustrative formula</div>
+              <div class="math-value">Interest = P × r × (days ÷ 365)</div>
+              <p class="small">
+                This formula assumes simple interest and does not include fees,
+                changing rates, or additional deposits.
+              </p>
+            </div>
+          </article>
+
+          <article class="card accent-card">
+            <div class="icon-box">02</div>
+            <h2>APY · Annual percentage yield</h2>
+            <p>
+              APY expresses an annualized effective return that accounts for
+              compounding assumptions. The result depends on the rate and
+              the compounding schedule.
+            </p>
+            <div class="math-box">
+              <div class="small">Compounding concept</div>
+              <div class="math-value">Interest can earn interest.</div>
+              <p class="small">
+                Compare equivalent periods and assumptions. Do not compare
+                an APR figure directly with an APY figure as though they
+                necessarily describe the same return.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <article class="card mt-5">
+          <h2>Illustrative 90-day example</h2>
+          <p>
+            Using $2,000 as principal and an assumed 24% annual rate:
+          </p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Input</th>
+                  <th>Illustrative value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Starting principal</td><td>$2,000.00</td></tr>
+                <tr><td>Assumed annual rate</td><td>24% APR</td></tr>
+                <tr><td>Period</td><td>90 days</td></tr>
+                <tr><td>Calculated interest</td><td>$118.36</td></tr>
+                <tr><td>Illustrative ending balance</td><td>$2,118.36</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="small mt-3">
+            This is simple-interest math using 90 ÷ 365. It is not a quote,
+            guarantee, or prediction of what any platform will pay.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- COMPARISON -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-heading">
+          <div class="section-kicker">04 · Compare carefully</div>
+          <h2>Different products. Different risks.</h2>
+          <p>
+            The comparison below is qualitative, not a rate ranking.
+            The visual bars are intentionally equal because they do not
+            represent measured yields or a numerical risk score.
+          </p>
+        </div>
+
+        <article class="card">
+          <div class="comparison-list">
+            <div class="comparison-row">
+              <div class="comparison-label">Bank savings</div>
+              <div>
+                <div class="comparison-description">
+                  Deposit terms and applicable insurance protections differ.
+                </div>
+                <div class="comparison-track"><div class="comparison-fill"></div></div>
+              </div>
+            </div>
+
+            <div class="comparison-row">
+              <div class="comparison-label">Bank CD</div>
+              <div>
+                <div class="comparison-description">
+                  Term restrictions, withdrawal conditions, and protections differ.
+                </div>
+                <div class="comparison-track"><div class="comparison-fill"></div></div>
+              </div>
+            </div>
+
+            <div class="comparison-row">
+              <div class="comparison-label">Mutual funds</div>
+              <div>
+                <div class="comparison-description">
+                  Market returns vary and are not equivalent to a fixed interest rate.
+                </div>
+                <div class="comparison-track"><div class="comparison-fill blue"></div></div>
+              </div>
+            </div>
+
+            <div class="comparison-row">
+              <div class="comparison-label">Exchange rewards</div>
+              <div>
+                <div class="comparison-description">
+                  Rewards, eligibility, assets, and program terms vary.
+                </div>
+                <div class="comparison-track"><div class="comparison-fill blue"></div></div>
+              </div>
+            </div>
+
+            <div class="comparison-row">
+              <div class="comparison-label">CoinDepo</div>
+              <div>
+                <div class="comparison-description">
+                  Custodial interest-account structure; verify current rate,
+                  legal terms, asset-use rights, and withdrawal conditions.
+                </div>
+                <div class="comparison-track"><div class="comparison-fill green"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="notice mt-6">
+            <strong>Research principle:</strong> Comparing headline percentages
+            without comparing product structure can lead to a misleading conclusion.
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CALCULATOR -->
+    <section class="section" id="calculator">
+      <div class="wrap">
+        <div class="section-heading">
+          <div class="section-kicker">05 · Interactive tool</div>
+          <h2>Run your own interest scenario.</h2>
+          <p>
+            Change the principal, annual rate, period, and calculation method.
+            The results update automatically. This tool models mathematical
+            scenarios only; it does not fetch CoinDepo rates or forecast actual payouts.
+          </p>
+        </div>
+
+        <article class="card calculator">
+          <div class="grid-2">
+            <div>
+              <h2>Interest calculator</h2>
+              <p class="small">
+                Start with your own assumptions. Rates, fees, and eligibility
+                must be verified separately.
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-2 md:justify-end">
+              <button class="btn btn-secondary" type="button" data-preset="90">90 days</button>
+              <button class="btn btn-secondary" type="button" data-preset="180">180 days</button>
+              <button class="btn btn-secondary" type="button" data-preset="365">365 days</button>
+            </div>
+          </div>
+
+          <div class="calculator-grid">
+            <div class="field">
+              <label for="amt">Starting principal ($)</label>
+              <input id="amt" type="number" min="0" max="1000000000" step="100" value="2000">
+            </div>
+
+            <div class="field">
+              <label for="rate">Annual rate (%)</label>
+              <input id="rate" type="number" min="0" max="1000" step="0.1" value="24">
+            </div>
+
+            <div class="field">
+              <label for="days">Number of days</label>
+              <input id="days" type="number" min="0" max="36500" step="1" value="90">
+            </div>
+
+            <div class="field">
+              <label for="mode">Calculation method</label>
+              <select id="mode">
+                <option value="apr">Simple interest (APR example)</option>
+                <option value="compound">Compound interest</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="compound">Compounding frequency</label>
+              <select id="compound">
+                <option value="365">Daily</option>
+                <option value="52">Weekly</option>
+                <option value="12">Monthly</option>
+                <option value="4">Quarterly</option>
+                <option value="2">Semi-annually</option>
+                <option value="1">Annually</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="currency">Display currency</label>
+              <select id="currency">
+                <option value="USD" selected>USD ($)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="results" aria-live="polite">
+            <div class="result">
+              <div class="result-label">Illustrative interest</div>
+              <div class="result-value green" id="outInterest">$118.36</div>
+            </div>
+            <div class="result">
+              <div class="result-label">Ending balance</div>
+              <div class="result-value" id="outTotal">$2,118.36</div>
+            </div>
+            <div class="result">
+              <div class="result-label">Gain over starting principal</div>
+              <div class="result-value" id="outPct">5.92%</div>
+            </div>
+          </div>
+
+          <div class="chart-wrap">
+            <canvas id="growthChart" role="img" aria-label="Illustrative balance growth compared with holding the starting principal unchanged">
+              Illustrative balance growth chart. The results are also available in the calculator above.
+            </canvas>
+            <div class="chart-legend">
+              <span><span class="legend-dot" style="background:#34d399"></span>Illustrative interest scenario</span>
+              <span><span class="legend-dot" style="background:#94a3b8"></span>Principal held unchanged</span>
+            </div>
+          </div>
+
+          <p class="small mt-4" id="calcNote">
+            Assumes 24% APR and simple interest over 90 days. Actual returns may differ.
+          </p>
+
+          <div class="disclosure">
+            The calculator excludes fees, taxes, changing rates, withdrawals,
+            additional deposits, credit risk, and any platform-specific restrictions.
+            A calculated return is not a promise that the return will be paid.
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CUSTODY -->
+    <section class="section" id="risk">
+      <div class="wrap">
+        <div class="section-heading">
+          <div class="section-kicker">06 · The critical risk review</div>
+          <h2>Custody is not a footnote.</h2>
+          <p>
+            When assets are transferred to a centralized platform, the
+            relationship is governed by the relevant wallet, account,
+            and product terms—not just by the advertised rate.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card accent-card">
+            <h2>What the reported wallet terms say</h2>
+            <p>
+              The source material for this review describes CoinDepo's wallet
+              terms as permitting the custodian, where allowed by law, to
+              pledge, sell, lend, transfer, invest, or otherwise use digital
+              assets. The terms are also described as stating that wallet
+              funds are not bank deposits and the service is not a banking service.
+            </p>
+            <p>
+              Read the current legal wording yourself and assess what it means
+              for your assets, claims, and access to funds.
+            </p>
+          </article>
+
+          <article class="card">
+            <h2>Questions to resolve before depositing</h2>
+            <ul class="list">
+              <li>Who legally holds or controls the assets?</li>
+              <li>Can the platform lend, pledge, or otherwise reuse them?</li>
+              <li>What happens if the provider becomes insolvent?</li>
+              <li>Are withdrawal rights subject to notice, maturity, or limits?</li>
+              <li>Which entity and jurisdiction govern the agreement?</li>
+              <li>What recourse exists if access is interrupted?</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="notice risk-notice mt-5">
+          <strong>Risk distinction:</strong> A statement about a custody provider
+          or security technology does not, by itself, establish that every
+          customer asset is insured, segregated, recoverable, or protected
+          against every type of loss. Check the specific legal and product terms.
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCT STACK -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-heading">
+          <div class="section-kicker">07 · Product stack</div>
+          <h2>Token access and borrowing are separate decisions.</h2>
+          <p>
+            A platform's interest accounts, ecosystem token, and loan products
+            have different risk profiles. Evaluate each on its own merits.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <!-- TOKEN -->
+          <article class="card purple-card">
+            <div class="icon-box" style="color:#c4b5fd;background:rgba(196,181,253,.08);border-color:rgba(196,181,253,.18)">◇</div>
+            <div class="section-kicker" style="color:#c4b5fd">Ecosystem token</div>
+            <h2 class="token-title">$COINDEPO Token</h2>
+
+            <p>
+              The $COINDEPO token is associated with the CoinDepo ecosystem.
+              Review its utility, liquidity, holder concentration, exchange
+              availability, and token-specific risks separately from the platform.
+            </p>
+
+            <ul class="list">
+              <li>Verify any token-linked account tiers or benefits.</li>
+              <li>Review current incentives and eligibility.</li>
+              <li>Assess trading liquidity and market depth.</li>
+              <li>Remember that token price can move independently of platform usage.</li>
+            </ul>
+
+            <div class="disclosure">
+              <strong>Token risk is not platform risk.</strong> Holding an
+              ecosystem token is a different exposure from using a custodial
+              interest account. Neither should be treated as risk-free.
+            </div>
+
+            <div class="token-access">
+              <div class="stat-label">Exchange access</div>
+              <h3 class="mt-2">Check $COINDEPO availability on WEEX</h3>
+              <p class="small">
+                Exchange access, promotions, eligibility, and regional
+                availability may change. Verify current terms before proceeding.
+              </p>
+              <a class="btn btn-primary mt-3"
+                 href="https://weex.com/register?vipCode=5flql"
+                 target="_blank"
+                 rel="noopener noreferrer nofollow sponsored">
+                Visit WEEX ↗
+              </a>
+              <p class="small mt-3">
+                Referral link disclosure: the link may provide compensation
+                to Degenstein at no additional cost to you.
+              </p>
+            </div>
+          </article>
+
+          <!-- LOANS -->
+          <article class="card blue-card">
+            <div class="icon-box" style="color:#93c5fd;background:rgba(96,165,250,.08);border-color:rgba(96,165,250,.18)">↗</div>
+            <div class="section-kicker" style="color:#93c5fd">Borrowing product</div>
+            <h2 class="loan-title">Crypto-backed loans</h2>
+
+            <p>
+              CoinDepo has advertised a stablecoin credit-line structure
+              backed by assets held in CoinDepo interest accounts. Confirm
+              the current offering and applicable loan agreement.
+            </p>
+
+            <ul class="list">
+              <li>Advertising has referenced loan-to-value ratios of up to approximately 50%.</li>
+              <li>The platform has described a process without traditional credit checks.</li>
+              <li>Repayment terms and access depend on the applicable agreement.</li>
+              <li>Collateral may be subject to the platform's account terms.</li>
+            </ul>
+
+            <div class="disclosure">
+              <strong>Collateral risk:</strong> If collateral value falls,
+              the terms may permit additional collateral requirements,
+              restrictions, or liquidation. Never assume a loan is safe
+              simply because it is backed by crypto.
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOAN COMPARISON -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-heading">
+          <div class="section-kicker">08 · Borrowing comparison</div>
+          <h2>Crypto-backed borrowing vs. traditional loans.</h2>
+          <p>
+            These are broad structural differences, not a claim that one
+            product is always cheaper, faster, or better for every borrower.
+          </p>
+        </div>
+
+        <article class="card">
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>Traditional loan</th>
+                  <th>CoinDepo loan product</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Approval process</td>
+                  <td>Depends on lender and loan type; may involve underwriting.</td>
+                  <td>Platform describes rapid access; verify current eligibility and terms.</td>
+                </tr>
+                <tr>
+                  <td>Credit assessment</td>
+                  <td>Often includes credit and income assessment.</td>
+                  <td>CoinDepo has described its product as not requiring a traditional credit check.</td>
+                </tr>
+                <tr>
+                  <td>Collateral</td>
+                  <td>Depends on the loan; some loans are unsecured.</td>
+                  <td>Crypto assets serve as collateral under the applicable agreement.</td>
+                </tr>
+                <tr>
+                  <td>Access to funds</td>
+                  <td>Depends on approval and disbursement rules.</td>
+                  <td>Depends on the current credit-line structure and terms.</td>
+                </tr>
+                <tr>
+                  <td>Main risks</td>
+                  <td>Interest costs, repayment obligations, and potential credit consequences.</td>
+                  <td>Interest costs, collateral volatility, liquidation, custody, and platform risk.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="small mt-3">
+            Always compare total borrowing costs, fees, collateral rules,
+            liquidation thresholds, and repayment obligations before borrowing.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CARD -->
+    <section class="section">
+      <div class="wrap">
+        <article class="card">
+          <div class="section-kicker">09 · Planned product</div>
+          <h2>Crypto credit card: verify launch status.</h2>
+          <p>
+            CoinDepo has marketed a planned crypto-card product. The source
+            material for this report does not establish that all previously
+            promoted features are generally available now.
+          </p>
+          <p>
+            Confirm launch status, supported regions, eligibility, rewards,
+            fees, and card terms directly with CoinDepo. Previously advertised
+            cashback rates or waitlist bonuses should not be treated as guaranteed.
+          </p>
+          <div class="notice mt-4">
+            <strong>Do not plan around an unverified promotion.</strong>
+            Promotions can change, be limited by eligibility, or be withdrawn.
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CHECKLIST -->
+    <section class="section">
+      <div class="wrap">
+        <div class="grid-2">
+          <article class="card accent-card">
+            <div class="section-kicker">10 · Due diligence</div>
+            <h2>Before you transfer assets</h2>
+            <p>
+              Use this checklist to organize your own research before committing
+              funds to a custodial interest account.
+            </p>
+
+            <div class="checklist">
+              <div class="check-item"><span class="check">✓</span><span>Confirm whether the quoted figure is APR or APY.</span></div>
+              <div class="check-item"><span class="check">✓</span><span>Understand compounding, maturity, rollover, and withdrawal rules.</span></div>
+              <div class="check-item"><span class="check">✓</span><span>Read the current wallet agreement and Earn terms.</span></div>
+              <div class="check-item"><span class="check">✓</span><span>Understand how the provider may use deposited assets.</span></div>
+              <div class="check-item"><span class="check">✓</span><span>Assess custody, counterparty, legal, and liquidity exposure.</span></div>
+              <div class="check-item"><span class="check">✓</span><span>Keep essential and near-term spending funds accessible elsewhere.</span></div>
+              <div class="check-item"><span class="check">✓</span><span>Check current fees, supported assets, eligibility, and geographic restrictions.</span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="section-kicker">Operational claims</div>
+            <h2>What to verify directly</h2>
+            <p>
+              The source material for this report describes CoinDepo as
+              advertising no minimum or maximum deposits, withdrawal access
+              subject to applicable terms, and no fees on its Earn product.
+            </p>
+            <p>
+              These are product claims to confirm against the current agreement
+              and app. Do not interpret them as a guarantee that every transfer
+              is immediate, unrestricted, or free of every possible cost.
+            </p>
+            <div class="pill-row">
+              <span class="pill">Deposit limits</span>
+              <span class="pill">Withdrawal terms</span>
+              <span class="pill">Fees</span>
+              <span class="pill">Eligibility</span>
+              <span class="pill">Maturity</span>
+            </div>
+            <div class="notice mt-5">
+              <strong>Verify first.</strong> Your decision should be based on
+              the terms that apply to your account today—not on a screenshot,
+              past promotion, or historical rate.
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-heading">
+          <div class="section-kicker">11 · Frequently asked questions</div>
+          <h2>CoinDepo FAQ</h2>
+          <p>Questions worth resolving before using a custodial crypto platform.</p>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary>Is CoinDepo safe?</summary>
+            <p>
+              No custodial crypto platform should be described as simply
+              "safe." The source material references security information,
+              including a Fireblocks custody relationship, but users should
+              independently review the current custody arrangement, legal
+              structure, wallet terms, operational disclosures, and
+              counterparty risk. A custody provider does not eliminate all
+              risks or automatically guarantee recovery of customer assets.
+            </p>
+          </details>
+
+          <details>
+            <summary>Is the advertised yield guaranteed?</summary>
+            <p>
+              Do not assume a return is guaranteed. Rates can vary by asset
+              and account type, and the applicable product and legal terms
+              govern the arrangement. An advertised rate is not proof that
+              a future payment is assured.
+            </p>
+          </details>
+
+          <details>
+            <summary>Can I lose money using a custodial interest account?</summary>
+            <p>
+              Yes. Potential risks include platform failure, counterparty
+              exposure, liquidity restrictions, operational issues, legal
+              uncertainty, and changes in the value or availability of assets.
+              Stablecoins also carry risks and should not automatically be
+              treated as equivalent to insured cash deposits.
+            </p>
+          </details>
+
+          <details>
+            <summary>What's the difference between APR and APY?</summary>
+            <p>
+              APR is a nominal annualized rate. APY reflects the effect of
+              compounding over a year under specified assumptions. Compare
+              rates only after checking the calculation method, period,
+              compounding frequency, and applicable conditions.
+            </p>
+          </details>
+
+          <details>
+            <summary>Can I withdraw my assets whenever I want?</summary>
+            <p>
+              Do not assume unrestricted or immediate access. Review the
+              current account terms for maturity dates, withdrawal procedures,
+              processing times, restrictions, and any conditions that apply
+              to your specific product.
+            </p>
+          </details>
+
+          <details>
+            <summary>Does a high stablecoin rate mean there is no market risk?</summary>
+            <p>
+              No. Even when a stablecoin is designed to track a reference
+              currency, its value, redemption, liquidity, and underlying
+              ecosystem can be affected by stress. A high advertised rate
+              does not remove the platform's counterparty or custody risks.
+            </p>
+          </details>
+
+          <details>
+            <summary>Should I buy $COINDEPO because I use the platform?</summary>
+            <p>
+              That is a separate investment decision. Review the token's
+              utility, liquidity, concentration, market access, and potential
+              downside independently. Platform use does not establish that
+              a token is fairly valued or likely to appreciate.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL TAKE -->
+    <section class="section">
+      <div class="wrap">
+        <div class="final-panel">
+          <div class="section-kicker">The Degenstein conclusion</div>
+          <h2>
+            Earn while you hold?<br>
+            <span>Understand what you're holding it with.</span>
+          </h2>
+
+          <p class="muted">
+            CoinDepo's advertised interest-account model may be relevant to
+            people researching custodial crypto yield. But the headline rate
+            is only one variable. Custody rights, asset-use provisions,
+            withdrawal conditions, legal structure, liquidity, and counterparty
+            exposure belong in the same decision.
+          </p>
+
+          <p class="muted mt-4">
+            The practical takeaway: calculate the potential return, verify
+            the actual terms, and decide whether the risks fit your own
+            circumstances. Do not confuse an illustrative calculation with
+            a guaranteed outcome.
+          </p>
+
+          <div class="button-row">
+            <a class="btn btn-primary"
+               href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV"
+               target="_blank"
+               rel="noopener noreferrer nofollow sponsored">
+              CoinDepo — USA referral link ↗
+            </a>
+
+            <a class="btn btn-secondary"
+               href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W"
+               target="_blank"
+               rel="noopener noreferrer nofollow sponsored">
+              International referral link ↗
+            </a>
+
+            <a class="btn btn-secondary" href="#calculator">Revisit calculator ↑</a>
+          </div>
+
+          <p class="small mt-5">
+            Referral disclosure: Degenstein may receive compensation through
+            the signup links above at no additional cost to you. Verify current
+            rates, availability, legal terms, and withdrawal conditions directly
+            with the provider.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <div class="brand">THE <span>DEGENSTEIN</span> REPORT</div>
+
+      <p class="small mt-4">
+        <strong>Research &amp; risk disclosure:</strong> This independent
+        report is for educational and informational purposes only. It is not
+        financial, investment, legal, or tax advice, and it is not an
+        endorsement or guarantee of any provider, token, product, or rate.
+        Crypto assets and third-party custodial platforms can result in
+        partial or total loss. Information and product terms can change.
+        Some links are referral links and may compensate Degenstein at no
+        additional cost to you. Conduct your own due diligence and verify
+        current terms directly with the relevant provider.
       </p>
-    </section>
 
-    <!-- EXPANDED TOKEN SECTION -->
-    <section class="card">
-    <div class="flex items-center gap-3 my-10 opacity-60">
-      <div class="h-px flex-1 bg-gradient-to-r from-transparent via-purple-400 to-transparent"></div>
-      <span class="text-xs tracking-widest uppercase text-purple-400 font-bold">
-        Product Stack
-      </span>
-      <div class="h-px flex-1 bg-gradient-to-r from-transparent via-purple-400 to-transparent"></div>
-    </div>
-
-    <section class="grid md:grid-cols-2 gap-6">
-
-      <!-- TOKEN -->
-      <div class="card border-purple-400/30">
-
-        <h2 class="text-2xl font-extrabold mb-2 text-purple-400">
-          $COINDEPO Token
-        </h2>
-
-        <p class="muted">
-          An ecosystem token associated with CoinDepo. Review token utility, liquidity, concentration, exchange availability, and token-specific risk separately from the platform.
-        </p>
-
-        <div class="mt-4 space-y-2 text-sm">
-          <div class="p-3 rounded bg-white/5 border border-white/10">
-            Review any account-tier or token-linked benefits directly
-          </div>
-          <div class="p-3 rounded bg-white/5 border border-white/10">
-            Review current platform incentives and eligibility
-          </div>
-          <div class="p-3 rounded bg-white/5 border border-white/10">
-            Token price can rise or fall independently of platform usage
-          </div>
-        </div>
-
-        <div class="mt-4 p-3 rounded-lg bg-red-500/10 border border-red-400/30">
-          <div class="text-xs text-gray-400">Important</div>
-          <div class="text-sm font-bold text-red-400">
-            Token risk ≠ platform risk
-          </div>
-        </div>
-
-     <div class="mt-4 rounded-xl border border-emerald-400/30 bg-emerald-400/5 p-4">
-
-      <div class="text-xs text-gray-400 mb-1">Where to access</div>
-
-      <div class="mt-4 rounded-xl border border-emerald-400/30 bg-emerald-400/5 p-4">
-
-      <div class="text-xs text-gray-400">Buy $COINDEPO</div>
-
-      <div class="text-lg font-extrabold text-emerald-400 mt-1">
-        Access on WEEX Exchange
+      <div class="footer-links">
+        <a href="https://degenstein.xyz/">Main site</a>
+        <a href="https://degenstein.xyz/report/">Reports</a>
+        <a href="https://degenstein.xyz/playbooks/">Playbooks</a>
       </div>
 
-      <p class="fine mt-2">
-        Promotions, eligibility, and regional availability may change. Verify current terms directly with the exchange.
-      </p>
-
-      <a
-        href="https://weex.com/register?vipCode=5flql"
-        target="_blank"
-        rel="noopener nofollow noreferrer"
-        class="btn-primary w-full mt-4 justify-center"
-      >
-        Visit exchange →
-      </a>
-
-    </div>
-
-      <!-- LOANS -->
-      <div class="card border-blue-400/30">
-
-        <h2 class="text-2xl font-extrabold mb-2 text-blue-400">
-          Crypto Loans
-        </h2>
-
-        <p class="muted">
-          CoinDepo advertises a stablecoin credit line backed by assets held in CoinDepo interest accounts.
-        </p>
-
-        <div class="mt-4 space-y-2 text-sm">
-          <div class="p-3 rounded bg-white/5 border border-white/10">
-            Up to ~50% LTV
-          </div>
-          <div class="p-3 rounded bg-white/5 border border-white/10">
-            No credit checks
-          </div>
-          <div class="p-3 rounded bg-white/5 border border-white/10">
-            Flexible repayment
-          </div>
-          <div class="p-3 rounded bg-white/5 border border-white/10">
-            Collateral may still earn yield
-          </div>
-        </div>
-
-        <div class="mt-4 p-3 rounded-lg bg-yellow-400/10 border border-yellow-400/30">
-          <div class="text-xs text-gray-400">Risk</div>
-          <div class="text-sm font-bold text-yellow-300">
-            Liquidation possible if value drops
-          </div>
-        </div>
-
-      </div>
-
-    </section>
-
-    <section class="card">
-      <h2 class="text-2xl font-extrabold mb-2">Crypto-backed loans vs traditional loans</h2>
-
-      <div class="overflow-x-auto">
-        <table class="w-full text-sm text-gray-300 border-collapse">
-          <thead>
-            <tr class="text-left text-gray-400">
-              <th class="py-2 pr-3">Feature</th>
-              <th class="py-2 pr-3">Traditional loans</th>
-              <th class="py-2">CoinDepo loans</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="border-t border-white/10">
-              <td class="py-2 pr-3">Approval speed</td>
-              <td class="py-2 pr-3">Days to weeks</td>
-              <td class="py-2">Platform describes rapid access; verify current terms</td>
-            </tr>
-            <tr class="border-t border-white/10">
-              <td class="py-2 pr-3">Credit check</td>
-              <td class="py-2 pr-3">Required</td>
-              <td class="py-2">CoinDepo states no traditional credit check</td>
-            </tr>
-            <tr class="border-t border-white/10">
-              <td class="py-2 pr-3">Collateral</td>
-              <td class="py-2 pr-3">Income / assets</td>
-              <td class="py-2">Crypto balances</td>
-            </tr>
-            <tr class="border-t border-white/10">
-              <td class="py-2 pr-3">Liquidity</td>
-              <td class="py-2 pr-3">One-time</td>
-              <td class="py-2">Stablecoin credit-line structure</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section class="card">
-      <h2 class="text-2xl font-extrabold mb-2">Credit card (Coming Soon)</h2>
-
-      <p class="muted">
-        CoinDepo markets a planned crypto card product. Because the product is not yet fully reflected as a generally available card in this report, launch status, eligibility, rewards, fees, and regional availability should be verified directly with CoinDepo.
-      </p>
-
-      <p class="muted mt-2">
-        Do not treat previously advertised cashback or waitlist incentives as guaranteed.
-        Promotional terms may be changed, limited, or withdrawn before launch.
-      </p>
-
-      <p class="fine mt-3">
-        Card features and eligibility may change before launch. Always verify
-        details directly with CoinDepo.
-      </p>
-    </section>
-    <section class="card highlight fade" style="display:none;">
-    <h2 class="text-2xl font-bold">Crypto Credit Card</h2>
-
-    <p class="mt-4">Join the waitlist now:</p>
-    <div class="mt-4">
-        <a href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV"
-           target="_blank" rel="noopener noreferrer nofollow sponsored"
-           class="btn-primary">
-          Start here (USA) →
-        </a>
-      </div>
-
-      <div class="mt-3">
-        <a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W"
-           target="_blank" rel="noopener noreferrer nofollow sponsored"
-           class="btn-outline">
-          Start here (International)
-        </a>
-      </div>
-    <div class="big text-emerald-400 mt-3">
-    500 USDC BONUS
-    </div>
-
-    <p class="mt-2">
-    After spending $3,000 within the first 3 months
-    </p>
-
-    <p class="mt-4 muted">
-    Earn up to 8% cashback in crypto.
-    </p>
-    </section>
-    <section class="card">
-      <h2 class="text-2xl font-extrabold mb-2">DYOR checklist</h2>
-      <ul class="list-disc pl-6 text-gray-300 space-y-2">
-        <li>Confirm APR vs APY and compounding frequency</li>
-        <li>Understand lockups, exits, and rollover mechanics</li>
-        <li>Evaluate custody and counterparty risk</li>
-        <li>Never deploy funds you may need liquid</li>
-      </ul>
-    </section>
-
-    <!-- SEO ADDITION START -->
-    <section class="card">
-      <h2 class="text-2xl font-extrabold mb-2">CoinDepo FAQ</h2>
-
-      <p class="muted"><strong>Is CoinDepo safe?</strong><br>
-      No custodial crypto platform should be described as simply "safe." CoinDepo publishes security and custody information, including a Fireblocks custody relationship, but users should also review the wallet terms, legal structure, operational disclosures, and counterparty risk.</p>
-
-      <p class="muted mt-3"><strong>Is yield guaranteed?</strong><br>
-      No return should be assumed guaranteed. CoinDepo advertises rates that vary by asset and account type, and its legal and product terms should be reviewed.</p>
-
-      <p class="muted mt-3"><strong>Can you lose money?</strong><br>
-      Yes. Platform risk, market risk, and liquidity risk all exist.</p>
-    </section>
-    <!-- SEO ADDITION END -->
-
-    <div class="flex items-center gap-3 my-10 opacity-60">
-      <div class="h-px flex-1 bg-gradient-to-r from-transparent via-emerald-400 to-transparent"></div>
-      <span class="text-xs tracking-widest uppercase text-emerald-400 font-bold">
-        Final take
-      </span>
-      <div class="h-px flex-1 bg-gradient-to-r from-transparent via-emerald-400 to-transparent"></div>
-    </div>
-
-    <section class="card relative overflow-hidden ring-1 ring-emerald-400/40 shadow-[0_0_80px_rgba(16,185,129,0.35)]">
-      <h2 class="text-2xl font-extrabold mb-2">Operational highlights</h2>
-
-      <ul class="list-disc pl-6 text-gray-300 space-y-2 mt-2">
-        <li>CoinDepo advertises no minimum or maximum deposits</li>
-        <li>The platform advertises withdrawal access, subject to applicable terms</li>
-        <li>CoinDepo advertises no fees on its Earn product</li>
-        <li>Interest rates vary by asset and account type</li>
-      </ul>
-
-      <p class="muted mt-4">
-        CoinDepo should be evaluated as a custodial third-party interest-account platform.
-        The advertised rate is only one part of the analysis; legal terms, asset use, custody, liquidity, and counterparty exposure also matter.
-      </p>
-
-      <div class="mt-4">
-        <a href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV"
-           target="_blank" rel="noopener noreferrer nofollow sponsored"
-           class="btn-primary">
-          Visit CoinDepo — USA referral disclosure →
-        </a>
-      </div>
-
-      <div class="mt-3">
-        <a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W"
-           target="_blank" rel="noopener noreferrer nofollow sponsored"
-           class="btn-outline">
-          Visit CoinDepo — International referral disclosure
-        </a>
-      </div>
-
-      <p class="fine mt-3">
-        Always review product terms directly inside the app.
-      </p>
-    </section>
-
-    <section id="risk" class="card">
-      <h2 class="text-2xl font-extrabold mb-2">Final risk notes</h2>
-      <p class="muted">
-        Interest-bearing crypto accounts involve risks that differ from self-custody and bank deposits.
-        Before transferring assets, review the current wallet and Earn terms, understand how the platform may use digital assets,
-        and decide whether the custody, counterparty, liquidity, legal, and market risks fit your own situation.
-      </p>
-    </section>
-
-    </main>
-
-    <footer class="border-t border-white/10">
-      <div class="wrap py-8 text-sm text-gray-400">
-        <strong>Research &amp; Risk Disclosure:</strong> This independent review is educational and is not financial, investment, legal, or tax advice. Crypto assets and third-party custodial platforms can result in partial or total loss. Some links are affiliate or referral links and may compensate Degenstein at no additional cost to you. Verify current rates, product terms, legal terms, eligibility, and withdrawal conditions directly with the provider.<br><br>
+      <p class="small mt-5">
         © <span id="year"></span> The Degenstein Report
-      </div>
-    </footer>
+      </p>
+    </div>
+  </footer>
 
-    <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
-    <script>
-    document.addEventListener("DOMContentLoaded", () => {
+  <script>
+    (() => {
+      const $ = (id) => document.getElementById(id);
 
-      const amt = document.getElementById("amt");
-      const rate = document.getElementById("rate");
-      const days = document.getElementById("days");
-      const mode = document.getElementById("mode");
-      const compound = document.getElementById("compound");
-
-      const outI = document.getElementById("outInterest");
-      const outT = document.getElementById("outTotal");
-      const outP = document.getElementById("outPct");
-
-      const canvas = document.getElementById("growthChart");
+      const amountInput = $("amt");
+      const rateInput = $("rate");
+      const daysInput = $("days");
+      const modeInput = $("mode");
+      const compoundInput = $("compound");
+      const canvas = $("growthChart");
       const ctx = canvas.getContext("2d");
 
-      function calc(){
-        const P = +amt.value || 0;
-        const r = (+rate.value || 0) / 100;
-        const d = +days.value || 0;
-        const n = +compound.value || 365;
+      $("year").textContent = new Date().getFullYear();
 
-        const total =
-          mode.value === "apr"
-            ? P * (1 + r * (d / 365))
-            : P * Math.pow(1 + r / n, n * (d / 365));
+      const money = (value) => new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }).format(Number.isFinite(value) ? value : 0);
 
-        const interest = total - P;
-    document.getElementById("deltaIdle").textContent =
-      "+$" + interest.toFixed(2);
-        outI.textContent = "$" + interest.toFixed(2);
-        outT.textContent = "$" + total.toFixed(2);
-        outP.textContent = ((interest / P) * 100 || 0).toFixed(2) + "%";
+      function getInputs() {
+        const principal = Number(amountInput.value);
+        const rate = Number(rateInput.value) / 100;
+        const days = Number(daysInput.value);
+        const frequency = Number(compoundInput.value);
 
-        draw(P, r, d, n);
+        const valid =
+          amountInput.value !== "" &&
+          rateInput.value !== "" &&
+          daysInput.value !== "" &&
+          Number.isFinite(principal) &&
+          Number.isFinite(rate) &&
+          Number.isFinite(days) &&
+          principal >= 0 &&
+          rate >= 0 &&
+          days >= 0 &&
+          principal <= 1000000000 &&
+          rate <= 10 &&
+          days <= 36500;
+
+        return {
+          principal: valid ? principal : 0,
+          rate: valid ? rate : 0,
+          days: valid ? days : 0,
+          frequency: Number.isFinite(frequency) && frequency > 0 ? frequency : 365,
+          valid
+        };
       }
 
-      function draw(P, r, d, n){
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        const steps = 48;
-        const yieldPts = [];
-        const idlePts = [];
-
-        for (let i = 0; i <= steps; i++) {
-          const t = d * (i / steps);
-          yieldPts.push(
-            mode.value === "apr"
-              ? P * (1 + r * (t / 365))
-              : P * Math.pow(1 + r / n, n * (t / 365))
-          );
-          idlePts.push(P);
+      function balanceAt(principal, rate, days, frequency, mode) {
+        if (mode === "apr") {
+          return principal * (1 + rate * (days / 365));
         }
 
-        const min = Math.min(...yieldPts, ...idlePts);
-        const max = Math.max(...yieldPts, ...idlePts);
-        const range = max - min || 1;
-
-        // Idle line
-        ctx.setLineDash([6,4]);
-        ctx.strokeStyle = "#9ca3af";
-        ctx.beginPath();
-        idlePts.forEach((v,i)=>{
-          const x = (i/steps)*canvas.width;
-          const y = canvas.height - ((v-min)/range)*(canvas.height-16) - 8;
-          i ? ctx.lineTo(x,y) : ctx.moveTo(x,y);
-        });
-        ctx.stroke();
-
-        // Yield line
-        ctx.setLineDash([]);
-        ctx.shadowColor = "#34d399";
-    ctx.shadowBlur = 10;
-    ctx.strokeStyle = "#34d399";
-        ctx.beginPath();
-        yieldPts.forEach((v,i)=>{
-          const x = (i/steps)*canvas.width;
-          const y = canvas.height - ((v-min)/range)*(canvas.height-16) - 8;
-          i ? ctx.lineTo(x,y) : ctx.moveTo(x,y);
-        });
-        ctx.stroke();
+        return principal * Math.pow(
+          1 + rate / frequency,
+          frequency * (days / 365)
+        );
       }
 
-      // Presets (called by buttons)
-      window.preset90 = () => {
-        amt.value = 2000;
-        rate.value = 24;
-        days.value = 90;
-        mode.value = "apr";
-        compound.value = 365;
-        calc();
-      };
+      function drawChart(principal, rate, days, frequency, mode) {
+        const rect = canvas.getBoundingClientRect();
+        const pixelRatio = Math.max(1, window.devicePixelRatio || 1);
+        const width = Math.max(280, rect.width);
+        const height = 210;
 
-      window.presetLadder = () => {
-        amt.value = 2000;
-        rate.value = 22;
-        days.value = 180;
-        mode.value = "apy";
-        compound.value = 12;
-        calc();
-      };
+        canvas.width = Math.round(width * pixelRatio);
+        canvas.height = Math.round(height * pixelRatio);
+        ctx.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+        ctx.clearRect(0, 0, width, height);
 
-      window.presetLong = () => {
-        amt.value = 2000;
-        rate.value = 24;
-        days.value = 365;
-        mode.value = "apy";
-        compound.value = 365;
-        calc();
-      };
+        const pad = { left: 12, right: 12, top: 16, bottom: 24 };
+        const plotWidth = width - pad.left - pad.right;
+        const plotHeight = height - pad.top - pad.bottom;
+        const steps = 48;
+        const values = [];
 
-      // Live updates
-      ["amt","rate","days"].forEach(id => {
-      const el = document.getElementById(id);
-      if (el) el.addEventListener("input", calc);
-    });
+        for (let i = 0; i <= steps; i++) {
+          const t = days * i / steps;
+          values.push(balanceAt(principal, rate, t, frequency, mode));
+        }
 
-      // Initial render
-      calc();
-    });
-    </script>
-    </body>
-    </html>
+        const minValue = Math.min(principal, ...values);
+        const maxValue = Math.max(principal, ...values);
+        const range = maxValue - minValue || Math.max(1, principal * 0.01);
+
+        const x = (i) => pad.left + plotWidth * i / steps;
+        const y = (value) =>
+          pad.top + plotHeight -
+          ((value - minValue) / range) * plotHeight;
+
+        ctx.strokeStyle = "rgba(148,163,184,.14)";
+        ctx.lineWidth = 1;
+
+        for (let i = 0; i < 4; i++) {
+          const gy = pad.top + plotHeight * i / 3;
+          ctx.beginPath();
+          ctx.moveTo(pad.left, gy);
+          ctx.lineTo(width - pad.right, gy);
+          ctx.stroke();
+        }
+
+        ctx.setLineDash([5, 5]);
+        ctx.strokeStyle = "#94a3b8";
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(pad.left, y(principal));
+        ctx.lineTo(width - pad.right, y(principal));
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        ctx.strokeStyle = "#34d399";
+        ctx.lineWidth = 2.8;
+        ctx.lineJoin = "round";
+        ctx.lineCap = "round";
+        ctx.beginPath();
+
+        values.forEach((value, i) => {
+          if (i === 0) ctx.moveTo(x(i), y(value));
+          else ctx.lineTo(x(i), y(value));
+        });
+
+        ctx.stroke();
+
+        const gradient = ctx.createLinearGradient(0, pad.top, 0, height - pad.bottom);
+        gradient.addColorStop(0, "rgba(52,211,153,.17)");
+        gradient.addColorStop(1, "rgba(52,211,153,0)");
+
+        ctx.lineTo(x(steps), height - pad.bottom);
+        ctx.lineTo(x(0), height - pad.bottom);
+        ctx.closePath();
+        ctx.fillStyle = gradient;
+        ctx.fill();
+      }
+
+      function calculate() {
+        const input = getInputs();
+
+        if (!input.valid) {
+          $("outInterest").textContent = "Check inputs";
+          $("outTotal").textContent = "—";
+          $("outPct").textContent = "—";
+          $("calcNote").textContent =
+            "Enter a valid non-negative principal, annual rate, and number of days within the permitted range.";
+          drawChart(0, 0, 0, 365, "apr");
+          return;
+        }
+
+        const { principal, rate, days, frequency } = input;
+        const mode = modeInput.value;
+        const total = balanceAt(principal, rate, days, frequency, mode);
+        const interest = total - principal;
+        const percentage = principal > 0 ? interest / principal * 100 : 0;
+
+        $("outInterest").textContent = money(interest);
+        $("outTotal").textContent = money(total);
+        $("outPct").textContent = percentage.toFixed(2) + "%";
+
+        $("calcNote").textContent = mode === "apr"
+          ? `Simple-interest illustration using ${(rate * 100).toFixed(2)}% APR over ${days} days. No compounding is applied.`
+          : `Compound-interest illustration using ${(rate * 100).toFixed(2)}% nominal annual rate, ${frequency} compounding periods per year, over ${days} days.`;
+
+        drawChart(principal, rate, days, frequency, mode);
+      }
+
+      [amountInput, rateInput, daysInput, modeInput, compoundInput].forEach((el) => {
+        el.addEventListener("input", calculate);
+        el.addEventListener("change", calculate);
+      });
+
+      document.querySelectorAll("[data-preset]").forEach((button) => {
+        button.addEventListener("click", () => {
+          daysInput.value = button.dataset.preset;
+          calculate();
+        });
+      });
+
+      let resizeFrame;
+      window.addEventListener("resize", () => {
+        cancelAnimationFrame(resizeFrame);
+        resizeFrame = requestAnimationFrame(calculate);
+      });
+
+      calculate();
+    })();
+  </script>
+</body>
+</html>
 
 
