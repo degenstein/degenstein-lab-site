@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>$ONDO — July 2026 Tokenized Stocks, Treasuries & RWA Rails | The Degenstein Report</title>
+  <title>$ONDO — July 2026 Tokenized Stocks, Treasuries &amp; RWA Rails | The Degenstein Report</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- SEO -->
@@ -12,264 +12,286 @@
   <!-- Open Graph -->
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="The Degenstein Report" />
-  <meta property="og:title" content="$ONDO — July 2026 Tokenized Stocks, Treasuries & RWA Rails" />
+  <meta property="og:title" content="$ONDO — July 2026 Tokenized Stocks, Treasuries &amp; RWA Rails" />
   <meta property="og:description" content="Ondo Stocks, tokenized Treasuries, regulated market infrastructure, and the ONDO value-capture question." />
   <meta property="og:url" content="https://degenstein.xyz/report/ondo/" />
   <meta property="og:image" content="https://degenstein.xyz/assets/report-ondo-1200x630.png" />
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="$ONDO — July 2026 Tokenized Stocks, Treasuries & RWA Rails" />
-  <meta name="twitter:description" content="Independent research into Ondo's RWA growth, token economics, catalysts, and risks." />
+  <meta name="twitter:title" content="$ONDO — July 2026 Tokenized Stocks, Treasuries &amp; RWA Rails" />
+  <meta name="twitter:description" content="Ondo Stocks, tokenized Treasuries, regulated market infrastructure, and the ONDO value-capture question." />
   <meta name="twitter:image" content="https://degenstein.xyz/assets/report-ondo-1200x630.png" />
+  <meta name="twitter:site" content="@degensteindgn" />
+
+  <meta name="theme-color" content="#22c55e" />
 
   <style>
     :root {
-      --bg: #070b14;
-      --panel: #0f172a;
-      --panel-soft: #111c2d;
-      --text-main: #e5edf8;
-      --text-muted: #a8b6ca;
-      --accent: #5eead4;
-      --accent-strong: #34d399;
-      --border: rgba(148, 163, 184, 0.22);
+      --bg: #020617;
+      --card: #020617;
+      --card-soft: #020817;
+      --border: #1e293b;
+      --accent: #22c55e;
+      --accent-soft: rgba(34, 197, 94, 0.1);
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.8);
       --radius-lg: 18px;
-      --shadow-soft: 0 16px 45px rgba(0, 0, 0, 0.28);
     }
 
     * { box-sizing: border-box; }
 
-    html { scroll-behavior: smooth; }
-
     body {
       margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont,
+        "SF Pro Text", "Segoe UI", sans-serif;
       background:
-        radial-gradient(ellipse at top, rgba(20, 83, 75, 0.15), transparent 45%),
+        radial-gradient(circle at top left, rgba(34, 197, 94, 0.16), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(15, 118, 110, 0.2), transparent 55%),
         var(--bg);
       color: var(--text-main);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
     }
 
-    a { color: var(--accent); }
-
-    .page-shell {
-      width: min(1120px, calc(100% - 36px));
-      margin: 0 auto;
-      padding: 34px 0 60px;
+    .page {
+      min-height: 100vh;
+      padding: 38px 16px 70px;
+      display: flex;
+      justify-content: center;
     }
 
-    .report-header {
-      position: relative;
-      overflow: hidden;
-      padding: clamp(25px, 5vw, 48px);
-      border: 1px solid rgba(94, 234, 212, 0.24);
-      border-radius: 26px;
-      background:
-        radial-gradient(ellipse at 90% 10%, rgba(45, 212, 191, 0.18), transparent 35%),
-        linear-gradient(140deg, #102a2b, #101827 65%, #101827);
-      box-shadow: var(--shadow-soft);
+    .container {
+      width: 100%;
+      max-width: 860px;
     }
 
-    .eyebrow {
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .back-link {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      color: var(--accent);
-      font-size: 0.75rem;
-      font-weight: 800;
-      letter-spacing: 0.16em;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .back-link span { font-size: 1.1rem; }
+
+    .home-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 14px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.8);
+      color: var(--text-muted);
+      font-size: 0.74rem;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.15s ease-out;
     }
 
-    .eyebrow-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 12px rgba(94, 234, 212, 0.8);
+    .home-pill:hover {
+      background: var(--accent-soft);
+      border-color: var(--accent);
+      color: var(--accent);
+      text-decoration: none;
     }
 
-    h1 {
-      max-width: 850px;
-      margin: 16px 0 14px;
-      font-size: clamp(2.2rem, 5vw, 4.2rem);
-      line-height: 1.06;
-      letter-spacing: -0.045em;
+    .banner-wrap {
+      margin: 6px 0 18px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid rgba(148,163,184,.25);
+      background: rgba(15,23,42,.35);
+      box-shadow: 0 18px 60px rgba(0,0,0,.55);
     }
 
-    .subtitle {
-      max-width: 760px;
-      color: #c3d0e1;
-      font-size: clamp(1rem, 2vw, 1.15rem);
-      line-height: 1.75;
+    .banner-wrap img {
+      width: 100%;
+      display: block;
+      height: auto;
     }
 
-    .header-meta {
+    .badge-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 9px;
-      margin-top: 24px;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 10px;
     }
 
     .badge {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 5px 10px;
+      padding: 4px 10px;
       border-radius: 999px;
-      background: rgba(15, 23, 42, 0.72);
-      border: 1px solid rgba(148, 163, 184, 0.3);
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.4);
       color: var(--text-muted);
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
+      font-size: 11px;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
-    .share-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 22px;
-    }
-
-    .share-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 15px;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      color: var(--text-main);
-      background: rgba(15, 23, 42, 0.8);
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    .share-button:hover {
-      border-color: var(--accent);
-    }
-
-    .toc {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-      margin: 24px 0 32px;
-    }
-
-    .toc a {
-      padding: 8px 12px;
-      border: 1px solid var(--border);
+    .badge-dot {
+      width: 6px;
+      height: 6px;
       border-radius: 999px;
-      color: #c6d3e3;
-      background: rgba(15, 23, 42, 0.65);
-      text-decoration: none;
-      font-size: 0.8rem;
+      background: var(--accent);
+      box-shadow: 0 0 10px rgba(34, 197, 94, 0.9);
     }
 
-    .toc a:hover {
-      border-color: var(--accent);
+    .token-pill {
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(34, 197, 94, 0.12);
+      border: 1px solid rgba(34, 197, 94, 0.6);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
       color: var(--accent);
     }
 
-    .section {
-      margin-top: 24px;
-      padding: clamp(22px, 3vw, 32px);
-      border: 1px solid var(--border);
+    h1 {
+      font-size: clamp(2.15rem, 3.4vw, 2.8rem);
+      margin: 6px 0 6px;
+      letter-spacing: 0.02em;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 560px;
+    }
+
+    .share-row {
+      margin-top: 14px;
+      margin-bottom: 6px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .share-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+    }
+
+    .share-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.15s ease-out;
+    }
+
+    .share-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      text-decoration: none;
+      background: var(--accent-soft);
+    }
+
+    .share-btn span { font-size: 0.95rem; }
+
+    .snapshot {
+      margin-top: 20px;
+      padding: 18px 18px 16px;
       border-radius: var(--radius-lg);
-      background: rgba(15, 23, 42, 0.78);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background:
+        linear-gradient(135deg, rgba(34, 197, 94, 0.16), transparent 55%),
+        rgba(15, 23, 42, 0.96);
       box-shadow: var(--shadow-soft);
     }
 
-    .section-title {
-      margin: 0 0 16px;
-      font-size: clamp(1.35rem, 3vw, 1.85rem);
-      line-height: 1.2;
-      letter-spacing: -0.025em;
-    }
-
-    .section-body {
-      color: var(--text-muted);
-      font-size: 0.96rem;
-      line-height: 1.8;
-    }
-
-    .section-body p { margin: 0 0 12px; }
-    .section-body p:last-child { margin-bottom: 0; }
-    .section-body strong { color: var(--text-main); }
-
-    ul.section-list {
-      margin: 8px 0 0;
-      padding-left: 20px;
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      line-height: 1.75;
-    }
-
-    ul.section-list li { margin-bottom: 9px; }
-
-    .snapshot {
-      margin-top: 24px;
-      padding: clamp(22px, 3vw, 30px);
-      border: 1px solid rgba(94, 234, 212, 0.24);
-      border-radius: var(--radius-lg);
-      background: linear-gradient(135deg, rgba(20, 83, 75, 0.2), rgba(15, 23, 42, 0.9));
-    }
-
     .snapshot-title {
-      margin-bottom: 18px;
-      font-size: 1.3rem;
-      font-weight: 850;
+      font-size: 0.98rem;
+      font-weight: 600;
+      margin-bottom: 10px;
     }
 
     .snapshot-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .snapshot-grid > div {
-      padding: 16px;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      background: rgba(7, 11, 20, 0.48);
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 10px 22px;
+      font-size: 0.9rem;
     }
 
     .snapshot-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
       color: var(--text-muted);
-      font-size: 0.75rem;
-      line-height: 1.5;
+      margin-bottom: 2px;
     }
 
-    .snapshot-value {
-      margin-top: 7px;
-      color: var(--text-main);
-      font-size: 1.05rem;
-      font-weight: 850;
-      line-height: 1.35;
-    }
+    .snapshot-value { font-weight: 500; }
 
     .snapshot-note {
-      margin-top: 15px;
+      margin-top: 10px;
+      font-size: 0.72rem;
       color: var(--text-muted);
-      font-size: 0.82rem;
-      line-height: 1.65;
+      opacity: 0.75;
     }
 
-    /* CoinDepo: prominent Earn While You Hold feature */
+    .section { margin-top: 26px; }
+
+    .section-title {
+      font-size: 1.2rem;
+      margin-bottom: 6px;
+    }
+
+    .section-body {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: var(--text-muted);
+    }
+
+    .section-body strong { color: var(--text-main); }
+
+    ul.section-list {
+      margin: 8px 0 0 0;
+      padding-left: 18px;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+    }
+
+    ul.section-list li { margin-bottom: 6px; }
+
+    /* Enhanced CoinDepo Earn While You Hold feature */
     .income-card {
       position: relative;
       overflow: hidden;
       margin-top: 30px;
-      padding: clamp(22px, 3.5vw, 38px);
+      padding: clamp(22px, 4vw, 36px);
       border-radius: 24px;
-      border: 1px solid rgba(75, 226, 185, 0.48);
+      border: 1px solid rgba(74, 234, 185, 0.52);
       background:
-        radial-gradient(ellipse at 92% 8%, rgba(48, 225, 183, .17), transparent 38%),
-        linear-gradient(135deg, rgba(16, 43, 39, .98), rgba(16, 27, 43, .98) 58%, rgba(17, 24, 39, .98));
-      box-shadow: var(--shadow-soft);
+        radial-gradient(ellipse at 92% 5%, rgba(48, 225, 183, .18), transparent 38%),
+        linear-gradient(135deg, rgba(16, 43, 39, .98), rgba(16, 27, 43, .98) 58%, rgba(15, 23, 42, .98));
+      box-shadow: 0 20px 55px rgba(0, 0, 0, .42);
     }
 
     .income-topline {
@@ -301,21 +323,21 @@
 
     .income-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.5fr) minmax(220px, .8fr);
+      grid-template-columns: minmax(0, 1.45fr) minmax(210px, .8fr);
       align-items: center;
-      gap: 30px;
+      gap: 28px;
     }
 
     .income-title {
-      font-size: clamp(1.7rem, 3.8vw, 2.55rem);
-      line-height: 1.1;
-      letter-spacing: -.04em;
       margin: 0 0 14px;
       color: #f8fafc;
+      font-size: clamp(1.7rem, 3.8vw, 2.5rem);
+      line-height: 1.1;
+      letter-spacing: -.04em;
     }
 
     .income-body {
-      font-size: .98rem;
+      font-size: 0.97rem;
       color: #d1deeb;
       line-height: 1.75;
     }
@@ -347,11 +369,12 @@
     }
 
     .income-rate-panel {
-      padding: 26px 20px;
+      padding: 26px 18px;
       text-align: center;
-      background: rgba(5, 14, 25, .55);
-      border: 1px solid rgba(98, 235, 191, .35);
+      background: rgba(5, 14, 25, .58);
+      border: 1px solid rgba(98, 235, 191, .38);
       border-radius: 20px;
+      box-shadow: inset 0 1px rgba(255,255,255,.04);
     }
 
     .income-rate-label {
@@ -364,15 +387,25 @@
     .income-rate {
       margin: 14px 0 0;
       color: #63edbd;
-      font-size: clamp(4rem, 8vw, 5.8rem);
+      font-size: clamp(4rem, 8vw, 5.7rem);
       font-weight: 900;
       letter-spacing: -.08em;
       line-height: .95;
-      text-shadow: 0 0 35px rgba(74, 234, 185, .15);
+      text-shadow: 0 0 35px rgba(74, 234, 185, .18);
     }
 
-    .income-rate span { font-size: .48em; letter-spacing: -.04em; }
-    .income-rate sup { position: relative; top: -.7em; margin-left: 3px; font-size: .3em; letter-spacing: 0; }
+    .income-rate span {
+      font-size: .48em;
+      letter-spacing: -.04em;
+    }
+
+    .income-rate sup {
+      position: relative;
+      top: -.7em;
+      margin-left: 3px;
+      font-size: .3em;
+      letter-spacing: 0;
+    }
 
     .income-rate-unit {
       display: block;
@@ -400,7 +433,7 @@
     .income-list {
       margin-top: 16px;
       padding-left: 18px;
-      font-size: .93rem;
+      font-size: 0.95rem;
       color: var(--text-muted);
       line-height: 1.7;
     }
@@ -411,28 +444,29 @@
       justify-content: center;
       gap: 10px;
       margin-top: 14px;
-      padding: 13px 20px;
+      padding: 12px 19px;
       border-radius: 12px;
       border: none;
       background: linear-gradient(110deg, #67e8b8, #31d5c4);
       color: #05241e;
-      font-size: .92rem;
+      font-size: 0.9rem;
       font-weight: 850;
       cursor: pointer;
       text-decoration: none;
-      box-shadow: 0 8px 24px rgba(49, 213, 196, .15);
-      transition: transform .2s ease, box-shadow .2s ease;
+      box-shadow: 0 8px 24px rgba(49, 213, 196, .17);
+      transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
     }
 
     .cta-button:hover {
       transform: translateY(-2px);
-      box-shadow: 0 12px 30px rgba(49, 213, 196, .25);
+      box-shadow: 0 12px 30px rgba(49, 213, 196, .28);
+      text-decoration: none;
     }
 
     .income-separation {
-      margin-top: 28px;
-      padding: 18px 20px;
-      background: rgba(4, 12, 22, .38);
+      margin-top: 26px;
+      padding: 17px 19px;
+      background: rgba(4, 12, 22, .42);
       border-left: 3px solid #59e7b8;
       border-radius: 0 12px 12px 0;
     }
@@ -448,283 +482,338 @@
 
     .income-note {
       margin-top: 14px;
-      font-size: .76rem;
+      font-size: 0.76rem;
       color: #a9bbcf;
       line-height: 1.65;
     }
 
     .disclaimer {
       margin-top: 30px;
-      padding-top: 18px;
+      padding-top: 10px;
       border-top: 1px solid rgba(148, 163, 184, 0.35);
       font-size: 0.75rem;
       color: var(--text-muted);
-      line-height: 1.7;
+      line-height: 1.6;
     }
 
-    .footer {
-      margin-top: 26px;
-      padding: 20px 0;
-      color: var(--text-muted);
-      font-size: 0.78rem;
-      text-align: center;
-    }
-
-    @media (max-width: 760px) {
-      .snapshot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    @media (max-width: 640px) {
+      .page { padding-top: 26px; }
+      .snapshot-grid { grid-template-columns: minmax(0, 1fr); }
       .income-grid { grid-template-columns: 1fr; gap: 22px; }
-      .cta-button { width: 100%; box-sizing: border-box; text-align: center; }
-    }
-
-    @media (max-width: 480px) {
-      .page-shell { width: min(100% - 22px, 1120px); padding-top: 14px; }
-      .snapshot-grid { grid-template-columns: 1fr; }
-      .share-button { width: 100%; }
+      .cta-button { width: 100%; text-align: center; }
     }
   </style>
 </head>
 
 <body>
-  <main class="page-shell">
-    <header class="report-header">
-      <div class="eyebrow"><span class="eyebrow-dot"></span> The Degenstein Report · Independent Research</div>
-      <h1>$ONDO — Tokenized Stocks, Treasuries &amp; RWA Rails</h1>
+  <div class="page">
+    <div class="container">
+
+      <a class="back-link" href="/report/">
+        <span>←</span> Back to all reports
+      </a>
+
+      <a href="https://degenstein.xyz/" class="home-pill">
+        ← Back to Main Page
+      </a>
+
+      <div class="banner-wrap">
+        <img src="/assets/report-ondo-1200x630.png" alt="ONDO Report Cover" width="1200" height="630" loading="eager" />
+      </div>
+
+      <div class="badge-row">
+        <div class="badge">
+          <span class="badge-dot"></span>
+          The Degenstein Report
+        </div>
+        <div class="token-pill">$ONDO • RWA Thesis</div>
+      </div>
+
+      <h1>$ONDO — Tokenized Treasuries &amp; Real Yield Rails</h1>
       <p class="subtitle">
-        A research-first look at Ondo's real-world-asset expansion, regulated market infrastructure,
-        the ONDO token thesis, supply dynamics, and the difference between ecosystem adoption and token value capture.
+        July 2026 research on tokenized stocks, Treasuries, regulated market rails, ONDO governance, supply, and value capture.
       </p>
-      <div class="header-meta">
-        <span class="badge">RWA Infrastructure</span>
-        <span class="badge">Token Economics</span>
-        <span class="badge">Bull / Bear Analysis</span>
-        <span class="badge">Risks Included</span>
-      </div>
+
       <div class="share-row">
-        <button class="share-button" type="button" onclick="copyReportLink()">Copy Report Link</button>
-        <a class="share-button" href="https://x.com/DHouseofcrypto" target="_blank" rel="noopener noreferrer">Discuss on X ↗</a>
-      </div>
-    </header>
+        <span class="share-label">Share this report</span>
 
-    <nav class="toc" aria-label="Report navigation">
-      <a href="#thesis">Core Thesis</a>
-      <a href="#ecosystem">Ecosystem</a>
-      <a href="#signals">Adoption Signals</a>
-      <a href="#risks">Risks</a>
-      <a href="#yield">Yield Strategy</a>
-      <a href="#bottom-line">Bottom Line</a>
-    </nav>
+        <a
+          class="share-btn"
+          href="https://twitter.com/intent/tweet?text=New%20Degenstein%20Report%3A%20ONDO%20%E2%80%94%20Tokenized%20Treasuries%20%26%20Real%20Yield%20Rails&url=https%3A%2F%2Fdegenstein.xyz%2Freport%2Fondo%2F"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>✕</span> Share on X
+        </a>
 
-    <section class="section" id="thesis">
-      <h2 class="section-title">The Core Thesis</h2>
-      <div class="section-body">
-        <p>
-          Ondo is building financial infrastructure around tokenized real-world assets, including tokenized
-          Treasuries and tokenized securities. The investment case rests on whether these products can attract
-          durable demand, expand distribution, and strengthen Ondo's position in onchain financial markets.
-        </p>
-        <p>
-          The key distinction is between the success of Ondo's products and the economics of the <strong>ONDO token</strong>.
-          Growth in tokenized assets can strengthen the ecosystem story, but it does not automatically mean that
-          the token captures proportional economic value.
-        </p>
-      </div>
-    </section>
-
-    <section class="section" id="ecosystem">
-      <h2 class="section-title">What to Watch Across the Ondo Ecosystem</h2>
-      <div class="section-body">
-        <p>
-          Ondo's broader thesis includes tokenized Treasury products, tokenized stocks, distribution partnerships,
-          and connections to established financial infrastructure. These developments matter because they may help
-          determine whether tokenized assets can move beyond isolated crypto-native use cases.
-        </p>
-        <p>
-          Partnerships and product launches should be evaluated on their actual implementation, distribution,
-          adoption, and economics—not solely on the announcement itself.
-        </p>
-      </div>
-    </section>
-
-    <section class="section" id="signals">
-      <h2 class="section-title">Recent Ecosystem Developments</h2>
-      <div class="section-body">
-        <p>
-          The July 2026 research snapshot highlighted several notable developments in Ondo's ecosystem.
-          These figures are historical report-period observations and should be checked against current primary
-          sources before being treated as today's metrics.
-        </p>
-        <p style="margin-top:10px;">
-          Ondo Stocks was reported to have surpassed <strong>$1 billion in total value locked</strong>.
-          The report also covered Ondo's announcement of a live model for third-party tokenized U.S. securities,
-          alongside announced relationships involving Clearstream and 360X.
-        </p>
-        <p style="margin-top:10px;">
-          RWA.xyz has tracked Ondo-related distributed asset value, holders, and transfer activity.
-          These measures can help show product adoption, but they do not independently establish the amount of
-          economic value accruing to ONDO holders.
-        </p>
-      </div>
-    </section>
-
-    <section class="snapshot">
-      <div class="snapshot-title">July 2026 RWA Signals — Historical Snapshot</div>
-      <div class="snapshot-grid">
-        <div>
-          <div class="snapshot-label">Ondo Stocks TVL</div>
-          <div class="snapshot-value">$1B+ milestone</div>
-        </div>
-        <div>
-          <div class="snapshot-label">Distributed Asset Value</div>
-          <div class="snapshot-value">~$2.61B tracked by RWA.xyz</div>
-        </div>
-        <div>
-          <div class="snapshot-label">RWA Holders</div>
-          <div class="snapshot-value">~80,000 tracked</div>
-        </div>
-        <div>
-          <div class="snapshot-label">Monthly Transfer Volume</div>
-          <div class="snapshot-value">~$1.97B tracked</div>
-        </div>
-      </div>
-      <div class="snapshot-note">
-        These figures reflect the historical snapshot described in the report, not a live feed.
-        Product adoption and asset growth are measurable ecosystem signals. They are not automatically ONDO token value capture.
-      </div>
-    </section>
-
-    <section class="section" id="risks">
-      <h2 class="section-title">Risks to the Thesis</h2>
-      <ul class="section-list">
-        <li><strong>ONDO value capture:</strong> product TVL and tokenized-stock growth may not automatically create proportional demand for the ONDO token.</li>
-        <li><strong>Regulatory and jurisdiction limits:</strong> Ondo Stocks are not offered or sold in the U.S. or to U.S. persons under the product's current restrictions. Check the current product terms and eligibility requirements.</li>
-        <li><strong>Competition and supply:</strong> other tokenization platforms, traditional financial infrastructure, and ONDO token supply dynamics can pressure the investment thesis.</li>
-        <li><strong>Execution risk:</strong> announced partnerships and product launches do not guarantee sustained adoption or profitable activity.</li>
-        <li><strong>Market risk:</strong> ONDO remains exposed to crypto-market volatility, liquidity conditions, and changes in investor sentiment.</li>
-      </ul>
-    </section>
-
-    <!-- Upgraded CoinDepo feature section -->
-    <section class="income-card" id="yield">
-      <div class="income-topline">
-        <span class="income-eyebrow">Earn While You Hold</span>
-        <span class="income-tag">THIRD-PARTY PLATFORM</span>
+        <button class="share-btn" type="button" onclick="copyOndoLink()">
+          <span>⧉</span> Copy link
+        </button>
       </div>
 
-      <div class="income-grid">
-        <div>
-          <h2 class="income-title">Put Your Crypto to Work</h2>
-          <div class="income-body">
-            <p>
-              Holding crypto for the long term? CoinDepo advertises the opportunity to earn
-              <strong>upwards of 18% APY</strong> on eligible crypto assets, including ONDO
-              and other major cryptocurrencies.
-            </p>
+      <!-- Snapshot -->
+      <section class="snapshot">
+        <div class="snapshot-title">Snapshot</div>
+        <div class="snapshot-grid">
+          <div>
+            <div class="snapshot-label">Token</div>
+            <div class="snapshot-value">$ONDO (Ondo Finance)</div>
           </div>
-
-          <div class="income-assets" aria-label="Examples of crypto assets">
-            <span>$ONDO</span>
-            <span>$AVAX</span>
-            <span>$BTC</span>
-            <span>$XRP</span>
-            <span>$LINK</span>
-            <span>And more</span>
+          <div>
+            <div class="snapshot-label">Sector</div>
+            <div class="snapshot-value">RWAs · Tokenized Treasuries · On-chain yield rails</div>
           </div>
-
-          <div class="income-body">
-            <p>
-              Explore a separate yield strategy while maintaining exposure to supported assets.
-              Rates, supported assets, eligibility, and account terms vary and may change.
-            </p>
+          <div>
+            <div class="snapshot-label">Narrative</div>
+            <div class="snapshot-value">Bringing compliant TradFi yield on-chain</div>
           </div>
-
-          <a class="cta-button" href="/report/coindepo-earn-while-you-hold/">
-            Read the CoinDepo Research Review <span aria-hidden="true">↗</span>
-          </a>
-
-          <div class="income-note">
-            Important: 18% APY is an advertised potential rate, not a guaranteed return or a confirmed
-            rate for every listed asset. Verify the current ONDO rate and account terms directly with
-            CoinDepo before depositing. Third-party platform and custody risks apply. Some links in the
-            separate CoinDepo report are referral links and are disclosed there.
+          <div>
+            <div class="snapshot-label">Status</div>
+            <div class="snapshot-value" style="color: var(--accent);">
+              Under active 2026 watch
+            </div>
           </div>
         </div>
-
-        <div class="income-rate-panel">
-          <div class="income-rate-label">ADVERTISED POTENTIAL YIELD</div>
-          <div class="income-rate">18<span>%</span><sup>+</sup></div>
-          <span class="income-rate-unit">APY</span>
-          <div class="income-rate-divider"></div>
-          <p>Explore yield opportunities on eligible assets <strong>while you hold</strong>.</p>
-          <p style="font-size:.76rem;color:#9fb5c7;">Rates and availability can change.</p>
+        <div class="snapshot-note">
+          Note: This is an educational overview, not financial advice. Always DYOR.
         </div>
+      </section>
+
+      <!-- Executive Summary -->
+      <section class="section">
+        <h2 class="section-title">Executive Summary</h2>
+        <div class="section-body">
+          <p>
+            Ondo has expanded well beyond a tokenized-Treasury thesis. By July 2026, Ondo Stocks had surpassed $1 billion in total value locked,
+            tokenized stocks were expanding across onchain venues, and Ondo announced a live U.S. custodial tokenized-securities model.
+            The ONDO investment question is narrower: whether growth in Ondo's products and infrastructure creates durable economic or governance value for the ONDO token itself.
+          </p>
+        </div>
+      </section>
+
+      <!-- What it does -->
+      <section class="section">
+        <h2 class="section-title">What Ondo Finance Does (Plain English)</h2>
+        <ul class="section-list">
+          <li>Brings traditional financial assets, including Treasuries, stocks, and ETFs, onto blockchain rails through structured products and infrastructure.</li>
+          <li>Builds compliance and distribution structures around tokenized financial products.</li>
+          <li>Develops market infrastructure for issuance, transfer, trading access, and onchain settlement.</li>
+        </ul>
+      </section>
+
+      <!-- Why now -->
+      <section class="section">
+        <h2 class="section-title">Why the Ondo Thesis Exists Now</h2>
+        <ul class="section-list">
+          <li>Tokenized Treasuries have demonstrated demand for blockchain-based access to traditional financial assets.</li>
+          <li>Tokenized stocks and ETFs are expanding the RWA thesis beyond yield products.</li>
+          <li>Regulatory and market-structure discussions increasingly focus on how tokenized securities fit existing frameworks.</li>
+          <li>Ondo's distributed asset value is now measured in the billions, making product usage more measurable than narrative alone.</li>
+        </ul>
+      </section>
+
+      <!-- Catalysts -->
+      <section class="section">
+        <h2 class="section-title">The Real Catalysts (No Hopium)</h2>
+        <ul class="section-list">
+          <li><strong>Ondo Stocks:</strong> more than $1 billion in TVL and continued distribution across onchain venues.</li>
+          <li><strong>U.S. tokenized securities:</strong> Ondo announced a live custodial model for third-party tokenized U.S. securities in July.</li>
+          <li><strong>Regulated infrastructure:</strong> partnerships with Clearstream and 360X connect tokenized securities with regulated market infrastructure.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">July 2026 Thesis Update</h2>
+        <div class="section-body">
+          <p>
+            The biggest change since the older version of this report is that Ondo is no longer just a tokenized-Treasury story.
+            <strong>Ondo Stocks surpassed $1 billion in total value locked</strong>, and Ondo says the platform has tens of thousands of users.
+            Tokenized stocks have also expanded to additional onchain distribution venues, including LI.FI and Uniswap.
+          </p>
+          <p style="margin-top:10px;">
+            On July 2, Ondo announced what it describes as the <strong>first live solution for third-party tokenized U.S. securities operating within the existing U.S. regulatory framework</strong>.
+            The model is important because it attempts to connect tokenized securities with established custody and securities infrastructure rather than creating a parallel offshore-only market.
+          </p>
+          <p style="margin-top:10px;">
+            Ondo also announced a partnership with <strong>Clearstream and 360X</strong> to bring tokenized securities into regulated market infrastructure.
+            RWA.xyz currently tracks roughly <strong>$2.61 billion in distributed asset value</strong> for Ondo, about <strong>80,000 holders</strong>, and nearly <strong>$2 billion in monthly transfer volume</strong>.
+          </p>
+        </div>
+      </section>
+
+      <section class="snapshot">
+        <div class="snapshot-title">Fresh July 2026 RWA Signals</div>
+        <div class="snapshot-grid">
+          <div>
+            <div class="snapshot-label">Ondo Stocks TVL</div>
+            <div class="snapshot-value">$1B+ milestone</div>
+          </div>
+          <div>
+            <div class="snapshot-label">Distributed Asset Value</div>
+            <div class="snapshot-value">~$2.61B tracked by RWA.xyz</div>
+          </div>
+          <div>
+            <div class="snapshot-label">RWA Holders</div>
+            <div class="snapshot-value">~80,000 tracked</div>
+          </div>
+          <div>
+            <div class="snapshot-label">Monthly Transfer Volume</div>
+            <div class="snapshot-value">~$1.97B tracked</div>
+          </div>
+        </div>
+        <div class="snapshot-note">
+          Product adoption and asset growth are measurable ecosystem signals. They are not automatically ONDO token value capture.
+        </div>
+      </section>
+
+      <!-- Risks -->
+      <section class="section">
+        <h2 class="section-title">Risks to the Thesis</h2>
+        <ul class="section-list">
+          <li><strong>ONDO value capture:</strong> product TVL and tokenized-stock growth may not automatically create proportional demand for the ONDO token.</li>
+          <li><strong>Regulatory and jurisdiction limits:</strong> Ondo Stocks are not offered or sold in the U.S. or to U.S. persons under the product's current restrictions.</li>
+          <li><strong>Competition and supply:</strong> other tokenization platforms, traditional financial infrastructure, and ONDO token supply dynamics can pressure the investment thesis.</li>
+        </ul>
+      </section>
+
+      <!-- Upgraded CoinDepo section -->
+      <section class="income-card" id="coindepo-yield">
+
+        <div class="income-topline">
+          <span class="income-eyebrow">Earn While You Hold</span>
+          <span class="income-tag">THIRD-PARTY PLATFORM</span>
+        </div>
+
+        <div class="income-grid">
+          <div>
+            <h2 class="income-title">Put Your Crypto to Work</h2>
+
+            <div class="income-body">
+              <p>
+                Holding crypto for the long term? CoinDepo advertises the opportunity to earn
+                <strong>upwards of 18% APY</strong> on eligible crypto assets, including ONDO
+                and other major cryptocurrencies.
+              </p>
+            </div>
+
+            <div class="income-assets" aria-label="Examples of crypto assets">
+              <span>$ONDO</span>
+              <span>$AVAX</span>
+              <span>$BTC</span>
+              <span>$XRP</span>
+              <span>$LINK</span>
+              <span>And more</span>
+            </div>
+
+            <div class="income-body">
+              <p>
+                Explore a separate yield strategy while maintaining exposure to supported assets.
+                Rates, supported assets, eligibility, and account terms vary and may change.
+              </p>
+            </div>
+
+            <a class="cta-button" href="/report/coindepo-earn-while-you-hold/">
+              Read the CoinDepo Research Review <span aria-hidden="true">↗</span>
+            </a>
+
+            <div class="income-note">
+              Important: 18% APY is an advertised potential rate, not a guaranteed return or a confirmed
+              rate for every listed asset. Verify the current ONDO rate and account terms directly with
+              CoinDepo before depositing. Third-party platform and custody risks apply. Some links in the
+              separate CoinDepo report are referral links and are disclosed there.
+            </div>
+          </div>
+
+          <div class="income-rate-panel">
+            <div class="income-rate-label">ADVERTISED POTENTIAL YIELD</div>
+            <div class="income-rate">18<span>%</span><sup>+</sup></div>
+            <span class="income-rate-unit">APY</span>
+            <div class="income-rate-divider"></div>
+            <p>Explore yield opportunities on eligible assets <strong>while you hold</strong>.</p>
+            <p style="font-size:.76rem;color:#9fb5c7;">Rates and availability can change.</p>
+          </div>
+        </div>
+
+        <div class="income-separation">
+          <strong>Keep the investment thesis separate.</strong>
+          <p>
+            CoinDepo yield is a third-party platform offering, not Ondo protocol yield and not proof of
+            ONDO token value capture. Evaluate the provider, custody arrangements, rate terms, withdrawal
+            conditions, and risks independently of your ONDO investment thesis.
+          </p>
+        </div>
+      </section>
+
+      <!-- Bottom line -->
+      <section class="section">
+        <h2 class="section-title">Bottom Line</h2>
+        <div class="section-body">
+          <p>
+            Ondo has become one of the more measurable RWA platforms by product adoption, distributed asset value, and tokenized-stock growth.
+            That strengthens the Ondo ecosystem thesis. It does not settle the ONDO token thesis. The key question for investors is whether governance,
+            ecosystem growth, and future network economics create durable demand or value capture for ONDO while supply and competition are considered.
+          </p>
+        </div>
+      </section>
+
+      <!-- DM / Suggestions card -->
+      <section class="section">
+        <div class="snapshot" style="border-color: rgba(34,197,94,.35);">
+          <div class="snapshot-title">Want me to cover a token?</div>
+          <div class="section-body" style="margin-top: 6px;">
+            DM me on X with the ticker + why it matters. If it has real catalysts, it goes on the list.
+          </div>
+
+          <div class="share-row" style="margin-top: 12px;">
+            <a
+              class="share-btn"
+              href="https://x.com/DHouseofcrypto"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>✕</span> DM me on X
+            </a>
+          </div>
+
+          <div class="snapshot-note" style="margin-top: 10px;">
+            Tip: Include the thesis + the catalyst + what would make you wrong (risk).
+          </div>
+        </div>
+      </section>
+
+      <div class="disclaimer">
+        <strong>Research &amp; Risk Disclosure:</strong> This report is for informational and educational purposes only and does not constitute financial,
+        investment, legal, or tax advice. ONDO is volatile. Growth in Ondo Finance products, tokenized securities, TVL, or partnerships does not guarantee
+        ONDO price appreciation or direct token value capture. Tokenized financial products can involve issuer, custody, regulatory, market, liquidity, and smart-contract risks.
+        Third-party custodial platforms introduce separate risks and can result in partial or total loss. Verify current information independently.<br><br>
+        <a href="/about/">About</a> · <a href="/contact/">Contact</a> · <a href="/editorial-policy/">Editorial Policy</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a>
       </div>
 
-      <div class="income-separation">
-        <strong>Keep the investment thesis separate.</strong>
-        <p>
-          CoinDepo yield is a third-party platform offering, not Ondo protocol yield and not proof of
-          ONDO token value capture. Evaluate the provider, custody arrangements, rate terms, withdrawal
-          conditions, and risks independently of your ONDO investment thesis.
-        </p>
-      </div>
-    </section>
-
-    <section class="section" id="bottom-line">
-      <h2 class="section-title">Bottom Line</h2>
-      <div class="section-body">
-        <p>
-          Ondo has become one of the more measurable RWA platforms by product adoption, distributed asset value,
-          and tokenized-stock growth. That strengthens the Ondo ecosystem thesis. It does not settle the ONDO token thesis.
-        </p>
-        <p>
-          The key question for investors is whether governance, ecosystem growth, and future network economics create
-          durable demand or value capture for ONDO while supply, competition, regulation, and execution risks are considered.
-        </p>
-      </div>
-    </section>
-
-    <div class="disclaimer">
-      <strong>Research disclaimer:</strong> This report is for informational and educational purposes only and is not
-      financial, investment, legal, or tax advice. Cryptoassets are volatile and may result in partial or total loss.
-      Historical metrics and advertised platform rates may change and should be independently verified. Third-party
-      yield products carry separate platform, custody, counterparty, liquidity, and withdrawal risks. Nothing in this
-      report guarantees future performance or yield.
     </div>
-
-    <footer class="footer">
-      © The Degenstein Report · Independent research, systems-first analysis, and risk-aware crypto education.
-    </footer>
-  </main>
+  </div>
 
   <script>
-    function copyReportLink() {
-      const url = window.location.href;
-      if (navigator.clipboard && window.isSecureContext) {
-        navigator.clipboard.writeText(url).then(() => {
-          alert("Report link copied.");
-        }).catch(() => fallbackCopy(url));
+    function copyOndoLink() {
+      const url = "https://degenstein.xyz/report/ondo/";
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(function () {
+          alert("Link copied: " + url);
+        }, function () {
+          alert("Could not copy link, please copy manually: " + url);
+        });
       } else {
-        fallbackCopy(url);
+        const temp = document.createElement("input");
+        temp.value = url;
+        document.body.appendChild(temp);
+        temp.select();
+        try {
+          document.execCommand("copy");
+          alert("Link copied: " + url);
+        } catch (e) {
+          alert("Could not copy link, please copy manually: " + url);
+        }
+        document.body.removeChild(temp);
       }
-    }
-
-    function fallbackCopy(text) {
-      const field = document.createElement("textarea");
-      field.value = text;
-      field.style.position = "fixed";
-      field.style.opacity = "0";
-      document.body.appendChild(field);
-      field.focus();
-      field.select();
-
-      try {
-        document.execCommand("copy");
-        alert("Report link copied.");
-      } catch (error) {
-        prompt("Copy this report link:", text);
-      }
-
-      document.body.removeChild(field);
     }
   </script>
 </body>
