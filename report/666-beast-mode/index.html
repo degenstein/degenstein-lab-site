@@ -1,371 +1,1206 @@
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>666 Beast Mode Crypto Portfolio — 6 Tokens • 6 Months • $6,000 @ 16% APR | The Degenstein Report</title>
-  <meta name="description" content="The 666 Beast Mode Crypto Portfolio: 6 core tokens, 6‑month horizon, $6,000 deployed with a 16% APR earn‑while‑you‑wait framework. Base, Bull, and Mega Bull scenarios." />
-  <meta name="robots" content="index, follow" />
+  <title>666 Beast Mode | The Degenstein Report</title>
+  <meta name="description" content="Six tokens. Six months. $6,000. Explore the 666 Beast Mode Crypto Portfolio, six-month market scenarios, and an illustrative earn-while-you-wait strategy.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://degenstein.xyz/report/666-beast-mode/">
 
-  <link rel="canonical" href="https://degenstein.xyz/report/666-beast-mode/" />
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="The Degenstein Report">
+  <meta property="og:title" content="666 Beast Mode — Six Tokens. Six Months. One System.">
+  <meta property="og:description" content="Six assets. $6,000 deployed. Three market scenarios. A disciplined crypto strategy built around risk, time, and opportunity.">
+  <meta property="og:url" content="https://degenstein.xyz/report/666-beast-mode/">
+  <meta property="og:image" content="https://degenstein.xyz/assets/666beastmode.png">
 
-  <!-- Open Graph -->
-
-  <meta property="og:type" content="article" />
-  <meta property="og:site_name" content="The Degenstein Report" />
-  <meta property="og:title" content="666 Beast Mode Crypto Portfolio" />
-  <meta property="og:description" content="6 tokens • 6 months • $6,000 • 16% APR. Scenario-driven crypto portfolio with an earn-while-you-wait overlay." />
-  <meta property="og:url" content="https://degenstein.xyz/report/666-beast-mode/" />
-  <meta property="og:image" content="https://degenstein.xyz/assets/666beastmode.png" />
-
-  <!-- X / Twitter -->
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@degensteindgn" />
-  <meta name="twitter:title" content="666 Beast Mode Crypto Portfolio" />
-  <meta name="twitter:description" content="6 tokens • 6 months • $6,000 • 16% APR earn-while-you-wait framework." />
-  <meta name="twitter:image" content="https://degenstein.xyz/assets/666beastmode.png" />
-
-  <meta name="theme-color" content="#16a34a" />
-
-  <!-- Fonts + Tailwind -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@degensteindgn">
+  <meta name="twitter:title" content="666 Beast Mode Crypto Portfolio">
+  <meta name="twitter:description" content="Six tokens. Six months. $6,000. Three scenarios. No crystal-ball predictions.">
+  <meta name="twitter:image" content="https://degenstein.xyz/assets/666beastmode.png">
+  <meta name="theme-color" content="#070a10">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    :root { color-scheme: dark; }
-    html, body { background:#000; color:#e5e7eb; font-family:'Montserrat',system-ui; }
-    .card{border-radius:1.5rem;padding:1.5rem;background:rgba(20,20,20,.85);border:1px solid rgba(255,255,255,.1);box-shadow:0 0 40px rgba(34,197,94,.15)}
-    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1.25rem;border-radius:9999px;font-weight:800;transition:.15s}
-    .btn-primary{background:linear-gradient(135deg,#22c55e,#06b6d4);color:#00110b}
-    .btn-outline{border:1px solid rgba(255,255,255,.2)}
-    .badge{font-size:.7rem;padding:.25rem .65rem;border-radius:9999px;border:1px solid rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.12em;font-weight:800}
-    .pill{font-size:.75rem;padding:.3rem .75rem;border-radius:9999px;border:1px solid rgba(34,197,94,.5);background:rgba(34,197,94,.12);color:#6ee7b7;font-weight:700}
-  
-    
-    /* ================= SAFE FLAIR PASS ================= */
+    :root {
+      color-scheme: dark;
+      --bg: #070a10;
+      --panel: #101620;
+      --panel2: #0b111a;
+      --text: #f3f6fb;
+      --muted: #a0adbd;
+      --green: #42f59b;
+      --cyan: #38d9ff;
+      --red: #ff4b64;
+      --border: rgba(255,255,255,.11);
+      --max: 1160px;
+    }
 
-    /* Section glow accents (no layout impact) */
-    section { position: relative; }
-    section::before {
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 50% -12%, rgba(27,116,91,.18), transparent 40%),
+        var(--bg);
+      color: var(--text);
+      font-family: Inter, system-ui, sans-serif;
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(7,10,16,.88);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      min-height: 66px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: .88rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .brand span { color: var(--green); }
+
+    .navlinks {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: .83rem;
+      color: var(--muted);
+    }
+
+    .navlinks a:hover { color: var(--green); }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--green);
+      font-size: .73rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .19em;
+    }
+
+    .eyebrow:before {
+      content: "";
+      width: 23px;
+      height: 2px;
+      background: var(--green);
+      box-shadow: 0 0 12px rgba(66,245,155,.8);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 76px 0 66px;
+      border-bottom: 1px solid var(--border);
+      background:
+        radial-gradient(ellipse at 78% 25%, rgba(56,217,255,.12), transparent 32%),
+        radial-gradient(ellipse at 20% 50%, rgba(66,245,155,.10), transparent 35%);
+    }
+
+    .hero:after {
+      content: "666";
+      position: absolute;
+      right: -35px;
+      top: 5px;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: clamp(200px, 32vw, 440px);
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: -.09em;
+      color: rgba(255,255,255,.022);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1, h2, .display {
+      font-family: "Barlow Condensed", Impact, sans-serif;
+      text-transform: uppercase;
+      line-height: .99;
+      letter-spacing: -.025em;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 22px 0;
+      font-size: clamp(3.8rem, 8vw, 7.4rem);
+      font-weight: 900;
+    }
+
+    h1 .green {
+      color: var(--green);
+      text-shadow: 0 0 35px rgba(66,245,155,.2);
+    }
+
+    h1 .outline {
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(243,246,251,.8);
+    }
+
+    .hero-copy {
+      max-width: 620px;
+      color: #c0cbd7;
+      font-size: 1.05rem;
+    }
+
+    .hero-copy strong { color: white; }
+
+    .hero-art {
+      position: relative;
+      padding: 13px;
+      border: 1px solid rgba(66,245,155,.25);
+      border-radius: 24px;
+      background: linear-gradient(145deg, rgba(66,245,155,.08), rgba(56,217,255,.04));
+      box-shadow: 0 20px 90px rgba(0,0,0,.45), 0 0 45px rgba(66,245,155,.06);
+    }
+
+    .hero-art img {
+      width: 100%;
+      border-radius: 15px;
+      border: 1px solid var(--border);
+    }
+
+    .art-label {
+      padding: 13px 5px 2px;
+      color: var(--muted);
+      font-size: .73rem;
+      text-align: center;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 26px 0;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 13px 19px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: .85rem;
+      font-weight: 800;
+      transition: transform .18s, border-color .18s, filter .18s;
+    }
+
+    .btn:hover { transform: translateY(-2px); border-color: var(--green); }
+
+    .btn-primary {
+      color: #04110b;
+      background: linear-gradient(110deg, var(--green), var(--cyan));
+      border-color: transparent;
+    }
+
+    .btn-primary:hover { filter: brightness(1.08); }
+
+    .btn-secondary { background: rgba(255,255,255,.035); }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 32px;
+    }
+
+    .stat {
+      padding: 17px 15px;
+      background: rgba(255,255,255,.035);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .stat strong {
+      display: block;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      line-height: 1.1;
+      color: white;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: .7rem;
+      text-transform: uppercase;
+      letter-spacing: .09em;
+    }
+
+    .tickerbar {
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+      background: #0a1017;
+    }
+
+    .ticker-inner {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 17px 0;
+    }
+
+    .token-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      background: rgba(255,255,255,.035);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      font-size: .8rem;
+      font-weight: 800;
+    }
+
+    .token-pill span {
+      color: var(--muted);
+      font-size: .67rem;
+      font-weight: 600;
+    }
+
+    .eth { color: #a9b6ff; }
+    .sol { color: #72f0be; }
+    .xrp { color: #7dc4ff; }
+    .link { color: #6fa5ff; }
+    .ondo { color: #64e6aa; }
+    .avax { color: #ff7483; }
+
+    .section {
+      padding: 76px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-head {
+      max-width: 780px;
+      margin-bottom: 32px;
+    }
+
+    h2 {
+      margin: 15px 0;
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      font-weight: 900;
+    }
+
+    .section-head p { color: var(--muted); }
+
+    .panel {
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: linear-gradient(145deg, rgba(17,24,35,.96), rgba(10,15,23,.96));
+      box-shadow: 0 15px 45px rgba(0,0,0,.13);
+    }
+
+    .thesis-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .token-card {
+      position: relative;
+      overflow: hidden;
+      padding: 23px;
+      min-height: 220px;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      background: linear-gradient(150deg, #121a25, #0b1018);
+      transition: transform .2s, border-color .2s;
+    }
+
+    .token-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(66,245,155,.42);
+    }
+
+    .token-card:after {
       content: "";
       position: absolute;
-      inset: -1px;
-      border-radius: 2rem;
-      background: radial-gradient(circle at top left, rgba(34,197,94,0.18), transparent 60%);
-      pointer-events: none;
-      opacity: 0.55;
+      width: 110px;
+      height: 110px;
+      right: -50px;
+      top: -50px;
+      border-radius: 50%;
+      background: rgba(66,245,155,.07);
+      filter: blur(12px);
     }
 
-    /* Premium card micro-interaction */
-    .card {
-      transition: transform .18s ease, box-shadow .18s ease;
-    }
-    .card:hover {
-      transform: translateY(-2px);
-      box-shadow:
-        0 0 45px rgba(34,197,94,.22),
-        inset 0 0 20px rgba(34,197,94,.05);
+    .token-symbol {
+      display: block;
+      margin-bottom: 8px;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 2.5rem;
+      font-weight: 900;
+      line-height: 1;
     }
 
-    /* Hero title glow (subtle, screenshot-friendly) */
-    h1 {
-      text-shadow:
-        0 0 25px rgba(34,197,94,.25),
-        0 0 45px rgba(6,182,212,.15);
+    .token-role {
+      color: var(--muted);
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
     }
 
-    /* Gradient divider utility */
-    .divider {
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(34,197,94,.8), rgba(6,182,212,.8), transparent);
-      margin: 2.5rem 0;
+    .token-card p {
+      margin: 15px 0 0;
+      color: #c2ccd7;
+      font-size: .87rem;
     }
 
-    /* ================= TOKEN ACCENT COLORS ================= */
-    /* AUTO-DETECT TOKEN TICKERS (SAFE, VISUAL-ONLY) */
+    .allocation {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      align-items: center;
+      margin-top: 24px;
+    }
 
-    /* ETH */
-    :where(h1,h2,h3,p,li,td,th,span):has(:not(*)) {}
-    :where(h1,h2,h3,p,li,td,th,span):contains("$ETH") { color:#8b9cff; text-shadow:0 0 14px rgba(139,156,255,.35); }
+    .allocation-bars { display: grid; gap: 12px; }
 
-    /* SOL */
-    :where(h1,h2,h3,p,li,td,th,span):contains("$SOL") { color:#6ee7b7; text-shadow:0 0 14px rgba(110,231,183,.35); }
+    .bar-label {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: .8rem;
+      margin-bottom: 5px;
+    }
 
-    /* XRP */
-    :where(h1,h2,h3,p,li,td,th,span):contains("$XRP") { color:#60a5fa; text-shadow:0 0 14px rgba(96,165,250,.35); }
+    .bar-track {
+      height: 7px;
+      border-radius: 10px;
+      background: rgba(255,255,255,.08);
+      overflow: hidden;
+    }
 
-    /* LINK */
-    :where(h1,h2,h3,p,li,td,th,span):contains("$LINK") { color:#3b82f6; text-shadow:0 0 14px rgba(59,130,246,.35); }
+    .bar-fill {
+      width: 16.6667%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--green), var(--cyan));
+      border-radius: inherit;
+    }
 
-    /* ONDO */
-    :where(h1,h2,h3,p,li,td,th,span):contains("$ONDO") { color:#22c55e; text-shadow:0 0 14px rgba(34,197,94,.35); }
+    .allocation-note {
+      padding: 22px;
+      border: 1px solid rgba(56,217,255,.23);
+      border-radius: 12px;
+      background: rgba(56,217,255,.045);
+    }
 
-    /* AVAX */
-    :where(h1,h2,h3,p,li,td,th,span):contains("$AVAX") { color:#ef4444; text-shadow:0 0 14px rgba(239,68,68,.35); }
+    .allocation-note strong {
+      display: block;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 2rem;
+      text-transform: uppercase;
+    }
 
-    /* =================================================== */
+    .allocation-note p {
+      margin: 9px 0 0;
+      color: var(--muted);
+      font-size: .85rem;
+    }
 
+    .scenario-intro {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .scenario-intro p { color: var(--muted); margin-bottom: 0; }
+
+    .assumption {
+      padding: 8px 12px;
+      border: 1px solid rgba(66,245,155,.3);
+      border-radius: 7px;
+      color: var(--green);
+      font-size: .72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    .scenario-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .scenario {
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #0d131c;
+    }
+
+    .scenario.bull {
+      border-color: rgba(66,245,155,.45);
+      background: linear-gradient(155deg, rgba(66,245,155,.09), #0d131c 75%);
+    }
+
+    .scenario.mega {
+      border-color: rgba(56,217,255,.45);
+      background: linear-gradient(155deg, rgba(56,217,255,.09), #0d131c 75%);
+    }
+
+    .scenario-name {
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .scenario-total {
+      margin: 12px 0 3px;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: clamp(2.5rem, 4vw, 3.8rem);
+      line-height: 1;
+      font-weight: 900;
+    }
+
+    .scenario-gain {
+      color: var(--green);
+      font-weight: 800;
+      font-size: .95rem;
+    }
+
+    .scenario.mega .scenario-gain { color: var(--cyan); }
+
+    .scenario p {
+      margin: 17px 0 0;
+      color: var(--muted);
+      font-size: .83rem;
+    }
+
+    .scenario-table-wrap {
+      margin-top: 22px;
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 570px;
+      font-size: .86rem;
+    }
+
+    th, td {
+      padding: 15px 17px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+      font-size: .69rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    tbody tr:last-child td { border-bottom: 0; }
+    tbody tr:hover { background: rgba(255,255,255,.025); }
+    td strong { color: var(--green); }
+
+    .fineprint {
+      margin-top: 15px;
+      color: var(--muted);
+      font-size: .75rem;
+    }
+
+    .thesis-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .thesis-item {
+      padding: 23px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255,255,255,.025);
+    }
+
+    .thesis-number {
+      color: var(--green);
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 2.2rem;
+      font-weight: 900;
+    }
+
+    .thesis-item h3 {
+      margin: 5px 0 8px;
+      font-size: 1rem;
+    }
+
+    .thesis-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .86rem;
+    }
+
+    .earn-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .earn-card {
+      padding: 26px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: #0c121b;
+    }
+
+    .earn-card.active {
+      border-color: rgba(66,245,155,.4);
+      background: linear-gradient(145deg, rgba(66,245,155,.08), #0c121b);
+    }
+
+    .earn-card h3 {
+      margin-bottom: 5px;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 2rem;
+      text-transform: uppercase;
+    }
+
+    .earn-card .sub { color: var(--muted); font-size: .8rem; }
+
+    .earn-card ul {
+      padding-left: 19px;
+      margin: 22px 0 0;
+    }
+
+    .earn-card li {
+      margin: 10px 0;
+      color: #c5cfda;
+      font-size: .88rem;
+    }
+
+    .earn-card li strong { color: white; }
+    .earn-card.active li strong { color: var(--green); }
+
+    .risk-box {
+      margin-top: 20px;
+      padding: 20px 22px;
+      border: 1px solid rgba(255,183,77,.28);
+      border-radius: 12px;
+      background: rgba(255,183,77,.045);
+    }
+
+    .risk-box h3 {
+      margin: 0 0 7px;
+      color: #ffca80;
+      font-size: .9rem;
+    }
+
+    .risk-box p {
+      margin: 0;
+      color: #c7cbd0;
+      font-size: .82rem;
+    }
+
+    .cta {
+      position: relative;
+      overflow: hidden;
+      padding: 42px;
+      border: 1px solid rgba(66,245,155,.3);
+      border-radius: 18px;
+      background:
+        radial-gradient(ellipse at 100% 0%, rgba(56,217,255,.12), transparent 40%),
+        linear-gradient(135deg, rgba(66,245,155,.08), #0d131c 60%);
+    }
+
+    .cta h2 {
+      max-width: 700px;
+      margin-top: 12px;
+    }
+
+    .cta p { max-width: 700px; color: #bac6d2; }
+
+    .disclosure {
+      padding: 30px 0 45px;
+      color: var(--muted);
+      font-size: .76rem;
+    }
+
+    .footer {
+      border-top: 1px solid var(--border);
+      background: #05070b;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 24px 0;
+      color: var(--muted);
+      font-size: .75rem;
+    }
+
+    @media (max-width: 850px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+      .hero-art { max-width: 600px; }
+      .thesis-grid { grid-template-columns: repeat(2, 1fr); }
+      .scenario-grid { grid-template-columns: 1fr; }
+      .scenario-total { font-size: 3.5rem; }
+    }
+
+    @media (max-width: 600px) {
+      .wrap { width: min(100% - 28px, var(--max)); }
+      .navlinks { gap: 12px; font-size: .74rem; }
+      .brand { font-size: .74rem; }
+      .hero { padding: 52px 0 44px; }
+      h1 { font-size: clamp(3.4rem, 16vw, 5rem); }
+      .hero-stats { gap: 7px; }
+      .stat { padding: 13px 9px; }
+      .stat strong { font-size: 1.75rem; }
+      .stat span { font-size: .59rem; }
+      .section { padding: 52px 0; }
+      .panel { padding: 18px; }
+      .thesis-grid, .thesis-list, .allocation, .earn-grid { grid-template-columns: 1fr; }
+      .token-card { min-height: auto; }
+      .cta { padding: 25px 20px; }
+      .ticker-inner { justify-content: flex-start; }
+      .btn { width: 100%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *:before, *:after { transition: none !important; }
+    }
   </style>
-
 </head>
-<body class="min-h-screen flex flex-col">
 
-<header class="border-b border-white/10 bg-black/80 backdrop-blur">
-  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-    <a href="https://degenstein.xyz" class="font-extrabold">The Degenstein Report</a>
-    <nav class="flex gap-3 text-sm">
+<body>
+<header class="topbar">
+  <div class="wrap nav">
+    <a class="brand" href="https://degenstein.xyz">THE <span>DEGENSTEIN</span> REPORT</a>
+    <nav class="navlinks" aria-label="Main navigation">
       <a href="https://degenstein.xyz/report/">Reports</a>
       <a href="https://degenstein.xyz">Home</a>
     </nav>
   </div>
 </header>
 
-<main class="flex-1">
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Flagship Portfolio Strategy · 6•6•6 Framework</div>
 
-<section class="relative overflow-hidden border-b border-white/10">
-  <div class="relative max-w-6xl mx-auto px-4 py-12">
-    <div class="flex flex-wrap gap-2 mb-4">
-      <span class="badge">Flagship Portfolio</span>
-      <span class="badge">6•6•6 Framework</span>
+        <h1>
+          666<br>
+          <span class="green">BEAST MODE</span><br>
+          <span class="outline">ACTIVATE.</span>
+        </h1>
+
+        <p class="hero-copy">
+          <strong>Six tokens. Six months. $6,000 deployed.</strong>
+          One scenario-driven framework designed to balance crypto market
+          exposure with an illustrative earn-while-you-wait strategy.
+          No leverage. No crystal-ball predictions. No chasing every narrative.
+        </p>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="#scenarios">Explore the Scenarios ↘</a>
+          <a class="btn btn-secondary" target="_blank" rel="noopener"
+             href="https://twitter.com/intent/tweet?text=666%20Beast%20Mode%20Crypto%20Portfolio%20%E2%80%94%20Six%20tokens.%20Six%20months.%20%246%2C000.&url=https%3A%2F%2Fdegenstein.xyz%2Freport%2F666-beast-mode%2F">
+            Share on X ↗
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <strong>$6K</strong>
+            <span>Starting Capital</span>
+          </div>
+          <div class="stat">
+            <strong>06</strong>
+            <span>Core Assets</span>
+          </div>
+          <div class="stat">
+            <strong>6 MO</strong>
+            <span>Scenario Horizon</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <img src="/assets/666beastmode.png"
+             alt="666 Beast Mode Crypto Portfolio — Degenstein Report">
+        <div class="art-label">
+          THE 6•6•6 FRAMEWORK · SIX POSITIONS · ONE DISCIPLINED SYSTEM
+        </div>
+      </div>
     </div>
+  </section>
 
-```
-<div class="card grid lg:grid-cols-2 gap-8">
-  <div>
-    <h1 class="text-4xl md:text-5xl font-extrabold">666 Beast Mode Crypto Portfolio</h1>
-    <p class="mt-4 text-gray-300">
-      <strong>6 tokens • 6 months • $6,000 deployed</strong> with an <strong>earn‑while‑you‑wait 16% APR overlay</strong>.
-      This is a disciplined, scenario‑driven portfolio — not a meme.
-    </p>
-
-    <div class="mt-4 space-y-1 text-sm text-gray-400">
-      <p>⚙️ Objective: maximize time, not prediction.</p>
-      <p>📅 Horizon: 6 months.</p>
-      <p>⚠️ Always DYOR. Not financial advice.</p>
-    </div>
-
-    <div class="mt-6 flex flex-wrap gap-3">
-      <a href="#scenarios" class="btn btn-primary">📊 Scenario Table</a>
-      <a target="_blank" href="https://twitter.com/intent/tweet?text=New%20Degenstein%20Report%3A%20666%20Beast%20Mode%20Crypto%20Portfolio&url=https://degenstein.xyz/report/666-beast-mode/" class="btn btn-outline">✕ Share on X</a>
-    </div>
-
-    <div class="mt-4 flex gap-2">
-      <a href="https://degenstein.xyz/report/" class="pill">← Back to Reports</a>
-      <a href="https://degenstein.xyz" class="pill">← Back to Home</a>
-    </div>
-  </div>
-
-  <aside>
-    <img src="/assets/666beastmode.png" alt="666 Beast Mode Crypto Portfolio" class="rounded-2xl border border-white/10" />
-    <p class="mt-3 text-xs text-gray-400">Banner concept: dark inferno palette, neon green & cyan glow, six token sigils encircling “666 Beast Mode”.</p>
-  </aside>
-</div>
-```
-
-  </div>
-</section>
-
-<section id="portfolio" class="max-w-6xl mx-auto px-4 py-12">
-  <div class="card">
-    <h2 class="text-2xl font-extrabold mb-4">Token-by-Token Mini Thesis</h2>
-    <p class="text-gray-300 mb-6">Each position is equal-weighted but plays a distinct role in the portfolio.</p>
-
-```
-<div class="grid md:grid-cols-2 gap-4 text-sm">
-  <div class="border border-white/10 rounded-xl p-4">
-    <h3 class="font-bold text-emerald-300">$ETH</h3>
-    <p>Core settlement and collateral layer. Institutional access + staking normalization underpin downside support.</p>
-  </div>
-  <div class="border border-white/10 rounded-xl p-4">
-    <h3 class="font-bold text-emerald-300">$SOL</h3>
-    <p>High-throughput consumer chain. Liquidity clusters where UX and daily active users concentrate.</p>
-  </div>
-  <div class="border border-white/10 rounded-xl p-4">
-    <h3 class="font-bold text-emerald-300">$XRP</h3>
-    <p>Liquidity rail thesis. Value accrues if access and real settlement volumes continue scaling.</p>
-  </div>
-  <div class="border border-white/10 rounded-xl p-4">
-    <h3 class="font-bold text-emerald-300">$LINK</h3>
-    <p>Non-optional infrastructure for tokenization. CCIP adoption compounds long-term demand.</p>
-  </div>
-  <div class="border border-white/10 rounded-xl p-4">
-    <h3 class="font-bold text-emerald-300">$ONDO</h3>
-    <p>On-chain yield proxy. Captures migration of treasury-style returns into crypto rails.</p>
-  </div>
-  <div class="border border-white/10 rounded-xl p-4">
-    <h3 class="font-bold text-emerald-300">$AVAX</h3>
-    <p>App-specific networks. Upside if subnets convert pilots into sustained fee activity.</p>
-  </div>
-</div>
-```
-
-  </div>
-</section>
-
-<section id="scenarios" class="max-w-6xl mx-auto px-4 pb-12">
-  <div class="card">
-    <h2 class="text-2xl font-extrabold mb-2">6-Month Outcome Scenarios (Holding on CoinDepo)</h2>
-    <p class="text-sm text-gray-300 mb-4">Equal-weight portfolio ($1,000 per asset). Yield assumes ~16% APR, prorated over 6 months.</p>
-
-```
-<!-- SCROLL-STOPPER PnL BAR -->
-<div class="mb-6">
-  <div class="text-xs uppercase tracking-widest text-gray-400 mb-2">PnL Snapshot</div>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-    <div class="rounded-xl border border-white/10 bg-white/5 p-4">
-      <div class="text-sm font-bold">Base Case</div>
-      <div class="text-2xl font-extrabold text-emerald-300 mt-1">+$480</div>
-      <div class="text-xs text-gray-400">Yield only</div>
-    </div>
-    <div class="rounded-xl border border-emerald-400/40 bg-emerald-500/10 p-4">
-      <div class="text-sm font-bold">Bull Case</div>
-      <div class="text-2xl font-extrabold text-emerald-300 mt-1">+$2,580</div>
-      <div class="text-xs text-gray-300">Yield + 35% avg price move</div>
-    </div>
-    <div class="rounded-xl border border-cyan-400/40 bg-cyan-500/10 p-4">
-      <div class="text-sm font-bold">Mega Bull</div>
-      <div class="text-2xl font-extrabold text-cyan-200 mt-1">+$4,980</div>
-      <div class="text-xs text-gray-300">Yield + 75% avg price move</div>
+  <!-- TOKEN STRIP -->
+  <div class="tickerbar">
+    <div class="wrap ticker-inner" aria-label="Portfolio assets">
+      <div class="token-pill"><b class="eth">$ETH</b><span>Settlement</span></div>
+      <div class="token-pill"><b class="sol">$SOL</b><span>High Throughput</span></div>
+      <div class="token-pill"><b class="xrp">$XRP</b><span>Liquidity Rails</span></div>
+      <div class="token-pill"><b class="link">$LINK</b><span>Infrastructure</span></div>
+      <div class="token-pill"><b class="ondo">$ONDO</b><span>Tokenized Assets</span></div>
+      <div class="token-pill"><b class="avax">$AVAX</b><span>App Networks</span></div>
     </div>
   </div>
-</div>
 
-<!-- SCENARIO TABLE -->
-<div class="overflow-x-auto">
-  <table class="min-w-full text-sm border border-white/10 rounded-xl overflow-hidden">
-    <thead class="bg-white/5">
-      <tr>
-        <th class="px-3 py-2 text-left">Scenario</th>
-        <th class="px-3 py-2 text-left">Price Assumption</th>
-        <th class="px-3 py-2 text-left">Yield</th>
-        <th class="px-3 py-2 text-left">Total Value</th>
-      </tr>
-    </thead>
-    <tbody class="divide-y divide-white/10">
-      <tr>
-        <td class="px-3 py-2 font-bold">Base</td>
-        <td class="px-3 py-2">0% price appreciation</td>
-        <td class="px-3 py-2">+$480</td>
-        <td class="px-3 py-2 font-bold text-emerald-300">$6,480</td>
-      </tr>
-      <tr>
-        <td class="px-3 py-2 font-bold">Bull</td>
-        <td class="px-3 py-2">+35% avg across assets</td>
-        <td class="px-3 py-2">+$480</td>
-        <td class="px-3 py-2 font-bold text-emerald-300">$8,580</td>
-      </tr>
-      <tr>
-        <td class="px-3 py-2 font-bold">Mega Bull</td>
-        <td class="px-3 py-2">+75% avg across assets</td>
-        <td class="px-3 py-2">+$480</td>
-        <td class="px-3 py-2 font-bold text-cyan-200">$10,980</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+  <!-- PORTFOLIO -->
+  <section class="section" id="portfolio">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">01 · The Portfolio</div>
+        <h2>Six Assets.<br>Six Different Roles.</h2>
+        <p>
+          Equal weighting keeps the starting allocation simple. Each position
+          represents a distinct thesis rather than six bets on the same story.
+        </p>
+      </div>
 
-<p class="mt-3 text-xs text-gray-400">Illustrative math only. Yield: $6,000 × 0.16 × (6/12) = $480. Price outcomes are scenarios, not forecasts.</p>
-```
+      <div class="thesis-grid">
+        <article class="token-card">
+          <span class="token-symbol eth">$ETH</span>
+          <span class="token-role">Core Settlement Layer</span>
+          <p>
+            Core settlement and collateral layer. Institutional access and
+            staking normalization underpin the long-term thesis, though neither
+            removes market risk.
+          </p>
+        </article>
 
-  </div>
-</section>
+        <article class="token-card">
+          <span class="token-symbol sol">$SOL</span>
+          <span class="token-role">Consumer Activity</span>
+          <p>
+            High-throughput consumer chain. The thesis depends on liquidity,
+            user experience, and sustained application activity continuing
+            to attract users and developers.
+          </p>
+        </article>
 
-<section id="deep-thesis" class="max-w-6xl mx-auto px-4 pb-12">
-  <div class="card">
-    <h2 class="text-2xl font-extrabold mb-4">Deeper Portfolio Thesis</h2>
-    <div class="space-y-4 text-sm text-gray-200">
-      <p><strong>1. Time arbitrage:</strong> This portfolio monetizes time via yield, reducing dependency on perfect entry timing.</p>
-      <p><strong>2. Liquidity hierarchy:</strong> ETH, SOL, and XRP anchor liquidity; LINK, ONDO, and AVAX add convex upside.</p>
-      <p><strong>3. Scenario resilience:</strong> Base case still wins. Bull cases add asymmetry without leverage.</p>
-      <p><strong>4. Risk discipline:</strong> No leverage, no forced lockups, no narrative chasing mid-cycle.</p>
+        <article class="token-card">
+          <span class="token-symbol xrp">$XRP</span>
+          <span class="token-role">Liquidity Rails</span>
+          <p>
+            Liquidity rail thesis. The investment case depends on access,
+            adoption, and real settlement activity scaling over time.
+          </p>
+        </article>
+
+        <article class="token-card">
+          <span class="token-symbol link">$LINK</span>
+          <span class="token-role">Infrastructure</span>
+          <p>
+            Oracle and interoperability infrastructure. Continued CCIP adoption
+            and ecosystem integration are potential demand drivers—not a
+            guarantee of token price appreciation.
+          </p>
+        </article>
+
+        <article class="token-card">
+          <span class="token-symbol ondo">$ONDO</span>
+          <span class="token-role">Tokenized Finance</span>
+          <p>
+            Exposure to the tokenization of treasury-style and other real-world
+            assets. Adoption of the platform does not automatically translate
+            into proportional value for the token.
+          </p>
+        </article>
+
+        <article class="token-card">
+          <span class="token-symbol avax">$AVAX</span>
+          <span class="token-role">Application Networks</span>
+          <p>
+            App-specific networks thesis. Upside depends on applications and
+            network deployments converting pilots into sustainable activity
+            and economic demand.
+          </p>
+        </article>
+      </div>
+
+      <div class="panel" style="margin-top:22px">
+        <div class="eyebrow">Starting Allocation</div>
+        <div class="allocation">
+          <div class="allocation-bars">
+            <div>
+              <div class="bar-label"><span>Each token position</span><strong>$1,000 · 16.67%</strong></div>
+              <div class="bar-track"><div class="bar-fill"></div></div>
+            </div>
+            <div>
+              <div class="bar-label"><span>Each token position</span><strong>$1,000 · 16.67%</strong></div>
+              <div class="bar-track"><div class="bar-fill"></div></div>
+            </div>
+            <div>
+              <div class="bar-label"><span>Each token position</span><strong>$1,000 · 16.67%</strong></div>
+              <div class="bar-track"><div class="bar-fill"></div></div>
+            </div>
+            <div>
+              <div class="bar-label"><span>Each token position</span><strong>$1,000 · 16.67%</strong></div>
+              <div class="bar-track"><div class="bar-fill"></div></div>
+            </div>
+            <div>
+              <div class="bar-label"><span>Each token position</span><strong>$1,000 · 16.67%</strong></div>
+              <div class="bar-track"><div class="bar-fill"></div></div>
+            </div>
+            <div>
+              <div class="bar-label"><span>Each token position</span><strong>$1,000 · 16.67%</strong></div>
+              <div class="bar-track"><div class="bar-fill"></div></div>
+            </div>
+          </div>
+
+          <div class="allocation-note">
+            <strong>$6,000 Total</strong>
+            <p>
+              Six equal starting positions. Actual portfolio weights will
+              change as token prices move, unless the portfolio is rebalanced.
+              Trading fees and taxes are not included in the scenarios below.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="earn" class="max-w-6xl mx-auto px-4 pb-14">
-  <div class="card mb-6">
-    <h2 class="text-xl font-extrabold mb-3">CoinDepo vs Idle Wallet — 6-Month Delta</h2>
-    <p class="text-sm text-gray-300 mb-4">Same assets. Same market. The difference is whether your capital works while you wait.</p>
+  <!-- SCENARIOS -->
+  <section class="section" id="scenarios">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">02 · The Scenario Engine</div>
+        <h2>Three Paths.<br>One Reality Check.</h2>
+        <p>
+          Markets do not move in straight lines. These examples model three
+          possible six-month outcomes using the same starting capital and
+          the same illustrative yield assumption.
+        </p>
+      </div>
 
-```
-<div class="grid md:grid-cols-2 gap-4 text-sm">
-  <div class="border border-white/10 rounded-xl p-4 bg-white/5">
-    <h3 class="font-bold mb-2">Idle Wallet</h3>
-    <ul class="space-y-1 text-gray-400">
-      <li>• Starting capital: $6,000</li>
-      <li>• Yield earned: $0</li>
-      <li>• 6-month value (flat prices): $6,000</li>
-      <li>• Opportunity cost: <span class="text-red-400 font-bold">−$480</span></li>
-    </ul>
-  </div>
+      <div class="scenario-intro">
+        <p>Starting capital: <strong>$6,000</strong> · Time horizon: <strong>6 months</strong></p>
+        <span class="assumption">Illustrative 16% APR assumption</span>
+      </div>
 
-  <div class="border border-emerald-400/40 rounded-xl p-4 bg-emerald-500/10">
-    <h3 class="font-bold mb-2 text-emerald-300">Holding on CoinDepo</h3>
-    <ul class="space-y-1 text-gray-200">
-      <li>• Starting capital: $6,000</li>
-      <li>• Yield earned (~16% APR, 6mo): <span class="font-bold">+$480</span></li>
-      <li>• 6-month value (flat prices): <span class="font-bold">$6,480</span></li>
-      <li>• Net delta vs idle: <span class="text-emerald-300 font-extrabold">+$480</span></li>
-    </ul>
-  </div>
-</div>
+      <div class="scenario-grid">
+        <article class="scenario">
+          <div class="scenario-name">01 · Base Case</div>
+          <div class="scenario-total">$6,480</div>
+          <div class="scenario-gain">+$480 · Illustrative gain</div>
+          <p>
+            Assumes flat token prices and $480 in yield over six months.
+            This is a mathematical illustration, not a guaranteed floor or
+            a prediction that the portfolio will preserve its value.
+          </p>
+        </article>
 
-<p class="mt-3 text-xs text-gray-400">Illustrative math only. Rates, eligibility, and terms can change. Always verify directly on CoinDepo.</p>
-```
+        <article class="scenario bull">
+          <div class="scenario-name">02 · Bull Case</div>
+          <div class="scenario-total">$8,580</div>
+          <div class="scenario-gain">+$2,580 · Illustrative gain</div>
+          <p>
+            Assumes an average 35% price increase across the six assets,
+            plus the same $480 illustrative yield. Individual tokens could
+            perform very differently.
+          </p>
+        </article>
 
-  </div>
-  <div class="card">
-    <h2 class="text-2xl font-extrabold mb-3">This Is Why You Hold on CoinDepo</h2>
-    <p class="text-gray-300 mb-4">
-      Keeping assets idle is a hidden tax. CoinDepo lets you earn while you wait — without trading, leverage, or complexity.
-    </p>
+        <article class="scenario mega">
+          <div class="scenario-name">03 · Mega Bull</div>
+          <div class="scenario-total">$10,980</div>
+          <div class="scenario-gain">+$4,980 · Illustrative gain</div>
+          <p>
+            Assumes an average 75% price increase across the six assets,
+            plus the same $480 illustrative yield. This is a high-upside
+            hypothetical—not an expected return.
+          </p>
+        </article>
+      </div>
 
-```
-<div class="grid md:grid-cols-2 gap-4 text-sm">
-  <div class="border border-white/10 rounded-xl p-4">
-    <h3 class="font-bold mb-2">Idle Wallet</h3>
-    <ul class="text-gray-400 space-y-1">
-      <li>• No yield</li>
-      <li>• Full opportunity cost</li>
-      <li>• Only upside is price</li>
-    </ul>
-  </div>
-  <div class="border border-emerald-400/40 rounded-xl p-4 bg-emerald-500/10">
-    <h3 class="font-bold mb-2 text-emerald-300">CoinDepo Hold</h3>
-    <ul class="text-gray-200 space-y-1">
-      <li>• ~16% APR (illustrative)</li>
-      <li>• Yield cushions volatility</li>
-      <li>• Compounds while you wait</li>
-    </ul>
-  </div>
-</div>
+      <div class="scenario-table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Scenario</th>
+              <th>Average Price Assumption</th>
+              <th>Illustrative Yield</th>
+              <th>Ending Value</th>
+              <th>Change vs. Start</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Base</td>
+              <td>0%</td>
+              <td>$480</td>
+              <td><strong>$6,480</strong></td>
+              <td><strong>+$480</strong></td>
+            </tr>
+            <tr>
+              <td>Bull</td>
+              <td>+35%</td>
+              <td>$480</td>
+              <td><strong>$8,580</strong></td>
+              <td><strong>+$2,580</strong></td>
+            </tr>
+            <tr>
+              <td>Mega Bull</td>
+              <td>+75%</td>
+              <td>$480</td>
+              <td><strong>$10,980</strong></td>
+              <td><strong>+$4,980</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-<div class="mt-6 flex flex-wrap gap-3">
-  <a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W" target="_blank" rel="noopener nofollow" class="btn btn-primary">Start on CoinDepo →</a>
-  <span class="text-xs text-gray-400">Always verify current rates & terms. DYOR.</span>
-</div>
-```
+      <p class="fineprint">
+        Calculation assumptions: $6,000 × 16% APR × 6/12 = $480 using
+        simple-interest arithmetic. Bull and Mega Bull price assumptions
+        are applied to the $6,000 starting portfolio. Ending values add
+        the same $480 illustrative yield. These figures assume the full
+        starting capital qualifies for the assumed rate for six months,
+        with no compounding, fees, taxes, defaults, interruptions, or
+        changes in eligibility. Actual outcomes may be substantially lower,
+        including a loss of principal.
+      </p>
+    </div>
+  </section>
 
-  </div>
-</section>
+  <!-- STRATEGY -->
+  <section class="section" id="thesis">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">03 · The Strategy</div>
+        <h2>Beast Mode Is<br>Discipline Mode.</h2>
+        <p>
+          The point is not to predict every candle. It is to build a framework
+          for managing exposure, time, and uncertainty without relying on
+          leverage or perfect timing.
+        </p>
+      </div>
 
+      <div class="thesis-list">
+        <article class="thesis-item">
+          <div class="thesis-number">01</div>
+          <h3>Time Arbitrage</h3>
+          <p>
+            The framework explores putting eligible capital to work while
+            waiting for a longer-term thesis to develop. Yield is variable
+            and introduces its own risks; it does not eliminate poor timing.
+          </p>
+        </article>
+
+        <article class="thesis-item">
+          <div class="thesis-number">02</div>
+          <h3>Liquidity Hierarchy</h3>
+          <p>
+            ETH, SOL, and XRP represent major liquidity-oriented theses.
+            LINK, ONDO, and AVAX add exposure to infrastructure, tokenization,
+            and application-network narratives. All six remain volatile assets.
+          </p>
+        </article>
+
+        <article class="thesis-item">
+          <div class="thesis-number">03</div>
+          <h3>Scenario Resilience</h3>
+          <p>
+            Model a flat market, a strong market, and a high-upside market
+            before committing capital. The base case is not a guaranteed
+            winning outcome: token declines can overwhelm any yield earned.
+          </p>
+        </article>
+
+        <article class="thesis-item">
+          <div class="thesis-number">04</div>
+          <h3>Risk Discipline</h3>
+          <p>
+            The stated framework uses no leverage, avoids forced lockups
+            where possible, and rejects impulsive mid-cycle narrative chasing.
+            Review platform terms and asset-specific risks before acting.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- EARN WHILE YOU WAIT -->
+  <section class="section" id="earn">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">04 · Earn While You Wait</div>
+        <h2>Idle Capital vs.<br>Capital at Work.</h2>
+        <p>
+          Here is the mathematical difference between earning no yield and
+          earning the illustrative rate used in this report—assuming the
+          token prices themselves remain unchanged.
+        </p>
+      </div>
+
+      <div class="earn-grid">
+        <article class="earn-card">
+          <h3>Idle Wallet</h3>
+          <div class="sub">Illustration · Flat token prices</div>
+          <ul>
+            <li>Starting capital: <strong>$6,000</strong></li>
+            <li>Yield earned: <strong>$0</strong></li>
+            <li>Illustrative ending value: <strong>$6,000</strong></li>
+            <li>Yield difference vs. the example: <strong>$480</strong></li>
+          </ul>
+        </article>
+
+        <article class="earn-card active">
+          <h3>Yield Scenario</h3>
+          <div class="sub">Illustration · 16% APR for six months</div>
+          <ul>
+            <li>Starting capital: <strong>$6,000</strong></li>
+            <li>Assumed yield: <strong>+$480</strong></li>
+            <li>Illustrative ending value: <strong>$6,480</strong></li>
+            <li>Difference vs. zero yield: <strong>+$480</strong></li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="risk-box">
+        <h3>Important: yield is not a protective floor.</h3>
+        <p>
+          A yield platform can introduce counterparty, custody, liquidity,
+          withdrawal, smart-contract, and operational risks, depending on
+          its structure and terms. A 10% fall in a $6,000 token portfolio
+          equals $600—more than the $480 illustrative yield. The yield
+          assumption does not guarantee that assets can be withdrawn on
+          demand or that principal will be returned in full.
+        </p>
+      </div>
+
+      <div class="panel" style="margin-top:22px">
+        <div class="eyebrow">The Platform Consideration</div>
+        <h3 style="font-size:1.35rem;margin:13px 0">
+          Understand the terms before chasing the rate.
+        </h3>
+        <p style="color:var(--muted);font-size:.9rem">
+          CoinDepo is the yield platform referenced in this framework.
+          The 16% APR figure is an assumption used for the calculations;
+          it is not a representation that this rate is currently available
+          for every asset, account, or jurisdiction. Confirm live rates,
+          eligibility, supported assets, withdrawal conditions, and all
+          applicable terms directly with the platform.
+        </p>
+        <div class="actions" style="margin-bottom:0">
+          <a class="btn btn-primary"
+             href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W"
+             target="_blank" rel="noopener nofollow">
+            Explore CoinDepo ↗
+          </a>
+          <a class="btn btn-secondary"
+             href="https://degenstein.xyz/report/">
+            Browse All Reports →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="section">
+    <div class="wrap">
+      <div class="cta">
+        <div class="eyebrow">The Degenstein Framework</div>
+        <h2>Less Hype.<br>More Structure.</h2>
+        <p>
+          Six assets. A defined horizon. Three transparent scenarios.
+          An illustrative yield overlay. The goal is not to promise an outcome.
+          It is to make the assumptions, opportunities, and risks visible
+          before a decision is made.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#portfolio">Review the Six Assets ↑</a>
+          <a class="btn btn-secondary" href="#scenarios">Revisit the Numbers ↑</a>
+        </div>
+      </div>
+
+      <div class="disclosure">
+        <strong>Disclosure:</strong> This report is for informational and
+        educational purposes only and is not financial, investment, tax,
+        or legal advice. Cryptocurrency assets are highly volatile and can
+        lose substantial or all of their value. Scenario figures are
+        hypothetical illustrations based on stated assumptions, not forecasts
+        or guarantees. APRs may change and may depend on platform terms,
+        eligibility, asset, jurisdiction, and other conditions. Yield products
+        can involve counterparty, custody, liquidity, and other risks. Past
+        performance does not predict future results. Conduct your own research
+        and evaluate whether any strategy is appropriate for your circumstances.
+        Referral links may benefit The Degenstein Report.
+      </div>
+    </div>
+  </section>
 </main>
 
-<footer class="border-t border-white/10">
-  <div class="max-w-6xl mx-auto px-4 py-8 text-xs text-gray-400 flex justify-between">
-    <span>© Degenstein</span>
-    <span>Nothing here is financial advice. Always DYOR.</span>
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <span>© The Degenstein Report</span>
+    <span>Systems first. No hopium. Always DYOR.</span>
+    <span><a href="https://degenstein.xyz">degenstein.xyz</a></span>
   </div>
 </footer>
-
 </body>
 </html>
+
 
 
 
