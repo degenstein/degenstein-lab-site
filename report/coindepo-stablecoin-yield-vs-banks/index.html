@@ -1,560 +1,714 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Where Does $10,000 Earn the Most? | CoinDepo vs Banks</title>
+<title>Where Should $10,000 Work Harder? | The Degenstein Report</title>
+<meta name="description" content="Compare illustrative $10,000 bank savings, CD, and stablecoin yield scenarios over 90 days, six months, and one year. Understand the math and risks.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://degenstein.xyz/report/coindepo-stablecoin-yield-vs-banks/">
 
-<!-- SEO ADDITION START -->
-<meta name="description" content="Compare where $10,000 earns the most: high-yield savings accounts, CDs, and CoinDepo stablecoin yield. Real math across 90 days, 6 months, and 12 months." />
-<link rel="canonical" href="https://degenstein.xyz/report/coindepo-stablecoin-yield-vs-banks/" />
-<!-- SEO ADDITION END -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Degenstein Report">
+<meta property="og:title" content="$10,000: Bank vs. Stablecoin Yield">
+<meta property="og:description" content="Same $10,000. Different assumptions. See the numbers and understand the risks.">
+<meta property="og:image" content="https://degenstein.xyz/assets/10000save.png">
+<meta property="og:url" content="https://degenstein.xyz/report/coindepo-stablecoin-yield-vs-banks/">
 
-<!-- Open Graph -->
-<meta property="og:type" content="article" />
-<meta property="og:title" content="Where Does $10,000 Earn the Most in 1 Year?" />
-<meta property="og:description" content="A side-by-side breakdown of $10,000 in banks vs CoinDepo stablecoin yield. Real math. No hype." />
-<meta property="og:image" content="https://degenstein.xyz/assets/10000save.png" />
-<meta property="og:url" content="https://degenstein.xyz/report/coindepo-stablecoin-yield-vs-banks.html" />
-<meta property="og:site_name" content="Degenstein Research" />
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@degensteindgn">
+<meta name="twitter:title" content="$10,000: Bank vs. Stablecoin Yield">
+<meta name="twitter:description" content="Compare the illustrative math. Understand the risk before chasing the rate.">
+<meta name="twitter:image" content="https://degenstein.xyz/assets/10000save.png">
+<meta name="theme-color" content="#080c12">
 
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Where Does $10,000 Earn the Most?" />
-<meta name="twitter:description" content="$10k in a bank vs stablecoins. The difference isn’t subtle." />
-<meta name="twitter:image" content="https://degenstein.xyz/assets/10000save.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-  .reveal{
-  opacity:0;
-  transform:translateY(30px);
-  transition:all .6s ease;
-}
-.reveal.active{
-  opacity:1;
-  transform:translateY(0);
-}
-  /* CONVERSION UPGRADE */
-.card{
-  transition: all .25s ease;
-}
-.card:hover{
-  transform: translateY(-4px);
-  box-shadow: 0 20px 60px rgba(124,124,255,.2);
-}
-
-a:hover{
-  opacity:.9;
-}
-
-/* CHART ANIMATION */
-svg polyline{
-  stroke-dasharray:1000;
-  stroke-dashoffset:1000;
-  animation:drawLine 2s ease forwards;
-}
-@keyframes drawLine{
-  to{stroke-dashoffset:0}
-}
 :root{
-  --bg:#0b0f1a;
-  --card:#12172a;
-  --accent:#7c7cff;
-  --text:#e6e8f0;
-  --muted:#9aa0c3;
-  --success:#3ddc97;
+  color-scheme:dark;
+  --bg:#080c12;
+  --panel:#111923;
+  --text:#f3f7fb;
+  --muted:#a5b1c0;
+  --green:#42f5a1;
+  --cyan:#35d9ff;
+  --purple:#9991ff;
+  --border:rgba(255,255,255,.12);
+  --max:1100px;
 }
 *{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
 body{
   margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-  background:radial-gradient(circle at top,#12183a,var(--bg));
+  background:radial-gradient(ellipse at 50% -10%,rgba(43,121,95,.18),transparent 40%),var(--bg);
   color:var(--text);
-  line-height:1.6;
+  font-family:Inter,system-ui,sans-serif;
+  line-height:1.7;
 }
-.container{max-width:980px;margin:0 auto;padding:40px 20px 80px}
-h1{
-  font-size:2.6rem;
-  background:linear-gradient(90deg,#b8b8ff,var(--accent));
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+a{color:inherit;text-decoration:none}
+.wrap{width:min(var(--max),calc(100% - 36px));margin:auto}
+.top{
+  position:sticky;top:0;z-index:20;
+  background:rgba(8,12,18,.9);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
 }
-h2{margin-top:56px}
-h3{margin-top:28px}
-p{color:var(--muted);max-width:860px}
-ul{color:var(--muted)}
-.card{
-  margin-top:28px;
-  padding:24px;
-  border-radius:16px;
-  background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,0));
-  border:1px solid rgba(124,124,255,.2);
-  box-shadow:0 0 40px rgba(124,124,255,.1);
+.nav{
+  display:flex;justify-content:space-between;align-items:center;
+  gap:18px;min-height:66px;
 }
-.highlight{color:var(--success);font-weight:700}
-footer{margin-top:80px;color:var(--muted);font-size:.9rem}
+.brand{font-size:.82rem;font-weight:900;letter-spacing:.1em}
+.brand b{color:var(--green)}
+.navlinks{display:flex;gap:20px;color:var(--muted);font-size:.82rem}
+.navlinks a:hover{color:var(--green)}
+.hero{
+  position:relative;overflow:hidden;padding:76px 0 62px;
+  border-bottom:1px solid var(--border);
+  background:
+    radial-gradient(ellipse at 85% 25%,rgba(53,217,255,.12),transparent 30%),
+    radial-gradient(ellipse at 12% 55%,rgba(66,245,161,.09),transparent 34%);
+}
+.hero:after{
+  content:"$10K";position:absolute;right:-30px;top:20px;
+  font:900 clamp(170px,30vw,360px)/1 "Barlow Condensed",sans-serif;
+  color:rgba(255,255,255,.025);pointer-events:none;
+}
+.hero-grid{
+  position:relative;z-index:1;display:grid;
+  grid-template-columns:1.1fr .9fr;gap:42px;align-items:center;
+}
+.eyebrow{
+  display:inline-flex;gap:9px;align-items:center;
+  color:var(--green);font-size:.72rem;font-weight:800;
+  letter-spacing:.17em;text-transform:uppercase;
+}
+.eyebrow:before{
+  content:"";width:22px;height:2px;background:var(--green);
+  box-shadow:0 0 12px var(--green);
+}
+h1,h2,h3,.display{
+  font-family:"Barlow Condensed",Impact,sans-serif;
+  text-transform:uppercase;line-height:1.02;letter-spacing:-.02em;
+}
+h1{font-size:clamp(3.5rem,7vw,6.5rem);margin:20px 0;font-weight:900}
+h1 .green{color:var(--green);text-shadow:0 0 28px rgba(66,245,161,.18)}
+h1 .outline{color:transparent;-webkit-text-stroke:1px #eaf2f7}
+.lead{max-width:640px;color:#c4ced9;font-size:1.03rem}
+.lead strong{color:white}
+.hero-art{
+  padding:12px;border:1px solid rgba(66,245,161,.25);
+  border-radius:20px;
+  background:linear-gradient(140deg,rgba(66,245,161,.07),rgba(53,217,255,.04));
+  box-shadow:0 20px 70px rgba(0,0,0,.5);
+}
+.hero-art img{width:100%;border-radius:12px}
+.caption{padding:12px 4px 0;text-align:center;color:var(--muted);font-size:.72rem}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:13px 18px;border:1px solid var(--border);
+  border-radius:8px;font-size:.83rem;font-weight:800;transition:.18s;
+}
+.btn:hover{transform:translateY(-2px);border-color:var(--green)}
+.primary{
+  color:#06120c;
+  background:linear-gradient(110deg,var(--green),var(--cyan));
+  border-color:transparent;
+}
+.secondary{background:rgba(255,255,255,.03)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:28px}
+.stat{padding:15px;border:1px solid var(--border);border-radius:10px;background:rgba(255,255,255,.025)}
+.stat strong{display:block;font:800 2rem/1.1 "Barlow Condensed",sans-serif}
+.stat span{color:var(--muted);font-size:.68rem;text-transform:uppercase;letter-spacing:.08em}
+.section{padding:68px 0;border-bottom:1px solid var(--border)}
+.section-head{max-width:780px;margin-bottom:28px}
+.section-head h2{font-size:clamp(2.7rem,5vw,4.2rem);margin:13px 0}
+.section-head p{color:var(--muted)}
+.panel{
+  padding:26px;border:1px solid var(--border);border-radius:15px;
+  background:linear-gradient(145deg,#121b26,#0c121a);
+}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.compare-card{padding:23px;border:1px solid var(--border);border-radius:13px;background:rgba(255,255,255,.015)}
+.compare-card.highlight{
+  border-color:rgba(66,245,161,.4);
+  background:linear-gradient(145deg,rgba(66,245,161,.07),#111923);
+}
+.label{color:var(--muted);font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.big-number{font:900 clamp(2.4rem,5vw,4rem)/1 "Barlow Condensed",sans-serif;margin:10px 0}
+.green-text{color:var(--green)}
+.purple-text{color:var(--purple)}
+.cyan-text{color:var(--cyan)}
+.note{color:var(--muted);font-size:.78rem}
+.calc-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:22px;align-items:center}
+.range{width:100%;accent-color:var(--green);margin:18px 0}
+.calc-results{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.result{padding:17px;border-radius:10px;border:1px solid var(--border);background:rgba(255,255,255,.02)}
+.result strong{display:block;font:800 1.9rem/1.2 "Barlow Condensed",sans-serif}
+.result span{font-size:.75rem;color:var(--muted)}
+.scenario-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.scenario{padding:22px;border:1px solid var(--border);border-radius:13px;background:#101721}
+.scenario:nth-child(2){border-color:rgba(66,245,161,.35)}
+.scenario:nth-child(3){border-color:rgba(53,217,255,.4)}
+.scenario h3{font-size:1.5rem;margin:0 0 8px}
+.scenario p{font-size:.82rem;color:var(--muted)}
+.scenario .big-number{font-size:2.6rem}
+.chart{width:100%;height:auto;display:block}
+.legend{display:flex;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:.78rem;margin-top:12px}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px}
+.decision-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.decision{padding:23px;border:1px solid var(--border);border-radius:13px;background:rgba(255,255,255,.015)}
+.decision h3{font-size:1.7rem;margin:0 0 8px}
+.decision p,.decision li{color:var(--muted);font-size:.86rem}
+.decision ul{padding-left:19px}
+.risk{
+  margin-top:18px;padding:20px;border:1px solid rgba(255,189,107,.35);
+  border-radius:12px;background:rgba(255,189,107,.03);
+}
+.risk strong{color:#ffcb87}
+.risk p{margin:5px 0 0;color:#c5ccd5;font-size:.84rem}
+.cta{
+  padding:34px;border:1px solid rgba(66,245,161,.35);border-radius:16px;
+  background:
+    radial-gradient(ellipse at 100% 0,rgba(53,217,255,.12),transparent 40%),
+    linear-gradient(120deg,rgba(66,245,161,.04),#101721);
+}
+.cta h2{font-size:clamp(2.7rem,5vw,4rem);margin:12px 0}
+.cta p{max-width:720px;color:#c1ccd7}
+.footer{padding:25px 0;color:var(--muted);font-size:.76rem}
+.footer-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:15px}
+.disclosure{padding:22px 0 40px;color:var(--muted);font-size:.76rem}
+.sticky{
+  position:fixed;left:50%;bottom:16px;transform:translateX(-50%);
+  z-index:30;max-width:calc(100% - 24px);
+  display:flex;align-items:center;gap:12px;padding:10px 12px 10px 17px;
+  border:1px solid rgba(255,255,255,.17);border-radius:999px;
+  background:rgba(13,20,29,.95);box-shadow:0 10px 45px rgba(0,0,0,.6);
+  backdrop-filter:blur(14px);font-size:.78rem;
+}
+.sticky strong{white-space:nowrap}
+.sticky .btn{padding:9px 14px;border-radius:999px;white-space:nowrap}
+.faq details{padding:17px 0;border-bottom:1px solid var(--border)}
+.faq summary{cursor:pointer;font-weight:800}
+.faq details p{color:var(--muted);font-size:.86rem;margin:12px 0 0}
+
+@media(max-width:800px){
+  .hero-grid,.calc-grid{grid-template-columns:1fr}
+  .hero-art{max-width:650px}
+  .scenario-grid{grid-template-columns:1fr}
+  .hero{padding:54px 0}
+  .section{padding:52px 0}
+}
+@media(max-width:560px){
+  .wrap{width:calc(100% - 28px)}
+  .navlinks{gap:12px;font-size:.72rem}
+  .brand{font-size:.7rem}
+  .stat{padding:11px 8px}
+  .stat strong{font-size:1.65rem}
+  .stat span{font-size:.58rem}
+  .compare,.calc-results,.decision-grid{grid-template-columns:1fr}
+  .panel{padding:18px}
+  .btn{width:100%}
+  .sticky{width:calc(100% - 20px);justify-content:space-between}
+  .sticky strong{font-size:.72rem}
+  .sticky .btn{width:auto}
+  .section-head h2{font-size:3rem}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important}
+}
 </style>
 </head>
-<!-- STICKY CTA -->
-<div id="stickyCTA" style="
-position:fixed;
-bottom:20px;
-left:50%;
-transform:translateX(-50%);
-background:linear-gradient(135deg,#7c7cff,#3ddc97);
-color:#0b0f1a;
-padding:14px 26px;
-border-radius:999px;
-font-weight:900;
-box-shadow:0 0 20px rgba(124,124,255,.5);
-z-index:999;
-cursor:pointer;
-">
-Start earning 20–23% →
-</div>
 
-<script>
-document.getElementById("stickyCTA").onclick = function(){
-  window.open("https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W","_blank");
-}
-</script>
 <body>
-<div class="container">
-  <!-- CONVERSION HERO -->
-<div class="card" style="margin-top:0">
+<header class="top">
+  <div class="wrap nav">
+    <a class="brand" href="https://degenstein.xyz">THE <b>DEGENSTEIN</b> REPORT</a>
+    <nav class="navlinks">
+      <a href="https://degenstein.xyz/">Home</a>
+      <a href="https://degenstein.xyz/report/">Reports</a>
+    </nav>
+  </div>
+</header>
 
-  <h1 style="margin-top:0">
-    $10,000 → $12,300 vs $10,500
-  </h1>
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Capital Comparison · Stablecoin Yield</div>
+        <h1>WHERE SHOULD<br><span class="green">$10,000</span><br><span class="outline">WORK HARDER?</span></h1>
+        <p class="lead">
+          A bank account. A CD. A stablecoin yield platform.
+          <strong>Same starting capital—different rates, different risks.</strong>
+          See how the numbers compare before you make a decision.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="#calculator">Run the Calculator ↓</a>
+          <a class="btn secondary" href="#risks">Understand the Risks</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><strong>$10K</strong><span>Starting Balance</span></div>
+          <div class="stat"><strong>3</strong><span>Time Horizons</span></div>
+          <div class="stat"><strong>2 Sides</strong><span>Return vs. Risk</span></div>
+        </div>
+      </div>
 
-  <p style="font-size:1.15rem;max-width:720px">
-    The difference isn’t subtle —
-    <span class="highlight">$1,800+ more per year</span> on the same capital.
-  </p>
-
-  <div style="display:flex;gap:24px;flex-wrap:wrap;margin-top:18px">
-
-    <div>
-      <div style="color:var(--muted)">Bank / CD</div>
-      <div style="font-size:1.8rem;font-weight:800">$10,500</div>
-    </div>
-
-    <div>
-      <div style="color:var(--muted)">CoinDepo</div>
-      <div style="font-size:1.8rem;font-weight:800;color:var(--accent)">
-        $12,300
+      <div class="hero-art">
+        <img src="/assets/10000save.png" alt="Where should $10,000 work harder: bank savings versus stablecoin yield">
+        <div class="caption">THE DEGENSTEIN REPORT · COMPARE THE MATH, NOT JUST THE HEADLINE RATE</div>
       </div>
     </div>
+  </section>
 
+  <!-- HEADLINE COMPARISON -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">01 · The Headline Comparison</div>
+        <h2>Potential Return Is Only Half the Story.</h2>
+        <p>
+          This comparison uses illustrative 5%, 20%, and 23% annual-rate
+          assumptions. These are examples for modeling—not verified live
+          offers or guaranteed returns.
+        </p>
+      </div>
+
+      <div class="compare">
+        <article class="compare-card">
+          <div class="label">Traditional Savings / CD Example</div>
+          <div class="big-number">$10,500</div>
+          <p>Illustrative ending balance after one year at 5% simple interest on $10,000.</p>
+          <div class="note">Example interest: $500</div>
+        </article>
+
+        <article class="compare-card highlight">
+          <div class="label">Stablecoin Yield Example</div>
+          <div class="big-number green-text">$12,300</div>
+          <p>Illustrative ending balance after one year at 23% simple interest on $10,000.</p>
+          <div class="note">Example interest: $2,300</div>
+        </article>
+      </div>
+
+      <p class="note" style="margin-top:15px">
+        The $1,800 difference results from applying the assumed rates
+        (23% versus 5%) to $10,000 for one year. It is not a promise that
+        a platform will pay those rates or return principal.
+      </p>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE CALCULATOR -->
+  <section class="section" id="calculator">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">02 · Interactive Calculator</div>
+        <h2>Change the Amount. See the Math.</h2>
+        <p>
+          Adjust your starting balance and rates to compare illustrative
+          one-year simple-interest outcomes. These are editable assumptions,
+          not current rate quotes.
+        </p>
+      </div>
+
+      <div class="panel calc-grid">
+        <div>
+          <label for="amount"><strong>Starting Amount: <span id="amountLabel">$10,000</span></strong></label>
+          <input class="range" type="range" id="amount" min="1000" max="100000" step="500" value="10000">
+
+          <label for="bankRate">Bank / CD Assumed Annual Rate (%)</label>
+          <input id="bankRate" type="number" min="0" max="30" step="0.1" value="5"
+            style="width:100%;margin:8px 0 18px;padding:12px;border-radius:8px;border:1px solid var(--border);background:#080c12;color:white">
+
+          <label for="yieldRate">Stablecoin Yield Assumed Annual Rate (%)</label>
+          <input id="yieldRate" type="number" min="0" max="100" step="0.1" value="23"
+            style="width:100%;margin:8px 0;padding:12px;border-radius:8px;border:1px solid var(--border);background:#080c12;color:white">
+
+          <p class="note">
+            Uses simple interest for 12 months. Fees, taxes, rate changes,
+            losses, and compounding are excluded.
+          </p>
+        </div>
+
+        <div class="calc-results" aria-live="polite">
+          <div class="result">
+            <span>Bank / CD Ending Balance</span>
+            <strong id="bankEnd">$10,500</strong>
+            <span id="bankInterest">$500 illustrative interest</span>
+          </div>
+          <div class="result">
+            <span>Stablecoin Ending Balance</span>
+            <strong id="yieldEnd" class="green-text">$12,300</strong>
+            <span id="yieldInterest">$2,300 illustrative interest</span>
+          </div>
+          <div class="result">
+            <span>Difference in Interest</span>
+            <strong id="delta" class="cyan-text">$1,800</strong>
+            <span>Based on your assumptions</span>
+          </div>
+          <div class="result">
+            <span>90-Day Stablecoin Interest</span>
+            <strong id="ninety">$575</strong>
+            <span>Approx. 90/365 of annual simple interest</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIME HORIZONS -->
+  <section class="section" id="horizons">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">03 · Time Horizon</div>
+        <h2>90 Days. Six Months. One Year.</h2>
+        <p>
+          Using $10,000 and the original illustrative rates: 5% for bank/CD,
+          20% for a quarterly stablecoin-yield example, and 23% for an annual
+          stablecoin-yield example. Simple-interest math only; actual product
+          terms may work differently.
+        </p>
+      </div>
+
+      <div class="scenario-grid">
+        <article class="scenario">
+          <div class="label">90 Days · Approx.</div>
+          <h3>Short Horizon</h3>
+          <div class="big-number">$10,123</div>
+          <p>Bank/CD at 5%: about $123 interest using a 365-day year.</p>
+          <div class="big-number green-text">$10,493</div>
+          <p>Stablecoin yield at 20%: about $493 interest using a 365-day year.</p>
+        </article>
+
+        <article class="scenario">
+          <div class="label">6 Months · Approx.</div>
+          <h3>Midyear Check</h3>
+          <div class="big-number">$10,250</div>
+          <p>Bank/CD at 5%: about $250 interest.</p>
+          <div class="big-number green-text">$11,000</div>
+          <p>Stablecoin yield at 20%: about $1,000 interest.</p>
+        </article>
+
+        <article class="scenario">
+          <div class="label">12 Months · Approx.</div>
+          <h3>Full Year</h3>
+          <div class="big-number">$10,500</div>
+          <p>Bank/CD at 5%: $500 interest.</p>
+          <div class="big-number purple-text">$12,300</div>
+          <p>Stablecoin yield at 23%: $2,300 interest.</p>
+        </article>
+      </div>
+
+      <p class="note" style="margin-top:15px">
+        Illustrations use simple interest, not compound growth. The original
+        page's claim of about $500 in 90 days on $10,000 at 20% APR is slightly
+        overstated; simple interest over 90 days is about $493 using a 365-day year.
+      </p>
+    </div>
+  </section>
+
+  <!-- VISUAL COMPARISON -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">04 · Visual Comparison</div>
+        <h2>See the Gap—Under the Assumptions.</h2>
+        <p>
+          Illustrative ending balances for a $10,000 starting amount.
+          These bars compare the stated assumptions, not confirmed live offers.
+        </p>
+      </div>
+
+      <div class="panel">
+        <svg class="chart" viewBox="0 0 760 330" role="img"
+          aria-label="Illustrative one-year balances: bank at 5 percent equals 10500 dollars, stablecoin example at 20 percent equals 12000 dollars, and stablecoin example at 23 percent equals 12300 dollars">
+          <g stroke="rgba(255,255,255,.10)" stroke-dasharray="5 5">
+            <line x1="130" y1="65" x2="715" y2="65"/>
+            <line x1="130" y1="125" x2="715" y2="125"/>
+            <line x1="130" y1="185" x2="715" y2="185"/>
+            <line x1="130" y1="245" x2="715" y2="245"/>
+          </g>
+          <g fill="#a5b1c0" font-size="13">
+            <text x="18" y="69">$12.5k</text>
+            <text x="18" y="129">$12k</text>
+            <text x="18" y="189">$11k</text>
+            <text x="18" y="249">$10k</text>
+          </g>
+          <line x1="130" y1="245" x2="715" y2="245" stroke="#728093"/>
+          <rect x="190" y="215" width="100" height="30" rx="5" fill="#8995a5"/>
+          <rect x="365" y="155" width="100" height="90" rx="5" fill="#42f5a1"/>
+          <rect x="540" y="137" width="100" height="108" rx="5" fill="#9991ff"/>
+          <g font-size="15" font-weight="700" text-anchor="middle">
+            <text x="240" y="204" fill="#eaf0f5">$10,500</text>
+            <text x="415" y="144" fill="#42f5a1">$12,000</text>
+            <text x="590" y="126" fill="#b9b3ff">$12,300</text>
+          </g>
+          <g fill="#a5b1c0" font-size="12" text-anchor="middle">
+            <text x="240" y="273">Bank / CD</text>
+            <text x="415" y="273">20% Example</text>
+            <text x="590" y="273">23% Example</text>
+            <text x="380" y="310">Illustrative 12-Month Ending Balance</text>
+          </g>
+        </svg>
+
+        <div class="legend">
+          <span><i class="dot" style="background:#8995a5"></i>Bank / CD at 5%</span>
+          <span><i class="dot" style="background:#42f5a1"></i>Stablecoin example at 20%</span>
+          <span><i class="dot" style="background:#9991ff"></i>Stablecoin example at 23%</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DECISION GUIDE -->
+  <section class="section" id="decision">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">05 · Decision Framework</div>
+        <h2>Quarterly Flexibility or Annual Commitment?</h2>
+        <p>
+          Do not choose based on the headline rate alone. Liquidity needs,
+          terms, counterparty risk, and your ability to absorb losses matter.
+        </p>
+      </div>
+
+      <div class="decision-grid">
+        <article class="decision">
+          <h3 class="green-text">Quarterly Example · 20%</h3>
+          <p>
+            May be worth evaluating if actual product terms support shorter
+            commitment periods and that flexibility matters to you.
+          </p>
+          <ul>
+            <li>You may need access to funds sooner.</li>
+            <li>You want to reassess rates and terms more often.</li>
+            <li>You understand renewal rates can change.</li>
+          </ul>
+        </article>
+
+        <article class="decision">
+          <h3 class="purple-text">Annual Example · 23%</h3>
+          <p>
+            May be worth evaluating only if the actual offer exists, you
+            understand restrictions, and you can tolerate the commitment and risks.
+          </p>
+          <ul>
+            <li>You can set aside funds for the stated term.</li>
+            <li>You maintain separate emergency savings.</li>
+            <li>You have reviewed early-withdrawal and platform terms.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="risk" id="risks">
+        <strong>The risk-adjusted answer matters more than the biggest number.</strong>
+        <p>
+          CoinDepo is not a bank and its stablecoin yield is not FDIC-insured.
+          Stablecoins can depeg, platforms can fail or restrict withdrawals,
+          and rates and eligibility can change. A higher advertised yield is
+          compensation for a different risk profile—not a bank deposit with a
+          larger interest rate.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">06 · Frequently Asked Questions</div>
+        <h2>Before You Move Your Money.</h2>
+      </div>
+
+      <div class="panel faq">
+        <details>
+          <summary>Is CoinDepo safer than a bank?</summary>
+          <p>
+            They are different types of arrangements. CoinDepo is not a bank
+            and stablecoin yield products are not FDIC-insured bank deposits.
+            Review custody, counterparty, liquidity, and withdrawal risks before depositing.
+          </p>
+        </details>
+
+        <details>
+          <summary>Are stablecoin yield earnings taxable?</summary>
+          <p>
+            Yield or interest-like rewards may have tax consequences. The
+            correct treatment depends on circumstances and applicable tax rules.
+            Keep records and consult a qualified tax professional.
+          </p>
+        </details>
+
+        <details>
+          <summary>Can I lose money with stablecoin yield?</summary>
+          <p>
+            Yes. Risks can include platform failure, withdrawal restrictions,
+            stablecoin depegging, operational issues, and changing terms.
+            A dollar-pegged target does not guarantee a stable market price
+            or principal protection.
+          </p>
+        </details>
+
+        <details>
+          <summary>Are the 20% and 23% rates live CoinDepo offers?</summary>
+          <p>
+            They are assumptions carried into this comparison from the source
+            page, not independently verified live offers. Check current rates,
+            supported assets, availability, eligibility, and terms directly
+            with CoinDepo before making a decision.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="section">
+    <div class="wrap">
+      <div class="cta">
+        <div class="eyebrow">Research Before You Reach for Yield</div>
+        <h2>Compare the Return.<br>Respect the Risk.</h2>
+        <p>
+          Use the numbers as a starting point—not a promise. Review the terms,
+          compare alternatives, and decide whether the risk fits your situation.
+        </p>
+
+        <div class="actions">
+          <a class="btn primary"
+             href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV"
+             target="_blank" rel="noopener nofollow">CoinDepo · USA ↗</a>
+
+          <a class="btn secondary"
+             href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W"
+             target="_blank" rel="noopener nofollow">CoinDepo · International ↗</a>
+
+          <a class="btn secondary"
+             href="/report/coindepo-earn-while-you-hold/"
+             target="_blank" rel="noopener">Read the CoinDepo Deep Dive →</a>
+        </div>
+
+        <p class="note">
+          Referral disclosure: these links may benefit The Degenstein Report.
+          Verify all rates and terms directly with the provider.
+        </p>
+      </div>
+
+      <div class="disclosure">
+        <strong>Important disclosure:</strong> This page is for educational and
+        informational purposes only and is not financial, legal, or tax advice.
+        Examples use simplified assumptions and may not reflect actual bank
+        rates, CD terms, CoinDepo offers, fees, taxes, compounding, lockups, or
+        withdrawal conditions. No rate or return is guaranteed. Stablecoin
+        yield products carry risks, including loss of principal. Compare
+        products carefully and seek qualified professional advice where appropriate.
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <span>© The Degenstein Report</span>
+    <span>Systems first. No hopium. Always DYOR.</span>
+    <span><a href="https://degenstein.xyz/report/">All Reports</a></span>
   </div>
-
-  <div style="margin-top:18px">
-    <a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W"
-    style="display:inline-block;padding:16px 32px;border-radius:999px;
-    background:linear-gradient(135deg,#7c7cff,#3ddc97);
-    color:#0b0f1a;font-weight:900;text-decoration:none">
-      Start earning 20–23% →
-    </a>
-  </div>
-
-</div>
-<!-- TOP NAV -->
-<div style="
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:16px;
-  margin-bottom:32px;
-  flex-wrap:wrap;
-">
-
-  <!-- Left links -->
-  <div style="display:flex;gap:18px;flex-wrap:wrap">
-    <a href="https://degenstein.xyz/"
-       style="color:#9aa0c3;text-decoration:none;font-weight:600">
-      ← Main Page
-    </a>
-
-    <a href="https://degenstein.xyz/report/"
-       style="color:#9aa0c3;text-decoration:none;font-weight:600">
-      ← All Reports
-    </a>
-  </div>
-
-  <!-- Share on X -->
-  <a
-    href="https://twitter.com/intent/tweet?text=Where%20does%20$10,000%20earn%20the%20most%3F%20Banks%20vs%20stablecoins%20with%20real%20math.&url=https://degenstein.xyz/report/coindepo-stablecoin-yield-vs-banks/"
-    target="_blank"
-    rel="noopener noreferrer"
-    style="
-      padding:10px 18px;
-      border-radius:999px;
-      background:linear-gradient(135deg,#7c7cff,#3ddc97);
-      color:#0b0f1a;
-      font-weight:800;
-      text-decoration:none;
-      white-space:nowrap;
-    "
-  >
-    Share on X
-  </a>
-
-</div>
-<h1>$10,000 Stablecoins vs Banks</h1>
-<p>
-This report examines what a $10,000 balance can realistically earn over 90 days,
-6 months, and 12 months using <strong>CoinDepo</strong> stablecoin yields — compared
-directly against traditional savings accounts, CDs, and similar bank products.
-</p>
-
-<!-- SEO ADDITION START -->
-<p>
-<strong>Key question:</strong> Where does $10,000 earn the most right now — a bank, a CD,
-or stablecoin yield? This report answers that question with transparent assumptions
-and side-by-side comparisons.
-</p>
-<!-- SEO ADDITION END -->
-
-<!-- WHY IT MATTERS -->
-<h2>Why This Comparison Matters</h2>
-<div class="card">
-  <p>
-    Despite higher interest rates, most traditional banking products still deliver
-    relatively modest returns. Even so-called “high-yield” savings accounts and CDs
-    typically cluster around the <strong>4–5%</strong> range.
-  </p>
-  <p>
-    At the same time, crypto-native platforms like CoinDepo offer fixed-rate yields
-    on dollar-pegged stablecoins — allowing investors to earn materially higher
-    returns without direct exposure to volatile assets like Bitcoin or Ethereum.
-  </p>
-  <p>
-    The charts below compare these approaches using the same $10,000 starting balance
-    and transparent assumptions.
-  </p>
-</div>
-
-<!-- HERO IMAGE -->
-<div class="card" style="text-align:center">
-  <img src="/assets/10000save.png"
-       alt="Where does $10,000 earn the most"
-       style="width:100%;max-width:820px;border-radius:14px;
-       box-shadow:0 0 40px rgba(124,124,255,.35)">
-</div>
-<!-- CALCULATOR -->
-<div class="card">
-<h3>Live Earnings Calculator</h3>
-
-<label>Amount: $<span id="amtVal">10000</span></label>
-<input type="range" min="1000" max="100000" value="10000" id="amt" style="width:100%">
-
-<div style="margin-top:16px">
-Bank: <span id="bankCalc">$0</span><br>
-CoinDepo: <span id="cryptoCalc" class="highlight">$0</span>
-</div>
-</div>
-
-<script>
-const amt=document.getElementById("amt");
-
-function calc(){
-let a=amt.value;
-document.getElementById("amtVal").textContent=a;
-
-let bank=a*1.05;
-let crypto=a*1.23;
-
-document.getElementById("bankCalc").textContent="$"+Math.round(bank).toLocaleString();
-document.getElementById("cryptoCalc").textContent="$"+Math.round(crypto).toLocaleString();
-}
-
-amt.oninput=calc;
-calc();
-</script>
-<!-- GROWTH CHART -->
-<div class="card">
-<h3>12-Month Growth Comparison ($10,000)</h3>
-
-<svg viewBox="0 0 640 320" width="100%" height="320">
-
-  <line x1="80" y1="40" x2="80" y2="280" stroke="#666"/>
-  <line x1="80" y1="280" x2="600" y2="280" stroke="#666"/>
-
-  <g stroke="rgba(255,255,255,.08)" stroke-dasharray="4 4">
-    <line x1="80" y1="80" x2="600" y2="80"/>
-    <line x1="80" y1="140" x2="600" y2="140"/>
-    <line x1="80" y1="200" x2="600" y2="200"/>
-  </g>
-
-  <text x="20" y="85" fill="#9aa0c3" font-size="12">$12.5k</text>
-  <text x="20" y="145" fill="#9aa0c3" font-size="12">$12k</text>
-  <text x="20" y="205" fill="#9aa0c3" font-size="12">$11k</text>
-  <text x="20" y="285" fill="#9aa0c3" font-size="12">$10k</text>
-
-  <text x="80" y="305" fill="#9aa0c3" font-size="12">Start</text>
-  <text x="300" y="305" fill="#9aa0c3" font-size="12">6 months</text>
-  <text x="520" y="305" fill="#9aa0c3" font-size="12">12 months</text>
-
-  <polyline points="80,280 300,265 520,255" stroke="#888" fill="none" stroke-width="2"/>
-  <polyline points="80,280 300,210 520,185" stroke="#3ddc97" fill="none" stroke-width="3"/>
-  <polyline points="80,280 300,200 520,170" stroke="#7c7cff" fill="none" stroke-width="3"/>
-</svg>
-
-<div style="display:flex;gap:18px;margin-top:12px;font-size:.9rem;color:var(--muted)">
-  <span><strong style="color:#888">—</strong> Bank / CD (~5%)</span>
-  <span><strong style="color:#3ddc97">—</strong> CoinDepo Quarterly (20%)</span>
-  <span><strong style="color:#7c7cff">—</strong> CoinDepo Annual (23%)</span>
-</div>
-
-<p style="font-size:.9rem">
-Illustrative growth curves based on stated APRs. Actual results depend on terms and duration.
-</p>
-</div>
-
-<!-- INTERPRETATION -->
-<div class="card">
-<p>
-The bank line remains relatively flat throughout the year, while both CoinDepo
-strategies show meaningfully steeper growth. The annual CoinDepo option compounds
-the advantage further by locking in a higher fixed rate.
-</p>
-</div>
-
-<!-- BAR CHART -->
-<div class="card" style="position:relative">
-<h3>12-Month Ending Balance — Side-by-Side</h3>
-
-<div style="position:absolute;top:48px;right:28px;
-background:linear-gradient(135deg,#7c7cff,#3ddc97);
-color:#0b0f1a;font-weight:800;padding:10px 16px;border-radius:999px">
-+$1,800 vs banks
-</div>
-
-<svg viewBox="0 0 640 360" width="100%" height="360">
-  <line x1="80" y1="40" x2="80" y2="300" stroke="#666"/>
-  <line x1="80" y1="300" x2="600" y2="300" stroke="#666"/>
-
-  <g stroke="rgba(255,255,255,.08)" stroke-dasharray="4 4">
-    <line x1="80" y1="80" x2="600" y2="80"/>
-    <line x1="80" y1="140" x2="600" y2="140"/>
-    <line x1="80" y1="200" x2="600" y2="200"/>
-  </g>
-
-  <rect x="150" y="260" width="90" height="40" fill="#888"/>
-  <text x="150" y="330" fill="#9aa0c3" font-size="12">Bank / CD</text>
-  <text id="bankVal" x="150" y="245" fill="#888" font-size="12">$0</text>
-
-  <rect x="300" y="190" width="90" height="110" fill="#3ddc97"/>
-  <text x="300" y="330" fill="#9aa0c3" font-size="12">CoinDepo Quarterly 20%</text>
-  <text id="quarterVal" x="300" y="175" fill="#3ddc97" font-size="12">$0</text>
-
-  <rect x="450" y="170" width="90" height="130"
-        fill="#7c7cff" stroke="#b8b8ff" stroke-width="2"
-        style="filter:drop-shadow(0 0 14px rgba(124,124,255,.9))"/>
-  <text x="450" y="330" fill="#9aa0c3" font-size="12">CoinDepo Annual 23%</text>
-  <text id="annualVal" x="450" y="155" fill="#7c7cff" font-size="12" font-weight="700">$0</text>
-</svg>
-
-<p style="font-size:.9rem">
-After 12 months, CoinDepo delivers roughly <strong>$1,800 more</strong> on a $10,000 balance than traditional banking.
-</p>
-</div>
-
-<!-- DECISION GUIDE -->
-<h2>Quarterly vs Annual: Which Makes Sense?</h2>
-<div class="card">
-<p><strong>Quarterly (20%) may be a better fit if:</strong></p>
-<ul>
-  <li>You want access to funds every 90 days</li>
-  <li>You value flexibility</li>
-  <li>You may redeploy capital mid-year</li>
-</ul>
-
-<p><strong>Annual (23%) may be a better fit if:</strong></p>
-<ul>
-  <li>You do not need liquidity for 12 months</li>
-  <li>You want the highest fixed return</li>
-  <li>You prefer a set-and-forget approach</li>
-</ul>
-</div>
-
-<!-- SEO ADDITION START -->
-<h2>Frequently Asked Questions</h2>
-<div class="card">
-  <h3>Is CoinDepo safer than a bank?</h3>
-  <p>
-    CoinDepo is not a bank and is not FDIC insured. Bank accounts carry government insurance,
-    while stablecoin platforms involve platform and counterparty risk.
-  </p>
-
-  <h3>Are stablecoin yields taxable?</h3>
-  <p>
-    Yes. Interest earned from stablecoin yield is generally taxable as income.
-    Consult a tax professional for guidance.
-  </p>
-
-  <h3>Can I lose money earning stablecoin yield?</h3>
-  <p>
-    While stablecoins are designed to track the U.S. dollar, risks include platform failure,
-    stablecoin depegging, and changing yield terms.
-  </p>
-</div>
-<!-- SEO ADDITION END -->
-
-<!-- CTA -->
-<div style="display:flex;justify-content:center;margin-top:32px">
-<div class="card" style="max-width:720px;text-align:center">
-
-<p style="text-transform:uppercase;letter-spacing:.05em">
-Want these yields working for you?
-</p>
-
-<a href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV"
-   style="display:inline-block;padding:16px 34px;border-radius:999px;
-   background:linear-gradient(135deg,#7c7cff,#3ddc97);
-   color:#0b0f1a;font-weight:900;text-decoration:none">
-Start earning → (USA)
-</a>
-
-<br><br>
-
-<a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W"
-   style="display:inline-block;padding:16px 34px;border-radius:999px;
-   background:linear-gradient(135deg,#7c7cff,#3ddc97);
-   color:#0b0f1a;font-weight:900;text-decoration:none">
-Start earning → (International)
-</a>
-
-<p style="margin-top:12px">
-⏱️ <span class="highlight">90 days ≈ $500</span> on $10,000
-</p>
-   <p style="margin-top:10px;font-size:.85rem;color:rgba(156,163,175,.95);">
-    For a full breakdown of rates, bonuses, and risks, see the
-    <a href="/report/coindepo-earn-while-you-hold/" target="_blank" rel="noopener">CoinDepo deep dive →</a>
-  </p>
-</div>
-</div>
-
-<!-- RISKS -->
-<h2>Risks & Considerations</h2>
-<div class="card">
-<ul>
-  <li>Stablecoin yields are not FDIC-insured</li>
-  <li>Returns depend on platform structure and counterparty risk</li>
-  <li>Rates and terms may change over time</li>
-</ul>
-<p>
-This report is informational only and should not be considered financial advice.
-</p>
-</div>
-
-<footer>
-© Degenstein Research — informational content only.
 </footer>
 
+<div class="sticky">
+  <strong>Compare $10K Scenarios</strong>
+  <a class="btn primary" href="#calculator">Run Calculator ↓</a>
 </div>
 
 <script>
-function countUp(id,target,duration=900){
-  const el=document.getElementById(id);
-  let start=0;
-  const step=Math.max(1,Math.floor(target/(duration/30)));
-  const t=setInterval(()=>{
-    start+=step;
-    if(start>=target){start=target;clearInterval(t);}
-    el.textContent="$"+start.toLocaleString();
-  },30);
-}
-window.addEventListener("load",()=>{
-  countUp("bankVal",10500);
-  countUp("quarterVal",12155);
-  countUp("annualVal",12300);
-});
+(function(){
+  const amount = document.getElementById('amount');
+  const bankRate = document.getElementById('bankRate');
+  const yieldRate = document.getElementById('yieldRate');
+
+  const money = n => '$' + Math.round(n).toLocaleString('en-US');
+
+  function update(){
+    const a = Math.max(0, Number(amount.value) || 0);
+    const br = Math.max(0, Number(bankRate.value) || 0) / 100;
+    const yr = Math.max(0, Number(yieldRate.value) || 0) / 100;
+
+    const bankInterest = a * br;
+    const yieldInterest = a * yr;
+
+    document.getElementById('amountLabel').textContent = money(a);
+    document.getElementById('bankEnd').textContent = money(a + bankInterest);
+    document.getElementById('yieldEnd').textContent = money(a + yieldInterest);
+    document.getElementById('bankInterest').textContent =
+      money(bankInterest) + ' illustrative interest';
+    document.getElementById('yieldInterest').textContent =
+      money(yieldInterest) + ' illustrative interest';
+
+    const difference = yieldInterest - bankInterest;
+    document.getElementById('delta').textContent =
+      (difference < 0 ? '−' : '') + money(Math.abs(difference));
+
+    document.getElementById('ninety').textContent =
+      money(a * yr * 90 / 365);
+  }
+
+  [amount, bankRate, yieldRate].forEach(el => {
+    el.addEventListener('input', update);
+  });
+
+  update();
+})();
 </script>
 
-<!-- SEO ADDITION START -->
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
     {
-      "@type": "Question",
-      "name": "Where does $10,000 earn the most?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "In this comparison, CoinDepo stablecoin yield earns significantly more than traditional bank savings accounts or CDs over 12 months."
+      "@type":"Question",
+      "name":"Is CoinDepo safer than a bank?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"CoinDepo is not a bank and stablecoin yield products are not FDIC-insured bank deposits. Review custody, counterparty, liquidity, and withdrawal risks."
       }
     },
     {
-      "@type": "Question",
-      "name": "Is stablecoin yield better than a high-yield savings account?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Stablecoin yield can offer higher returns, but carries different risks compared to FDIC-insured bank accounts."
+      "@type":"Question",
+      "name":"Are stablecoin yield earnings taxable?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Yield or interest-like rewards may have tax consequences. The correct treatment depends on circumstances and applicable tax rules; consult a qualified tax professional."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Can I lose money with stablecoin yield?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Yes. Risks can include platform failure, withdrawal restrictions, stablecoin depegging, operational issues, and changing terms."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Are the 20% and 23% rates live CoinDepo offers?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"They are assumptions used in the comparison, not independently verified live offers. Check current rates, supported assets, eligibility, and terms directly with CoinDepo."
       }
     }
   ]
 }
 </script>
-<!-- SEO ADDITION END -->
-<script>
-const reveals=document.querySelectorAll(".card");
-
-function revealOnScroll(){
-  const trigger=window.innerHeight * 0.85;
-
-  reveals.forEach(el=>{
-    const top=el.getBoundingClientRect().top;
-    if(top < trigger){
-      el.classList.add("active");
-      el.classList.add("reveal");
-    }
-  });
-}
-
-window.addEventListener("scroll", revealOnScroll);
-revealOnScroll();
-</script>
-  <div id="activityFeed" style="
-position:fixed;
-bottom:90px;
-right:20px;
-background:#12172a;
-padding:12px 16px;
-border-radius:12px;
-border:1px solid rgba(124,124,255,.2);
-font-size:.9rem;
-color:#e6e8f0;
-opacity:0;
-transition:.4s;
-z-index:999;
-"></div>
-
-<script>
-const messages=[
-"Someone just earned $480 in 90 days",
-"New user started with $10,000",
-"Deposit confirmed — earning 20%",
-"User locked in 23% annual yield",
-"Portfolio earning activated"
-];
-
-function showFeed(){
-  const el=document.getElementById("activityFeed");
-  const msg=messages[Math.floor(Math.random()*messages.length)];
-
-  el.innerHTML=msg;
-  el.style.opacity=1;
-
-  setTimeout(()=>{el.style.opacity=0},4000);
-}
-
-setInterval(showFeed,6000);
-</script>
 </body>
 </html>
+
 
 
 
