@@ -132,18 +132,18 @@ tr:last-child td{border-bottom:0}
 .footer{border-top:1px solid var(--line);margin-top:25px;padding:35px 0 55px;color:#94a2b6;font-size:.85rem}
 .disclaimer{font-size:.83rem;color:#94a2b6}
 @media(max-width:800px){
- .span-8,.span-7,.span-6,.span-5,.span-4{grid-column:span 12}
- .hero{min-height:580px;background-position:60% center}
- .hero:before{background:linear-gradient(0deg,#05080ff5,#05080f55 100%)}
- .stat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
- .section{padding:34px 0}
- .two-col{grid-template-columns:1fr}
+  .span-8,.span-7,.span-6,.span-5,.span-4{grid-column:span 12}
+  .hero{min-height:580px;background-position:60% center}
+  .hero:before{background:linear-gradient(0deg,#05080ff5,#05080f55 100%)}
+  .stat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .section{padding:34px 0}
+  .two-col{grid-template-columns:1fr}
 }
 @media(max-width:480px){
- .toplinks{display:none}
- .card{padding:19px}
- .hero{border-radius:17px;min-height:570px}
- .stat b{font-size:1.28rem}
+  .toplinks{display:none}
+  .card{padding:19px}
+  .hero{border-radius:17px;min-height:570px}
+  .stat b{font-size:1.28rem}
 }
 </style>
 </head>
@@ -343,20 +343,57 @@ tr:last-child td{border-bottom:0}
       <ul class="bullets">
         <li>Verify supported assets and geographic eligibility.</li>
         <li>Read current custody terms and withdrawal restrictions.</li>
-        <li>Check whether APY is variable, promotional, or conditional.</li>
+        <li>Check whether APR is variable, promotional, or conditional.</li>
         <li>Do not assume advertised yield is guaranteed or insured.</li>
       </ul>
       <div class="callout"><strong>Yield is not free money.</strong><p style="margin-top:8px">A token-denominated return cannot protect an investment if the token falls sharply in market value. Counterparty failure can create additional losses.</p></div>
     </article>
   </div>
-  <div class="card" style="margin-top:17px">
-    <h3>CoinDepo research disclosure</h3>
-    <p>CoinDepo is a third-party yield platform readers may wish to investigate when comparing ways to earn on supported crypto holdings. Rates, eligible assets, geographic access, and terms can change. Verify all current claims before depositing funds.</p>
-    <div class="two-col">
-      <div><div class="mini-label">United States referral link</div><p style="margin-top:8px"><a href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV" target="_blank" rel="noopener noreferrer">Explore CoinDepo ↗</a></p></div>
-      <div><div class="mini-label">International referral link</div><p style="margin-top:8px"><a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W" target="_blank" rel="noopener noreferrer">Explore CoinDepo ↗</a></p></div>
+
+  <!-- CoinDepo feature: integrated into the report -->
+  <div class="card" style="margin-top:17px;border-color:#71313b;background:linear-gradient(135deg,#21131c,#111927 75%)">
+    <div class="kicker">Earn While You Hold · AVAX</div>
+    <h3 style="font-size:1.65rem;margin-top:12px">Put Your AVAX to Work</h3>
+    <p class="lead">Holding AVAX for the long term? CoinDepo offers interest-bearing crypto accounts, with its published annual-account rate for AVAX currently reaching <strong style="color:#ff858b">18% APR</strong>, subject to account terms.</p>
+
+    <div class="stat-grid" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr));margin:22px 0">
+      <div class="stat" style="border-color:#71313b">
+        <b style="font-size:2rem">18% APR</b>
+        <small>Published AVAX annual-account rate before the scheduled rate change</small>
+      </div>
+      <div class="stat">
+        <b style="font-size:2rem;color:#65e5b3">$180</b>
+        <small>Illustrative one-year interest on $1,000 at 18% APR, before fees and assuming simple interest</small>
+      </div>
     </div>
-    <p class="fineprint">Disclosure: These are referral links. The publisher may receive compensation if a reader signs up, at no additional cost to the reader. This is not a guarantee of platform safety, returns, or eligibility. Confirm regional restrictions and terms before use.</p>
+
+    <h3>What could that look like?</h3>
+    <p>Imagine placing $1,000 worth of AVAX into an eligible account earning 18% APR for one year.</p>
+    <div class="table-wrap">
+      <table style="min-width:0">
+        <thead><tr><th>Illustrative amount</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td>Starting investment</td><td>$1,000</td></tr>
+          <tr><td>Illustrative annual interest at 18% APR</td><td style="color:#65e5b3">$180</td></tr>
+          <tr><td>Total after one year</td><td><strong>$1,180</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="fineprint">This is a simplified illustration, not a guaranteed return. It assumes the 18% APR remains available for the full year and uses simple interest. Actual payouts depend on the account terms and applicable rate. If interest is paid in AVAX, its dollar value can rise or fall with the token price.</p>
+
+    <div class="callout" style="margin-bottom:20px">
+      <strong>Important rate update</strong>
+      <p style="margin-top:8px">CoinDepo has announced a change to its AVAX annual-account rate from 18% to 16% APR, scheduled for November 8, 2026. Confirm the rate available to you before opening or renewing an account.</p>
+    </div>
+
+    <div class="actions">
+      <a class="btn" href="https://app.coindepo.com/auth/sign-up?ref=R-UgAoMRNV" target="_blank" rel="noopener noreferrer">Explore CoinDepo ↗</a>
+      <a class="btn secondary" href="https://coindepo.com/" target="_blank" rel="noopener noreferrer">Review Current Rates</a>
+    </div>
+    <p style="margin-top:12px"><a href="https://app.coindepo.com/auth/sign-up?ref=A-32wqw35W" target="_blank" rel="noopener noreferrer">International users: explore CoinDepo ↗</a></p>
+
+    <p class="fineprint" style="margin-top:17px">Disclosure: These are referral links. Degenstein Crypto Hub may receive compensation if you sign up through a referral link, at no additional cost to you. Crypto yield accounts involve platform, counterparty, liquidity, and market risks. This is not a recommendation to deposit funds.</p>
   </div>
 </section>
 
@@ -503,4 +540,3 @@ function shareReport() {
 </script>
 </body>
 </html>
-
