@@ -1,1550 +1,1490 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Solana ($SOL) — The Execution Layer Thesis | The Degenstein Report</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="An in-depth Solana ($SOL) research report covering the execution-layer thesis, October 2026 news, Western Union USDPT, MoneyGram, stablecoins, tokenized assets, network upgrades, market metrics, risks, and long-term investment positioning.">
 
-<meta
-  name="description"
-  content="A research-first Solana ($SOL) report covering the execution-layer thesis, adoption, network metrics, market performance, and long-term positioning. No hopium."
-/>
+<link rel="canonical" href="https://degenstein.xyz/report/solana-execution-layer-report/">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#070A0F">
 
-<link
-  rel="canonical"
-  href="https://degenstein.xyz/report/solana-execution-layer-report/"
-/>
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Degenstein Report">
+<meta property="og:title" content="Solana ($SOL) — The Execution Layer Thesis">
+<meta property="og:description" content="The institutional adoption, payments infrastructure, tokenization, network upgrades, and investment risks shaping Solana's execution-layer thesis.">
+<meta property="og:url" content="https://degenstein.xyz/report/solana-execution-layer-report/">
+<meta property="og:image" content="https://degenstein.xyz/assets/solana-report.png">
 
-<meta name="robots" content="index, follow" />
-
-<!-- OPEN GRAPH -->
-<meta property="og:type" content="article" />
-<meta property="og:site_name" content="The Degenstein Report" />
-<meta property="og:title" content="Solana ($SOL) — The Execution Layer Thesis" />
-
-<meta
-  property="og:description"
-  content="Why Solana is positioning itself as crypto's execution layer: speed, UX, payments, tokenization, and measurable adoption."
-/>
-
-<meta
-  property="og:url"
-  content="https://degenstein.xyz/report/solana-execution-layer-report/"
-/>
-
-<meta
-  property="og:image"
-  content="https://degenstein.xyz/assets/solana-report.png"
-/>
-
-<!-- X / TWITTER -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:site" content="@DHouseofcrypto" />
-<meta name="twitter:creator" content="@DHouseofcrypto" />
-<meta name="twitter:title" content="Solana ($SOL) — The Execution Layer Thesis" />
-
-<meta
-  name="twitter:description"
-  content="A research-first SOL report covering execution, payments, tokenization, network metrics, and market positioning."
-/>
-
-<meta
-  name="twitter:image"
-  content="https://degenstein.xyz/assets/solana-report.png"
-/>
-
-<meta name="theme-color" content="#00ffaa" />
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@DHouseofcrypto">
+<meta name="twitter:creator" content="@DHouseofcrypto">
+<meta name="twitter:title" content="Solana ($SOL) — The Execution Layer Thesis">
+<meta name="twitter:description" content="A research-first Solana deep dive: payments, stablecoins, tokenized assets, network metrics, catalysts, and risks.">
+<meta name="twitter:image" content="https://degenstein.xyz/assets/solana-report.png">
 
 <style>
-
 :root{
   --bg:#070A0F;
-  --panel:rgba(255,255,255,0.06);
-  --text:rgba(255,255,255,0.92);
-  --muted:rgba(255,255,255,0.70);
-  --muted2:rgba(255,255,255,0.55);
-  --stroke:rgba(255,255,255,0.12);
-  --accent:#00FFAA;
-  --glow:rgba(0,255,170,0.18);
-  --radius:18px;
-  --shadow:0 18px 55px rgba(0,0,0,0.55);
-  --max:1120px;
-  --sans:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  --bg2:#0b1019;
+  --panel:#101722;
+  --panel2:#0b111b;
+  --text:#f5f7fb;
+  --muted:#b1bdce;
+  --muted2:#8390a3;
+  --stroke:rgba(255,255,255,.11);
+  --green:#00ffaa;
+  --green2:#00d88f;
+  --cyan:#47dcff;
+  --purple:#a78bfa;
+  --gold:#ffd166;
+  --red:#ff7777;
+  --radius:20px;
+  --max:1180px;
+  --shadow:0 20px 65px rgba(0,0,0,.40);
+  --sans:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
-
-*{
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:24px}
 body{
   margin:0;
+  color:var(--text);
   font-family:var(--sans);
-  color:var(--text);
-
   background:
-    radial-gradient(
-      900px 500px at 20% 10%,
-      rgba(0,255,170,0.16),
-      transparent 60%
-    ),
-    radial-gradient(
-      800px 600px at 85% 20%,
-      rgba(124,58,237,0.18),
-      transparent 60%
-    ),
+    radial-gradient(1000px 650px at 8% 0%,rgba(0,255,170,.13),transparent 60%),
+    radial-gradient(900px 650px at 96% 8%,rgba(124,58,237,.16),transparent 60%),
+    radial-gradient(700px 500px at 50% 50%,rgba(71,220,255,.035),transparent 70%),
     var(--bg);
+  line-height:1.68;
 }
-
-a{
-  color:var(--accent);
-  text-decoration:none;
-}
-
-a:hover{
-  text-decoration:underline;
-  text-underline-offset:4px;
-}
-
-.wrap{
-  max-width:var(--max);
-  margin:0 auto;
-  padding:26px 18px 70px;
-}
-
+a{color:var(--cyan);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:4px}
+button,input{font:inherit}
+button{cursor:pointer}
+img{max-width:100%}
+.wrap{max-width:var(--max);width:calc(100% - 34px);margin:0 auto;padding:22px 0 75px}
 .topbar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:16px;
-
-  padding:14px 16px;
-
-  border:1px solid var(--stroke);
-  border-radius:var(--radius);
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255,255,255,0.08),
-      rgba(255,255,255,0.04)
-    );
-
-  box-shadow:var(--shadow);
+  display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;
+  padding:15px 18px;border:1px solid var(--stroke);border-radius:17px;
+  background:rgba(8,12,20,.86);backdrop-filter:blur(15px);box-shadow:var(--shadow)
 }
-
-.brand{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-weight:800;
+.brand{display:flex;align-items:center;gap:11px;font-weight:950;letter-spacing:.1px}
+.brand-mark{
+  width:11px;height:11px;border-radius:50%;background:var(--green);
+  box-shadow:0 0 20px rgba(0,255,170,.75);flex-shrink:0
 }
-
-.dot{
-  width:10px;
-  height:10px;
-  border-radius:50%;
-  background:var(--accent);
-  box-shadow:0 0 18px var(--glow);
-}
-
-.nav{
-  display:flex;
-  gap:14px;
-  align-items:center;
-  flex-wrap:wrap;
-}
-
-.nav a,
+.nav{display:flex;align-items:center;gap:13px;flex-wrap:wrap}
+.nav a,.sharex{font-size:12px;font-weight:850;color:var(--muted)}
 .sharex{
-  font-size:13px;
-  color:var(--muted);
-  font-weight:700;
+  padding:9px 12px;border-radius:11px;border:1px solid rgba(0,255,170,.28);
+  background:rgba(0,255,170,.07);color:var(--green)
 }
-
-.sharex{
-  cursor:pointer;
-  padding:8px 10px;
-  border-radius:12px;
-  border:1px solid var(--stroke);
-  background:rgba(255,255,255,0.07);
-}
-
-.sharex:hover{
-  border-color:rgba(0,255,170,0.35);
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(0,255,170,0.22),
-      rgba(255,255,255,0.06)
-    );
-}
-
 .hero{
-  margin-top:18px;
-  padding:26px 22px;
-  border:1px solid var(--stroke);
-  border-radius:var(--radius);
-
+  margin-top:20px;padding:clamp(24px,5vw,54px);
+  border:1px solid rgba(0,255,170,.23);border-radius:27px;
   background:
-    linear-gradient(
-      180deg,
-      rgba(255,255,255,0.08),
-      rgba(255,255,255,0.04)
-    );
-
-  box-shadow:var(--shadow);
+    radial-gradient(ellipse at 90% 0%,rgba(71,220,255,.13),transparent 40%),
+    radial-gradient(ellipse at 5% 100%,rgba(0,255,170,.08),transparent 45%),
+    linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));
+  box-shadow:var(--shadow);position:relative;overflow:hidden
 }
-
-.kicker{
-  display:inline-flex;
-  gap:10px;
-  font-size:12px;
-  color:var(--muted);
-  border:1px solid var(--stroke);
-  padding:8px 10px;
-  border-radius:999px;
-  background:rgba(0,0,0,0.25);
+.hero:after{
+  content:"SOL";position:absolute;right:-15px;top:18px;
+  font-size:clamp(100px,22vw,245px);line-height:1;font-weight:1000;letter-spacing:-.12em;
+  color:rgba(255,255,255,.025);pointer-events:none
 }
-
-h1{
-  margin:14px 0 8px;
-  font-size:clamp(30px,5vw,42px);
-  line-height:1.1;
-  letter-spacing:-0.7px;
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;
+  border:1px solid var(--stroke);background:rgba(0,0,0,.22);
+  color:var(--green);font-size:10px;font-weight:950;letter-spacing:1.3px;text-transform:uppercase
 }
-
-.sub{
-  color:var(--muted);
-  max-width:72ch;
-  line-height:1.55;
+h1{font-size:clamp(37px,6.5vw,74px);line-height:.99;letter-spacing:-2.8px;margin:23px 0 19px;max-width:960px}
+.gradient-text{
+  background:linear-gradient(90deg,var(--green),var(--cyan) 58%,#c4b5fd);
+  -webkit-background-clip:text;background-clip:text;color:transparent
 }
-
-.muted{
-  color:var(--muted);
-  line-height:1.6;
-}
-
-.hero-cover{
-  position:relative;
-  margin-top:16px;
-  border-radius:16px;
-  overflow:hidden;
-  border:1px solid var(--stroke);
-
-  background:
-    radial-gradient(
-      circle at 20% 20%,
-      rgba(0,255,170,0.18),
-      transparent 45%
-    ),
-    radial-gradient(
-      circle at 80% 60%,
-      rgba(124,58,237,0.22),
-      transparent 50%
-    ),
-    #10141b;
-}
-
-.hero-cover img{
-  width:100%;
-  height:auto;
-  display:block;
-}
-
-.hero-cover-fallback{
-  display:none;
-  min-height:300px;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:40px;
-}
-
-.hero-cover-fallback strong{
-  display:block;
-  font-size:clamp(28px,5vw,48px);
-  color:#fff;
-}
-
-.hero-cover-fallback span{
-  display:block;
-  margin-top:12px;
-  color:var(--muted);
-}
-
-.section{
-  margin-top:18px;
-  padding:18px;
-  border:1px solid var(--stroke);
-  border-radius:var(--radius);
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255,255,255,0.06),
-      rgba(255,255,255,0.03)
-    );
-
-  box-shadow:var(--shadow);
-}
-
-.section h2{
-  margin:0 0 10px;
-  font-size:20px;
-}
-
-.section h3{
-  margin:14px 0 6px;
-  font-size:15px;
-}
-
-.bullets{
-  padding-left:20px;
-  color:var(--muted);
-  line-height:1.55;
-}
-
-.bullets li{
-  margin:7px 0;
-}
-
-.metrics{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:14px;
-  margin-top:12px;
-}
-
-.metric{
-  border:1px solid var(--stroke);
-  border-radius:16px;
-  background:rgba(0,0,0,0.25);
-  padding:18px;
-}
-
-.metric .label{
-  font-size:12px;
-  color:var(--muted2);
-}
-
-.metric .value{
-  font-size:22px;
-  font-weight:900;
-  margin-top:6px;
-}
-
-.metric .note{
-  font-size:12px;
-  color:var(--muted2);
-  margin-top:8px;
-  line-height:1.5;
-}
-
-.metric-link{
-  display:inline-block;
-  margin-top:12px;
-  font-size:12px;
-  font-weight:800;
-}
-
-.callout{
-  margin-top:14px;
-  padding:16px;
-  border-radius:var(--radius);
-  border:1px solid rgba(0,255,170,0.3);
-
-  background:
-    radial-gradient(
-      600px 200px at 20% 20%,
-      rgba(0,255,170,0.18),
-      rgba(0,0,0,0.15)
-    );
-}
-
-.btnrow{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-top:10px;
-}
-
+.hero-intro{font-size:clamp(15px,2vw,18px);color:var(--muted);max-width:800px}
+.hero-intro strong{color:#fff}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
 .btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:10px 12px;
-  border-radius:12px;
-  border:1px solid var(--stroke);
-  background:rgba(255,255,255,0.07);
-  color:var(--text);
-  font-weight:700;
-  font-size:13px;
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:11px 15px;border:1px solid var(--stroke);border-radius:12px;
+  background:rgba(255,255,255,.055);color:var(--text);font-size:12px;font-weight:900
 }
-
-.btn:hover{
-  text-decoration:none;
-  transform:translateY(-1px);
+.btn:hover{text-decoration:none;transform:translateY(-1px)}
+.btn.primary{background:var(--green);color:#04120c;border-color:var(--green)}
+.btn.cyan-btn{background:rgba(71,220,255,.09);border-color:rgba(71,220,255,.28);color:var(--cyan)}
+.cover{margin-top:27px;border:1px solid var(--stroke);border-radius:17px;overflow:hidden;background:#10141b}
+.cover img{width:100%;height:auto;display:block}
+.cover-fallback{display:none;min-height:240px;align-items:center;justify-content:center;text-align:center;padding:35px}
+.cover-fallback strong{display:block;font-size:clamp(34px,6vw,64px);letter-spacing:-2px}
+.cover-fallback span{display:block;color:var(--muted);margin-top:8px}
+.section{
+  margin-top:19px;padding:clamp(21px,3.5vw,32px);
+  border:1px solid var(--stroke);border-radius:var(--radius);
+  background:linear-gradient(155deg,rgba(255,255,255,.045),rgba(255,255,255,.016));
+  box-shadow:var(--shadow)
 }
-
-.btn.primary{
-  border-color:rgba(0,255,170,0.35);
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(0,255,170,0.25),
-      rgba(255,255,255,0.06)
-    );
+.section h2{font-size:clamp(24px,3.4vw,34px);line-height:1.14;letter-spacing:-.9px;margin:0 0 13px}
+.section h3{font-size:17px;line-height:1.3;margin:0 0 8px}
+.section p{color:var(--muted);margin:10px 0}
+.section-head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:17px}
+.kicker{font-size:10px;font-weight:950;letter-spacing:1.5px;text-transform:uppercase;color:var(--cyan);margin-bottom:8px}
+.muted{color:var(--muted)}
+.small{font-size:12px;color:var(--muted2)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.grid.four{grid-template-columns:repeat(4,minmax(0,1fr))}
+.card{
+  min-width:0;padding:19px;border:1px solid var(--stroke);border-radius:17px;
+  background:linear-gradient(155deg,rgba(15,22,34,.97),rgba(8,13,21,.95))
 }
-
-.source-note{
-  margin-top:12px;
-  padding:12px 14px;
-  border-radius:12px;
-  border:1px solid rgba(255,255,255,0.10);
-  background:rgba(0,0,0,0.20);
-  color:var(--muted2);
-  font-size:12px;
-  line-height:1.55;
+.card .label{font-size:10px;letter-spacing:1.15px;text-transform:uppercase;color:var(--muted2);font-weight:950}
+.card .value{font-size:clamp(23px,3vw,35px);line-height:1.15;letter-spacing:-1px;font-weight:950;margin:9px 0}
+.card .note{font-size:12px;line-height:1.6;color:var(--muted)}
+.green{color:var(--green)!important}
+.cyan{color:var(--cyan)!important}
+.purple{color:var(--purple)!important}
+.gold{color:var(--gold)!important}
+.red{color:var(--red)!important}
+.pill{
+  display:inline-flex;padding:5px 9px;border-radius:999px;font-size:10px;font-weight:950;
+  letter-spacing:.55px;text-transform:uppercase;color:var(--cyan);
+  background:rgba(71,220,255,.075);border:1px solid rgba(71,220,255,.21)
 }
-
-.footer{
-  margin-top:18px;
-  color:var(--muted2);
-  font-size:12px;
-  line-height:1.55;
+.green-pill{color:var(--green);background:rgba(0,255,170,.07);border-color:rgba(0,255,170,.23)}
+.gold-pill{color:var(--gold);background:rgba(255,209,102,.07);border-color:rgba(255,209,102,.23)}
+.red-pill{color:var(--red);background:rgba(255,119,119,.07);border-color:rgba(255,119,119,.23)}
+.purple-pill{color:var(--purple);background:rgba(167,139,250,.07);border-color:rgba(167,139,250,.23)}
+.callout{
+  margin-top:16px;padding:18px;border-radius:16px;
+  border:1px solid rgba(0,255,170,.24);
+  background:linear-gradient(125deg,rgba(0,255,170,.075),rgba(71,220,255,.035))
 }
-
-@media(max-width:760px){
-
-  .topbar{
-    align-items:flex-start;
-    flex-direction:column;
-  }
-
-  .nav{
-    gap:10px;
-  }
-
-  .metrics{
-    grid-template-columns:1fr;
-  }
-
-  .hero{
-    padding:22px 17px;
-  }
-
+.callout strong{color:var(--green)}
+.callout p{margin:8px 0}
+.list{padding-left:21px;color:var(--muted);margin:10px 0}
+.list li{padding-left:3px;margin:8px 0}
+.list strong{color:var(--text)}
+.divider{height:1px;background:var(--stroke);margin:20px 0}
+.source-note{margin-top:13px;color:var(--muted2);font-size:11px;line-height:1.65}
+.source-note a{color:var(--cyan)}
+.metric-link,.market-link{display:inline-block;margin-top:10px;font-size:12px;font-weight:900}
+.news-card{display:flex;flex-direction:column;gap:10px}
+.news-card p{font-size:13px;margin:0}
+.news-card .date{font-size:10px;color:var(--muted2);font-weight:900;letter-spacing:.7px}
+.news-card .bottom{margin-top:auto;padding-top:8px}
+.news-card .bottom a{display:inline-block}
+.timeline{display:grid;grid-template-columns:105px 1fr;gap:16px;padding:17px 0;border-top:1px solid var(--stroke)}
+.timeline:first-of-type{border-top:0}
+.timeline-date{font-size:11px;font-weight:950;letter-spacing:.7px;color:var(--green);text-transform:uppercase}
+.timeline-content h3{margin-bottom:6px}
+.timeline-content p{margin:5px 0;font-size:13px}
+.checklist{list-style:none;padding:0;margin:0}
+.checklist li{display:flex;gap:10px;margin:12px 0;color:var(--muted)}
+.checklist li:before{content:"↗";font-weight:950;color:var(--green)}
+.risk{
+  border-color:rgba(255,119,119,.23);
+  background:linear-gradient(145deg,rgba(255,119,119,.05),rgba(255,255,255,.015))
 }
-
+.risk h2{color:#ffc0c0}
+.chart-wrap{padding:15px;border:1px solid var(--stroke);border-radius:16px;background:rgba(0,0,0,.16);overflow:hidden}
+.chart-wrap svg{width:100%;height:auto;display:block}
+.faq details{border-top:1px solid var(--stroke);padding:15px 0}
+.faq details:last-child{border-bottom:1px solid var(--stroke)}
+.faq summary{cursor:pointer;font-weight:900}
+.faq details p{font-size:13px}
+.footer{margin-top:24px;padding:0 5px;color:var(--muted2);font-size:11px;line-height:1.8}
+.footer a{color:var(--muted)}
+@media(max-width:850px){
+  .grid.four{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .grid{grid-template-columns:1fr}
+  .grid.two{grid-template-columns:1fr}
+  .section-head{display:block}
+}
+@media(max-width:620px){
+  .wrap{width:calc(100% - 20px);padding-top:10px}
+  .topbar{padding:13px}
+  .nav{width:100%;gap:10px}
+  .hero{padding:22px 17px}
+  h1{letter-spacing:-1.6px}
+  .timeline{grid-template-columns:1fr;gap:4px}
+  .grid.four{grid-template-columns:1fr 1fr}
+}
 @media(prefers-reduced-motion:reduce){
-
-  html{
-    scroll-behavior:auto;
-  }
-
-  *{
-    transition:none !important;
-  }
-
+  html{scroll-behavior:auto}
+  *{transition:none!important}
 }
-
 </style>
-
 </head>
 
 <body>
-
 <div class="wrap">
 
-<!-- TOP NAV -->
-
-<div class="topbar">
-
-  <div class="brand">
-    <span class="dot"></span>
-    The Degenstein Report
-  </div>
-
+<nav class="topbar" aria-label="Main navigation">
+  <div class="brand"><span class="brand-mark"></span>The Degenstein Report</div>
   <div class="nav">
-
-    <a href="/">
-      Home
-    </a>
-
-    <a href="/report/">
-      Reports
-    </a>
-
-    <a href="#june-milestones">
-      2026 Update
-    </a>
-
-    <a href="#price">
-      Market Data
-    </a>
-
-    <a href="#metrics">
-      Metrics
-    </a>
-
-    <a href="#compare">
-      Compare
-    </a>
-
-    <button
-      class="sharex"
-      type="button"
-      onclick="shareOnX()"
-    >
-      ✕ Share on X
-    </button>
-
+    <a href="/">Home</a>
+    <a href="/report/">Reports</a>
+    <a href="#latest-news">Latest News</a>
+    <a href="#milestones">Milestones</a>
+    <a href="#market-data">Market Data</a>
+    <a href="#investor-takeaways">Takeaways</a>
+    <button class="sharex" type="button" onclick="shareOnX()">✕ Share on X</button>
   </div>
-
-</div>
+</nav>
 
 <!-- HERO -->
 
 <header class="hero">
-
-  <div class="kicker">
-    The Degenstein Report • Solana Deep Dive
-  </div>
-
-  <h1>
-    Solana ($SOL): The Execution Layer Thesis
-  </h1>
-
-  <p class="sub">
-
-    Solana is optimizing for one thing above all else:
-
-    <strong>
-      fast, cheap, global execution at scale
-    </strong>.
-
-    This report breaks down why that matters and the
-    measurable adoption signals and risks investors
-    should monitor.
-
+  <div class="eyebrow">The Degenstein Report · October 18, 2026 Research Update</div>
+  <h1>SOLANA ($SOL):<br><span class="gradient-text">THE EXECUTION LAYER THESIS</span></h1>
+  <p class="hero-intro">
+    Solana is making a focused bet on <strong>fast, inexpensive, global execution at scale</strong>.
+    New developments in payments, institutional tokenization, stablecoins, and network engineering
+    give investors more to evaluate than a speed narrative alone.
   </p>
-
-  <!-- TLDR -->
-
-  <div
-    class="section"
-    id="tldr"
-    style="margin-top:14px;"
-  >
-
-    <h2 style="font-size:16px;margin-bottom:8px;">
-      TL;DR
-    </h2>
-
-    <p class="muted" style="max-width:78ch;">
-
-      Solana ($SOL) is an execution-layer thesis built
-      around high throughput, low transaction costs,
-      and a shared global state.
-
-      The 2026 research case is increasingly measurable:
-      Western Union launched USDPT on Solana, Solana's
-      RWA sector grew 58% in Q1 to more than $2.5 billion,
-      crossed $2.8 billion in May, and surpassed $3 billion
-      in June.
-
-      June also pushed cumulative tokenized-stock volume
-      above $10 billion, while daily tokenized-stock volume
-      reached a record $683 million.
-
-      Those adoption signals do not guarantee SOL price
-      appreciation.
-
-      The key question is whether network usage,
-      institutional integrations, and economic value
-      capture continue to strengthen together.
-
-    </p>
-
+  <p class="hero-intro">
+    This deep dive examines what is changing, which adoption signals matter, what could strengthen
+    the investment case, and where the thesis can still break. No hopium. No guaranteed outcomes.
+  </p>
+  <div class="hero-actions">
+    <a class="btn primary" href="#latest-news">Explore the Latest News ↓</a>
+    <a class="btn cyan-btn" href="#investor-takeaways">Read the Investment Thesis ↓</a>
   </div>
-
-  <!-- HERO IMAGE -->
-
-  <div class="hero-cover">
-
-    <img
-      src="/assets/solana-report.png"
-      alt="Solana SOL Execution Layer Report"
-      width="1200"
-      height="675"
-      loading="eager"
-      onerror="
-        this.style.display='none';
-        this.nextElementSibling.style.display='flex';
-      "
-    />
-
-    <div class="hero-cover-fallback">
-
-      <div>
-
-        <strong>
-          SOLANA
-        </strong>
-
-        <span>
-          The Execution Layer Thesis
-        </span>
-
-      </div>
-
-    </div>
-
+  <div class="cover">
+    <img src="/assets/solana-report.png" alt="Solana SOL — The Execution Layer Thesis" width="1200" height="675" loading="eager"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="cover-fallback"><div><strong>SOLANA</strong><span>The Execution Layer Thesis</span></div></div>
   </div>
-
 </header>
 
-<!-- THESIS -->
+<!-- EXECUTIVE SUMMARY -->
 
-<section
-  class="section"
-  id="thesis"
->
-
-  <h2>
-    The Solana Execution Thesis
-  </h2>
-
-  <p class="muted">
-
-    Solana is not competing to be a generalized settlement
-    layer or a modular base for dozens of fragmented rollups.
-
-    Its design philosophy is far more opinionated:
-    optimize aggressively for
-
-    <strong>
-      execution speed, composability, and cost predictability
-    </strong>
-
-    on a single global state.
-
+<section class="section" id="tldr">
+  <div class="kicker">Executive Summary</div>
+  <h2>The Short Version</h2>
+  <p>
+    Solana's investment thesis centers on its ability to support high-throughput applications on a shared network:
+    payments, trading, stablecoins, tokenized assets, and consumer-facing financial products.
+  </p>
+  <p>
+    Developments reported during 2026 have broadened the story beyond decentralized trading. Western Union's USDPT,
+    MoneyGram's infrastructure participation, tokenized-market growth, institutional fund initiatives, and new
+    wallet-distribution opportunities all point toward potential real-world uses.
+  </p>
+  <p>
+    But the market should distinguish a press release from a live product, a live product from sustained usage,
+    and sustained usage from economic value accruing to SOL.
   </p>
 
-  <p class="muted">
+  <div class="grid two">
+    <div class="card">
+      <div class="pill green-pill">What Strengthens the Thesis</div>
+      <h3 style="margin-top:13px">More Than Speculation</h3>
+      <ul class="list">
+        <li>Stablecoin payment and settlement infrastructure.</li>
+        <li>Tokenized assets and institutional distribution.</li>
+        <li>Consumer wallet and financial-service integrations.</li>
+        <li>Improvements in network performance and resilience.</li>
+        <li>Growing recurring activity with measurable economic value.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="pill red-pill">What Still Needs Proof</div>
+      <h3 style="margin-top:13px">Adoption Must Become Economics</h3>
+      <ul class="list">
+        <li>Announced products need to launch and retain users.</li>
+        <li>Transactions need to represent meaningful activity.</li>
+        <li>Usage must support durable demand for blockspace.</li>
+        <li>Network growth does not guarantee proportional SOL returns.</li>
+        <li>Competition, outages, regulation, and market cycles remain risks.</li>
+      </ul>
+    </div>
+  </div>
 
-    This matters because consumer-facing crypto applications
-    break down quickly when latency is high, fees are volatile,
-    or liquidity is fragmented.
+  <div class="callout">
+    <strong>DEGENSTEIN RESEARCH VIEW:</strong>
+    Solana's opportunity is to become important infrastructure for on-chain financial and consumer activity.
+    The decisive investment question is whether adoption turns into durable network economics and value capture for SOL.
+  </div>
+</section>
 
-    Payments, trading, gaming, and social applications require
-    responsive execution and low marginal costs — conditions
-    that Solana explicitly targets at the protocol level.
+<!-- CORE THESIS -->
 
+<section class="section" id="thesis">
+  <div class="kicker">01 / The Core Thesis</div>
+  <h2>Solana Is Betting on Execution</h2>
+
+  <p>
+    Solana's design philosophy is opinionated: optimize for fast execution, low transaction costs, and applications
+    that can interact with shared state. Rather than asking users to navigate fragmented environments, Solana aims
+    to give applications access to a common network and liquidity environment.
   </p>
 
-  <p class="muted">
-
-    Rather than pushing complexity to users through layered
-    abstractions, Solana absorbs more of that complexity at the
-    validator and protocol layer.
-
-    The result is an ecosystem designed for applications to
-    interact with a shared state in real time.
-
+  <p>
+    This matters when user experience depends on responsiveness. A trading application, payment product, consumer
+    wallet, game, or automated financial service can be difficult to use if transactions are slow, costs are
+    unpredictable, or liquidity is scattered across disconnected systems.
   </p>
 
+  <p>
+    Solana attempts to reduce those frictions at the protocol level. Its long-term case depends on whether that
+    architecture attracts developers, keeps users engaged, and supports economically meaningful activity.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <div class="label">Execution</div>
+      <div class="value green">Speed + Cost</div>
+      <p class="note">Responsive transactions and low marginal costs can support products that require frequent on-chain interaction.</p>
+    </div>
+    <div class="card">
+      <div class="label">Composability</div>
+      <div class="value cyan">Shared State</div>
+      <p class="note">Applications can interact with shared infrastructure instead of relying exclusively on disconnected environments.</p>
+    </div>
+    <div class="card">
+      <div class="label">Adoption</div>
+      <div class="value purple">Real Usage</div>
+      <p class="note">The goal is to turn developer interest and integrations into repeat users, transaction demand, and sustainable economics.</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <h3>Why Execution Matters for Payments</h3>
+  <p>
+    Payments are a useful test case. A transfer system needs predictable settlement, a good user experience,
+    dependable infrastructure, and enough distribution to reach people who do not already use crypto.
+    Stablecoins can represent dollar-denominated value on-chain, while the underlying network processes transfers.
+  </p>
+
+  <h3>Why Execution Matters for Tokenized Assets</h3>
+  <p>
+    Tokenization places representations of financial or real-world assets on blockchain infrastructure.
+    Issuing a token is only the beginning. Investors also need compliant access, distribution, liquidity,
+    transferability, settlement, and clear rights. Solana's opportunity is to support the transactions
+    and applications surrounding these assets.
+  </p>
+
+  <h3>Why Execution Alone Is Not Enough</h3>
+  <p>
+    A network can be technically impressive and still struggle to generate durable value for its token.
+    Competition, fees, incentives, token supply, user retention, validator economics, and the relationship
+    between network activity and SOL demand all matter.
+  </p>
+</section>
+
+<!-- LATEST NEWS -->
+
+<section class="section" id="latest-news">
+  <div class="section-head">
+    <div>
+      <div class="kicker">02 / Latest Developments</div>
+      <h2>Solana News: October 2026 and Beyond</h2>
+      <p>
+        These developments add new dimensions to the Solana thesis. Read them as catalysts to monitor,
+        not automatic buy signals.
+      </p>
+    </div>
+    <span class="pill green-pill">Research Update</span>
+  </div>
+
+  <div class="grid two">
+
+    <article class="card news-card">
+      <div><span class="pill green-pill">Consumer Payments</span></div>
+      <div class="date">ANNOUNCED OCTOBER 7, 2026</div>
+      <h3>Samsung Wallet and USDC Transfers</h3>
+      <p>
+        Solana announced plans for Samsung Wallet to support USDC cross-border transfers on Solana,
+        with an initial U.S. rollout planned for the last week of October and a potential distribution
+        footprint across 82 million U.S. Galaxy devices.
+      </p>
+      <p>
+        <strong>Why it matters:</strong> existing consumer-wallet distribution could help stablecoin payments
+        reach people without requiring them to begin with a dedicated crypto application.
+      </p>
+      <p>
+        <strong>What remains uncertain:</strong> rollout timing, availability, supported transfer corridors,
+        actual usage, user retention, and the resulting network economics.
+      </p>
+      <div class="bottom">
+        <a class="market-link" href="https://solana.com/news" target="_blank" rel="noopener noreferrer">Check official Solana announcements →</a>
+      </div>
+    </article>
+
+    <article class="card news-card">
+      <div><span class="pill cyan">Institutional Finance</span></div>
+      <div class="date">ANNOUNCED SEPTEMBER 16, 2026</div>
+      <h3>Project Harmonia and Allfunds</h3>
+      <p>
+        Project Harmonia aims to connect tokenized funds on Solana with Allfunds' established fund-distribution
+        network, which serves more than 3,300 asset managers and financial institutions.
+      </p>
+      <p>
+        The first cohort is targeted for late 2026 and early 2027. The initiative aims to bridge tokenized
+        funds and traditional distribution infrastructure.
+      </p>
+      <p>
+        <strong>Why it matters:</strong> institutional distribution could create a pathway from token issuance
+        to more practical financial-market activity. Execution, eligibility, and real participation remain the test.
+      </p>
+      <div class="bottom">
+        <a class="market-link" href="https://solana.com/news/project-harmonia-brings-institutional-tokenized-funds-to-solana" target="_blank" rel="noopener noreferrer">Read the Project Harmonia announcement →</a>
+      </div>
+    </article>
+
+    <article class="card news-card">
+      <div><span class="pill purple-pill">Network Performance</span></div>
+      <div class="date">CHANGELOG · OCTOBER 8, 2026</div>
+      <h3>Target Slot Times Move Toward 200 ms</h3>
+      <p>
+        Solana's October 8 developer changelog reported a feature gate for reducing slot times from
+        250 milliseconds to 200 milliseconds, with the shorter target taking effect one epoch after activation.
+      </p>
+      <p>
+        <strong>Why it matters:</strong> shorter target slot times can support a more responsive execution
+        environment. The real test is measured performance under load, not the headline number.
+      </p>
+      <div class="bottom">
+        <a class="market-link" href="https://solana.com/news/solana-changelog-october-8-2026" target="_blank" rel="noopener noreferrer">Read the October 8 changelog →</a>
+      </div>
+    </article>
+
+    <article class="card news-card">
+      <div><span class="pill gold-pill">Settlement Infrastructure</span></div>
+      <div class="date">ANNOUNCED OCTOBER 6, 2026</div>
+      <h3>Delivery-versus-Payment Infrastructure</h3>
+      <p>
+        Solana announced an open-source delivery-versus-payment program designed for financial institutions.
+        The approach aims to coordinate the exchange of assets and payment atomically.
+      </p>
+      <p>
+        <strong>Why it matters:</strong> tokenized financial markets require reliable settlement processes.
+        The opportunity is to support transactions in which asset delivery and payment are linked.
+      </p>
+      <p>
+        Adoption by institutions, production deployment, and real settlement volume are the milestones to watch.
+      </p>
+      <div class="bottom">
+        <a class="market-link" href="https://solana.com/news" target="_blank" rel="noopener noreferrer">Review official Solana news →</a>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="callout">
+    <strong>HOW TO INTERPRET THE NEWS:</strong>
+    Announcements show intent. Integrations show progress. Live transactions show implementation.
+    Recurring, economically meaningful usage provides stronger evidence of adoption.
+  </div>
+
+  <div class="source-note">
+    Sources:
+    <a href="https://solana.com/news" target="_blank" rel="noopener noreferrer">Solana Foundation official news</a>,
+    <a href="https://solana.com/news/solana-changelog-october-8-2026" target="_blank" rel="noopener noreferrer">October 8, 2026 developer changelog</a>,
+    and <a href="https://solana.com/news/project-harmonia-brings-institutional-tokenized-funds-to-solana" target="_blank" rel="noopener noreferrer">Project Harmonia</a>.
+    Planned launches and target dates may change. Confirm rollout and adoption with primary sources.
+  </div>
 </section>
 
 <!-- WESTERN UNION -->
 
-<section
-  class="section"
-  id="western-union-signal"
-  style="
-    border:1px solid rgba(255,204,0,0.35);
-    background:
-      linear-gradient(
-        180deg,
-        rgba(255,204,0,0.10),
-        rgba(255,255,255,0.03)
-      );
-    box-shadow:0 0 40px rgba(255,204,0,0.12);
-  "
->
+<section class="section" id="western-union">
+  <div class="kicker">03 / Payments Infrastructure</div>
+  <h2>Western Union: USDPT on Solana</h2>
 
-  <h2
-    style="
-      margin:0 0 10px;
-      font-size:18px;
-      color:#FFD700;
-      letter-spacing:0.3px;
-    "
-  >
-    ⚡ Institutional Signal: Western Union Moves On-Chain
-  </h2>
+  <div class="callout" style="border-color:rgba(255,209,102,.32);background:linear-gradient(135deg,rgba(255,209,102,.09),rgba(255,255,255,.015))">
+    <strong style="color:var(--gold)">Institutional Signal</strong>
+    <p>
+      Western Union's USDPT initiative is an important part of the payments thesis because it connects a recognized
+      global money-movement business with blockchain-based dollar settlement infrastructure.
+    </p>
+  </div>
 
-  <p class="muted">
-
-    On May 4, 2026, Western Union announced the launch
-    of USDPT on Solana.
-
-    USDPT is issued by Anchorage Digital Bank, N.A. and
-    Western Union says it is backed 1:1 by reserves that
-    include U.S. dollar deposits, Treasury bills, and
-    similar cash equivalents.
-
+  <p>
+    On May 4, 2026, Western Union announced the launch of USDPT on Solana. USDPT is issued by Anchorage Digital
+    Bank, N.A. Western Union has described the token as backed 1:1 by reserves that include U.S. dollar deposits,
+    Treasury bills, and similar cash equivalents.
   </p>
 
-  <p class="muted">
-
-    Western Union is developing USDPT for exchange access,
-    digital-asset cash-out infrastructure, consumer spending,
-    money-transfer receipt, and near-instant 24/7 treasury
-    and agent settlement.
-
-    In June 2026, Bybit became the first major crypto exchange
-    announced as an integration partner for USDPT.
-
+  <p>
+    Western Union's stated use cases include exchange access, digital-asset cash-out infrastructure, consumer
+    spending, money-transfer receipt, and near-instant, 24/7 treasury and agent settlement.
   </p>
 
-  <p class="muted">
-
-    This is a meaningful payments-infrastructure signal for
-    Solana, but rollout, transaction volume, user adoption,
-    and value capture for SOL still need to be measured over time.
-
+  <p>
+    In June 2026, Bybit was announced as the first major crypto exchange integration partner for USDPT.
+    The integration adds another potential route for distribution and access, although a partnership does not
+    establish the amount of activity that will ultimately occur.
   </p>
 
-  <ul class="bullets">
+  <div class="grid two">
+    <div class="card">
+      <div class="label">Potential Opportunity</div>
+      <div class="value gold">Global Reach</div>
+      <p class="note">
+        Western Union operates across more than 200 countries and territories, giving the initiative a potentially
+        large distribution surface if products are rolled out and adopted.
+      </p>
+    </div>
+    <div class="card">
+      <div class="label">Investment Test</div>
+      <div class="value cyan">Usage + Fees</div>
+      <p class="note">
+        Actual settlement volume, repeat users, transaction demand, and economic value for the Solana network matter
+        more than the announcement itself.
+      </p>
+    </div>
+  </div>
 
-    <li>
-      Western Union operates across more than 200 countries
-      and territories, creating a potentially large distribution surface.
-    </li>
-
-    <li>
-      USDPT settlement and application activity can add on-chain
-      usage, though the direct economic impact on SOL must be measured.
-    </li>
-
-    <li>
-      Bybit was announced in June 2026 as the first major
-      exchange integration for USDPT.
-    </li>
-
-    <li>
-      Anchorage Digital Bank issues USDPT on Solana, adding
-      regulated financial infrastructure to the thesis.
-    </li>
-
+  <h3 style="margin-top:22px">What Western Union Could Mean for Solana</h3>
+  <ul class="list">
+    <li><strong>Payments:</strong> stablecoin infrastructure can support transfers and settlement outside traditional operating hours.</li>
+    <li><strong>Distribution:</strong> an established money-movement brand can introduce blockchain rails to existing users and business partners.</li>
+    <li><strong>Infrastructure:</strong> regulated issuance and exchange integrations can help connect traditional financial operations with on-chain services.</li>
+    <li><strong>Network activity:</strong> real settlement volume could create additional transactions on Solana.</li>
+    <li><strong>Value capture:</strong> additional transactions do not automatically produce a proportional rise in SOL demand or price.</li>
   </ul>
 
-  <div
-    style="
-      margin-top:14px;
-      padding:12px;
-      border-left:3px solid #FFD700;
-      background:rgba(0,0,0,0.25);
-      border-radius:10px;
-      font-weight:700;
-      color:#fff;
-    "
-  >
-
-    This is real infrastructure going live — but adoption,
-    transaction volume, and SOL value capture remain the
-    metrics that matter.
-
+  <div class="callout">
+    <strong>DEGENSTEIN TAKE:</strong>
+    Western Union is a meaningful infrastructure signal. The next question is whether USDPT moves from launch and integrations
+    into measurable, recurring settlement activity.
   </div>
 
+  <div class="source-note">
+    Verify the latest product availability, supported markets, and partner integrations through
+    <a href="https://solana.com/news" target="_blank" rel="noopener noreferrer">Solana's official announcements</a>
+    and <a href="https://www.westernunion.com/" target="_blank" rel="noopener noreferrer">Western Union</a>.
+  </div>
 </section>
 
-<!-- JULY UPDATE -->
+<!-- MONEYGRAM -->
 
-<section
-  class="section"
-  id="july-2026"
->
+<section class="section" id="moneygram">
+  <div class="kicker">04 / Money Movement</div>
+  <h2>MoneyGram: Infrastructure and Validator Participation</h2>
 
-  <h2>
-    July 2026 Thesis Update
-  </h2>
-
-  <p class="muted">
-
-    The Solana thesis has moved beyond speed benchmarks alone.
-
-    Galaxy Research reported that Solana's Q1 2026 TVL declined
-    22% quarter over quarter to about $15.0 billion, while RWAs
-    grew 58% to more than $2.5 billion and stablecoin supply
-    increased to $15.45 billion.
-
-    Solana Foundation later reported stablecoin supply reaching
-    $17 billion in March.
-
+  <p>
+    MoneyGram's participation in Solana's infrastructure ecosystem adds another money-movement company to the
+    broader payments narrative. The June 2026 ecosystem update described MoneyGram as a Solana Developer Platform
+    infrastructure partner and active validator.
   </p>
 
-  <p class="muted">
-
-    May brought another important payments signal: Western Union's
-    USDPT went live on Solana, and June brought the first major
-    exchange integration announcement with Bybit.
-
-    Solana's May ecosystem update also highlighted Cash App support
-    for USDC on Solana and SoFiUSD becoming available on the network.
-
+  <p>
+    This matters because payment businesses evaluate more than transaction speed. They need infrastructure that
+    can support operational requirements, integration workflows, liquidity management, compliance processes,
+    and reliable settlement.
   </p>
 
-  <p class="muted">
-
-    The June 2026 ecosystem data strengthened the tokenization thesis
-    further.
-
-    Solana's RWA value crossed $3 billion for the first time,
-    cumulative tokenized-stock volume passed $10 billion, and daily
-    tokenized-stock volume reached an all-time high of $683 million.
-
-    MoneyGram also joined the Solana Developer Platform as an
-    infrastructure partner and active validator, adding another
-    global money-movement company at the protocol level.
-
-  </p>
-
-  <p class="muted">
-
-    Solana also introduced native subscriptions and delegated
-    spending as a shared on-chain primitive for recurring billing
-    and allowances.
-
-    That expands the execution thesis beyond trading into SaaS
-    billing, payroll-style flows, API payments, media subscriptions,
-    and other recurring-payment use cases.
-
-  </p>
-
-  <div class="callout">
-
-    <strong>
-      What I am watching now:
-    </strong>
-
-    <ul class="bullets">
-
-      <li>
-        Whether USDPT moves from launch and integrations into
-        measurable settlement volume.
-      </li>
-
-      <li>
-        Whether RWA value holds above the new $3 billion milestone
-        and tokenized-stock volume continues expanding.
-      </li>
-
-      <li>
-        Whether MoneyGram's validator and infrastructure role
-        develops into measurable payment activity.
-      </li>
-
-      <li>
-        Whether native subscriptions and delegated spending attract
-        real recurring-payment applications.
-      </li>
-
-      <li>
-        Whether stablecoin supply and payment activity translate
-        into durable network economics.
-      </li>
-
-      <li>
-        Whether client diversity and ongoing Alpenglow engineering
-        work improve resilience and finality.
-      </li>
-
-      <li>
-        Whether SOL captures value from rising activity instead of
-        usage growing faster than token economics.
-      </li>
-
-    </ul>
-
+  <div class="grid three">
+    <div class="card">
+      <div class="label">Distribution</div>
+      <div class="value green">Reach</div>
+      <p class="note">Money-movement businesses already operate within established customer and agent networks.</p>
+    </div>
+    <div class="card">
+      <div class="label">Infrastructure</div>
+      <div class="value cyan">Participation</div>
+      <p class="note">Validator participation is a more direct infrastructure role than a logo-only partnership announcement.</p>
+    </div>
+    <div class="card">
+      <div class="label">Evidence Required</div>
+      <div class="value gold">Transactions</div>
+      <p class="note">Live payment volume, repeat usage, and measurable settlement activity determine how material the integration becomes.</p>
+    </div>
   </div>
 
+  <h3 style="margin-top:22px">What Investors Should Watch</h3>
+  <ul class="list">
+    <li>Whether infrastructure participation develops into live payment products.</li>
+    <li>Whether payment volume and transaction frequency become measurable.</li>
+    <li>Whether those flows are economically meaningful for the network.</li>
+    <li>Whether MoneyGram expands its participation over time.</li>
+  </ul>
+
+  <p>
+    A financial company operating infrastructure on Solana can strengthen the network's institutional credibility.
+    It is still necessary to distinguish infrastructure participation from large-scale commercial adoption.
+  </p>
+
+  <div class="source-note">
+    Source: <a href="https://solana.com/news" target="_blank" rel="noopener noreferrer">Solana Foundation ecosystem announcements</a>.
+    Confirm the latest deployment and activity details before treating the relationship as a source of material transaction demand.
+  </div>
+</section>
+
+<!-- 2026 TIMELINE -->
+
+<section class="section" id="timeline">
+  <div class="kicker">05 / Thesis Evolution</div>
+  <h2>Solana's 2026 Adoption Timeline</h2>
+  <p>
+    The thesis has been developing across several fronts. The dates below summarize milestones discussed in this report;
+    they do not imply that every announced product is fully deployed or operating at scale.
+  </p>
+
+  <div class="timeline">
+    <div class="timeline-date">Q1 2026</div>
+    <div class="timeline-content">
+      <h3>RWA and Stablecoin Expansion</h3>
+      <p>
+        Galaxy Research reported Solana's Q1 total value locked declined 22% quarter over quarter to approximately
+        $15.0 billion, while real-world assets grew 58% to more than $2.5 billion and stablecoin supply increased
+        to approximately $15.45 billion.
+      </p>
+      <p>
+        Solana Foundation also reported stablecoin supply reaching $17 billion in March. These figures come from
+        different reports and reporting windows, so they should not be treated as perfectly interchangeable snapshots.
+      </p>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-date">May 2026</div>
+    <div class="timeline-content">
+      <h3>USDPT and Consumer Payment Signals</h3>
+      <p>
+        Western Union announced USDPT on Solana. Solana's ecosystem update also highlighted Cash App support for
+        USDC on Solana and SoFiUSD becoming available on the network.
+      </p>
+      <p>
+        The broader signal: stablecoin activity and payment distribution are becoming more important parts of the
+        Solana narrative, alongside decentralized finance and trading.
+      </p>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-date">June 2026</div>
+    <div class="timeline-content">
+      <h3>RWA and Tokenized-Stock Milestones</h3>
+      <p>
+        Solana's June ecosystem update reported RWA value crossing $3 billion, cumulative tokenized-stock volume
+        exceeding $10 billion, and a record daily tokenized-stock volume of $683 million.
+      </p>
+      <p>
+        MoneyGram also joined the Solana Developer Platform as an infrastructure partner and active validator,
+        while Bybit was announced as the first major exchange integration partner for USDPT.
+      </p>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-date">September 2026</div>
+    <div class="timeline-content">
+      <h3>Stablecoin Supply and Tokenized Markets</h3>
+      <p>
+        Solana's September ecosystem roundup reported $17.51 billion in stablecoin supply, $684 million in
+        tokenized-equity supply, and 3.18 billion non-vote transactions during the month.
+      </p>
+      <p>
+        These are ecosystem-reported figures and should be evaluated with attention to definitions, measurement
+        periods, and whether the activity is recurring and economically meaningful.
+      </p>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-date">October 2026</div>
+    <div class="timeline-content">
+      <h3>Consumer Distribution and Network Engineering</h3>
+      <p>
+        Samsung Wallet's planned USDC transfer integration, institutional tokenization initiatives, and the reported
+        slot-time reduction target broaden the near-term catalysts to monitor.
+      </p>
+      <p>
+        The next stage is execution: product availability, user activity, institutional participation, measured
+        performance, and durable network economics.
+      </p>
+    </div>
+  </div>
+
+  <div class="source-note">
+    Historical metrics are drawn from reports and announcements with different publication dates and methodologies.
+    Use primary sources for the latest figures and product status:
+    <a href="https://solana.com/news" target="_blank" rel="noopener noreferrer">Solana official news</a> and
+    <a href="https://solana.com/changelog" target="_blank" rel="noopener noreferrer">Solana changelog</a>.
+  </div>
 </section>
 
 <!-- JUNE MILESTONES -->
 
-<section
-  class="section"
-  id="june-milestones"
->
+<section class="section" id="milestones">
+  <div class="kicker">06 / Network Adoption</div>
+  <h2>Fresh Network Milestones</h2>
+  <p>
+    Solana's 2026 ecosystem reports described growth in tokenized assets, stablecoin supply, and transaction activity.
+    These figures help frame the adoption story; they are not forecasts for SOL's price.
+  </p>
 
-  <h2>
-    Fresh June 2026 Network Milestones
-  </h2>
-
-  <div class="metrics">
-
-    <div class="metric">
-
-      <div class="label">
-        Solana RWA Value
-      </div>
-
-      <div class="value">
-        $3B+
-      </div>
-
-      <div class="note">
-        Crossed the milestone in June 2026.
-      </div>
-
+  <div class="grid four">
+    <div class="card">
+      <div class="label">Solana RWA Value</div>
+      <div class="value green">$3B+</div>
+      <div class="note">Reported milestone crossed in June 2026.</div>
     </div>
-
-    <div class="metric">
-
-      <div class="label">
-        Tokenized-Stock Volume
-      </div>
-
-      <div class="value">
-        $10B+
-      </div>
-
-      <div class="note">
-        Cumulative volume reported by Solana's June roundup.
-      </div>
-
+    <div class="card">
+      <div class="label">Cumulative Tokenized-Stock Volume</div>
+      <div class="value cyan">$10B+</div>
+      <div class="note">Reported in Solana's June ecosystem roundup.</div>
     </div>
-
-    <div class="metric">
-
-      <div class="label">
-        Daily Tokenized-Stock Record
-      </div>
-
-      <div class="value">
-        $683M
-      </div>
-
-      <div class="note">
-        All-time high reported for June.
-      </div>
-
+    <div class="card">
+      <div class="label">Daily Tokenized-Stock Volume</div>
+      <div class="value purple">$683M</div>
+      <div class="note">Reported record daily volume in June 2026.</div>
     </div>
-
-    <div class="metric">
-
-      <div class="label">
-        Payments Infrastructure
-      </div>
-
-      <div class="value">
-        MoneyGram
-      </div>
-
-      <div class="note">
-        Joined SDP and became an active Solana validator.
-      </div>
-
+    <div class="card">
+      <div class="label">Payments Infrastructure</div>
+      <div class="value gold">MoneyGram</div>
+      <div class="note">Announced as a Solana Developer Platform infrastructure partner and active validator.</div>
     </div>
-
   </div>
 
-  <p class="muted" style="margin-top:14px;">
+  <h3 style="margin-top:24px">What These Milestones Actually Tell Us</h3>
+  <ul class="list">
+    <li><strong>RWA value:</strong> signals the amount of tokenized real-world asset value reported on the network, according to the relevant methodology.</li>
+    <li><strong>Tokenized-stock volume:</strong> signals activity in tokenized equity products, but reported volume does not necessarily equal net new capital or durable liquidity.</li>
+    <li><strong>Stablecoin supply:</strong> provides context for dollar-denominated assets available on-chain, but supply alone does not establish how frequently they are used.</li>
+    <li><strong>Payment partnerships:</strong> can expand access and integration opportunities, but announced relationships need to be followed by actual transaction activity.</li>
+  </ul>
 
-    These milestones strengthen the case that Solana is competing
-    for tokenized-market and payments execution.
-
-    They do not prove that SOL will appreciate in price.
-
-    The research question remains whether increased network activity
-    creates durable fees, demand, and economic value capture for the
-    native asset.
-
-  </p>
-
-</section>
-
-<!-- SOL MARKET DATA -->
-
-<section
-  class="section"
-  id="price"
->
-
-  <h2>
-    Solana Market Data
-  </h2>
-
-  <p class="muted">
-
-    SOL price and relative market performance can change rapidly.
-
-    Rather than relying on an embedded third-party chart that may
-    be blocked by browser privacy settings, content-security rules,
-    or external widget availability, use the live market sources
-    below to verify current pricing and chart history.
-
-  </p>
-
-  <div class="metrics">
-
-    <div class="metric">
-
-      <div class="label">
-        SOL / USD
-      </div>
-
-      <div class="value">
-        Live Chart
-      </div>
-
-      <div class="note">
-
-        View current SOL price action, historical candles,
-        volume, and technical chart data.
-
-      </div>
-
-      <a
-        class="metric-link"
-        href="https://www.tradingview.com/symbols/SOLUSD/"
-        target="_blank"
-        rel="noopener noreferrer nofollow"
-      >
-        Open SOL Chart on TradingView →
-      </a>
-
-    </div>
-
-    <div class="metric">
-
-      <div class="label">
-        SOL Market Overview
-      </div>
-
-      <div class="value">
-        Verify Live
-      </div>
-
-      <div class="note">
-
-        Review current market price, market capitalization,
-        volume, supply data, and recent performance.
-
-      </div>
-
-      <a
-        class="metric-link"
-        href="https://www.coingecko.com/en/coins/solana"
-        target="_blank"
-        rel="noopener noreferrer nofollow"
-      >
-        View Solana Market Data →
-      </a>
-
-    </div>
-
+  <div class="callout">
+    <strong>THE KEY DISTINCTION:</strong>
+    Ecosystem growth is evidence of potential adoption. The investment case becomes stronger when that adoption is recurring,
+    resilient, economically meaningful, and connected to sustainable demand for SOL.
   </div>
 
   <div class="source-note">
-
-    Market data is supplied by independent third-party sources.
-    Exchange pricing and reported metrics may vary by provider.
-    Always verify current data before making an investment decision.
-
+    Source: <a href="https://solana.com/news" target="_blank" rel="noopener noreferrer">Solana Foundation ecosystem updates</a>.
+    Metric definitions and reporting windows may differ across providers.
   </div>
-
 </section>
 
-<!-- NETWORK METRICS -->
+<!-- STABLECOINS -->
 
-<section
-  class="section"
-  id="metrics"
->
+<section class="section" id="stablecoins">
+  <div class="kicker">07 / On-Chain Dollars</div>
+  <h2>Why Stablecoins Matter to Solana</h2>
 
-  <h2>
-    Solana Network Metrics
-  </h2>
+  <p>
+    Stablecoins can make blockchain networks more useful by allowing users to transfer dollar-denominated value
+    without relying on the volatility of a typical crypto asset for the value being transferred.
+    On Solana, stablecoins can support payments, trading, liquidity, settlement, and financial applications.
+  </p>
 
-  <div class="metrics">
-
-    <div class="metric">
-
-      <div class="label">
-        Solana TVL
-      </div>
-
-      <div class="value">
-        Verify Live
-      </div>
-
-      <div class="note">
-
-        Review current Solana total value locked,
-        protocol activity, and DeFi sector data.
-
-      </div>
-
-      <a
-        class="metric-link"
-        href="https://defillama.com/chain/Solana"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Verify on DeFiLlama →
-      </a>
-
+  <div class="grid two">
+    <div class="card">
+      <div class="pill green-pill">Potential Upside</div>
+      <h3 style="margin-top:13px">More Dollar-Denominated Activity</h3>
+      <ul class="list">
+        <li>Payments can reach users across time zones.</li>
+        <li>On-chain dollars can be used across compatible applications.</li>
+        <li>Stablecoin balances can support trading and settlement.</li>
+        <li>Wallet and payment integrations can reduce user friction.</li>
+      </ul>
     </div>
-
-    <div class="metric">
-
-      <div class="label">
-        Network Activity
-      </div>
-
-      <div class="value">
-        Verify Live
-      </div>
-
-      <div class="note">
-
-        Review transactions, blocks, epochs,
-        validators, and current network activity.
-
-      </div>
-
-      <a
-        class="metric-link"
-        href="https://explorer.solana.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Open Solana Explorer →
-      </a>
-
+    <div class="card">
+      <div class="pill red-pill">What Can Be Misread</div>
+      <h3 style="margin-top:13px">Supply Is Not the Same as Usage</h3>
+      <ul class="list">
+        <li>A large supply does not prove high payment frequency.</li>
+        <li>Stablecoins can be concentrated among a small number of users or services.</li>
+        <li>Some activity can reflect trading, incentives, or temporary liquidity.</li>
+        <li>Stablecoin adoption does not automatically create proportional SOL demand.</li>
+      </ul>
     </div>
+  </div>
 
+  <h3 style="margin-top:22px">The Metrics to Follow</h3>
+  <ul class="list">
+    <li>Stablecoin supply over time, using a consistent source and definition.</li>
+    <li>Transfer volume and transaction frequency, not only the total balance outstanding.</li>
+    <li>Payments and settlement activity that can be distinguished from speculative trading.</li>
+    <li>Growth in active users, applications, and recurring transactions.</li>
+    <li>Fees and network economics associated with the additional activity.</li>
+  </ul>
+
+  <div class="source-note">
+    Useful sources:
+    <a href="https://defillama.com/chain/Solana" target="_blank" rel="noopener noreferrer">DeFiLlama — Solana</a>,
+    <a href="https://explorer.solana.com/" target="_blank" rel="noopener noreferrer">Solana Explorer</a>,
+    and <a href="https://solana.com/news" target="_blank" rel="noopener noreferrer">Solana official news</a>.
+  </div>
+</section>
+
+<!-- TOKENIZATION -->
+
+<section class="section" id="tokenization">
+  <div class="kicker">08 / Real-World Assets</div>
+  <h2>Tokenization: From Issuance to Real Financial Activity</h2>
+
+  <p>
+    Tokenization represents assets or financial claims through blockchain-based tokens. Depending on the product
+    and its legal structure, tokenized assets can include fund interests, equities, credit, Treasury-related products,
+    and other real-world assets.
+  </p>
+
+  <p>
+    Solana's opportunity is not simply to host tokenized assets. It is to support the activity around them:
+    compliant distribution, transfer, trading, liquidity, settlement, and application access.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <div class="label">Stage 1</div>
+      <div class="value green">Issuance</div>
+      <p class="note">Assets are represented on-chain under a particular product, issuer, and legal framework.</p>
+    </div>
+    <div class="card">
+      <div class="label">Stage 2</div>
+      <div class="value cyan">Distribution</div>
+      <p class="note">Eligible investors need compliant ways to discover, access, and hold the products.</p>
+    </div>
+    <div class="card">
+      <div class="label">Stage 3</div>
+      <div class="value purple">Usage</div>
+      <p class="note">Trading, transfers, liquidity, and settlement show whether the products are being used beyond issuance.</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:22px">Why Project Harmonia Matters</h3>
+  <p>
+    Project Harmonia's effort to connect tokenized funds with Allfunds' distribution network is relevant because
+    distribution can be a major barrier between an on-chain asset and an investor who is eligible to own it.
+    Established infrastructure could make tokenized funds easier to access through familiar financial channels.
+  </p>
+
+  <h3>What Investors Should Not Assume</h3>
+  <ul class="list">
+    <li>Tokenized assets on a blockchain are not necessarily freely accessible to every user.</li>
+    <li>Reported asset value does not automatically translate into secondary-market liquidity.</li>
+    <li>Institutional announcements do not prove that a product has reached large-scale adoption.</li>
+    <li>Growth in tokenized assets does not guarantee that the native network token will appreciate.</li>
+  </ul>
+
+  <div class="callout">
+    <strong>THE STRONGER SIGNAL:</strong>
+    Look for tokenized assets that attract eligible investors, repeat transactions, meaningful liquidity, and durable settlement activity.
   </div>
 
   <div class="source-note">
-
-    Network metrics can vary by methodology, sample window,
-    transaction classification, and data provider.
-
-    Degenstein Crypto Hub does not treat a single network metric
-    as an investment signal in isolation.
-
+    Source: <a href="https://solana.com/news/project-harmonia-brings-institutional-tokenized-funds-to-solana" target="_blank" rel="noopener noreferrer">Project Harmonia announcement</a>.
+    Product terms, investor eligibility, and rollout timing depend on the relevant issuers and providers.
   </div>
-
 </section>
 
-<!-- MARKET COMPARISON -->
+<!-- NETWORK ENGINEERING -->
 
-<section
-  class="section"
-  id="compare"
->
+<section class="section" id="network-engineering">
+  <div class="kicker">09 / Network Engineering</div>
+  <h2>Performance, Finality, and Resilience</h2>
 
-  <h2>
-    SOL vs BTC vs ETH
-  </h2>
-
-  <p class="muted">
-
-    Relative performance matters because SOL should not be evaluated
-    only against the U.S. dollar.
-
-    Investors should also consider whether Solana is gaining or
-    losing value relative to Bitcoin and Ethereum across a full
-    market cycle.
-
+  <p>
+    Solana's execution thesis requires dependable infrastructure. Higher performance is useful only if the network
+    remains secure, reliable, and practical for developers and users under real demand.
   </p>
 
-  <div class="metrics">
-
-    <div class="metric">
-
-      <div class="label">
-        SOL vs Bitcoin
-      </div>
-
-      <div class="value">
-        SOL / BTC
-      </div>
-
-      <div class="note">
-
-        Track whether SOL is outperforming or underperforming
-        Bitcoin over time.
-
-      </div>
-
-      <a
-        class="metric-link"
-        href="https://www.tradingview.com/symbols/SOLBTC/"
-        target="_blank"
-        rel="noopener noreferrer nofollow"
-      >
-        View SOL / BTC Chart →
-      </a>
-
+  <div class="grid two">
+    <div class="card">
+      <span class="pill green-pill">Performance</span>
+      <h3 style="margin-top:13px">Shorter Slot-Time Targets</h3>
+      <p class="note">
+        The October 8, 2026 changelog described a feature gate for reducing target slot times from 250 ms to 200 ms,
+        with the change taking effect one epoch after activation.
+      </p>
+      <p class="note">
+        The important follow-up is measured latency, consistency, and network behavior under load.
+      </p>
+      <a class="market-link" href="https://solana.com/news/solana-changelog-october-8-2026" target="_blank" rel="noopener noreferrer">Read the changelog →</a>
     </div>
 
-    <div class="metric">
-
-      <div class="label">
-        SOL vs Ethereum
-      </div>
-
-      <div class="value">
-        SOL / ETH
-      </div>
-
-      <div class="note">
-
-        Compare Solana's market performance with Ethereum,
-        its largest smart-contract platform benchmark.
-
-      </div>
-
-      <a
-        class="metric-link"
-        href="https://www.tradingview.com/symbols/SOLETH/"
-        target="_blank"
-        rel="noopener noreferrer nofollow"
-      >
-        View SOL / ETH Chart →
-      </a>
-
+    <div class="card">
+      <span class="pill cyan">Consensus Development</span>
+      <h3 style="margin-top:13px">Alpenglow Engineering</h3>
+      <p class="note">
+        Alpenglow-related engineering and migration work is part of Solana's broader effort to improve consensus and
+        transaction finality. Verify implementation status and measured results rather than assuming every intended
+        improvement has already reached production.
+      </p>
+      <a class="market-link" href="https://solana.com/changelog" target="_blank" rel="noopener noreferrer">Follow official release notes →</a>
     </div>
 
+    <div class="card">
+      <span class="pill purple-pill">Client Diversity</span>
+      <h3 style="margin-top:13px">Firedancer and Validator Software</h3>
+      <p class="note">
+        Multiple independent validator-client implementations can reduce some forms of shared software risk.
+        Their practical value depends on implementation quality, adoption, and production behavior.
+      </p>
+      <a class="market-link" href="https://solana.com/news" target="_blank" rel="noopener noreferrer">Follow official updates →</a>
+    </div>
+
+    <div class="card">
+      <span class="pill gold-pill">Reliability</span>
+      <h3 style="margin-top:13px">Performance Under Stress</h3>
+      <p class="note">
+        Congestion, outages, validator participation, recovery behavior, and operational resilience are central
+        to evaluating a high-performance blockchain.
+      </p>
+      <a class="market-link" href="https://solana.com/" target="_blank" rel="noopener noreferrer">Visit Solana's official site →</a>
+    </div>
+  </div>
+
+  <h3 style="margin-top:24px">The Engineering Scorecard</h3>
+  <ul class="list">
+    <li><strong>Latency:</strong> how quickly transactions are processed and confirmed in real conditions.</li>
+    <li><strong>Reliability:</strong> how the network behaves during congestion and infrastructure stress.</li>
+    <li><strong>Client diversity:</strong> whether software diversity reduces correlated failure risk.</li>
+    <li><strong>Validator health:</strong> participation, distribution, and operational sustainability.</li>
+    <li><strong>Developer experience:</strong> whether applications can build, deploy, and operate reliably.</li>
+  </ul>
+
+  <div class="callout">
+    <strong>RESEARCH RULE:</strong>
+    Treat roadmap items as roadmap items, release notes as implementation evidence, and measured production performance
+    as the stronger signal.
+  </div>
+</section>
+
+<!-- MARKET DATA -->
+
+<section class="section" id="market-data">
+  <div class="kicker">10 / Market Research</div>
+  <h2>Solana Market Data</h2>
+  <p>
+    SOL price, trading volume, market capitalization, and relative performance change continuously.
+    This report intentionally links to independent live sources rather than presenting an unverified price snapshot.
+  </p>
+
+  <div class="grid two">
+    <div class="card">
+      <div class="label">SOL / USD</div>
+      <div class="value green">Live Chart</div>
+      <p class="note">Check price action, historical candles, trading volume, trend structure, and drawdowns.</p>
+      <a class="market-link" href="https://www.tradingview.com/symbols/SOLUSD/" target="_blank" rel="noopener noreferrer">Open SOL/USD on TradingView →</a>
+      <a class="market-link" href="https://www.coingecko.com/en/coins/solana" target="_blank" rel="noopener noreferrer">Open Solana market overview →</a>
+    </div>
+
+    <div class="card">
+      <div class="label">Market Structure</div>
+      <div class="value cyan">Verify Live</div>
+      <p class="note">Review current market capitalization, circulating supply, trading volume, and recent performance.</p>
+      <a class="market-link" href="https://www.coingecko.com/en/coins/solana" target="_blank" rel="noopener noreferrer">View CoinGecko data →</a>
+    </div>
+
+    <div class="card">
+      <div class="label">DeFi Metrics</div>
+      <div class="value purple">TVL + Activity</div>
+      <p class="note">Track total value locked, protocol activity, stablecoin liquidity, and changes across the Solana ecosystem.</p>
+      <a class="market-link" href="https://defillama.com/chain/Solana" target="_blank" rel="noopener noreferrer">Verify Solana on DeFiLlama →</a>
+    </div>
+
+    <div class="card">
+      <div class="label">Network Activity</div>
+      <div class="value gold">On-Chain Data</div>
+      <p class="note">Review blocks, transactions, validators, epochs, and network activity directly through an explorer.</p>
+      <a class="market-link" href="https://explorer.solana.com/" target="_blank" rel="noopener noreferrer">Open Solana Explorer →</a>
+    </div>
+  </div>
+
+  <div class="source-note">
+    Third-party data may differ by provider, exchange, reporting interval, and methodology. Verify current data independently
+    before making an investment decision.
+  </div>
+</section>
+
+<!-- RELATIVE PERFORMANCE -->
+
+<section class="section" id="compare">
+  <div class="kicker">11 / Relative Strength</div>
+  <h2>SOL vs. Bitcoin vs. Ethereum</h2>
+
+  <p>
+    SOL should not be evaluated only against the U.S. dollar. Relative performance helps show whether the market
+    is rewarding Solana compared with the two largest crypto benchmarks.
+  </p>
+
+  <div class="grid">
+    <div class="card">
+      <div class="label">SOL / BTC</div>
+      <div class="value green">Relative Strength</div>
+      <p class="note">
+        A rising SOL/BTC ratio indicates SOL is outperforming BTC over the selected period. A falling ratio indicates
+        relative underperformance.
+      </p>
+      <a class="market-link" href="https://www.tradingview.com/symbols/SOLBTC/" target="_blank" rel="noopener noreferrer">View SOL/BTC chart →</a>
+    </div>
+
+    <div class="card">
+      <div class="label">SOL / ETH</div>
+      <div class="value cyan">Platform Competition</div>
+      <p class="note">
+        The SOL/ETH ratio provides context for how the market is valuing Solana relative to Ethereum across different periods.
+      </p>
+      <a class="market-link" href="https://www.tradingview.com/symbols/SOLETH/" target="_blank" rel="noopener noreferrer">View SOL/ETH chart →</a>
+    </div>
+
+    <div class="card">
+      <div class="label">SOL / USD</div>
+      <div class="value purple">Absolute Price</div>
+      <p class="note">
+        Dollar performance remains important, but it should be assessed alongside drawdown risk, volume, and relative strength.
+      </p>
+      <a class="market-link" href="https://www.tradingview.com/symbols/SOLUSD/" target="_blank" rel="noopener noreferrer">View SOL/USD chart →</a>
+    </div>
   </div>
 
   <div class="callout">
+    <strong>DEGENSTEIN RESEARCH VIEW:</strong>
+    The strongest picture combines improving adoption metrics with a resilient network and improving relative performance.
+    No single chart or metric is sufficient on its own.
+  </div>
+</section>
 
-    <strong>
-      Degenstein Research View:
-    </strong>
+<!-- ECONOMICS -->
 
-    <p class="muted" style="margin-bottom:0;">
+<section class="section" id="value-capture">
+  <div class="kicker">12 / Token Economics</div>
+  <h2>Does More Network Activity Mean More Value for SOL?</h2>
 
-      SOL price appreciation is not the thesis by itself.
+  <p>
+    This is the central investment question. Solana can gain users, attract stablecoins, and host more tokenized assets
+    without SOL necessarily appreciating in proportion to those developments.
+  </p>
 
-      The stronger research signal is whether network adoption,
-      stablecoin activity, tokenization, payments infrastructure,
-      and application usage continue expanding while SOL maintains
-      relative strength against major crypto benchmarks.
+  <p>
+    Network adoption and token value capture are related, but they are not interchangeable. Investors need to examine
+    how activity creates demand for blockspace, how fees behave, how the token is used, and whether those factors
+    remain durable across different market conditions.
+  </p>
 
-    </p>
+  <div class="grid two">
+    <div class="card">
+      <div class="pill green-pill">Bullish Evidence</div>
+      <h3 style="margin-top:13px">What Could Strengthen the Thesis?</h3>
+      <ul class="list">
+        <li>Recurring stablecoin payments and settlement volume.</li>
+        <li>Tokenized assets with active markets and meaningful liquidity.</li>
+        <li>Growth in useful applications and repeat users.</li>
+        <li>Fees and blockspace demand that grow with activity.</li>
+        <li>Reliable execution through periods of high demand.</li>
+        <li>Improving relative strength against major crypto benchmarks.</li>
+      </ul>
+    </div>
 
+    <div class="card">
+      <div class="pill red-pill">Bearish Evidence</div>
+      <h3 style="margin-top:13px">What Could Weaken the Thesis?</h3>
+      <ul class="list">
+        <li>Announcements that fail to become live products.</li>
+        <li>Activity that fades when speculation or incentives decline.</li>
+        <li>Weak economic value capture despite growing transaction counts.</li>
+        <li>Network reliability or decentralization concerns.</li>
+        <li>Competition that captures users, liquidity, or developers.</li>
+        <li>Persistent underperformance against BTC and ETH.</li>
+      </ul>
+    </div>
   </div>
 
+  <h3 style="margin-top:24px">Do Not Confuse These Four Things</h3>
+  <div class="grid two">
+    <div class="card">
+      <h3>1. Announced Adoption</h3>
+      <p class="note">A company or institution states an intention to build, integrate, or launch a product.</p>
+    </div>
+    <div class="card">
+      <h3>2. Live Product</h3>
+      <p class="note">The product becomes available to its intended users under defined conditions.</p>
+    </div>
+    <div class="card">
+      <h3>3. Sustained Usage</h3>
+      <p class="note">Users return, transactions continue, and the product becomes more than a one-time announcement.</p>
+    </div>
+    <div class="card">
+      <h3>4. Token Value Capture</h3>
+      <p class="note">The activity creates durable economic demand or other benefits relevant to SOL holders.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>THE BOTTOM LINE:</strong>
+    A bullish Solana ecosystem story is not automatically a bullish SOL valuation at every price.
+    Entry valuation, market conditions, competition, token economics, and risk all matter.
+  </div>
 </section>
 
 <!-- INVESTOR TAKEAWAYS -->
 
-<section
-  class="section"
-  id="investor-takeaways"
->
+<section class="section" id="investor-takeaways">
+  <div class="kicker">13 / Investor Takeaways</div>
+  <h2>The Degenstein Solana Scorecard</h2>
 
-  <h2>
-    Investor Takeaways
-  </h2>
-
-  <ul class="bullets">
-
-    <li>
-
-      Solana is a focused bet on
-
-      <strong>
-        execution, speed, and consumer-scale usage
-      </strong>,
-
-      not on modular abstraction or settlement-first design.
-
-    </li>
-
-    <li>
-
-      Its strengths show up most clearly in applications where
-      latency and fees materially impact user experience.
-
-    </li>
-
-    <li>
-
-      SOL's volatility can coexist with real network usage.
-
-      Usage alone, however, does not guarantee proportional token
-      value capture or future price appreciation.
-
-    </li>
-
-    <li>
-
-      Network metrics help validate adoption, but should be
-      interpreted in context, not in isolation.
-
-    </li>
-
-    <li>
-
-      A research framework should track stablecoin supply, RWA
-      growth, application activity, validator and client resilience,
-      fees, and token value capture rather than relying only on
-      price momentum.
-
-    </li>
-
-  </ul>
-
-  <p class="muted">
-
-    In short, Solana's execution thesis has stronger 2026 adoption
-    evidence than the older version of this report showed.
-
-    The remaining investment question is whether growing activity
-    produces durable economics and value capture for SOL over time.
-
+  <p>
+    The purpose of this scorecard is not to predict a price target. It is to organize the evidence investors should
+    watch as the Solana thesis develops.
   </p>
 
-</section>
-
-<!-- COINDEPO RISK DISTINCTION -->
-
-<section
-  class="section"
-  id="strategy"
->
-
-  <h2>
-    Custodial SOL Interest Accounts — Separate Platform Risk
-  </h2>
-
-  <div class="callout">
-
-    <div class="btnrow">
-
-      <a
-        class="btn primary"
-        href="/report/coindepo-earn-while-you-hold/"
-      >
-        Read the CoinDepo risk review →
-      </a>
-
-    </div>
-
-    <p
-      style="
-        margin-top:12px;
-        font-size:.85rem;
-        color:rgba(156,163,175,.95);
-      "
-    >
-
-      For a separate review of advertised rates, custody terms,
-      and platform risks, see the
-
-      <a href="/report/coindepo-earn-while-you-hold/">
-        CoinDepo research review →
-      </a>
-
-    </p>
-
-    <div
-      style="
-        margin-top:14px;
-        padding:14px;
-        border-radius:14px;
-        border:1px solid rgba(0,255,170,0.25);
-        background:
-          linear-gradient(
-            180deg,
-            rgba(0,255,170,0.12),
-            rgba(0,0,0,0.25)
-          );
-      "
-    >
-
-      <strong style="color:#00FFAA;">
-        Research distinction:
-      </strong>
-
-      <p
-        style="
-          margin-top:8px;
-          font-size:13px;
-          color:rgba(255,255,255,0.85);
-        "
-      >
-
-        Holding SOL in self-custody and transferring SOL to a
-        third-party custodial interest platform are different
-        risk decisions.
-
-        CoinDepo currently advertises rates that vary by asset
-        and account type and can change.
-
-        Always verify current rates and terms directly with the provider.
-
-      </p>
-
-      <ul
-        style="
-          margin-top:8px;
-          padding-left:18px;
-          font-size:13px;
-          color:rgba(255,255,255,0.8);
-          line-height:1.55;
-        "
-      >
-
-        <li>
-          Review custody and counterparty risk.
-        </li>
-
-        <li>
-          Review withdrawal and account terms.
-        </li>
-
-        <li>
-          Do not treat advertised APR as guaranteed.
-        </li>
-
-        <li>
-          Separate the Solana investment thesis from the
-          third-party platform thesis.
-        </li>
-
+  <div class="grid two">
+    <div class="card">
+      <div class="pill green-pill">Thesis Strengths</div>
+      <h3 style="margin-top:13px">What Stands Out</h3>
+      <ul class="list">
+        <li>A clear focus on high-performance execution.</li>
+        <li>Stablecoin and payments infrastructure opportunities.</li>
+        <li>Institutional tokenization and distribution initiatives.</li>
+        <li>Consumer-facing integrations with potential reach.</li>
+        <li>Continued engineering work on performance and resilience.</li>
       </ul>
-
-      <p
-        style="
-          margin-top:10px;
-          font-size:11px;
-          color:rgba(255,255,255,0.6);
-        "
-      >
-
-        Some links in the separate CoinDepo report are referral
-        links and are clearly disclosed there.
-
-      </p>
-
     </div>
 
-    <div class="footer">
-
-      Educational research only.
-
-      Crypto assets and third-party custodial platforms can result
-      in partial or total loss.
-
+    <div class="card">
+      <div class="pill red-pill">Open Questions</div>
+      <h3 style="margin-top:13px">What Must Be Proven</h3>
+      <ul class="list">
+        <li>Whether announcements translate into repeat usage.</li>
+        <li>Whether new activity produces durable economic value.</li>
+        <li>Whether network reliability remains strong under stress.</li>
+        <li>Whether SOL captures value as the ecosystem expands.</li>
+        <li>Whether current valuation compensates investors for risk.</li>
+      </ul>
     </div>
-
   </div>
 
+  <h3 style="margin-top:24px">The Research Checklist</h3>
+  <ul class="checklist">
+    <li><span><strong>Samsung Wallet:</strong> Verify actual rollout, supported regions, transfer availability, and repeat usage.</span></li>
+    <li><span><strong>Western Union USDPT:</strong> Follow product availability, exchange integrations, and settlement activity.</span></li>
+    <li><span><strong>MoneyGram:</strong> Watch for measurable payments activity associated with infrastructure participation.</span></li>
+    <li><span><strong>Project Harmonia:</strong> Follow the target rollout window and evidence of institutional participation.</span></li>
+    <li><span><strong>Tokenized assets:</strong> Track supply, liquidity, trading activity, and settlement rather than issuance alone.</span></li>
+    <li><span><strong>Stablecoins:</strong> Review supply and transaction activity using consistent data sources.</span></li>
+    <li><span><strong>Network upgrades:</strong> Confirm deployment status and evaluate measured production results.</span></li>
+    <li><span><strong>Economics:</strong> Track fees, useful activity, and whether network growth supports SOL value capture.</span></li>
+    <li><span><strong>Relative strength:</strong> Compare SOL/BTC and SOL/ETH over multiple time horizons.</span></li>
+  </ul>
+
+  <div class="callout">
+    <strong>FINAL DEGENSTEIN VIEW:</strong>
+    Solana's execution-layer thesis has meaningful areas of potential growth: payments, stablecoins, tokenization,
+    and consumer applications. The investment case becomes more convincing when those opportunities translate into
+    real usage, reliable infrastructure, and durable economics. The market still has to price those outcomes—and the risks.
+  </div>
 </section>
 
-<!-- FOOTER -->
+<!-- COINDEPO DISTINCTION -->
 
-<div class="footer">
+<section class="section" id="strategy">
+  <div class="kicker">14 / Separate Investment Decisions</div>
+  <h2>Holding SOL vs. Earning Interest on SOL</h2>
 
-  <strong>
-    Research &amp; Risk Disclosure:
-  </strong>
+  <p>
+    A long-term view on Solana is separate from the decision to deposit SOL with a third-party custodial platform.
+    The underlying asset can perform as expected while a platform creates additional risks—or the reverse.
+  </p>
 
-  This report is for informational and educational purposes only
-  and does not constitute financial, investment, legal, or tax advice.
+  <div class="grid two">
+    <div class="card">
+      <div class="label">Holding the Asset</div>
+      <h3 style="margin-top:10px">SOL Market Risk</h3>
+      <ul class="list">
+        <li>Price volatility and drawdowns.</li>
+        <li>Competition between blockchain networks.</li>
+        <li>Token supply, demand, and market liquidity.</li>
+        <li>Network, regulatory, and macroeconomic risks.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="label">Using a Custodial Platform</div>
+      <h3 style="margin-top:10px">Additional Platform Risk</h3>
+      <ul class="list">
+        <li>Custody and counterparty exposure.</li>
+        <li>Withdrawal terms and potential restrictions.</li>
+        <li>Platform solvency and operational risk.</li>
+        <li>Advertised rates that may change or carry conditions.</li>
+      </ul>
+    </div>
+  </div>
 
-  SOL is volatile and network adoption does not guarantee token
-  price appreciation.
+  <div class="callout">
+    <strong>Research the platform separately.</strong>
+    Advertised interest rates are not guaranteed returns. Review custody terms, withdrawal conditions,
+    platform risk, and the exact account structure before depositing assets.
+    <div class="hero-actions">
+      <a class="btn primary" href="/report/coindepo-earn-while-you-hold/">Read the CoinDepo Risk Review →</a>
+      <a class="btn" href="/coindepo-review/">View CoinDepo Review →</a>
+    </div>
+  </div>
 
-  Third-party market and network data may lag or reflect different
-  methodologies.
+  <p class="small">
+    Some links in the separate CoinDepo research may be referral links, as disclosed on that report.
+    This Solana report does not recommend depositing SOL with any specific platform.
+  </p>
+</section>
 
-  Verify current data independently.
+<!-- RISK DISCLOSURE -->
 
+<section class="section risk" id="risks">
+  <div class="kicker">15 / Risk Analysis</div>
+  <h2>What Could Go Wrong?</h2>
+
+  <p>
+    Every investment thesis should explain what could invalidate it. Solana's potential opportunities come with
+    technical, economic, competitive, market, and regulatory risks.
+  </p>
+
+  <div class="grid two">
+    <div class="card">
+      <h3>Market and Valuation Risk</h3>
+      <ul class="list">
+        <li>SOL can decline sharply even while network usage grows.</li>
+        <li>Macro conditions and broad crypto-market selloffs can dominate asset-specific news.</li>
+        <li>A strong narrative can become overvalued before fundamentals justify the price.</li>
+        <li>Leverage, liquidity, and market structure can amplify losses.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Technology and Network Risk</h3>
+      <ul class="list">
+        <li>Technical upgrades may be delayed or underdeliver.</li>
+        <li>Congestion, software issues, or outages can damage user confidence.</li>
+        <li>Validator concentration or client-related risks can affect resilience.</li>
+        <li>Competition can offer different performance, security, or decentralization tradeoffs.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Adoption Risk</h3>
+      <ul class="list">
+        <li>Announced integrations may not reach broad deployment.</li>
+        <li>Users may not return after incentives or speculation fade.</li>
+        <li>Tokenized assets may remain small or lack secondary-market liquidity.</li>
+        <li>Stablecoin supply may grow without comparable payment activity.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Token Value-Capture Risk</h3>
+      <ul class="list">
+        <li>Transaction growth may not translate into proportional SOL demand.</li>
+        <li>Fees and network economics may be weaker than expected.</li>
+        <li>Competing assets may offer stronger relative performance.</li>
+        <li>Regulation or product restrictions may change adoption pathways.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <p>
+    <strong>Risk rule:</strong> Do not assume a partnership guarantees adoption, that adoption guarantees token appreciation,
+    or that a promising network automatically represents an attractive investment at every price.
+  </p>
+</section>
+
+<!-- FAQ -->
+
+<section class="section faq" id="faq">
+  <div class="kicker">16 / Frequently Asked Questions</div>
+  <h2>Solana Research FAQ</h2>
+
+  <details>
+    <summary>What is the Solana execution-layer thesis?</summary>
+    <p>
+      It is the view that Solana's high-throughput, low-cost design can support payments, trading, tokenized assets,
+      and consumer applications. The thesis depends on adoption and durable network economics, not speed alone.
+    </p>
+  </details>
+
+  <details>
+    <summary>Why does the Western Union USDPT announcement matter?</summary>
+    <p>
+      It connects a global money-movement company with stablecoin infrastructure on Solana. The long-term significance
+      depends on actual product availability, settlement volume, user adoption, and economic value for the network.
+    </p>
+  </details>
+
+  <details>
+    <summary>Does Samsung Wallet guarantee a surge in SOL demand?</summary>
+    <p>
+      No. The announced integration creates a potential distribution opportunity. Rollout, actual usage, supported
+      markets, and the economics of the resulting activity need to be verified.
+    </p>
+  </details>
+
+  <details>
+    <summary>Does tokenization growth guarantee SOL price appreciation?</summary>
+    <p>
+      No. Tokenized asset supply and trading volume can be positive adoption indicators, but neither guarantees
+      fees, token demand, or future price performance.
+    </p>
+  </details>
+
+  <details>
+    <summary>Why should investors track SOL/BTC and SOL/ETH?</summary>
+    <p>
+      Relative-performance charts help reveal whether SOL is outperforming or underperforming major crypto assets.
+      SOL can rise in dollar terms while still losing ground against BTC or ETH.
+    </p>
+  </details>
+
+  <details>
+    <summary>What network metrics should investors monitor?</summary>
+    <p>
+      Consider stablecoin supply and transfers, tokenized asset activity, transaction quality, fees, application usage,
+      network reliability, and validator/client resilience. No single metric should be used in isolation.
+    </p>
+  </details>
+
+  <details>
+    <summary>Is this report a live SOL price feed?</summary>
+    <p>
+      No. The report links to external sources for current market and network data. Check those sources directly
+      before making decisions.
+    </p>
+  </details>
+
+  <details>
+    <summary>Is this report financial advice?</summary>
+    <p>
+      No. It is educational research and does not account for an individual's financial situation, risk tolerance,
+      tax position, or investment objectives.
+    </p>
+  </details>
+</section>
+
+<!-- SOURCES -->
+
+<section class="section" id="sources">
+  <div class="kicker">17 / Primary Sources and Research Tools</div>
+  <h2>Verify the Evidence</h2>
+  <p>
+    Use the sources below to follow official announcements, review market data, and compare on-chain metrics.
+    Confirm dates, definitions, rollout status, and reporting methodology before relying on a particular figure.
+  </p>
+
+  <div class="grid two">
+    <div class="card">
+      <h3>Solana Official News</h3>
+      <p class="note">Official announcements, ecosystem updates, and institutional initiatives.</p>
+      <a class="market-link" href="https://solana.com/news" target="_blank" rel="noopener noreferrer">Open Solana News →</a>
+    </div>
+    <div class="card">
+      <h3>Solana Changelog</h3>
+      <p class="note">Developer and network changes, releases, and implementation notes.</p>
+      <a class="market-link" href="https://solana.com/changelog" target="_blank" rel="noopener noreferrer">Open Solana Changelog →</a>
+    </div>
+    <div class="card">
+      <h3>DeFiLlama</h3>
+      <p class="note">Review total value locked and ecosystem-level DeFi metrics.</p>
+      <a class="market-link" href="https://defillama.com/chain/Solana" target="_blank" rel="noopener noreferrer">Open Solana Dashboard →</a>
+    </div>
+    <div class="card">
+      <h3>Solana Explorer</h3>
+      <p class="note">Inspect blocks, transactions, epochs, and validator-related network information.</p>
+      <a class="market-link" href="https://explorer.solana.com/" target="_blank" rel="noopener noreferrer">Open Explorer →</a>
+    </div>
+    <div class="card">
+      <h3>CoinGecko</h3>
+      <p class="note">Review SOL price, market capitalization, supply information, and historical performance.</p>
+      <a class="market-link" href="https://www.coingecko.com/en/coins/solana" target="_blank" rel="noopener noreferrer">Open Solana Market Data →</a>
+    </div>
+    <div class="card">
+      <h3>TradingView</h3>
+      <p class="note">Compare SOL/USD, SOL/BTC, and SOL/ETH price charts.</p>
+      <a class="market-link" href="https://www.tradingview.com/symbols/SOLUSD/" target="_blank" rel="noopener noreferrer">Open SOL/USD Chart →</a>
+      <a class="market-link" href="https://www.tradingview.com/symbols/SOLBTC/" target="_blank" rel="noopener noreferrer">Open SOL/BTC Chart →</a>
+      <a class="market-link" href="https://www.tradingview.com/symbols/SOLETH/" target="_blank" rel="noopener noreferrer">Open SOL/ETH Chart →</a>
+    </div>
+  </div>
+
+  <div class="source-note">
+    Sources are provided for independent verification. Third-party data can differ in coverage, definitions,
+    and update frequency. The inclusion of a source does not imply endorsement.
+  </div>
+</section>
+
+<!-- FINAL VERDICT -->
+
+<section class="section" id="verdict">
+  <div class="kicker">The Final Word</div>
+  <h2>Execution Is the Thesis. Adoption Is the Test.</h2>
+
+  <p>
+    Solana's opportunity is broader than a single application or market cycle. Payments, stablecoins, tokenized
+    financial assets, and consumer applications all create potential demand for fast and inexpensive execution.
+    The 2026 developments discussed here add concrete milestones to monitor.
+  </p>
+
+  <p>
+    But a durable investment thesis requires more than a growing list of partners. It requires real products,
+    recurring usage, resilient infrastructure, and economics that make the network valuable over time.
+  </p>
+
+  <p>
+    The question is not simply whether Solana can grow. It is whether it can turn that growth into lasting
+    economic value—and whether the price of SOL adequately compensates investors for the risks.
+  </p>
+
+  <div class="callout">
+    <strong>DEGENSTEIN'S BOTTOM LINE:</strong>
+    Track the rollout. Measure the usage. Verify the economics. Respect the risk.
+    No announcement, metric, or upgrade guarantees SOL price appreciation.
+  </div>
+
+  <div class="hero-actions">
+    <a class="btn primary" href="https://www.tradingview.com/symbols/SOLUSD/" target="_blank" rel="noopener noreferrer">Review SOL Market Data ↗</a>
+    <a class="btn" href="/report/">Explore More Reports →</a>
+    <button class="btn cyan-btn" type="button" onclick="shareOnX()">Share This Report on X ↗</button>
+  </div>
+</section>
+
+<footer class="footer">
+  <strong>Research & Risk Disclosure</strong><br>
+  This report is for informational and educational purposes only and does not constitute financial, investment, legal,
+  or tax advice. SOL is volatile and can result in partial or total loss. Network adoption, partnerships, technical
+  upgrades, and ecosystem growth do not guarantee token price appreciation. News summaries reflect public announcements
+  available at the stated update date; plans, rollout dates, and metrics may change. Confirm current details through
+  primary sources. Third-party market and network data may differ by provider, methodology, and reporting interval.
   <br><br>
-
-  <a href="/about/">
-    About
-  </a>
-
-  ·
-
-  <a href="/contact/">
-    Contact
-  </a>
-
-  ·
-
-  <a href="/editorial-policy/">
-    Editorial Policy
-  </a>
-
-  ·
-
-  <a href="/privacy.html">
-    Privacy
-  </a>
-
-  ·
-
-  <a href="/terms.html">
-    Terms
-  </a>
-
+  The Degenstein Report does not guarantee the accuracy, completeness, or future performance of any asset discussed.
+  Always conduct independent research and consider your financial situation and risk tolerance before investing.
   <br><br>
-
+  <a href="/">Home</a> ·
+  <a href="/report/">Reports</a> ·
+  <a href="/about/">About</a> ·
+  <a href="/contact/">Contact</a> ·
+  <a href="/editorial-policy/">Editorial Policy</a> ·
+  <a href="/privacy.html">Privacy</a> ·
+  <a href="/terms.html">Terms</a>
+  <br><br>
   © 2026 The Degenstein Report
-
-</div>
+</footer>
 
 </div>
 
 <script>
-
 function shareOnX(){
-
-  const url =
-    "https://degenstein.xyz/report/solana-execution-layer-report/";
-
+  const url = "https://degenstein.xyz/report/solana-execution-layer-report/";
   const text =
-    "Solana ($SOL) is optimizing for one thing:\n" +
-    "⚡ fast, cheap, global execution.\n\n" +
-    "New SOL Execution Layer report 👇";
-
-  window.open(
-
-    "https://twitter.com/intent/tweet?text=" +
-    encodeURIComponent(text) +
-    "&url=" +
-    encodeURIComponent(url),
-
-    "_blank",
-
-    "noopener"
-
-  );
-
+    "⚡ SOLANA: THE EXECUTION LAYER THESIS\n\n" +
+    "Samsung Wallet. Western Union. MoneyGram. Tokenized assets. Network upgrades.\n\n" +
+    "Adoption is the story. Value capture is the proof.\n\n" +
+    "The Degenstein Report's updated $SOL research 👇";
+  const shareUrl = "https://twitter.com/intent/tweet?text=" +
+    encodeURIComponent(text) + "&url=" + encodeURIComponent(url);
+  window.open(shareUrl, "_blank", "noopener,noreferrer");
 }
-
 </script>
 
 </body>
 </html>
+
 
 
