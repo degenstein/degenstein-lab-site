@@ -1,798 +1,1486 @@
- <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <title>$XRP — July 2026 ETF Flows, MiCA & XRPL Payment Rails | The Degenstein Report</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      <!-- ✅ SEO -->
-      <meta name="description" content="Independent July 2026 XRP research covering U.S. spot ETF flows, Ripple's EU MiCA authorization, XRPL payments and tokenization, catalysts, value capture, and risk." />
-      <link rel="canonical" href="https://degenstein.xyz/report/xrp/" />
-      <meta name="robots" content="index, follow" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b16">
 
-      <!-- ✅ Open Graph -->
-      <meta property="og:type" content="article" />
-      <meta property="og:site_name" content="The Degenstein Report" />
-      <meta property="og:title" content="$XRP — July 2026 ETF Flows, MiCA & XRPL Payment Rails" />
-      <meta property="og:description" content="Current XRP research: ETF demand, regulated payments, XRPL adoption, tokenization, and risks." />
-      <!-- If you export the SVG below to PNG, save it as /assets/report-xrp.png -->
-      <meta property="og:image" content="https://degenstein.xyz/assets/report-xrp.png" />
-      <meta property="og:url" content="https://degenstein.xyz/report/xrp/" />
+  <title>$XRP Research Report | The Degenstein Report</title>
+  <meta name="description" content="The Degenstein Report's October 2026 XRP research: the new official @XRP X account, ETF flows, Ripple institutional expansion, XRPL adoption, catalysts and risks.">
+  <link rel="canonical" href="https://degenstein.xyz/report/xrp/">
+  <meta name="robots" content="index, follow">
 
-      <!-- ✅ X / Twitter -->
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content="$XRP — July 2026 ETF Flows, MiCA & XRPL Payment Rails" />
-      <meta name="twitter:description" content="Current XRP research: ETF demand, regulated payments, XRPL adoption, tokenization, and risks." />
-      <meta name="twitter:image" content="https://degenstein.xyz/assets/report-xrp.png" />
-      <meta name="twitter:site" content="@DHouseofcrypto" />
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="The Degenstein Report">
+  <meta property="og:title" content="$XRP — The Institutional Adoption & Value-Capture Report">
+  <meta property="og:description" content="The official @XRP account is live. ETF flows have shifted. Ripple's institutional push continues. What actually matters for XRP investors?">
+  <meta property="og:url" content="https://degenstein.xyz/report/xrp/">
+  <meta property="og:image" content="https://degenstein.xyz/assets/report-xrp.png">
 
-      <meta name="theme-color" content="#22c55e" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="$XRP — The Institutional Adoption & Value-Capture Report">
+  <meta name="twitter:description" content="Official X account. ETF demand. Institutional adoption. The value-capture question.">
+  <meta name="twitter:image" content="https://degenstein.xyz/assets/report-xrp.png">
+  <meta name="twitter:site" content="@DHouseofcrypto">
 
-      <style>
-        :root {
-          --bg: #020617;
-          --card: #020617;
-          --card-soft: #020817;
-          --border: #1e293b;
-          --accent: #22c55e;
-          --accent-soft: rgba(34, 197, 94, 0.1);
-          --text-main: #f9fafb;
-          --text-muted: #9ca3af;
-          --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.8);
-          --radius-lg: 18px;
-        }
-
-        * { box-sizing: border-box; }
-    .container {
-      max-width: 920px;
-    }
-        body {
-          margin: 0;
-          font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
-          background:
-            radial-gradient(circle at top left, rgba(34, 197, 94, 0.16), transparent 55%),
-            radial-gradient(circle at bottom right, rgba(15, 118, 110, 0.2), transparent 55%),
-            var(--bg);
-          color: var(--text-main);
-          -webkit-font-smoothing: antialiased;
-        }
-    .snapshot, .income-card {
-      transition: transform .15s ease, box-shadow .15s ease;
+  <style>
+    :root {
+      --bg: #080b16;
+      --bg2: #0b1222;
+      --panel: rgba(16, 24, 43, .88);
+      --panel2: rgba(11, 18, 34, .94);
+      --border: rgba(148, 163, 184, .19);
+      --text: #f4f7ff;
+      --muted: #a7b2c8;
+      --dim: #78859e;
+      --green: #5cf2a5;
+      --cyan: #42d9f5;
+      --purple: #aa8bfa;
+      --red: #ff7d91;
+      --amber: #ffd27a;
+      --radius: 20px;
+      --shadow: 0 20px 65px rgba(0, 0, 0, .28);
     }
 
-    .snapshot:hover, .income-card:hover {
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(ellipse at 8% 0%, rgba(92,242,165,.12), transparent 35%),
+        radial-gradient(ellipse at 100% 18%, rgba(66,217,245,.10), transparent 32%),
+        radial-gradient(ellipse at 80% 75%, rgba(170,139,250,.07), transparent 35%),
+        var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--cyan); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .page {
+      width: min(1120px, 100%);
+      margin: auto;
+      padding: 30px 20px 80px;
+    }
+
+    .topbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .brand {
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+
+    .brand span { color: var(--green); }
+
+    .toplinks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      font-size: .83rem;
+      color: var(--muted);
+    }
+
+    .toplinks a { color: var(--muted); }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(25px, 5vw, 58px);
+      border: 1px solid rgba(92,242,165,.25);
+      border-radius: 28px;
+      background:
+        linear-gradient(120deg, rgba(92,242,165,.11), transparent 43%),
+        linear-gradient(300deg, rgba(66,217,245,.12), transparent 46%),
+        linear-gradient(145deg, #101a2c, #080d19 72%);
+      box-shadow: var(--shadow);
+    }
+
+    .hero:after {
+      content: "X";
+      position: absolute;
+      right: -20px;
+      top: -100px;
+      font-size: clamp(260px, 44vw, 490px);
+      font-weight: 900;
+      line-height: 1;
+      color: rgba(255,255,255,.025);
+      pointer-events: none;
+    }
+
+    .hero-content { position: relative; z-index: 1; }
+
+    .eyebrow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      align-items: center;
+      margin-bottom: 18px;
+      color: var(--green);
+      font-size: .74rem;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 16px rgba(92,242,165,.8);
+    }
+
+    h1 {
+      max-width: 850px;
+      margin: 0;
+      font-size: clamp(2.5rem, 7vw, 5.3rem);
+      line-height: .99;
+      letter-spacing: -.055em;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, var(--green), var(--cyan) 58%, var(--purple));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-sub {
+      max-width: 760px;
+      margin: 23px 0 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.17rem);
+    }
+
+    .hero-question {
+      max-width: 760px;
+      margin-top: 22px;
+      padding-left: 15px;
+      border-left: 3px solid var(--green);
+      color: #eafcf4;
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 25px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 11px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(5,10,22,.5);
+      color: #c7d3e8;
+      font-size: .72rem;
+      font-weight: 750;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 11px;
+      margin-top: 27px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 43px;
+      padding: 10px 16px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(10,17,31,.85);
+      color: var(--text);
+      font-weight: 800;
+      font-size: .88rem;
+      cursor: pointer;
+      transition: transform .15s ease, border-color .15s ease;
+    }
+
+    .button:hover {
       transform: translateY(-2px);
-      box-shadow: 0 25px 70px rgba(0,0,0,.85);
+      border-color: var(--green);
+      text-decoration: none;
     }
-        .page {
-          min-height: 100vh;
-          padding: 38px 16px 70px;
-          display: flex;
-          justify-content: center;
-        }
-
-        .container {
-          width: 100%;
-          max-width: 860px;
-        }
-
-        a { color: var(--accent); text-decoration: none; }
-        a:hover { text-decoration: underline; }
-
-        .back-link {
-          font-size: 0.8rem;
-          text-transform: uppercase;
-          letter-spacing: 0.14em;
-          color: var(--text-muted);
-          display: inline-flex;
-          align-items: center;
-          gap: 6px;
-          margin-bottom: 8px;
-        }
-        .back-link span { font-size: 1.1rem; }
-
-        .home-pill {
-          display: inline-flex;
-          align-items: center;
-          gap: 6px;
-          margin-bottom: 16px;
-          padding: 7px 14px;
-          border-radius: 999px;
-          border: 1px solid rgba(148, 163, 184, 0.4);
-          background: rgba(15, 23, 42, 0.8);
-          color: var(--text-muted);
-          font-size: 0.74rem;
-          letter-spacing: 0.14em;
-          text-transform: uppercase;
-          text-decoration: none;
-          transition: all 0.15s ease-out;
-        }
-        .home-pill:hover {
-          background: var(--accent-soft);
-          border-color: var(--accent);
-          color: var(--accent);
-          text-decoration: none;
-        }
-
-        /* ✅ NEW: Hero cover image (SVG) */
-        .hero-cover {
-          margin: 10px 0 16px;
-          border-radius: 18px;
-          overflow: hidden;
-          border: 1px solid rgba(148, 163, 184, 0.26);
-          background: rgba(15, 23, 42, 0.55);
-          box-shadow: 0 20px 70px rgba(0,0,0,.55);
-        }
-        .hero-cover svg { width: 100%; height: auto; display: block; }
-
-        .badge-row {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 8px;
-          align-items: center;
-          margin-bottom: 10px;
-        }
-
-        .badge {
-          display: inline-flex;
-          align-items: center;
-          gap: 6px;
-          padding: 4px 10px;
-          border-radius: 999px;
-          background: rgba(15, 23, 42, 0.9);
-          border: 1px solid rgba(148, 163, 184, 0.4);
-          color: var(--text-muted);
-          font-size: 11px;
-          letter-spacing: 0.16em;
-          text-transform: uppercase;
-        }
-
-        .badge-dot {
-          width: 6px;
-          height: 6px;
-          border-radius: 999px;
-          background: var(--accent);
-          box-shadow: 0 0 10px rgba(34, 197, 94, 0.9);
-        }
-
-        .token-pill {
-          padding: 4px 10px;
-          border-radius: 999px;
-          background: rgba(34, 197, 94, 0.12);
-          border: 1px solid rgba(34, 197, 94, 0.6);
-          font-size: 11px;
-          letter-spacing: 0.16em;
-          text-transform: uppercase;
-          color: var(--accent);
-        }
-
-        h1 {
-          font-size: clamp(2.15rem, 3.4vw, 2.8rem);
-          margin: 6px 0 6px;
-          letter-spacing: 0.02em;
-        }
-
-        .subtitle {
-          font-size: 0.95rem;
-          color: var(--text-muted);
-          max-width: 520px;
-        }
-
-        .share-row {
-          margin-top: 14px;
-          margin-bottom: 6px;
-          display: flex;
-          flex-wrap: wrap;
-          gap: 10px;
-          align-items: center;
-        }
-
-        .share-label {
-          font-size: 0.8rem;
-          text-transform: uppercase;
-          letter-spacing: 0.16em;
-          color: var(--text-muted);
-        }
-
-        .share-btn {
-          display: inline-flex;
-          align-items: center;
-          gap: 6px;
-          padding: 7px 12px;
-          border-radius: 999px;
-          border: 1px solid rgba(148, 163, 184, 0.4);
-          background: rgba(15, 23, 42, 0.9);
-          color: var(--text-muted);
-          font-size: 0.8rem;
-          text-decoration: none;
-          cursor: pointer;
-          transition: all 0.15s ease-out;
-        }
-
-        .share-btn:hover {
-          border-color: var(--accent);
-          color: var(--accent);
-          text-decoration: none;
-          background: var(--accent-soft);
-        }
-
-        .share-btn span { font-size: 0.95rem; }
-
-        .snapshot {
-          margin-top: 20px;
-          padding: 18px 18px 16px;
-          border-radius: var(--radius-lg);
-          border: 1px solid rgba(148, 163, 184, 0.4);
-          background:
-            linear-gradient(135deg, rgba(34, 197, 94, 0.16), transparent 55%),
-            rgba(15, 23, 42, 0.96);
-          box-shadow: var(--shadow-soft);
-        }
-
-        .snapshot-title {
-          font-size: 0.98rem;
-          font-weight: 600;
-          margin-bottom: 10px;
-        }
-
-        .snapshot-grid {
-          display: grid;
-          grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-          gap: 10px 22px;
-          font-size: 0.9rem;
-        }
-
-        @media (max-width: 640px) {
-          .page { padding-top: 26px; }
-          .snapshot-grid { grid-template-columns: minmax(0, 1fr); }
-        }
-
-        .snapshot-label {
-          font-size: 0.78rem;
-          text-transform: uppercase;
-          letter-spacing: 0.14em;
-          color: var(--text-muted);
-          margin-bottom: 2px;
-        }
-
-        .snapshot-value { font-weight: 500; }
-
-        .snapshot-note {
-          margin-top: 10px;
-          font-size: 0.72rem;
-          color: var(--text-muted);
-          opacity: 0.75;
-        }
-
-        .section { margin-top: 26px; }
-        .section-title { font-size: 1.2rem; margin-bottom: 6px; }
-
-        .section-body {
-          font-size: 0.95rem;
-          line-height: 1.75;
-          color: var(--text-muted);
-        }
-        .section-body strong { color: var(--text-main); }
-
-        ul.section-list {
-          margin: 8px 0 0 0;
-          padding-left: 18px;
-          font-size: 0.95rem;
-          line-height: 1.7;
-          color: var(--text-muted);
-        }
-        ul.section-list li { margin-bottom: 6px; }
-
-        .income-card {
-          margin-top: 26px;
-          padding: 18px 18px 20px;
-          border-radius: var(--radius-lg);
-          border: 1px solid rgba(34, 197, 94, 0.5);
-          background:
-            linear-gradient(135deg, rgba(34, 197, 94, 0.15), transparent 60%),
-            rgba(15, 23, 42, 0.96);
-          box-shadow: var(--shadow-soft);
-        }
-
-        .income-title { font-size: 1.18rem; margin-bottom: 6px; }
-
-        .income-body {
-          font-size: 0.95rem;
-          color: var(--text-muted);
-          line-height: 1.75;
-        }
-
-        .income-list {
-          margin-top: 8px;
-          padding-left: 18px;
-          font-size: 0.95rem;
-          color: var(--text-muted);
-          line-height: 1.7;
-        }
-
-        .cta-button {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          margin-top: 14px;
-          padding: 9px 18px;
-          border-radius: 999px;
-          border: none;
-          background: var(--accent);
-          color: #020617;
-          font-size: 0.9rem;
-          font-weight: 600;
-          cursor: pointer;
-          text-decoration: none;
-          box-shadow: 0 10px 30px rgba(34, 197, 94, 0.7);
-          transition: transform 0.08s ease-out, box-shadow 0.08s ease-out, background 0.12s ease-out;
-        }
-
-        .cta-button:hover {
-          transform: translateY(-1px);
-          background: #4ade80;
-          box-shadow: 0 14px 40px rgba(34, 197, 94, 0.9);
-          text-decoration: none;
-        }
-
-        .income-note {
-          margin-top: 8px;
-          font-size: 0.72rem;
-          color: var(--text-muted);
-          opacity: 0.8;
-        }
-
-        .disclaimer {
-          margin-top: 30px;
-          padding-top: 10px;
-          border-top: 1px solid rgba(148, 163, 184, 0.35);
-          font-size: 0.75rem;
-          color: var(--text-muted);
-          line-height: 1.6;
-        }
-      </style>
-    </head>
-    <body>
-      <div class="page">
-        <div class="container">
-
-          <a class="back-link" href="/report/">
-            <span>←</span> Back to all reports
-          </a>
-
-          <a href="https://degenstein.xyz/" class="home-pill">
-            ← Back to Main Page
-          </a>
-
-          <!-- ✅ NEW: XRP COVER IMAGE (SVG). To make a PNG:
-               1) Copy just the <svg> below into a file named report-xrp.svg in /assets/
-               2) Export to 1200x675 PNG as report-xrp.png (optional for OG/Twitter) -->
-          <div class="hero-cover" aria-label="XRP report cover">
-            <svg viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="XRP — 2026 ETF Era & Global Payment Rails">
-              <defs>
-                <radialGradient id="g1" cx="20%" cy="15%" r="70%">
-                  <stop offset="0" stop-color="#22c55e" stop-opacity="0.28"/>
-                  <stop offset="0.55" stop-color="#22c55e" stop-opacity="0.06"/>
-                  <stop offset="1" stop-color="#020617" stop-opacity="1"/>
-                </radialGradient>
-                <radialGradient id="g2" cx="85%" cy="25%" r="70%">
-                  <stop offset="0" stop-color="#06b6d4" stop-opacity="0.22"/>
-                  <stop offset="0.55" stop-color="#06b6d4" stop-opacity="0.06"/>
-                  <stop offset="1" stop-color="#020617" stop-opacity="1"/>
-                </radialGradient>
-                <linearGradient id="line" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0" stop-color="#22c55e" stop-opacity="0.9"/>
-                  <stop offset="1" stop-color="#06b6d4" stop-opacity="0.9"/>
-                </linearGradient>
-                <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
-                  <feGaussianBlur stdDeviation="10" result="b"/>
-                  <feColorMatrix in="b" type="matrix"
-                    values="1 0 0 0 0
-                            0 1 0 0 0
-                            0 0 1 0 0
-                            0 0 0 0.55 0" result="g"/>
-                  <feMerge>
-                    <feMergeNode in="g"/>
-                    <feMergeNode in="SourceGraphic"/>
-                  </feMerge>
-                </filter>
-              </defs>
-
-              <!-- background -->
-              <rect width="1200" height="675" fill="#020617"/>
-              <rect width="1200" height="675" fill="url(#g1)"/>
-              <rect width="1200" height="675" fill="url(#g2)"/>
-
-              <!-- subtle grid -->
-              <g opacity="0.10">
-                <path d="M0 120H1200M0 240H1200M0 360H1200M0 480H1200M0 600H1200" stroke="#94a3b8" stroke-width="1"/>
-                <path d="M120 0V675M240 0V675M360 0V675M480 0V675M600 0V675M720 0V675M840 0V675M960 0V675M1080 0V675" stroke="#94a3b8" stroke-width="1"/>
-              </g>
-
-              <!-- rails / arcs -->
-              <g opacity="0.9" filter="url(#softGlow)">
-                <path d="M-40 520 C 220 380, 420 610, 680 430 S 1140 240, 1260 360" fill="none" stroke="url(#line)" stroke-width="4" opacity="0.55"/>
-                <path d="M-30 560 C 240 430, 440 650, 720 470 S 1120 280, 1260 420" fill="none" stroke="url(#line)" stroke-width="3" opacity="0.35"/>
-                <circle cx="260" cy="430" r="6" fill="#22c55e" opacity="0.9"/>
-                <circle cx="680" cy="430" r="6" fill="#06b6d4" opacity="0.9"/>
-                <circle cx="980" cy="310" r="6" fill="#22c55e" opacity="0.9"/>
-              </g>
-
-              <!-- XRP mark (simple) -->
-              <g transform="translate(84 92)" opacity="0.95">
-                <circle cx="66" cy="66" r="66" fill="rgba(15,23,42,0.85)" stroke="rgba(148,163,184,0.35)" stroke-width="2"/>
-                <path d="M34 46c14 0 20 6 32 18 12-12 18-18 32-18h18c-18 0-28 8-42 22 14 14 24 22 42 22H98c-14 0-20-6-32-18-12 12-18 18-32 18H16c18 0 28-8 42-22C44 54 34 46 16 46h18z"
-                      fill="#f9fafb" opacity="0.92"/>
-                <circle cx="66" cy="66" r="62" fill="none" stroke="rgba(34,197,94,0.35)" stroke-width="2"/>
-              </g>
-
-              <!-- text -->
-              <g font-family="system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial" fill="#f9fafb">
-                <text x="84" y="220" font-size="22" letter-spacing="3" opacity="0.78">THE DEGENSTEIN REPORT</text>
-                <text x="84" y="286" font-size="58" font-weight="800">$XRP</text>
-                <text x="84" y="342" font-size="34" font-weight="700" opacity="0.92">July 2026 ETF Flows &amp; Global Payment Rails</text>
-
-                <text x="84" y="392" font-size="22" opacity="0.72">
-                  ETF flows • regulated payments • XRPL adoption • value-capture risk
-                </text>
-
-                <!-- pill -->
-                <g transform="translate(84 430)">
-                  <rect x="0" y="0" rx="18" ry="18" width="390" height="44" fill="rgba(15,23,42,0.75)" stroke="rgba(148,163,184,0.28)"/>
-                  <circle cx="22" cy="22" r="6" fill="#22c55e"/>
-                  <text x="40" y="29" font-size="18" font-weight="700" fill="#9ca3af">degenstein.xyz/report/xrp</text>
-                </g>
-              </g>
-
-              <!-- corner glow -->
-              <circle cx="1120" cy="110" r="140" fill="#22c55e" opacity="0.08"/>
-              <circle cx="1100" cy="140" r="170" fill="#06b6d4" opacity="0.07"/>
-            </svg>
-          </div>
-
-          <div class="badge-row">
-            <div class="badge">
-              <span class="badge-dot"></span>
-              The Degenstein Report
-            </div>
-            <div class="token-pill">$XRP • Infrastructure Thesis</div>
-          </div>
-
-          <h1>$XRP — July 2026 ETF Flows &amp; Global Payment Rails</h1>
-          <p class="subtitle">July 2026 research on XRP ETF demand, regulated payments, XRPL adoption, tokenization, and the risks the market still needs to resolve.</p>
-    <div style="
-      margin-top:14px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      font-size:.75rem;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-    ">
-
-      <div style="
-        padding:6px 10px;
-        border-radius:999px;
-        background:rgba(34,197,94,.12);
-        border:1px solid rgba(34,197,94,.5);
-        color:#22c55e;
-      ">Infrastructure Asset</div>
-
-      <div style="
-        padding:6px 10px;
-        border-radius:999px;
-        background:rgba(6,182,212,.12);
-        border:1px solid rgba(6,182,212,.5);
-        color:#06b6d4;
-      ">Institutional Narrative</div>
-
-      <div style="
-        padding:6px 10px;
-        border-radius:999px;
-        background:rgba(148,163,184,.12);
-        border:1px solid rgba(148,163,184,.4);
-        color:#9ca3af;
-      ">Research Watchlist</div>
-
-    </div>
-          <div class="share-row">
-            <span class="share-label">Share this report</span>
-
-            <a
-              class="share-btn"
-              href="https://twitter.com/intent/tweet?text=New%20Degenstein%20Report%3A%20XRP%20%E2%80%94%202026%20ETF%20Era%20%26%20Global%20Payment%20Rails&url=https%3A%2F%2Fdegenstein.xyz%2Freport%2Fxrp%2F"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span>✕</span> Share on X
-            </a>
-
-            <button class="share-btn" type="button" onclick="copyXrpLink()">
-              <span>⧉</span> Copy link
-            </button>
-          </div>
-
-          <!-- Snapshot -->
-          <section class="snapshot">
-            <div class="snapshot-title">Snapshot</div>
-            <div class="snapshot-grid">
-              <div>
-                <div class="snapshot-label">Token</div>
-                <div class="snapshot-value">$XRP (Ripple)</div>
-              </div>
-              <div>
-                <div class="snapshot-label">Sector</div>
-                <div class="snapshot-value">Payments · FinTech · Banking rails</div>
-              </div>
-              <div>
-                <div class="snapshot-label">Narrative</div>
-                <div class="snapshot-value">Cross-border settlement &amp; liquidity bridge</div>
-              </div>
-              <div>
-                <div class="snapshot-label">Status</div>
-                <div class="snapshot-value" style="color: var(--accent);">Under active 2026 watch</div>
-              </div>
-            </div>
-            <div class="snapshot-note">Note: This is an educational overview, not financial advice. Always DYOR.</div>
-          </section>
-
-          <!-- XRP in 60 Seconds -->
-          <section class="section">
-            <h2 class="section-title">XRP in 60 Seconds</h2>
-            <div class="section-body">
-              <p>
-                XRP is the native asset of the XRP Ledger, a network designed for fast settlement and low transaction costs.
-                The investment thesis is not that every Ripple customer must use XRP. The research question is whether XRP itself gains durable utility,
-                liquidity demand, or balance-sheet demand as regulated payments, tokenization, and institutional products expand around XRPL.
-              </p>
-              <p style="margin-top: 10px;">
-                That distinction matters in 2026 because Ripple's payments business, RLUSD, tokenized assets on XRPL, and XRP ETF demand are related signals,
-                but they should not automatically be counted as direct XRP value capture. This report tracks the overlap without treating every Ripple headline as an XRP price catalyst.
-              </p>
-            </div>
-          </section>
-
-          <!-- Catalysts -->
-          <section class="section">
-            <h2 class="section-title">Key July 2026 Catalysts I’m Watching</h2>
-            <ul class="section-list">
-              <li>
-                <strong>EU regulatory expansion:</strong> Ripple announced in early July that it received full MiCA authorization in Luxembourg, allowing regulated crypto-asset services across the EEA. The signal is stronger regulatory reach for Ripple's payments infrastructure; the direct effect on XRP demand still needs to be measured.
-              </li>
-              <li>
-                <strong>Bitso + MXNB:</strong> Ripple and Bitso expanded their payments partnership in June. Bitso's regulated Mexican-peso stablecoin, MXNB, is set to be issued on XRPL and integrated into Ripple Payments' DEX infrastructure.
-              </li>
-              <li>
-                <strong>Spot XRP ETF demand:</strong> Ripple reported more than $1.5 billion in cumulative inflows by early March 2026 across five U.S. spot XRP ETFs. June then marked a third straight month of net inflows, with XRP-linked ETFs adding about $59.4 million despite broader Bitcoin and Ether fund weakness.
-              </li>
-              <li>
-                <strong>Custody absorption:</strong> ETF custody has locked a meaningful quantity of XRP. That is measurable institutional-product demand, but ETF holdings alone do not prove payment utility or guarantee price appreciation.
-              </li>
-              <li>
-                <strong>Value capture:</strong> the most important unresolved question is whether growth in XRPL stablecoins, tokenized assets, payments, and institutional DeFi creates sustained economic demand for XRP itself.
-              </li>
-            </ul>
-          </section>
-
-          <section class="section">
-            <h2 class="section-title">July 2026 Thesis Update</h2>
-            <div class="section-body">
-              <p>
-                XRP entered July with a notable divergence between price and institutional-product demand. XRP-linked ETFs added about
-                <strong>$59.4 million in June</strong>, marking a third consecutive month of net inflows even as Bitcoin and Ether products faced heavier de-risking.
-                Ripple had previously reported more than <strong>$1.5 billion in cumulative U.S. spot XRP ETF inflows</strong> by early March 2026.
-              </p>
-              <p style="margin-top:10px;">
-                The regulatory infrastructure also moved forward. In early July, Ripple announced full <strong>MiCA authorization in Luxembourg</strong>,
-                expanding its ability to provide regulated crypto-asset services across the European Economic Area.
-              </p>
-              <p style="margin-top:10px;">
-                On the XRPL side, Ripple and Bitso announced that the regulated Mexican-peso stablecoin <strong>MXNB</strong> will be issued on XRPL and integrated
-                into Ripple Payments' DEX infrastructure. This strengthens the network's stablecoin and cross-border settlement story, but it also sharpens the
-                value-capture question: investors should measure when XRP is actually required for liquidity or settlement rather than assuming all XRPL activity flows to XRP.
-              </p>
-            </div>
-          </section>
-
-          <section class="snapshot">
-            <div class="snapshot-title">Fresh 2026 Signals</div>
-            <div class="snapshot-grid">
-              <div>
-                <div class="snapshot-label">Spot XRP ETFs</div>
-                <div class="snapshot-value">$1.5B+ cumulative inflows by early March</div>
-              </div>
-              <div>
-                <div class="snapshot-label">June ETF Flows</div>
-                <div class="snapshot-value">~$59.4M net inflows · third positive month</div>
-              </div>
-              <div>
-                <div class="snapshot-label">EU Regulation</div>
-                <div class="snapshot-value">Ripple MiCA authorization in Luxembourg</div>
-              </div>
-              <div>
-                <div class="snapshot-label">XRPL Stablecoins</div>
-                <div class="snapshot-value">MXNB issuance and payments DEX integration announced</div>
-              </div>
-            </div>
-            <div class="snapshot-note">Company, ETF, and network adoption signals should not be treated as guaranteed XRP token value capture.</div>
-          </section>
-
-          <!-- Value -->
-          <section class="section">
-            <h2 class="section-title">Where I See Potential Value</h2>
-            <div class="section-body">
-              <p>
-                XRP is an infrastructure and liquidity thesis. The stronger 2026 evidence is no longer limited to legal clarity or partnership announcements:
-                spot ETF products have accumulated meaningful inflows, Ripple has expanded regulated payments reach in Europe, and XRPL is being used for stablecoin and tokenized-asset infrastructure.
-              </p>
-              <p style="margin-top: 10px;">
-                The upside case requires <strong>measurable XRP value capture</strong>: deeper liquidity, greater use as a bridge or settlement asset,
-                sustained ETF demand, or other economic demand for the native token. The risk is that Ripple and XRPL adoption can grow while stablecoins,
-                tokenized deposits, or other assets capture more of the actual transaction demand than XRP.
-              </p>
-            </div>
-          </section>
-
-          <!-- ✅ UPDATED INCOME ANGLE -->
-          <section class="income-card">
-            <div class="income-title">Custodial XRP Interest Accounts — Separate Platform Risk</div>
-
-            <div class="income-body">
-              <p>
-                Holding XRP and transferring XRP to a third-party custodial interest platform are two different risk decisions.
-                A platform rate should not be treated as part of the XRP investment thesis or as a guaranteed return.
-              </p>
-
-              <p style="margin-top:8px;">
-                Before using any custodial interest account, research:
-              </p>
-            </div>
-
-            <ul class="income-list">
-              <li>Custody and counterparty exposure.</li>
-              <li>How the platform may use deposited assets.</li>
-              <li>Withdrawal, liquidity, and account terms.</li>
-              <li>Whether the advertised rate can change.</li>
-            </ul>
-
-            <div class="income-body" style="margin-top:8px;">
-              <p>
-                Degenstein maintains a separate <strong>CoinDepo research review</strong>. CoinDepo currently advertises up to 18% APR on crypto,
-                but rates vary by asset and account type. Its custodial and wallet terms should be reviewed separately from the XRP thesis.
-              </p>
-            </div>
-
-            <hr style="margin:16px 0;border:0;border-top:1px solid rgba(148,163,184,0.25);" />
-
-            <div class="income-body">
-              <p>
-                <strong>Important research distinction:</strong> an advertised interest rate is compensation offered by a third-party platform.
-                It is not XRP protocol yield and it is not created by the XRP Ledger.
-              </p>
-
-              <p style="margin-top:10px;">
-      The XRP thesis should stand on its own: ETF demand, liquidity, payments, tokenization, XRPL usage,
-      and value capture. A custodial interest account adds a separate platform thesis and separate failure modes.
-    </p>
-
-              <p style="margin-top:10px;">
-      Price volatility still matters because XRP can decline while interest accrues.
-      Custody and counterparty risk also matter because assets have been transferred to a third party.
-    </p>
-
-              <p style="margin-top:10px;">
-                Do not describe custodial interest as risk-free or non-price-dependent upside.
-                Evaluate the platform, legal terms, asset-use rights, liquidity, and the possibility of partial or total loss.
-              </p>
-            </div>
-    <div style="
-      margin-top:16px;
-      padding:14px;
-      border-radius:14px;
-      background:linear-gradient(135deg, rgba(34,197,94,.18), rgba(6,182,212,.12));
-      border:1px solid rgba(34,197,94,.5);
-      font-size:.95rem;
-      color:#ecfdf5;
-      font-weight:500;
-    ">
-    Research the XRP thesis and the platform thesis separately.
-    </div>
-            <!-- Mini comparison -->
-            <div style="
-              margin-top:14px;
-              padding:12px 14px;
-              border-radius:14px;
-              border:1px solid rgba(148,163,184,0.35);
-              background:rgba(15,23,42,0.85);
-              font-size:0.9rem;
-              color:var(--text-muted);
-            ">
-             <strong style="color:var(--text-main);">Different custody structure.</strong><br />
-    • Self-custody: XRP price risk and wallet-security responsibility.<br />
-    • Custodial interest account: XRP price risk plus platform, custody, counterparty, liquidity, and legal risk.
-            </div>
-
-            <!-- ✅ FIXED: correct CoinDepo link + referral code -->
-            <a class="cta-button" href="/report/coindepo-earn-while-you-hold/">
-              Read the CoinDepo research review →
-            </a>
-    <p style="margin-top:10px;font-size:.85rem;color:rgba(156,163,175,.95);">
-        For a separate review of advertised rates, custody terms, and platform risks, see the
-        <a href="/report/coindepo-earn-while-you-hold/" target="_blank" rel="noopener">CoinDepo research review →</a>
-      </p>
-            <div class="income-note">
-      CoinDepo rates, terms, and availability can change. Some links in the separate CoinDepo report are referral links and are clearly disclosed there.
-      This report does not treat platform interest as part of XRP's protocol economics.
-    </div>
-          </section>
-    <div style="
-      margin-top:30px;
-      padding:18px;
-      text-align:center;
-      border-radius:16px;
-      background:linear-gradient(135deg, rgba(34,197,94,.15), rgba(6,182,212,.1));
-      border:1px solid rgba(148,163,184,.3);
-    ">
-      <div style="font-size:1.1rem;font-weight:600;">
-        The bet isn’t hype.
+
+    .button-primary {
+      color: #04120b;
+      background: linear-gradient(100deg, var(--green), #9af9c8);
+      border-color: transparent;
+    }
+
+    .updated {
+      margin-top: 17px;
+      color: var(--dim);
+      font-size: .76rem;
+    }
+
+    .toc {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 19px 0 30px;
+      padding: 14px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: rgba(10,16,30,.72);
+    }
+
+    .toc a {
+      padding: 7px 10px;
+      border-radius: 8px;
+      color: #c3cde0;
+      font-size: .8rem;
+    }
+
+    .toc a:hover {
+      background: rgba(92,242,165,.09);
+      color: var(--green);
+      text-decoration: none;
+    }
+
+    .section { margin-top: 36px; scroll-margin-top: 20px; }
+
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .kicker {
+      margin-bottom: 5px;
+      color: var(--green);
+      font-size: .7rem;
+      font-weight: 850;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(1.55rem, 3vw, 2.2rem);
+      line-height: 1.16;
+      letter-spacing: -.035em;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 1.08rem;
+      line-height: 1.35;
+    }
+
+    p { margin: 0 0 14px; }
+
+    .muted { color: var(--muted); }
+    .small { font-size: .84rem; color: var(--muted); }
+    .green { color: var(--green); }
+    .cyan { color: var(--cyan); }
+    .purple { color: var(--purple); }
+    .red { color: var(--red); }
+    .amber { color: var(--amber); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0,1fr));
+      gap: 14px;
+    }
+
+    .card {
+      min-width: 0;
+      padding: 21px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: linear-gradient(145deg, rgba(19,29,49,.92), rgba(9,15,28,.94));
+      box-shadow: 0 10px 35px rgba(0,0,0,.12);
+    }
+
+    .span-12 { grid-column: span 12; }
+    .span-8 { grid-column: span 8; }
+    .span-7 { grid-column: span 7; }
+    .span-6 { grid-column: span 6; }
+    .span-5 { grid-column: span 5; }
+    .span-4 { grid-column: span 4; }
+
+    .metric {
+      color: var(--text);
+      font-size: clamp(1.6rem, 3.2vw, 2.45rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -.04em;
+    }
+
+    .metric-label {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: .83rem;
+    }
+
+    .metric-note {
+      margin-top: 9px;
+      color: var(--dim);
+      font-size: .75rem;
+    }
+
+    .accent-green { border-top: 2px solid var(--green); }
+    .accent-cyan { border-top: 2px solid var(--cyan); }
+    .accent-purple { border-top: 2px solid var(--purple); }
+    .accent-red { border-top: 2px solid var(--red); }
+
+    .callout {
+      margin-top: 15px;
+      padding: 16px 18px;
+      border: 1px solid rgba(92,242,165,.25);
+      border-radius: 14px;
+      background: linear-gradient(100deg, rgba(92,242,165,.09), rgba(66,217,245,.045));
+    }
+
+    .callout strong { color: #edfff5; }
+
+    .news-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .news-card .tag {
+      display: inline-block;
+      margin-bottom: 11px;
+      padding: 4px 8px;
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      color: var(--green);
+      font-size: .68rem;
+      font-weight: 850;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    .news-card p {
+      color: var(--muted);
+      font-size: .91rem;
+    }
+
+    .news-card .news-link {
+      display: inline-block;
+      margin-top: 3px;
+      font-size: .83rem;
+      font-weight: 800;
+    }
+
+    .list {
+      margin: 10px 0 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .list li { margin-bottom: 9px; }
+
+    .divider {
+      height: 1px;
+      margin: 18px 0;
+      background: var(--border);
+    }
+
+    .quote {
+      margin: 13px 0;
+      padding: 16px 18px;
+      border-left: 3px solid var(--cyan);
+      border-radius: 0 12px 12px 0;
+      background: rgba(66,217,245,.06);
+      color: #e7f9ff;
+      font-size: 1.08rem;
+      font-weight: 800;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 580px;
+      font-size: .87rem;
+    }
+
+    th, td {
+      padding: 13px 15px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      color: #dfe8f8;
+      background: rgba(255,255,255,.035);
+      font-size: .72rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    td { color: var(--muted); }
+    tr:last-child td { border-bottom: 0; }
+
+    .signal {
+      display: inline-flex;
+      padding: 4px 8px;
+      border-radius: 7px;
+      font-size: .7rem;
+      font-weight: 850;
+      white-space: nowrap;
+    }
+
+    .signal-positive {
+      color: var(--green);
+      background: rgba(92,242,165,.09);
+    }
+
+    .signal-negative {
+      color: var(--red);
+      background: rgba(255,125,145,.09);
+    }
+
+    .signal-neutral {
+      color: var(--amber);
+      background: rgba(255,210,122,.09);
+    }
+
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0 0;
+    }
+
+    .checklist li {
+      position: relative;
+      padding: 10px 0 10px 28px;
+      border-bottom: 1px solid rgba(148,163,184,.1);
+      color: var(--muted);
+    }
+
+    .checklist li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      color: var(--green);
+      font-weight: 900;
+    }
+
+    .risk-list li:before {
+      content: "!";
+      color: var(--amber);
+    }
+
+    .source-list li { overflow-wrap: anywhere; }
+
+    details {
+      padding: 15px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    summary {
+      cursor: pointer;
+      color: var(--text);
+      font-weight: 800;
+    }
+
+    details p {
+      margin: 11px 0 0;
+      color: var(--muted);
+    }
+
+    .closing {
+      margin-top: 36px;
+      padding: clamp(24px, 5vw, 45px);
+      border: 1px solid rgba(66,217,245,.25);
+      border-radius: 24px;
+      background:
+        linear-gradient(120deg, rgba(66,217,245,.08), transparent 50%),
+        linear-gradient(300deg, rgba(92,242,165,.08), transparent 55%),
+        #0b1220;
+      text-align: center;
+    }
+
+    .closing h2 { max-width: 760px; margin: auto; }
+    .closing p { max-width: 700px; margin: 15px auto 0; color: var(--muted); }
+
+    .footer {
+      margin-top: 35px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      color: var(--dim);
+      font-size: .77rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 13px;
+    }
+
+    .footer-links a { color: var(--muted); }
+
+    @media (max-width: 760px) {
+      .page { padding: 18px 13px 55px; }
+      .span-8, .span-7, .span-6, .span-5, .span-4 { grid-column: span 12; }
+      .hero { border-radius: 21px; }
+      .card { padding: 18px; }
+      .toplinks { gap: 10px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *:before, *:after { transition: none !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <header class="topbar">
+      <a class="brand" href="https://degenstein.xyz/">THE <span>DEGENSTEIN</span> REPORT</a>
+      <nav class="toplinks" aria-label="Main navigation">
+        <a href="/report/">All Reports</a>
+        <a href="/playbooks/">Playbooks</a>
+        <a href="/about/">About</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-content">
+        <div class="eyebrow"><span class="live-dot"></span> Research Update · October 20, 2026</div>
+        <h1>$XRP<br><span class="gradient-text">The Adoption vs. Value-Capture Report</span></h1>
+        <p class="hero-sub">
+          A research-first look at XRP, Ripple's expanding institutional footprint,
+          the new official @XRP account, ETF demand, XRPL utility, and the question
+          investors cannot afford to ignore.
+        </p>
+        <div class="hero-question">
+          More attention and more infrastructure may strengthen the XRP story.
+          But does that growth create sustained demand for the XRP token itself?
+        </div>
+        <div class="pills">
+          <span class="pill">Institutional Adoption</span>
+          <span class="pill">ETF Flows</span>
+          <span class="pill">XRPL Utility</span>
+          <span class="pill">Token Economics</span>
+          <span class="pill">Risk First</span>
+        </div>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#latest-news">Explore the Latest News ↓</a>
+          <a class="button" href="#investor-checklist">Investor Checklist</a>
+          <a class="button" href="https://x.com/XRP" target="_blank" rel="noopener noreferrer">Official @XRP on X ↗</a>
+        </div>
+        <div class="updated">Prepared October 20, 2026 · Market figures below use their stated observation dates.</div>
       </div>
-      <div style="margin-top:6px;color:#9ca3af;">
-        The bet is that global money movement gets rebuilt.
-      </div>
-    </div>
-          <!-- Final thoughts -->
-          <section class="section">
-            <h2 class="section-title">Final Thoughts</h2>
-            <div class="section-body">
-              <p>
-                XRP is one of the few large-cap assets where the thesis is less about memes and more about
-                <strong>infrastructure, rails, and settlement</strong>. That doesn’t guarantee success, but it does give it a clear role
-                in a more mature crypto cycle where real-world usage and institutional adoption start to matter more.
-              </p>
-              <p style="margin-top: 10px;">
-                The 2026 research case is stronger than the older version of this report showed, but the standard should remain evidence:
-                ETF flows, payment volume, XRPL activity, liquidity, and direct XRP value capture. Strong infrastructure headlines are useful signals, not price guarantees.
-              </p>
-            </div>
-          </section>
+    </section>
 
-          <div class="disclaimer">
-            <strong>Research &amp; Risk Disclosure:</strong> This report is for informational and educational purposes only and does not constitute financial,
-            investment, legal, or tax advice. XRP is volatile. Ripple company growth, XRPL adoption, ETF inflows, and tokenized-asset activity do not guarantee
-            XRP price appreciation or direct value capture for the native token. Third-party custodial platforms introduce separate risks and can result in partial or total loss.
-            Verify current information independently.<br><br>
-            <a href="/about/">About</a> · <a href="/contact/">Contact</a> · <a href="/editorial-policy/">Editorial Policy</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a>
-          </div>
+    <nav class="toc" aria-label="Report sections">
+      <a href="#executive-summary">Executive Summary</a>
+      <a href="#latest-news">Latest News</a>
+      <a href="#official-x">Official X Account</a>
+      <a href="#etfs">ETF Flows</a>
+      <a href="#institutional">Institutional Expansion</a>
+      <a href="#xrpl">XRPL Utility</a>
+      <a href="#value-capture">Value Capture</a>
+      <a href="#risks">Risks</a>
+      <a href="#coin-depo">Yield & Custody</a>
+      <a href="#sources">Sources</a>
+    </nav>
 
+    <section id="executive-summary" class="section">
+      <div class="section-head">
+        <div>
+          <div class="kicker">01 / The Thesis</div>
+          <h2>Executive Summary</h2>
         </div>
       </div>
 
-      <script>
-        function copyXrpLink() {
+      <div class="grid">
+        <article class="card span-4 accent-green">
+          <div class="metric green">New milestone</div>
+          <div class="metric-label">XRP's own official X account went live on October 19.</div>
+          <div class="metric-note">A communications and visibility milestone—not proof of new token demand.</div>
+        </article>
+
+        <article class="card span-4 accent-cyan">
+          <div class="metric cyan">~$1.8B</div>
+          <div class="metric-label">Reported cumulative net inflows for U.S. XRP ETF products by October 16.</div>
+          <div class="metric-note">A third-party market-data estimate; definitions and fund coverage vary.</div>
+        </article>
+
+        <article class="card span-4 accent-red">
+          <div class="metric red">−$1.84M</div>
+          <div class="metric-label">Approximate weekly XRP ETF net outflow for October 12–16.</div>
+          <div class="metric-note">The previous 13-week positive-flow streak ended.</div>
+        </article>
+
+        <article class="card span-7">
+          <h3>The constructive case</h3>
+          <p class="muted">
+            XRP has a recognizable role in the digital-asset market, while Ripple continues
+            expanding its payments, custody, stablecoin and institutional businesses.
+            XRPL development and regulated investment products can broaden access and
+            create new avenues for liquidity.
+          </p>
+          <p class="muted">
+            These are real areas to monitor. The strongest thesis would combine
+            persistent investor demand with evidence that XRP is being used economically
+            as a bridge, liquidity or settlement asset.
+          </p>
+        </article>
+
+        <article class="card span-5">
+          <h3>The discipline test</h3>
+          <p class="muted">
+            Ripple's growth is not the same as XRP's growth. RLUSD activity is not
+            automatically XRP demand. Tokenized assets on XRPL do not guarantee that
+            users must hold XRP beyond the XRP needed for network fees and other specific uses.
+          </p>
+          <div class="callout">
+            <strong>Core rule:</strong> Measure the token's own demand—not just the size
+            of the ecosystem around it.
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="latest-news" class="section">
+      <div class="section-head">
+        <div>
+          <div class="kicker">02 / October Watch</div>
+          <h2>The Latest XRP & Ripple Developments</h2>
+        </div>
+      </div>
+
+      <div class="grid">
+        <article class="card span-6 news-card accent-green">
+          <span class="tag">October 19 · Major community milestone</span>
+          <h3>1. XRP launches its own official X account</h3>
+          <p>
+            The <a href="https://x.com/XRP" target="_blank" rel="noopener noreferrer">@XRP</a>
+            handle went live with the opening message, “hello, world. It’s about time.”
+            The profile describes XRP as the native token of the XRP Ledger and says
+            the account is jointly managed by Ripple and the XRPL Foundation.
+          </p>
+          <p>
+            Why it matters: XRP now has a dedicated official communications channel.
+            That can improve discoverability and coordination, but it does not establish
+            a new product launch, a supply change, or a direct price catalyst.
+          </p>
+          <a class="news-link" href="https://x.com/XRP" target="_blank" rel="noopener noreferrer">View @XRP on X ↗</a>
+        </article>
+
+        <article class="card span-6 news-card accent-cyan">
+          <span class="tag">October 16 · ETF demand check</span>
+          <h3>2. XRP ETF products record a weekly outflow</h3>
+          <p>
+            Market trackers reported roughly $1.84 million in net outflows for the
+            October 12–16 week, ending a 13-week positive weekly-flow streak.
+            The preceding week had recorded about $11.31 million in inflows.
+          </p>
+          <p>
+            Why it matters: the longer-term institutional-product story remains relevant,
+            but the latest week is a reminder that demand is not one-way. Watch multiple
+            weeks of flows, fund assets and XRP price action rather than extrapolating
+            one streak indefinitely.
+          </p>
+          <a class="news-link" href="https://www.tokenpost.com/news/investing/34124" target="_blank" rel="noopener noreferrer">Read ETF flow coverage ↗</a>
+        </article>
+
+        <article class="card span-6 news-card accent-purple">
+          <span class="tag">October 14 · Institutional infrastructure</span>
+          <h3>3. Ripple announces a DriveWealth partnership</h3>
+          <p>
+            Ripple announced a partnership with DriveWealth aimed at bringing institutional
+            digital-asset infrastructure to global investing. This adds to the broader
+            narrative of traditional financial services integrating digital-asset rails.
+          </p>
+          <p>
+            XRP angle: monitor the specific products, assets, settlement routes and
+            liquidity requirements that become operational. A partnership announcement
+            alone does not prove XRP is used in every flow.
+          </p>
+          <a class="news-link" href="https://ripple.com/press-releases/" target="_blank" rel="noopener noreferrer">Check Ripple's press releases ↗</a>
+        </article>
+
+        <article class="card span-6 news-card accent-cyan">
+          <span class="tag">October 14 · Korea</span>
+          <h3>4. Ripple and Meritz Securities announce a partnership</h3>
+          <p>
+            Ripple announced a partnership with Meritz Securities focused on institutional
+            custody and tokenization in Korea's capital markets. The development reinforces
+            Ripple's effort to build regulated financial infrastructure across jurisdictions.
+          </p>
+          <p>
+            XRP angle: the investment case strengthens only if implementation creates
+            material demand for XRP or other measurable benefits to the XRP ecosystem.
+            Custody and tokenization can also operate through other assets.
+          </p>
+          <a class="news-link" href="https://ripple.com/press-releases/" target="_blank" rel="noopener noreferrer">Check the announcement ↗</a>
+        </article>
+
+        <article class="card span-6 news-card">
+          <span class="tag">October 12 · Stablecoin infrastructure</span>
+          <h3>5. Standard Chartered announces RLUSD custody</h3>
+          <p>
+            Ripple announced that Standard Chartered would launch RLUSD custody and join
+            a planned collateral integration with Ripple and LMAX Group. This is relevant
+            to the institutional stablecoin and collateral story.
+          </p>
+          <p>
+            Important distinction: demand for RLUSD can support activity around Ripple's
+            ecosystem without necessarily creating equivalent demand for XRP. Track the
+            actual settlement and liquidity pathways.
+          </p>
+          <a class="news-link" href="https://ripple.com/press-releases/" target="_blank" rel="noopener noreferrer">Review Ripple's announcement list ↗</a>
+        </article>
+
+        <article class="card span-6 news-card">
+          <span class="tag">October 15 · Digital-asset access</span>
+          <h3>6. Ripple expands access to real-world asset perpetual swaps</h3>
+          <p>
+            Ripple's press-release list includes an October 15 announcement about
+            institutional access to real-world-asset perpetual swaps. This points to
+            a wider institutional trading and collateral strategy.
+          </p>
+          <p>
+            Investor takeaway: distinguish Ripple's company-level business expansion
+            from direct XRP demand. Verify which entities, products and assets are
+            involved before assigning a token-specific valuation premium.
+          </p>
+          <a class="news-link" href="https://ripple.com/press-releases/" target="_blank" rel="noopener noreferrer">Read official press releases ↗</a>
+        </article>
+      </div>
+
+      <div class="callout">
+        <strong>Research standard:</strong> Dates and summaries above reflect reports and
+        announcements available for this update. Partnership announcements, planned
+        integrations and market-data estimates should be checked against the linked
+        primary source before being used as trading signals.
+      </div>
+    </section>
+
+    <section id="official-x" class="section">
+      <div class="section-head">
+        <div>
+          <div class="kicker">03 / The First-Ever Dedicated Account</div>
+          <h2>Why the Official @XRP Account Matters</h2>
+        </div>
+      </div>
+
+      <div class="grid">
+        <article class="card span-7">
+          <div class="quote">“hello, world. It’s about time.”</div>
+          <p class="muted">
+            On October 19, 2026, XRP's official X account launched under the
+            <a href="https://x.com/XRP" target="_blank" rel="noopener noreferrer">@XRP</a>
+            handle. News coverage reported that the account was jointly managed by
+            Ripple and the XRP Ledger Foundation.
+          </p>
+          <p class="muted">
+            The timing and simplicity of the first post attracted attention across
+            the XRP community. The account creates a direct channel for official XRP
+            communications rather than requiring every update to be relayed through
+            Ripple, developers, exchanges or community commentators.
+          </p>
+          <p class="muted">
+            It is a notable milestone after more than a decade of XRP's existence.
+            But investors should separate the symbolic importance of the account from
+            unconfirmed speculation about future announcements.
+          </p>
+          <a class="button button-primary" href="https://x.com/XRP" target="_blank" rel="noopener noreferrer">Follow the Official Account ↗</a>
+        </article>
+
+        <article class="card span-5">
+          <h3>What it could mean</h3>
+          <ul class="list">
+            <li><strong class="green">Visibility:</strong> a recognizable destination for official XRP updates.</li>
+            <li><strong class="cyan">Coordination:</strong> a shared channel for Ripple and XRPL ecosystem communications.</li>
+            <li><strong class="purple">Discovery:</strong> easier access for developers, users, institutions and media.</li>
+            <li><strong class="amber">Community signal:</strong> a milestone that may increase attention, but is not a valuation model.</li>
+          </ul>
+          <div class="divider"></div>
+          <h3>What it does not prove</h3>
+          <ul class="list">
+            <li>No announced change to XRP's fixed maximum supply.</li>
+            <li>No automatic increase in transaction volume or token utility.</li>
+            <li>No guarantee of an upcoming product, partnership or price increase.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="etfs" class="section">
+      <div class="section-head">
+        <div>
+          <div class="kicker">04 / Institutional Product Demand</div>
+          <h2>XRP ETF Flows: Keep the Scoreboard Honest</h2>
+        </div>
+      </div>
+
+      <div class="grid">
+        <article class="card span-4 accent-green">
+          <div class="metric green">13 weeks</div>
+          <div class="metric-label">Previous consecutive positive weekly-flow run, ending with the week of October 12–16.</div>
+        </article>
+        <article class="card span-4 accent-cyan">
+          <div class="metric cyan">~$11.31M</div>
+          <div class="metric-label">Reported net inflows for the week ending October 9.</div>
+        </article>
+        <article class="card span-4 accent-red">
+          <div class="metric red">~−$1.84M</div>
+          <div class="metric-label">Reported net outflows for October 12–16.</div>
+        </article>
+      </div>
+
+      <div class="card" style="margin-top:14px">
+        <h3>How to interpret the change</h3>
+        <p class="muted">
+          The prior inflow streak suggested sustained demand for regulated XRP investment
+          products. The latest negative week does not erase that history, but it does
+          challenge any assumption that ETF buying is a guaranteed, uninterrupted source
+          of demand.
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Signal</th>
+                <th>What it tells us</th>
+                <th>What it does not tell us</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Weekly net inflows</td>
+                <td>New demand exceeded redemptions over that period.</td>
+                <td>That flows will continue or that XRP must rise.</td>
+              </tr>
+              <tr>
+                <td>Weekly net outflows</td>
+                <td>Redemptions exceeded creations during the measured period.</td>
+                <td>That the long-term investment thesis has automatically failed.</td>
+              </tr>
+              <tr>
+                <td>Assets under management</td>
+                <td>The value of assets held by the products at the measurement time.</td>
+                <td>Pure investor flows; prices can change AUM even when flows are positive.</td>
+              </tr>
+              <tr>
+                <td>ETF XRP holdings</td>
+                <td>The reported quantity held by tracked products.</td>
+                <td>Direct evidence of payment utility on XRPL.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="small" style="margin-top:13px">
+          Reported figures vary across trackers depending on which funds are included and
+          how data gaps are handled. Treat these values as dated third-party estimates,
+          not audited figures.
+        </p>
+        <p>
+          <a href="https://xrp-insights.com/" target="_blank" rel="noopener noreferrer">Review ETF holdings and flows ↗</a>
+          &nbsp;·&nbsp;
+          <a href="https://www.tokenpost.com/news/investing/34124" target="_blank" rel="noopener noreferrer">Read coverage of the weekly outflow ↗</a>
+        </p>
+      </div>
+    </section>
+
+    <section id="institutional" class="section">
+      <div class="section-head">
+        <div>
+          <div class="kicker">05 / Company & Capital Markets</div>
+          <h2>Ripple's Institutional Expansion</h2>
+        </div>
+      </div>
+
+      <div class="grid">
+        <article class="card span-6">
+          <h3>Regulated payments and market access</h3>
+          <p class="muted">
+            Ripple's broader strategy includes payments, custody, stablecoins and
+            institutional infrastructure. Its reported European MiCA authorization
+            through Luxembourg is an important regulatory milestone for its EU ambitions.
+          </p>
+          <p class="muted">
+            Regulatory access can make products easier for eligible institutions to
+            evaluate, but it does not mean every service automatically uses XRP.
+          </p>
+        </article>
+
+        <article class="card span-6">
+          <h3>DriveWealth and Meritz Securities</h3>
+          <p class="muted">
+            Ripple's October announcements with DriveWealth and Meritz Securities add
+            to its institutional expansion narrative. DriveWealth's announcement focuses
+            on digital-asset infrastructure for global investing; Meritz's focuses on
+            institutional custody and tokenization in Korea.
+          </p>
+          <p class="muted">
+            Follow implementation details, supported assets, volumes and whether XRP is
+            actually used in the relevant transaction path.
+          </p>
+        </article>
+
+        <article class="card span-6">
+          <h3>RLUSD and institutional collateral</h3>
+          <p class="muted">
+            RLUSD is Ripple's dollar-linked stablecoin. Ripple announced Standard Chartered
+            custody and a planned collateral integration with Ripple and LMAX Group in
+            October 2026. These developments matter for the company's regulated stablecoin
+            and institutional-services ambitions.
+          </p>
+          <p class="muted">
+            However, RLUSD is designed to maintain a dollar value; XRP is a separate
+            volatile asset. Demand for one should not automatically be counted as demand
+            for the other.
+          </p>
+        </article>
+
+        <article class="card span-6">
+          <h3>Real-world assets and tokenization</h3>
+          <p class="muted">
+            Tokenization aims to represent assets or financial claims on blockchain
+            infrastructure. If tokenized financial products grow on XRPL, that may support
+            ecosystem activity, liquidity and developer interest.
+          </p>
+          <p class="muted">
+            The question for XRP holders is how much of that activity requires XRP, how
+            much is denominated in stablecoins or other assets, and whether the resulting
+            demand is economically meaningful relative to XRP's circulating supply.
+          </p>
+        </article>
+      </div>
+
+      <div class="callout">
+        <strong>Institutional adoption is a process, not a single headline.</strong>
+        Give more weight to live products, recurring transactions, disclosed volumes,
+        customer retention and demonstrable XRP usage than to announcements alone.
+      </div>
+    </section>
+
+    <section id="xrpl" class="section">
+      <div class="section-head">
+        <div>
+          <div class="kicker">06 / Network Utility</div>
+          <h2>What Actually Creates Demand on XRPL?</h2>
+        </div>
+      </div>
+
+      <div class="grid">
+        <article class="card span-4">
+          <h3 class="green">Payments & settlement</h3>
+          <p class="muted">
+            XRP can be used as a bridge asset when it is selected to move value between
+            currencies or markets. The investment question is how often it is selected
+            and how much liquidity is required.
+          </p>
+        </article>
+
+        <article class="card span-4">
+          <h3 class="cyan">Transaction fees</h3>
+          <p class="muted">
+            XRPL transactions require XRP for fees. This is a real protocol-level use,
+            but the fee amount per transaction is generally small. More transactions
+            do not automatically imply a proportionate rise in XRP's market value.
+          </p>
+        </article>
+
+        <article class="card span-4">
+          <h3 class="purple">Liquidity & exchange activity</h3>
+          <p class="muted">
+            Deeper markets can make XRP more useful for settlement and trading. Track
+            liquidity quality, spreads, turnover and the depth available for large orders,
+            not just the number of partnerships.
+          </p>
+        </article>
+
+        <article class="card span-6">
+          <h3>Stablecoins can help the ecosystem—and compete with XRP</h3>
+          <p class="muted">
+            Stablecoins can make on-chain payments more predictable in dollar terms and
+            may attract users who do not want exposure to a volatile asset. They can
+            expand the addressable market for blockchain settlement.
+          </p>
+          <p class="muted">
+            But stablecoins may also become the preferred asset for some transfers.
+            Their growth should be evaluated alongside, not substituted for, evidence
+            of XRP-specific liquidity demand.
+          </p>
+        </article>
+
+        <article class="card span-6">
+          <h3>Tokenized assets are not automatically an XRP bull case</h3>
+          <p class="muted">
+            Tokenized bonds, funds and other real-world assets can increase the usefulness
+            of blockchain infrastructure. Yet the tokenized asset, stablecoin used for
+            settlement, application and network token each play different roles.
+          </p>
+          <p class="muted">
+            A credible XRP thesis needs a clear explanation of how broader XRPL adoption
+            translates into demand for XRP, rather than assuming that all network growth
+            benefits the token equally.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="value-capture" class="section">
+      <div class="section-head">
+        <div>
+          <div class="kicker">07 / The Critical Question</div>
+          <h2>Adoption vs. XRP Value Capture</h2>
+        </div>
+      </div>
+
+      <div class="card">
+        <p class="muted">
+          For a long-term XRP investor, this is the section that matters most.
+          An expanding company and a more capable network can be positive developments
+          without creating a one-for-one increase in the value of the native token.
+        </p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Development</th>
+                <th>Potential benefit</th>
+                <th>Evidence to seek</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Spot XRP investment products</td>
+                <td>Additional investment access and potential demand for held XRP.</td>
+                <td>Persistent net flows, reported holdings and assets through market cycles.</td>
+              </tr>
+              <tr>
+                <td>Ripple payment partnerships</td>
+                <td>More customers and potential payment volume.</td>
+                <td>Live usage, transaction volumes, route details and explicit XRP utilization.</td>
+              </tr>
+              <tr>
+                <td>RLUSD growth</td>
+                <td>More stablecoin activity around Ripple's services and ecosystem.</td>
+                <td>Where RLUSD circulates, how it settles and whether XRP is needed in the same flows.</td>
+              </tr>
+              <tr>
+                <td>XRPL tokenization</td>
+                <td>More applications, assets and financial activity on the ledger.</td>
+                <td>Active use, liquidity, recurring fees, settlement demand and the assets users need to hold.</td>
+              </tr>
+              <tr>
+                <td>Official @XRP account</td>
+                <td>Better official communication and visibility.</td>
+                <td>Useful product updates and ecosystem engagement—not follower count alone.</td>
+              </tr>
+              <tr>
+                <td>Regulatory progress</td>
+                <td>Potentially clearer routes for eligible businesses and institutions.</td>
+                <td>Actual services launched, jurisdictions covered and sustained customer adoption.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout">
+          <strong>The thesis gets stronger when multiple independent signals agree:</strong>
+          sustained investment demand, growing real usage, healthy liquidity and clear
+          evidence that XRP itself benefits economically.
+        </div>
+      </div>
+    </section>
+
+    <section id="token-economics" class="section">
+      <div class="section-head">
+        <div>
+          <div class="kicker">08 / Supply & Market Structure</div>
+          <h2>Supply, Escrow and Liquidity</h2>
+        </div>
+      </div>
+
+      <div class="grid">
+        <article class="card span-6">
+          <h3>Fixed maximum supply</h3>
+          <p class="muted">
+            XRP was created with a maximum supply of 100 billion tokens. Unlike proof-of-work
+            assets that issue new coins through mining, XRP does not have an ongoing mining
+            issuance schedule. Transaction fees are destroyed, though their scale should
+            not be confused with a guaranteed material supply reduction.
+          </p>
+        </article>
+
+        <article class="card span-6">
+          <h3>Escrow is not the same as circulating supply</h3>
+          <p class="muted">
+            Ripple's escrow arrangements govern scheduled releases of XRP. Released XRP
+            can be used, retained or placed back into escrow according to the applicable
+            process. Investors should distinguish escrow balances, actual releases,
+            re-locks, operational wallets and exchange balances.
+          </p>
+        </article>
+
+        <article class="card span-12">
+          <h3>What to monitor each month</h3>
+          <ul class="checklist">
+            <li>Escrow releases and amounts returned to escrow.</li>
+            <li>Changes in reported XRP ETF holdings and net creations/redemptions.</li>
+            <li>Exchange balances, with careful attention to wallet-label limitations.</li>
+            <li>Spot market liquidity, spreads and depth across major venues.</li>
+            <li>Actual XRPL payment activity and the assets used in those transactions.</li>
+            <li>Whether new institutional services explicitly use XRP as a bridge or settlement asset.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="risks" class="section">
+      <div class="section-head">
+        <div>
+          <div class="kicker">09 / What Can Go Wrong</div>
+          <h2>The Risks XRP Investors Should Respect</h2>
+        </div>
+      </div>
+
+      <div class="grid">
+        <article class="card span-6">
+          <h3 class="amber">Value-capture risk</h3>
+          <p class="muted">
+            Ripple's services or XRPL activity may grow without creating proportionate
+            demand for XRP. This is a central risk, not a minor footnote.
+          </p>
+        </article>
+
+        <article class="card span-6">
+          <h3 class="amber">Market and macro risk</h3>
+          <p class="muted">
+            XRP remains a volatile crypto asset. Liquidity conditions, interest rates,
+            risk appetite, leverage and broad market selloffs can overwhelm positive
+            project-specific developments.
+          </p>
+        </article>
+
+        <article class="card span-6">
+          <h3 class="amber">ETF flow reversals</h3>
+          <p class="muted">
+            ETF demand can change. The end of the recent 13-week positive-flow streak
+            shows why investors should monitor rolling data instead of assuming permanent
+            institutional accumulation.
+          </p>
+        </article>
+
+        <article class="card span-6">
+          <h3 class="amber">Competition</h3>
+          <p class="muted">
+            XRP competes with stablecoins, other blockchains, bank payment networks and
+            alternative settlement systems. Institutions may choose the route that best
+            fits cost, regulation, liquidity and operational requirements.
+          </p>
+        </article>
+
+        <article class="card span-6">
+          <h3 class="amber">Execution and adoption risk</h3>
+          <p class="muted">
+            Announced partnerships and planned integrations may take time to implement,
+            operate at limited scale or fail to achieve the anticipated usage. Announcements
+            are not substitutes for evidence of execution.
+          </p>
+        </article>
+
+        <article class="card span-6">
+          <h3 class="amber">Custody and counterparty risk</h3>
+          <p class="muted">
+            Transferring XRP to a third-party platform introduces risks beyond price
+            volatility, including custody, legal claims, liquidity restrictions,
+            counterparty failure and possible partial or total loss.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="investor-checklist" class="section">
+      <div class="section-head">
+        <div>
+          <div class="kicker">10 / Practical Framework</div>
+          <h2>The XRP Investor Checklist</h2>
+        </div>
+      </div>
+
+      <div class="grid">
+        <article class="card span-7">
+          <h3>Before making a decision, ask:</h3>
+          <ul class="checklist">
+            <li>Are ETF flows positive across multiple weeks, or has demand weakened?</li>
+            <li>Are announced Ripple partnerships operating in production?</li>
+            <li>Is there measurable evidence of XRP being used for liquidity or settlement?</li>
+            <li>Is XRPL activity growing in a way that creates meaningful token demand?</li>
+            <li>Am I separating Ripple company growth from XRP token economics?</li>
+            <li>Can I tolerate a major price decline without being forced to sell?</li>
+            <li>Have I verified current facts, fees, product terms and regulatory status?</li>
+          </ul>
+        </article>
+
+        <article class="card span-5">
+          <h3>Research dashboard</h3>
+          <ul class="list">
+            <li><a href="https://x.com/XRP" target="_blank" rel="noopener noreferrer">Official XRP account on X</a></li>
+            <li><a href="https://ripple.com/press-releases/" target="_blank" rel="noopener noreferrer">Ripple press releases</a></li>
+            <li><a href="https://ripple.com/insights/category/xrp/" target="_blank" rel="noopener noreferrer">Ripple XRP insights</a></li>
+            <li><a href="https://xrp-insights.com/" target="_blank" rel="noopener noreferrer">XRP ETF holdings and flows tracker</a></li>
+            <li><a href="https://xrpl.org/" target="_blank" rel="noopener noreferrer">Official XRP Ledger documentation</a></li>
+            <li><a href="https://xrpscan.com/" target="_blank" rel="noopener noreferrer">XRPL explorer</a></li>
+            <li><a href="https://www.coingecko.com/en/coins/xrp" target="_blank" rel="noopener noreferrer">XRP market data</a></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="coin-depo" class="section">
+      <div class="section-head">
+        <div>
+          <div class="kicker">11 / Separate Strategy</div>
+          <h2>Holding XRP vs. Earning Interest on XRP</h2>
+        </div>
+      </div>
+
+      <div class="card">
+        <p class="muted">
+          Holding XRP in a wallet and transferring XRP to a third-party custodial interest
+          platform are two different decisions. A platform's advertised rate is not
+          protocol-native XRP yield and should not be treated as part of XRP's investment thesis.
+        </p>
+
+        <div class="grid">
+          <article class="card span-6" style="background:rgba(92,242,165,.035)">
+            <h3 class="green">Self-custody</h3>
+            <ul class="list">
+              <li>XRP price volatility.</li>
+              <li>Wallet security and private-key responsibility.</li>
+              <li>No automatic interest payment from the XRP Ledger simply for holding XRP.</li>
+            </ul>
+          </article>
+
+          <article class="card span-6" style="background:rgba(170,139,250,.04)">
+            <h3 class="purple">Custodial interest account</h3>
+            <ul class="list">
+              <li>XRP price volatility remains.</li>
+              <li>Additional platform and counterparty risk.</li>
+              <li>Terms, rates, withdrawal access and asset-use arrangements may change.</li>
+              <li>Potential partial or total loss of assets.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="callout">
+          <strong>Keep the two theses separate.</strong> Evaluate XRP's utility and valuation
+          independently from the risk and return offered by any third-party platform.
+          A displayed APR is not a guaranteed total return, and it does not prevent XRP
+          from falling in market value.
+        </div>
+
+        <p style="margin-top:18px">
+          For a separate review of advertised rates, custody terms, platform mechanics
+          and risks, read the Degenstein research report:
+        </p>
+
+        <a class="button button-primary" href="/report/coindepo-earn-while-you-hold/">
+          Read the CoinDepo Research Review →
+        </a>
+
+        <p class="small" style="margin-top:12px">
+          Platform rates, eligibility, lock periods and terms can change. Verify current
+          terms directly. Some links in the separate CoinDepo report are referral links
+          and are disclosed there.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="section-head">
+        <div>
+          <div class="kicker">12 / Common Questions</div>
+          <h2>XRP Research FAQ</h2>
+        </div>
+      </div>
+
+      <div class="card">
+        <details>
+          <summary>Is the new official @XRP account bullish?</summary>
+          <p>
+            It is a notable visibility and communications milestone. It could help
+            coordinate official updates and improve discovery, but the account's launch
+            alone does not prove new XRP demand, a product launch or future price appreciation.
+          </p>
+        </details>
+
+        <details>
+          <summary>Did XRP ETF demand stop growing?</summary>
+          <p>
+            The reported weekly data for October 12–16 showed about $1.84 million in net
+            outflows, ending a 13-week positive weekly-flow run. One negative week does
+            not establish a long-term trend. Continue monitoring weekly and monthly data.
+          </p>
+        </details>
+
+        <details>
+          <summary>Does every Ripple partnership benefit XRP?</summary>
+          <p>
+            Not automatically. A partnership can benefit Ripple's business or use XRPL
+            without requiring substantial XRP holdings. Investors should verify the
+            specific product, assets, settlement path and source of token demand.
+          </p>
+        </details>
+
+        <details>
+          <summary>Does RLUSD growth automatically increase XRP's price?</summary>
+          <p>
+            No. RLUSD is a dollar-linked stablecoin and XRP is a separate volatile asset.
+            RLUSD can increase activity in Ripple's ecosystem, but the effect on XRP
+            depends on how the relevant products and transactions use XRP.
+          </p>
+        </details>
+
+        <details>
+          <summary>What is the strongest evidence for a long-term XRP thesis?</summary>
+          <p>
+            A combination of sustained investor-product demand, deeper liquidity,
+            real payment and settlement use, growing XRPL activity, and clear evidence
+            that XRP itself is economically required or beneficial in those flows.
+          </p>
+        </details>
+
+        <details>
+          <summary>Does this report predict a specific XRP price?</summary>
+          <p>
+            No. This is a research framework, not a price target or a guarantee of future
+            performance. Crypto prices can fall sharply even when adoption narratives
+            remain strong.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <section id="sources" class="section">
+      <div class="section-head">
+        <div>
+          <div class="kicker">13 / Further Reading</div>
+          <h2>Sources & Verification</h2>
+        </div>
+      </div>
+
+      <div class="card">
+        <p class="muted">
+          Use primary sources where available. Market-data figures are dated snapshots
+          and can differ by methodology, fund coverage and reporting time.
+        </p>
+        <ul class="list source-list">
+          <li><a href="https://x.com/XRP" target="_blank" rel="noopener noreferrer">Official @XRP account</a> — direct source for its posts and profile.</li>
+          <li><a href="https://x.com/Ripple" target="_blank" rel="noopener noreferrer">Ripple on X</a> — company communications.</li>
+          <li><a href="https://x.com/XRPLF" target="_blank" rel="noopener noreferrer">XRP Ledger Foundation on X</a> — ecosystem communications.</li>
+          <li><a href="https://ripple.com/press-releases/" target="_blank" rel="noopener noreferrer">Ripple Press Center</a> — company announcements and partnerships.</li>
+          <li><a href="https://ripple.com/insights/category/xrp/" target="_blank" rel="noopener noreferrer">Ripple XRP Insights</a> — company research and commentary.</li>
+          <li><a href="https://www.tokenpost.com/news/investing/34124" target="_blank" rel="noopener noreferrer">TokenPost: XRP ETF weekly outflow report</a> — coverage of the October 12–16 flow reversal.</li>
+          <li><a href="https://xrp-insights.com/" target="_blank" rel="noopener noreferrer">XRP Insights tracker</a> — third-party ETF holdings and flow estimates.</li>
+          <li><a href="https://xrpl.org/" target="_blank" rel="noopener noreferrer">XRPL.org</a> — official ledger documentation.</li>
+          <li><a href="https://xrpscan.com/" target="_blank" rel="noopener noreferrer">XRPSCAN</a> — public ledger explorer.</li>
+        </ul>
+        <p class="small" style="margin-top:15px">
+          Some announcements describe planned integrations or strategic partnerships.
+          Their eventual scope, timing and usage may differ from initial expectations.
+          Confirm material developments with the original issuer or network source.
+        </p>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="kicker">The Degenstein Report · Final Take</div>
+      <h2>Adoption is the story.<br><span class="gradient-text">Value capture is the proof.</span></h2>
+      <p>
+        XRP has a fresh official communications milestone, a significant institutional
+        narrative and a growing set of developments to monitor. But a serious investor
+        still needs evidence: recurring demand, real usage, healthy liquidity and a clear
+        connection between ecosystem growth and the native token.
+      </p>
+      <div class="hero-actions" style="justify-content:center">
+        <a class="button button-primary" href="https://x.com/XRP" target="_blank" rel="noopener noreferrer">Follow @XRP ↗</a>
+        <a class="button" href="/report/">Explore More Research</a>
+        <button class="button" type="button" id="shareBtn">Share This Report on X ↗</button>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <strong>The Degenstein Report</strong> · Independent, research-first crypto analysis.
+
+      <p style="margin-top:12px">
+        <strong>Research & Risk Disclosure:</strong> This report is for informational and
+        educational purposes only and does not constitute financial, investment, legal
+        or tax advice. Digital assets are volatile and may lose substantial or all of
+        their value. Company growth, partnerships, ETF flows, network usage, regulatory
+        developments and social-media milestones do not guarantee XRP price appreciation.
+        Data and news can change; verify important facts independently before making
+        financial decisions. No specific investment outcome is promised.
+      </p>
+
+      <div class="footer-links">
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
+        <a href="/editorial-policy/">Editorial Policy</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+      </div>
+      <p style="margin-top:12px">© 2026 The Degenstein Report.</p>
+    </footer>
+  </main>
+
+  <script>
+    (function () {
+      const shareButton = document.getElementById("shareBtn");
+      if (shareButton) {
+        shareButton.addEventListener("click", function () {
           const url = "https://degenstein.xyz/report/xrp/";
-          if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(url).then(function () {
-              alert("Link copied: " + url);
-            }, function () {
-              alert("Could not copy link, please copy manually: " + url);
-            });
-          } else {
-            const temp = document.createElement("input");
-            temp.value = url;
-            document.body.appendChild(temp);
-            temp.select();
-            try {
-              document.execCommand("copy");
-              alert("Link copied: " + url);
-            } catch (e) {
-              alert("Could not copy link, please copy manually: " + url);
-            }
-            document.body.removeChild(temp);
-          }
-        }
-      </script>
-    </body>
-    </html>
-
-
+          const text = "The new official @XRP account is live. But the bigger investor question remains: will Ripple and XRPL adoption translate into sustained demand for XRP? Read the Degenstein Report.";
+          const intent = "https://twitter.com/intent/tweet?text=" +
+            encodeURIComponent(text) + "&url=" + encodeURIComponent(url);
+          window.open(intent, "_blank", "noopener,noreferrer");
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
 
